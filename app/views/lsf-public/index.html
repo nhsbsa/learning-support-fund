@@ -1,0 +1,109 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+
+<!-- Variables -->
+{% set loggedIn = false %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Learning Support Fund
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <!-- Change the page title here -->
+    <h1 class="nhsuk-heading-xl"><span class="nhsuk-caption-xl nhsuk-caption--bottom">Learning Support Fund</span>Public</h1>
+    <!-- Add your content here -->
+    <!-- Styles and components can be found at https://beta.nhs.uk/service-manual/styles-components-patterns -->
+    <p class="nhsuk-body-l">...
+    </p>
+
+    <hr>
+
+
+        <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text"><small>Version 1</small></span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <h2 class="nhsuk-heading-l">Updating the toolkit
+              <span class="nhsuk-caption-l nhsuk-caption--bottom">Taking a replica of LSF Public and transferring to the new toolkit.</span>
+            </h2>
+            <!-- <details class="nhsuk-details nhsuk-expander">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Personas
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <ul class="nhsuk-body-s nhsuk-list nhsuk-list--bullet">
+
+                </ul>
+              </div>
+            </details> -->
+            <!-- <h3 class="nhsuk-heading-m">Hypothesis A</h3>
+            <p style="background: #DEE0E2; padding: 20px;"></p> -->
+            <hr>
+
+            </ul>
+            <h3 class="nhsuk-heading-m">What we created:</h3>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>...</li>
+            </ul>
+            <h3 class="nhsuk-heading-m">What we plan to test:</h3>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>...</li>
+            </ul>
+            <h3 class="nhsuk-heading-m">What we found:</h3>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>...</li>
+            </ul>
+            <h3 class="nhsuk-heading-m">Any known issues?</h3>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>...</li>
+            </ul>
+            <hr>
+
+            <a class="nhsuk-button" href="#">Learning Support Fund Public</a>
+
+
+            <div class="nhsuk-action-link nhsuk-u-margin-bottom-3">
+              <a class="nhsuk-action-link__link" href="#">
+                <svg aria-hidden="true" class="nhsuk-icon nhsuk-icon__arrow-right-circle" viewbox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+                  </path>
+                </svg>
+                <span class="nhsuk-action-link__text">View user journey (v1)</span>
+              </a>
+            </div>
+          </div>
+        </details>
+
+  </div>
+</div>
+{% endblock %}

@@ -94,6 +94,16 @@
 
       {% block main %}
         <div class="nhsuk-width-container {{ containerClasses }}">
+          <div class="nhsuk-phase-banner">
+            <p class="nhsuk-phase-banner__content">
+              <strong class="nhsuk-tag nhsuk-phase-banner__content__tag">
+                BETA
+              </strong>
+              <span class="nhsuk-phase-banner__text">
+                This is a new service – your <a class="nhsuk-link" href="#">feedback</a> will help us to improve it.
+              </span>
+            </p>
+          </div>
           {% block outerContent %}{% endblock %}
           <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
             {% block content %}{% endblock %}

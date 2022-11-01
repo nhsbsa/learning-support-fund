@@ -4,8 +4,35 @@
 // Components that are not in the NHS.UK frontend library
 @import 'components/list-border';
 @import 'components/related-nav';
+@import 'components/phase-banner';
+
+// Reminder: import tabs from node_modules
+@import 'components/tabs';
 
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
-  
+
+.nhsuk-select {
+    &.nhsuk-select--custom-width {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+.nhsuk-custom-three-column {
+    display: inline-block;
+    width: 33%;
+}
+.nhsuk-custom-four-column {
+    display: inline-block;
+    width: 24%;
+}
+.nhsuk-inset-text {
+    &.nhsuk-inset--custom-width {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+.nhsuk-button-custom {
+    float: right;
+}

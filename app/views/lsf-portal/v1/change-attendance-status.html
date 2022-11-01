@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Change attendance status
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>Change attendance status (Joe Blogs)</h1>
+
+    </div>
+
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-inset-text nhsuk-inset--custom-width">
+            <div class="nhsuk-custom-four-column">
+                <h2 class="nhsuk-heading-xs">Course name</h2>
+                <p>Diagnostic Radiography</p>
+            </div>
+            <div class="nhsuk-custom-four-column">
+                <h2 class="nhsuk-heading-xs">Academic year</h2>
+                <p>March 2022</p>
+            </div>
+            <div class="nhsuk-custom-four-column">
+                <h2 class="nhsuk-heading-xs">Study year</h2>
+                <p>Year 1</p>
+            </div>
+            <div class="nhsuk-custom-four-column">
+                <h2 class="nhsuk-heading-xs">Attendance</h2>
+                <p>Full-time</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="select-1">
+                Change status to
+            </label>
+            <select class="nhsuk-select" id="select-1" name="select-1">
+                <option value="1" selected>Please select...</option>
+                <option value="2">NHS.UK frontend option 2</option>
+                <option value="3">NHS.UK frontend option 3</option>
+            </select>
+        </div>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                Comments
+            </label>
+            <div class="nhsuk-hint" id="example-hint">
+                Tell us the details of the change
+            </div>
+            <textarea class="nhsuk-textarea" id="example" name="example" rows="5"
+                aria-describedby="example-hint"></textarea>
+            <div class="nhsuk-hint" id="example-hint">
+                1000 characters remaining
+            </div>
+        </div>
+        <a class="nhsuk-button" href="#">Submit</a>
+    </div>
+</div>
+
+</div>
+{% endblock %}
