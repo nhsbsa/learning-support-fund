@@ -1,0 +1,39 @@
+.govuk-timeout-warning {
+  display: none;
+  // Setting width allows IE to center dialog vertically
+  width: 100%;
+
+  // To do: allow this to be customised
+  max-width: 500px;
+
+  &[open] {
+    display: block;
+
+    background-color: rgba(0, 0, 0, .8);
+
+    // Backdrop styles for browsers with native support
+    &+ .backdrop {
+      background: $backdrop-colour;
+    }
+
+    // Backdrop styles for browsers using
+    // Keep these two backdrop styles separate - Safari didn't
+    // work when combined
+    &::backdrop {
+      background: $backdrop-colour;
+    }
+  }
+}
+
+// Stop background scrolling while dialog open.
+.govuk-timeout-warning-overlay {
+  overflow: hidden;
+}
+
+.js-enabled .govuk-timeout-warning-fallback {
+  display: none;
+}
+
+.tabular-numbers {
+  font-family: $govuk-font-family-tabular;
+}

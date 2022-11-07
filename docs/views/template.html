@@ -94,6 +94,8 @@
 
       {% block main %}
         <div class="nhsuk-width-container {{ containerClasses }}">
+
+          <!-- phase banner -->
           <div class="nhsuk-phase-banner">
             <p class="nhsuk-phase-banner__content">
               <strong class="nhsuk-tag nhsuk-phase-banner__content__tag">
@@ -104,6 +106,7 @@
               </span>
             </p>
           </div>
+
           {% block outerContent %}{% endblock %}
           <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
             {% block content %}{% endblock %}
