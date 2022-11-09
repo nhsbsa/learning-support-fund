@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-heading-xl"><span class="nhsuk-caption-xl nhsuk-caption--bottom">NHS Learning Support Fund account</span>Sign in to NHS Learning Support Fund</h1>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="sign-in-username">
+              Username or Email address
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="sign-in-username" name="sign-in-username" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="sign-in-password">
+              Password
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="sign-in-password" name="sign-in-password" type="password">
+        </div>
+
+        <a class="nhsuk-button" href="./account/dashboard">Sign in</a><br>
+        <p><a href="forgotten-credentials/forgotten-username">Forgotten your username?</a><br>
+        <a href="forgotten-credentials/forgotten-password">Forgotten your password?</a></p>
+
+        <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">I need to register an account</h2>
+        <p>You can sign up for an NHS Learning Support Fund account by visiting our <a href="./start-screen">registration page</a>.</p>
+
+    </div>
+
+  </div>
+{% endblock %}
