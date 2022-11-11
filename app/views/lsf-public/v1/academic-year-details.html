@@ -20,13 +20,16 @@
 
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-
-                <div class="nhsuk-card nhsuk-card--clickable">
-                    <div class="nhsuk-card__content">
-                        <p class="nhsuk-card__description">Before you are able to apply for funding you need to answer some questions</p>
-                        <a href="#">Answer Department of Health and Social Care questions</a>
+                {% if data['questionnaire-completed'] == 'Completed' %}
+                {% else %}
+                    <div class="nhsuk-card nhsuk-card--clickable">
+                        <div class="nhsuk-card__content">
+                            <p class="nhsuk-card__description">Before you are able to apply for funding you need to answer some questions</p>
+                            <a href="DHSC-start">Answer Department of Health and Social Care questions</a>
+                        </div>
                     </div>
-                </div>
+                {% endif %}
+
             </div>
 
         </div>
@@ -68,4 +71,16 @@
         </p>
     </div>
 </div>
+{% if data['questionnaire-completed'] == 'Completed' %}                
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+            <hr>
+            <h2 class="nhsuk-heading-l">Training Grant</h2>
+            <h3 class="nhsuk-heading-m">Application for Training Grant</h3>
+            <p>Training grant is a non-means tested grant of £5,000 per academic year. For more information, <a href="#">Please visit our website</a>.</p>
+            <a class="nhsuk-button" href="#">Apply for Training Grant</a>
+        </div>
+    </div>
+{% else %}
+{% endif %}
 {% endblock %}

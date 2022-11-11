@@ -1,0 +1,116 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What were the key factors involved?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+
+        <form action="v1/DHSC-factors-involved" method="POST">
+
+                <div class="nhsuk-form-group">
+              
+                  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Department of Health and SocialCare questionnaire</span>What were the key factors involved?</h1>
+                    </legend>
+              
+                    <div class="nhsuk-hint" id="example-hint">
+                      Select all that apply
+                    </div>
+              
+                    <div class="nhsuk-checkboxes">
+              
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="financial-worries" name="factors-involved" type="checkbox" value="financial worries">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="financial-worries">
+                          Financial worries 
+                        </label>
+                      </div>
+              
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="academic-performance" name="factors-involved" type="checkbox" value="academic performance">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="academic-performance">
+                          Concerns about my academic performance
+                        </label>
+                      </div>
+              
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="heavy-workload" name="factors-involved" type="checkbox" value="heavy workload">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="heavy-workload">
+                          Heavy workload
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="academic-support" name="factors-involved" type="checkbox" value="academic support">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="academic-support">
+                          Academic support
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="caring-responsibilities" name="factors-involved" type="checkbox" value="pressure from caring responsibilities">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="caring-responsibilities">
+                          Pressure from caring responsibilities
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="poor-experience" name="factors-involved" type="checkbox" value="poor placement experiences">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="poor-experience">
+                          Poor placement experiences
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="doubts-career-choice" name="factors-involved" type="checkbox" value="doubts about career choice">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="doubts-career-choice">
+                          Doubts about career choice
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="health-wellbeing" name="factors-involved" type="checkbox" value="concerns about my health and wellbeing">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="health-wellbeing">
+                          Concerns about my health and wellbeing
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="prefer-not-say" name="factors-involved" type="checkbox" value="prefer not to say">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="prefer-not-say">
+                          Prefer not to say
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="other" name="factors-involved" type="checkbox" value="other">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="other">
+                          Other
+                        </label>
+                      </div>
+              
+                    </div>
+                  </fieldset>
+              
+                </div>
+
+                <button class="nhsuk-button" type="submit">Next</button><br>
+                <a href="academic-year-details">Cancel</a>
+            
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

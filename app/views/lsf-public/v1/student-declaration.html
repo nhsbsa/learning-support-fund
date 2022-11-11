@@ -80,14 +80,17 @@
         <p>I understand and accept that the terms and conditions (including rates) for the NHS Learning Support Fund may change at any time without notice, and the scheme is subject to continued government funding, which may cease at any time without notice.</p>
         <p>I declare that the information given on this form and in any supporting documents I provide is complete and accurate. I understand and accept that if I provide NHSBSA Student Services with false or misleading information, financial support may be refused or withdrawn and I may be liable to criminal prosecution and/or civil proceedings.</p>
 
-        <div class="nhsuk-checkboxes__item nhsuk-u-margin-top-9 nhsuk-u-margin-bottom-9">
-            <input class="nhsuk-checkboxes__input" id="student-declaration" name="student-declaration" type="checkbox" value="approve">
-            <label class="nhsuk-label nhsuk-checkboxes__label" for="student-declaration">
-                Accept declaration
-            </label>
-        </div>
-
-        <a class="nhsuk-button" href="academic-year-details">Apply now</a>
+        
+        <form action="v1/student-declaration" method="POST">
+            <div class="nhsuk-checkboxes__item nhsuk-u-margin-top-9 nhsuk-u-margin-bottom-9">
+                <input class="nhsuk-checkboxes__input" id="student-declaration" name="student-declaration" type="checkbox" value="approve">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="student-declaration">
+                    Accept declaration
+                </label>
+            </div>
+        
+            <button class="nhsuk-button" type="submit">Apply now</button>
+        </form>
 
 
     </div>

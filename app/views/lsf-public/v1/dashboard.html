@@ -23,10 +23,17 @@
 
                     <div class="nhsuk-card nhsuk-card--clickable">
                         <div class="nhsuk-card__content">
-                            <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                            <a class="nhsuk-card__link" href="attending-university">Apply for 2020/2021 academic year</a>
-                            </h2>
-                            <p class="nhsuk-card__description">You can now apply for this academic year</p>
+                            {% if data['questionnaire-completed'] == 'Completed' %}     
+                                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                                <a class="nhsuk-card__link" href="academic-year-details">View 2020/2021 academic year details</a>
+                                </h2>
+                                <p class="nhsuk-card__description">This is a previous academic year</p>
+                            {% else %}
+                                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                                <a class="nhsuk-card__link" href="attending-university">Apply for 2020/2021 academic year</a>
+                                </h2>
+                                <p class="nhsuk-card__description">You can now apply for this academic year</p>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
