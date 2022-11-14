@@ -131,7 +131,7 @@ router.post('/v1/DHSC-may-leave-course', (req, res) => {
     if (mayLeaveCourse === "yes") {
         res.redirect('/lsf-public/v1/DHSC-factors-involved')
     } else {
-        res.redirect('/lsf-public/v1/DHSC-may-leave-course')
+        res.redirect('/lsf-public/v1/DHSC-expect-complete-final-year')
     }
 
 })
@@ -204,6 +204,58 @@ router.post('/v1/DHSC-submit-questionnaire', (req, res) => {
 })
 
 // ********************************
+// Training Grant Application
+// ********************************
+
+// Have you applied for a student loan?
+router.post('/v1/APPLY-applied-student-loan', (req, res) => {
+
+    const studentLoan = req.session.data['student-loan']
+
+    if (studentLoan === 'yes') {
+        res.redirect('/lsf-public/v1/APPLY-bank-details')
+    } else {
+        res.redirect('/lsf-public/v1/no')
+    }
+
+})
+
+// Please enter your bank details
+router.post('/v1/APPLY-bank-details', (req, res) => {
+
+    const accountHolder = req.session.data['account-holder']
+    const sortCode = req.session.data['sort-code']
+    const accountNumber = req.session.data['account-number']
+    const buildingSocietyNumber = req.session.data['building-society-number']
+
+    res.redirect('/lsf-public/v1/APPLY-submit-your-evidence')
+
+})
+
+// Upload your Student loan award letter
+router.post('/v1/APPLY-upload-sl-award-letter', (req, res) => {
+
+    req.session.data['evidence-submitted'] = 'Submitted'
+
+    res.redirect('/lsf-public/v1/APPLY-submit-your-evidence')
+    
+})
+
+// Evidence required
+router.post('/v1/APPLY-submit-your-evidence', (req, res) => {
+  
+    res.redirect('/lsf-public/v1/APPLY-training-grant-submitted')
+    
+})
+
+// You have now completed your Training Grant application
+router.post('/v1/APPLY-training-grant-submitted', (req, res) => {
+  
+    req.session.data['training-grant-submitted'] = 'Submitted'
+
+    res.redirect('/lsf-public/v1/academic-year-details')
+    
+})
 
 
 
