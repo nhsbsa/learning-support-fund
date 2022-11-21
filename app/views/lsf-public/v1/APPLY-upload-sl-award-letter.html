@@ -11,7 +11,7 @@
 
     <form action="v1/APPLY-upload-sl-award-letter" method="POST">
         
-        <h1 class="nhsuk-heading-l">Upload your Student loan award letter</h1>
+        <h1 class="nhsuk-heading-l">Upload your {% if data['student-loan'] === 'yes' %}Student loan award letter{% else %}Passport - photo page OR UK birth certificate{% endif %}</h1>
 
         <p>Guidance for uploading document</p>
         <div class="nhsuk-hint" id="contact-hint">

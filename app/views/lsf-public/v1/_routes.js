@@ -215,8 +215,43 @@ router.post('/v1/APPLY-applied-student-loan', (req, res) => {
     if (studentLoan === 'yes') {
         res.redirect('/lsf-public/v1/APPLY-bank-details')
     } else {
-        res.redirect('/lsf-public/v1/no')
+        res.redirect('/lsf-public/v1/APPLY-nationality')
     }
+
+})
+
+// What is your nationality?
+router.post('/v1/APPLY-nationality', (req, res) => {
+
+    const nationality = req.session.data['nationality']
+
+    res.redirect('/lsf-public/v1/APPLY-residency')
+
+})
+
+// Add residency
+router.post('/v1/APPLY-add-residency', (req, res) => {
+
+    const country = req.session.data['country']
+    const reason = req.session.data['reason']
+
+    // From Dates
+    const fromDateDay = req.session.data['from-date-day']
+    const fromDateMonth = req.session.data['from-date-month']
+    const fromDateYear = req.session.data['from-date-year']
+    
+    const mergedFromDate = fromDateDay + '/' + fromDateMonth + '/' + fromDateYear
+
+    // To Dates
+    const toDateDay = req.session.data['to-date-day']
+    const toDateMonth = req.session.data['to-date-month']
+    const toDateYear = req.session.data['to-date-year']
+
+    const mergedToDate = toDateDay + '/' + toDateMonth + '/' + toDateYear
+
+    const currentlyLive = req.session.data['currently-live']
+
+    res.redirect('/lsf-public/v1/APPLY-residency')
 
 })
 
