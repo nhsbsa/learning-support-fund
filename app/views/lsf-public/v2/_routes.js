@@ -400,6 +400,13 @@ router.post('/v2/TDAE-student-declaration', (req, res) => {
 
 })
 
+router.post('/v2/TDAE-claim-submitted', (req, res) => {
+
+    req.session.data['TDAE-claim'] = 'Submitted'
+    res.redirect('/lsf-public/v2/academic-year-details')
+
+})
+
 
 module.exports = router;
 

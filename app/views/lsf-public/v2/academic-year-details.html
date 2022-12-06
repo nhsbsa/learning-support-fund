@@ -151,12 +151,25 @@
                               </tr>
                             </thead>
                             <tbody class="nhsuk-table__body">
+                              {% if data['TDAE-claim'] == 'Submitted' %}
+                                <tr role="row" class="nhsuk-table__row">
+                                  <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Application </span>Travel expenses (Car journey)
+                                  </td>
+                                  <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Status </span>Pending
+                                  </td>
+                                  <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Dates </span><a href="#">21-Nov-2022 to 23-Nov-2022</a>
+                                  </td>
+                                </tr>
+                              {% endif %}
                               <tr role="row" class="nhsuk-table__row">
                                 <td role="cell" class="nhsuk-table__cell">
                                   <span class="nhsuk-table-responsive__heading">Application </span>Travel and Dual Accommodation Expenses
                                 </td>
                                 <td role="cell" class="nhsuk-table__cell">
-                                  <span class="nhsuk-table-responsive__heading">Status </span>Pending Approved for payment
+                                  <span class="nhsuk-table-responsive__heading">Status </span>Approved for payment
                                 </td>
                                 <td role="cell" class="nhsuk-table__cell">
                                   <span class="nhsuk-table-responsive__heading">Dates </span><a href="#">01-Sep-2020 to 02-Sep-2020</a>
