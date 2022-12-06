@@ -1,0 +1,102 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Where do you intend to work following graduation?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+
+        <form action="v2/DHSC-work-following-graduation" method="POST">
+
+                <div class="nhsuk-form-group">
+              
+                  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Department of Health and SocialCare questionnaire</span>Where do you intend to work following graduation?</h1>
+                    </legend>
+              
+                    <div class="nhsuk-hint" id="example-hint">
+                      Select all that apply
+                    </div>
+              
+                    <div class="nhsuk-checkboxes">
+              
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="acute" name="work-following-graduation" type="checkbox" value="acute">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="acute">
+                          Acute
+                        </label>
+                      </div>
+              
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="primary-care" name="work-following-graduation" type="checkbox" value="academic performance">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="primary-care">
+                          Primary Care
+                        </label>
+                      </div>
+              
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="social-care" name="work-following-graduation" type="checkbox" value="social care">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="social-care">
+                          Social Care
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="not-health-care" name="work-following-graduation" type="checkbox" value="not in health and care">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="not-health-care">
+                          Not in health and care
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="gap-year" name="work-following-graduation" type="checkbox" value="take a gap year">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="gap-year">
+                          Take a gap year
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="undecided" name="work-following-graduation" type="checkbox" value="undecided">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="undecided">
+                          Undecided
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="prefer-not-say" name="work-following-graduation" type="checkbox" value="prefer not to say">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="prefer-not-say">
+                          Prefer not to say
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="other" name="work-following-graduation" type="checkbox" value="other">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="other">
+                          Other
+                        </label>
+                      </div>
+              
+                    </div>
+                  </fieldset>
+              
+                </div>
+
+                <button class="nhsuk-button" type="submit">Next</button><br>
+                <a href="academic-year-details">Cancel</a>
+            
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

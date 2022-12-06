@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Provide evidence
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<!-- <form action="#" method="POST"> -->
+
+            <h1 class="nhsuk-heading-l">Provide evidence</h1>
+            <p>You must now provide evidence for your claim. This should include where relevant:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>car journey mileage - petrol receipts</li>
+                <li>car parking - receipts, permits or invoices</li>
+                <li>tunnel and toll charges - receipts</li>
+            </ul>
+
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="file-upload-1">
+                  Upload evidence
+                </label>
+                <input class="nhsuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+            </div>
+
+			<a class="nhsuk-button" href="TDAE-evidence-summary">Next</a><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		<!-- </form> -->
+
+	</div>
+
+</div>
+{% endblock %}

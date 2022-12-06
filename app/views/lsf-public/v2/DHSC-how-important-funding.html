@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+How important was funding to your decision on where to study?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+
+        <form action="v2/DHSC-how-important-funding" method="POST">
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Department of Health and SocialCare questionnaire</span>How important was funding to your decision on where to study?</h1>
+                    </legend>
+
+                    <p>Using a scale where 1 is not important at all and 5 is very important</p>
+
+                    <div class="nhsuk-radios nhsuk-radios--inline">
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="important-1" name="how-important-funding"
+                                type="radio" value="yes">
+                            <label class="nhsuk-label nhsuk-radios__label" for="important-1">
+                                1
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="important-2" name="how-important-funding"
+                                type="radio" value="no">
+                            <label class="nhsuk-label nhsuk-radios__label" for="important-2">
+                                2
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="important-3" name="how-important-funding"
+                                type="radio" value="yes">
+                            <label class="nhsuk-label nhsuk-radios__label" for="important-3">
+                                3
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="important-4" name="how-important-funding"
+                                type="radio" value="no">
+                            <label class="nhsuk-label nhsuk-radios__label" for="important-4">
+                                4
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="important-5" name="how-important-funding"
+                                type="radio" value="no">
+                            <label class="nhsuk-label nhsuk-radios__label" for="important-5">
+                                5
+                            </label>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+            </div>
+
+            <button class="nhsuk-button" type="submit">Next</button><br>
+            <a href="academic-year-details">Cancel</a>
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Department of Health and Social Care questionnaire
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Department of Health and Social Care questionnaire</span>Department of Health and Social Care questionnaire</h1>
+
+        <p>Your asnwers to the following questions will only be used for research purposes. They will be anonymised before sharing with the Department of Health and Social care.</p>
+        <p>These questions will take around 10 minutes to complete</p>
+
+        <a class="nhsuk-button" href="DHSC-first-year-application">Start now</a>
+
+    </div>
+
+  </div>
+{% endblock %}

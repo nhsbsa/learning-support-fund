@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+If you usually incur parking, tunnel or toll road costs for your placement, give the total daily costs of these
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v2/TDAE-placement-additional-costs" method="POST">
+
+            
+
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="input-width-5">
+                    <h1 class="nhsuk-heading-l">If you usually incur parking, tunnel or toll road costs for your placement, give the total daily costs of these</h1>
+                </label>
+                <div class="nhsuk-hint" id="contact-hint">
+                    For example, 10.00
+                  </div>
+                <input class="nhsuk-input nhsuk-input--width-5" id="input-width-5" name="placement-additional-costs" type="text">
+            </div>
+
+			<button class="nhsuk-button" type="submit">Next</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

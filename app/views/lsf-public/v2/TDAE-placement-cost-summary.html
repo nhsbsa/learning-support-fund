@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Your costs
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- <form action="" method="POST"> -->
+
+        <h1 class="nhsuk-heading-xl">Your costs summary</h1>
+        <p>This is a breakdown of your normal costs, placement costs and the amount you will be claiming.</p>
+
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Normal costs
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                £15.00
+              </dd>
+          
+            </div>
+          
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Placement costs
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                £20.00
+              </dd>
+          
+            </div>
+          
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Total claim
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                £5.00
+              </dd>
+          
+            </div>
+        
+          
+          </dl>
+        
+
+        <a class="nhsuk-button" href="TDAE-type-journey-evidence">Next</a><br>
+        <a href="TDAE-start-claim">Cancel</a>
+
+        <!-- </form> -->
+
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Evidence summary
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<!-- <form action="#" method="POST"> -->
+
+            <h1 class="nhsuk-heading-l">Evidence summary</h1>
+
+            <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Car journey mileage
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    my-mileage-receipt.jpg
+                  </dd>
+              
+                  <dd class="nhsuk-summary-list__actions">
+              
+                    <a href="#">
+                      Delete<span class="nhsuk-u-visually-hidden"> evidence</span>
+                    </a>
+              
+                  </dd>
+              
+                </div>
+              
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Parking
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    parking-receipt.jpg
+                  </dd>
+              
+                  <dd class="nhsuk-summary-list__actions">
+              
+                    <a href="#">
+                      Delete<span class="nhsuk-u-visually-hidden"> evidence</span>
+                    </a>
+              
+                  </dd>
+              
+                </div>
+              
+              </dl>
+
+			<a class="nhsuk-button nhsuk-u-margin-right-3" href="TDAE-placement-summary-cya">Next</a>
+            <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-type-journey-evidence">Add more evidence</a><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		<!-- </form> -->
+
+	</div>
+
+</div>
+{% endblock %}

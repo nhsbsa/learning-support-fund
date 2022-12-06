@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Claim Travel and Dual Accommodation Expenses
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <!-- <form action="" method="POST"> -->
+
+            <h1 class="nhsuk-heading-xl">Claim Travel and Dual Accommodation Expenses</h1>
+
+            <p>You are now able to claim travel expenses online if your mode of transport is car, this will also include any additional costs (parking, tunnels and toll charges) your incure for this journey.</p>
+
+            <h2 class="nhsuk-heading-l">Alternative travel and accommodation</h2>
+            <p>If your normal way of travel is not car or if you need to claim for accommodation you will need to complete the <a href="#">Travel and Dual Accommodation Expenses form</a>.</p>
+            <p>Once we've received your application and all relevant evidence, we'll process your application within 20 working days.</p>
+            <p>When completed send your TDAE Application form and any associated receipts to your university.</p>
+            <p>Your university will review your TDAE Application and inform us of authorised claims which you will be able to view under your <a href="academic-year-details">academic details</a>.</p>
+
+            <h2 class="nhsuk-heading-l">Claiming online</h2>
+            <p>When claiming online you will need to provide details of your normal place of study, placement address and information about your claim. You wil also be required to upload evidence to support your claim.</p>
+            <p>What evidence to provide for a claim:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>car journey mileage - petrol receipts</li>
+                <li>car parking - receipts, permits or invoices</li>
+                <li>tunnel and toll charges - receipts</li>
+            </ul>
+
+            <a class="nhsuk-button nhsuk-u-margin-top-3" href="TDAE-dsa-help">Start now</a>
+
+        <!-- </form> -->
+
+    </div>
+
+</div>
+{% endblock %}
