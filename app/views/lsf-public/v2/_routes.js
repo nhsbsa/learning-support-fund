@@ -286,7 +286,7 @@ router.post('/v2/TDAE-dsa-help', (req, res) => {
 
     if (dsaSupport === 'yes') {
         req.session.data['TDAE-signpost'] = 'DSA'
-        res.redirect('/lsf-public/v2/TDAE-signpost')
+        res.redirect('/lsf-public/v2/TDAE-signpost/TDAE-dsa-signpost')
     } else {
         res.redirect('/lsf-public/v2/TDAE-incur-costs')
     }
@@ -317,7 +317,7 @@ router.post('/v2/TDAE-travel-accommodation', (req, res) => {
     if (carJourney === 'yes') {
         res.redirect('/lsf-public/v2/TDAE-term-time-address')
     } else {
-        res.redirect('/lsf-public/v2/TDAE-signpost')
+        res.redirect('/lsf-public/v2/TDAE-signpost/TDAE-alternative-journey-signpost')
     }
 
 })
