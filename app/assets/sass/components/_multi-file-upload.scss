@@ -1,0 +1,101 @@
+.moj-multi-file-upload {
+	margin-bottom: 40px;
+}
+
+.moj-multi-file-upload--enhanced .moj-multi-file-upload__button {
+	display: none;
+}
+
+.moj-multi-file-upload__dropzone {
+    outline: 3px dashed black;
+	display: flex;
+	text-align: center;
+	padding: nhsuk-spacing(9) nhsuk-spacing(3);
+	transition: outline-offset .1s ease-in-out, background-color .1s linear;
+}
+
+.moj-multi-file-upload__dropzone label {
+	margin-bottom: 0;
+	display: inline-block;
+	width: auto;
+}
+
+.moj-multi-file-upload__dropzone p {
+  margin-bottom: 0;
+  margin-right: 10px;
+  padding-top: 7px;
+}
+
+.moj-multi-file-upload__dropzone [type=file] {
+	position: absolute;
+	left: -9999em;
+}
+
+.moj-multi-file-upload--dragover {
+	background: #b1b4b6;
+	outline-color: #6f777b;
+}
+
+// .moj-multi-file-upload--focused {
+//     background-color: $nhsuk-focus-colour;
+//     color: $nhsuk-focus-text-colour;
+//     box-shadow: 0 -2px $nhsuk-focus-colour, 0 4px $nhsuk-focus-text-colour;
+//     outline: none;
+// }
+
+.moj-multi-file-upload__error {
+	color: red;
+	font-weight: bold;
+}
+
+.moj-multi-file-upload__success {
+	color: green;
+	font-weight: bold;
+}
+
+.moj-multi-file-upload__error svg {
+   fill: currentColor;
+   float: left;
+   margin-right: nhsuk-spacing(2);
+}
+
+.moj-multi-file-upload__success svg {
+	fill: currentColor;
+	float: left;
+	margin-right: nhsuk-spacing(2);
+}
+
+.govuk-button {
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 22px;
+    padding: 8px 10px 7px;
+    border: 2px solid rgba(0,0,0,0);
+    border-radius: 0;
+    color: #fff;
+    background-color: #00703c;
+    box-shadow: 0 2px 0 #002d18;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+}
+.govuk-button--secondary {
+    background-color: #f3f2f1;
+    box-shadow: 0 2px 0 #929191;
+    color: #0b0c0c;
+}
+.govuk-button:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -4px;
+    left: -2px;
+    background: rgba(0,0,0,0);
+}

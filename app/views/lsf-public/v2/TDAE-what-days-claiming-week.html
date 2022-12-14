@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-What days are you claiming for?
+What days are you claiming for week 1?
 {% endblock %}
 
 {% block content %}
@@ -14,19 +14,19 @@ What days are you claiming for?
 		"text": "Go back"
 		}) }}
 
-		<form action="v2/TDAE-days-claiming" method="POST">
+		<form action="v2/TDAE-what-days-claiming-week" method="POST">
 
                 <div class="nhsuk-form-group">
               
                   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                       <h1 class="nhsuk-fieldset__heading">
-                        What days are you claiming for?
+                        What days are you claiming for week 1?
                       </h1>
                     </legend>
               
                     <div class="nhsuk-hint" id="example-hint">
-                      Select all days you are claiming for.
+                      Select all days you are claiming for week 1.
                     </div>
               
                     <div class="nhsuk-checkboxes">

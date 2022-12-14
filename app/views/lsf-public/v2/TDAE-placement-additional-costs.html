@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-If you usually incur parking, tunnel or toll road costs for your placement, give the total daily costs of these
+What additional costs do you incur when travelling to your placement?
 {% endblock %}
 
 {% block content %}
@@ -20,8 +20,9 @@ If you usually incur parking, tunnel or toll road costs for your placement, give
 
             <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="input-width-5">
-                    <h1 class="nhsuk-heading-l">If you usually incur parking, tunnel or toll road costs for your placement, give the total daily cost of these</h1>
+                    <h1 class="nhsuk-heading-l">What {% if data['often-additional-costs'] === 'daily' %}daily{% elif data['often-additional-costs'] === 'weekly' %}weekly{% else %}monthly{% endif %} additional costs do you incur when travelling to your placement?</h1>
                 </label>
+				<p>These are costs to you which have covered car parking, tunnel or toll road charges.</p>
                 <div class="nhsuk-hint" id="contact-hint">
                     For example, 10.00
                   </div>

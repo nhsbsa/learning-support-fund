@@ -336,13 +336,37 @@ router.post('/v2/TDAE-normal-place-study', (req, res) => {
 
 router.post('/v2/TDAE-normal-return-mileage', (req, res) => {
 
-    res.redirect('/lsf-public/v2/TDAE-additional-costs')
+    res.redirect('/lsf-public/v2/TDAE-normal-additional-costs-often')
+
+})
+
+router.post('/v2/TDAE-normal-additional-costs-often', (req, res) => {
+
+    const normalOftenAdditionalCosts = req.session.data['normal-often-additional-costs']
+
+    if (normalOftenAdditionalCosts === 'none') {
+        res.redirect('/lsf-public/v2/TDAE-normal-summary-cya')
+    } else {
+        res.redirect('/lsf-public/v2/TDAE-additional-costs')
+    }
 
 })
 
 router.post('/v2/TDAE-additional-costs', (req, res) => {
 
     res.redirect('/lsf-public/v2/TDAE-normal-summary-cya')
+
+})
+
+router.post('/v2/TDAE-placement-journey-same-days', (req, res) => {
+
+    const sameJourneyCosts = req.session.data['same-costs']
+
+    if (sameJourneyCosts === 'yes') {
+        res.redirect('/lsf-public/v2/TDAE-placement-address')
+    } else {
+        res.redirect('/lsf-public/v2/TDAE-signpost/TDAE-not-same-journey-costs')
+    }
 
 })
 
@@ -360,19 +384,83 @@ router.post('/v2/TDAE-start-claim', (req, res) => {
 
 router.post('/v2/TDAE-end-claim', (req, res) => {
 
-    res.redirect('/lsf-public/v2/TDAE-days-claiming')
+    const startDateDay = req.session.data['start-claim-day']
+    const startDateMonth = req.session.data['start-claim-month']
+    const startDateYear = req.session.data['start-claim-year']
+    const startDate = startDateDay + '-' + startDateMonth + '-' + startDateYear
+
+    const endDateDay = req.session.data['end-claim-day']
+    const endDateMonth = req.session.data['end-claim-month']
+    const endDateYear = req.session.data['end-claim-year']
+    const endDate = endDateDay + '-' + endDateMonth + '-' + endDateYear
+
+    // following a set start and end date to view the different journey between more than 1 week and under 1 week
+    // 1 week or less: 05-12-2022 to 09-12-2022
+    // 2 weeks: 28-11-2022 to 09-12-2022
+
+    if (startDate === '05-12-2022' && endDate === '09-12-2022') {
+        res.redirect('/lsf-public/v2/TDAE-days-claiming')
+    } else if (startDate === '28-11-2022' && endDate === '09-12-2022'){
+        res.redirect('/lsf-public/v2/TDAE-claiming-same-days')
+    } else {
+        res.redirect('/lsf-public/v2/TDAE-end-claim')
+    }
 
 })
 
-router.post('/v2/TDAE-days-claiming', (req, res) => {
+router.post('/v2/TDAE-claiming-same-days', (req, res) => {
+
+    const claimingSameDays = req.session.data['claiming-same-days']
+
+    if (claimingSameDays === 'yes'){
+        req.session.data['TDAE-multiple-weeks'] = 'yes'
+        res.redirect('/lsf-public/v2/TDAE-days-claiming')
+    } else {
+        req.session.data['TDAE-multiple-weeks'] = 'no'
+        res.redirect('/lsf-public/v2/TDAE-what-days-claiming-week')
+    }
+
+})
+
+router.post('/v2/TDAE-what-days-claiming-week', (req, res) => {
+
+    res.redirect('/lsf-public/v2/TDAE-provide-journey-evidence')
+
+})
+
+router.post('/v2/TDAE-what-days-claiming-week-2', (req, res) => {
+
+    res.redirect('/lsf-public/v2/TDAE-provide-journey-evidence-2')
+
+})
+
+router.post('/v2/TDAE-what-days-claiming-week-cya', (req, res) => {
 
     res.redirect('/lsf-public/v2/TDAE-placement-return-mileage')
 
 })
 
+router.post('/v2/TDAE-days-claiming', (req, res) => {
+
+    res.redirect('/lsf-public/v2/TDAE-provide-journey-evidence-2')
+
+})
+
 router.post('/v2/TDAE-placement-return-mileage', (req, res) => {
 
-    res.redirect('/lsf-public/v2/TDAE-placement-additional-costs')
+    res.redirect('/lsf-public/v2/TDAE-placement-additional-costs-often')
+
+})
+
+router.post('/v2/TDAE-placement-additional-costs-often', (req, res) => {
+
+    const oftenAdditionalCosts = req.session.data['often-additional-costs']
+
+    if (oftenAdditionalCosts === 'none') {
+        res.redirect('/lsf-public/v2/TDAE-placement-cost-summary')
+    } else {
+        res.redirect('/lsf-public/v2/TDAE-placement-additional-costs')
+    }
 
 })
 
@@ -391,6 +479,15 @@ router.post('/v2/TDAE-type-journey-evidence', (req, res) => {
 router.post('/v2/TDAE-placement-journey-evidence', (req, res) => {
 
     res.redirect('/lsf-public/v2/TDAE-evidence-summary')
+
+})
+
+router.post('/v2/TDAE-add-evidence-week', (req, res) => {
+
+    const addEvidenceWeek = req.session.data['more-evidence']
+    
+    req.session.data['more-evidence'] = 'added'
+    res.redirect('/lsf-public/v2/TDAE-provide-journey-evidence-2')
 
 })
 

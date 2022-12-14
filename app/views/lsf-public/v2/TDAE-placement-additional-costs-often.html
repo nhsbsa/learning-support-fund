@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Do you incur additional costs to placement?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="v2/TDAE-placement-additional-costs-often" method="POST">
+
+
+            <div class="nhsuk-form-group">
+
+
+                <fieldset class="nhsuk-fieldset">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                        <h1 class="nhsuk-fieldset__heading">
+                            When do you incur additional costs to placement?
+                        </h1>
+                    </legend>
+
+                    <div class="nhsuk-radios">
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="addition-costs-daily" name="often-additional-costs"
+                                type="radio" value="daily">
+                            <label class="nhsuk-label nhsuk-radios__label" for="addition-costs-daily">
+                                Daily
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="addition-costs-weekly" name="often-additional-costs"
+                                type="radio" value="weekly">
+                            <label class="nhsuk-label nhsuk-radios__label" for="addition-costs-weekly">
+                                Weekly
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="addition-costs-monthly" name="often-additional-costs"
+                                type="radio" value="monthly">
+                            <label class="nhsuk-label nhsuk-radios__label" for="addition-costs-monthly">
+                                Monthly
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-radios__divider">or</div>
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="addition-costs-none" name="often-additional-costs"
+                                type="radio" value="none">
+                            <label class="nhsuk-label nhsuk-radios__label" for="addition-costs-none">
+                                No additional costs
+                            </label>
+                        </div>
+
+                    </div>
+                </fieldset> 
+
+    </div>
+
+    <button class="nhsuk-button" type="submit">Next</button><br>
+    <a href="TDAE-start-claim">Cancel</a>
+
+    </form>
+
+</div>
+
+</div>
+{% endblock %}

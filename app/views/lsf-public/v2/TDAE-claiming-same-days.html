@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Are you claiming for the same days for each week?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v2/TDAE-claiming-same-days" method="POST">
+
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <h1 class="nhsuk-fieldset__heading">
+                        Are you claiming for the same days for each week?
+                    </h1>
+                  </legend>
+              
+                  <div class="nhsuk-radios">
+              
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="claiming-same-days-yes" name="claiming-same-days" type="radio" value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="claiming-same-days-yes">
+                        Yes
+                      </label>
+                    </div>
+              
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="claiming-same-days-no" name="claiming-same-days" type="radio" value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="claiming-same-days-no">
+                        No
+                      </label>
+                    </div>
+              
+                  </div>
+                </fieldset>
+              
+              </div>
+
+			<button class="nhsuk-button" type="submit">Next</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}
