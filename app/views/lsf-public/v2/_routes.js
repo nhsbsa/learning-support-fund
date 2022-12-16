@@ -363,10 +363,34 @@ router.post('/v2/TDAE-placement-journey-same-days', (req, res) => {
     const sameJourneyCosts = req.session.data['same-costs']
 
     if (sameJourneyCosts === 'yes') {
-        res.redirect('/lsf-public/v2/TDAE-placement-address')
+        res.redirect('/lsf-public/v2/TDAE-placement-return-mileage')
     } else {
         res.redirect('/lsf-public/v2/TDAE-signpost/TDAE-not-same-journey-costs')
     }
+
+})
+
+router.post('/v2/TDAE-placement-return-mileage', (req, res) => {
+
+    res.redirect('/lsf-public/v2/TDAE-placement-additional-costs-often')
+
+})
+
+router.post('/v2/TDAE-placement-additional-costs-often', (req, res) => {
+
+    const oftenAdditionalCosts = req.session.data['often-additional-costs']
+
+    if (oftenAdditionalCosts === 'none') {
+        res.redirect('/lsf-public/v2/TDAE-placement-address')
+    } else {
+        res.redirect('/lsf-public/v2/TDAE-placement-additional-costs')
+    }
+
+})
+
+router.post('/v2/TDAE-placement-additional-costs', (req, res) => {
+
+    res.redirect('/lsf-public/v2/TDAE-placement-address')
 
 })
 
@@ -443,30 +467,6 @@ router.post('/v2/TDAE-what-days-claiming-week-cya', (req, res) => {
 router.post('/v2/TDAE-days-claiming', (req, res) => {
 
     res.redirect('/lsf-public/v2/TDAE-provide-journey-evidence-2')
-
-})
-
-router.post('/v2/TDAE-placement-return-mileage', (req, res) => {
-
-    res.redirect('/lsf-public/v2/TDAE-placement-additional-costs-often')
-
-})
-
-router.post('/v2/TDAE-placement-additional-costs-often', (req, res) => {
-
-    const oftenAdditionalCosts = req.session.data['often-additional-costs']
-
-    if (oftenAdditionalCosts === 'none') {
-        res.redirect('/lsf-public/v2/TDAE-placement-cost-summary')
-    } else {
-        res.redirect('/lsf-public/v2/TDAE-placement-additional-costs')
-    }
-
-})
-
-router.post('/v2/TDAE-placement-additional-costs', (req, res) => {
-
-    res.redirect('/lsf-public/v2/TDAE-placement-cost-summary')
 
 })
 
