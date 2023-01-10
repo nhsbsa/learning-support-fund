@@ -6,9 +6,16 @@ const router = express.Router();
 
 // Add your routes here - above the module.exports line
 
+// clear session data - link in footer
+router.post('/clear-session-data/', (req, res) => {
+    req.session.data = {}
+    res.render('index')
+})
+
 // ================================
 // Routes for LSF Portal
 // ================================
+router.use('/lsf-portal/v2', require('./views/lsf-portal/v2/_routes'));
 router.use('/lsf-portal/v1', require('./views/lsf-portal/v1/_routes'));
 
 // ================================

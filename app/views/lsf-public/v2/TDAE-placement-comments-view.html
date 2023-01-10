@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Additional costs comments for your placement journey
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds"> 
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <!-- <form action="v2/TDAE-" method="POST"> -->
+
+        <h1 class="nhsuk-heading-xl">Additional costs comments for your placement journey</h1>
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Comments
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{ data['placement-related-comments'] }}
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+      
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> comments</span>
+                </a>
+      
+              </dd>
+      
+            </div>
+
+        </dl>
+
+        <a class="nhsuk-button" href="TDAE-placement-cost-summary">Continue</a><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    <!-- </form> -->
+
+    </div>
+
+  </div>
+{% endblock %}

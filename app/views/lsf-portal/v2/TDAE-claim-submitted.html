@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Claim outcome
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="v2/TDAE-claim-submitted" method="POST">
+
+            <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+                <div class="nhsuk-card__content">
+                    <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                        Claim has been 
+                        {% if data['what-claim-outcome'] === 'approve' %}approved
+                        {% elif data['what-claim-outcome'] === 'pending' %}set to pending
+                        {% elif data['what-claim-outcome'] === 'reject' %}Rejected
+                        {% else %}
+                        submitted
+                        {% endif %}
+                    </h1>
+                    <h2 class="nhsuk-card__heading nhsuk-u-font-weight-normal"
+                        style="text-align: center; color: white;">
+                        Reference number: <span class="nhsuk-caption-xl nhsuk-caption--bottom nhsuk-u-font-weight-bold" style="color: white;">HDJ2123F</span>
+                    </h2>
+                </div>
+            </div>
+
+            <h2 class="nhsuk-heading-m">What next?</h2>
+            <p>A claim outcome has been sent to the student and to the NHS Business Services Authority</p>
+
+            <button class="nhsuk-button" type="submit">Return to claims list</button>
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

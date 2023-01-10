@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Do you incur additional costs to placement?
+Do you incur daily additional costs to your placement?
 {% endblock %}
 
 {% block content %}
@@ -23,7 +23,7 @@ Do you incur additional costs to placement?
                 <fieldset class="nhsuk-fieldset">
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                         <h1 class="nhsuk-fieldset__heading">
-                            When do you incur additional costs to placement?
+                            Do you incur daily additional costs to your placement?
                         </h1>
                     </legend>
 
@@ -31,35 +31,17 @@ Do you incur additional costs to placement?
 
                         <div class="nhsuk-radios__item">
                             <input class="nhsuk-radios__input" id="addition-costs-daily" name="often-additional-costs"
-                                type="radio" value="daily">
+                                type="radio" value="yes">
                             <label class="nhsuk-label nhsuk-radios__label" for="addition-costs-daily">
-                                Daily
+                                Yes
                             </label>
                         </div>
 
                         <div class="nhsuk-radios__item">
                             <input class="nhsuk-radios__input" id="addition-costs-weekly" name="often-additional-costs"
-                                type="radio" value="weekly">
+                                type="radio" value="no">
                             <label class="nhsuk-label nhsuk-radios__label" for="addition-costs-weekly">
-                                Weekly
-                            </label>
-                        </div>
-
-                        <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="addition-costs-monthly" name="often-additional-costs"
-                                type="radio" value="monthly">
-                            <label class="nhsuk-label nhsuk-radios__label" for="addition-costs-monthly">
-                                Monthly
-                            </label>
-                        </div>
-
-                        <div class="nhsuk-radios__divider">or</div>
-
-                        <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="addition-costs-none" name="often-additional-costs"
-                                type="radio" value="none">
-                            <label class="nhsuk-label nhsuk-radios__label" for="addition-costs-none">
-                                No additional costs
+                                No
                             </label>
                         </div>
 

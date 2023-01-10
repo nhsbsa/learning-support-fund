@@ -1,0 +1,116 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Claim details</h1>
+
+    <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Claim start date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            05 December 2022
+          </dd>
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Claim end date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            09 December 2022
+          </dd>
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Placement address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            246 Placement street<br>
+            Newcastle,<br>
+            NE33 3AB
+          </dd>
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Daily return mileage cost
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £8.40
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Daily additional costs
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              £2.00
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Number of days at placement
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              3
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Total to claim (university journey deducted)
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              £11.40
+            </dd>
+          </div>
+      </dl>
+
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Week 1
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Days attended: Monday, Thursday, Friday</p>
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                parking-receipts.jpg
+              </dt>
+              <dd class="nhsuk-summary-list__actions">
+
+                <a href="#">
+                  View<span class="nhsuk-u-visually-hidden"> evidence</span>
+                </a>
+          
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </details>
+
+      <a class="nhsuk-button" href="TDAE-evidence-match">Continue</a>
+
+  </div>
+
+</div>
+{% endblock %}

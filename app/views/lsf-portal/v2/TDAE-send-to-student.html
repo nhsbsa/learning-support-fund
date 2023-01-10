@@ -1,0 +1,64 @@
+send back to student{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  What is the reason to send the claim back to the student?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds"> 
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v2/TDAE-send-to-student" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                    What is the reason to send the claim back to the student?
+                </h1>
+              </legend>
+          
+              <div class="nhsuk-radios">
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="return-student-university" name="return-student" type="radio" value="university-details">
+                  <label class="nhsuk-label nhsuk-radios__label" for="return-student-university">
+                    University details incorrect
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="return-student-placement" name="return-student" type="radio" value="placement-details">
+                  <label class="nhsuk-label nhsuk-radios__label" for="return-student-placement">
+                    Placement details incorrect
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="return-student-evidence" name="return-student" type="radio" value="evidence-incorrect">
+                    <label class="nhsuk-label nhsuk-radios__label" for="return-student-evidence">
+                      Evidence incorrect
+                    </label>
+                </div>
+          
+              </div>
+            </fieldset>
+          
+          </div>
+
+
+        <button class="nhsuk-button" type="submit">Next</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

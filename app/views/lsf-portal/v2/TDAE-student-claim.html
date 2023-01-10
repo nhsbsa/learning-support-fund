@@ -1,0 +1,111 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Travel and Dual Accommodation Expenses</span>Joe Blogs</h1>
+
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Claim checks incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 3 sections.</p>
+    </div>
+    
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1. </span> University details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              <a href="TDAE-student-university-details" aria-describedby="eligibility-status">
+                Check University details
+              </a>
+            </span>
+            {% if data['university-completed'] === 'completed' %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+            {% elif data['university-completed'] === 'in-progress' %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In Progress</strong>
+            {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">2. </span> Claim details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              <a href="TDAE-claim-evidence" aria-describedby="eligibility-status">
+                Check claim details
+              </a>
+            </span>
+            {% if data['evidence-completed'] === 'completed' %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+            {% elif data['evidence-completed'] === 'in-progress' %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In Progress</strong>
+            {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">3. </span> Finish checking claim
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              {% if data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' %}
+              <a class="app-task-list__task-name" href="TDAE-approve-pend-reject">
+                Submit claim checks
+              </a>
+              {% else %}
+              <span class="app-task-list__task-name">
+                Submit claim checks
+              </span>
+              {% endif %}
+            </span>
+            {% if data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' %}
+              {% if data['approve-in-progress'] === 'in-progress' %}
+                <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In progress</strong>
+              {% elif data['approve-in-progress'] === 'completed' %}
+                <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% else %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
+              {% endif %}
+            {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Cannot start yet</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+
+    </ol>
+
+    <h2 class="nhsuk-heading-m">Return to student</h2>
+    <p>If there are any issues with the claim you can can send this back to the student to provide additional information or evidence.</p>
+    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-send-to-student">Send to student</a>
+
+  </div>
+
+</div>
+{% endblock %}

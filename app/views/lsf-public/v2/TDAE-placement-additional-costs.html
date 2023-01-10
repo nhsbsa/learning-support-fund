@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-What additional costs do you incur when travelling to your placement?
+Additional costs for your normal daily journey
 {% endblock %}
 
 {% block content %}
@@ -16,18 +16,38 @@ What additional costs do you incur when travelling to your placement?
 
 		<form action="v2/TDAE-placement-additional-costs" method="POST">
 
-            
 
-            <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="input-width-5">
-                    <h1 class="nhsuk-heading-l">What {% if data['often-additional-costs'] === 'daily' %}daily{% elif data['often-additional-costs'] === 'weekly' %}weekly{% else %}monthly{% endif %} additional costs do you incur when travelling to your placement?</h1>
-                </label>
-				<p>These are costs to you which have covered car parking, tunnel or toll road charges.</p>
-                <div class="nhsuk-hint" id="contact-hint">
-                    For example, 10.00
-                  </div>
-                <input class="nhsuk-input nhsuk-input--width-5" id="input-width-5" name="placement-additional-costs" type="text">
-            </div>
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="input-width-5">
+					<h1 class="nhsuk-heading-l">
+						<h1 class="nhsuk-heading-l">What daily additional costs do you incur when travelling to your placement?</h1>
+					</h1>
+				</label>
+				<p>These are costs to you which have covered car parking, congestion and clean air charges, tunnel or toll road charges.</p>
+
+				
+
+				<div class="nhsuk-hint" id="contact-hint">
+					For example, 1.00
+				</div>
+				<input class="nhsuk-input nhsuk-input--width-5" id="input-width-5" name="placement-additional-costs" type="text">
+			</div>
+
+			<details class="nhsuk-details">
+				<summary class="nhsuk-details__summary">
+					<span class="nhsuk-details__summary-text">
+						What if your additional cost covers a week or month?
+					</span>
+				</summary>
+				<div class="nhsuk-details__text">
+					<p>If you purchase a pass for example a monthly parking ticket, you will need to provide this additional costs as a daily amount</p>
+					<h2 class="nhsuk-heading-s">Breaking down to daily</h2>
+					<p>The total for a 1 month parking ticket to be divided by the amount of days you attended placement for the period you are claiming for.</p>
+					<p>For example:</p>
+					<p>£20 monthly parking pass divided by 10 days at placement, totals a daily additional cost of £2.</p>
+				</div>
+			</details>
 
 			<button class="nhsuk-button" type="submit">Next</button><br>
 			<a href="TDAE-start-claim">Cancel</a>

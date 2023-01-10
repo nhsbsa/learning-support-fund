@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Do you incur additional costs to your normal place of study?
+Do you incur daily additional costs to your normal place of study?
 {% endblock %}
 
 {% block content %}
@@ -23,7 +23,7 @@ Do you incur additional costs to your normal place of study?
                 <fieldset class="nhsuk-fieldset">
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                         <h1 class="nhsuk-fieldset__heading">
-                            Do you incur additional costs to your normal place of study?
+                            Do you incur daily additional costs to your normal place of study?
                         </h1>
                     </legend>
 
@@ -31,35 +31,17 @@ Do you incur additional costs to your normal place of study?
 
                         <div class="nhsuk-radios__item">
                             <input class="nhsuk-radios__input" id="normal-addition-costs-daily" name="normal-often-additional-costs"
-                                type="radio" value="daily">
+                                type="radio" value="yes">
                             <label class="nhsuk-label nhsuk-radios__label" for="normal-addition-costs-daily">
-                                Daily
+                                Yes
                             </label>
                         </div>
 
                         <div class="nhsuk-radios__item">
                             <input class="nhsuk-radios__input" id="normal-addition-costs-weekly" name="normal-often-additional-costs"
-                                type="radio" value="weekly">
+                                type="radio" value="no">
                             <label class="nhsuk-label nhsuk-radios__label" for="normal-addition-costs-weekly">
-                                Weekly
-                            </label>
-                        </div>
-
-                        <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="normal-addition-costs-monthly" name="normal-often-additional-costs"
-                                type="radio" value="monthly">
-                            <label class="nhsuk-label nhsuk-radios__label" for="normal-addition-costs-monthly">
-                                Monthly
-                            </label>
-                        </div>
-
-                        <div class="nhsuk-radios__divider">or</div>
-
-                        <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="normal-addition-costs-none" name="normal-often-additional-costs"
-                                type="radio" value="none">
-                            <label class="nhsuk-label nhsuk-radios__label" for="normal-addition-costs-none">
-                                No additional costs
+                                No
                             </label>
                         </div>
 

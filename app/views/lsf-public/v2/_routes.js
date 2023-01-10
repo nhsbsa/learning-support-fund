@@ -344,7 +344,7 @@ router.post('/v2/TDAE-normal-additional-costs-often', (req, res) => {
 
     const normalOftenAdditionalCosts = req.session.data['normal-often-additional-costs']
 
-    if (normalOftenAdditionalCosts === 'none') {
+    if (normalOftenAdditionalCosts === 'no') {
         res.redirect('/lsf-public/v2/TDAE-normal-summary-cya')
     } else {
         res.redirect('/lsf-public/v2/TDAE-additional-costs')
@@ -353,6 +353,25 @@ router.post('/v2/TDAE-normal-additional-costs-often', (req, res) => {
 })
 
 router.post('/v2/TDAE-additional-costs', (req, res) => {
+
+    res.redirect('/lsf-public/v2/TDAE-additional-costs-comments')
+
+})
+
+router.post('/v2/TDAE-additional-costs-comments', (req, res) => {
+
+    const provideComments = req.session.data['related-comments']
+
+    if (provideComments === 'yes') {
+        res.redirect('/lsf-public/v2/TDAE-comments')
+    } else {
+        res.redirect('/lsf-public/v2/TDAE-normal-summary-cya')
+    }
+    
+
+})
+
+router.post('/v2/TDAE-comments', (req, res) => {
 
     res.redirect('/lsf-public/v2/TDAE-normal-summary-cya')
 
@@ -380,7 +399,7 @@ router.post('/v2/TDAE-placement-additional-costs-often', (req, res) => {
 
     const oftenAdditionalCosts = req.session.data['often-additional-costs']
 
-    if (oftenAdditionalCosts === 'none') {
+    if (oftenAdditionalCosts === 'no') {
         res.redirect('/lsf-public/v2/TDAE-placement-address')
     } else {
         res.redirect('/lsf-public/v2/TDAE-placement-additional-costs')
@@ -389,6 +408,24 @@ router.post('/v2/TDAE-placement-additional-costs-often', (req, res) => {
 })
 
 router.post('/v2/TDAE-placement-additional-costs', (req, res) => {
+
+    res.redirect('/lsf-public/v2/TDAE-placement-additional-comments')
+
+})
+
+router.post('/v2/TDAE-placement-additional-comments', (req, res) => {
+
+    const placementAdditionalComments = req.session.data['placement-related-comments']
+
+    if (placementAdditionalComments === 'yes') {
+        res.redirect('/lsf-public/v2/TDAE-placement-comments')
+    } else {
+        res.redirect('/lsf-public/v2/TDAE-placement-address')
+    }
+
+})
+
+router.post('/v2/TDAE-placement-comments', (req, res) => {
 
     res.redirect('/lsf-public/v2/TDAE-placement-address')
 
@@ -436,11 +473,11 @@ router.post('/v2/TDAE-claiming-same-days', (req, res) => {
 
     const claimingSameDays = req.session.data['claiming-same-days']
 
+    req.session.data['TDAE-multiple-weeks'] = 'yes'
+
     if (claimingSameDays === 'yes'){
-        req.session.data['TDAE-multiple-weeks'] = 'yes'
         res.redirect('/lsf-public/v2/TDAE-days-claiming')
     } else {
-        req.session.data['TDAE-multiple-weeks'] = 'no'
         res.redirect('/lsf-public/v2/TDAE-what-days-claiming-week')
     }
 
