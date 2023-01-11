@@ -288,9 +288,21 @@ router.post('/v2/TDAE-dsa-help', (req, res) => {
         req.session.data['TDAE-signpost'] = 'DSA'
         res.redirect('/lsf-public/v2/TDAE-signpost/TDAE-dsa-signpost')
     } else {
-        res.redirect('/lsf-public/v2/TDAE-incur-costs')
+        res.redirect('/lsf-public/v2/TDAE-placement-journey-same-days')
     }
     
+})
+
+router.post('/v2/TDAE-placement-journey-same-days', (req, res) => {
+
+    const sameJourneyCosts = req.session.data['same-costs']
+
+    if (sameJourneyCosts === 'yes') {
+        res.redirect('/lsf-public/v2/TDAE-incur-costs')
+    } else {
+        res.redirect('/lsf-public/v2/TDAE-signpost/TDAE-not-same-journey-costs')
+    }
+
 })
 
 router.post('/v2/TDAE-incur-cost', (req, res) => {
@@ -377,17 +389,6 @@ router.post('/v2/TDAE-comments', (req, res) => {
 
 })
 
-router.post('/v2/TDAE-placement-journey-same-days', (req, res) => {
-
-    const sameJourneyCosts = req.session.data['same-costs']
-
-    if (sameJourneyCosts === 'yes') {
-        res.redirect('/lsf-public/v2/TDAE-placement-return-mileage')
-    } else {
-        res.redirect('/lsf-public/v2/TDAE-signpost/TDAE-not-same-journey-costs')
-    }
-
-})
 
 router.post('/v2/TDAE-placement-return-mileage', (req, res) => {
 
@@ -462,6 +463,7 @@ router.post('/v2/TDAE-end-claim', (req, res) => {
     if (startDate === '05-12-2022' && endDate === '09-12-2022') {
         res.redirect('/lsf-public/v2/TDAE-days-claiming')
     } else if (startDate === '28-11-2022' && endDate === '09-12-2022'){
+        req.session.data['TDAE-multiple-weeks'] = 'yes'
         res.redirect('/lsf-public/v2/TDAE-claiming-same-days')
     } else {
         res.redirect('/lsf-public/v2/TDAE-end-claim')
@@ -472,8 +474,6 @@ router.post('/v2/TDAE-end-claim', (req, res) => {
 router.post('/v2/TDAE-claiming-same-days', (req, res) => {
 
     const claimingSameDays = req.session.data['claiming-same-days']
-
-    req.session.data['TDAE-multiple-weeks'] = 'yes'
 
     if (claimingSameDays === 'yes'){
         res.redirect('/lsf-public/v2/TDAE-days-claiming')
