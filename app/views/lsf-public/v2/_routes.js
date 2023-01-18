@@ -327,9 +327,21 @@ router.post('/v2/TDAE-travel-accommodation', (req, res) => {
     const carJourney = req.session.data['car-journey']
 
     if (carJourney === 'yes') {
-        res.redirect('/lsf-public/v2/TDAE-term-time-address')
+        res.redirect('/lsf-public/v2/TDAE-same-term-time-address')
     } else {
         res.redirect('/lsf-public/v2/TDAE-signpost/TDAE-alternative-journey-signpost')
+    }
+
+})
+
+router.post('/v2/TDAE-same-term-time-address', (req, res) => {
+
+    const sameTermTimeAddress = req.session.data['same-term-address']
+
+    if (sameTermTimeAddress === 'yes') {
+        res.redirect('/lsf-public/v2/TDAE-normal-place-study')
+    } else {
+        res.redirect('/lsf-public/v2/TDAE-term-time-address')
     }
 
 })
