@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Your costs
+Check your answers
 {% endblock %}
 
 {% block content %}
@@ -13,16 +13,32 @@ Your costs
 
     <h1 class="nhsuk-heading-xl">Check your answers</h1>
 
-    <div class="nhsuk-warning-callout">
-      <h3 class="nhsuk-warning-callout__label">
-        <span role="text">
-          <span class="nhsuk-u-visually-hidden">Important: </span>
-          Evidence is incorrect
-        </span>
-      </h3>
-      <p>You need to upload a photo of the car park receipt.</p>
-      <p><a href="#">Dismiss message</a></p>
-    </div>
+
+      {% if data['change'] == "yes" %}
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Evidence is incorrect
+          </span>
+        </h3>
+        <p>You need to upload a photo of the car park receipt.</p>
+        <p><a class="nhsuk-link--no-visited-state" href="TDAE-placement-cost-summary?change=disappear">Dismiss message</a></p>
+      </div>
+      {% elif data['change'] == "disappear" %}
+        <p><a class="nhsuk-link--no-visited-state" href="TDAE-placement-cost-summary?change=yes">Display feedback</a></p>
+      {% else %}
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Evidence is incorrect
+          </span>
+        </h3>
+        <p>You need to upload a photo of the car park receipt.</p>
+      </div>
+      {% endif %}
+
 
     <p>This is a breakdown of your daily costs for your normal journey and placement journey and a total of what you are
       entitled to claim back.</p>
