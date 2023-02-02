@@ -20,21 +20,6 @@
 
     {% if data['change'] == "submitted" %}
     {% else %}
-    <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
-      <div class="nhsuk-card--care__heading-container">
-        <h2 class="nhsuk-card--care__heading">
-          <span role="text">Action needed</span>
-        </h2>
-        <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
-      </div>
-
-      <div class="nhsuk-card__content">
-
-        <p>University staff returned your Travel and Dual Accommodation Expenses claim.</p>
-        <p><a class="nhsuk-link--no-visited-state" href="TDAE-placement-cost-summary">Review feedback and change claim</a></p>
-
-      </div>
-    </div>
     <div class="nhsuk-warning-callout">
       <h3 class="nhsuk-warning-callout__label">
         <span role="text">
@@ -42,8 +27,8 @@
           Action needed
         </span>
       </h3>
-      <p>University staff returned your Travel and Dual Accommodation Expenses claim.</p>
-      <p><a class="nhsuk-link--no-visited-state" href="TDAE-placement-cost-summary">Review feedback and change claim</a></p>
+      <p>University staff have returned your Travel and Dual Accommodation Expenses claim.</p>
+      <p><a class="nhsuk-link--no-visited-state" href="submitted-claims">Review feedback and change claim</a></p>
     </div>
     {% endif %}
 
@@ -143,50 +128,11 @@
                     </div>
                     <div class="nhsuk-tabs__panel" id="tab-two">
                         <h3 class="nhsuk-heading-m">Travel and Dual Accommodation Expense (TDAE)</h3>
-                        <p>Travel and Dual Accommodation Expenses will reimburse excess costs incurred when undertaking clinical placement.</p>
+                        <p>TDAE claims will repay extra costs incurred travelling to clinical placement.</p>
                         <h3 class="nhsuk-heading-m">When to submit a TDAE claim</h3>
                         <p>You'll need to submit your form within nine months of the last date of the placement period you are claiming for.</p>
-                        <a class="nhsuk-button" href="TDAE-start-screen">Make a claim</a>
-                        <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
-                            <caption class="nhsuk-table__caption">Your TDAE claims</caption>
-                            <thead role="rowgroup" class="nhsuk-table__head">
-                              <tr role="row">
-                                <th role="columnheader" class="" scope="col">
-                                  Application
-                                </th>
-                                <th role="columnheader" class="" scope="col">
-                                  Status
-                                </th>
-                                <th role="columnheader" class="" scope="col">
-                                  Dates
-                                </th>
-                              </tr>
-                            </thead>
-                            <tbody class="nhsuk-table__body">
-                                <tr role="row" class="nhsuk-table__row">
-                                  <td role="cell" class="nhsuk-table__cell">
-                                    <span class="nhsuk-table-responsive__heading">Application </span><a href="#" class="nhsuk-link--no-visited-state">Travel expenses (Car journey)</a>
-                                  </td>
-                                  <td role="cell" class="nhsuk-table__cell">
-                                    <span class="nhsuk-table-responsive__heading">Status </span>{% if data['change'] == "submitted" %}University pending{% else %}Returned to student{% endif %}
-                                  </td>
-                                  <td role="cell" class="nhsuk-table__cell">
-                                    <span class="nhsuk-table-responsive__heading">Dates </span><a href="TDAE-placement-cost-summary" class="nhsuk-link--no-visited-state">21-Nov-2022 to 23-Nov-2022</a>
-                                  </td>
-                                </tr>
-                              <tr role="row" class="nhsuk-table__row">
-                                <td role="cell" class="nhsuk-table__cell">
-                                  <span class="nhsuk-table-responsive__heading">Application </span>Travel and Dual Accommodation Expenses
-                                </td>
-                                <td role="cell" class="nhsuk-table__cell">
-                                  <span class="nhsuk-table-responsive__heading">Status </span>Approved for payment
-                                </td>
-                                <td role="cell" class="nhsuk-table__cell">
-                                  <span class="nhsuk-table-responsive__heading">Dates </span><a href="#" class="nhsuk-link--no-visited-state">01-Sep-2020 to 02-Sep-2020</a>
-                                </td>
-                              </tr>
-                            </tbody>
-                        </table>
+                        <a class="nhsuk-button" href="TDAE-start-screen">Make a claim</a><br>
+                        <a class="nhsuk-button nhsuk-button--secondary" href="submitted-claims">View submitted claims</a>
                     </div>
                 </div>
 
