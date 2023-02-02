@@ -1,0 +1,256 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Your costs
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <!-- <form action="" method="POST"> -->
+
+    <h1 class="nhsuk-heading-xl">Check your answers</h1>
+    <p>This is a breakdown of your daily costs for your normal journey and placement journey and a total of what you are
+      entitled to claim back.</p>
+
+    <h2 class="nhsuk-heading-s">Costs for normal journey</h2>
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Mileage cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £5.60
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+
+          <a href="TDAE-normal-return-mileage">
+            Change<span class="nhsuk-u-visually-hidden"> normal mileage</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Additional cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £1.00
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+
+          <a href="TDAE-additional-costs">
+            Change<span class="nhsuk-u-visually-hidden"> normal additional costs</span>
+          </a>
+
+        </dd>
+      </div>
+
+      {# {% if data['related-comments'] === 'yes' %} #}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Comments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+           Provided
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+
+        <a href="TDAE-normal-comments-view">
+          View<span class="nhsuk-u-visually-hidden"> additional cost comments</span>
+        </a>
+
+        </dd>
+      </div>
+      {# {% endif %} #}
+
+    </dl>
+    <h2 class="nhsuk-heading-s">Costs for placement journey</h2>
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Mileage cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £8.40
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+
+          <a href="TDAE-placement-return-mileage">
+            Change<span class="nhsuk-u-visually-hidden"> placement mileage</span>
+          </a>
+
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Additional costs
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £2.00
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+
+          <a href="TDAE-placement-additional-costs">
+            Change<span class="nhsuk-u-visually-hidden"> placement additional costs</span>
+          </a>
+
+        </dd>
+      </div>
+
+      {# {% if data['placement-related-comments'] === 'yes' %} #}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Comments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Provided
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+
+        <a href="TDAE-placement-comments-view">
+          View<span class="nhsuk-u-visually-hidden"> additional cost comments</span>
+        </a>
+
+        </dd>
+      </div>
+      {# {% endif %} #}
+
+    </dl>
+
+    <h2 class="nhsuk-heading-l">Total of your expenses</h2>
+    <p>Based on the information you have provided this is a total of what you are entitled to claim back.</p>
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Placement address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          123 Practice Placement
+          Newcastle
+          Tyne and Wear
+          NE12 3AB
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+
+          <a href="TDAE-start-claim">
+            Change<span class="nhsuk-u-visually-hidden"> placement address</span>
+          </a>
+
+        </dd>
+
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Claim start date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['TDAE-multiple-weeks'] == 'yes' %}
+            28 November 2022
+          {% else %}
+            05 December 2022
+          {% endif %}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+
+          <a href="TDAE-start-claim">
+            Change<span class="nhsuk-u-visually-hidden"> claim start date</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Claim end date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          09 December 2022
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+
+          <a href="TDAE-end-claim">
+            Change<span class="nhsuk-u-visually-hidden"> claim end date</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Number of days
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['TDAE-multiple-weeks'] == 'yes' %}
+            6 
+          {% else %}
+            3
+          {% endif %}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+
+          <a href="TDAE-what-days-claiming-week-cya">
+            View<span class="nhsuk-u-visually-hidden"> days you are claiming for</span>
+          </a>
+
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Evidence
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Submitted
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+
+          <a href="TDAE-evidence-summary">
+            View<span class="nhsuk-u-visually-hidden"> evidence</span>
+          </a>
+
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Total
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['TDAE-multiple-weeks'] == 'yes' %}
+            £22.80
+          {% else %}
+            £11.40
+          {% endif %}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+
+
+
+        </dd>
+      </div>
+
+
+    </dl>
+
+
+    <a class="nhsuk-button" href="TDAE-student-declaration">Save and continue</a><br>
+    <a href="TDAE-start-claim">Cancel</a>
+
+    <!-- </form> -->
+
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  What is your nationality?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <form action="v3/APPLY-nationality" method="POST">
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Eligibility</span>What is your nationality?</h1>
+                </legend>
+            
+                <div class="nhsuk-radios">
+            
+                    <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="nationality-uk" name="nationality" type="radio" value="uk national">
+                    <label class="nhsuk-label nhsuk-radios__label" for="nationality-uk">
+                        UK national
+                    </label>
+                    </div>
+            
+                    <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="eu-eea-swiss-national" name="nationality" type="radio" value="eu eea swiss national">
+                    <label class="nhsuk-label nhsuk-radios__label" for="eu-eea-swiss-national">
+                        Non-UK EU/EEA/Swiss national
+                    </label>
+                    </div>
+
+                    <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="non-eu-eea-swiss-national" name="nationality" type="radio" value="non eu eea swiss national">
+                        <label class="nhsuk-label nhsuk-radios__label" for="non-eu-eea-swiss-national">
+                        Non-UK Non-EU/EEA/Swiss national
+                        </label>
+                    </div>
+            
+                </div>
+                </fieldset>
+            
+            </div>
+
+            <button class="nhsuk-button" type="submit">Next</button><br>
+            <a href="dashboard">Cancel</a>
+
+        </form>
+
+    </div>
+
+  </div>
+{% endblock %}
