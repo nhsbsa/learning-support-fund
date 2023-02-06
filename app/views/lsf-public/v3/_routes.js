@@ -327,7 +327,8 @@ router.post('/v3/TDAE-travel-accommodation', (req, res) => {
     const carJourney = req.session.data['car-journey']
 
     if (carJourney === 'yes') {
-        res.redirect('/lsf-public/v3/TDAE-same-term-time-address')
+        req.session.data['eligible-online'] = 'yes'
+        res.redirect('/lsf-public/v3/TDAE-task-list')
     } else {
         res.redirect('/lsf-public/v3/TDAE-signpost/TDAE-alternative-journey-signpost')
     }
@@ -401,6 +402,13 @@ router.post('/v3/TDAE-comments', (req, res) => {
 
 })
 
+router.post('/v3/TDAE-normal-summary-cya', (req, res) => {
+
+    req.session.data['university-details'] = "completed"
+    res.redirect('/lsf-public/v3/TDAE-task-list')
+
+})
+
 
 router.post('/v3/TDAE-placement-return-mileage', (req, res) => {
 
@@ -446,7 +454,14 @@ router.post('/v3/TDAE-placement-comments', (req, res) => {
 
 router.post('/v3/TDAE-placement-address', (req, res) => {
 
-    res.redirect('/lsf-public/v3/TDAE-start-claim')
+    res.redirect('/lsf-public/v3/TDAE-placement-journey-cya')
+
+})
+
+router.post('/v3/TDAE-placement-journey-cya', (req, res) => {
+
+    req.session.data['placement-details'] = 'completed'
+    res.redirect('/lsf-public/v3/TDAE-task-list')
 
 })
 
@@ -540,6 +555,13 @@ router.post('/v3/TDAE-add-evidence-week', (req, res) => {
 
 })
 
+router.post('/v3/TDAE-provide-journey-evidence', (req, res) => {
+
+    req.session.data['add-date-evidence'] = 'completed'
+    res.redirect('/lsf-public/v3/TDAE-task-list')
+
+})
+
 router.post('/v3/TDAE-student-declaration', (req, res) => {
 
     res.redirect('/lsf-public/v3/TDAE-claim-submitted')
@@ -549,7 +571,7 @@ router.post('/v3/TDAE-student-declaration', (req, res) => {
 router.post('/v3/TDAE-claim-submitted', (req, res) => {
 
     req.session.data['TDAE-claim'] = 'Submitted'
-    res.redirect('/lsf-public/v3/academic-year-details')
+    res.redirect('/lsf-public/v3/TDAE-returning-student/TDAE-active-claims')
 
 })
 
