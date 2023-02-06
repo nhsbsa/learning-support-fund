@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Do you want to provide any comments to the NHSBSA regarding this claim?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v3/TDAE-provide-nhsbsa-comments" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                    Do you want to provide any comments to the NHSBSA regarding this claim?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="provide-comments-nhsbsa-yes" name="provide-comments-nhsbsa" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="provide-comments-nhsbsa-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="provide-comments-nhsbsa-no" name="provide-comments-nhsbsa" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="provide-comments-nhsbsa-no">
+                    No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

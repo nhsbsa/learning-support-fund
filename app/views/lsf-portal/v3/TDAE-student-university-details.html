@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">University details</h1>
+
+    <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Term-time address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            123 Term Time Street,<br>
+            Newcastle,<br>
+            NE11 1AB
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Academic year
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            2021/22
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Course
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Nursing
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            University address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            321 University street,<br>
+            Newcastle,<br>
+            NE22 2AB
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Daily return mileage costs
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              £5.60
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Daily additional costs
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              £1.00
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Total travel costs
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              £6.60
+            </dd>
+          </div>
+      </dl>
+
+      {% if data['read-only'] != 'true' %}
+      <a class="nhsuk-button" href="TDAE-checked-university-details">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

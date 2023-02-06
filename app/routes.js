@@ -15,6 +15,7 @@ router.post('/clear-session-data/', (req, res) => {
 // ================================
 // Routes for LSF Portal
 // ================================
+router.use('/lsf-portal/v3', require('./views/lsf-portal/v3/_routes'));
 router.use('/lsf-portal/v2', require('./views/lsf-portal/v2/_routes'));
 router.use('/lsf-portal/v1', require('./views/lsf-portal/v1/_routes'));
 

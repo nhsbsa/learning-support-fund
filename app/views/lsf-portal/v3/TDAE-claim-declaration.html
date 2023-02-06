@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Declaration
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="v3/TDAE-claim-declaration" method="POST">
+
+        <h1 class="nhsuk-heading-xl">Declaration</h1>
+
+        <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+              <span role="text">
+                <span class="nhsuk-u-visually-hidden">Important: </span>
+                Declaration
+              </span>
+            </h3>
+        <p>In countersigning this claim for Travel and Dual Accommodation Expenses, I confirm the following: </p>
+        <ol class="nhsuk-list nhsuk-list--number nhsuk-u-margin-bottom-7">
+            <li>The student named on this form is studying on a pre-registration healthcare programme that is, to the best of my knowledge, eligible for Travel and Dual Accommodation Expenses.</li>
+            <li>The practice placement/s for which the student is claiming the Travel and Dual Accommodation Expenses were essentially incurred as part of the overall programme requirements.</li>
+            <li>the expenses detailed in this claim form have been reasonably and necessarily incurred in accordance with the provisions of the policy</li>
+            <li>The student’s normal daily travel to university costs have been deducted.</li>
+            <li>I have checked the claim and, to the best of my knowledge, confirm that the expenses being claimed are correct.</li>
+            <li>I have checked the receipts (where applicable) and these will be retained in line with this institution’s audit and governance requirements.</li>
+            <li>I am a registered employee of the higher education institution that the student attends, and I have authority agreed by this higher education institution to countersign Travel and Dual Accommodation Expense claims.</li>
+            <li>I understand and accept that if I provide false or misleading information, I may be liable to prosecution and/or civil proceedings.</li>
+            <li>I understand that the administration of Travel and Dual Accommodation Expenses and responsibility for counter fraud and security management are both responsibilities of the NHS Business Services Authority</li>
+            <li>I understand that Student Services may share the information on this form with the NHSBSA and NHS Counter Fraud Authority for the purposes of the prevention, detection, investigation and prosecution of fraud or any other unlawful activity affecting the NHS.</li>
+        </ol>
+          </div>
+
+
+
+        <div class="nhsuk-checkboxes__item nhsuk-u-margin-bottom-7">
+            <input class="nhsuk-checkboxes__input" id="claim-declaration" name="claim-declaration" type="checkbox" value="claim-declaration">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="claim-declaration">
+              Accept declaration
+            </label>
+        </div>
+
+        <button class="nhsuk-button" type="submit">Submit claim</button><br>
+        <a href="TDAE-start-claim">Cancel</a>
+
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}
