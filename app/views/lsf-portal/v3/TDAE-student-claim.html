@@ -14,8 +14,8 @@
     }) }}
 
     <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Travel and Dual Accommodation Expenses</span>
-      {% if data['status'] === 'Returned from NHSBSA' %}
-      Jack Aitken
+      {% if data['name'] != '' %}
+      {{ data['name'] }}
       {% else %}
       Joe Bloggs
       {% endif %}
@@ -23,7 +23,11 @@
 
     {% if data['read-only'] != 'true' %}
     <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Claim checks incomplete</h2>
-    <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed 0 of 3 sections.</p>
+    <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed {% if data['status'] === 'Returned from NHSBSA' %}1{% else %}0{% endif %} of 3 sections.</p>
+    {% endif %}
+
+    {% if data['status'] == 'University processing' %}
+    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-7">Claim currently being processed by Samuel Jackson</h2>
     {% endif %}
 
     {% if data['status'] === 'Returned from NHSBSA' %}
@@ -52,9 +56,9 @@
           </thead>
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">NHSBSA</td>
+              <td class="nhsuk-table__cell">Catherine S (NHSBSA)</td>
               <td class="nhsuk-table__cell">9 October 2022</td>
-              <td class="nhsuk-table__cell "><strong>Evidence is incorrect</strong><br>Evidence of Parking ticket is missing. Return to student.</td>
+              <td class="nhsuk-table__cell "><strong>Placement details incorrect</strong><br>Daily return mileage cost is £840.00 appears to be input incorrectly.</td>
             </tr>
           </tbody>
         </table>
@@ -136,13 +140,13 @@
 
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">2. </span> Claim details
+          <span class="app-task-list__section-number">2. </span> Placement details
         </h2>
         <ul class="app-task-list__items">
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
               <a href="TDAE-claim-evidence" aria-describedby="eligibility-status">
-                Check claim details
+                Check placement details
               </a>
             </span>
             {% if data['evidence-completed'] === 'completed' %}
@@ -192,7 +196,11 @@
 
     {% if data['read-only'] != 'true' %}
     <h2 class="nhsuk-heading-m">Return to student</h2>
-    <p>If there are any issues with the claim you can can send this back to the student to provide additional information or evidence.</p>
+    <p>If there are any issues with the claim you can send it back to the student either explaining:</p>
+    <ul>
+      <li>what needs changing for them to re-submit the claim</li>
+      <li>why the claim is being declined</li>
+    </ul>
     <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-send-to-student">Send to student</a>
     {% endif %}
 

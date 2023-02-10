@@ -9,22 +9,28 @@ Send to student
 
     <div class="nhsuk-grid-column-two-thirds">
 
-        <form action="TDAE-claims-list" method="POST">
+      {% if data['name'] == 'Ben Bloggs' %}
+      <form action="TDAE-claims-list?Bloggs=returned" method="POST">
+      {% elif data['name'] == 'Chet Cheema' %}
+      <form action="TDAE-claims-list?Cheema=returned" method="POST">
+      {% else %}
+      <form action="TDAE-claims-list" method="POST">
+      {% endif %}
 
             <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
                 <div class="nhsuk-card__content">
                     <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
-                        Claim returned to student
+                        Claim returned to
+                        {% if data['name'] %}
+                        {{ data['name'] }}
+                        {% else %}
+                        Ben Bloggs
+                        {% endif %}
                     </h1>
-                    <h2 class="nhsuk-card__heading nhsuk-u-font-weight-normal"
-                        style="text-align: center; color: white;">
-                        Reference number: <span class="nhsuk-caption-xl nhsuk-caption--bottom nhsuk-u-font-weight-bold"
-                            style="color: white;">HDJ2123F</span>
-                    </h2>
                 </div>
             </div>
 
-            <p>The claim has returned to the student with feedback on {% if data['return-student'] == 'claim-declined' %}
+            <p>The claim has returned to the student with feedback on {% if data['return-student'] == 'Decline claim' %}
             why it has been declined.
             {% else %}
             the issues that need changing.

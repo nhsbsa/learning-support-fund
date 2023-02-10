@@ -5,3 +5,47 @@
 {% endif %}
 
 <!-- Add any custom scripts -->
+
+<!-- ****************** TEXT EDITOR *****************-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.18.0/trumbowyg.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.18.0/ui/trumbowyg.min.css">
+<script>$('.text-editor').trumbowyg({
+  btns: [
+  //  ['viewHTML'],
+    ['undo', 'redo'], // Only supported in Blink browsers
+    ['formatting'],
+    ['strong', 'em'],
+    ['unorderedList', 'orderedList'],
+//    ['underline', 'strong', 'em', 'del'],
+//    ['superscript', 'subscript'],
+//    ['link'],
+//    ['insertImage'],
+//    ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+//    ['horizontalRule'],
+//    ['removeformat'],
+//    ['fullscreen']
+  ],
+  autogrow: true
+});</script>
+
+<script>$('.text-editor-2').trumbowyg({
+  btns: [
+  ['undo', 'redo'], // Only supported in Blink browsers
+//  ['formatting'],
+  ['strong', 'em'],
+  ['unorderedList', 'orderedList'],
+//    ['underline', 'strong', 'em', 'del'],
+//    ['superscript', 'subscript'],
+//    ['link'],
+//    ['insertImage'],
+//    ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+//    ['horizontalRule'],
+//    ['removeformat'],
+//    ['fullscreen']
+  ],
+  autogrow: true
+});</script>
+
+<script src="/js/character-count.js"></script>
+<!-- ****************** END TEXT EDITOR ***************** -->

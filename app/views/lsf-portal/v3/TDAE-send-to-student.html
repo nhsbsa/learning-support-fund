@@ -27,31 +27,31 @@ send back to student{% extends 'layout.html' %}
               <div class="nhsuk-radios">
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="return-student-university" name="return-student" type="radio" value="university-details">
+                  <input class="nhsuk-radios__input" id="return-student-university" name="return-student" type="radio" value="University details incorrect">
                   <label class="nhsuk-label nhsuk-radios__label" for="return-student-university">
                     University details incorrect
                   </label>
                 </div>
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="return-student-placement" name="return-student" type="radio" value="placement-details">
+                  <input class="nhsuk-radios__input" id="return-student-placement" name="return-student" type="radio" value="Placement details incorrect">
                   <label class="nhsuk-label nhsuk-radios__label" for="return-student-placement">
                     Placement details incorrect
                   </label>
                 </div>
 
                 <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="return-student-evidence" name="return-student" type="radio" value="evidence-incorrect">
+                    <input class="nhsuk-radios__input" id="return-student-evidence" name="return-student" type="radio" value="Evidence incorrect or missing">
                     <label class="nhsuk-label nhsuk-radios__label" for="return-student-evidence">
-                      Evidence incorrect
+                      Evidence incorrect or missing
                     </label>
                 </div>
 
                 <div class="nhsuk-radios__divider">or</div>
 
                 <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="return-student-evidence" name="return-student" type="radio" value="claim-declined">
-                    <label class="nhsuk-label nhsuk-radios__label" for="return-student-evidence">
+                    <input class="nhsuk-radios__input" id="return-student-decline" name="return-student" type="radio" value="Decline claim">
+                    <label class="nhsuk-label nhsuk-radios__label" for="return-student-decline">
                       Decline claim
                     </label>
                 </div>
@@ -63,7 +63,6 @@ send back to student{% extends 'layout.html' %}
 
 
         <button class="nhsuk-button" type="submit">Continue</button><br>
-        <a href="TDAE-claims-list">Cancel</a>
 
     </form>
 

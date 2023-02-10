@@ -18,7 +18,7 @@
         <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="return-more-detail">
               <h1 class="nhsuk-heading-l">Give feedback to the student for
-              {% if data['return-student'] == 'claim-declined' %}
+              {% if data['return-student'] == 'Decline claim' %}
               declining
               {% else %}
               returning
@@ -26,16 +26,29 @@
               the claim
               </h1>
             </label>
-            {% if data['return-student'] != 'claim-declined' %}
+            {% if data['return-student'] != 'Decline claim' %}
             <div class="nhsuk-hint" id="return-more-detail-hint">
-              Students will use this feedback to change and re-submit their claim.
+              Describe to the student clearly what needs changing for them to re-submit their claim.
             </div>
             {% endif %}
-            <textarea class="nhsuk-textarea" id="return-more-detail" name="return-more-detail" rows="5"></textarea>
+
           </div>
 
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
+            <div class="nhsuk-form-group ">
+              <textarea class="text-editor-2 nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-500"></textarea>
+              <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining" >
+                  You have <span class="nhsuk-character-count-remaining"></span> characters remaining
+              </p>
+              <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-toomany govuk-error-message" >
+                You have <span class="nhsuk-character-count-toomany"></span> characters too many
+            </p>
+            </div>
+          </div>
+
+          <style>.trumbowyg-button-pane {display: none;}</style>
+
         <button class="nhsuk-button" type="submit">Continue</button><br>
-        <a href="TDAE-claims-list">Cancel</a>
 
     </form>
 

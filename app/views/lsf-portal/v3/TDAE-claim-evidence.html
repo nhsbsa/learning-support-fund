@@ -14,13 +14,13 @@ Claim details
     }) }}
 
 
-    <h1 class="nhsuk-heading-l">Claim details</h1>
+    <h1 class="nhsuk-heading-l">Placement details</h1>
 
     <dl class="nhsuk-summary-list">
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Claim start date
+            Start date
           </dt>
           <dd class="nhsuk-summary-list__value">
             05 December 2022
@@ -29,7 +29,7 @@ Claim details
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Claim end date
+            End date
           </dt>
           <dd class="nhsuk-summary-list__value">
             09 December 2022
@@ -52,7 +52,11 @@ Claim details
             Daily return mileage cost
           </dt>
           <dd class="nhsuk-summary-list__value">
+            {% if data['status'] === 'Returned from NHSBSA' %}
+            £840.00
+            {% else %}
             £8.40
+            {% endif %}
           </dd>
         </div>
 
@@ -82,8 +86,18 @@ Claim details
           </div>
       </dl>
 
-      <h2 class="nhsuk-heading-m">Claim evidence</h2>
+      <h2 class="nhsuk-heading-m">Additional costs</h2>
 
+      <h3 class="nhsuk-heading-xs">Student comments</h3>
+
+
+          <p>I have uploaded parking ticket receipts for parking at the placement Hospital</p>
+
+
+
+      <h3 class="nhsuk-heading-xs">Evidence</h3>
+
+      <p>Students need to provide evidence of their daily additional costs.</p>
 
       <details class="nhsuk-details nhsuk-expander">
         <summary class="nhsuk-details__summary">
@@ -95,6 +109,18 @@ Claim details
           <p>Evidence for the dates between 5 December 2022 and 9 December 2022.</p>
           <p>Days attended: Monday, Thursday, Friday</p>
           <dl class="nhsuk-summary-list">
+            {% if data['wrong-evidence'] === 'true' %}
+            <div class="nhsuk-summary-list__row">
+              <dt style="width:50%" class="nhsuk-summary-list__key">
+                Monday5December-Parking-Ticket.png
+              </dt>
+              <dd style="width:50%" class="nhsuk-summary-list__actions">
+                <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target=”_blank”>
+                  View (opens in new tab)<span class="nhsuk-u-visually-hidden"> evidence</span>
+                </a>
+              </dd>
+            </div>
+            {% else %}
             <div class="nhsuk-summary-list__row">
               <dt style="width:50%" class="nhsuk-summary-list__key">
                 Screenshot 2023-02-06 at 17.09.59.png
@@ -125,6 +151,7 @@ Claim details
                 </a>
               </dd>
             </div>
+            {% endif %}
           </dl>
         </div>
       </details>

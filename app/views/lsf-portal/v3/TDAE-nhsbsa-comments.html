@@ -17,17 +17,34 @@ test{% extends 'layout.html' %}
 
         <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="nhsbsa-comments">
-              <h1 class="nhsuk-heading-l">What comments would you like to provide to the NHSBSA regarding this claim?</h1>
+              <h1 class="nhsuk-heading-l">Add comments for NHSBSA about this claim</h1>
             </label>
-            <textarea class="nhsuk-textarea" id="nhsbsa-comments" name="nhsbsa-comments" rows="5"></textarea>
           </div>
 
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
+            <div class="nhsuk-form-group ">
+              <textarea class="text-editor-2 nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-500"></textarea>
+              <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining" >
+                  You have <span class="nhsuk-character-count-remaining"></span> characters remaining
+              </p>
+              <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-toomany govuk-error-message" >
+                You have <span class="nhsuk-character-count-toomany"></span> characters too many
+            </p>
+            </div>
+          </div>
+
+          <style>.trumbowyg-button-pane {display: none;}</style>
+
+
         <button class="nhsuk-button" type="submit">Continue</button><br>
-        <a href="TDAE-claims-list">Cancel</a>
 
     </form>
 
     </div>
 
   </div>
+
+
+
+
 {% endblock %}

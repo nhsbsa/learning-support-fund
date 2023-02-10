@@ -8,23 +8,27 @@ Claim outcome
 <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
-
+      {% if data['name'] == 'Amara Ansari' %}
+      <form action="TDAE-claims-list?Ansari=submitted" method="POST">
+      {% else %}
+      <form action="TDAE-claims-list" method="POST">
+      {% endif %}
         <form action="TDAE-claims-list?Blogs-status=submitted" method="POST">
 
             <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
                 <div class="nhsuk-card__content">
                     <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
-                        Claim submitted
+                        Claim submitted for
+                        {% if data['name'] %}
+                        {{ data['name'] }}
+                        {% else %}
+                        Amara Ansari
+                        {% endif %}
                     </h1>
-                    <h2 class="nhsuk-card__heading nhsuk-u-font-weight-normal"
-                        style="text-align: center; color: white;">
-                        Reference number: <span class="nhsuk-caption-xl nhsuk-caption--bottom nhsuk-u-font-weight-bold" style="color: white;">HDJ2123F</span>
-                    </h2>
                 </div>
             </div>
 
-            <h2 class="nhsuk-heading-m">What next?</h2>
-            <p>Claim submitted to the NHS Business Services Authority and student updated with outcome.</p>
+            <p>This has been sent to the NHS Business Services Authority and student updated with outcome.</p>
 
             <button class="nhsuk-button" type="submit">Return to claims list</button>
         </form>
