@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What is the outcome of this claim?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds"> 
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v3/TDAE-approve-pend-reject" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                    What is the outcome of this claim?
+                </h1>
+              </legend>
+          
+              <div class="nhsuk-hint" id="contact-hint">
+                Select one option
+              </div>
+          
+              <div class="nhsuk-radios nhsuk-radios--conditional">
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="claim-outcome-approve" name="what-claim-outcome" type="radio" value="approve">
+                  <label class="nhsuk-label nhsuk-radios__label" for="claim-outcome-approve">
+                    Approve
+                  </label>
+                </div>
+                  
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="claim-outcome-reject" name="what-claim-outcome" type="radio" value="reject" aria-controls="claim-outcome-conditional" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-radios__label" for="claim-outcome-reject">
+                    Reject
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="claim-outcome-conditional">
+          
+                    <div class="nhsuk-form-group">
+                        <label class="nhsuk-label" for="example">
+                          Reason for rejected claim?
+                        </label>
+                        <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
+                      </div>
+          
+                </div>
+          
+              </div>
+            </fieldset>
+          
+          </div>
+
+        <button class="nhsuk-button" type="submit">Next</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,166 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Placement details</h1>
+
+    <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Start date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            05 December 2022
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            End date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            09 December 2022
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Placement address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            246 Placement street<br>
+            Newcastle,<br>
+            NE33 3AB
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Daily return mileage cost
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['status'] === 'Returned from NHSBSA' %}
+            £840.00
+            {% else %}
+            £8.40
+            {% endif %}
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Daily additional costs
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              £2.00
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Number of days at placement
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              3
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Total to claim (university journey deducted)
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              £11.40
+            </dd>
+          </div>
+      </dl>
+
+      <h2 class="nhsuk-heading-m">Additional costs</h2>
+
+      <h3 class="nhsuk-heading-xs">Student comments</h3>
+
+
+          <p>I have uploaded parking ticket receipts for parking at the placement Hospital</p>
+
+
+
+      <h3 class="nhsuk-heading-xs">Evidence</h3>
+
+      <p>Students need to provide evidence of their daily additional costs.</p>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Week 1
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Evidence for the dates between 5 December 2022 and 9 December 2022.</p>
+          <p>Days attended: Monday, Thursday, Friday</p>
+          <dl class="nhsuk-summary-list">
+            {% if data['wrong-evidence'] === 'true' %}
+            <div class="nhsuk-summary-list__row">
+              <dt style="width:50%" class="nhsuk-summary-list__key">
+                Monday5December-Parking-Ticket.png
+              </dt>
+              <dd style="width:50%" class="nhsuk-summary-list__actions">
+                <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target=”_blank”>
+                  View (opens in new tab)<span class="nhsuk-u-visually-hidden"> evidence</span>
+                </a>
+              </dd>
+            </div>
+            {% else %}
+            <div class="nhsuk-summary-list__row">
+              <dt style="width:50%" class="nhsuk-summary-list__key">
+                Screenshot 2023-02-06 at 17.09.59.png
+              </dt>
+              <dd style="width:50%" class="nhsuk-summary-list__actions">
+                <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target=”_blank”>
+                  View (opens in new tab)<span class="nhsuk-u-visually-hidden"> evidence</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt style="width:50%" class="nhsuk-summary-list__key">
+                Screenshot 2023-02-06 at 17.11.16.png
+              </dt>
+              <dd style="width:50%" class="nhsuk-summary-list__actions">
+                <a href="#">
+                  View (opens in new tab)<span class="nhsuk-u-visually-hidden"> evidence</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt style="width:50%" class="nhsuk-summary-list__key">
+                Screenshot 2023-02-06 at 17.13.32.png
+              </dt>
+              <dd style="width:50%" class="nhsuk-summary-list__actions">
+                <a href="#">
+                  View (opens in new tab)<span class="nhsuk-u-visually-hidden"> evidence</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+          </dl>
+        </div>
+      </details>
+
+      {% if data['read-only'] != 'true' %}
+      <a class="nhsuk-button" href="TDAE-evidence-match">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}
