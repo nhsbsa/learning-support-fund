@@ -73,7 +73,12 @@ Travel and Dual Accommodation Expense claims
                         {% endif %}
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Action </span><a class="nhsuk-link--no-visited-state" href="TDAE-student-claim?name=Amara Ansari&status=To be completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=">Process claim</a>
+                        <span class="nhsuk-table-responsive__heading">Action </span>
+                        {% if data['Ansari'] == 'submitted' %}
+                        <a class="nhsuk-link--no-visited-state" href="TDAE-student-claim?name=Amara Ansari&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View claim</a>
+                        {% else %}
+                        <a class="nhsuk-link--no-visited-state" href="TDAE-student-claim?name=Amara Ansari&status=To be completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=">Process claim</a>
+                        {% endif %}
                     </td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
@@ -95,7 +100,12 @@ Travel and Dual Accommodation Expense claims
                         {% endif %}
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Action </span><a class="nhsuk-link--no-visited-state" href="TDAE-student-claim?name=Ben Bloggs&status=To be completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=&wrong-evidence=true">Process claim</a>
+                        <span class="nhsuk-table-responsive__heading">Action </span>
+                        {% if data['Bloggs'] == 'returned' %}
+                        <a class="nhsuk-link--no-visited-state" href="TDAE-student-claim?name=Ben Bloggs&status=Returned to student&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=true">View claim</a>
+                        {% else %}
+                        <a class="nhsuk-link--no-visited-state" href="TDAE-student-claim?name=Ben Bloggs&status=To be completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=&wrong-evidence=true">Process claim</a>
+                        {% endif %}
                     </td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
@@ -168,7 +178,12 @@ Travel and Dual Accommodation Expense claims
                         {% endif %}
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Action </span><a class="nhsuk-link--no-visited-state"href="TDAE-student-claim?name=Chet Cheema&status=Returned from NHSBSA&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=">View feedback</a>
+                        <span class="nhsuk-table-responsive__heading">Action </span>
+                        {% if data['Cheema'] == 'returned' %}
+                        <a class="nhsuk-link--no-visited-state" href="TDAE-student-claim?name=Chet Cheema&status=Returned to student&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=true">View claim</a>
+                        {% else %}
+                        <a class="nhsuk-link--no-visited-state"href="TDAE-student-claim?name=Chet Cheema&status=Returned from NHSBSA&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=&wrong-evidence=false">View feedback</a>
+                        {% endif %}
                     </td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
