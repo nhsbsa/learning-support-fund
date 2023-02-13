@@ -22,20 +22,24 @@
         max-width: 100%;
     }
 }
+
 .nhsuk-custom-three-column {
     display: inline-block;
     width: 33%;
 }
+
 .nhsuk-custom-four-column {
     display: inline-block;
     width: 24%;
 }
+
 .nhsuk-inset-text {
     &.nhsuk-inset--custom-width {
         width: 100%;
         max-width: 100%;
     }
 }
+
 .nhsuk-button-custom {
     float: right;
 }
@@ -52,4 +56,20 @@
     background: rgba(0, 0, 0, .8);
     padding-top: 20vh;
     z-index: 1;
+}
+
+// Style button as a link to show 'Action required' journey
+.nhsbsa-link--custom {
+    font-size: 1.1875rem;
+    background: none !important;
+    border: none;
+    padding: 0 !important;
+    color: #005eb8;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+// Screen with two forms to be inline - File: TDAE-evidence-week-cya
+.nhsbsa-form--inline {
+    display: inline-block;
 }

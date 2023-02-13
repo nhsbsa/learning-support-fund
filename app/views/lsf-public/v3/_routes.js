@@ -3,6 +3,7 @@
 // ********************************
 
 // External dependencies
+const e = require('express');
 const express = require('express');
 // const moment = require('moment');
 const router = express.Router();
@@ -557,8 +558,15 @@ router.post('/v3/TDAE-add-evidence-week', (req, res) => {
 
 router.post('/v3/TDAE-provide-journey-evidence', (req, res) => {
 
-    req.session.data['add-date-evidence'] = 'completed'
-    res.redirect('/lsf-public/v3/TDAE-task-list')
+    const actionLink = req.session.data['action-required']
+
+    if (actionLink === 'yes') {
+        req.session.data['action-required'] = 'no'
+        res.redirect('/lsf-public/v3/TDAE-returning-student/TDAE-task-list-actions')
+    } else {
+        req.session.data['add-date-evidence'] = 'completed'
+        res.redirect('/lsf-public/v3/TDAE-task-list')
+    }
 
 })
 
@@ -572,6 +580,57 @@ router.post('/v3/TDAE-claim-submitted', (req, res) => {
 
     req.session.data['TDAE-claim'] = 'Submitted'
     res.redirect('/lsf-public/v3/TDAE-returning-student/TDAE-active-claims')
+
+})
+
+// **************************************
+// TDAE Claim - Action Required on Claim
+// **************************************
+
+router.post('/v3/TDAE-action-link', (req, res) => {
+
+    req.session.data['action-required'] = 'yes'
+    res.redirect('/lsf-public/v3/TDAE-returning-student/TDAE-task-list-actions')
+
+})
+
+router.post('/v3/TDAE-delete-evidence', (req, res) => {
+
+    const deleteEvidence = req.session.data['delete-evidence']
+
+    if (deleteEvidence === 'yes') {
+        req.session.data['evidence-deleted'] = 'yes'
+        res.redirect('/lsf-public/v3/TDAE-evidence-week-cya')
+    } else {
+        res.redirect('/lsf-public/v3/TDAE-evidence-week-cya')
+    }
+
+})
+
+router.post('/v3/TDAE-evidence-week-cya', (req, res) => {
+
+    res.redirect('/lsf-public/v3/TDAE-evidence-section-cya')
+
+})
+
+router.post('/v3/TDAE-add-more-evidence', (req, res) => {
+
+    req.session.data['add-more-evidence'] = 'yes'
+    res.redirect('/lsf-public/v3/TDAE-provide-journey-evidence-2')
+
+})
+
+router.post('/v3/TDAE-more-evidence-added', (req, res) => {
+
+    req.session.data['more-evidence-added'] = 'yes'
+    res.redirect('/lsf-public/v3/TDAE-evidence-week-cya')
+
+})
+
+router.post('/v3/TDAE-evidence-section-cya', (req, res) => {
+
+    req.session.data['action-required'] = 'no'
+    res.redirect('/lsf-public/v3/TDAE-returning-student/TDAE-task-list-actions')
 
 })
 

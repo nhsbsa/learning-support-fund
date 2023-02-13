@@ -52,9 +52,15 @@ Upload your evidence for week 2
     </div>
     <!-- MoJ end -->
 
-    <form action="v3/TDAE-provide-journey-evidence" method="POST">
-      <button class="nhsuk-button" type="submit">Next</button><br>
-    </form>
+    {% if data['add-more-evidence'] === 'yes' %}
+      <form action="v3/TDAE-more-evidence-added" method="POST">
+        <button class="nhsuk-button" type="submit">Next</button><br>
+      </form> 
+    {% else %}
+      <form action="v3/TDAE-provide-journey-evidence" method="POST">
+        <button class="nhsuk-button" type="submit">Next</button><br>
+      </form>
+    {% endif %}
 
     <a href="TDAE-start-claim">Cancel</a>
 

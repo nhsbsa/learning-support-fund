@@ -60,7 +60,10 @@ Your active claims
                         <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--yellow">Action required</strong>
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Action </span><a href="TDAE-student-claim">Review claim</a>
+                        <span class="nhsuk-table-responsive__heading">Action </span>
+                        <form action="../v3/TDAE-action-link" method="POST">
+                            <button class="nhsbsa-link--custom" type="submit">Review claim</button>
+                        </form>
                     </td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
@@ -74,7 +77,7 @@ Your active claims
                         <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--blue">In progress</strong>
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Continue claim</a>
+                        <span class="nhsuk-table-responsive__heading">Action </span><a href="../TDAE-task-list">Continue claim</a>
                     </td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
