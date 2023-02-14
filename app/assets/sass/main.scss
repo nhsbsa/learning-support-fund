@@ -7,6 +7,8 @@
 @import 'components/phase-banner';
 @import 'components/multi-file-upload';
 @import 'components/task-list';
+@import 'components/moj-filter';
+@import 'components/pagination';
 
 
 // Reminder: import tabs from node_modules
@@ -15,6 +17,8 @@
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
+/// 
+///
 
 /***** Text editor *****/
 
@@ -88,4 +92,8 @@
 // Screen with two forms to be inline - File: TDAE-evidence-week-cya
 .nhsbsa-form--inline {
     display: inline-block;
+}
+
+.nhsbsa-hide-filter {
+    display: none;
 }

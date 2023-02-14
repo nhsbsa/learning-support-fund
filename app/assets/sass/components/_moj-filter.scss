@@ -1,0 +1,237 @@
+/* ==========================================================================
+   #FILTER
+   ========================================================================== */
+
+   .moj-filter {
+    background-color:  $color_nhsuk-white;
+    box-shadow: inset 0 0 0 1px $color_nhsuk-grey-5;
+  
+    // &:focus {
+    //   box-shadow: 0 -2px $nhsuk-focus-colour, 0 4px $nhsuk-focus-text-colour;
+    // }
+  }
+  
+  
+  .moj-filter__header {
+    background-color: $color_nhsuk-grey-3;
+    font-size: 0; // Hide whitespace between elements
+    padding: nhsuk-spacing(2) nhsuk-spacing(4);
+    text-align: justify; // Trick to remove the need for floats
+  
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+    }
+  
+    [class^=nhsuk-heading-] {
+      margin-bottom: 0;
+    }
+  
+  }
+  
+  
+  // JavaScript
+  .moj-filter__legend {
+    overflow: visible; // Override nhsuk to allow for focus style to be seen
+    width: 100%;
+  
+    button {
+      background-color: transparent;
+      box-sizing: border-box;
+      border-radius: 0;
+      border: 0 none;
+      cursor: pointer; // Adam would not approve
+      display: block;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      text-align: left;
+      width: 100%;
+      -webkit-appearance: none;
+  
+      // Fix unwanted button padding in Firefox
+      &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+      }
+  
+      &::after {
+        // background-image: url(#{$moj-images-path}icon-toggle-plus-minus.svg);
+        background-position: 0 0;
+        content: "";
+        display: block;
+        height: 16px;
+        margin-top: -8px; // Half the height of the icon
+        position: absolute; top: 50%; right: 0;
+        width: 16px;
+      }
+  
+      &[aria-expanded="true"] {
+        &::after {
+          background-position: 16px 16px;
+        }
+      }
+  
+      &:focus {
+        // @include nhsuk-focusable;
+      }
+  
+    }
+  
+  }
+  
+  
+  .moj-filter__header-title,
+  .moj-filter__header-action {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+  }
+  
+  
+  .moj-filter__close {
+    // @include nhsuk-focusable;
+    color:  $nhsuk-text-color;
+    cursor: pointer; // I know Adam won’t like this
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+  
+  
+    &:focus {
+    //   background-color: $nhsuk-focus-colour;
+    //   color: $nhsuk-focus-text-colour;
+    //   box-shadow: 0 -2px $nhsuk-focus-colour, 0 4px $nhsuk-focus-text-colour;
+      outline: none;
+    }
+  
+    // Fix unwanted button padding in Firefox
+    &::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+    }
+  
+    &::before {
+    //   background-image: url(#{$moj-images-path}icon-close-cross-black.svg);
+      content: "";
+      display: inline-block;
+      height: 14px;
+      margin-right: nhsuk-spacing(1);
+      position: relative;
+      top: -1px; // Alignment tweak
+      vertical-align: middle;
+      width: 14px;
+    }
+  
+  }
+  
+  
+  .moj-filter__close {
+    // @include nhsuk-font(19);
+  }
+  
+  
+  .moj-filter__selected {
+    background-color:  $color_nhsuk-grey-4;
+    box-shadow: inset 0 0 0 1px $color_nhsuk-grey-5;
+    padding: nhsuk-spacing(4);
+  
+    ul:last-of-type {
+      margin-bottom: 0; // IE9 +
+    }
+  
+  }
+  
+  
+  .moj-filter__selected-heading {
+    font-size: 0; // Hide whitespace between elements
+    text-align: justify; // Trick to remove the need for floats
+  
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+    }
+  
+  }
+  
+  
+  .moj-filter__heading-title,
+  .moj-filter__heading-action {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+  }
+  
+  
+  .moj-filter-tags {
+    font-size: 0;
+    margin-bottom: nhsuk-spacing(4); // Needs to adjust to 15px on mobile
+    padding-left: 0;
+  
+    li {
+      display: inline-block;
+      margin-right: nhsuk-spacing(2);
+    }
+  
+  }
+  
+  
+  .moj-filter__tag {
+    // @include nhsuk-font(16);
+    background-color:  $color_nhsuk-white;
+    border: 1px solid $nhsuk-text-color;
+    color: $nhsuk-text-color;
+    display: inline-block;
+    margin-top: nhsuk-spacing(1);
+    padding: nhsuk-spacing(1);
+    text-decoration: none;
+  
+    &:link,
+    &:visited {
+      color: $nhsuk-text-color;
+    }
+  
+    &:focus {
+    //   color: $nhsuk-focus-text-colour;
+    //   background-color: $nhsuk-focus-colour;
+    }
+  
+    &:hover {
+      background-color: $nhsuk-text-color;
+      color:  $color_nhsuk-white;
+    }
+  
+    &:after {
+      background-image: url(icon-close.svg);
+      content: "";
+      display: inline-block;
+      font-weight: bold;
+      height: 10px;
+      margin-left: nhsuk-spacing(1);
+      vertical-align: middle;
+      width: 10px;
+    }
+  
+    &:hover:after {
+    //   background-image: url(#{$moj-images-path}icon-tag-remove-cross-white.svg);
+    }
+  
+  }
+  
+  
+  .moj-filter__options {
+    box-shadow: inset 0 0 0 1px $color_nhsuk-grey-5;
+    margin-top: -1px;
+    padding: nhsuk-spacing(4);
+  
+    div:last-of-type {
+      margin-bottom: 0; // IE9 +
+    }
+  
+  }
+  
