@@ -8,6 +8,19 @@ const router = express.Router();
 
 // ********************************
 
+// Additional funding expectation
+router.post('/v3/additionalfundingexpectation', (req, res) => {
+
+    const additionalfundingexpectation = req.session.data['additionalfundingexpectation']
+
+    if (additionalfundingexpectation === 'yes') {
+        res.redirect('/lsf-portal/v3/change-additional-funding/expectation-comment')
+    } else {
+        res.redirect('/lsf-portal/v3/change-additional-funding/comment')
+    }
+
+})
+
 // CHANGE REQUEST
 router.post('/v3/change-request', (req, res) => {
 
@@ -15,6 +28,8 @@ router.post('/v3/change-request', (req, res) => {
 
     if (changeRequestType === 'interruption') {
         res.redirect('/lsf-portal/v3/interruption')
+    } else if (changeRequestType === 'additional-funding') {
+        res.redirect('/lsf-portal/v3/change-additional-funding/dates')
     } else if (changeRequestType === 'attendance-status') {
         res.redirect('/lsf-portal/v3/change-attendance-status')
     } else if (changeRequestType === 'resume-student') {
