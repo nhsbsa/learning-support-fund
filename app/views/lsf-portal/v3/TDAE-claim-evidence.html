@@ -81,7 +81,11 @@ Claim details
               Total to claim (university journey deducted)
             </dt>
             <dd class="nhsuk-summary-list__value">
+              {% if data['status'] === 'Returned from NHSBSA' %}
+              £846.00
+              {% else %}
               £11.40
+              {% endif %}
             </dd>
           </div>
       </dl>
