@@ -1,0 +1,174 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-admin-interface.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Get help to buy food and milk (Healthy Start) - Joe Bloggs
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+<!-- Breadcrumbs -->
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Admin menu</a></li>
+          <li class="nhsuk-breadcrumb__item">Student search</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- End breadcrumbs -->
+
+
+<div class="nhsBSA-sidebar-container">
+  <div class="nhsBSA-sidebar-wrapper">
+    <div class="nhsBSA-sidebar-content">
+      <div class="nhsuk-width-container-fluid">
+
+        <div class="nhsuk-main-wrapper" id="maincontent">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+
+              <h1 class="nhsuk-heading-l">
+                  Search for a student
+              </h1>
+
+            </div>
+
+          </div>
+
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="ls-number">
+                  NHS Learning Support Number
+                </label>
+                <input class="nhsuk-input nhsuk-input--width-20" id="ls-number" name="ls-number" type="text">
+              </div>
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="surname">
+                  Surname
+                </label>
+                <input class="nhsuk-input nhsuk-input--width-20" id="surname" name="surname" type="text">
+              </div>
+
+              <div class="nhsuk-form-group">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                  <legend>
+                    <p class="nhsuk-u-margin-bottom-2">
+                      Date of birth
+                    </p>
+                  </legend>
+                  <div class="nhsuk-date-input" id="example">
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                          Day
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+                          Month
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+                          Year
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="select-1">
+                  Course
+                </label>
+                <select class="nhsuk-select" id="select-1" name="select-1">
+                  <option value="1"></option>
+                  <option value="2">NHS option 1</option>
+                  <option value="3">NHS option 2</option>
+                </select>
+              </div>
+
+              <div class="nhsuk-form-group nhsuk-u-margin-bottom-7">
+                <label class="nhsuk-label" for="select-1">
+                  Academic year
+                </label>
+                <select class="nhsuk-select" id="select-1" name="select-1">
+                  <option value="1"></option>
+                  <option value="2">NHS option 1</option>
+                  <option value="3">NHS option 2</option>
+                </select>
+              </div>
+
+              <a class="nhsuk-button" href="#">Search</a>
+      
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+    <div class="nhsBSA-sidebar-nav">
+      <div class="side-nav">
+        <ul>
+          <div id="options" class="options">
+            <li><a class="active" href="admin-interface">Student search</a></li>
+            <li><a href="TDAE-claims-list">Travel expense claims</a></li>
+            <li><a href="#">Manage users</a></li>
+            <li><a href="#">Manage universities</a></li>
+            <li><a href="#">Manage courses</a></li>
+            <li><a href="#">Manage rates</a></li>
+            <li><a href="#">Manage term payment percentages</a></li>
+            <li><a href="#">Manage knowledge base</a></li>
+            <li><a href="#">Manage enrolement year</a></li>
+            <li><a href="#">Manage attendance status</a></li>
+            <li><a href="#">Manage note types</a></li>
+            <li><a href="#">Manage forms</a></li>
+            <li><a href="#">Manage payment runs</a></li>
+            <li><a href="#">Invalid bank details</a></li>
+            <li><a href="#">Reporting menu</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,120 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-admin-interface.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+<!-- Breadcrumbs -->
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Admin menu</a></li>
+          <li class="nhsuk-breadcrumb__item">Student search</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- End breadcrumbs -->
+
+<div class="nhsBSA-sidebar-container">
+  <div class="nhsBSA-sidebar-wrapper">
+    <div class="nhsBSA-sidebar-content">
+      <div class="nhsuk-width-container-fluid">
+
+        <div class="nhsuk-main-wrapper" id="maincontent">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+
+              {{ backLink({
+                "href": "javascript:history.go(-1)",
+                "text": "Go back"
+              }) }}
+        
+              <form action="v2/TDAE-nhsbsa-comments" method="POST">
+          
+                  <div class="nhsuk-form-group">
+                      <label class="nhsuk-label" for="nhsbsa-comments">
+                        <h1 class="nhsuk-heading-l">Add comments for NHSBSA about this claim</h1>
+                      </label>
+                    </div>
+          
+                    <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
+                      <div class="nhsuk-form-group ">
+                        <textarea class="text-editor-2 nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-500"></textarea>
+                        <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining" >
+                            You have <span class="nhsuk-character-count-remaining"></span> characters remaining
+                        </p>
+                        <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-toomany govuk-error-message" >
+                          You have <span class="nhsuk-character-count-toomany"></span> characters too many
+                      </p>
+                      </div>
+                    </div>
+          
+                    <style>.trumbowyg-button-pane {display: none;}</style>
+          
+          
+                  <button class="nhsuk-button" type="submit">Continue</button><br>
+          
+              </form>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+    <div class="nhsBSA-sidebar-nav">
+      <div class="side-nav">
+        <ul>
+          <div id="options" class="options">
+            <li><a href="admin-interface">Student search</a></li>
+            <li><a class="active" href="TDAE-claims-list">Travel expense claims</a></li>
+            <li><a href="#">Manage users</a></li>
+            <li><a href="#">Manage universities</a></li>
+            <li><a href="#">Manage courses</a></li>
+            <li><a href="#">Manage rates</a></li>
+            <li><a href="#">Manage term payment percentages</a></li>
+            <li><a href="#">Manage knowledge base</a></li>
+            <li><a href="#">Manage enrolement year</a></li>
+            <li><a href="#">Manage attendance status</a></li>
+            <li><a href="#">Manage note types</a></li>
+            <li><a href="#">Manage forms</a></li>
+            <li><a href="#">Manage payment runs</a></li>
+            <li><a href="#">Invalid bank details</a></li>
+            <li><a href="#">Reporting menu</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,116 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-admin-interface.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Has the student given the correct university details
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+<!-- Breadcrumbs -->
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="admin-interface">Admin menu</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="TDAE-claims-list">Travel expense claims</a></li>
+          <li class="nhsuk-breadcrumb__item">Amara Ansari</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- End breadcrumbs -->
+
+<div class="nhsBSA-sidebar-container">
+  <div class="nhsBSA-sidebar-wrapper">
+    <div class="nhsBSA-sidebar-content">
+      <div class="nhsuk-width-container-fluid">
+
+        <div class="nhsuk-main-wrapper" id="maincontent">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+
+              <form action="v2/TDAE-evidence-match" method="POST">
+                <div class="nhsuk-form-group">
+                    <fieldset class="nhsuk-fieldset">
+                      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                        <h1 class="nhsuk-heading-l">Has the student given the correct details and evidence for their placement?</h1>
+                      </legend>
+                      <div class="nhsuk-radios" data-module="nhsuk-radios">
+                        <div class="nhsuk-radios__item">
+                          <input class="nhsuk-radios__input" id="evidence-match-yes" name="evidence-match" type="radio" value="yes">
+                          <label class="nhsuk-label nhsuk-radios__label" for="evidence-match-yes">
+                            Yes
+                          </label>
+                        </div>
+                        <div class="nhsuk-radios__item">
+                          <input class="nhsuk-radios__input" id="evidence-match-no" name="evidence-match" type="radio" value="no">
+                          <label class="nhsuk-label nhsuk-radios__label" for="evidence-match-no">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                </div>
+                <button class="nhsuk-button" type="submit">
+                    Save and continue
+                </button>
+            </form>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+    <div class="nhsBSA-sidebar-nav">
+      <div class="side-nav">
+        <ul>
+          <div id="options" class="options">
+            <li><a href="admin-interface">Student search</a></li>
+            <li><a class="active" href="TDAE-claims-list">Travel expense claims</a></li>
+            <li><a href="#">Manage users</a></li>
+            <li><a href="#">Manage universities</a></li>
+            <li><a href="#">Manage courses</a></li>
+            <li><a href="#">Manage rates</a></li>
+            <li><a href="#">Manage term payment percentages</a></li>
+            <li><a href="#">Manage knowledge base</a></li>
+            <li><a href="#">Manage enrolement year</a></li>
+            <li><a href="#">Manage attendance status</a></li>
+            <li><a href="#">Manage note types</a></li>
+            <li><a href="#">Manage forms</a></li>
+            <li><a href="#">Manage payment runs</a></li>
+            <li><a href="#">Invalid bank details</a></li>
+            <li><a href="#">Reporting menu</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
