@@ -29,9 +29,9 @@ Placement details
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <ol class="nhsuk-breadcrumb__list">
-          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="admin-interface">Admin menu</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="admin-interface">Student search</a></li>
           <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="TDAE-claims-list">Travel expense claims</a></li>
-          <li class="nhsuk-breadcrumb__item">Amara Ansari</li>
+          <li class="nhsuk-breadcrumb__item">{{ data['name'] }}</li>
         </ol>
       </div>
     </div>
@@ -86,7 +86,7 @@ Placement details
             Daily return mileage cost
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {% if data['status'] === 'Returned from NHSBSA' %}
+            {% if data['name'] === 'Ben Bloggs' %}
             £840.00
             {% else %}
             £8.40
@@ -115,7 +115,11 @@ Placement details
               Total to claim (university journey deducted)
             </dt>
             <dd class="nhsuk-summary-list__value">
-              £11.40
+              {% if data['name'] === 'Ben Bloggs' %}
+                £2,506.20
+              {% else %}
+                £11.40
+              {% endif %}
             </dd>
           </div>
       </dl>

@@ -29,8 +29,9 @@ Return to student
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <ol class="nhsuk-breadcrumb__list">
-          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Admin menu</a></li>
-          <li class="nhsuk-breadcrumb__item">Student search</li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="admin-interface">Student search</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="TDAE-claims-list">Travel expense claims</a></li>
+          <li class="nhsuk-breadcrumb__item">{{ data['name'] }}</li>
         </ol>
       </div>
     </div>
@@ -51,7 +52,7 @@ Return to student
 
                 <div class="nhsuk-form-group">
                     <label class="nhsuk-label" for="return-more-detail">
-                      <h1 class="nhsuk-heading-l">Give feedback to the student for
+                      <h1 class="nhsuk-heading-l">Give feedback to the University for
                       {% if data['return-student'] == 'Decline claim' %}
                       declining
                       {% else %}
@@ -62,7 +63,7 @@ Return to student
                     </label>
                     {% if data['return-student'] != 'Decline claim' %}
                     <div class="nhsuk-hint" id="return-more-detail-hint">
-                      Describe to the student clearly what needs changing for them to re-submit their claim.
+                      Describe to the University clearly what needs changing for them to request this from the student.
                     </div>
                     {% endif %}
         

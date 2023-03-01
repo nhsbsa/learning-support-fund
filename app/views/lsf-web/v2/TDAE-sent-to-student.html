@@ -29,8 +29,9 @@ Sent to student
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <ol class="nhsuk-breadcrumb__list">
-          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Admin menu</a></li>
-          <li class="nhsuk-breadcrumb__item">Student search</li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="admin-interface">Student search</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="TDAE-claims-list">Travel expense claims</a></li>
+          <li class="nhsuk-breadcrumb__item">{{ data['name'] }}</li>
         </ol>
       </div>
     </div>
@@ -45,7 +46,7 @@ Sent to student
 
         <div class="nhsuk-main-wrapper" id="maincontent">
           <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-one half">
+            <div class="nhsuk-grid-column-one-half">
 
                 {% if data['name'] == 'Ben Bloggs' %}
                 <form action="TDAE-claims-list?Bloggs=returned" method="POST">
@@ -58,17 +59,12 @@ Sent to student
                       <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
                           <div class="nhsuk-card__content">
                               <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
-                                  Claim returned to
-                                  {% if data['name'] %}
-                                  {{ data['name'] }}
-                                  {% else %}
-                                  Ben Bloggs
-                                  {% endif %}
+                                  Claim returned to University
                               </h1>
                           </div>
                       </div>
           
-                      <p>The claim has returned to the student with feedback on {% if data['return-student'] == 'Decline claim' %}
+                      <p>The claim has returned to the University with feedback on {% if data['return-student'] == 'Decline claim' %}
                       why it has been declined.
                       {% else %}
                       the issues that need changing.

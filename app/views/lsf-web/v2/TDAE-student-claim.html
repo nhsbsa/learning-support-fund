@@ -12,7 +12,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-Get help to buy food and milk (Healthy Start) - Joe Bloggs
+Student claim
 {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -29,9 +29,9 @@ Get help to buy food and milk (Healthy Start) - Joe Bloggs
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <ol class="nhsuk-breadcrumb__list">
-          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="admin-interface">Admin menu</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="admin-interface">Student search</a></li>
           <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="TDAE-claims-list">Travel expense claims</a></li>
-          <li class="nhsuk-breadcrumb__item">Amara Ansari</li>
+          <li class="nhsuk-breadcrumb__item">{{ data['name'] }}</li>
         </ol>
       </div>
     </div>
@@ -64,7 +64,7 @@ Get help to buy food and milk (Healthy Start) - Joe Bloggs
               <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-7">Claim currently being processed by Samuel Jackson</h2>
               {% endif %}
 
-              {% if data['status'] === 'Returned from NHSBSA' %}
+              {% if data['status'] === 'Returned to University' %}
               <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
                 <div class="nhsuk-card--care__heading-container">
                   <h2 class="nhsuk-card--care__heading">
@@ -158,7 +158,7 @@ Get help to buy food and milk (Healthy Start) - Joe Bloggs
                       {% if data['university-completed'] === 'completed' %}
                         <strong class="nhsuk-tag" style="float: right;" id="eligibility-status">Completed</strong>
                       {% elif data['university-completed'] === 'in-progress' %}
-                        <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to student</strong>
+                        <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to University</strong>
                       {% else %}
                         <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
                       {% endif %}
@@ -180,7 +180,7 @@ Get help to buy food and milk (Healthy Start) - Joe Bloggs
                       {% if data['evidence-completed'] === 'completed' %}
                         <strong class="nhsuk-tag" style="float: right;" id="eligibility-status">Completed</strong>
                       {% elif data['evidence-completed'] === 'in-progress' %}
-                        <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to student</strong>
+                        <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to University</strong>
                       {% else %}
                         <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
                       {% endif %}
@@ -196,18 +196,18 @@ Get help to buy food and milk (Healthy Start) - Joe Bloggs
                     <li class="app-task-list__item nhsuk-u-clear">
                       <span class="app-task-list__task-name">
                         {% if data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' %}
-                        <a class="app-task-list__task-name" href="TDAE-provide-nhsbsa-comments">
-                          Submit claim checks
+                        <a class="app-task-list__task-name" href="TDAE-claim-declaration">
+                          Authorise payment
                         </a>
                         {% else %}
                         <span class="app-task-list__task-name">
-                          Submit claim checks
+                          Authorise payment
                         </span>
                         {% endif %}
                       </span>
                       {% if data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' %}
                         {% if data['approve-in-progress'] === 'in-progress' %}
-                          <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to student</strong>
+                          <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to University</strong>
                         {% elif data['approve-in-progress'] === 'completed' %}
                           <strong class="nhsuk-tag" style="float: right;" id="eligibility-status">Completed</strong>
                         {% else %}

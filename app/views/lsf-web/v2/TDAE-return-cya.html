@@ -29,8 +29,9 @@ Add comments for NHSBSA about this claim
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <ol class="nhsuk-breadcrumb__list">
-          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Admin menu</a></li>
-          <li class="nhsuk-breadcrumb__item">Student search</li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="admin-interface">Student search</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="TDAE-claims-list">Travel expense claims</a></li>
+          <li class="nhsuk-breadcrumb__item">{{ data['name'] }}</li>
         </ol>
       </div>
     </div>
@@ -49,13 +50,13 @@ Add comments for NHSBSA about this claim
         
             <!-- <form action="v2/TDAE-" method="POST"> -->
         
-                <h1 class="nhsuk-heading-l">Check reasons for returning to student</h1>
+                <h1 class="nhsuk-heading-l">Check reasons for returning to University</h1>
         
                 <dl class="nhsuk-summary-list">
         
                     <div class="nhsuk-summary-list__row">
                       <dt class="nhsuk-summary-list__key">
-                        What is the reason to send the claim back to the student?
+                        What is the reason to send the claim back to the University?
                       </dt>
                       <dd class="nhsuk-summary-list__value">
                         {{ data['return-student'] }}
@@ -73,7 +74,7 @@ Add comments for NHSBSA about this claim
         
                     <div class="nhsuk-summary-list__row">
                       <dt class="nhsuk-summary-list__key">
-                        Feedback to the student for
+                        Feedback to the University for
                         {% if data['return-student'] == 'Decline claim' %}
                         declining
                         {% else %}
@@ -97,7 +98,7 @@ Add comments for NHSBSA about this claim
         
                   </dl>
         
-                <a class="nhsuk-button" href="TDAE-sent-to-student">Submit to student</a>
+                <a class="nhsuk-button" href="TDAE-sent-to-student">Submit to University</a>
               
             </div>
           </div>

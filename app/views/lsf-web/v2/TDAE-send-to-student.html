@@ -12,7 +12,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-What is the reason to send the claim back to the student?
+What is the reason to send the claim back to the University?
 {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -29,8 +29,9 @@ What is the reason to send the claim back to the student?
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <ol class="nhsuk-breadcrumb__list">
-          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Admin menu</a></li>
-          <li class="nhsuk-breadcrumb__item">Student search</li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="admin-interface">Student search</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="TDAE-claims-list">Travel expense claims</a></li>
+          <li class="nhsuk-breadcrumb__item">{{ data['name'] }}</li>
         </ol>
       </div>
     </div>
@@ -59,7 +60,7 @@ What is the reason to send the claim back to the student?
                       <fieldset class="nhsuk-fieldset">
                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                           <h1 class="nhsuk-fieldset__heading">
-                              What is the reason to send the claim back to the student?
+                              What is the reason to send the claim back to the University?
                           </h1>
                         </legend>
           

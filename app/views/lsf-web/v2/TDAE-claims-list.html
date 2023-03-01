@@ -12,7 +12,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-Get help to buy food and milk (Healthy Start) - Joe Bloggs
+Travel expense claims
 {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -29,7 +29,7 @@ Get help to buy food and milk (Healthy Start) - Joe Bloggs
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <ol class="nhsuk-breadcrumb__list">
-          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Admin menu</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="admin-interface">Student search</a></li>
           <li class="nhsuk-breadcrumb__item">Travel expense claims</li>
         </ol>
       </div>
@@ -191,7 +191,7 @@ Get help to buy food and milk (Healthy Start) - Joe Bloggs
                                 <td role="cell" class="nhsuk-table__cell">
                                     <span class="nhsuk-table-responsive__heading">Status </span>
                                     {% if data['Ansari'] == 'submitted' %}
-                                    <strong class="nhsuk-tag nhsuk-tag--green">Submitted to NHSBSA</strong>
+                                    <strong class="nhsuk-tag">Payment approved</strong>
                                     {% else %}
                                     <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
                                     {% endif %}
@@ -222,7 +222,7 @@ Get help to buy food and milk (Healthy Start) - Joe Bloggs
                                 <td role="cell" class="nhsuk-table__cell">
                                     <span class="nhsuk-table-responsive__heading">Status </span>
                                     {% if data['Bloggs'] == 'returned' %}
-                                    <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
+                                    <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to University</strong>
                                     {% else %}
                                     <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
                                     {% endif %}
@@ -231,7 +231,7 @@ Get help to buy food and milk (Healthy Start) - Joe Bloggs
                                     <span class="nhsuk-table-responsive__heading">Action </span>
                                     {% if data['Bloggs'] == 'returned' %}
                                     <a class="nhsuk-link--no-visited-state"
-                                        href="TDAE-student-claim?name=Ben Bloggs&status=Returned to student&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=true">View
+                                        href="TDAE-student-claim?name=Ben Bloggs&status=Returned to University&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=true">View
                                         claim</a>
                                     {% else %}
                                     <a class="nhsuk-link--no-visited-state"
@@ -252,7 +252,7 @@ Get help to buy food and milk (Healthy Start) - Joe Bloggs
                                 </td>
                                 <td role="cell" class="nhsuk-table__cell">
                                     <span class="nhsuk-table-responsive__heading">Status </span><strong
-                                        class="nhsuk-tag nhsuk-tag--blue">University processing</strong>
+                                        class="nhsuk-tag nhsuk-tag--blue">NHSBSA processing</strong>
                                 </td>
                                 <td role="cell" class="nhsuk-table__cell">
                                     <span class="nhsuk-table-responsive__heading">Action </span><a
@@ -261,7 +261,7 @@ Get help to buy food and milk (Healthy Start) - Joe Bloggs
                                         claim</a>
                                 </td>
                             </tr>
-                            <tr role="row" class="nhsuk-table__row">
+                            <!-- <tr role="row" class="nhsuk-table__row">
                                 <td role="cell" class="nhsuk-table__cell">
                                     <span class="nhsuk-table-responsive__heading">Student name </span>Mia Smith
                                 </td>
@@ -273,7 +273,7 @@ Get help to buy food and milk (Healthy Start) - Joe Bloggs
                                 </td>
                                 <td role="cell" class="nhsuk-table__cell">
                                     <span class="nhsuk-table-responsive__heading">Status </span><strong
-                                        class="nhsuk-tag nhsuk-tag--green">Submitted to NHSBSA</strong>
+                                        class="nhsuk-tag nhsuk-tag--yellow">Returned to University</strong>
                                 </td>
                                 <td role="cell" class="nhsuk-table__cell">
                                     <span class="nhsuk-table-responsive__heading">Action </span><a
@@ -281,7 +281,7 @@ Get help to buy food and milk (Healthy Start) - Joe Bloggs
                                         href="TDAE-student-claim?name=Mia Smith&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
                                         claim</a>
                                 </td>
-                            </tr>
+                            </tr> -->
                             <tr role="row" class="nhsuk-table__row">
                                 <td role="cell" class="nhsuk-table__cell">
                                     <span class="nhsuk-table-responsive__heading">Student name </span>George Hill
@@ -315,23 +315,14 @@ Get help to buy food and milk (Healthy Start) - Joe Bloggs
                                 </td>
                                 <td role="cell" class="nhsuk-table__cell">
                                     <span class="nhsuk-table-responsive__heading">Status </span>
-                                    {% if data['Cheema'] == 'returned' %}
-                                    <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
-                                    {% else %}
-                                    <strong class="nhsuk-tag nhsuk-tag--yellow">Returned from NHSBSA</strong>
-                                    {% endif %}
+                                    <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to University</strong>
                                 </td>
                                 <td role="cell" class="nhsuk-table__cell">
                                     <span class="nhsuk-table-responsive__heading">Action </span>
-                                    {% if data['Cheema'] == 'returned' %}
                                     <a class="nhsuk-link--no-visited-state"
-                                        href="TDAE-student-claim?name=Chet Cheema&status=Returned to student&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=true">View
+                                        href="TDAE-student-claim?name=Chet Cheema&status=Returned to University&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=true">View
                                         claim</a>
-                                    {% else %}
-                                    <a class="nhsuk-link--no-visited-state"
-                                        href="TDAE-student-claim?name=Chet Cheema&status=Returned from NHSBSA&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=&wrong-evidence=false">View
-                                        feedback</a>
-                                    {% endif %}
+
                                 </td>
                             </tr>
                             <tr role="row" class="nhsuk-table__row">
