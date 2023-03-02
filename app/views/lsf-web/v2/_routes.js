@@ -40,6 +40,20 @@ router.post('/v2/TDAE-university-match', (req, res) => {
 
 })
 
+router.post('/v2/TDAE-authoriser-approved', (req, res) => {
+
+    const heiApproved = req.session.data['hei-details']
+
+    if (heiApproved === 'yes') {
+        req.session.data['hei-completed'] = 'completed'
+    } else {
+        req.session.data['hei-completed'] = 'in-progress'
+    }
+
+    res.redirect('/lsf-web/v2/TDAE-student-claim')
+
+})
+
 router.post('/v2/TDAE-approve-pend-reject', (req, res) => {
 
     const claimOutcome = req.session.data['what-claim-outcome']

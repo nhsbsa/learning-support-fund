@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Claim summary
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Authorising payment</h1>
+
+    <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Student number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            SR234567890
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Student name
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Amara Ansari
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Course
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Nursing
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Claim start date
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              05 December 2022
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Claim end date
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              09 December 2022
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Number of days at placement
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              3
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Total cost of all placement travel
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              £11.40
+            </dd>
+          </div>
+
+      </dl>
+
+      <a class="nhsuk-button" href="TDAE-payment-authorised">Authorise payment</a>
+      
+
+  </div>
+
+</div>
+{% endblock %}

@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Has the student given the correct details and evidence for their placement?
+Have all Higher Education Institute details been provided?
 {% endblock %}
 
 {% block content %}
@@ -13,25 +13,24 @@ Has the student given the correct details and evidence for their placement?
         "text": "Go back"
       }) }}
 
-      <form action="v2/TDAE-evidence-match" method="POST">
+      <form action="v2/TDAE-authoriser-approved" method="POST">
         <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset">
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-              <h1 class="nhsuk-heading-l">Has the student given the correct details and evidence for their
-                placement?</h1>
+              <h1 class="nhsuk-heading-l">Have all Higher Education Institute details been provided?</h1>
             </legend>
             <div class="nhsuk-radios" data-module="nhsuk-radios">
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="evidence-match-yes" name="evidence-match" type="radio"
+                <input class="nhsuk-radios__input" id="hei-details-yes" name="hei-details" type="radio"
                   value="yes">
-                <label class="nhsuk-label nhsuk-radios__label" for="evidence-match-yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="hei-details-yes">
                   Yes
                 </label>
               </div>
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="evidence-match-no" name="evidence-match" type="radio"
+                <input class="nhsuk-radios__input" id="hei-details-no" name="hei-details" type="radio"
                   value="no">
-                <label class="nhsuk-label nhsuk-radios__label" for="evidence-match-no">
+                <label class="nhsuk-label nhsuk-radios__label" for="hei-details-no">
                   No
                 </label>
               </div>
