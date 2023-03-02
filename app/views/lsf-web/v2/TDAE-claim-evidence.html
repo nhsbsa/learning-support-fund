@@ -7,13 +7,28 @@ University details
 {% block content %}
   <div class="nhsuk-grid-row">
 
-    <div class="nhsuk-grid-column-two-thirds"> 
+    <div class="nhsuk-grid-column-two-thirds">
       {{ backLink({
         "href": "javascript:history.go(-1)",
         "text": "Go back"
       }) }}
 
       <h1 class="nhsuk-heading-l">Placement details</h1>
+
+      <div class="nhsuk-notification-banner" role="region"
+        aria-labelledby="nhsuk-notification-banner-title"
+        data-module="nhsuk-notification-banner">
+        <div class="nhsuk-notification-banner__header">
+          <h2 class="nhsuk-notification-banner__title" id="nhsuk-notification-banner-title">
+            Important
+          </h2>
+        </div>
+        <div class="nhsuk-notification-banner__content">
+          <p class="nhsuk-notification-banner__heading">
+            Amari Ansari has another claim submitted for the same placement dates. Check the students previous applications for duplication.
+          </p>
+        </div>
+      </div>
 
       <dl class="nhsuk-summary-list">
 
