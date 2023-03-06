@@ -12,6 +12,16 @@ const router = express.Router();
 // TDAE Claim
 // ********************************
 
+router.post('/v2/current-search-student', (req, res) => {
+
+    const studentNumber = req.session.data['student-ref']
+    req.session.data['studentRef'] = studentNumber
+
+    res.redirect('/lsf-web/v2/current-search-student-results')
+    
+
+})
+
 router.post('/v2/TDAE-evidence-match', (req, res) => {
 
     const evidenceMatch = req.session.data['evidence-match']
