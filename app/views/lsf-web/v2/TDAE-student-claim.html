@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'layout-custom-header.html' %}
 
 {% block pageTitle %}
 Claim checks
@@ -30,7 +30,7 @@ Claim checks
     <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-7">Claim currently being processed by Samuel Jackson</h2>
     {% endif %}
 
-    {% if data['status'] === 'Returned from NHSBSA'%}
+    {% if data['Bloggs'] === 'returned'%}
     <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
       <div class="nhsuk-card--care__heading-container">
         <h2 class="nhsuk-card--care__heading">
@@ -57,8 +57,8 @@ Claim checks
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
               <td class="nhsuk-table__cell">Catherine S (NHSBSA)</td>
-              <td class="nhsuk-table__cell">9 October 2022</td>
-              <td class="nhsuk-table__cell "><strong>Placement details incorrect</strong><br>Daily return mileage cost is £840.00 appears to be input incorrectly.</td>
+              <td class="nhsuk-table__cell">03 January 2023</td>
+              <td class="nhsuk-table__cell "><strong>Evidence is incorrect</strong><br>Evidence has not been provided for Thursday and Friday</td>
             </tr>
           </tbody>
         </table>

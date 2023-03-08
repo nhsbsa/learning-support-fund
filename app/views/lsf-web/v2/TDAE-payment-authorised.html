@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'layout-custom-header.html' %}
 
 {% block pageTitle %}
 Payment authorised
@@ -14,8 +14,8 @@ Payment authorised
         <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
             <div class="nhsuk-card__content">
                 <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
-                    Payment authorised for Amari Ansari
-                    <span class="nhsuk-heading-m nhsuk-u-margin-top-5">Student number: SR234567890</span>
+                    Payment authorised for {{ data['name'] }}
+                    <span class="nhsuk-heading-m nhsuk-u-margin-top-5">Student number: {{ data['student number'] }}</span>
                 </h1>
                 
             </div>

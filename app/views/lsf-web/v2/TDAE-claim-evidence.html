@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'layout-custom-header.html' %}
 
 {% block pageTitle %}
 University details
@@ -73,11 +73,7 @@ University details
             Daily return mileage cost
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {% if data['name'] === 'Ben Bloggs' %}
-            £840.00
-            {% else %}
             £8.40
-            {% endif %}
           </dd>
         </div>
 
@@ -102,11 +98,7 @@ University details
             Total to claim (university journey deducted)
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {% if data['name'] === 'Ben Bloggs' %}
-            £2,506.20
-            {% else %}
             £15.18
-            {% endif %}
           </dd>
         </div>
       </dl>

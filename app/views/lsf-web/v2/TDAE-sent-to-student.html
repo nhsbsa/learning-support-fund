@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'layout-custom-header.html' %}
 
 {% block pageTitle %}
 University details
@@ -10,7 +10,7 @@ University details
     <div class="nhsuk-grid-column-two-thirds"> 
 
       {% if data['name'] == 'Ben Bloggs' %}
-      <form action="current-search-student?Bloggs=returned&hei-completed=in-progress" method="POST">
+      <form action="student-course-details?Bloggs=returned&hei-completed=in-progress" method="POST">
       {% elif data['name'] == 'Chet Cheema' %}
       <form action="TDAE-claims-list?Cheema=returned" method="POST">
       {% else %}
@@ -32,7 +32,7 @@ University details
             {% endif %}
             </p>
 
-            <button class="nhsuk-button" type="submit">Return to student search</button>
+            <button class="nhsuk-button" type="submit">Return to course details</button>
         </form>
 
         <a href="https://docs.google.com/document/d/1X8kw8t50C2Ts8ozpmwJP9sn6XbkoNgU1KgOTcFP7vAY/edit?usp=sharing" target="_blank"><p class="nhsuk-body-s">[Google Doc - Emails sent to student (opens in new tab)]</p></a>
