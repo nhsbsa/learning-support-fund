@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Search for a student
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>User search</h1>
+
+        <div class="nhsuk-grid-row nhsuk-u-margin-bottom-5">
+            <div class="nhsuk-grid-column-two-thirds">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-one-half">
+                        <label class="nhsuk-label" for="example">
+                            Surname
+                        </label>
+                        <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+                    </div>
+                    <div class="nhsuk-grid-column-one-half">
+                        <label class="nhsuk-label" for="example">
+                            Email
+                        </label>
+                        <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a class="nhsuk-button" href="user-search-results">Search</a>
+        <a class="nhsuk-button" href="#">Create user</a><br>
+        <p><a href="/">Clear search</a></p>
+
+        <h2 class="nhsuk-heading-l">Search results</h2>
+
+        <table role="table" class="nhsuk-table-responsive">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Search for a student results</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                     Email
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Name
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Role
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Active
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Email</span> <a href="update-user">joe.blogs@gmail.com</a>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Name </span> Joe Bloggs
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Role </span> HEI USER
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Active </span> Yes
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+    </div>
+
+  </div>
+{% endblock %}

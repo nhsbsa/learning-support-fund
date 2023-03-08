@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <!-- <form action="v4/TDAE-" method="POST"> -->
+
+        <h1 class="nhsuk-heading-l">Check reasons for returning to student</h1>
+
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                What is the reason to send the claim back to the student?
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{ data['return-student'] }}
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> reason</span>
+                </a>
+
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Feedback to the student for
+                {% if data['return-student'] == 'Decline claim' %}
+                declining
+                {% else %}
+                returning
+                {% endif %}
+                the claim
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{ data['return-more-detail'] }}
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> details</span>
+                </a>
+
+              </dd>
+
+            </div>
+
+          </dl>
+
+        <a class="nhsuk-button" href="TDAE-sent-to-student">Submit to student</a><br>
+
+    <!-- </form> -->
+
+    </div>
+
+  </div>
+{% endblock %}

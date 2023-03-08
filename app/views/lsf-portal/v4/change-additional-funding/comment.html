@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Change attendance status
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>Add a comment on Joe Blogg's additional funding (optional)</h1>
+
+        <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="100">
+          <div class="nhsuk-form-group ">
+            <textarea class="text-editor-2 nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-1000"></textarea>
+            <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining" >
+                You have <span class="nhsuk-character-count-remaining"></span> characters remaining
+            </p>
+            <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-toomany govuk-error-message" >
+              You have <span class="nhsuk-character-count-toomany"></span> characters too many
+          </p>
+          </div>
+        </div>
+
+        <style>.trumbowyg-button-pane {display: none;}</style>
+
+        <br>
+        <a class="nhsuk-button" href="check-answers">Continue</a>
+        <a href="../course-intake"><p class="nhsuk-body">Cancel change</p></a>
+    </div>
+</div>
+
+</div>
+{% endblock %}

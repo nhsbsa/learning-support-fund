@@ -1,0 +1,50 @@
+test{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    What comments would you like to provide to the NHSBSA regarding this claim?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v4/TDAE-nhsbsa-comments" method="POST">
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="nhsbsa-comments">
+              <h1 class="nhsuk-heading-l">Add comments for NHSBSA about this claim</h1>
+            </label>
+          </div>
+
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
+            <div class="nhsuk-form-group ">
+              <textarea class="text-editor-2 nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-500"></textarea>
+              <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining" >
+                  You have <span class="nhsuk-character-count-remaining"></span> characters remaining
+              </p>
+              <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-toomany govuk-error-message" >
+                You have <span class="nhsuk-character-count-toomany"></span> characters too many
+            </p>
+            </div>
+          </div>
+
+          <style>.trumbowyg-button-pane {display: none;}</style>
+
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+
+    </form>
+
+    </div>
+
+  </div>
+
+
+
+
+{% endblock %}

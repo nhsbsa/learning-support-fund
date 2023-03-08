@@ -1,0 +1,348 @@
+{% extends 'layout.html' %}
+
+{% from 'tabs/macro.njk' import tabs %}
+
+{% block pageTitle %}
+Courses
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning SupportFund</span>Viewing all course details for SHEFFIELD HALLAM UNIVERSITY</h1>
+
+
+
+        <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+            <h2 class="nhsuk-tabs__title">Contents</h2>
+
+            <ul class="nhsuk-tabs__list">
+                <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+                    <a class="nhsuk-tabs__tab" href="#tab-one">2022 courses</a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#tab-two">2021 courses</a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#tab-three">2020 courses</a>
+                </li>
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#tab-four">2019 courses</a>
+                </li>
+            </ul>
+
+            <div class="nhsuk-tabs__panel" id="tab-one">
+                <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+                    <caption class="nhsuk-table__caption">September 2022 course details</caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" class="" scope="col">
+                                Course name
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Study year
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Intake
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Course name</span> <a href="/">Diagnostic Radiography</a>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Study year </span> Year 1
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Intake </span> 1 <strong class="nhsuk-tag nhsuk-tag--green">
+                                    1 NEW
+                                  </strong>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Action </span> <a href="course-intake">View intake</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table role="table" class="nhsuk-table-responsive">
+                    <caption class="nhsuk-table__caption">March 2022 course details</caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" class="" scope="col">
+                                Course name
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Study year
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Intake
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Course name</span> <a href="/">Diagnostic Radiography</a>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Study year </span> Year 1
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Intake </span> 1
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Action </span> <a href="#">View intake</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="tab-two">
+                <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+                    <caption class="nhsuk-table__caption">September 2021 course details</caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" class="" scope="col">
+                                Course name
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Study year
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Intake
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Course name</span> <a href="/">Diagnostic Radiography</a>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Study year </span> Year 1
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Intake </span> 1 <strong class="nhsuk-tag nhsuk-tag--green">
+                                    1 NEW
+                                  </strong>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Action </span> <a href="#">View intake</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table role="table" class="nhsuk-table-responsive">
+                    <caption class="nhsuk-table__caption">March 2021 course details</caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" class="" scope="col">
+                                Course name
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Study year
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Intake
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Course name</span> <a href="/">Diagnostic Radiography</a>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Study year </span> Year 1
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Intake </span> 1
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Action </span> <a href="#">View intake</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="tab-three">
+                <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+                    <caption class="nhsuk-table__caption">September 2020 course details</caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" class="" scope="col">
+                                Course name
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Study year
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Intake
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Course name</span> <a href="/">Diagnostic Radiography</a>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Study year </span> Year 1
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Intake </span> 1 <strong class="nhsuk-tag nhsuk-tag--green">
+                                    1 NEW
+                                  </strong>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Action </span> <a href="#">View intake</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table role="table" class="nhsuk-table-responsive">
+                    <caption class="nhsuk-table__caption">March 2020 course details</caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" class="" scope="col">
+                                Course name
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Study year
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Intake
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Course name</span> <a href="/">Diagnostic Radiography</a>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Study year </span> Year 1
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Intake </span> 1
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Action </span> <a href="#">View intake</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="tab-four">
+                <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+                    <caption class="nhsuk-table__caption">September 2019 course details</caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" class="" scope="col">
+                                Course name
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Study year
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Intake
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Course name</span> <a href="/">Diagnostic Radiography</a>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Study year </span> Year 1
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Intake </span> 1 <strong class="nhsuk-tag nhsuk-tag--green">
+                                    1 NEW
+                                  </strong>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Action </span> <a href="#">View intake</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table role="table" class="nhsuk-table-responsive">
+                    <caption class="nhsuk-table__caption">March 2019 course details</caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" class="" scope="col">
+                                Course name
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Study year
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Intake
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Course name</span> <a href="/">Diagnostic Radiography</a>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Study year </span> Year 1
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Intake </span> 1
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Action </span> <a href="#">View intake</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
