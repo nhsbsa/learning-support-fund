@@ -55,15 +55,24 @@ Student and University details
             321 University street,<br>
             Newcastle,<br>
             NE22 2AB
+            <!--<br>
+            <p><a class="nhsuk-link--no-visited-state" href="https://www.google.com/maps/dir/NE11+0JY/NE22">Google Maps directions</a></p>-->
           </dd>
         </div>
-
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Daily return mileage
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            15.5 miles
+          </dd>
+        </div>
         <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
               Daily return mileage costs
             </dt>
             <dd class="nhsuk-summary-list__value">
-              £5.60
+              £4.34
             </dd>
           </div>
           <div class="nhsuk-summary-list__row">
@@ -76,13 +85,17 @@ Student and University details
           </div>
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
-              Total travel costs
+              Total daily travel costs
             </dt>
             <dd class="nhsuk-summary-list__value">
-              £6.60
+              £5.34
             </dd>
           </div>
       </dl>
+
+      <h3 class="nhsuk-heading-xs">Daily additional costs comments</h3>
+
+      <p>I pay a pound to park at university parking.</p>
 
       {% if data['read-only'] != 'true' %}
       <a class="nhsuk-button" href="TDAE-checked-university-details">Continue</a>
