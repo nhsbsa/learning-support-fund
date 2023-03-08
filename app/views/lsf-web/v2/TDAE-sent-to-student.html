@@ -10,7 +10,7 @@ University details
     <div class="nhsuk-grid-column-two-thirds"> 
 
       {% if data['name'] == 'Ben Bloggs' %}
-      <form action="TDAE-claims-list?Bloggs=returned" method="POST">
+      <form action="current-search-student?Bloggs=returned&hei-completed=in-progress" method="POST">
       {% elif data['name'] == 'Chet Cheema' %}
       <form action="TDAE-claims-list?Cheema=returned" method="POST">
       {% else %}

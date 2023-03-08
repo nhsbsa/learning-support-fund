@@ -10,13 +10,12 @@ Student details
     <div class="nhsuk-grid-column-two-thirds">
         <h1 class="nhsuk-heading-xl">
             <span class="nhsuk-caption-l" id="studentRef">
-                <span th:with="studentinfo=${student.studentReferenceNo}" th:text="${studentinfo}"></span>
                 <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
             Student details
         </h1>
-        <p th:classappend="${student?.user?.active != 0 AND student.enabled} ? activeStudent : notActive">
-            Account status: <strong class="nhsuk-tag" th:if="${student?.user?.active != 0 AND student.enabled}">Active</strong>
+        <p>
+            Account status: <strong class="nhsuk-tag">Active</strong>
         </p>
     </div>
     <div class="nhsuk-grid-column-one-third">
@@ -27,13 +26,13 @@ Student details
             <div class="nhsuk-grid-row">
                 <div class="nhsuk-grid-column-one-third">
                     <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Name</h2>
-                    <p id="studentName">Amara Ansari</p>
+                    <p id="studentName">{{ data['name'] }}</p>
 
                     <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Date of birth</h2>
                     <p id="studentDOB">15 November 2000</p>
 
                     <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Username</h2>
-                    <p id="studentUsername">Amara.Ansari</p>
+                    <p id="studentUsername">{{ data['username'] }}</p>
 
                 </div>
                 <div class="nhsuk-grid-column-one-third">
@@ -42,7 +41,7 @@ Student details
                         <p id="studentPhone">07777777777</p>
 
                     <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Email</h2>
-                    <p id="studentEmail">amara.ansari@myemail.com</p>
+                    <p id="studentEmail">{{ data['email'] }}</p>
                 </div>
 
                 <div class="nhsuk-grid-column-one-third">
@@ -68,7 +67,7 @@ Student details
                                 <p id="sortcode">11-22-33</p>
                                 
                                 <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account holder</h3>
-                                <p id="accountholder">Amara Ansari</p>
+                                <p id="accountholder">Amari Ansari</p>
 
                                 <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Building society number</h3>
                                 <p>
@@ -129,13 +128,13 @@ Student details
                         <details class="nhsuk-details">
                             <summary class="nhsuk-details__summary">
                               <span class="nhsuk-details__summary-text">
-                                1413 - TDAE (Active)
+                                TDAE (Active)
                               </span>
                             </summary>
                             <div class="nhsuk-details__text">
                                 <div class="nhsuk-hint" id="example-hint">
-                                    Start Date: 01/11/2022<br>
-                                    End date: 15/08/2024<br>
+                                    <!-- Start Date: 01/11/2022<br>
+                                    End date: 15/08/2024<br> -->
                                     Date created: 23/11/2022 11:10:58<br>
                                     Date last updated: 15/12/2022 10:32:51<br>
                                     Last updated by: Deacon Robert<br>
