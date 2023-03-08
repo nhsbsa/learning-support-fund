@@ -26,8 +26,8 @@ Student details
               Label text goes here
             </label>
             <select class="nhsuk-select" id="select-1" name="select-1">
-              <option value="1"selected>Pending</option>
-              <option value="2">In attendance</option>
+              <option value="1">Pending</option>
+              <option value="2" selected>In attendance</option>
               <option value="3">Option 3</option>
             </select>
           </div>
@@ -185,7 +185,7 @@ Student details
                 </div>
                 <div class="nhsuk-column-full">
                     <table role="table" class="nhsuk-table-responsive">
-                        <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Travel expense claims list</caption>
+                        <caption class="nhsuk-table__caption">Online active claims</caption>
                         <thead role="rowgroup" class="nhsuk-table__head">
                             <tr role="row">
                                 <th role="columnheader" class="" scope="col">
@@ -272,6 +272,105 @@ Student details
                             </tr>
                         </tbody>
                     </table>
+                    <nav class="nav" role="navigation" aria-label="Pagination">
+                        <ul class="pagination">
+                            <li class="pagination__item pagination-li"><a class="pagination__link current" href="#" aria-current="true"
+                                    aria-label="Page 1, current page">1</a></li>
+                            <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">2</a></li>
+                        </ul>
+                        <a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true"role="presentation">&nbsp;&raquo;</span></a>
+                        <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 5 of 10 claims
+                        </div>
+                    </nav>
+                    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-6">
+                        <caption class="nhsuk-table__caption">PDF active claims</caption>
+                        <thead role="rowgroup" class="nhsuk-table__head">
+                            <tr role="row">
+                                <th role="columnheader" class="" scope="col">
+                                    Status
+                                </th>
+                                <th role="columnheader" class="" scope="col">
+                                    Claim dates
+                                </th>
+                                <th role="columnheader" class="" scope="col">
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="nhsuk-table__body">
+                            <tr role="row" class="nhsuk-table__row">
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Status </span>
+                                    <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Course </span>01 October 2022 to 05 October 2022
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Action </span>
+                                    <a class="nhsuk-link--no-visited-state" target="_blank"
+                                        href="#">Process
+                                        claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                </td>
+                            </tr>
+                            <tr role="row" class="nhsuk-table__row">
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Status </span>
+                                    <strong class="nhsuk-tag">Payment approved</strong>
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Course </span>03 January 2023 to 05 January 2023
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Action </span>
+                                    <a class="nhsuk-link--no-visited-state" target="_blank"
+                                        href="#">View
+                                        claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                </td>
+                            </tr>
+                            <tr role="row" class="nhsuk-table__row">
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Status </span>
+                                    <strong class="nhsuk-tag">Payment approved</strong>
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Course </span>16 December 2022 to 18 December 2022
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Action </span>
+                                    <a class="nhsuk-link--no-visited-state" target="_blank"
+                                        href="#">View
+                                        claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                </td>
+                            </tr>
+                            <tr role="row" class="nhsuk-table__row">
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Status </span>
+                                    <strong class="nhsuk-tag">Payment approved</strong>
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Course </span>03 January 2023 to 05 January 2023
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Action </span>
+                                    <a class="nhsuk-link--no-visited-state" target="_blank"
+                                        href="#">View
+                                        claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <nav class="nav" role="navigation" aria-label="Pagination">
+                        <ul class="pagination">
+                            <li class="pagination__item pagination-li"><a class="pagination__link current" href="#" aria-current="true"
+                                    aria-label="Page 1, current page">1</a></li>
+                            <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">2</a></li>
+                        </ul>
+                        <a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true"role="presentation">&nbsp;&raquo;</span></a>
+                        <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 5 of 7 claims
+                        </div>
+                    </nav>
+                    <p class="nhsuk-u-margin-top-7"><a href="#">View previously processed claims</a></p>
                 </div>
             </div>
 

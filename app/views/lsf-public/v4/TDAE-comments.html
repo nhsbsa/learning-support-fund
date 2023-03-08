@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Additional costs comments
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds"> 
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v4/TDAE-comments" method="POST">
+
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+              <h1 class="nhsuk-heading-l">Additional costs comments</h1>
+            </label>
+            <div class="nhsuk-hint" id="example-hint">
+              Include any comments related to your additional costs, for example costs which are spread over a week or month.
+            </div>
+            <textarea class="nhsuk-textarea" id="example" name="normal-additional-comments" rows="5" aria-describedby="example-hint"></textarea>
+          </div>
+
+        <button class="nhsuk-button" type="submit">Next</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

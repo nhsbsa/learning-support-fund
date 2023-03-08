@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Which type of evidence does this relate to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <!-- <form action="#" method="POST"> -->
+
+            <div class="nhsuk-form-group">
+          
+              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  <h1 class="nhsuk-fieldset__heading">
+                    Which type of evidence does this relate to?
+                  </h1>
+                </legend>
+          
+                <div class="nhsuk-hint" id="example-hint">
+                  Select all options that are relevant to your evidence.
+                </div>
+          
+                <div class="nhsuk-checkboxes">
+          
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="evidence-day-monday" name="evidence-day" type="checkbox" value="email">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="evidence-day-monday">
+                        Car parking
+                    </label>
+                  </div>
+          
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="evidence-day-wednesday" name="evidence-day" type="checkbox" value="phone">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="evidence-day-wednesday">
+                        Tunnel and toll charges
+                    </label>
+                  </div>
+          
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="evidence-day-thursday" name="evidence-day" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="evidence-day-thursday">
+                        Congestion and clean air charges
+                    </label>
+                  </div>
+          
+                </div>
+              </fieldset>
+          
+            </div>
+
+            <a class="nhsuk-button" href="TDAE-evidence-mini-cya">Next</a><br>
+            <a href="TDAE-start-claim">Cancel</a>
+          
+
+    <!-- </form> -->
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

@@ -1,0 +1,162 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- <form action="" method="POST"> -->
+
+        <h1 class="nhsuk-heading-xl">Check your answers</h1>
+
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Claim start date
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    {% if data['TDAE-multiple-weeks'] == 'yes' %}
+                    28 November 2022
+                    {% else %}
+                    05 December 2022
+                    {% endif %}
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="TDAE-start-claim">
+                        Change<span class="nhsuk-u-visually-hidden"> claim start date</span>
+                    </a>
+
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Claim end date
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    09 December 2022
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="TDAE-end-claim">
+                        Change<span class="nhsuk-u-visually-hidden"> claim end date</span>
+                    </a>
+
+                </dd>
+
+            </div>
+        </dl>
+
+        <h2 class="nhsuk-heading-m">Weeks at placement</h2>
+        <p>You can view each week you were at placement and change the days you attended and add or remove evidence.</p>
+        <details class="nhsuk-details nhsuk-expander">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                Week 1
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+    
+              <p>Evidence for the dates between 28 November 2022 and 4 December 2022</p>
+              
+              <dl class="nhsuk-summary-list">
+    
+                <div class="nhsuk-summary-list__row">
+                  <dd class="nhsuk-summary-list__value">
+                    congestion-charge.jpg
+                  </dd>
+              
+                  <dd class="nhsuk-summary-list__actions">
+              
+                    <a href="TDAE-delete-evidence">
+                      Delete<span class="nhsuk-u-visually-hidden"> evidence</span>
+                    </a>
+              
+                  </dd>
+              
+                </div>
+              
+                <div class="nhsuk-summary-list__row">
+                  <dd class="nhsuk-summary-list__value">
+                    parking-receipt.jpg
+                  </dd>
+              
+                  <dd class="nhsuk-summary-list__actions">
+              
+                    <a href="#">
+                      Delete<span class="nhsuk-u-visually-hidden"> evidence</span>
+                    </a>
+              
+                  </dd>
+              
+                </div>
+              
+              </dl>
+            </div>
+          </details>
+    
+          <details class="nhsuk-details nhsuk-expander">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                Week 2
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>Evidence for the dates between 5 December 2022 and 9 December 2022</p>
+              <dl class="nhsuk-summary-list">
+    
+                <div class="nhsuk-summary-list__row">
+                  <dd class="nhsuk-summary-list__value">
+                    congestion-charge.jpg
+                  </dd>
+              
+                  <dd class="nhsuk-summary-list__actions">
+              
+                    <a href="#">
+                      Delete<span class="nhsuk-u-visually-hidden"> evidence</span>
+                    </a>
+              
+                  </dd>
+              
+                </div>
+              
+                <div class="nhsuk-summary-list__row">
+                  <dd class="nhsuk-summary-list__value">
+                    parking-receipt.jpg
+                  </dd>
+              
+                  <dd class="nhsuk-summary-list__actions">
+              
+                    <a href="#">
+                      Delete<span class="nhsuk-u-visually-hidden"> evidence</span>
+                    </a>
+              
+                  </dd>
+              
+                </div>
+              
+              </dl>
+            </div>
+          </details>
+
+        <form action="v4/TDAE-normal-summary-cya" method="POST">
+            <button class="nhsuk-button" type="submit">Save and continue</button>
+            <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-add-evidence-week">Add more evidence</a><br>
+            <a href="TDAE-start-claim">Cancel</a>
+        </form>
+
+        <!-- </form> -->
+
+    </div>
+
+</div>
+{% endblock %}

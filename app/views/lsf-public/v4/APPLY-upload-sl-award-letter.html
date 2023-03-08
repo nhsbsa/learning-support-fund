@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="v4/APPLY-upload-sl-award-letter" method="POST">
+        
+        <h1 class="nhsuk-heading-l">Upload your {% if data['student-loan'] === 'yes' %}Student loan award letter{% else %}Passport - photo page OR UK birth certificate{% endif %}</h1>
+
+        <p>Guidance for uploading document</p>
+        <div class="nhsuk-hint" id="contact-hint">
+            <p>Please choose a file of one of the following types: jpg, bmp, png, tif, pdf</p>
+            <p>The quality of your digital photo upload must be:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>orignial copy</li>
+                <li>full document displayed</li>
+                <li>clear and in focus</li>
+                <li>in colour</li>
+                <li>unaltered by computer software</li>
+                <li>at least 50KB and no more than 5mb</li>
+            </ul>
+            <p>If the document does not meet this criteria, your application will be rejected</p>
+        </div>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-u-visually-hidden" for="sl-upload-evidence">Select a file:</label>
+            <input type="file" id="sl-upload-evidence" name="sl-upload-evidence">
+        </div>
+
+        <button class="nhsuk-button" type="submit">Add</button><br>
+        <a href="academic-year-details">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

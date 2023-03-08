@@ -1,0 +1,115 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <!-- <form action="v4/TDAE-evidence-mini-cya" method="POST"> -->
+
+        <h1 class="nhsuk-heading-l">Check your answers</h1>
+
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Claim start date
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    05 December 2022
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="#">
+                        Change<span class="nhsuk-u-visually-hidden"> claim start date</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Claim end date
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    09 December 2022
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="#">
+                        Change<span class="nhsuk-u-visually-hidden"> claim end date</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Days
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Monday, Thursday, Friday
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="#">
+                        Change<span class="nhsuk-u-visually-hidden"> days</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+        <h2 class="nhsuk-heading-m">Evidence</h2>
+        <details class="nhsuk-details nhsuk-expander">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                Week 1
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <dl class="nhsuk-summary-list">
+                <div class="nhsuk-summary-list__row">
+                  <dt style="width:50%" class="nhsuk-summary-list__key">
+                    Screenshot 2023-02-06 at 17.09.59.png
+                  </dt>
+                  <dd style="width:50%" class="nhsuk-summary-list__actions">
+                    <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target=”_blank”>
+                      Remove<span class="nhsuk-u-visually-hidden"> evidence</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt style="width:50%" class="nhsuk-summary-list__key">
+                    Screenshot 2023-02-06 at 17.11.16.png
+                  </dt>
+                  <dd style="width:50%" class="nhsuk-summary-list__actions">
+                    <a href="#">
+                      Remove<span class="nhsuk-u-visually-hidden"> evidence</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt style="width:50%" class="nhsuk-summary-list__key">
+                    Screenshot 2023-02-06 at 17.13.32.png
+                  </dt>
+                  <dd style="width:50%" class="nhsuk-summary-list__actions">
+                    <a href="#">
+                      Remove<span class="nhsuk-u-visually-hidden"> evidence</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </details>
+
+        <a class="nhsuk-button" type="submit">Save and continue</a><br>
+        <a href="TDAE-start-claim">Cancel</a>
+
+        <!-- </form> -->
+
+    </div>
+
+</div>
+
+</script>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Do you incur the same costs for each day you travel to your placement?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v4/TDAE-placement-journey-same-days" method="POST">
+
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <h1 class="nhsuk-fieldset__heading">
+                        Do you incur the same costs for each day you travel to your placement?
+                    </h1>
+                  </legend>
+                  <p>Your daily travel costs to your placement must be the same to be able to claim online. If your travel costs are different each day you can compelete the <a href="#">Travel and Dual Accommodation Expenses</a> form.</p>
+              
+                  <div class="nhsuk-radios">
+              
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="same-costs-yes" name="same-costs" type="radio" value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="same-costs-yes">
+                        Yes
+                      </label>
+                    </div>
+              
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="same-costs-no" name="same-costs" type="radio" value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="same-costs-no">
+                        No
+                      </label>
+                    </div>
+              
+                  </div>
+                </fieldset>
+              
+              </div>
+
+			<button class="nhsuk-button" type="submit">Next</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

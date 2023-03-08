@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Which academic year are you appling for funding?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">SSRN0000059 - Joe Bloggs</span>Which academic year are you appling for funding?</h1>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="academic-year-funding">
+              Academic year
+            </label>
+            <div class="nhsuk-hint" id="contact-hint">
+                This is the month and year you begin study
+              </div>
+            <select class="nhsuk-select" id="academic-year-funding" name="academic-year-funding">
+              <option value="1" selected>Please select...</option>
+              <option value="2">September 2022</option>
+            </select>
+        </div>
+
+        <a class="nhsuk-button" href="course-duration">Next</a><br>
+        <a href="dashboard">Cancel</a>
+
+
+    </div>
+
+  </div>
+{% endblock %}
