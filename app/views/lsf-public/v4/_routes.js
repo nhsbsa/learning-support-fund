@@ -549,6 +549,16 @@ router.post('/v4/TDAE-evidence-mini-cya', (req, res) => {
 
 })
 
+router.post('/v4/TDAE-claim-date-evidence-cya', (req, res) => {
+
+    req.session.data['add-date-evidence'] = 'completed'
+
+    res.redirect('/lsf-public/v4/TDAE-task-list')
+
+})
+
+
+
 router.post('/v4/TDAE-type-journey-evidence', (req, res) => {
 
     res.redirect('/lsf-public/v4/TDAE-provide-journey-evidence')

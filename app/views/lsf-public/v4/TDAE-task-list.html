@@ -13,14 +13,20 @@ Task list
         "text": "Go back"
         }) }}
 
-        <h1 class="nhsuk-heading-l">Travel and Dual Accommodation Expenses task list</h1>
+        {% if data['submit-claim'] != 'completed' %}
+            <h1 class="nhsuk-heading-l">Travel and Dual Accommodation Expenses task list</h1>
+        {% else %}
+            <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-9">Travel and Dual Accommodation Expenses task list</h1>
+        {% endif %}
 
+        {% if data['submit-claim'] != 'completed' %}
         <div class="nhsuk-inset-text">
             <span class="nhsuk-u-visually-hidden">Information: </span>
             <h2 class="nhsuk-heading-s nhsuk-!-margin-bottom-2">Claim tasks incomplete</h2>
             <p>Before you can submit your claim you must first complete tasks 1 to 4.</p>
             <p class="nhsuk-body nhsuk-!-margin-bottom-7">You have completed 0 of 4 sections.</p>
         </div>
+        {% endif %}
 
 
         <ol class="app-task-list">
@@ -107,9 +113,15 @@ Task list
                 <ul class="app-task-list__items">
                     <li class="app-task-list__item nhsuk-u-clear">
                         <span class="app-task-list__task-name">
-                            <a class="app-task-list__task-name" href="TDAE-start-claim">
-                                Upload your evidence
-                            </a>
+                            {% if data['submit-claim'] === 'completed' %}
+                                <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">
+                                    Upload your evidence
+                                </a>
+                            {% else %}
+                                <a class="app-task-list__task-name" href="TDAE-start-claim">
+                                    Upload your evidence
+                                </a>
+                            {% endif %}
                         </span>
                         {% if data['add-date-evidence'] === 'completed' %}
                         <strong class="nhsuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
@@ -141,8 +153,11 @@ Task list
                             </span>
                             {% endif %}
                         </span>
-                        {% if data['university-details'] === 'completed' and data['placement-details'] === 'completed' and data['add-date-evidence'] === 'completed' %}
-                        <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag" id="eligibility-status">Not Started</strong>
+
+                        {% if data['submit-claim'] === 'completed' %}
+                            <strong class="nhsuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        {% elif data['university-details'] === 'completed' and data['placement-details'] === 'completed' and data['add-date-evidence'] === 'completed' %}
+                            <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag" id="eligibility-status">Not Started</strong>
                         {% else %}
                         <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag" id="eligibility-status">Cannot
                             start yet</strong>

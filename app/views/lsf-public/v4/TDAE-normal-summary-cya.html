@@ -26,7 +26,7 @@ Check your answers
                     County,<br>
                     NE33 3AB
                   </dd>
-              
+                  {% if data['submit-claim'] != 'completed' %}
                   <dd class="nhsuk-summary-list__actions">
               
                     <a href="TDAE-term-time-address">
@@ -34,7 +34,7 @@ Check your answers
                     </a>
               
                   </dd>
-              
+              {% endif %}
                 </div>
               
                 <div class="nhsuk-summary-list__row">
@@ -48,7 +48,7 @@ Check your answers
                     County,<br>
                     NE33 3BC
                   </dd>
-              
+                  {% if data['submit-claim'] != 'completed' %}
                   <dd class="nhsuk-summary-list__actions">
               
                     <a href="TDAE-normal-place-study">
@@ -56,7 +56,7 @@ Check your answers
                     </a>
               
                   </dd>
-              
+              {% endif %}
                 </div>
               
                 <div class="nhsuk-summary-list__row">
@@ -64,9 +64,9 @@ Check your answers
                     Normal return mileage
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    20
+                    15.5
                   </dd>
-              
+                  {% if data['submit-claim'] != 'completed' %}
                   <dd class="nhsuk-summary-list__actions">
               
                     <a href="TDAE-normal-return-mileage">
@@ -74,7 +74,7 @@ Check your answers
                     </a>
               
                   </dd>
-              
+              {% endif %}
                 </div>
               
                 <div class="nhsuk-summary-list__row">
@@ -82,9 +82,9 @@ Check your answers
                     Daily additional costs
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    £0.50
+                    £1.00
                   </dd>
-              
+                  {% if data['submit-claim'] != 'completed' %}
                   <dd class="nhsuk-summary-list__actions">
               
                     <a href="TDAE-additional-costs">
@@ -92,7 +92,7 @@ Check your answers
                     </a>
               
                   </dd>
-              
+              {% endif %}
                 </div>
 
                 <div class="nhsuk-summary-list__row">
@@ -102,7 +102,7 @@ Check your answers
                   <dd class="nhsuk-summary-list__value">
                     Provided
                   </dd>
-              
+                  {% if data['submit-claim'] != 'completed' %}
                   <dd class="nhsuk-summary-list__actions">
               
                     <a href="TDAE-normal-comments-view">
@@ -110,15 +110,16 @@ Check your answers
                     </a>
               
                   </dd>
-              
+              {% endif %}
                 </div>
               
               </dl>
-            
-      <form action="v4/TDAE-normal-summary-cya" method="POST">
-			  <button class="nhsuk-button" type="submit">Save and continue</button><br>
-			  <a href="TDAE-start-claim">Cancel</a>
-      </form>
+              {% if data['submit-claim'] != 'completed' %}
+                <form action="v4/TDAE-normal-summary-cya" method="POST">
+                  <button class="nhsuk-button" type="submit">Save and continue</button><br>
+                  <a href="TDAE-start-claim">Cancel</a>
+                </form>
+              {% endif %}
 
 		<!-- </form> -->
 
