@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-
+Claim checks
 {% endblock %}
 
 {% block content %}
@@ -10,11 +10,19 @@
   <div class="nhsuk-grid-column-two-thirds">
 
     <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Travel and Dual Accommodation Expenses</span>
-      Amara Ansari
+      Claim checks
     </h1>
 
+    <!-- <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Student name: Amari Ansari</li>
+        <li>Activity number: 1411</li>
+      </ul>
+    </div> -->  
+
     {% if data['read-only'] != 'true' %}
-    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Claim checks incomplete</h2>
+    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">{{ data['name'] }} ({{ data['activity number'] }}) claim checks incomplete</h2>
     <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed {% if data['status'] === 'Returned from NHSBSA' %}1{% else %}0{% endif %} of 4 sections.</p>
     {% endif %}
 
@@ -22,7 +30,7 @@
     <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-7">Claim currently being processed by Samuel Jackson</h2>
     {% endif %}
 
-    {% if data['status'] === 'Returned from NHSBSA' %}
+    {% if data['status'] === 'Returned from NHSBSA'%}
     <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
       <div class="nhsuk-card--care__heading-container">
         <h2 class="nhsuk-card--care__heading">
