@@ -201,7 +201,11 @@
       <li>what needs changing for them to re-submit the claim</li>
       <li>why the claim is being declined</li>
     </ul>
+    {% if data['university-completed'] === 'in-progress' or data['evidence-completed'] === 'in-progress' %}
+    <a class="nhsuk-button" href="TDAE-send-to-student">Send to student</a>
+    {% else %}
     <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-send-to-student">Send to student</a>
+    {% endif %}
     {% endif %}
 
   </div>

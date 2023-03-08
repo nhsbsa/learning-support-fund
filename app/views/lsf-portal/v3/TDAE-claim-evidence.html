@@ -46,7 +46,18 @@ Claim details
             NE33 3AB
           </dd>
         </div>
-
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Daily return mileage
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['status'] === 'Returned from NHSBSA' %}
+            8400 miles
+            {% else %}
+            30 miles
+            {% endif %}
+          </dd>
+        </div>
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Daily return mileage cost
@@ -82,9 +93,9 @@ Claim details
             </dt>
             <dd class="nhsuk-summary-list__value">
               {% if data['status'] === 'Returned from NHSBSA' %}
-              £846.00
+              £2,509.98
               {% else %}
-              £11.40
+              £15.18
               {% endif %}
             </dd>
           </div>
