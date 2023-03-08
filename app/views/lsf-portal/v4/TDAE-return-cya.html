@@ -19,23 +19,34 @@
 
         <dl class="nhsuk-summary-list">
 
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Do you want to return or decline the claim?
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {{ data['return-student'] }}
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="#">
+                Change<span class="nhsuk-u-visually-hidden"> reason</span>
+              </a>
+            </dd>
+          </div>
+          {% if data['return-student'] != 'Decline claim' %}
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
                 What is the reason to send the claim back to the student?
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {{ data['return-student'] }}
+                {{ data['return-reason'] }}
               </dd>
-
               <dd class="nhsuk-summary-list__actions">
-
                 <a href="#">
                   Change<span class="nhsuk-u-visually-hidden"> reason</span>
                 </a>
-
               </dd>
-
             </div>
+          {% endif %}
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">

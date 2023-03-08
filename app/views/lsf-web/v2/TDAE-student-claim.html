@@ -19,7 +19,7 @@ Claim checks
         <li>Student name: Amari Ansari</li>
         <li>Activity number: 1411</li>
       </ul>
-    </div> -->  
+    </div> -->
 
     {% if data['read-only'] != 'true' %}
     <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">{{ data['name'] }} ({{ data['activity number'] }}) claim checks incomplete</h2>
@@ -222,7 +222,11 @@ Claim checks
       <li>what the student needs to change for them to re-submit the claim</li>
       <li>why the claim is being declined</li>
     </ul>
+    {% if data['university-completed'] === 'in-progress' or data['evidence-completed'] === 'in-progress' or data['hei-completed'] === 'in-progress' %}
+    <a class="nhsuk-button" href="TDAE-send-to-student">Send to University</a>
+    {% else %}
     <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-send-to-student">Send to University</a>
+    {% endif %}
     {% endif %}
 
   </div>

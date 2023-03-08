@@ -7,7 +7,7 @@ University details
 {% block content %}
   <div class="nhsuk-grid-row">
 
-    <div class="nhsuk-grid-column-two-thirds"> 
+    <div class="nhsuk-grid-column-two-thirds">
       {{ backLink({
         "href": "javascript:history.go(-1)",
         "text": "Go back"
@@ -16,73 +16,86 @@ University details
       <h1 class="nhsuk-heading-l">University details</h1>
 
       <dl class="nhsuk-summary-list">
-  
-          <div class="nhsuk-summary-list__row">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Term-time address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            123 Term Time Street,<br>
+            Newcastle,<br>
+            NE11 1AB
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Academic year
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            2021/22
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Course
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Adult nursing
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            University address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            321 University street,<br>
+            Newcastle,<br>
+            NE22 2AB
+            <!--<br>
+            <p><a class="nhsuk-link--no-visited-state" href="https://www.google.com/maps/dir/NE11+0JY/NE22">Google Maps directions</a></p>-->
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Daily return mileage
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            15.5 miles
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
-              Term-time address
+              Daily return mileage costs
             </dt>
             <dd class="nhsuk-summary-list__value">
-              123 Term Time Street,<br>
-              Newcastle,<br>
-              NE11 1AB
+              £4.34
             </dd>
           </div>
-  
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
-              Academic year
+              Daily additional costs
             </dt>
             <dd class="nhsuk-summary-list__value">
-              2022/23
+              £1.00
             </dd>
           </div>
-  
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
-              Course
+              Total daily travel costs
             </dt>
             <dd class="nhsuk-summary-list__value">
-              Adult Nursing
+              £5.34
             </dd>
           </div>
-  
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              University address
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              321 University street,<br>
-              Newcastle,<br>
-              NE22 2AB
-            </dd>
-          </div>
-  
-          <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Daily return mileage costs
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                £5.60
-              </dd>
-            </div>
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Daily additional costs
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                £1.00
-              </dd>
-            </div>
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Total travel costs
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                £6.60
-              </dd>
-            </div>  
         </dl>
-  
+
+        <h3 class="nhsuk-heading-xs">Daily additional costs comments</h3>
+
+        <p>I pay a pound to park at university parking.</p>
+
         {% if data['read-only'] != 'true' %}
         <a class="nhsuk-button" href="TDAE-checked-university-details">Continue</a>
         {% endif %}
