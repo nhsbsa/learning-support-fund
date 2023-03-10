@@ -8,6 +8,12 @@ Claim checks
 <div class="nhsuk-grid-row">
 
   <div class="nhsuk-grid-column-two-thirds">
+    {% if data['read-only'] === 'true' %}
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+    {% endif %}
 
     <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Travel and Dual Accommodation Expenses</span>
       Claim checks
