@@ -422,8 +422,10 @@ router.post('/v4/TDAE-placement-additional-costs-often', (req, res) => {
     const oftenAdditionalCosts = req.session.data['often-additional-costs']
 
     if (oftenAdditionalCosts === 'no') {
+        req.session.data['any-additional-costs'] = 'no'
         res.redirect('/lsf-public/v4/TDAE-placement-address')
     } else {
+        req.session.data['any-additional-costs'] = 'yes'
         res.redirect('/lsf-public/v4/TDAE-placement-additional-costs')
     }
 
@@ -531,7 +533,13 @@ router.post('/v4/TDAE-what-days-claiming-week-cya', (req, res) => {
 
 router.post('/v4/TDAE-days-claiming', (req, res) => {
 
-    res.redirect('/lsf-public/v4/TDAE-provide-journey-evidence-2')
+    const anyAdditionalCosts = req.session.data['any-additional-costs']
+
+    if (anyAdditionalCosts === 'no') {
+        res.redirect('/lsf-public/v4/TDAE-claim-date-evidence-cya')
+    } else {
+        res.redirect('/lsf-public/v4/TDAE-provide-journey-evidence-2')
+    }
 
 })
 
