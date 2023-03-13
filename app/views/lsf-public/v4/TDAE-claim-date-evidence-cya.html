@@ -59,38 +59,42 @@ Check your answers
                   </dd>
               </div>
           </dl>
-          <h2 class="nhsuk-heading-m">Evidence</h2>
-          <table class="nhsuk-table">
-            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                    Day
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    Type of evidence
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    File
-                </th>
-              </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">
-                    Monday
-                </td>
-                <td class="nhsuk-table__cell ">
-                    Parking receipt
-                </td>
-                <td class="nhsuk-table__cell ">
-                    snapshot-032-07-03-2023.jpg
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          {% if data['any-additional-costs'] === 'no' %}
 
-          <p class="nhsuk-u-margin-bottom-7"><a class="nhsuk-link" href="TDAE-evidence-mini-cya">Add or remove evidence</a></p>
+          {% else %}
+            <h2 class="nhsuk-heading-m">Evidence</h2>
+            <table class="nhsuk-table">
+              <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                      Day
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                      Type of evidence
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                      File
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">
+                      Monday
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                      Parking receipt
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                      snapshot-032-07-03-2023.jpg
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="nhsuk-u-margin-bottom-7"><a class="nhsuk-link" href="TDAE-evidence-mini-cya">Add or remove evidence</a></p>
+          {% endif %}
 
 
 

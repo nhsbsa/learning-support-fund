@@ -104,19 +104,34 @@ Task list
 
             <li>
                 <h2 class="app-task-list__section">
-                    <span class="app-task-list__section-number">4. </span> Claim date and evidence
+                    {% if data['any-additional-costs'] === 'no' %}
+                        <span class="app-task-list__section-number">4. </span> Claim dates
+                    {% else %}
+                        <span class="app-task-list__section-number">4. </span> Claim dates and evidence
+                    {% endif %}
                 </h2>
                 <ul class="app-task-list__items">
                     <li class="app-task-list__item nhsuk-u-clear">
                         <span class="app-task-list__task-name">
                             {% if data['submit-claim'] === 'completed' %}
-                                <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">
-                                    Upload your evidence
-                                </a>
+                                {% if data['any-additional-costs'] === 'no' %}
+                                    <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">
+                                        Provide claim dates
+                                {% else %}
+                                    <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">
+                                        Provide claim dates and evidence
+                                    </a>
+                                {% endif %}
                             {% else %}
-                                <a class="app-task-list__task-name" href="TDAE-start-claim">
-                                    Upload your evidence
-                                </a>
+                                {% if data['any-additional-costs'] === 'no' %}
+                                    <a class="app-task-list__task-name" href="TDAE-start-claim">
+                                        Provide claim dates
+                                    </a>
+                                {% else %}
+                                    <a class="app-task-list__task-name" href="TDAE-start-claim">
+                                        Provide claim dates and evidence
+                                    </a>
+                                {% endif %}
                             {% endif %}
                         </span>
                         {% if data['add-date-evidence'] === 'completed' %}
