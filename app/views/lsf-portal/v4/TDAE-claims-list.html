@@ -113,7 +113,7 @@ Travel and Dual Accommodation Expense claims
 
                           <div style="width: 50%;float: left;">
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status" name="status" type="checkbox" value="1">
+                            <input class="nhsuk-checkboxes__input" id="status" name="status" type="checkbox" value="1" {% if data['filter'] == 'yes' %}checked{% endif %}>
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="status">
                               To be completed (5)
                             </label>
@@ -161,9 +161,14 @@ Travel and Dual Accommodation Expense claims
 
                         </div>
 
-                        <button class="nhsuk-button" data-module="nhsuk-button" style="margin-bottom: 0px;">
-                          Apply filters
-                        </button>
+                        <form style="float: left; display: contents;" action="TDAE-claims-list?filter=yes" method="POST">
+                          <button style="float: left;" class="nhsuk-button" data-module="nhsuk-button" style="margin-bottom: 0px;">
+                            Apply filters
+                          </button>
+                        </form>
+                        {% if data['filter'] == 'yes' %}
+                        <p style="float: left; padding-top: 15px; padding-left: 15px;"><a href="course-intake?filter=no">Reset filters</a></p>
+                        {% endif %}
 
                       </fieldset>
 
