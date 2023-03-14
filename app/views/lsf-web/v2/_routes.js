@@ -12,13 +12,26 @@ const router = express.Router();
 // TDAE Claim
 // ********************************
 
+// Return to student decline or return
+router.post('/v4/returnordecline', (req, res) => {
+
+    const returnstudent = req.session.data['return-student']
+
+    if (returnstudent === 'return') {
+        res.redirect('/lsf-web/v2/TDAE-send-to-student')
+    } else {
+        res.redirect('/lsf-web/v2/TDAE-details-for-return')
+    }
+
+})
+
 router.post('/v2/current-search-student', (req, res) => {
 
     const studentNumber = req.session.data['student-ref']
     req.session.data['studentRef'] = studentNumber
 
     res.redirect('/lsf-web/v2/current-search-student-results')
-    
+
 
 })
 

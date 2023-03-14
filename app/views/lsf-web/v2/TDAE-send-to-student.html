@@ -7,63 +7,54 @@ What is the reason to send the claim back to the University?
 {% block content %}
   <div class="nhsuk-grid-row">
 
-    <div class="nhsuk-grid-column-two-thirds"> 
+    <div class="nhsuk-grid-column-two-thirds">
       {{ backLink({
         "href": "javascript:history.go(-1)",
         "text": "Go back"
       }) }}
 
       <form action="v2/TDAE-send-to-student" method="POST">
-  
+
           <div class="nhsuk-form-group">
-  
+
               <fieldset class="nhsuk-fieldset">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                   <h1 class="nhsuk-fieldset__heading">
                       What is the reason to send the claim back to the University?
                   </h1>
                 </legend>
-  
-                <div class="nhsuk-radios">
-  
-                  <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="return-student-university" name="return-student" type="radio" value="University details incorrect">
-                    <label class="nhsuk-label nhsuk-radios__label" for="return-student-university">
+
+                <div class="nhsuk-checkboxes">
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-1" name="return-reason" type="checkbox" value="University details incorrect">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
                       University details incorrect
                     </label>
                   </div>
-  
-                  <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="return-student-placement" name="return-student" type="radio" value="Placement details incorrect">
-                    <label class="nhsuk-label nhsuk-radios__label" for="return-student-placement">
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-2" name="return-reason" type="checkbox" value="Placement details incorrect">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
                       Placement details incorrect
                     </label>
                   </div>
-  
-                  <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="return-student-evidence" name="return-student" type="radio" value="Evidence incorrect or missing">
-                      <label class="nhsuk-label nhsuk-radios__label" for="return-student-evidence">
-                        Evidence incorrect or missing
-                      </label>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="return-reason" type="checkbox" value="Evidence incorrect or missing">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                      Evidence incorrect or missing
+                    </label>
                   </div>
-  
-                  <div class="nhsuk-radios__divider">or</div>
-  
-                  <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="return-student-decline" name="return-student" type="radio" value="Decline claim">
-                      <label class="nhsuk-label nhsuk-radios__label" for="return-student-decline">
-                        Decline claim
-                      </label>
-                  </div>
-  
+
                 </div>
               </fieldset>
-  
+
             </div>
-  
-  
+
+
           <button class="nhsuk-button" type="submit">Continue</button><br>
-  
+
       </form>
 
     </div>
