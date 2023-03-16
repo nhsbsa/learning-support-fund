@@ -17,7 +17,23 @@ Upload your evidence for week 2
     <!-- <form action="#" method="POST"> -->
 
     <h1 class="nhsuk-heading-l">Upload your evidence for this week</h1>
-    <p>You must now provide evidence to support your additional costs. You will be able to provide more evidence once you have chosen a day and type of evidence.</p>
+    <p>You must now provide evidence to support your additional costs. You will be able to provide more evidence once you have chosen a day this relates to and the type of evidence.</p>
+  
+    {% if data['TDAE-multiple-weeks'] %}
+      <div class="nhsuk-hint" id="example-hint">
+        This evidence should relate between 
+        {% if data['upload-week-2'] === 'yes' %}
+          5 December 2022 and 9 December 2022.                      
+        {% else %}
+          28 November 2022 and 04 December 2022.
+        {% endif %}
+      </div>
+    {% else %}
+      <div class="nhsuk-hint" id="example-hint">
+        This evidence should relate between 05 December 2022 and 09 December 2022.
+      </div>
+    {% endif %}
+    </p>
     <details class="nhsuk-details">
       <summary class="nhsuk-details__summary">
         <span class="nhsuk-details__summary-text">

@@ -515,7 +515,7 @@ router.post('/v4/TDAE-claiming-same-days', (req, res) => {
 
 router.post('/v4/TDAE-what-days-claiming-week', (req, res) => {
 
-    res.redirect('/lsf-public/v4/TDAE-provide-journey-evidence')
+    res.redirect('/lsf-public/v4/TDAE-provide-journey-evidence-2')
 
 })
 
@@ -547,13 +547,36 @@ router.post('/v4/TDAE-days-claiming', (req, res) => {
 router.post('/v4/TDAE-evidence-mini-cya', (req, res) => {
 
     const moreEvidence = req.session.data['more-evidence']
+    const claimingSameDays = req.session.data['claiming-same-days']
+    const multipleWeeks = req.session.data['TDAE-multiple-weeks']
 
     if (moreEvidence === 'yes') {
         res.redirect('/lsf-public/v4/TDAE-provide-journey-evidence-2')
     } else {
-        res.redirect('/lsf-public/v4/TDAE-claim-date-evidence-cya')
+
+        if (multipleWeeks === 'yes') {
+
+            if (claimingSameDays === 'yes') {
+                req.session.data['upload-week-2'] = 'yes'
+                req.session.data['end-of-upload-2']= 'yes'
+                res.redirect('/lsf-public/v4/TDAE-provide-journey-evidence-2')
+            } else {
+                req.session.data['upload-week-2'] = 'yes'
+                req.session.data['end-of-upload-2'] = 'yes'
+                res.redirect('/lsf-public/v4/TDAE-what-days-claiming-week-2')
+            }
+
+        } else {
+            res.redirect('/lsf-public/v4/TDAE-claim-date-evidence-cya')
+        }
+        
     }
-    
+
+})
+
+router.post('/v4/TDAE-evidence-mini-cya-complete', (req, res) => {
+
+    res.redirect('/lsf-public/v4/TDAE-claim-date-evidence-cya')
 
 })
 
