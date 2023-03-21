@@ -336,6 +336,14 @@ router.post('/v4/TDAE-travel-accommodation', (req, res) => {
 
 })
 
+router.post('/v4/TDAE-normal-transport', (req, res) => {
+
+    const modeOfTransport = req.session.data['mode-of-transport']
+
+    res.redirect('/lsf-public/v4/TDAE-same-term-time-address')
+ 
+})
+
 router.post('/v4/TDAE-same-term-time-address', (req, res) => {
 
     const sameTermTimeAddress = req.session.data['same-term-address']
@@ -356,7 +364,13 @@ router.post('/v4/TDAE-term-time-address', (req, res) => {
 
 router.post('/v4/TDAE-normal-place-study', (req, res) => {
 
-    res.redirect('/lsf-public/v4/TDAE-normal-return-mileage')
+    const modeOfTransport = req.session.data['mode-of-transport']
+    
+    if (modeOfTransport === 'walk' || modeOfTransport === 'public' || modeOfTransport === 'cycle') {
+        res.redirect('/lsf-public/v4/TDAE-normal-additional-costs-often')
+    } else {        
+        res.redirect('/lsf-public/v4/TDAE-normal-return-mileage')
+    }
 
 })
 

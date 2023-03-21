@@ -15,26 +15,53 @@ Your costs
     <p>This is a breakdown of your daily costs for your normal journey and placement journey and a total of what you are
       entitled to claim back.</p>
 
-    <h2 class="nhsuk-heading-s">Costs for normal journey</h2>
+    {% if data['mode-of-transport'] === 'drive' or data['mode-of-transport'] === 'public' %}
+      <h2 class="nhsuk-heading-s">Costs for normal journey</h2>
+    {% else %}
+      <h2 class="nhsuk-heading-s">Normal journey</h2>
+    {% endif %}
     <dl class="nhsuk-summary-list">
 
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Mileage cost
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          £4.34
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
+      {% if data['mode-of-transport'] === 'walk' or data['mode-of-transport'] === 'cycle' %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Mode of transport
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['mode-of-transport'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
 
-          <a href="TDAE-normal-return-mileage">
-            Change<span class="nhsuk-u-visually-hidden"> normal mileage</span>
-          </a>
+            <a href="TDAE-normal-return-mileage">
+              Change<span class="nhsuk-u-visually-hidden"> mode of transport</span>
+            </a>
 
-        </dd>
+          </dd>
 
-      </div>
+        </div>
+      {% endif %}
 
+      {% if data['mode-of-transport'] === 'drive' %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Mileage cost
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £4.34
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+
+            <a href="TDAE-normal-return-mileage">
+              Change<span class="nhsuk-u-visually-hidden"> normal mileage</span>
+            </a>
+
+          </dd>
+
+        </div>
+      {% endif %}
+
+
+      {% if data['mode-of-transport'] === 'drive' or data['mode-of-transport'] === 'public' %}
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
           Additional cost
@@ -50,6 +77,9 @@ Your costs
 
         </dd>
       </div>
+      {% else  %}
+        
+      {% endif %}
 
       <!-- {# {% if data['related-comments'] === 'yes' %} #}
       <div class="nhsuk-summary-list__row">
@@ -231,7 +261,11 @@ Your costs
           {% if data['TDAE-multiple-weeks'] == 'yes' %}
             £22.80
           {% else %}
-            £15.18
+            {% if data['mode-of-transport'] !== 'drive' %}
+              £28.20
+            {% else %}
+              £15.18
+            {% endif %}
           {% endif %}
         </dd>
         <dd class="nhsuk-summary-list__actions">

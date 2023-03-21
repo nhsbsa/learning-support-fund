@@ -15,6 +15,24 @@ Check your answers
             
             <dl class="nhsuk-summary-list">
 
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Mode of transport
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {{ data['mode-of-transport'] }}
+                </dd>
+                {% if data['submit-claim'] != 'completed' %}
+                <dd class="nhsuk-summary-list__actions">
+            
+                  <a href="TDAE-normal-transport">
+                    Change<span class="nhsuk-u-visually-hidden"> mode of transport</span>
+                  </a>
+            
+                </dd>
+                {% endif %}
+              </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Term time address
@@ -59,6 +77,7 @@ Check your answers
               {% endif %}
                 </div>
               
+                {% if data['mode-of-transport'] === 'drive' %}
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Normal return mileage
@@ -67,15 +86,16 @@ Check your answers
                     15.5
                   </dd>
                   {% if data['submit-claim'] != 'completed' %}
-                  <dd class="nhsuk-summary-list__actions">
-              
-                    <a href="TDAE-normal-return-mileage">
-                      Change<span class="nhsuk-u-visually-hidden"> normal return mileage</span>
-                    </a>
-              
-                  </dd>
-              {% endif %}
+                    <dd class="nhsuk-summary-list__actions">
+                
+                      <a href="TDAE-normal-return-mileage">
+                        Change<span class="nhsuk-u-visually-hidden"> normal return mileage</span>
+                      </a>
+                
+                    </dd>
+                  {% endif %}
                 </div>
+                {% endif %}
               
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">

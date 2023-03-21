@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Which mode of transport do you take to and from your normal place of study?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+    <form action="v4/TDAE-normal-transport" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                    Which mode of transport do you take to and from your normal place of study?
+                </h1>
+              </legend>
+          
+              <div class="nhsuk-radios">
+          
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="mode-of-transport-walk" name="mode-of-transport" type="radio" value="walk">
+                    <label class="nhsuk-label nhsuk-radios__label" for="mode-of-transport-walk">
+                        Walk
+                    </label>
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="mode-of-transport-drive" name="mode-of-transport" type="radio" value="drive">
+                    <label class="nhsuk-label nhsuk-radios__label" for="mode-of-transport-drive">
+                        Drive
+                    </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="mode-of-transport-public" name="mode-of-transport" type="radio" value="public">
+                    <label class="nhsuk-label nhsuk-radios__label" for="mode-of-transport-public">
+                        Public transport
+                    </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="mode-of-transport-cycle" name="mode-of-transport" type="radio" value="cycle">
+                    <label class="nhsuk-label nhsuk-radios__label" for="mode-of-transport-cycle">
+                      Cycle
+                    </label>
+                </div>
+          
+              </div>
+            </fieldset>
+          
+          </div>
+
+      <button class="nhsuk-button" type="submit">Next</button><br>
+      <a href="TDAE-start-claim">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}
