@@ -17,7 +17,11 @@
 
         <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="return-more-detail">
-              <h1 class="nhsuk-heading-l">Give feedback to the student for
+              <h1 class="nhsuk-heading-l">Give feedback to {% if data['name'] %}
+              {{ data['name'] }}
+              {% else %}
+              Joe Bloggs
+              {% endif %} for
               {% if data['return-student'] == 'Decline claim' %}
               declining
               {% else %}

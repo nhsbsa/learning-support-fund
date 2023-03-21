@@ -90,14 +90,8 @@
                           Select the statuses you want shown.
                         </div>
 
-                        <div class="nhsuk-checkboxes nhsuk-checkboxes--small nhsuk-u-padding-bottom-5" style="display: flex" data-module="nhsuk-checkboxes">
+                        <div class="nhsuk-checkboxes nhsuk-checkboxes--small nhsuk-u-padding-bottom-5" data-module="nhsuk-checkboxes">
 
-
-
-
-
-
-                          <div style="width: 50%;float: left;">
                           <div class="nhsuk-checkboxes__item">
                             <input class="nhsuk-checkboxes__input" id="status" name="status" type="checkbox" value="1">
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="status">
@@ -126,9 +120,6 @@
                             </label>
                           </div>
 
-                          </div>
-                          <div style="width: 50%;float: left;">
-
                           <div class="nhsuk-checkboxes__item">
                             <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="4">
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
@@ -150,16 +141,16 @@
                             </label>
                           </div>
 
-                          </div>
+
 
                         </div>
-                        <form style="float: left; display: contents;" action="course-intake?filter=yes" method="POST">
-                          <button style="float: left;" class="nhsuk-button" data-module="nhsuk-button" style="margin-bottom: 0px;">
+                        <form style="" action="course-intake?filter=yes" method="POST">
+                          <button style="" class="nhsuk-button" data-module="nhsuk-button" style="margin-bottom: 0px;">
                             Apply filters
                           </button>
                         </form>
                         {% if data['filter'] == 'yes' %}
-                        <p style="float: left; padding-top: 15px; padding-left: 15px;"><a href="course-intake?filter=no">Reset filters</a></p>
+                        <p style=""><a href="course-intake?filter=no">Reset filters</a></p>
                         {% endif %}
                       </fieldset>
 
@@ -176,7 +167,11 @@
           </div>
 
         <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-3">
-            <caption class="nhsuk-table__caption">Intake contains 1 students</caption>
+            <caption class="nhsuk-table__caption">Intake contains 1 students
+            {% if data['filter'] == 'yes' %}
+            <div class="nhsuk-hint nhsuk-u-padding-top-3" id="Filtered-results">Filtered results contain 1 students</div>
+            {% endif %}
+            </caption>
             <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
                     <th role="columnheader" class="" scope="col">

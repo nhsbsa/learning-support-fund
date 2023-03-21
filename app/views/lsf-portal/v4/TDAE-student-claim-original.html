@@ -21,14 +21,10 @@
       {% endif %}
     </h1>
 
-    {% if data['status'] == 'University processing' %}
-      <strong class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-bottom-3">Being assessed</strong>
-    {% elif data['status'] == 'Returned to student' %}
-      <strong class="nhsuk-tag nhsuk-tag--yellow nhsuk-u-margin-bottom-3">Returned to student</strong>
-    {% elif data['status'] == 'Submitted to NHSBSA' %}
+    {% if data['status'] == 'Returned from NHSBSA' %}
+      <strong class="nhsuk-tag nhsuk-tag--white nhsuk-u-margin-bottom-3">Returned from NHSBSA</strong>
+    {% else %}
       <strong class="nhsuk-tag nhsuk-tag--green nhsuk-u-margin-bottom-3">Submitted to NHSBSA</strong>
-    {% elif data['status'] == 'Payment approved' %}
-      <strong class="nhsuk-tag nhsuk-u-margin-bottom-3">Payment approved</strong>
     {% endif %}
 
     {% if data['read-only'] != 'true' %}
@@ -74,13 +70,14 @@
         {% endif %}-->
 
     {% if data['status'] === 'Submitted to NHSBSA' %}
-    <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
-      <summary class="nhsuk-details__summary">
-        <span class="nhsuk-details__summary-text">
-          Claim feedback and history
-        </span>
-      </summary>
-      <div class="nhsuk-details__text">
+    <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent nhsuk-u-margin-top-0">
+      <div class="nhsuk-card--care__heading-container">
+        <h2 class="nhsuk-card--care__heading">
+          <span role="text">Claim feedback and history</span>
+        </h2>
+        <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-card__content">
 
         <table class="nhsuk-table-responsive">
           <thead role="rowgroup" class="nhsuk-table__head">
@@ -106,16 +103,18 @@
         </table>
 
       </div>
-    </details>
+    </div>
     {% endif %}
     {% if data['status'] === 'Returned from NHSBSA' %}
-    <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0" open>
-      <summary class="nhsuk-details__summary">
-        <span class="nhsuk-details__summary-text">
-          Claim feedback and history
-        </span>
-      </summary>
-      <div class="nhsuk-details__text">
+    <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent nhsuk-u-margin-top-0">
+      <div class="nhsuk-card--care__heading-container">
+        <h2 class="nhsuk-card--care__heading">
+          <span role="text">Claim feedback and history</span>
+        </h2>
+        <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-card__content">
+
         <table class="nhsuk-table-responsive">
           <thead role="rowgroup" class="nhsuk-table__head">
             <tr role="row">
@@ -145,16 +144,18 @@
         </table>
 
       </div>
-    </details>
+    </div>
     {% endif %}
     {% if data['status'] === 'Returned to student' %}
-    <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
-      <summary class="nhsuk-details__summary">
-        <span class="nhsuk-details__summary-text">
-          Claim feedback and history
-        </span>
-      </summary>
-      <div class="nhsuk-details__text">
+    <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent nhsuk-u-margin-top-0">
+      <div class="nhsuk-card--care__heading-container">
+        <h2 class="nhsuk-card--care__heading">
+          <span role="text">Claim feedback and history</span>
+        </h2>
+        <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-card__content">
+
         <table class="nhsuk-table-responsive">
           <thead role="rowgroup" class="nhsuk-table__head">
             <tr role="row">
@@ -189,7 +190,7 @@
         </table>
 
       </div>
-    </details>
+    </div>
     {% endif %}
 
   </div>

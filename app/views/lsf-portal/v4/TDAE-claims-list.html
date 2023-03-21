@@ -32,7 +32,11 @@ Travel and Dual Accommodation Expense claims
       }) }}
 
         <h1 class="nhsuk-heading-l">Travel and Dual Accommodation Expenses</h1>
-        <p>This is a list of claims that have been submitted by students.</p>
+    </div>
+    <div class="nhsuk-grid-column-two-thirds">
+        <p>This is a list of claims submitted by students. Claims are displayed in order of when they were submitted, oldest at the top.</p>
+    </div>
+    <div class="nhsuk-grid-column-full">
         <p><a class="nhsuk-link--no-visited-state" href="TDAE-previous-claims-list">View previously processed claims</a>
         </p>
 
@@ -196,7 +200,7 @@ Travel and Dual Accommodation Expense claims
                                 Course
                             </th>
                             <th role="columnheader" class="" scope="col">
-                                Date of claim
+                                Claim submitted
                             </th>
                             <th role="columnheader" class="" scope="col">
                                 Status
@@ -215,7 +219,7 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Nursing
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Date of claim </span>15 November 2022
+                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>15 November 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span>
@@ -246,7 +250,7 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Nursing
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Date of claim </span>22 November 2022
+                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>22 November 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span>
@@ -277,11 +281,11 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Dental
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Date of claim </span>25 November 2022
+                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>25 November 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span><strong
-                                    class="nhsuk-tag nhsuk-tag--blue">University processing</strong>
+                                    class="nhsuk-tag nhsuk-tag--blue">Being assessed</strong>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Action </span><a
@@ -298,7 +302,7 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Medicine
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Date of claim </span>28 November 2022
+                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>28 November 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span><strong
@@ -319,11 +323,11 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Podiatry
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Date of claim </span>01 December 2022
+                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>01 December 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Status </span><strong
-                                    class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
+                                <span class="nhsuk-table-responsive__heading">Status </span>
+                                <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Action </span><a
@@ -340,14 +344,14 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Nurse
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Date of claim </span>08 December 2022
+                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>08 December 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span>
                                 {% if data['Cheema'] == 'returned' %}
                                 <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
                                 {% else %}
-                                <strong class="nhsuk-tag nhsuk-tag--yellow">Returned from NHSBSA</strong>
+                                <strong class="nhsuk-tag nhsuk-tag--white">Returned from NHSBSA</strong>
                                 {% endif %}
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
@@ -358,8 +362,8 @@ Travel and Dual Accommodation Expense claims
                                     claim</a>
                                 {% else %}
                                 <a class="nhsuk-link--no-visited-state"
-                                    href="TDAE-student-claim?name=Chet Cheema&status=Returned from NHSBSA&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=&wrong-evidence=false">View
-                                    feedback</a>
+                                    href="TDAE-student-claim?name=Chet Cheema&status=Returned from NHSBSA&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=&wrong-evidence=false">
+                                    Process claim</a>
                                 {% endif %}
                             </td>
                         </tr>
@@ -371,7 +375,7 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Medicine
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Date of claim </span>09 December 2022
+                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>09 December 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span><strong
@@ -392,7 +396,7 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Nursing
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Date of claim </span>11 December 2022
+                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>11 December 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span><strong
@@ -413,7 +417,7 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Nursing
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Date of claim </span>11 December 2022
+                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>11 December 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span><strong
@@ -434,7 +438,7 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Medical
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Date of claim </span>12 December 2022
+                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>12 December 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span><strong

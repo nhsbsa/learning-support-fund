@@ -35,7 +35,11 @@
           {% if data['return-student'] != 'Decline claim' %}
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                What is the reason to send the claim back to the student?
+                What is the reason to send the claim back to {% if data['name'] %}
+                {{ data['name'] }}
+                {% else %}
+                Joe Bloggs
+                {% endif %}?
               </dt>
               <dd class="nhsuk-summary-list__value">
                 {{ data['return-reason'] }}
@@ -50,7 +54,7 @@
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Feedback to the student for
+                Feedback for
                 {% if data['return-student'] == 'Decline claim' %}
                 declining
                 {% else %}
