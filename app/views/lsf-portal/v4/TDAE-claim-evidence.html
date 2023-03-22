@@ -96,6 +96,10 @@ Claim details
             <dd class="nhsuk-summary-list__value">
               {% if data['status'] === 'Returned from NHSBSA' %}
               £2,509.98
+              {% elif data['breakdown'] === 'walk' %}
+              £31.20
+              {% elif data['breakdown'] ==='public-transport' %}
+              £20.85
               {% else %}
               £15.18
               {% endif %}
@@ -130,7 +134,13 @@ Claim details
                   <b>Type of travel</b>
               </td>
               <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                  {% if data['breakdown'] === 'walk' %}
+                  Walk
+                  {% elif data['breakdown'] ==='public-transport' %}
+                  Public transport
+                  {% else %}
                   Car
+                  {% endif %}
               </td>
               <td class="nhsuk-table__cell " style="font-size: 1rem;">
                   Car
@@ -141,7 +151,13 @@ Claim details
                   <b>Daily return mileage cost</b>
               </td>
               <td class="nhsuk-table__cell" style="font-size: 1rem;">
-                  £4.34
+                {% if data['breakdown'] === 'walk' %}
+                <span class="nhsuk-u-visually-hidden">No cost</span>
+                {% elif data['breakdown'] ==='public-transport' %}
+                <span class="nhsuk-u-visually-hidden">No cost</span>
+                {% else %}
+                £4.34
+                {% endif %}
               </td>
               <td class="nhsuk-table__cell " style="font-size: 1rem;">
                   £8.40
@@ -152,7 +168,13 @@ Claim details
                   <b>Daily additional costs</b>
               </td>
               <td class="nhsuk-table__cell" style="font-size: 1rem;">
-                  £1.00
+                {% if data['breakdown'] === 'walk' %}
+                <span class="nhsuk-u-visually-hidden">No cost</span>
+                {% elif data['breakdown'] ==='public-transport' %}
+                £3.45
+                {% else %}
+                £1.00
+                {% endif %}
               </td>
               <td class="nhsuk-table__cell " style="font-size: 1rem;">
                   £2.00
@@ -163,7 +185,13 @@ Claim details
                   <b>Daily cost</b>
               </td>
               <td class="nhsuk-table__cell" style="font-size: 1rem;">
-                  £5.34
+                {% if data['breakdown'] === 'walk' %}
+                £0.00
+                {% elif data['breakdown'] ==='public-transport' %}
+                £3.45
+                {% else %}
+                £5.34
+                {% endif %}
               </td>
               <td class="nhsuk-table__cell " style="font-size: 1rem;">
                   £10.40
@@ -179,7 +207,13 @@ Claim details
                 Extra daily cost to student travelling to placement
               </dt>
               <dd class="nhsuk-summary-list__value">
+                {% if data['breakdown'] === 'walk' %}
+                £10.40
+                {% elif data['breakdown'] ==='public-transport' %}
+                £6.95
+                {% else %}
                 £5.06
+                {% endif %}
               </dd>
             </div>
             <div class="nhsuk-summary-list__row" style="font-size: 1rem;">
@@ -195,7 +229,13 @@ Claim details
                 Total to claim
               </dt>
               <dd class="nhsuk-summary-list__value">
+                {% if data['breakdown'] === 'walk' %}
+                £31.20
+                {% elif data['breakdown'] ==='public-transport' %}
+                £20.85
+                {% else %}
                 £15.18
+                {% endif %}
               </dd>
             </div>
           </dl>
@@ -395,10 +435,11 @@ Claim details
       <details class="nhsuk-details">
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-details__summary-text">
-            Evidence removed by student
+            Previously submitted evidence
           </span>
         </summary>
         <div class="nhsuk-details__text">
+          <p>The student has removed the evidence when changing their claim as it is no longer deemed relevant.</p>
           <table class="nhsuk-table">
           <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Removed evidence</caption>
           <thead role="rowgroup" class="nhsuk-table__head">

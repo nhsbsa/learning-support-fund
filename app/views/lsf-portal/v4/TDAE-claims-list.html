@@ -113,9 +113,8 @@ Travel and Dual Accommodation Expense claims
                           Select the statuses you want shown.
                         </div>
 
-                        <div class="nhsuk-checkboxes nhsuk-checkboxes--small nhsuk-u-padding-bottom-5" style="display: flex" data-module="nhsuk-checkboxes">
+                        <div class="nhsuk-checkboxes nhsuk-checkboxes--small nhsuk-u-padding-bottom-5" data-module="nhsuk-checkboxes">
 
-                          <div style="width: 50%;float: left;">
                           <div class="nhsuk-checkboxes__item">
                             <input class="nhsuk-checkboxes__input" id="status" name="status" type="checkbox" value="1" {% if data['filter'] == 'yes' %}checked{% endif %}>
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="status">
@@ -136,9 +135,6 @@ Travel and Dual Accommodation Expense claims
                               Returned from NHSBSA (2)
                             </label>
                           </div>
-
-                          </div>
-                          <div style="width: 50%;float: left;">
 
                           <div class="nhsuk-checkboxes__item">
                             <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="4">
@@ -161,12 +157,10 @@ Travel and Dual Accommodation Expense claims
                             </label>
                           </div>
 
-                          </div>
-
                         </div>
 
-                        <form style="float: left; display: contents;" action="TDAE-claims-list?filter=yes" method="POST">
-                          <button style="float: left;" class="nhsuk-button" data-module="nhsuk-button" style="margin-bottom: 0px;">
+                        <form action="TDAE-claims-list?filter=yes" method="POST">
+                          <button style="float: left;" class="nhsuk-button" data-module="nhsuk-button">
                             Apply filters
                           </button>
                         </form>
@@ -191,6 +185,9 @@ Travel and Dual Accommodation Expense claims
 
                 <table role="table" class="nhsuk-table-responsive">
                     <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Travel expense claims list</caption>
+                    {% if data['filter'] == 'yes' %}
+                    <div class="nhsuk-hint nhsuk-u-padding-top-3" id="Filtered-results">Filtered results contain 12 claims</div>
+                    {% endif %}
                     <thead role="rowgroup" class="nhsuk-table__head">
                         <tr role="row">
                             <th role="columnheader" class="" scope="col">
