@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="en" id="adminTheme" class="html-admin">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+  <title>Manage knowledge base</title>
+  <link href="/css/old-admin-view.css"  rel="stylesheet">
+</head>
+
+<body class="nhs-bsa">
+  <div id="skiplink-container">
+    <div>
+      <a href="#adminContent" class="skiplink">Skip to main content</a>
+    </div>
+  </div>
+  <header class="with-proposition" id="global-header" role="banner">
+    <div class="header-wrapper">
+      <div class="header-proposition">
+        <div class="content">
+          <nav id="proposition-menu">
+            <a href="/lsf/admin/menu">
+              <img class="header-logo" src="/images/nhslogo.png" alt="NHS Business Services Authority">
+            </a>
+            <div class="user-menu">
+              <p style="float: right;">
+                Signed in as user.lastnam7@user.com (<a id="signOut" href="#">Sign out</a>)
+              </p>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="side-nav dft-sidebar" role="navigation" aria-label="Navigation">
+    <ul role="list">
+      <li class="side-nav__item"><a id="studentSearchButton" href="#">Student search</a></li>
+      <li class="side-nav__item"><a id="manageUsersButton" href="#">Manage users</a></li>
+      <li class="side-nav__item"><a id="manageCollegesButton" href="#">Manage universities</a></li>
+      <li class="side-nav__item"><a id="manageCoursesButton" href="#">Manage courses</a></li>
+      <li class="side-nav__item"><a id="manageRatesButton" href="#">Manage rates</a></li>
+      <li class="side-nav__item"><a id="manageTermPaymentPercentsButton" href="#">Manage term payment percentages</a></li>
+      <li class="side-nav__item active"><a id="manageKnowledgeBaseButton" href="/lsf-web/v2/admin-view/knowledge-base">Manage knowledge base</a></li>
+      <li class="side-nav__item"><a id="manageEnrolmentYearsButton" href="#">Manage enrolment year</a></li>
+      <li class="side-nav__item"><a id="manageCosaButton" href="#">Manage attendance status</a>
+      </li>
+      <li class="side-nav__item"><a id="manageNoteTypes" href="#">Manage note types</a>
+      </li>
+      <li class="side-nav__item"><a id="manageFormsButton" href="#">Manage forms</a></li>
+      <li class="side-nav__item"><a id="managePaymentRunButton" href="#">Manage payment runs</a></li>
+      <li class="side-nav__item"><a id="invalidBankDetailsButton" href="#">Invalid bank details</a></li>
+      <li class="side-nav__item"><a id="reportMenuButton" href="#">Reporting menu</a></li>
+      <li class="side-nav__item"><a id="accessibility-statement" href="#">Accessibility</a></li>
+    </ul>
+  </nav>
+
+  <main class="elements-index" id="adminContent" role="main">
+    <div class="content-wrapper">
+      <div class="admin-page-header">
+        <div class="grid-row">
+          <div class="column-full">
+            <div class="phase-banner">
+              <p><strong class="phase-tag" style="float: left;">ALPHA</strong><span style="float: left;">This is a new service</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-row">
+        <div class="column-full">
+          <h1 class="heading-large mt-15">Manage knowledge base</h1>
+          <div class="filterBox">
+            <form action="" class="search-box">
+              <div class="inline-search-wrapper">
+                <label for="filterText" class="visually-hidden">Filter knowledge base table</label>
+                <input class="search-box__input form-control" type="text" name="search-box" placeholder="Filter title" value="" id="filterText" onkeyup="filterTable('filterText', 'knowledgeListTable')">
+                <span class="inline-search-button">
+                  <span class="visually-hidden">Search</span>
+                </span>
+              </div>
+            </form>
+            <a class="button right-float" href="/lsf-web/v2/admin-view/add-item" role="button">Add Knowledge Item</a>
+          </div>
+
+          <table id="knowledgeListTable">
+            <caption class="visually-hidden">List of knowledge items</caption>
+            <thead>
+              <tr>
+                <th class="bold" scope="col">Title</th>
+                <th class="bold" scope="col">Content</th>
+                <th class="bold" scope="col">Enabled</th>
+                <th class="bold" scope="col" colspan="2">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Test</td>
+                <td>Test test test test</td>
+                <td>No</td>
+                <td>
+                  <a id="edit0" href="/lsf-web/v2/admin-view/edit-item">Edit</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
