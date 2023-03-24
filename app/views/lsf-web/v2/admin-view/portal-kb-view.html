@@ -52,19 +52,18 @@
             <p>Here you'll find answers to frequently asked questions as well as any messages from the NHSBSA Student Services. If your query isn't sudent specific and isn't answered by the items/articles on the notice board, then please raise a general query using the option in the navigation menu.</p>
             <details class="nhsuk-details">
               <summary class="nhsuk-details__summary">
-                <span class="nhsuk-details__summary-text">
+                <span class="nhsuk-details__summary-text" id="display-area-1">
                   Knowledge base title 1
                 </span>
               </summary>
-              <div class="nhsuk-details__text">
-                <p>Example paragraph 1 textExample paragraph 1 textExample paragraph 1 textExample paragraph 1 textExample paragraph 1 textExample paragraph 1 text</p>
+              <div class="nhsuk-details__text" id="display-area-5">
+                <p style="word-break: break-all;">Example paragraph 1 textExample paragraph 1 textExample paragraph 1 textExample paragraph 1 textExample paragraph 1 textExample paragraph 1 text</p>
                 
                 <h4 class="nhsuk-heading-s">Related links</h4>
                 <ul class="nhsuk-list nhsuk-list--bullet">
-                  <li><a href="#">wwww.link1.com</a></li>
-                  <li><a href="#">wwww.link2.co.uk</a></li>
-                  <li><a href="#">wwww.link3.net</a></li>
-                  <li><a href="#">wwww.alongerlink4.org</a></li>
+                  <li><a href="#" id="display-area-2">wwww.link1.com</a></li>
+                  <li><a href="#" id="display-area-3">wwww.link2.co.uk</a></li>
+                  <li><a href="#" id="display-area-4">wwww.link3.net</a></li>
                 </ul>
               </div>
             </details>
@@ -88,10 +87,25 @@
               </div>
             </details>
             
-            
-            
-
         </div>
-
     </div>
+    <script>
+      const displayAreas = [
+        document.getElementById('display-area-1'),
+        document.getElementById('display-area-2'),
+        document.getElementById('display-area-3'),
+        document.getElementById('display-area-4'),
+        document.getElementById('display-area-5')
+      ];
+    
+      for (let i = 0; i < displayAreas.length; i++) {
+        const enteredData = localStorage.getItem(`enteredData-${i}`);
+        if (enteredData) {
+          displayAreas[i].textContent = enteredData;
+        } else {
+          // displayAreas[i].textContent = 'No data entered.';
+        }
+      }
+      
+    </script>
 {% endblock %}
