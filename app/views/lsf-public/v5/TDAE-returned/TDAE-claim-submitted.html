@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Student declaration
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="academic-year-details?change=submitted" method="POST">
+
+            <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+                <div class="nhsuk-card__content">
+                    <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                        Claim submitted
+                    </h1>
+                    <h2 class="nhsuk-card__heading nhsuk-u-font-weight-normal"
+                        style="text-align: center; color: white;">
+                        Reference number: <span class="nhsuk-caption-xl nhsuk-caption--bottom nhsuk-u-font-weight-bold"
+                            style="color: white;">HDJ2123F</span>
+                    </h2>
+                </div>
+            </div>
+
+            <h2 class="nhsuk-heading-m">What next?</h2>
+            <p>Your claim will be sent to your University along with evidence you have provided. If more information is
+                required you will be notified.</p>
+            <p>You will also be able to check the status of your claim under your academic year details</p>
+
+            <button class="nhsuk-button" type="submit">Return to academic details</button>
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

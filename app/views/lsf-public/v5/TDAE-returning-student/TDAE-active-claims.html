@@ -1,0 +1,174 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Your active claims
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+
+        <h1 class="nhsuk-heading-l">Your active claims</h1>
+        <p>This is a list of claims that you have started, need actioning or been submitted.</p>
+
+        <!-- <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                What does each status mean?
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                <p>There are 3 statuses:</p>
+                <ul class="nhsuk-list nhsuk-list--bullet">
+                    <li><strong class="nhsuk-tag nhsuk-tag--blue">In progress</strong></li>
+                    <li><strong class="nhsuk-tag nhsuk-tag--green">Submitted</strong></li>
+                    <li><strong class="nhsuk-tag">Claim paid</strong></li>
+                </ul>
+            </div>
+          </details> -->
+
+        
+        <div class="nhsuk-form-group">
+            <table role="table" class="nhsuk-table-responsive">
+                <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Travel expense claims list</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                        Placement address
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Date submitted
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Status
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Action
+                    </th>
+                </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Placement address </span>123 Placement Avenue, NE11 12A
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date submitted </span>05 January 2023
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--green">Submitted to university</strong>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Action </span><a href="../TDAE-task-list?university-details=completed&placement-details=completed&add-date-evidence=completed&submit-claim=completed">View summary</a>
+                        </td>
+                    </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Placement address </span>123 Placement Avenue, NE11 12A
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date submitted </span>28 December 2022
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--yellow">Action required</strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span>
+                        <form action="../v5/TDAE-action-link" method="POST">
+                            <button class="nhsbsa-link--custom" type="submit">Review claim</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Placement address </span>123 Placement Avenue, NE11 12A
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date submitted </span>10 December 2022
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--blue">In progress</strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span><a href="../TDAE-task-list">Continue claim</a>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Placement address </span>123 Placement Avenue, NE11 12A
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date submitted </span>29 November 2022
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--green">Submitted to university</strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">View summary</a>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Placement address </span>123 Placement Avenue, NE11 12A
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date submitted </span>15 November 2022
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--orange">Declined</strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">View feedback</a>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Placement address </span>123 Placement Avenue, NE11 12A
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date submitted </span>05 November 2022
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--blue">Returned to University</strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">View summary</a>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Placement address </span>123 Placement Avenue, NE11 12A
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date submitted </span>21 October 2022
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--green">Submitted to NHSBSA</strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">View summary</a>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Placement address </span>123 Placement Avenue, NE11 12A
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date submitted </span>01 October 2022
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag">Payment approved</strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">View summary</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

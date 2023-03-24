@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="v5/APPLY-applied-student-loan" method="POST">
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Eligibility</span>Have you applied for a student loan?</h1>
+                    </legend>
+
+                    <p>If you select yes, you will need to supply a copy of your student loan award letter as evidence.</p>
+
+                    <p>This must relte to the academic year your applying for.</p>
+
+                    <p>If you select no, you will need to supply additional evidence to confirm your eligibility.</p>
+            
+                <div class="nhsuk-radios nhsuk-radios--inline">
+            
+                    <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="student-loan-yes" name="student-loan" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="student-loan-yes">
+                        Yes
+                    </label>
+                    </div>
+            
+                    <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="student-loan-no" name="student-loan" type="radio" value="no">
+                    <label class="nhsuk-label nhsuk-radios__label" for="student-loan-no">
+                        No
+                    </label>
+                    </div>
+            
+                </div>
+                </fieldset>
+            
+            </div>
+
+            <button class="nhsuk-button" type="submit">Next</button><br>
+            <a href="academic-year-details">Cancel</a>
+
+        </form>
+
+
+    </div>
+
+  </div>
+{% endblock %}

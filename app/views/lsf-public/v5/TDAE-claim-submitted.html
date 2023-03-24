@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Student declaration
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="v5/TDAE-claim-submitted" method="POST">
+
+            <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+                <div class="nhsuk-card__content">
+                    <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                        Claim submitted
+                    </h1>
+                </div>
+            </div>
+
+            <h2 class="nhsuk-heading-m">What happens next?</h2>
+            <p>Your claim will be checked by your University and NHS Business Services Authority. You will be emailed if more information's required.</p>
+            <p>You will be able to follow the progress of your claim in active claims.</p>
+
+            <button class="nhsuk-button" type="submit">View your active claims</button>
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}
