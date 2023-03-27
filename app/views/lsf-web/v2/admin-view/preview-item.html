@@ -71,21 +71,32 @@
       <div class="grid-row">
         <div class="column-two-thirds">
           <h1 class="heading-large mt-0">Preview knowledge item</h1>
-          <p>Your knowledge base item will appear like this:</p>
+          <p>Your knowledge base item will display to universities as:</p>
           <details class="form-group" role="group">
             <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary" id="display-area-1">Knowledge base item title</span></summary>
             <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
               <p id="display-area-5">Textarea content</p>
-              <h2 class="heading-small" style="margin-bottom: 20px;">Related links</h2>
-              <ol>
-                <li><a href="#" id="display-area-2">Link 1</a></li>
-                <li><a href="#" id="display-area-3">Link 2</a></li>
-                <li><a href="#" id="display-area-4">Link 3</a></li>
-              </ol>
+              <p><a href="#">For more information visit the NHS website</a></p>
             </div>
           </details>
+
           <div class="form-group">
-            <a href="/lsf-web/v2/admin-view/knowledge-base" class="button" id="submit-button" role="button">Save</a>  
+            <h2  class="heading-medium mt-0">Do you want to enable this knowledge item?</h2>
+          </div>
+
+          <div class="form-group">
+            <div class="multiple-choice">
+              <input type="radio" id="enabled" name="enabled" value="true">
+              <label for="enabled" class="form-label">Yes</label>
+            </div>
+            <div class="multiple-choice">
+              <input type="radio" id="enabled" name="enabled" value="true">
+              <label for="enabled" class="form-label">No</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <a href="/lsf-web/v2/admin-view/knowledge-base" class="button" id="submit-button" role="button">Save</a>
           </div>
 
           <div class="form-group">
@@ -137,7 +148,7 @@ span.summary {
     -webkit-padding-start: 24px;
 }
 /* firefox styles */
-@-moz-document url-prefix() { 
+@-moz-document url-prefix() {
     summary {
         display:inline-block !important;
         padding-left: 24px;
@@ -148,7 +159,7 @@ span.summary {
     }
   }
 /* Safari margin fix */
-@media not all and (min-resolution:.001dpcm) { 
+@media not all and (min-resolution:.001dpcm) {
     @supports (-webkit-appearance:none) {
         span.summary {
             display: inline-block;
@@ -180,6 +191,6 @@ p#display-area-5 {
       // displayAreas[i].textContent = 'No data entered.';
     }
   }
-  
+
 </script>
 </html>

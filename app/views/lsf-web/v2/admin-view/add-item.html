@@ -72,31 +72,32 @@
         <div class="column-two-thirds">
           <form action="/lsf-web/v2/admin-view/preview-item" method="POST">
             <h1 class="heading-large mt-0">Add knowledge item</h1>
-  
+
             <div class="form-group">
-              <label class="form-label-bold" for="title">Title</label> 
-              <input class="form-control" type="text" maxlength="100" id="title" name="title" value=""> 
+              <label class="form-label-bold" for="title">Title</label>
+              <input class="form-control" type="text" maxlength="100" id="title" name="title" value="">
             </div>
-  
+
             <div class="form-group">
-              <label for="textContent" class="form-label-bold" id="content-label">Content (optional)</label>
-            
+              <label for="textContent" class="form-label-bold" id="content-label">Content</label>
               <textarea style="width: 100%" class="form-control" rows="8" id="textContent" maxlength="1000" aria-labelledby="content-label" name="content"></textarea>
               <div id="charactersRemaining">1000 characters remaining</div>
             </div>
-          
+
             <div id="linkContainer">
               <div class="form-group">
-                <label class="form-label-bold" for="link1">Link 1 (optional)</label> 
-                <input class="form-control" type="text" id="link1" name="title" value=""> 
+                <label class="form-label-bold" for="link1">Hyperlink (optional)</label>
+                <div class="nhsuk-hint" id="link1-hint">
+                  For example, https://nhs.uk
+                </div>
+                <input class="form-control" style="width: 100%;" type="text" id="link1" name="title" value="">
               </div>
               <div class="form-group">
-                <label class="form-label-bold" for="link2">Link 2 (optional)</label> 
-                <input class="form-control" type="text" id="link2" name="title" value=""> 
-              </div>
-              <div class="form-group">
-                <label class="form-label-bold" for="link3">Link 3 (optional)</label> 
-                <input class="form-control" type="text" id="link3" name="title" value=""> 
+                <label class="form-label-bold" for="link1-text">Hyperlink display text (optional)</label>
+                <div class="nhsuk-hint" id="link1-text-hint">
+                  For example, Find out more information on the NHS UK website
+                </div>
+                <input class="form-control" style="width: 100%;" type="text" id="link1-text" name="title" value="">
               </div>
             </div>
 
@@ -135,23 +136,17 @@
                 counter++;
               });
             </script> -->
-          
-            <div class="form-group">
-              <div class="multiple-choice">
-                <input type="checkbox" id="enabled" name="enabled" value="true">
-                <label for="enabled" class="form-label">Enabled</label> 
-              </div>
-            </div>
-  
+
+
             <div class="form-group">
               <button class="button" id="submit-button" type="submit" value="Save" name="Save" role="button">Preview</button>
-              
+
             </div>
 
             <div class="form-group">
               <a href="/lsf-web/v2/admin-view/knowledge-base">Cancel</a>
             </div>
-    
+
           </form>
         </div>
       </div>
@@ -171,7 +166,7 @@
     countCharacters();
   });
 
-  //Function which counts characters remaining for note comments textarea                                               
+  //Function which counts characters remaining for note comments textarea
   function countCharacters() {
     var textEntered, countRemaining, counter;
     textEntered = document.getElementById('content').value;
