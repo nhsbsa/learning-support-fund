@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+            <div class="nhsuk-card__content">
+                <h1 class="nhsuk-card__heading nhsuk-heading-l" style="text-align: center; color: white;">
+                    <span class="nhsuk-card__heading nhsuk-u-margin-bottom-0" style="text-align: center; color: white; font-weight: 400; font-size: 24px;">SSRN0000065 - Joe Blogs</span><br>
+                    You have now completed your Training Grant application
+                </h1>
+            </div>
+        </div>
+
+        <h2 class="nhsuk-heading-l">Apply for additional support</h2>
+        <h3 class="nhsuk-heading-m">Parental Support</h3>
+        <p>Parental Support is available to students who have parental responsibility for a child. Please ensure you have read the <a href="#">NHS Learning Support Fund guide</a> relating to Parental Support bfore completing this section.</p>
+
+        <p><a href="#">Apply for Parental Support</a></p>
+
+        <form action="v5/APPLY-training-grant-submitted" method="POST">
+            <button class="nhsuk-button" type="submit">Return to academic year details</button>
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

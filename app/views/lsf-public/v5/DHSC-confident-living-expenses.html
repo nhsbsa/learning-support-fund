@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+How confident are you about being able to cover living expenses in the next year?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+
+        <form action="v5/DHSC-confident-living-expenses" method="POST">
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Department of
+                                Health and SocialCare questionnaire</span>How confident are you about being able to
+                            cover living expenses in the next year?</h1>
+                    </legend>
+
+                    <p>Using a scale where 1 is not confident at all and 5 is very confident</p>
+
+                    <div class="nhsuk-radios nhsuk-radios--inline">
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="confident-1" name="confident-living-cost"
+                                type="radio" value="yes">
+                            <label class="nhsuk-label nhsuk-radios__label" for="confident-1">
+                                1
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="confident-2" name="confident-living-cost"
+                                type="radio" value="no">
+                            <label class="nhsuk-label nhsuk-radios__label" for="confident-2">
+                                2
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="confident-3" name="confident-living-cost"
+                                type="radio" value="yes">
+                            <label class="nhsuk-label nhsuk-radios__label" for="confident-3">
+                                3
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="confident-4" name="confident-living-cost"
+                                type="radio" value="no">
+                            <label class="nhsuk-label nhsuk-radios__label" for="confident-4">
+                                4
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="confident-5" name="confident-living-cost"
+                                type="radio" value="no">
+                            <label class="nhsuk-label nhsuk-radios__label" for="confident-5">
+                                5
+                            </label>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+            </div>
+
+            <button class="nhsuk-button" type="submit">Next</button><br>
+            <a href="academic-year-details">Cancel</a>
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

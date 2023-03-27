@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What is your term-time address?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v5/TDAE-term-time-address" method="POST">
+
+
+			<fieldset class="nhsuk-fieldset">
+				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+					<h1 class="nhsuk-fieldset__heading">
+						What is your term-time address?
+					</h1>
+				</legend>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="address-line-1">
+						Building and street <span class="nhsuk-u-visually-hidden">line 1 of 2</span>
+					</label>
+					<input class="nhsuk-input" id="address-line-1" name="address-line-1" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="address-line-2">
+						<span class="nhsuk-u-visually-hidden">Building and street line 2 of 2</span>
+					</label>
+					<input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="address-town">
+						Town or city
+					</label>
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town"
+						type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="address-county">
+						County
+					</label>
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-county" name="address-county"
+						type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="address-postcode">
+						Postcode
+					</label>
+					<input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode"
+						type="text">
+				</div>
+
+			</fieldset>
+
+			<button class="nhsuk-button" type="submit">Next</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}
