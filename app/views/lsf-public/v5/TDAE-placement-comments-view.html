@@ -7,7 +7,7 @@ Additional costs comments for your placement journey
 {% block content %}
   <div class="nhsuk-grid-row">
 
-    <div class="nhsuk-grid-column-two-thirds"> 
+    <div class="nhsuk-grid-column-two-thirds">
       {{ backLink({
         "href": "javascript:history.go(-1)",
         "text": "Go back"
@@ -15,30 +15,30 @@ Additional costs comments for your placement journey
 
     <!-- <form action="v5/TDAE-" method="POST"> -->
 
-        <h1 class="nhsuk-heading-xl">Additional costs comments for your placement journey</h1>
-        <dl class="nhsuk-summary-list">
+    <h1 class="nhsuk-heading-xl">Additional costs comments for your placement journey</h1>
+    <dl class="nhsuk-summary-list">
 
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Comments
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {{ data['placement-related-comments'] }}
-              </dd>
-              <dd class="nhsuk-summary-list__actions">
-      
-                <a href="TDAE-placement-comments">
-                  Change<span class="nhsuk-u-visually-hidden"> comments</span>
-                </a>
-      
-              </dd>
-      
-            </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Comments
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['placement-additional-costs-comment'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
 
-        </dl>
+            <a href="TDAE-placement-additional-comments">
+              Change<span class="nhsuk-u-visually-hidden"> comments</span>
+            </a>
 
-        <a class="nhsuk-button" href="TDAE-placement-journey-cya">Continue</a><br>
-        <a href="TDAE-claims-list">Cancel</a>
+          </dd>
+
+        </div>
+
+    </dl>
+
+    <a class="nhsuk-button" href="TDAE-placement-journey-cya">Return to check your answers</a><br>
+    <a href="TDAE-claims-list">Cancel</a>
 
     <!-- </form> -->
 

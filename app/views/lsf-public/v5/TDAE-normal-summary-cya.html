@@ -11,135 +11,150 @@ Check your answers
 
 		<!-- <form action="" method="POST"> -->
 
-            <h1 class="nhsuk-heading-xl">Check your answers</h1>
-            
-            <dl class="nhsuk-summary-list">
+		<h1 class="nhsuk-heading-xl">Check your answers</h1>
 
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Mode of transport
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  {{ data['mode-of-transport'] }}
-                </dd>
-                {% if data['submit-claim'] != 'completed' %}
-                <dd class="nhsuk-summary-list__actions">
-            
-                  <a href="TDAE-normal-transport">
-                    Change<span class="nhsuk-u-visually-hidden"> mode of transport</span>
-                  </a>
-            
-                </dd>
-                {% endif %}
-              </div>
+		<dl class="nhsuk-summary-list">
 
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Term time address
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    123 Building stree 1,<br>
-                    Building street 2,<br>
-                    Town,<br>
-                    County,<br>
-                    NE33 3AB
-                  </dd>
-                  {% if data['submit-claim'] != 'completed' %}
-                  <dd class="nhsuk-summary-list__actions">
-              
-                    <a href="TDAE-term-time-address">
-                      Change<span class="nhsuk-u-visually-hidden"> term time address</span>
-                    </a>
-              
-                  </dd>
-              {% endif %}
-                </div>
-              
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Normal place of study
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    543 Building stree 1,<br>
-                    Building street 2,<br>
-                    City,<br>
-                    County,<br>
-                    NE33 3BC
-                  </dd>
-                  {% if data['submit-claim'] != 'completed' %}
-                  <dd class="nhsuk-summary-list__actions">
-              
-                    <a href="TDAE-normal-place-study">
-                      Change<span class="nhsuk-u-visually-hidden"> normal place of study</span>
-                    </a>
-              
-                  </dd>
-              {% endif %}
-                </div>
-              
-                {% if data['mode-of-transport'] === 'drive' %}
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Normal return mileage
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    15.5
-                  </dd>
-                  {% if data['submit-claim'] != 'completed' %}
-                    <dd class="nhsuk-summary-list__actions">
-                
-                      <a href="TDAE-normal-return-mileage">
-                        Change<span class="nhsuk-u-visually-hidden"> normal return mileage</span>
-                      </a>
-                
-                    </dd>
-                  {% endif %}
-                </div>
-                {% endif %}
-              
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Daily additional costs
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    £1.00
-                  </dd>
-                  {% if data['submit-claim'] != 'completed' %}
-                  <dd class="nhsuk-summary-list__actions">
-              
-                    <a href="TDAE-additional-costs">
-                      Change<span class="nhsuk-u-visually-hidden"> additional costs total</span>
-                    </a>
-              
-                  </dd>
-              {% endif %}
-                </div>
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Mode of transport
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{{ data['mode-of-transport'] }}
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
 
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Normal additional costs comments
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Provided
-                  </dd>
-                  {% if data['submit-claim'] != 'completed' %}
-                  <dd class="nhsuk-summary-list__actions">
-              
-                    <a href="TDAE-normal-comments-view">
-                      View<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
-                    </a>
-              
-                  </dd>
-              {% endif %}
-                </div>
-              
-              </dl>
-              {% if data['submit-claim'] != 'completed' %}
-                <form action="v5/TDAE-normal-summary-cya" method="POST">
-                  <button class="nhsuk-button" type="submit">Save and continue</button><br>
-                  <a href="TDAE-start-claim">Cancel</a>
-                </form>
-              {% endif %}
+					<a href="TDAE-normal-transport">
+						Change<span class="nhsuk-u-visually-hidden"> mode of transport</span>
+					</a>
+
+				</dd>
+				{% endif %}
+			</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Term time address
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						123 Building stree 1,<br>
+						Building street 2,<br>
+						Town,<br>
+						County,<br>
+						NE33 3AB
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="TDAE-term-time-address">
+							Change<span class="nhsuk-u-visually-hidden"> term time address</span>
+						</a>
+
+					</dd>
+			{% endif %}
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Normal place of study
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						543 Building stree 1,<br>
+						Building street 2,<br>
+						City,<br>
+						County,<br>
+						NE33 3BC
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="TDAE-normal-place-study">
+							Change<span class="nhsuk-u-visually-hidden"> normal place of study</span>
+						</a>
+
+					</dd>
+			{% endif %}
+				</div>
+
+				{% if data['mode-of-transport'] === 'drive' %}
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Normal return mileage
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						15.5
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+
+							<a href="TDAE-normal-return-mileage">
+								Change<span class="nhsuk-u-visually-hidden"> normal return mileage</span>
+							</a>
+
+						</dd>
+					{% endif %}
+				</div>
+				{% endif %}
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Daily additional costs
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['normal-often-additional-costs']  === 'yes' %}
+						 £1.00
+						{% else %}
+							No additional costs
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="TDAE-normal-additional-costs-often">
+							Change<span class="nhsuk-u-visually-hidden"> additional costs total</span>
+						</a>
+
+					</dd>
+			{% endif %}
+				</div>
+				{% if data['normal-often-additional-costs']  === 'yes' %}
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Normal additional costs comments
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['related-comments']  === 'yes' %}
+						 Provided
+						{% else %}
+							Not provided
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						{% if data['related-comments']  === 'yes' %}
+						<a href="TDAE-normal-comments-view">
+							View<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
+						</a>
+						{% else %}
+						<a href="TDAE-additional-costs-comments">
+							Change<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
+						</a>
+						{% endif %}
+
+
+					</dd>
+			{% endif %}
+				</div>
+				{% endif %}
+
+			</dl>
+			{% if data['submit-claim'] != 'completed' %}
+				<form action="v4/TDAE-normal-summary-cya" method="POST">
+					<button class="nhsuk-button" type="submit">Save and continue</button><br>
+					<a href="TDAE-start-claim">Cancel</a>
+				</form>
+			{% endif %}
 
 		<!-- </form> -->
 

@@ -12,7 +12,7 @@ Check your answers
 		<!-- <form action="" method="POST"> -->
 
             <h1 class="nhsuk-heading-xl">Check your answers</h1>
-            
+
             <dl class="nhsuk-summary-list">
 
               <div class="nhsuk-summary-list__row">
@@ -24,11 +24,11 @@ Check your answers
                 </dd>
                 {% if data['submit-claim'] != 'completed' %}
                 <dd class="nhsuk-summary-list__actions">
-            
+
                   <a href="TDAE-normal-transport">
                     Change<span class="nhsuk-u-visually-hidden"> mode of transport</span>
                   </a>
-            
+
                 </dd>
                 {% endif %}
               </div>
@@ -46,15 +46,15 @@ Check your answers
                   </dd>
                   {% if data['submit-claim'] != 'completed' %}
                   <dd class="nhsuk-summary-list__actions">
-              
+
                     <a href="TDAE-term-time-address">
                       Change<span class="nhsuk-u-visually-hidden"> term time address</span>
                     </a>
-              
+
                   </dd>
               {% endif %}
                 </div>
-              
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Normal place of study
@@ -68,15 +68,15 @@ Check your answers
                   </dd>
                   {% if data['submit-claim'] != 'completed' %}
                   <dd class="nhsuk-summary-list__actions">
-              
+
                     <a href="TDAE-normal-place-study">
                       Change<span class="nhsuk-u-visually-hidden"> normal place of study</span>
                     </a>
-              
+
                   </dd>
               {% endif %}
                 </div>
-              
+
                 {% if data['mode-of-transport'] === 'drive' %}
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
@@ -87,52 +87,67 @@ Check your answers
                   </dd>
                   {% if data['submit-claim'] != 'completed' %}
                     <dd class="nhsuk-summary-list__actions">
-                
+
                       <a href="TDAE-normal-return-mileage">
                         Change<span class="nhsuk-u-visually-hidden"> normal return mileage</span>
                       </a>
-                
+
                     </dd>
                   {% endif %}
                 </div>
                 {% endif %}
-              
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Daily additional costs
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    £1.00
+										{% if data['normal-often-additional-costs']  === 'yes' %}
+	                   £1.00
+	                  {% else %}
+	                    No additional costs
+	                  {% endif %}
                   </dd>
                   {% if data['submit-claim'] != 'completed' %}
                   <dd class="nhsuk-summary-list__actions">
-              
-                    <a href="TDAE-additional-costs">
+
+                    <a href="TDAE-normal-additional-costs-often">
                       Change<span class="nhsuk-u-visually-hidden"> additional costs total</span>
                     </a>
-              
+
                   </dd>
               {% endif %}
                 </div>
-
+								{% if data['normal-often-additional-costs']  === 'yes' %}
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Normal additional costs comments
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    Provided
+										{% if data['related-comments']  === 'yes' %}
+	                   Provided
+	                  {% else %}
+	                    Not provided
+	                  {% endif %}
                   </dd>
                   {% if data['submit-claim'] != 'completed' %}
                   <dd class="nhsuk-summary-list__actions">
-              
-                    <a href="TDAE-normal-comments-view">
-                      View<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
-                    </a>
-              
+										{% if data['related-comments']  === 'yes' %}
+										<a href="TDAE-normal-comments-view">
+											View<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
+										</a>
+										{% else %}
+										<a href="TDAE-additional-costs-comments">
+											Change<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
+										</a>
+										{% endif %}
+
+
                   </dd>
               {% endif %}
                 </div>
-              
+								{% endif %}
+
               </dl>
               {% if data['submit-claim'] != 'completed' %}
                 <form action="v4/TDAE-normal-summary-cya" method="POST">

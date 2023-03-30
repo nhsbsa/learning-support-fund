@@ -29,7 +29,7 @@ router.post('/v4/final-year', (req, res) => {
 router.post('/v4/student-declaration', (req, res) => {
 
     const studentDeclaration = req.session.data['student-declaration']
-    
+
     req.session.data['student-approved'] = 'approved'
 
     if (studentDeclaration) {
@@ -37,7 +37,7 @@ router.post('/v4/student-declaration', (req, res) => {
     } else {
         res.redirect('/lsf-public/v4/student-declaration')
     }
-    
+
 })
 
 // ********************************
@@ -255,23 +255,23 @@ router.post('/v4/APPLY-upload-sl-award-letter', (req, res) => {
     req.session.data['evidence-submitted'] = 'Submitted'
 
     res.redirect('/lsf-public/v4/APPLY-submit-your-evidence')
-    
+
 })
 
 // Evidence required
 router.post('/v4/APPLY-submit-your-evidence', (req, res) => {
-  
+
     res.redirect('/lsf-public/v4/APPLY-training-grant-submitted')
-    
+
 })
 
 // You have now completed your Training Grant application
 router.post('/v4/APPLY-training-grant-submitted', (req, res) => {
-  
+
     req.session.data['training-grant-submitted'] = 'Submitted'
 
     res.redirect('/lsf-public/v4/academic-year-details')
-    
+
 })
 
 
@@ -282,7 +282,7 @@ router.post('/v4/APPLY-training-grant-submitted', (req, res) => {
 
 // Do you receive travel support from Disabled Students Allowance?
 router.post('/v4/TDAE-dsa-help', (req, res) => {
-  
+
     const dsaSupport = req.session.data['dsa-support']
 
     if (dsaSupport === 'yes') {
@@ -291,7 +291,7 @@ router.post('/v4/TDAE-dsa-help', (req, res) => {
     } else {
         res.redirect('/lsf-public/v4/TDAE-placement-journey-same-days')
     }
-    
+
 })
 
 router.post('/v4/TDAE-placement-journey-same-days', (req, res) => {
@@ -341,7 +341,7 @@ router.post('/v4/TDAE-normal-transport', (req, res) => {
     const modeOfTransport = req.session.data['mode-of-transport']
 
     res.redirect('/lsf-public/v4/TDAE-same-term-time-address')
- 
+
 })
 
 router.post('/v4/TDAE-same-term-time-address', (req, res) => {
@@ -365,10 +365,10 @@ router.post('/v4/TDAE-term-time-address', (req, res) => {
 router.post('/v4/TDAE-normal-place-study', (req, res) => {
 
     const modeOfTransport = req.session.data['mode-of-transport']
-    
+
     if (modeOfTransport === 'walk' || modeOfTransport === 'public' || modeOfTransport === 'cycle') {
         res.redirect('/lsf-public/v4/TDAE-normal-additional-costs-often')
-    } else {        
+    } else {
         res.redirect('/lsf-public/v4/TDAE-normal-return-mileage')
     }
 
@@ -407,7 +407,7 @@ router.post('/v4/TDAE-additional-costs-comments', (req, res) => {
     } else {
         res.redirect('/lsf-public/v4/TDAE-normal-summary-cya')
     }
-    
+
 
 })
 
@@ -505,7 +505,7 @@ router.post('/v4/TDAE-end-claim', (req, res) => {
     // 2 weeks: 28-11-2022 to 09-12-2022
 
     if (startDate === '05-12-2022' && endDate === '09-12-2022') {
-        res.redirect('/lsf-public/v4/TDAE-days-claiming')
+        res.redirect('/lsf-public/v4/TDAE-days-claiming?weeks=1')
     } else if (startDate === '28-11-2022' && endDate === '09-12-2022'){
         req.session.data['TDAE-multiple-weeks'] = 'yes'
         res.redirect('/lsf-public/v4/TDAE-claiming-same-days')
@@ -583,7 +583,7 @@ router.post('/v4/TDAE-evidence-mini-cya', (req, res) => {
         } else {
             res.redirect('/lsf-public/v4/TDAE-claim-date-evidence-cya')
         }
-        
+
     }
 
 })
@@ -619,7 +619,7 @@ router.post('/v4/TDAE-placement-journey-evidence', (req, res) => {
 router.post('/v4/TDAE-add-evidence-week', (req, res) => {
 
     const addEvidenceWeek = req.session.data['more-evidence']
-    
+
     req.session.data['more-evidence'] = 'added'
     res.redirect('/lsf-public/v4/TDAE-provide-journey-evidence-2')
 
@@ -705,7 +705,3 @@ router.post('/v4/TDAE-evidence-section-cya', (req, res) => {
 
 
 module.exports = router;
-
-
-
-

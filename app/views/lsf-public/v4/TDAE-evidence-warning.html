@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Evidence you have uploaded
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+      <form action="TDAE-claim-date-evidence-cya">
+
+        <h1 class="nhsuk-heading-l">Are you sure you want to continue?</h1>
+
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>You have not provided evidence for the days:</p>
+          <ul>
+            <li>Thursday</li>
+            <li>Friday</li>
+          </ul>
+          <p>Your claim may not be successful if you cannot provide evidence for every days additional costs.</p>
+        </div>
+
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+
+              <div class="nhsuk-radios nhsuk-radios--inline">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="more-evidence-yes" name="more-evidence" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="more-evidence-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="more-evidence-no" name="more-evidence" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="more-evidence-no">
+                    No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-start-claim">Cancel</a>
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

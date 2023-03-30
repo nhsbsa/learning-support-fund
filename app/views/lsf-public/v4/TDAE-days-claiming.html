@@ -65,7 +65,7 @@ What days are you claiming for?
                           Friday
                         </label>
                       </div>
-
+											{% if data['weeks'] != "1" %}
                       <div class="nhsuk-checkboxes__item">
                         <input class="nhsuk-checkboxes__input" id="claim-saturday" name="claim-day" type="checkbox" value="saturday">
                         <label class="nhsuk-label nhsuk-checkboxes__label" for="claim-saturday">
@@ -79,7 +79,7 @@ What days are you claiming for?
                           Sunday
                         </label>
                       </div>
-
+											{% endif %}
                     </div>
                   </fieldset>
 

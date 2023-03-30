@@ -7,7 +7,7 @@
 {% block content %}
   <div class="nhsuk-grid-row">
 
-    <div class="nhsuk-grid-column-two-thirds"> 
+    <div class="nhsuk-grid-column-two-thirds">
       {{ backLink({
         "href": "javascript:history.go(-1)",
         "text": "Go back"
@@ -23,7 +23,19 @@
             <div class="nhsuk-hint" id="example-hint">
               Include any comments related to your additional costs, for example costs which are spread over a week or month.
             </div>
-            <textarea class="nhsuk-textarea" id="example" name="normal-additional-comments" rows="5" aria-describedby="example-hint"></textarea>
+            <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
+              <div class="nhsuk-form-group ">
+                <textarea class="text-editor-2 nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-500"></textarea>
+                <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining" >
+                    You have <span class="nhsuk-character-count-remaining"></span> characters remaining
+                </p>
+                <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-toomany govuk-error-message" >
+                  You have <span class="nhsuk-character-count-toomany"></span> characters too many
+              </p>
+              </div>
+            </div>
+
+            <style>.trumbowyg-button-pane {display: none;}</style>
           </div>
 
         <button class="nhsuk-button" type="submit">Next</button><br>

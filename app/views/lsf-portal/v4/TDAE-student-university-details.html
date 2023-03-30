@@ -63,6 +63,19 @@ Student and University details
         </div>
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
+            Type of travel
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['breakdown'] == "walk" %}
+            Walk
+            {% else %}
+            Car
+            {% endif %}
+          </dd>
+        </div>
+        {% if data['breakdown'] != "walk" %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
             Daily return mileage
           </dt>
           <dd class="nhsuk-summary-list__value">
@@ -85,20 +98,25 @@ Student and University details
               £1.00
             </dd>
           </div>
+          {% endif %}
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
               Total daily travel costs
             </dt>
             <dd class="nhsuk-summary-list__value">
+              {% if data['breakdown'] == "walk" %}
+              £0.00
+              {% else %}
               £5.34
+              {% endif %}
             </dd>
           </div>
       </dl>
-
+      {% if data['breakdown'] != "walk" %}
       <h3 class="nhsuk-heading-xs">Daily additional costs comments</h3>
 
       <p>I pay a pound to park at university parking.</p>
-
+      {% endif %}
       {% if data['read-only'] != 'true' %}
       <a class="nhsuk-button" href="TDAE-checked-university-details">Continue</a>
       {% endif %}
