@@ -1,0 +1,163 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<!-- <form action="" method="POST"> -->
+
+		<h1 class="nhsuk-heading-xl">Check your answers</h1>
+
+		<dl class="nhsuk-summary-list">
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Start date
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					15 November 2022
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+
+					<a href="TDAE-accommodation-start-date">
+						Change<span class="nhsuk-u-visually-hidden"> start date</span>
+					</a>
+
+				</dd>
+				{% endif %}
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					End date
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					19 November 2022
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+
+					<a href="TDAE-accommodation-end-date">
+						Change<span class="nhsuk-u-visually-hidden"> end date</span>
+					</a>
+
+				</dd>
+				{% endif %}
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Accommodation address
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					123 Building stree 1,<br>
+					Building street 2,<br>
+					Town,<br>
+					County,<br>
+					NE33 3AB
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+
+					<a href="TDAE-accommodation-address">
+						Change<span class="nhsuk-u-visually-hidden"> accommodation address</span>
+					</a>
+
+				</dd>
+				{% endif %}
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Accommodation type
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					Commercial
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+					<a href="TDAE-accommodation-type">
+						Change<span class="nhsuk-u-visually-hidden"> accommodation type</span>
+					</a>
+				</dd>
+				{% endif %}
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Cost per night
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					£60.00
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+					<a href="TDAE-accommodation-cost">
+						Change<span class="nhsuk-u-visually-hidden"> cost per night</span>
+					</a>
+				</dd>
+				{% endif %}
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Uploaded evidence
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					hotel-receipt.png
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+					<a href="TDAE-accommodation-evidence">
+						Change<span class="nhsuk-u-visually-hidden"> uploaded evidence</span>
+					</a>
+				</dd>
+				{% endif %}
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Comment
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{% if data['accommodation-comment']  === 'yes' %}
+					 	Provided
+					{% else %}
+						Not provided
+					{% endif %}
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+					{% if data['accommodation-comment']  === 'yes' %}
+					<a href="TDAE-accommodation-comments-view">
+						View<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
+					</a>
+					{% else %}
+					<a href="TDAE-accommodation-comments">
+						Change<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
+					</a>
+					{% endif %}
+					</dd>
+					{% endif %}
+			</div>
+
+			</dl>
+			{% if data['submit-claim'] != 'completed' %}
+				<form action="v5/TDAE-normal-summary-cya" method="POST">
+					<button class="nhsuk-button" type="submit">Save and continue</button><br>
+					<a href="TDAE-start-claim">Cancel</a>
+				</form>
+			{% endif %}
+
+		<!-- </form> -->
+
+	</div>
+
+</div>
+{% endblock %}

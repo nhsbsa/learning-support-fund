@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-What is your placement address?
+What was your accommodation address?
 {% endblock %}
 
 {% block content %}
@@ -14,13 +14,13 @@ What is your placement address?
 		"text": "Go back"
 		}) }}
 
-		<form action="v5/TDAE-placement-address" method="POST">
+		<form action="TDAE-accommodation-type" method="POST">
 
 
 			<fieldset class="nhsuk-fieldset">
 				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
 					<h1 class="nhsuk-fieldset__heading">
-						What is your placement address?
+						What was the address of your placement accommodation?
 					</h1>
 				</legend>
 
@@ -70,7 +70,7 @@ What is your placement address?
 
 			</fieldset>
 
-			<button class="nhsuk-button" type="submit">Save and continue</button><br>
+			<button class="nhsuk-button" type="submit">Continue</button><br>
 			<a href="TDAE-start-claim">Cancel</a>
 
 		</form>

@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Is your term time address the same?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="TDAE-accommodation-cost" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  What type of accommodation did you stay in?
+                </h1>
+              </legend>
+
+              <details class="nhsuk-details">
+                <summary class="nhsuk-details__summary">
+                  <span class="nhsuk-details__summary-text">
+                    How to know what type your accommodation was
+                  </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                  <p>Commercial Accommodation - provided subject to a commercial rental agreement, which, whether a tenancy or a licence, imposes conditions upon the parties to the agreement, including payment, that are enforceable at law.</p>
+                  <p>Non Commercial Accommodation - This is generally if the student stay with friends or relatives and/or in a room in a private house, where there is no formal tenancy or contract in place, without a formal rental payment. It also includes accommodation advertised on on-line platforms such as Air B n B, which is then booked through informal, off-line arrangements.</p>
+                </div>
+              </details>
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="same-term-address-yes" name="same-term-address" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="same-term-address-yes">
+                    Commercial
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="same-term-address-no" name="same-term-address" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="same-term-address-no">
+                    Non-commercial
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}
