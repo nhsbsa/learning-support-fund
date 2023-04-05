@@ -32,6 +32,12 @@ Evidence you have uploaded
           <p>This is evidence between 5 December 2022 and 9 December 2022</p>
         {% endif %}
 
+        {% if data['evidence'] === 'removed' %}
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>You have removed all evidence and will need to add new evidence.</p>
+          </div>
+        {% else %}
         <table class="nhsuk-table">
             <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
             <thead role="rowgroup" class="nhsuk-table__head">
@@ -62,12 +68,16 @@ Evidence you have uploaded
                     snapshot-032-07-03-2023.jpg
                 </td>
                 <td class="nhsuk-table__cell ">
-                    <a href="#">Remove</a>
+                    <a href="TDAE-evidence-mini-cya?evidence=removed">Remove</a>
                 </td>
               </tr>
             </tbody>
           </table>
+          {% endif %}
 
+          {% if data['evidence'] === 'removed' %}
+            <p style="margin-bottom:0px;"><a href="TDAE-provide-journey-evidence-2?evidence=added" class="nhsuk-button">Add evidence</a></p>
+          {% else %}
           <div class="nhsuk-form-group">
 
             <fieldset class="nhsuk-fieldset">
@@ -99,6 +109,7 @@ Evidence you have uploaded
           </div>
 
         <button class="nhsuk-button" type="submit">Continue</button><br>
+        {% endif %}
         <a href="TDAE-start-claim">Cancel</a>
 
     </form>
