@@ -9,7 +9,16 @@ Your active claims
 
     <div class="nhsuk-grid-column-full">
 
+      {{ backLink({
+  		"href": "academic-year-details#tab-two",
+  		"text": "Go back to academic year details"
+  		}) }}
+
         <h1 class="nhsuk-heading-l">Your active claims</h1>
+
+        {% if data['active'] == 'none' %}
+          <p>Claims that you have in progress or being processed by your Univeristy or NHSBSA will appear here.</p>
+        {% else %}
         <p>This is a list of claims that you have started, need actioning or been submitted.</p>
 
         <!-- <details class="nhsuk-details">
@@ -28,7 +37,7 @@ Your active claims
             </div>
           </details> -->
 
-        
+
         <div class="nhsuk-form-group">
             <table role="table" class="nhsuk-table-responsive">
                 <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Travel expense claims list</caption>
@@ -166,6 +175,7 @@ Your active claims
                 </tr>
                 </tbody>
             </table>
+            {% endif %}
         </div>
 
     </div>

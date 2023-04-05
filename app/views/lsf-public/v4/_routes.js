@@ -379,7 +379,7 @@ router.post('/v4/TDAE-normal-place-study', (req, res) => {
 
     const modeOfTransport = req.session.data['mode-of-transport']
 
-    if (modeOfTransport === 'walk' || modeOfTransport === 'public' || modeOfTransport === 'cycle') {
+    if (modeOfTransport === 'walk' || modeOfTransport === 'public') {
         res.redirect('/lsf-public/v4/TDAE-normal-additional-costs-often')
     } else {
         res.redirect('/lsf-public/v4/TDAE-normal-return-mileage')
