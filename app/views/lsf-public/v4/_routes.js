@@ -10,6 +10,19 @@ const router = express.Router();
 
 // ********************************
 
+// Wrong costs
+router.post('/v4/wrong-costs', (req, res) => {
+
+    const change = req.session.data['costs-correct']
+
+    if (change === 'yes') {
+        res.redirect('/lsf-public/v4/TDAE-task-list')
+    } else {
+        res.redirect('/lsf-public/v4/TDAE-returning-student/academic-year-details#tab-two')
+    }
+
+})
+
 // Is this your final year?
 router.post('/v4/final-year', (req, res) => {
 
