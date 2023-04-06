@@ -37,7 +37,7 @@ What is the return mileage to your normal place of study?
 				<div class="nhsuk-details__text">
 					<p>Ways you can check your mileage:</p>
 					<ul class="nhsuk-list nhsuk-list--bullet">
-						<li>reset the mileage trip on your car dashboard at the start of your journey to track the miles you do for a return journey</li>
+						{% if data['mode-of-transport'] == 'drive' %}<li>reset the mileage trip on your car dashboard at the start of your journey to track the miles you do for a return journey</li>{% endif %}
 						<li>enter your term-time address and placement address into Google maps and see the mileage results for that journey</li>
 					</ul>
 				</div>

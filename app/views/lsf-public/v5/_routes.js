@@ -10,6 +10,19 @@ const router = express.Router();
 
 // ********************************
 
+// Wrong costs
+router.post('/v5/wrong-costs', (req, res) => {
+
+    const change = req.session.data['costs-correct']
+
+    if (change === 'yes') {
+        res.redirect('/lsf-public/v5/TDAE-task-list')
+    } else {
+        res.redirect('/lsf-public/v5/TDAE-returning-student/academic-year-details#tab-two')
+    }
+
+})
+
 // Is this your final year?
 router.post('/V5/TDAE-accommodation-comment', (req, res) => {
 
@@ -393,7 +406,7 @@ router.post('/v5/TDAE-normal-place-study', (req, res) => {
 
     const modeOfTransport = req.session.data['mode-of-transport']
 
-    if (modeOfTransport === 'walk' || modeOfTransport === 'public' || modeOfTransport === 'cycle') {
+    if (modeOfTransport === 'walk' || modeOfTransport === 'public') {
         res.redirect('/lsf-public/v5/TDAE-normal-additional-costs-often')
     } else {
         res.redirect('/lsf-public/v5/TDAE-normal-return-mileage')

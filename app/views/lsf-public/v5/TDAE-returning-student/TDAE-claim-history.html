@@ -9,7 +9,16 @@ Your claims history
 
     <div class="nhsuk-grid-column-full">
 
+      {{ backLink({
+  		"href": "academic-year-details#tab-two",
+  		"text": "Go back to academic year details"
+  		}) }}
+
         <h1 class="nhsuk-heading-l">Your claims history</h1>
+
+        {% if data['claims'] == 'none' %}
+          <p>Claims that have been completed either with a payment sent or declined will appear here.</p>
+        {% else %}
         <p>This is a list of claims that have been processed by the NHSBSA.</p>
 
         <!-- <details class="nhsuk-details">
@@ -28,7 +37,7 @@ Your claims history
             </div>
           </details> -->
 
-        
+
         <div class="nhsuk-form-group">
             <table role="table" class="nhsuk-table-responsive">
                 <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Travel expense claims list</caption>
@@ -93,6 +102,7 @@ Your claims history
                     </tr>
                 </tbody>
             </table>
+            {% endif %}
         </div>
 
     </div>

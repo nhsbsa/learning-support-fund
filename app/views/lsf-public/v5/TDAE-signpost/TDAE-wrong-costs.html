@@ -1,0 +1,130 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Not eligible
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<form action="../v5/wrong-costs" method="post">
+
+		<div class="nhsuk-card" style="background: #4B6271; margin-top: 0;">
+			<div class="nhsuk-card__content">
+			  <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+				Not eligible
+			  </h1>
+			  <h2 class="nhsuk-card__heading nhsuk-u-font-weight-normal" style="text-align: center; color: white;">
+				Your placement journey costs are less than your university journey costs
+			  </h2>
+			</div>
+		</div>
+
+		<p>You can not claim reimbursement for any travel to placement if the placement journey costs less than your daily journey to university.</p>
+
+		<p>Check the details of both your journey costs:</p>
+
+		<table class="nhsuk-table">
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+          <th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+
+          </th>
+          <th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+              University journey
+          </th>
+          <th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+              Placement journey
+          </th>
+        </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell" style="font-size: 1rem;">
+              <b>Type of travel</b>
+          </td>
+          <td class="nhsuk-table__cell" style="font-size: 1rem;">
+
+              Car
+
+          </td>
+          <td class="nhsuk-table__cell " style="font-size: 1rem;">
+              Car
+          </td>
+        </tr>
+				<tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell" style="font-size: 1rem;">
+              <b>Daily return mileage</b>
+          </td>
+					<td class="nhsuk-table__cell " style="font-size: 1rem;">
+            30 miles
+          </td>
+          <td class="nhsuk-table__cell" style="font-size: 1rem;">
+						15.5 miles
+          </td>
+        </tr>
+				<tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell" style="font-size: 1rem;">
+              <b>Daily return mileage cost</b>
+          </td>
+					<td class="nhsuk-table__cell " style="font-size: 1rem;">
+              £8.40
+          </td>
+          <td class="nhsuk-table__cell" style="font-size: 1rem;">
+            £4.34
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+          <td class="nhsuk-table__cell" style="font-size: 1rem;">
+              <b>Daily additional costs</b>
+          </td>
+					<td class="nhsuk-table__cell " style="font-size: 1rem;">
+							£2.00
+					</td>
+          <td class="nhsuk-table__cell" style="font-size: 1rem;">
+            £1.00
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+          <td class="nhsuk-table__cell" style="font-size: 1rem;">
+              <b>Daily cost</b>
+          </td>
+					<td class="nhsuk-table__cell " style="font-size: 1rem;">
+							£10.40
+					</td>
+          <td class="nhsuk-table__cell" style="font-size: 1rem;">
+            £5.34
+          </td>
+        </tr>
+      </tbody>
+      </table>
+
+		<h2 class="nhsuk-heading-m">Are your journey costs correct?</h2>
+		<div class="nhsuk-form-group">
+			<div class="nhsuk-radios">
+		    <div class="nhsuk-radios__item">
+		      <input class="nhsuk-radios__input" id="costs-correct-yes" name="costs-correct" type="radio" value="yes">
+		      <label class="nhsuk-label nhsuk-radios__label" for="costs-correct-yes">
+		        Yes, I want to change my travel costs
+		      </label>
+		    </div>
+		    <div class="nhsuk-radios__item">
+		      <input class="nhsuk-radios__input" id="costs-correct-no" name="costs-correct" type="radio" value="no">
+		      <label class="nhsuk-label nhsuk-radios__label" for="costs-correct-no">
+		        No, I want to remove my claim
+		      </label>
+		    </div>
+		  </div>
+		</div>
+		<button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+		  Save and continue
+		</button>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}
