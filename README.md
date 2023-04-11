@@ -1,3 +1,17 @@
+# Student Services NHS Learning Support Fund
+
+NHS Learning Support Fund (LSF) provides financial support to (certain course) students including a training grant, parental support, Travel and Dual Accommodation expenses and financial hardship. Details on the service can be found on <a href="https://www.nhsbsa.nhs.uk/nhs-learning-support-fund-lsf">the NHSBSA website</a>.
+
+The digital service includes 3 systems for students, Higher Education Institutes's and NHSBSA staff.
+
+# Heroku prototype
+
+The following link is for a design prototype and should not be used for genuine LSF claims.
+
+The prototype can be accessed at: <a href="https://learning-support-fund.herokuapp.com/">learning-support-fund.herokuapp.com/</a>
+
+Username and password: NHSBSA
+
 # NHS.UK prototype kit
 
 Visit the <a href="http://nhsuk-prototype-kit.azurewebsites.net/docs">NHS.UK prototype kit site</a> to download the latest version and read the documentation.

@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    What is the reason to send the claim back to the student?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v5/TDAE-details-for-return" method="POST">
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="return-more-detail">
+              <h1 class="nhsuk-heading-l">Give feedback to {% if data['name'] %}
+              {{ data['name'] }}
+              {% else %}
+              Joe Bloggs
+              {% endif %} for
+              {% if data['return-student'] == 'Decline claim' %}
+              declining
+              {% else %}
+              returning
+              {% endif %}
+              the claim
+              </h1>
+            </label>
+            {% if data['return-student'] != 'Decline claim' %}
+            <div class="nhsuk-hint" id="return-more-detail-hint">
+              Describe to the student clearly what needs changing for them to re-submit their claim.
+            </div>
+            {% endif %}
+
+          </div>
+
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
+            <div class="nhsuk-form-group ">
+              <textarea id="return-more-detail" name="return-more-detail" class="text-editor-2 nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-500"></textarea>
+              <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining" >
+                  You have <span class="nhsuk-character-count-remaining"></span> characters remaining
+              </p>
+              <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-toomany govuk-error-message" >
+                You have <span class="nhsuk-character-count-toomany"></span> characters too many
+            </p>
+            </div>
+          </div>
+
+          <style>.trumbowyg-button-pane {display: none;}</style>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

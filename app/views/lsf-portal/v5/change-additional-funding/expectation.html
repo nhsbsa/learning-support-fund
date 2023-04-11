@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Change attendance status
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+        <form action="../v5/additionalfundingexpectation" method="POST">
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Joe Bloggs change request</span>Is the student expected to complete the academic year?</h1>
+
+        <div class="nhsuk-radios nhsuk-radios--inline">
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-inline-1" name="additionalfundingexpectation" type="radio" value="yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+              Yes
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-inline-2" name="additionalfundingexpectation" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+              No
+            </label>
+          </div>
+
+        </div>
+        <br>
+
+        <button class="nhsuk-button" type="submit">Continue</button>
+        </form>
+        <a href="../course-intake"><p class="nhsuk-body">Cancel change</p></a>
+    </div>
+</div>
+
+</div>
+{% endblock %}
