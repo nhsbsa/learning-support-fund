@@ -361,15 +361,15 @@ router.post('/v5/TDAE-travel-accommodation', (req, res) => {
         req.session.data['eligible-online'] = 'yes'
         req.session.data['claiming-travel'] = 'no'
         req.session.data['claiming-accommodation'] = 'yes'
-        res.redirect('/lsf-public/v5/TDAE-task-list')
+        res.redirect('/lsf-public/v5/TDAE-placement-address')
     } else if (claimingFor.includes('car') && !claimingFor.includes('accommodation')){
         req.session.data['claiming-travel'] = 'yes'
         req.session.data['claiming-accommodation'] = 'no'
-        res.redirect('/lsf-public/v5/TDAE-task-list')
+        res.redirect('/lsf-public/v5/TDAE-placement-address')
     } else if (claimingFor.includes('car', 'accommodation')) {
         req.session.data['claiming-travel'] = 'yes'
         req.session.data['claiming-accommodation'] = 'yes'
-        res.redirect('/lsf-public/v5/TDAE-task-list')
+        res.redirect('/lsf-public/v5/TDAE-placement-address')
     } else {
         res.redirect('/lsf-public/v5/TDAE-travel-accommodation')
     }
@@ -457,6 +457,13 @@ router.post('/v5/TDAE-comments', (req, res) => {
 
 })
 
+router.post('/v5/TDAE-accommodation-summary-cya', (req, res) => {
+
+    req.session.data['accommodation-details'] = "completed"
+    res.redirect('/lsf-public/v5/TDAE-task-list')
+
+})
+
 router.post('/v5/TDAE-normal-summary-cya', (req, res) => {
 
     req.session.data['university-details'] = "completed"
@@ -477,7 +484,7 @@ router.post('/v5/TDAE-placement-additional-costs-often', (req, res) => {
 
     if (oftenAdditionalCosts === 'no') {
         req.session.data['any-additional-costs'] = 'no'
-        res.redirect('/lsf-public/v5/TDAE-placement-address')
+        res.redirect('/lsf-public/v5/TDAE-eligibility-cya')
     } else {
         req.session.data['any-additional-costs'] = 'yes'
         res.redirect('/lsf-public/v5/TDAE-placement-additional-costs')
