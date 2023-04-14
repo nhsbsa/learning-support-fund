@@ -5,6 +5,7 @@
 // External dependencies
 const e = require('express');
 const express = require('express');
+const session = require('express-session');
 // const moment = require('moment');
 const router = express.Router();
 
@@ -457,7 +458,7 @@ router.post('/v5/TDAE-comments', (req, res) => {
 
 })
 
-router.post('/v5/TDAE-accommodation-summary-cya', (req, res) => {
+router.post('/v5/TDAE-accommodation-check', (req, res) => {
 
     req.session.data['accommodation-details'] = "completed"
     res.redirect('/lsf-public/v5/TDAE-task-list')
@@ -484,7 +485,7 @@ router.post('/v5/TDAE-placement-additional-costs-often', (req, res) => {
 
     if (oftenAdditionalCosts === 'no') {
         req.session.data['any-additional-costs'] = 'no'
-        res.redirect('/lsf-public/v5/TDAE-eligibility-cya')
+        res.redirect('/lsf-public/v5/TDAE-placement-journey-cya')
     } else {
         req.session.data['any-additional-costs'] = 'yes'
         res.redirect('/lsf-public/v5/TDAE-placement-additional-costs')
@@ -505,8 +506,8 @@ router.post('/v5/TDAE-placement-additional-comments', (req, res) => {
     if (placementAdditionalComments === 'yes') {
         res.redirect('/lsf-public/v5/TDAE-placement-comments')
     } else {
-        req.session.data['travel-details'] = 'completed'
-        res.redirect('/lsf-public/v5/TDAE-task-list')
+        // req.session.data['travel-details'] = 'completed'
+        res.redirect('/lsf-public/v5/TDAE-placement-journey-cya')
     }
 
 })
@@ -527,10 +528,12 @@ router.post('/v5/TDAE-placement-address', (req, res) => {
 
 router.post('/v5/TDAE-placement-journey-cya', (req, res) => {
 
+    console.log('testing')
+
     req.session.data['placement-details'] = 'completed'
     res.redirect('/lsf-public/v5/TDAE-task-list')
 
-})
+})  
 
 router.post('/v5/TDAE-start-claim', (req, res) => {
 
