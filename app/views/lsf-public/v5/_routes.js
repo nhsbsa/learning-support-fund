@@ -515,7 +515,7 @@ router.post('/v5/TDAE-placement-additional-comments', (req, res) => {
 router.post('/v5/TDAE-placement-comments', (req, res) => {
 
     req.session.data['travel-details'] = 'completed'
-    res.redirect('/lsf-public/v5/TDAE-task-list')
+    res.redirect('/lsf-public/v5/TDAE-placement-journey-cya')
 
 })
 
@@ -533,7 +533,7 @@ router.post('/v5/TDAE-placement-journey-cya', (req, res) => {
     req.session.data['placement-details'] = 'completed'
     res.redirect('/lsf-public/v5/TDAE-task-list')
 
-})  
+})
 
 router.post('/v5/TDAE-start-claim', (req, res) => {
 

@@ -20,7 +20,7 @@ Check your answers
 					Mode of transport
 				</dt>
 				<dd class="nhsuk-summary-list__value">
-					{{ data['mode-of-transport'] }}
+					<span class="capitalize">{{ data['mode-of-transport'] }}</span>
 				</dd>
 				{% if data['submit-claim'] != 'completed' %}
 				<dd class="nhsuk-summary-list__actions">
@@ -38,11 +38,25 @@ Check your answers
 						Term time address
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						123 Building stree 1,<br>
-						Building street 2,<br>
-						Town,<br>
-						County,<br>
-						NE33 3AB
+						{% if data['term-building-name'] %}
+							{{ data['term-building-name'] }}<br>
+							{{ data['term-address-line-1'] }}<br>
+							{% if data['term-address-line-2'] %}
+								{{ data['term-address-line-2'] }}<br>
+							{% endif %}
+							{% if data['term-address-line-3'] %}
+								{{ data['term-address-line-3'] }}<br>
+							{% endif %}
+							{{ data['term-address-town'] }}<br>
+							{{ data['term-address-postcode'] }}<br>
+						{% else %}
+							123<br>
+							Building street 1,<br>
+							Building street 2,<br>
+							Town,<br>
+							County,<br>
+							NE33 3AB
+						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
@@ -60,11 +74,25 @@ Check your answers
 						Normal place of study
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						543 Building stree 1,<br>
+						{% if data['study-building-name'] %}
+							{{ data['study-building-name'] }}<br>
+							{{ data['study-address-line-1'] }}<br>
+							{% if data['study-address-line-2'] %}
+								{{ data['study-address-line-2'] }}<br>
+							{% endif %}
+							{% if data['study-address-line-3'] %}
+								{{ data['study-address-line-3'] }}<br>
+							{% endif %}
+							{{ data['study-address-town'] }}<br>
+							{{ data['study-address-postcode'] }}<br>
+						{% else %}
+						543<br>
+						Building street 1,<br>
 						Building street 2,<br>
 						City,<br>
 						County,<br>
 						NE33 3BC
+						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
@@ -83,7 +111,11 @@ Check your answers
 						Normal return mileage
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						15.5
+						{% if data['mode-of-transport'] %}
+							{{ data['return-mileage'] }}
+						{% else %}
+							15.5
+						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
@@ -103,7 +135,7 @@ Check your answers
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['normal-often-additional-costs']  === 'yes' %}
-						 £1.00
+						 {{ data['study-additional-cost'] }}
 						{% else %}
 							No additional costs
 						{% endif %}

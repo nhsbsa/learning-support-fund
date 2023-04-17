@@ -59,10 +59,18 @@ Evidence you have uploaded
             <tbody class="nhsuk-table__body">
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">
+                  {% if data['evidence-day'] %}
+                    {{ data['evidence-day'] }}
+                  {% else %}
                     Monday
+                  {% endif %}
                 </td>
                 <td class="nhsuk-table__cell ">
+                  {% if data['evidence-type'] %}
+                    {{ data['evidence-type'] }}
+                  {% else %}
                     Parking receipt
+                  {% endif %}
                 </td>
                 <td class="nhsuk-table__cell ">
                     snapshot-032-07-03-2023.jpg

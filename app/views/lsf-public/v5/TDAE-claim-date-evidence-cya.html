@@ -24,14 +24,14 @@ Check your answers
                       Claim start date
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    {% if data['TDAE-multiple-weeks'] === 'yes' %}  
-                      28 November 2022
+                    {% if data['start-claim-day'] %}
+                      {{ data['start-claim-day'] }} <span class="cya-month">{{ data['start-claim-month'] }}</span> {{ data['start-claim-year'] }}
                     {% else %}
                       05 December 2022
                     {% endif %}
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
-                      <a href="#">
+                      <a href="TDAE-start-claim">
                           Change<span class="nhsuk-u-visually-hidden"> claim start date</span>
                       </a>
                   </dd>
@@ -41,10 +41,14 @@ Check your answers
                       Claim end date
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    09 December 2022              
+                    {% if data['end-claim-day'] %}
+                      {{ data['end-claim-day'] }} <span class="cya-month">{{ data['end-claim-month'] }}</span> {{ data['end-claim-year'] }}
+                    {% else %}
+                      09 December 2022
+                    {% endif %}
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
-                      <a href="#">
+                      <a href="TDAE-end-claim">
                           Change<span class="nhsuk-u-visually-hidden"> claim end date</span>
                       </a>
                   </dd>
@@ -57,10 +61,10 @@ Check your answers
                     Days
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                      Monday, Thursday, Friday
+                      <span class="capitalize">{{ data['claim-day'] }}</span>
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
-                      <a href="#">
+                      <a href="TDAE-days-claiming">
                           Change<span class="nhsuk-u-visually-hidden"> days</span>
                       </a>
                   </dd>
@@ -102,7 +106,7 @@ Check your answers
                       Days
                     </dt>
                     <dd class="nhsuk-summary-list__value">
-                        Monday, Thursday, Friday
+                      <span class="capitalize">{{ data['claim-day'] }}</span>
                     </dd>
                     <dd class="nhsuk-summary-list__actions">
                         <a href="#">
@@ -128,10 +132,10 @@ Check your answers
                     </span>
                   </summary>
                   <div class="nhsuk-details__text">
-    
+
                     <p>Evidence for the dates between 28 November 2022 and 9 December 2022.</p>
                     <p>Days attended: Monday, Thursday, Friday</p>
-    
+
                     <table class="nhsuk-table">
                       <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
                       <thead role="rowgroup" class="nhsuk-table__head">
@@ -161,7 +165,7 @@ Check your answers
                         </tr>
                       </tbody>
                     </table>
-    
+
                     <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link" href="TDAE-evidence-mini-cya">Add or remove evidence</a></p>
                   </div>
                 </details>
@@ -172,10 +176,10 @@ Check your answers
                     </span>
                   </summary>
                   <div class="nhsuk-details__text">
-    
+
                     <p>Evidence for the dates between 5 December 2022 and 9 December 2022.</p>
                     <p>Days attended: Monday, Thursday, Friday</p>
-    
+
                     <table class="nhsuk-table">
                       <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
                       <thead role="rowgroup" class="nhsuk-table__head">
@@ -205,7 +209,7 @@ Check your answers
                         </tr>
                       </tbody>
                     </table>
-    
+
                     <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link" href="TDAE-evidence-mini-cya?=upload-week-2=no">Add or remove evidence</a></p>
                   </div>
                 </details>
@@ -219,10 +223,10 @@ Check your answers
                     </span>
                   </summary>
                   <div class="nhsuk-details__text">
-    
+
                     <p>Evidence for the dates between 28 November 2022 and 4 December 2022.</p>
                     <p>Days attended: Monday, Thursday, Friday</p>
-    
+
                     <table class="nhsuk-table">
                       <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
                       <thead role="rowgroup" class="nhsuk-table__head">
@@ -252,7 +256,7 @@ Check your answers
                         </tr>
                       </tbody>
                     </table>
-    
+
                     <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link" href="TDAE-evidence-mini-cya">Add or remove evidence</a></p>
                   </div>
                 </details>
@@ -263,10 +267,10 @@ Check your answers
                     </span>
                   </summary>
                   <div class="nhsuk-details__text">
-    
+
                     <p>Evidence for the dates between 5 December 2022 and 9 December 2022.</p>
                     <p>Days attended: Monday, Tuesday, Friday</p>
-    
+
                     <table class="nhsuk-table">
                       <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
                       <thead role="rowgroup" class="nhsuk-table__head">
@@ -296,7 +300,7 @@ Check your answers
                         </tr>
                       </tbody>
                     </table>
-    
+
                     <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link" href="TDAE-evidence-mini-cya?=upload-week-2=no">Add or remove evidence</a></p>
                   </div>
                 </details>
@@ -314,7 +318,7 @@ Check your answers
                 <div class="nhsuk-details__text">
 
                   <p>Evidence for the dates between 5 December 2022 and 9 December 2022.</p>
-                  <p>Days attended: Monday, Thursday, Friday</p>
+                  <p>Days attended: <span class="capitalize">{{ data['claim-day'] }}</span></p>
 
                   <table class="nhsuk-table">
                     <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
@@ -334,10 +338,18 @@ Check your answers
                     <tbody class="nhsuk-table__body">
                       <tr role="row" class="nhsuk-table__row">
                         <td class="nhsuk-table__cell">
+                          {% if data['evidence-day'] %}
+                            {{ data['evidence-day'] }}
+                          {% else %}
                             Monday
+                          {% endif %}
                         </td>
                         <td class="nhsuk-table__cell ">
+                          {% if data['evidence-type'] %}
+                            {{ data['evidence-type'] }}
+                          {% else %}
                             Parking receipt
+                          {% endif %}
                         </td>
                         <td class="nhsuk-table__cell ">
                             snapshot-032-07-03-2023.jpg
@@ -404,6 +416,33 @@ Check your answers
         </form>
 
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        const months = {
+          "01": "January",
+          "02": "February",
+          "03": "March",
+          "04": "April",
+          "05": "May",
+          "06": "June",
+          "07": "July",
+          "08": "August",
+          "09": "September",
+          "10": "October",
+          "11": "November",
+          "12": "December",
+        };
+
+        $(".cya-month").text(function () {
+          const month = $(this).text();
+          console.log("month:", month);
+          console.log("months[month]:", months[month]);
+          return months[month];
+        });
+      });
+      </script>
 
 </div>
 

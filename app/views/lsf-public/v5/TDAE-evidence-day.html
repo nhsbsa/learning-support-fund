@@ -14,7 +14,7 @@ Which days does this evidence relate to?
     "text": "Go back"
     }) }}
 
-    <!-- <form action="#" method="POST"> -->
+    <form action="TDAE-evidence-type" method="POST">
 
 
             <div class="nhsuk-form-group">
@@ -44,7 +44,7 @@ Which days does this evidence relate to?
                 <div class="nhsuk-checkboxes">
 
                   <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="evidence-day-monday" name="evidence-day" type="checkbox" value="email">
+                    <input class="nhsuk-checkboxes__input" id="evidence-day-monday" name="evidence-day" type="checkbox" value="Monday">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="evidence-day-monday">
                       {% if data['TDAE-multiple-weeks'] === 'yes' %}
                           {% if data['upload-week-2'] === 'yes' %}
@@ -59,7 +59,7 @@ Which days does this evidence relate to?
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="evidence-day-wednesday" name="evidence-day" type="checkbox" value="phone">
+                    <input class="nhsuk-checkboxes__input" id="evidence-day-wednesday" name="evidence-day" type="checkbox" value="Thursday">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="evidence-day-wednesday">
                       {% if data['TDAE-multiple-weeks'] === 'yes' %}
                           {% if data['upload-week-2'] === 'yes' %}
@@ -74,7 +74,7 @@ Which days does this evidence relate to?
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="evidence-day-thursday" name="evidence-day" type="checkbox" value="text message">
+                    <input class="nhsuk-checkboxes__input" id="evidence-day-thursday" name="evidence-day" type="checkbox" value="Friday">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="evidence-day-thursday">
                       {% if data['TDAE-multiple-weeks'] === 'yes' %}
                           {% if data['upload-week-2'] === 'yes' %}
@@ -93,11 +93,11 @@ Which days does this evidence relate to?
 
             </div>
 
-            <a class="nhsuk-button" href="TDAE-evidence-type">Continue</a><br>
+            <button class="nhsuk-button">Continue</button><br>
             <a href="TDAE-start-claim">Cancel</a>
 
 
-    <!-- </form> -->
+    </form>
 
   </div>
 

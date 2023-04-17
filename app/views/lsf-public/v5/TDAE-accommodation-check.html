@@ -20,7 +20,11 @@ Check your answers
 					Start date
 				</dt>
 				<dd class="nhsuk-summary-list__value">
-					15 November 2022
+					{% if data['accommodation-start-day'] %}
+						{{ data['accommodation-start-day'] }} <span class="cya-month">{{ data['accommodation-start-month'] }}</span> {{ data['accommodation-start-year'] }}
+					{% else %}
+						15 November 2022
+					{% endif %}
 				</dd>
 				{% if data['submit-claim'] != 'completed' %}
 				<dd class="nhsuk-summary-list__actions">
@@ -38,7 +42,11 @@ Check your answers
 					End date
 				</dt>
 				<dd class="nhsuk-summary-list__value">
-					19 November 2022
+					{% if data['accommodation-end-day'] %}
+						{{ data['accommodation-end-day'] }} <span class="cya-month">{{ data['accommodation-end-month'] }}</span> {{ data['accommodation-end-year'] }}
+					{% else %}
+						19 November 2022
+					{% endif %}
 				</dd>
 				{% if data['submit-claim'] != 'completed' %}
 				<dd class="nhsuk-summary-list__actions">
@@ -56,11 +64,25 @@ Check your answers
 					Accommodation address
 				</dt>
 				<dd class="nhsuk-summary-list__value">
-					123 Building stree 1,<br>
+					{% if data['accommodation-building-name'] %}
+						{{ data['accommodation-building-name'] }}<br>
+						{{ data['accommodation-address-line-1'] }}<br>
+						{% if data['accommodation-address-line-2'] %}
+							{{ data['accommodation-address-line-2'] }}<br>
+						{% endif %}
+						{% if data['accommodation-address-line-3'] %}
+							{{ data['accommodation-address-line-3'] }}<br>
+						{% endif %}
+						{{ data['accommodation-address-town'] }}<br>
+						{{ data['accommodation-address-postcode'] }}<br>
+					{% else %}
+					123<br>
+					Building street 1,<br>
 					Building street 2,<br>
 					Town,<br>
 					County,<br>
 					NE33 3AB
+					{% endif %}
 				</dd>
 				{% if data['submit-claim'] != 'completed' %}
 				<dd class="nhsuk-summary-list__actions">
@@ -78,7 +100,11 @@ Check your answers
 					Accommodation type
 				</dt>
 				<dd class="nhsuk-summary-list__value">
-					Commercial
+					{% if data['accommodation-type'] %}
+						{{ data['accommodation-type'] }}
+					{% else %}
+						Commercial
+					{% endif %}
 				</dd>
 				{% if data['submit-claim'] != 'completed' %}
 				<dd class="nhsuk-summary-list__actions">
@@ -94,7 +120,11 @@ Check your answers
 					Cost per night
 				</dt>
 				<dd class="nhsuk-summary-list__value">
-					£60.00
+					{% if data['accommodation-cost'] %}
+						£{{ data['accommodation-cost'] }}
+					{% else %}
+						£60.00
+					{% endif %}
 				</dd>
 				{% if data['submit-claim'] != 'completed' %}
 				<dd class="nhsuk-summary-list__actions">
@@ -158,6 +188,33 @@ Check your answers
 		<!-- </form> -->
 
 	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			const months = {
+				"01": "January",
+				"02": "February",
+				"03": "March",
+				"04": "April",
+				"05": "May",
+				"06": "June",
+				"07": "July",
+				"08": "August",
+				"09": "September",
+				"10": "October",
+				"11": "November",
+				"12": "December",
+			};
+
+			$(".cya-month").text(function () {
+				const month = $(this).text();
+				console.log("month:", month);
+				console.log("months[month]:", months[month]);
+				return months[month];
+			});
+		});
+		</script>
 
 </div>
 {% endblock %}

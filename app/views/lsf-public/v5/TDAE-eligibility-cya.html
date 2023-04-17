@@ -48,7 +48,11 @@ Check your answers
                 First incurred costs
               </dt>
               <dd class="nhsuk-summary-list__value">
+                {% if data['incur-cost-day'] %}
+                {{ data['incur-cost-day'] }} <span class="cya-month">{{ data['incur-cost-month'] }}</span> {{ data['incur-cost-year'] }}
+                {% else %}
                 15 November 2022
+                {% endif %}
               </dd>
               <dd class="nhsuk-summary-list__actions">
                 <a href="TDAE-incur-costs">
@@ -62,7 +66,7 @@ Check your answers
                 What will you be claiming for
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {{ data['claiming-for'] }}
+                <span class="capitalize">{{ data['claiming-for'] }}</span>
               </dd>
               <dd class="nhsuk-summary-list__actions">
                 <a href="TDAE-travel-accommodation">
@@ -76,9 +80,22 @@ Check your answers
                 Placement address
               </dt>
               <dd class="nhsuk-summary-list__value">
+                {% if data['placement-building-name'] %}
+                  {{ data['placement-building-name'] }}<br>
+                  {{ data['placement-address-line-1'] }}<br>
+                  {% if data['placement-address-line-2'] %}
+                    {{ data['placement-address-line-2'] }}<br>
+                  {% endif %}
+                  {% if data['placement-address-line-3'] %}
+                    {{ data['placement-address-line-3'] }}<br>
+                  {% endif %}
+                  {{ data['placement-address-town'] }}<br>
+                  {{ data['placement-address-postcode'] }}<br>
+                {% else %}
                 123 Practice Placement<br>
                 Newcastle Tyne and Wear<br>
                 NE12 3AB
+                {% endif %}
               </dd>
               <dd class="nhsuk-summary-list__actions">
                 <a href="TDAE-placement-address">
@@ -97,6 +114,33 @@ Check your answers
         <!-- </form> -->
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        const months = {
+          "01": "January",
+          "02": "February",
+          "03": "March",
+          "04": "April",
+          "05": "May",
+          "06": "June",
+          "07": "July",
+          "08": "August",
+          "09": "September",
+          "10": "October",
+          "11": "November",
+          "12": "December",
+        };
+
+        $(".cya-month").text(function () {
+          const month = $(this).text();
+          console.log("month:", month);
+          console.log("months[month]:", months[month]);
+          return months[month];
+        });
+      });
+      </script>
+
 
 </div>
 {% endblock %}
