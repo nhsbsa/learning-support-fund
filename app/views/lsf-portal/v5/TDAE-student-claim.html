@@ -204,13 +204,13 @@
     <ol class="app-task-list">
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">1. </span> University details
+          <span class="app-task-list__section-number">1. </span> Travel details
         </h2>
         <ul class="app-task-list__items">
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
               <a href="TDAE-student-university-details" aria-describedby="eligibility-status">
-                Check university details
+                Check university travel details
               </a>
             </span>
             {% if data['university-completed'] === 'completed' %}
@@ -221,18 +221,10 @@
               <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
             {% endif %}
           </li>
-        </ul>
-      </li>
-
-      <li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">2. </span> Placement details
-        </h2>
-        <ul class="app-task-list__items">
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
               <a href="TDAE-claim-evidence" aria-describedby="eligibility-status">
-                Check placement details
+                Check placement travel details
               </a>
             </span>
             {% if data['evidence-completed'] === 'completed' %}
@@ -245,6 +237,29 @@
           </li>
         </ul>
       </li>
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">2. </span> Accommodation details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              <a href="TDAE-accommodation" aria-describedby="eligibility-status">
+                Check accommodation details
+              </a>
+            </span>
+            {% if data['accommodation-completed'] === 'completed' %}
+              <strong class="nhsuk-tag" style="float: right;" id="eligibility-status">Completed</strong>
+            {% elif data['accommodation-completed'] === 'in-progress' %}
+              <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to student</strong>
+            {% else %}
+              <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+
       {% if data['read-only'] != 'true' %}
       <li>
         <h2 class="app-task-list__section">

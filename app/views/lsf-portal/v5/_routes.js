@@ -57,9 +57,24 @@ router.post('/v5/change-request', (req, res) => {
 
 })
 
+
 // ********************************
 // TDAE Claim
 // ********************************
+
+router.post('/v5/TDAE-accommodation-check', (req, res) => {
+
+    const accommodationCheck = req.session.data['accommodation-check']
+
+    if (accommodationCheck === 'yes') {
+        req.session.data['accommodation-completed'] = 'completed'
+    } else {
+        req.session.data['accommodation-completed'] = 'in-progress'
+    }
+
+    res.redirect('/lsf-portal/v5/TDAE-student-claim')
+
+})
 
 router.post('/v5/TDAE-evidence-match', (req, res) => {
 
