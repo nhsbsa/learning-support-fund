@@ -33,6 +33,7 @@ router.use('/lsf-public/v1', require('./views/lsf-public/v1/_routes'));
 // ================================
 // Routes for LSF Web
 // ================================
+router.use('/lsf-web/v3', require('./views/lsf-web/v3/_routes'));
 router.use('/lsf-web/v2', require('./views/lsf-web/v2/_routes'));
 router.use('/lsf-web/v1', require('./views/lsf-web/v1/_routes'));
 

@@ -13,7 +13,7 @@ router.post('/v5/returnordecline', (req, res) => {
 
     const returnstudent = req.session.data['return-student']
 
-    if (returnstudent === 'return') {
+    if (returnstudent === 'Return to student') {
         res.redirect('/lsf-portal/v5/TDAE-send-to-student')
     } else {
         res.redirect('/lsf-portal/v5/TDAE-details-for-return')

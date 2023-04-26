@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'layout-custom-header.html' %}
 
 {% block pageTitle %}
 Claim details
@@ -17,6 +17,16 @@ Claim details
     <h1 class="nhsuk-heading-l">Placement travel details</h1>
 
     <p>This information outlines the student's journey to and from their placement.</p>
+
+    <div class="nhsuk-warning-callout">
+      <h3 class="nhsuk-warning-callout__label">
+        <span role="text">
+          <span class="nhsuk-u-visually-hidden">Important: </span>
+          Claim submitted late
+        </span>
+      </h3>
+      <p>The student submitted their claim over 6 months after their placement dates.</p>
+    </div>
 
     <dl class="nhsuk-summary-list">
 

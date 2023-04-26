@@ -13,7 +13,7 @@ send back to student{% extends 'layout.html' %}
         "text": "Go back"
       }) }}
 
-    <form action="v5/returnordecline" method="POST">
+    <form action="v4/returnordecline" method="POST">
 
         <div class="nhsuk-form-group">
 
@@ -27,12 +27,12 @@ send back to student{% extends 'layout.html' %}
               <div class="nhsuk-radios">
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="return-student-university" name="return-student" type="radio" value="Return to student">
+                  <input class="nhsuk-radios__input" id="return-student-university" name="return-student" type="radio" value="Return to univerity">
                   <label class="nhsuk-label nhsuk-radios__label" for="return-student-university">
-                    Return to student
+                    Return to univerity
                   </label>
                   <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                    Student will be able to change and re-submit the claim.
+                    University will be able to return the claim to the student for them to change and re-submit the claim.
                   </div>
                 </div>
 
@@ -42,7 +42,7 @@ send back to student{% extends 'layout.html' %}
                     Decline claim
                   </label>
                   <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                    Student will be notified but can not re-submit the claim.
+                    University will be notified but can not re-submit the claim.
                   </div>
                 </div>
 

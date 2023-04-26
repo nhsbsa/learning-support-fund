@@ -1,50 +1,25 @@
-{% extends 'layout.html' %}
+{% extends 'layout-custom-header.html' %}
 
 {% block pageTitle %}
 Travel and Dual Accommodation Expense claims
 {% endblock %}
 
-{% block pageScripts %}
-<script>
-  function change() // no ';' here
-{
-  var btn = document.getElementById("toggle-filter");
-  if(btn.innerText=="Show filter"){
-     btn.innerText="Hide filter";
-    }
-  else{
-    btn.innerText="Show filter";
-    }
-}
-</script>
-{% endblock %}
-
 {% block content %}
-
 <div class="nhsuk-grid-row">
 
 
     <div class="nhsuk-grid-column-full">
 
-      {{ backLink({
-        "href": "dashboard",
-        "text": "Go back"
-      }) }}
-
         <h1 class="nhsuk-heading-l">Travel and Dual Accommodation Expenses</h1>
-    </div>
-    <div class="nhsuk-grid-column-two-thirds">
-        <p>This is a list of claims submitted by students. Claims are displayed in order of when they were submitted, oldest at the top.</p>
-    </div>
-    <div class="nhsuk-grid-column-full">
+        <p>This is a list of claims that have been submitted by students.</p>
         <p><a class="nhsuk-link--no-visited-state" href="TDAE-previous-claims-list">View previously processed claims</a>
         </p>
 
-        <button class="nhsuk-button nhsuk-button--secondary" id="toggle-filter" style="margin-bottom: 24px;" value="Show filter" onclick="change()">Show filter</button>
+        <button class="nhsuk-button nhsuk-button--secondary" id="toggle-filter">Show filter</button>
 
         <div class="moj-filter-layout">
 
-            <div class="nhsuk-grid-column-full nhsuk-u-padding-0 moj-filter-layout__filter nhsbsa-hide-filter" id="filter-column">
+            <div class="nhsuk-grid-column-one-quarter nhsuk-u-padding-0 moj-filter-layout__filter nhsbsa-hide-filter" id="filter-column">
 
               <div class="moj-filter">
 
@@ -62,7 +37,7 @@ Travel and Dual Accommodation Expense claims
 
                 <div class="moj-filter__content">
 
-                  <!--<div class="moj-filter__selected">
+                  <div class="moj-filter__selected">
 
                     <div class="moj-filter__selected-heading">
 
@@ -84,89 +59,60 @@ Travel and Dual Accommodation Expense claims
 
                     </ul>
 
-                  </div>-->
+                  </div>
 
                   <div class="moj-filter__options">
 
-                    <div style="float: left; width: 50%;" class="nhsuk-form-group nhsuk-u-padding-right-5">
-                      <label class="nhsuk-label" for="student-name">
-                        Student name
-                      </label>
-                      <input class="nhsuk-input nhsuk-input--width-20" id="student-name" name="student-name" type="text">
-                    </div>
+                    <button class="nhsuk-button" data-module="nhsuk-button">
+                      Apply filters
+                    </button>
+
                     <div class="nhsuk-form-group">
-                      <label class="nhsuk-label" for="course">
-                        Course
+                      <label class="nhsuk-label nhsuk-label--m" for="keywords">
+                        Keywords
                       </label>
-                      <input class="nhsuk-input nhsuk-input--width-20" id="course" name="course" type="text">
+
+                      <input class="nhsuk-input" id="keywords" name="keywords" type="text">
+
                     </div>
 
                     <div class="nhsuk-form-group">
 
                       <fieldset class="nhsuk-fieldset">
 
-                        <label class="nhsuk-label" for="student-name">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+
                           Status
-                        </label>
 
-                        <div class="nhsuk-hint" id="contact-hint">
-                          Select the statuses you want shown.
-                        </div>
+                        </legend>
 
-                        <div class="nhsuk-checkboxes nhsuk-checkboxes--small nhsuk-u-padding-bottom-5" data-module="nhsuk-checkboxes">
+                        <div class="nhsuk-checkboxes nhsuk-checkboxes--small" data-module="nhsuk-checkboxes">
 
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status" name="status" type="checkbox" value="1" {% if data['filter'] == 'yes' %}checked{% endif %}>
+                            <input class="nhsuk-checkboxes__input" id="status" name="status" type="checkbox" value="1" checked>
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="status">
-                              To be completed (5)
+                              Complete (5)
                             </label>
+
                           </div>
 
                           <div class="nhsuk-checkboxes__item">
                             <input class="nhsuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="status-2">
-                              University processing (1)
+                              Incomplete (3)
                             </label>
+
                           </div>
 
                           <div class="nhsuk-checkboxes__item">
                             <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
-                              Returned from NHSBSA (2)
+                              In progress (13)
                             </label>
-                          </div>
 
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="4">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
-                              Returned to student (7)
-                            </label>
-                          </div>
-
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="5">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
-                              Submitted to NHSBSA (15)
-                            </label>
-                          </div>
-
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="6">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
-                              Payment approved (4)
-                            </label>
                           </div>
 
                         </div>
-
-                        <form action="TDAE-claims-list?filter=yes" method="POST">
-                          <button style="float: left;" class="nhsuk-button" data-module="nhsuk-button">
-                            Apply filters
-                          </button>
-                        </form>
-                        {% if data['filter'] == 'yes' %}
-                        <p style="float: left; padding-top: 15px; padding-left: 15px;"><a href="course-intake?filter=no">Reset filters</a></p>
-                        {% endif %}
 
                       </fieldset>
 
@@ -180,14 +126,11 @@ Travel and Dual Accommodation Expense claims
 
             </div>
 
-          </div>
+            <div class="moj-filter-layout__content" id="table-column">
 
-
+              <div class="moj-scrollable-pane">
                 <table role="table" class="nhsuk-table-responsive">
                     <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Travel expense claims list</caption>
-                    {% if data['filter'] == 'yes' %}
-                    <div class="nhsuk-hint nhsuk-u-padding-top-3" id="Filtered-results">Filtered results contain 12 claims</div>
-                    {% endif %}
                     <thead role="rowgroup" class="nhsuk-table__head">
                         <tr role="row">
                             <th role="columnheader" class="" scope="col">
@@ -197,7 +140,7 @@ Travel and Dual Accommodation Expense claims
                                 Course
                             </th>
                             <th role="columnheader" class="" scope="col">
-                                Claim submitted
+                                Date of claim
                             </th>
                             <th role="columnheader" class="" scope="col">
                                 Status
@@ -210,13 +153,13 @@ Travel and Dual Accommodation Expense claims
                     <tbody class="nhsuk-table__body">
                         <tr role="row" class="nhsuk-table__row">
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Student name </span>Amara Ansari
+                                <span class="nhsuk-table-responsive__heading">Student name </span>Amari Ansari
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Course </span>Nursing
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>15 November 2022
+                                <span class="nhsuk-table-responsive__heading">Date of claim </span>15 November 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span>
@@ -230,42 +173,11 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Action </span>
                                 {% if data['Ansari'] == 'submitted' %}
                                 <a class="nhsuk-link--no-visited-state"
-                                    href="TDAE-student-claim?name=Amara Ansari&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
+                                    href="TDAE-student-claim?name=Amari Ansari&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
                                     claim</a>
                                 {% else %}
                                 <a class="nhsuk-link--no-visited-state"
-                                    href="TDAE-student-claim?name=Amara Ansari&status=To be completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=">Process
-                                    claim</a>
-                                {% endif %}
-                            </td>
-                        </tr>
-                        <tr role="row" class="nhsuk-table__row">
-                            <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Student name </span>Bethany Thompson
-                            </td>
-                            <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Course </span>Adult Nursing
-                            </td>
-                            <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>18 November 2022
-                            </td>
-                            <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Status </span>
-                                {% if data['Thompson'] == 'Returned' %}
-                                <strong class="nhsuk-tag nhsuk-tag--green">Submitted to NHSBSA</strong>
-                                {% else %}
-                                <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
-                                {% endif %}
-                            </td>
-                            <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Action </span>
-                                {% if data['Thompson'] == 'Returned' %}
-                                <a class="nhsuk-link--no-visited-state"
-                                    href="TDAE-student-claim?name=Bethany Thompson&status=Returned to student&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=true&breakdown=walk">View
-                                    claim</a>
-                                {% else %}
-                                <a class="nhsuk-link--no-visited-state"
-                                    href="TDAE-student-claim?name=Bethany Thompson&status=To be completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=&wrong-evidence=true&breakdown=walk">Process
+                                    href="TDAE-student-claim?name=Amari Ansari&status=To be completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=">Process
                                     claim</a>
                                 {% endif %}
                             </td>
@@ -278,7 +190,7 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Nursing
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>22 November 2022
+                                <span class="nhsuk-table-responsive__heading">Date of claim </span>22 November 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span>
@@ -292,11 +204,11 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Action </span>
                                 {% if data['Bloggs'] == 'returned' %}
                                 <a class="nhsuk-link--no-visited-state"
-                                    href="TDAE-student-claim?name=Ben Bloggs&status=Returned to student&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=true&breakdown=walk">View
+                                    href="TDAE-student-claim?name=Ben Bloggs&status=Returned to student&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=true">View
                                     claim</a>
                                 {% else %}
                                 <a class="nhsuk-link--no-visited-state"
-                                    href="TDAE-student-claim?name=Ben Bloggs&status=To be completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=&wrong-evidence=true&breakdown=walk">Process
+                                    href="TDAE-student-claim?name=Ben Bloggs&status=To be completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=&wrong-evidence=true">Process
                                     claim</a>
                                 {% endif %}
                             </td>
@@ -309,11 +221,11 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Dental
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>25 November 2022
+                                <span class="nhsuk-table-responsive__heading">Date of claim </span>25 November 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span><strong
-                                    class="nhsuk-tag nhsuk-tag--blue">Being assessed</strong>
+                                    class="nhsuk-tag nhsuk-tag--blue">University processing</strong>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Action </span><a
@@ -330,7 +242,7 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Medicine
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>28 November 2022
+                                <span class="nhsuk-table-responsive__heading">Date of claim </span>28 November 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span><strong
@@ -351,11 +263,11 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Podiatry
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>01 December 2022
+                                <span class="nhsuk-table-responsive__heading">Date of claim </span>01 December 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Status </span>
-                                <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
+                                <span class="nhsuk-table-responsive__heading">Status </span><strong
+                                    class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Action </span><a
@@ -372,14 +284,14 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Nurse
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>08 December 2022
+                                <span class="nhsuk-table-responsive__heading">Date of claim </span>08 December 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span>
                                 {% if data['Cheema'] == 'returned' %}
                                 <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
                                 {% else %}
-                                <strong class="nhsuk-tag nhsuk-tag--white">Returned from NHSBSA</strong>
+                                <strong class="nhsuk-tag nhsuk-tag--yellow">Returned from NHSBSA</strong>
                                 {% endif %}
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
@@ -390,8 +302,8 @@ Travel and Dual Accommodation Expense claims
                                     claim</a>
                                 {% else %}
                                 <a class="nhsuk-link--no-visited-state"
-                                    href="TDAE-student-claim?name=Chet Cheema&status=Returned from NHSBSA&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=&wrong-evidence=false">
-                                    Process claim</a>
+                                    href="TDAE-student-claim?name=Chet Cheema&status=Returned from NHSBSA&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=&wrong-evidence=false">View
+                                    feedback</a>
                                 {% endif %}
                             </td>
                         </tr>
@@ -403,7 +315,7 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Medicine
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>09 December 2022
+                                <span class="nhsuk-table-responsive__heading">Date of claim </span>09 December 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span><strong
@@ -424,7 +336,7 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Nursing
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>11 December 2022
+                                <span class="nhsuk-table-responsive__heading">Date of claim </span>11 December 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span><strong
@@ -445,7 +357,7 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Nursing
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>11 December 2022
+                                <span class="nhsuk-table-responsive__heading">Date of claim </span>11 December 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span><strong
@@ -466,7 +378,7 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Course </span>Medical
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Claim submitted date </span>12 December 2022
+                                <span class="nhsuk-table-responsive__heading">Date of claim </span>12 December 2022
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                                 <span class="nhsuk-table-responsive__heading">Status </span><strong
@@ -482,6 +394,7 @@ Travel and Dual Accommodation Expense claims
                     </tbody>
                 </table>
 
+              </div>
               <nav class="nav" role="navigation" aria-label="Pagination">
 
                 <ul class="pagination">
@@ -498,7 +411,7 @@ Travel and Dual Accommodation Expense claims
                 <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 10 of 34 claims
                 </div>
             </nav>
-
+            </div>
 
 
     </div>
