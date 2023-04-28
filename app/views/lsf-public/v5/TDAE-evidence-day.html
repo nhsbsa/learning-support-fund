@@ -29,14 +29,14 @@ Which days does this evidence relate to?
                   <div class="nhsuk-hint" id="example-hint">
                     Select all options that are relevant to your evidence between
                     {% if data['upload-week-2'] === 'yes' %}
-                      5 December 2022 and 9 December 2022.
+                      24 April 2023 and 28 April 2023.
                     {% else %}
-                      28 November 2022 and 04 December 2022.
+                      17 April 2023 and 21 April 2023.
                     {% endif %}
                   </div>
                 {% else %}
                   <div class="nhsuk-hint" id="example-hint">
-                    Select all options that are relevant to your evidence between 05 December 2022 and 09 December 2022.
+                    Select all options that are relevant to your evidence between 17 April 2023 and 21 April 2023.
                   </div>
                 {% endif %}
 
@@ -48,12 +48,12 @@ Which days does this evidence relate to?
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="evidence-day-monday">
                       {% if data['TDAE-multiple-weeks'] === 'yes' %}
                           {% if data['upload-week-2'] === 'yes' %}
-                            Monday 5 December
+                            Monday 24 April
                           {% else %}
-                            Monday 28 November
+                            Monday 17 April
                           {% endif %}
                       {% else %}
-                        Monday 5 December
+                        Monday 17 April
                       {% endif %}
                     </label>
                   </div>
@@ -63,12 +63,16 @@ Which days does this evidence relate to?
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="evidence-day-wednesday">
                       {% if data['TDAE-multiple-weeks'] === 'yes' %}
                           {% if data['upload-week-2'] === 'yes' %}
-                            Tuesday 6 December
+                            {% if data['claiming-same-days'] === 'yes' %}
+                              Thursday 20 April
+                            {% else %}
+                              Tuesday 25 April
+                            {% endif %}
                           {% else %}
-                            Thursday 1 December
+                            Thursday 20 April
                           {% endif %}
                       {% else %}
-                        Thursday 8 December
+                        Thursday 20 April
                       {% endif %}
                     </label>
                   </div>
@@ -78,12 +82,12 @@ Which days does this evidence relate to?
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="evidence-day-thursday">
                       {% if data['TDAE-multiple-weeks'] === 'yes' %}
                           {% if data['upload-week-2'] === 'yes' %}
-                            Friday 9 December
+                            Friday 28 April
                           {% else %}
-                            Friday 1 December
+                            Friday 21 April
                           {% endif %}
                       {% else %}
-                        Friday 9 December
+                        Friday 21 April
                       {% endif %}
                     </label>
                   </div>

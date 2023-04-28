@@ -186,11 +186,7 @@ Your costs
           Claim start date
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {% if data['TDAE-multiple-weeks'] == 'yes' %}
-            28 November 2022
-          {% else %}
-            05 December 2022
-          {% endif %}
+          17 April 2023
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
@@ -208,7 +204,11 @@ Your costs
           Claim end date
         </dt>
         <dd class="nhsuk-summary-list__value">
-          09 December 2022
+          {% if data['TDAE-multiple-weeks'] == 'yes' %}
+            28 April 2023
+          {% else %}
+            21 April 2023
+          {% endif %}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">

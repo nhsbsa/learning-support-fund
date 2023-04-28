@@ -554,12 +554,12 @@ router.post('/v5/TDAE-end-claim', (req, res) => {
     const endDate = endDateDay + '-' + endDateMonth + '-' + endDateYear
 
     // following a set start and end date to view the different journey between more than 1 week and under 1 week
-    // 1 week or less: 05-12-2022 to 09-12-2022
-    // 2 weeks: 28-11-2022 to 09-12-2022
+    // 1 week or less: 17-04-2023 to 21-04-2023
+    // 2 weeks: 17-04-2023 to 28-04-2023
 
-    if (startDate === '05-12-2022' && endDate === '09-12-2022') {
+    if (startDate === '17-04-2023' && endDate === '21-04-2023') {
         res.redirect('/lsf-public/v5/TDAE-days-claiming')
-    } else if (startDate === '28-11-2022' && endDate === '09-12-2022'){
+    } else if (startDate === '17-04-2023' && endDate === '28-04-2023'){
         req.session.data['TDAE-multiple-weeks'] = 'yes'
         res.redirect('/lsf-public/v5/TDAE-claiming-same-days')
     } else {

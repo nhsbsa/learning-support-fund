@@ -38,6 +38,7 @@ Task list
                 </ul>
             </li>
 
+            {% if checked('claiming-for', 'car') %}
                 <li>
                     <h2 class="app-task-list__section">
                         <span class="app-task-list__section-number">2. </span> Travel costs
@@ -113,10 +114,18 @@ Task list
                         </li>
                     </ul>
                 </li>
+            {% endif %}
 
+            {% if checked('claiming-for', 'accommodation') %}
                 <li>
                     <h2 class="app-task-list__section">
-                        <span class="app-task-list__section-number">3. </span> Accommodation costs
+                        <span class="app-task-list__section-number">
+                            {% if checked('claiming-for', 'car') %}
+                                3. 
+                            {% else %}
+                                2.
+                            {% endif %}
+                        </span> Accommodation costs
                     </h2>
                     <ul class="app-task-list__items">
                         <li class="app-task-list__item nhsuk-u-clear">
@@ -140,11 +149,18 @@ Task list
                         </li>
                     </ul>
                 </li>
+            {% endif %}
 
 
             <li>
                 <h2 class="app-task-list__section">
-                    <span class="app-task-list__section-number">4. </span> Submit claim
+                    <span class="app-task-list__section-number">
+                        {% if checked('claiming-for', 'car') and checked('claiming-for', 'accommodation') %}
+                            4.
+                        {% else %} 
+                            3.
+                        {% endif %}
+                    </span> Submit claim
                 </h2>
                 <ul class="app-task-list__items">
                     <li class="app-task-list__item nhsuk-u-clear">
