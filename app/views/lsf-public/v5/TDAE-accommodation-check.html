@@ -100,11 +100,7 @@ Check your answers
 					Accommodation type
 				</dt>
 				<dd class="nhsuk-summary-list__value">
-					{% if data['accommodation-type'] %}
-						{{ data['accommodation-type'] }}
-					{% else %}
-						Commercial
-					{% endif %}
+					{{ data['accommodation-type'] }}
 				</dd>
 				{% if data['submit-claim'] != 'completed' %}
 				<dd class="nhsuk-summary-list__actions">

@@ -756,5 +756,13 @@ router.post('/v5/TDAE-evidence-section-cya', (req, res) => {
 
 })
 
+router.post('/v5/TDAE-accommodation-type', (req, res) => {
+
+    const accommodationType = req.session.data['accommodation-type']
+    
+    res.redirect('/lsf-public/v5/TDAE-accommodation-cost')
+
+})
+
 
 module.exports = router;
