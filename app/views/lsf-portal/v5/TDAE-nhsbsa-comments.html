@@ -28,20 +28,9 @@ test{% extends 'layout.html' %}
           </div>
           {% endif %}
 
-          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
-            <div class="nhsuk-form-group ">
-              <textarea class="text-editor-2 nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-500"></textarea>
-              <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining" >
-                  You have <span class="nhsuk-character-count-remaining"></span> characters remaining
-              </p>
-              <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-toomany govuk-error-message" >
-                You have <span class="nhsuk-character-count-toomany"></span> characters too many
-            </p>
-            </div>
-          </div>
-
-          <style>.trumbowyg-button-pane {display: none;}</style>
-
+          <textarea class="nhsuk-textarea" id="additionalCostsComment" name="return-more-detail" rows="8"></textarea>
+          <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">500 characters remaining</p>
+          <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 500 characters</p>
 
         <button class="nhsuk-button" type="submit">Continue</button><br>
 
@@ -51,7 +40,59 @@ test{% extends 'layout.html' %}
 
   </div>
 
+  <script>
+      const textarea = document.querySelector('#additionalCostsComment');
+      const countRemaining = document.getElementById('charactersRemaining');
+      const staticMsg = document.querySelector('#char-count-screen-reader');
+      const maxCharacters = 500;
+      let timeoutId;
 
+      function updateCharacterCount() {
+        const textEntered = textarea.value;
+        const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+        const addition = newLines?.length || 0;
+        const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+
+        if (remainingCharacters >= 0) {
+          countRemaining.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+          countRemaining.classList.remove('nhsbsa-count-error-message');
+          countRemaining.classList.add('nhsuk-hint');
+          textarea.classList.remove('nhsuk-textarea--error');
+        } else {
+          countRemaining.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+          countRemaining.classList.add('nhsbsa-count-error-message');
+          countRemaining.classList.remove('nhsuk-hint');
+          textarea.classList.add('nhsuk-textarea--error');
+        }
+      }
+
+      function updateScreenReaderMessage() {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+          const textEntered = textarea.value;
+          const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+          const addition = newLines?.length || 0;
+          const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+          // TO DO ADD FIX FOR 1 CHARACTER
+          if (remainingCharacters < 0) {
+            staticMsg.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+          } else {
+            staticMsg.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+          }
+        }, 500);
+      }
+
+      textarea.addEventListener('input', () => {
+        updateCharacterCount();
+        updateScreenReaderMessage();
+      });
+
+      // Update character count if textarea has a value on page load
+      window.addEventListener('load', () => {
+        updateCharacterCount();
+        updateScreenReaderMessage();
+      });
+    </script>
 
 
 {% endblock %}
