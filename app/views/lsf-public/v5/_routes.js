@@ -317,7 +317,7 @@ router.post('/v5/TDAE-dsa-help', (req, res) => {
         req.session.data['TDAE-signpost'] = 'DSA'
         res.redirect('/lsf-public/v5/TDAE-signpost/TDAE-dsa-signpost')
     } else {
-        res.redirect('/lsf-public/v5/TDAE-placement-journey-same-days')
+        res.redirect('/lsf-public/v5/TDAE-incur-costs')
     }
 
 })
@@ -684,7 +684,7 @@ router.post('/v5/TDAE-provide-journey-evidence', (req, res) => {
 
     if (actionLink === 'yes') {
         req.session.data['action-required'] = 'no'
-        res.redirect('/lsf-public/v5/TDAE-returning-student/TDAE-task-list-actions')
+        res.redirect('/lsf-public/v5/TDAE-returning-student/TDAE-task-list-actions?claiming-for=accommodation')
     } else {
         req.session.data['add-date-evidence'] = 'completed'
         res.redirect('/lsf-public/v5/TDAE-task-list')
@@ -712,7 +712,7 @@ router.post('/v5/TDAE-claim-submitted', (req, res) => {
 router.post('/v5/TDAE-action-link', (req, res) => {
 
     req.session.data['action-required'] = 'yes'
-    res.redirect('/lsf-public/v5/TDAE-returning-student/TDAE-task-list-actions')
+    res.redirect('/lsf-public/v5/TDAE-returning-student/TDAE-task-list-actions?claiming-for=accommodation&accommodation-details=action')
 
 })
 
@@ -759,7 +759,7 @@ router.post('/v5/TDAE-evidence-section-cya', (req, res) => {
 router.post('/v5/TDAE-accommodation-type', (req, res) => {
 
     const accommodationType = req.session.data['accommodation-type']
-    
+
     res.redirect('/lsf-public/v5/TDAE-accommodation-cost')
 
 })

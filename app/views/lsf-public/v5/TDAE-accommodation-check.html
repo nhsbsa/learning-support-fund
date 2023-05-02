@@ -13,6 +13,18 @@ Check your answers
 
 		<h1 class="nhsuk-heading-xl">Check your answers</h1>
 
+		{% if data['accommodation-details'] === 'action' %}
+			<div class="nhsuk-warning-callout">
+			  <h3 class="nhsuk-warning-callout__label">
+			    <span role="text">
+			      <span class="nhsuk-u-visually-hidden">Important: </span>
+			      University feedback
+			    </span>
+			  </h3>
+			  <p>You have provided a hotel receipt meaning this should be commercial accommodation instead of non-commercial.</p>
+			</div>
+		{% endif %}
+
 		<dl class="nhsuk-summary-list">
 
 			<div class="nhsuk-summary-list__row">
@@ -100,7 +112,11 @@ Check your answers
 					Accommodation type
 				</dt>
 				<dd class="nhsuk-summary-list__value">
-					{{ data['accommodation-type'] }}
+					{% if data['accommodation-details'] === 'action' %}
+						 Non-commercial
+					{% else %}
+						{{ data['accommodation-type'] }}
+					{% endif %}
 				</dd>
 				{% if data['submit-claim'] != 'completed' %}
 				<dd class="nhsuk-summary-list__actions">
