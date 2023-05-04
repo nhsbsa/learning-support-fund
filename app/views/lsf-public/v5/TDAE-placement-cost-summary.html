@@ -32,10 +32,10 @@ Your costs
           {% endif %}
         </dd>
       </div> -->
-
+      {% if checked('claiming-for', 'car') %}
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Placement journey
+          Travel
         </dt>
         <dd class="nhsuk-summary-list__value">
           {% if data['TDAE-multiple-weeks'] == 'yes' %}
@@ -49,23 +49,18 @@ Your costs
           {% endif %}
         </dd>
       </div>
+      {% endif %}
 
+      {% if checked('claiming-for', 'accommodation') %}
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
           Accommodation
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {% if data['TDAE-multiple-weeks'] == 'yes' %}
-            £22.80
-          {% else %}
-            {% if data['mode-of-transport'] !== 'drive' %}
-              £28.20
-            {% else %}
-              £15.18
-            {% endif %}
-          {% endif %}
+          £220.00
         </dd>
       </div>
+      {% endif %}
     </dl>
 
     <h2 class="nhsuk-heading-m">Amount to be paid to you</h2>
@@ -76,14 +71,10 @@ Your costs
           Total
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {% if data['TDAE-multiple-weeks'] == 'yes' %}
-            £22.80
+          {% if checked('claiming-for', 'accommodation') %}
+            £220.00
           {% else %}
-            {% if data['mode-of-transport'] !== 'drive' %}
-              £28.20
-            {% else %}
-              £15.18
-            {% endif %}
+            £22.80
           {% endif %}
         </dd>
       </div>
@@ -107,7 +98,7 @@ Your costs
       </div>
     </div> -->
 
-
+    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-task-list">Change claim</a><br>
     <a class="nhsuk-button" href="TDAE-student-declaration">Save and continue</a><br>
     <a href="TDAE-start-claim">Cancel</a>
 

@@ -35,7 +35,7 @@ Check your answers
 					{% if data['accommodation-start-day'] %}
 						{{ data['accommodation-start-day'] }} <span class="cya-month">{{ data['accommodation-start-month'] }}</span> {{ data['accommodation-start-year'] }}
 					{% else %}
-						15 November 2022
+						17 April 2023
 					{% endif %}
 				</dd>
 				{% if data['submit-claim'] != 'completed' %}
@@ -57,7 +57,7 @@ Check your answers
 					{% if data['accommodation-end-day'] %}
 						{{ data['accommodation-end-day'] }} <span class="cya-month">{{ data['accommodation-end-month'] }}</span> {{ data['accommodation-end-year'] }}
 					{% else %}
-						19 November 2022
+						21 April 2023
 					{% endif %}
 				</dd>
 				{% if data['submit-claim'] != 'completed' %}
@@ -152,7 +152,9 @@ Check your answers
 					Uploaded evidence
 				</dt>
 				<dd class="nhsuk-summary-list__value">
-					hotel-receipt.png
+					<a href="/images/Hotel-booking-confirmation.pdf" download="Amari Ansari accommodation evidence 17 Apr 2023 to 22 Apr 2023">
+						hotel-receipt.pdf
+					</a>
 				</dd>
 				{% if data['submit-claim'] != 'completed' %}
 				<dd class="nhsuk-summary-list__actions">
@@ -190,6 +192,22 @@ Check your answers
 			</div>
 
 			</dl>
+
+			<h2 class="nhsuk-heading-m">Total accommodation costs reimbursed to you</h2>
+	    <dl class="nhsuk-summary-list">
+
+	      <div class="nhsuk-summary-list__row">
+	        <dt class="nhsuk-summary-list__key">
+	          Accomodation total
+	        </dt>
+	        <dd class="nhsuk-summary-list__value">
+	            £220.00
+	        </dd>
+	      </div>
+
+	    </dl>
+
+
 			{% if data['submit-claim'] != 'completed' %}
 				<form action="v5/TDAE-accommodation-check" method="POST">
 					<button class="nhsuk-button" type="submit">Save and continue</button><br>

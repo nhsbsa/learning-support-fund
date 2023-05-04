@@ -78,6 +78,24 @@ Check your answers
 
         </dl>
 
+        <h2 class="nhsuk-heading-m">Total travel costs reimbursed to you</h2>
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Travel total
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {% if data['mode-of-transport'] !== 'drive' %}
+                £28.20
+              {% else %}
+                £15.18
+              {% endif %}
+            </dd>
+          </div>
+
+        </dl>
+
         <form action="v5/TDAE-placement-journey-cya" method="POST">
             <button class="nhsuk-button" type="submit">Save and continue</button><br>
             <a href="#">Cancel</a>

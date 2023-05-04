@@ -758,9 +758,13 @@ router.post('/v5/TDAE-evidence-section-cya', (req, res) => {
 
 router.post('/v5/TDAE-accommodation-type', (req, res) => {
 
-    const accommodationType = req.session.data['accommodation-type']
+    const accommodationAction = req.session.data['accommodation-details']
 
-    res.redirect('/lsf-public/v5/TDAE-accommodation-cost')
+    if (accommodationAction === 'action') {
+        res.redirect('/lsf-public/v5/TDAE-accommodation-check')
+    } else {
+        res.redirect('/lsf-public/v5/TDAE-accommodation-cost')
+    }
 
 })
 

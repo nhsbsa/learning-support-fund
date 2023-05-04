@@ -40,7 +40,7 @@ Is your term time address the same?
                 </div>
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="accommodation-type" name="accommodation-type" type="radio" value="Non-commercial">
+                  <input class="nhsuk-radios__input" id="accommodation-type" name="accommodation-type" type="radio" value="Non-commercial" {% if data['accommodation-details'] === 'action' %}checked{% endif %}>
                   <label class="nhsuk-label nhsuk-radios__label" for="same-term-address-no">
                     Non-commercial
                   </label>
