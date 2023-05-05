@@ -761,6 +761,7 @@ router.post('/v5/TDAE-accommodation-type', (req, res) => {
     const accommodationAction = req.session.data['accommodation-details']
 
     if (accommodationAction === 'action') {
+        req.session.data['accommodation-details'] = 'no'
         res.redirect('/lsf-public/v5/TDAE-accommodation-check')
     } else {
         res.redirect('/lsf-public/v5/TDAE-accommodation-cost')
