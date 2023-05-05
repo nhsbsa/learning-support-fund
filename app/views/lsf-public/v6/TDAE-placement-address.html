@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What is your placement address?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="TDAE-eligibility-cya" method="POST">
+
+
+			<fieldset class="nhsuk-fieldset">
+				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+					<h1 class="nhsuk-fieldset__heading">
+						What is your placement address?
+					</h1>
+				</legend>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="placement-building-name">
+						Building name or number
+					</label>
+					<input class="nhsuk-input" id="placement-building-name" name="placement-building-name" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="placement-address-line-1">
+						Address line 1
+					</label>
+					<input class="nhsuk-input" id="placement-address-line-1" name="placement-address-line-1" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="placement-address-line-2">
+						Address line 2 (optional)
+					</label>
+					<input class="nhsuk-input" id="placement-address-line-2" name="placement-address-line-2" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="placement-address-line-3">
+						Address line 3 (optional)
+					</label>
+					<input class="nhsuk-input" id="placement-address-line-3" name="placement-address-line-3" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="placement-address-town">
+						Town or city
+					</label>
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="placement-address-town" name="placement-address-town"
+						type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="placement-address-postcode">
+						Postcode
+					</label>
+					<input class="nhsuk-input nhsuk-input--width-10" id="placement-address-postcode" name="placement-address-postcode"
+						type="text">
+				</div>
+
+			</fieldset>
+
+			<button class="nhsuk-button" type="submit">Save and continue</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

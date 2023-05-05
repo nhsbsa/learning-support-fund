@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What is the start date of your claim?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="TDAE-accommodation-address" method="POST">
+
+			<div class="nhsuk-form-group">
+				<fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+				  <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+					<h1 class="nhsuk-fieldset__heading">
+					  What was the end date of your accommodation stay?
+					</h1>
+				  </legend>
+				  <div class="nhsuk-hint" id="example-hint">
+					For example, 19 11 2022
+				  </div>
+
+				  <div class="nhsuk-date-input" id="example">
+					<div class="nhsuk-date-input__item">
+					  <div class="nhsuk-form-group">
+						<label class="nhsuk-label nhsuk-date-input__label" for="accommodation-end-day">
+						  Day
+						</label>
+						<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="accommodation-end-day" name="accommodation-end-day" type="text" pattern="[0-9]*" inputmode="numeric">
+					  </div>
+					</div>
+					<div class="nhsuk-date-input__item">
+					  <div class="nhsuk-form-group">
+						<label class="nhsuk-label nhsuk-date-input__label" for="accommodation-end-month">
+						  Month
+						</label>
+						<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="accommodation-end-month" name="accommodation-end-month" type="text" pattern="[0-9]*" inputmode="numeric">
+					  </div>
+					</div>
+					<div class="nhsuk-date-input__item">
+					  <div class="nhsuk-form-group">
+						<label class="nhsuk-label nhsuk-date-input__label" for="accommodation-end-year">
+						  Year
+						</label>
+						<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="accommodation-end-year" name="accommodation-end-year" type="text" pattern="[0-9]*" inputmode="numeric">
+					  </div>
+					</div>
+				  </div>
+				</fieldset>
+
+			  </div>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<a href="#">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

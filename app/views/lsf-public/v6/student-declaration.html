@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+      <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">SSRN0000059 - Joe Bloggs</span>Student declaration</h1>
+
+        <p id="declaration">Please review all information you have provided before completing this declaration. Read this declaration carefully before accepting it. If you choose not to accept it, your funding application will not be processed.</p>
+        <h2 class="heading-medium">I declare that</h2>
+        <ul class="list list-bullet">
+            <li>I am undertaking a pre-registration healthcare programme that is eligible for the supplementary allowances from the NHS Learning Support Fund (NHS LSF)</li>
+            <li>I have read and understood the relevant guidance and other related information regarding the conditions for claiming NHS LSF</li>
+            <li>I am in receipt of a tuition fee and/or maintenance loan from Student Loans Company, and this thereby confirms that I am ordinarily resident in the United Kingdom.</li>
+        </ul>
+        <p class="bold">OR</p>
+        <ul class="list list-bullet">
+            <li>I have not applied for a student loan for personal reasons and I will provide the required eligibility evidence and/or additional declaration as specified by the NHS Business Services Authority (NHSBSA).</li><li>I am studying at a Higher Education Institution in England</li>
+            <li>I have enrolled and commenced on my programme of study and I am thus in active training</li>
+            <li>I am not an assisted student in that I am not in receipt of any sponsorship from an employer or any other agency</li>
+        </ul>
+        <p>By accepting the declaration I agree to all the conditions held within the NHS LSF student charter.</p>
+        <h3 class="heading-medium">Privacy Notice</h3>
+        <p>I am aware of the disclosure of information detailed below</p>
+        <h3 class="bold">We will use the information you provide to:</h3>
+        <ul class="list list-bullet">
+            <li>assess your application</li>
+            <li>pay you</li>
+            <li>detect and prevent fraud and mistakes</li>
+            <li>help plan and make improvements to NHS services, and/or direct patient care</li>
+            <li>research the effectiveness of the Training Grant</li>
+        </ul>
+        <p class="bold">To prevent, detect and investigate fraud and errors, we may share your information with:</p>
+        <ul class="list list-bullet">
+            <li>Student Loans Company</li>
+            <li>HM Revenue and Customs</li>
+            <li>higher education institutions</li>
+            <li>the Home Office</li>
+            <li>organisations from which you receive benefits, bursaries, grants or support</li>
+            <li>bodies performing functions on behalf of the above organisations</li>
+        </ul>
+        <p>We may share information with the DHSC to investigate and prosecute fraud, or any other unlawful activity affecting the NHS.</p>
+        <p>We may share information with the Cabinet Office in relation to the National Fraud Initiative.</p>
+        <p class="bold">Anonymised information may also be shared with the DHSC to:</p>
+        <ul class="list list-bullet">
+            <li>Monitor compliance with equality law</li>
+            <li>Research the effectiveness of the Training Grant</li>
+            <li>NHSBSA Student Services may contact you to discuss your application by any methods you have provided. Find out more about your rights and how we process your information at www.nhsbsa.nhs.uk/yourinformation.</li>
+        </ul>
+        <p>I understand that the administration of the NHS Learning Support Fund and the responsibility for counter fraud and security management in the NHS are both responsibilities of the NHS Business Services Authority.</p>
+        <p>I understand that NHSBSA Student Services may share the information on this form with the NHSBSA Loss and Fraud Prevention Team (LFP), Department of Health and Social Care (DHSC) Anti-Fraud Unit and NHS Counter Fraud Authority (NHSCFA) for the purposes of the prevention, detection, investigation and prosecution of fraud or any other unlawful activity affecting the NHS.</p>
+        <p>Please note: The NHS Counter Fraud Authority (NHSCFA) collects data appropriate for preventing and detecting economic crime within the NHS. Data is provided to the NHSCFA in the course of investigations undertaken by the NHSBSA LFP Team and Department of Health and Social Care, intelligence gathering and other proactive anti-crime programmes.</p>
+        <p class="bold">I accept that NHSBSA Student Services will immediately terminate or suspend my funding if:</p>
+        <ul class="list list-bullet">
+            <li>I withdraw, abandon, suspend, defer or interrupt the course permanently or temporarily for any reason, regardless of whether I intend to return</li>
+            <li>I gain financial support from sources other than the Student Loans Company which may affect my entitlement</li>
+            <li>NHSBSA Student Services in its absolute discretion determines that I am no longer entitled to financial support and that it is reasonable for it to withdraw funding.</li>
+        </ul>
+        <p class="bold">NHSBSA Student Services is committed to administering entitlement accurately wherever possible. I agree to pay back NHSBSA Student Services, within 30 days of receiving notification, any excess payment, fees and any other charges, including but not limited to the following circumstances:</p>
+        <ul class="list list-bullet">
+            <li>Changing my study pattern or course attendance in any way.</li>
+            <li>Withdrawing, abandoning, suspending, deferring or interrupting the course permanently or temporarily for any reason, regardless of whether I intend to return</li>
+            <li>Being overpaid because I have failed to notify NHSBSA Student Services of a change in my circumstances.</li>
+            <li>Where NHSBSA Student Services at its absolute discretion determines I have been given financial support to which I am not entitled.</li>
+            <li>Gaining support from sources other than the Student Loans Company that may affect my entitlement.</li>
+            <li>Should I fail to make full repayment of any amount due or agree an acceptable repayment plan with NHSBSA, I understand that the debt will be passed to a debt collection agency. I also understand that I may be charged for any additional recovery costs and/or interest at the rate of 8% on the referred debt which may be added to the balance.</li>
+        </ul>
+        <p>I understand and accept that if I fail to give sufficient notice of any change to my bank or building society account details, or provide incorrect details, NHSBSA Student Services cannot take responsibility for payments made to an incorrect account, delayed payments or non-payment of the funding.</p>
+        <p>I have read and accept the NHSBSA privacy notice in creating my NHS Learning Support Fund account.</p>
+        <p>I understand and accept that the terms and conditions (including rates) for the NHS Learning Support Fund may change at any time without notice, and the scheme is subject to continued government funding, which may cease at any time without notice.</p>
+        <p>I declare that the information given on this form and in any supporting documents I provide is complete and accurate. I understand and accept that if I provide NHSBSA Student Services with false or misleading information, financial support may be refused or withdrawn and I may be liable to criminal prosecution and/or civil proceedings.</p>
+
+        
+        <form action="v6/student-declaration" method="POST">
+            <div class="nhsuk-checkboxes__item nhsuk-u-margin-top-9 nhsuk-u-margin-bottom-9">
+                <input class="nhsuk-checkboxes__input" id="student-declaration" name="student-declaration" type="checkbox" value="approve">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="student-declaration">
+                    Accept declaration
+                </label>
+            </div>
+        
+            <button class="nhsuk-button" type="submit">Apply now</button>
+        </form>
+
+
+    </div>
+
+  </div>
+{% endblock %}

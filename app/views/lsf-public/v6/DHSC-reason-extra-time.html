@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What is the reason for taking extra time to complete your course?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+
+        <form action="v6/DHSC-reason-extra-time" method="POST">
+            <div class="nhsuk-form-group">
+                <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Department of Health and
+                        SocialCare questionnaire</span>What is the reason for taking extra time to complete your course?
+                </h1>
+
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="extra-time">
+                        Reason
+                    </label>
+                    <div class="nhsuk-hint" id="extra-time-hint">
+                        Leave blank if not applicable
+                    </div>
+                    <textarea class="nhsuk-textarea" id="extra-time" name="extra-time" rows="5"
+                        aria-describedby="extra-time-hint"></textarea>
+                        200 characters remaining
+                </div>
+
+            </div>
+            <button class="nhsuk-button" type="submit">Next</button><br>
+            <a href="academic-year-details">Cancel</a>
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

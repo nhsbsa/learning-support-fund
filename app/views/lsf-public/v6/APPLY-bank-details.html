@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+    <form action="v6/APPLY-bank-details" method="POST">
+
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Eligibility</span>Please enter your bank details</h1>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="account-holder">
+              Account holder
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="account-holder" name="account-holder" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="sort-code">
+              Sort code
+            </label>
+            <div class="nhsuk-hint" id="contact-hint">
+                For example, 233232
+            </div>
+            <input class="nhsuk-input nhsuk-input--width-20" id="sort-code" name="sort-code" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="account-number">
+              Account number
+            </label>
+            <div class="nhsuk-hint" id="contact-hint">
+                This is an 8 digit number
+            </div>
+            <input class="nhsuk-input nhsuk-input--width-20" id="account-number" name="account-number" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="building-society-number">
+              Building society number (if you have one)
+            </label>
+            <div class="nhsuk-hint" id="contact-hint">
+                You can find it on your card, statement or passbook
+            </div>
+            <input class="nhsuk-input nhsuk-input--width-20" id="building-society-number" name="building-society-number" type="text">
+        </div>
+
+        <button class="nhsuk-button" type="submit">Next</button><br>
+        <a href="academic-year-details">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

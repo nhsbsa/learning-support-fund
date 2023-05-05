@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Upload evidence
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds"> 
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <!-- <form action="v2/TDAE-" method="POST"> -->
+        <h1 class="nhsuk-heading-l">Upload your evidence for this week</h1>
+        <P>You need to provide evidence for each day you attended placement this week.</P>
+        
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="select-1">
+              Select a day the evidence relates to
+            </label>
+            <select class="nhsuk-select" id="select-1" name="select-1">
+                <option value="1" selected disabled>Day</option>
+                <option value="1">Monday</option>
+                <option value="2">Wednesday</option>
+                <option value="3">Thursday</option>
+            </select>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="select-1">
+              Select the evidence type
+            </label>
+            <select class="nhsuk-select" id="select-1" name="select-1">
+                <option value="1" selected disabled>Evidence type</option>
+                <option value="1" >Parking receipt</option>
+                <option value="2">Tunnel or toll charge</option>
+                <option value="3">Congestion or clean air charge</option>
+            </select>
+          </div>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="file-upload-1">
+                Upload your evidence file
+            </label>
+            <input class="nhsuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+        </div>
+
+      
+        <button class="nhsuk-button" type="submit">Next</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    <!-- </form> -->
+
+    </div>
+
+  </div>
+{% endblock %}

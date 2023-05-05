@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Additional costs for your normal daily journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v6/TDAE-additional-costs" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="input-width-5">
+					<h1 class="nhsuk-heading-l">
+						<h1 class="nhsuk-heading-l">What daily additional costs do you incur when travelling to your normal place of study?</h1>
+					</h1>
+				</label>
+				<p>These are costs to you which have covered car parking, congestion and clean air charges, tunnel or toll road charges.</p>
+
+
+
+				<div class="nhsuk-hint" id="contact-hint">
+					For example, 1.00
+				</div>
+				<div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+				<input class="nhsuk-input__prefix-input nhsuk-input nhsuk-input--width-5" id="study-additional-cost" name="study-additional-cost" type="text">
+			</div>
+
+			<!--<style>
+				.nhsuk-input__prefix{font-family:"GDS Transport",arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:400;font-size:16px;font-size:1rem;line-height:1.25;-webkit-box-sizing:border-box;box-sizing:border-box;display:inline-block;min-width:40px;min-width:2.5rem;height:40px;height:2.5rem;padding:5px;border:2px solid #0b0c0c;background-color:#f3f2f1;text-align:center;white-space:nowrap;cursor:default;-ms-flex:0 0 auto;-webkit-box-flex:0;flex:0 0 auto}@media print{.nhsuk-input__prefix{font-family:sans-serif}}@media(min-width: 40.0625em){.nhsuk-input__prefix{font-size:19px;font-size:1.1875rem;line-height:1.3157894737}}@media print{.nhsuk-input__prefix{font-size:14pt;line-height:1.15}}@media(max-width: 40.0525em){.nhsuk-input__prefix{line-height:1.6}}@media(max-width: 19.99em){.nhsuk-input__prefix{display:block;height:100%;white-space:normal}}@media(max-width: 19.99em){.nhsuk-input__prefix{border-bottom:0}}@media(min-width: 20em){.nhsuk-input__prefix{border-right:0}}@media(max-width: 19.99em)}@media(min-width: 20em)}
+				</style>-->
+
+			<details class="nhsuk-details">
+				<summary class="nhsuk-details__summary">
+					<span class="nhsuk-details__summary-text">
+						What if your additional cost covers a week or month?
+					</span>
+				</summary>
+				<div class="nhsuk-details__text">
+					<p>If you purchase a pass for example a monthly parking ticket, you will need to provide this additional costs as a daily amount</p>
+					<h2 class="nhsuk-heading-s">Breaking down to daily</h2>
+					<p>The total for a 1 month parking ticket to be divided by the amount of days you attended placement for the period you are claiming for.</p>
+					<p>For example:</p>
+					<p>£20 monthly parking pass divided by 10 days at placement, totals a daily additional cost of £2.</p>
+				</div>
+			</details>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

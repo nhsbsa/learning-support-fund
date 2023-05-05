@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Is your term time address the same?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v6/TDAE-accommodation-comment" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Do you want to provide any comments on your accommodation costs?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="same-term-address-yes" name="accommodation-comment" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="same-term-address-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="same-term-address-no" name="accommodation-comment" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="same-term-address-no">
+                    No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

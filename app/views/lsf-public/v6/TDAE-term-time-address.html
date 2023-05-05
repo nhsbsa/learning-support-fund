@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What is your term-time address?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v6/TDAE-term-time-address" method="POST">
+
+
+			<fieldset class="nhsuk-fieldset">
+				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+					<h1 class="nhsuk-fieldset__heading">
+						What is your term-time address?
+					</h1>
+				</legend>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="term-building-name">
+						Building name or number
+					</label>
+					<input class="nhsuk-input" id="term-building-name" name="term-building-name" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="term-address-line-1">
+						Address line 1
+					</label>
+					<input class="nhsuk-input" id="term-address-line-1" name="term-address-line-1" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="term-address-line-2">
+						Address line 2 (optional)
+					</label>
+					<input class="nhsuk-input" id="term-address-line-2" name="term-address-line-2" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="term-address-line-3">
+						Address line 3 (optional)
+					</label>
+					<input class="nhsuk-input" id="term-address-line-3" name="term-address-line-3" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="term-address-town">
+						Town or city
+					</label>
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="term-address-town" name="term-address-town"
+						type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="term-address-postcode">
+						Postcode
+					</label>
+					<input class="nhsuk-input nhsuk-input--width-10" id="term-address-postcode" name="term-address-postcode"
+						type="text">
+				</div>
+
+			</fieldset>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

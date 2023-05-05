@@ -1,0 +1,259 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<!-- <form action="" method="POST"> -->
+
+		<h1 class="nhsuk-heading-xl">Check your answers</h1>
+
+		{% if data['accommodation-details'] === 'action' %}
+			<div class="nhsuk-warning-callout">
+			  <h3 class="nhsuk-warning-callout__label">
+			    <span role="text">
+			      <span class="nhsuk-u-visually-hidden">Important: </span>
+			      University feedback
+			    </span>
+			  </h3>
+			  <p>You have provided a hotel receipt meaning this should be commercial accommodation instead of non-commercial.</p>
+			</div>
+		{% endif %}
+
+		<dl class="nhsuk-summary-list">
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Start date
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{% if data['accommodation-start-day'] %}
+						{{ data['accommodation-start-day'] }} <span class="cya-month">{{ data['accommodation-start-month'] }}</span> {{ data['accommodation-start-year'] }}
+					{% else %}
+						17 April 2023
+					{% endif %}
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+
+					<a href="TDAE-accommodation-start-date">
+						Change<span class="nhsuk-u-visually-hidden"> start date</span>
+					</a>
+
+				</dd>
+				{% endif %}
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					End date
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{% if data['accommodation-end-day'] %}
+						{{ data['accommodation-end-day'] }} <span class="cya-month">{{ data['accommodation-end-month'] }}</span> {{ data['accommodation-end-year'] }}
+					{% else %}
+						21 April 2023
+					{% endif %}
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+
+					<a href="TDAE-accommodation-end-date">
+						Change<span class="nhsuk-u-visually-hidden"> end date</span>
+					</a>
+
+				</dd>
+				{% endif %}
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Accommodation address
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{% if data['accommodation-building-name'] %}
+						{{ data['accommodation-building-name'] }}<br>
+						{{ data['accommodation-address-line-1'] }}<br>
+						{% if data['accommodation-address-line-2'] %}
+							{{ data['accommodation-address-line-2'] }}<br>
+						{% endif %}
+						{% if data['accommodation-address-line-3'] %}
+							{{ data['accommodation-address-line-3'] }}<br>
+						{% endif %}
+						{{ data['accommodation-address-town'] }}<br>
+						{{ data['accommodation-address-postcode'] }}<br>
+					{% else %}
+					123<br>
+					Building street 1,<br>
+					Building street 2,<br>
+					Town,<br>
+					County,<br>
+					NE33 3AB
+					{% endif %}
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+
+					<a href="TDAE-accommodation-address">
+						Change<span class="nhsuk-u-visually-hidden"> accommodation address</span>
+					</a>
+
+				</dd>
+				{% endif %}
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Accommodation type
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{% if data['accommodation-details'] === 'action' %}
+						 Non-commercial
+					{% else %}
+						{{ data['accommodation-type'] }}
+					{% endif %}
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+					<a href="TDAE-accommodation-type">
+						Change<span class="nhsuk-u-visually-hidden"> accommodation type</span>
+					</a>
+				</dd>
+				{% endif %}
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Cost per night
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{% if data['accommodation-cost'] %}
+						£{{ data['accommodation-cost'] }}
+					{% else %}
+						£60.00
+					{% endif %}
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+					<a href="TDAE-accommodation-cost">
+						Change<span class="nhsuk-u-visually-hidden"> cost per night</span>
+					</a>
+				</dd>
+				{% endif %}
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Uploaded evidence
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					<a href="/images/Hotel-booking-confirmation.pdf" download="Amari Ansari accommodation evidence 17 Apr 2023 to 22 Apr 2023">
+						hotel-receipt.pdf
+					</a>
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+					<a href="TDAE-accommodation-evidence">
+						Change<span class="nhsuk-u-visually-hidden"> uploaded evidence</span>
+					</a>
+				</dd>
+				{% endif %}
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Comment
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{% if data['accommodation-comment']  === 'yes' %}
+					 	Provided
+					{% else %}
+						Not provided
+					{% endif %}
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+					{% if data['accommodation-comment']  === 'yes' %}
+					<a href="TDAE-accommodation-comments-view">
+						View<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
+					</a>
+					{% else %}
+					<a href="TDAE-accommodation-comments">
+						Change<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
+					</a>
+					{% endif %}
+					</dd>
+					{% endif %}
+			</div>
+
+			</dl>
+
+			<h2 class="nhsuk-heading-m">Total accommodation costs reimbursed to you</h2>
+	    <dl class="nhsuk-summary-list">
+
+	      <div class="nhsuk-summary-list__row">
+	        <dt class="nhsuk-summary-list__key">
+	          Accomodation total
+	        </dt>
+	        <dd class="nhsuk-summary-list__value">
+	            £220.00
+	        </dd>
+	      </div>
+
+	    </dl>
+
+
+			{% if data['submit-claim'] != 'completed' %}
+				<form action="v6/TDAE-accommodation-check" method="POST">
+					<button class="nhsuk-button" type="submit">Save and continue</button><br>
+					<a href="TDAE-start-claim">Cancel</a>
+				</form>
+			{% endif %}
+
+		<!-- </form> -->
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			const months = {
+				"01": "January",
+				"02": "February",
+				"03": "March",
+				"04": "April",
+				"05": "May",
+				"06": "June",
+				"07": "July",
+				"08": "August",
+				"09": "September",
+				"1": "January",
+				"2": "February",
+				"3": "March",
+				"4": "April",
+				"5": "May",
+				"6": "June",
+				"7": "July",
+				"8": "August",
+				"9": "September",
+				"10": "October",
+				"11": "November",
+				"12": "December",
+			};
+
+			$(".cya-month").text(function () {
+				const month = $(this).text();
+				console.log("month:", month);
+				console.log("months[month]:", months[month]);
+				return months[month];
+			});
+		});
+		</script>
+
+</div>
+{% endblock %}

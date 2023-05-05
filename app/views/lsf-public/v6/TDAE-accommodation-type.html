@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Is your term time address the same?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v5/TDAE-accommodation-type" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  What type of accommodation did you stay in?
+                </h1>
+              </legend>
+
+              <p>Reimbursement for placement accommodation costs is capped as follows:</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Commercial accommodation up to £55 per night</li>
+                <li>Non-commercial accommodation up to £25 per night</li>
+              </ul>
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="accommodation-type-commercial" name="accommodation-type" type="radio" value="Commercial">
+                  <label class="nhsuk-label nhsuk-radios__label" for="accommodation-type-commercial">
+                    Commercial
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="accommodation-type-non-commercial" name="accommodation-type" type="radio" value="Non-commercial" {% if data['accommodation-details'] === 'action' %}checked{% endif %}>
+                  <label class="nhsuk-label nhsuk-radios__label" for="accommodation-type-non-commercial">
+                    Non-commercial
+                  </label>
+                </div>
+
+              </div>
+
+            </fieldset>
+
+          </div>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                What is the difference between commercial and non-commercial?
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>Commercial accommodation include hotels and Bed & Breakfasts where an agreement includes payments enforceable by law.</p>
+              <p>Non-commercial accommodation includes staying with friends, relatives or a room in a private house. This would usually have no formal contract or payment. It also includes accommodation advertised on on-line platforms such as Air B n B, which is then booked through informal, off-line arrangements.
+            </div>
+          </details>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

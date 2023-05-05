@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What was your accommodation address?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="TDAE-accommodation-type" method="POST">
+
+
+			<fieldset class="nhsuk-fieldset">
+				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+					<h1 class="nhsuk-fieldset__heading">
+						What was the address of your placement accommodation?
+					</h1>
+				</legend>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="accommodation-building-name">
+						Building name or number
+					</label>
+					<input class="nhsuk-input" id="accommodation-building-name" name="accommodation-building-name" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="accommodation-address-line-1">
+						Address line 1
+					</label>
+					<input class="nhsuk-input" id="accommodation-address-line-1" name="accommodation-address-line-1" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="accommodation-address-line-2">
+						Address line 2 (optional)
+					</label>
+					<input class="nhsuk-input" id="accommodation-address-line-2" name="accommodation-address-line-2" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="accommodation-address-line-3">
+						Address line 3 (optional)
+					</label>
+					<input class="nhsuk-input" id="accommodation-address-line-3" name="accommodation-address-line-3" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="accommodation-address-town">
+						Town or city
+					</label>
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="accommodation-address-town" name="accommodation-address-town"
+						type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="accommodation-address-postcode">
+						Postcode
+					</label>
+					<input class="nhsuk-input nhsuk-input--width-10" id="accommodation-address-postcode" name="accommodation-address-postcode"
+						type="text">
+				</div>
+
+			</fieldset>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}
