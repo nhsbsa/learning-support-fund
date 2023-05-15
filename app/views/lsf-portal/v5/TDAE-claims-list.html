@@ -125,7 +125,7 @@ Travel and Dual Accommodation Expense claims
                           <div class="nhsuk-checkboxes__item">
                             <input class="nhsuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="status-2">
-                              University processing (1)
+                              In progress (1)
                             </label>
                           </div>
 
@@ -133,6 +133,13 @@ Travel and Dual Accommodation Expense claims
                             <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
                               Returned from NHSBSA (2)
+                            </label>
+                          </div>
+
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-2">
+                              Being assessed (1)
                             </label>
                           </div>
 
@@ -255,7 +262,7 @@ Travel and Dual Accommodation Expense claims
                                 {% if data['Thompson'] == 'Returned' %}
                                 <strong class="nhsuk-tag nhsuk-tag--green">Submitted to NHSBSA</strong>
                                 {% else %}
-                                <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
+                                <strong class="nhsuk-tag nhsuk-tag--white">In progress</strong>
                                 {% endif %}
                             </td>
                             <td role="cell" class="nhsuk-table__cell">

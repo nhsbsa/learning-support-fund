@@ -485,10 +485,16 @@ router.post('/v6/TDAE-normal-summary-cya', (req, res) => {
 
 })
 
+router.post('/v6/TDAE-placement-to-mileage', (req, res) => {
+
+    res.redirect('/lsf-public/v6/TDAE-placement-return-mileage')
+
+})
+
 
 router.post('/v6/TDAE-placement-return-mileage', (req, res) => {
 
-    res.redirect('/lsf-public/v6/TDAE-placement-additional-costs-often')
+    res.redirect('/lsf-public/v6/TDAE-placement-itinerary')
 
 })
 
@@ -556,28 +562,54 @@ router.post('/v6/TDAE-start-claim', (req, res) => {
 
 router.post('/v6/TDAE-end-claim', (req, res) => {
 
-    const startDateDay = req.session.data['start-claim-day']
-    const startDateMonth = req.session.data['start-claim-month']
-    const startDateYear = req.session.data['start-claim-year']
-    const startDate = startDateDay + '-' + startDateMonth + '-' + startDateYear
+    res.redirect('/lsf-public/v6/TDAE-placement-days')
 
-    const endDateDay = req.session.data['end-claim-day']
-    const endDateMonth = req.session.data['end-claim-month']
-    const endDateYear = req.session.data['end-claim-year']
-    const endDate = endDateDay + '-' + endDateMonth + '-' + endDateYear
+    // const startDateDay = req.session.data['start-claim-day']
+    // const startDateMonth = req.session.data['start-claim-month']
+    // const startDateYear = req.session.data['start-claim-year']
+    // const startDate = startDateDay + '-' + startDateMonth + '-' + startDateYear
+
+    // const endDateDay = req.session.data['end-claim-day']
+    // const endDateMonth = req.session.data['end-claim-month']
+    // const endDateYear = req.session.data['end-claim-year']
+    // const endDate = endDateDay + '-' + endDateMonth + '-' + endDateYear
 
     // following a set start and end date to view the different journey between more than 1 week and under 1 week
     // 1 week or less: 17-04-2023 to 21-04-2023
     // 2 weeks: 17-04-2023 to 28-04-2023
 
-    if (startDate === '17-04-2023' && endDate === '21-04-2023') {
-        res.redirect('/lsf-public/v6/TDAE-days-claiming')
-    } else if (startDate === '17-04-2023' && endDate === '28-04-2023'){
-        req.session.data['TDAE-multiple-weeks'] = 'yes'
-        res.redirect('/lsf-public/v6/TDAE-claiming-same-days')
-    } else {
-        res.redirect('/lsf-public/v6/TDAE-end-claim')
-    }
+    // if (startDate === '17-04-2023' && endDate === '21-04-2023') {
+    //     res.redirect('/lsf-public/v6/TDAE-days-claiming')
+    // } else if (startDate === '17-04-2023' && endDate === '28-04-2023'){
+    //     req.session.data['TDAE-multiple-weeks'] = 'yes'
+    //     res.redirect('/lsf-public/v6/TDAE-claiming-same-days')
+    // } else {
+    //     res.redirect('/lsf-public/v6/TDAE-end-claim')
+    // }
+
+})
+
+router.post('/v6/TDAE-placement-days', (req, res) => {
+
+    res.redirect('/lsf-public/v6/TDAE-check-dates')
+
+})
+
+router.post('/v6/TDAE-check-dates', (req, res) => {
+
+    res.redirect('/lsf-public/v6/TDAE-same-journey')
+
+})
+
+router.post('/v6/TDAE-same-journey', (req, res) => {
+
+  const sameJourney = req.session.data['same-journey']
+
+  if (sameJourney === 'yes'){
+      res.redirect('/lsf-public/v6/TDAE-placement-to-mileage')
+  } else {
+      res.redirect('/lsf-public/v6/TDAE-placement-itinerary')
+  }
 
 })
 
