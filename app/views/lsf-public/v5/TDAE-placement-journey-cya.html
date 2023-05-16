@@ -23,7 +23,7 @@ Check your answers
                   {% if data['placement-mileage'] %}
                     {{ data['placement-mileage'] }}
                   {% else %}
-                    30
+                    8
                   {% endif %}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
@@ -78,18 +78,18 @@ Check your answers
 
         </dl>
 
-        <h2 class="nhsuk-heading-m">Total travel costs reimbursed to you</h2>
+        <h2 class="nhsuk-heading-m">Daily cost travelling to placement</h2>
         <dl class="nhsuk-summary-list">
 
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
-              Travel total
+              Daily claim
             </dt>
             <dd class="nhsuk-summary-list__value">
-              {% if data['mode-of-transport'] !== 'drive' %}
-                £28.20
+              {% if data['often-additional-costs'] == 'yes' %}
+                £4.30
               {% else %}
-                £15.18
+                £2.30
               {% endif %}
             </dd>
           </div>

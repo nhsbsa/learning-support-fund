@@ -420,6 +420,44 @@ Check your answers
               </div>
             </details> -->
 
+            <h2 class="nhsuk-heading-m">Total cost travelling to placement</h2>
+            <dl class="nhsuk-summary-list">
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Daily claim
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['often-additional-costs'] == 'yes' %}
+                    £4.30
+                  {% else %}
+                    £2.30
+                  {% endif %}
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Days travelling
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  3
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Total claim
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['often-additional-costs'] == 'yes' %}
+                    £12.90
+                  {% else %}
+                    £6.90
+                  {% endif %}
+                </dd>
+              </div>
+
+            </dl>
+
           <button class="nhsuk-button" type="submit">Save and continue</button><br>
           <a href="TDAE-start-claim">Cancel</a>
 

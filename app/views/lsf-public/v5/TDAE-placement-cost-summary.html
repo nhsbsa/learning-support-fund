@@ -12,7 +12,7 @@ Your costs
     <!-- <form action="" method="POST"> -->
 
     <h1 class="nhsuk-heading-l">Total of your expenses</h1>
-    <p>Based on the information you have provided this is a total of your travel and accommodation costs.</p>
+    <p>Based on the information you have provided this is the amount you will be reimbursed for travel and accommodation costs.</p>
 
     <dl class="nhsuk-summary-list">
 
@@ -38,14 +38,10 @@ Your costs
           Travel
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {% if data['TDAE-multiple-weeks'] == 'yes' %}
-            £22.80
+          {% if data['often-additional-costs'] == 'yes' %}
+            £12.90
           {% else %}
-            {% if data['mode-of-transport'] !== 'drive' %}
-              £28.20
-            {% else %}
-              £15.18
-            {% endif %}
+            £6.90
           {% endif %}
         </dd>
       </div>
@@ -71,10 +67,20 @@ Your costs
           Total
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {% if checked('claiming-for', 'accommodation') %}
+          {% if checked('claiming-for', 'car') %}
+            {% if data['often-additional-costs'] == 'yes' %}
+              £12.90
+            {% else %}
+              £6.90
+            {% endif %}
+          {% elif checked('claiming-for', 'accommodation') %}
             £220.00
-          {% else %}
-            £22.80
+          {% elif checked('claiming-for', 'accommodation') & checked('claiming-for', 'car') %}
+            {% if data['often-additional-costs'] == 'yes' %}
+              £232.90
+            {% else %}
+              £226.90
+            {% endif %}
           {% endif %}
         </dd>
       </div>
