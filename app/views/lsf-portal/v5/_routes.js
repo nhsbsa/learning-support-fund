@@ -21,6 +21,7 @@ router.get('/v5/process-claim', (req, res) => {
         req.session.data['late-submission'] = 'false'
         req.session.data['breakdown'] = 'walk'
         req.session.data['wrong-evidence'] = 'false'
+        req.session.data['read-only'] = 'false'
         res.redirect('/lsf-portal/v5/TDAE-student-claim')
     }
     else if (name === 'Ben Bloggs') {
@@ -29,6 +30,7 @@ router.get('/v5/process-claim', (req, res) => {
       req.session.data['late-submission'] = 'false'
       req.session.data['breakdown'] = 'walk'
       req.session.data['wrong-evidence'] = 'true'
+      req.session.data['read-only'] = 'false'
       res.redirect('/lsf-portal/v5/TDAE-student-claim')
     }
     else if (name === 'Chet Cheema') {
@@ -37,6 +39,7 @@ router.get('/v5/process-claim', (req, res) => {
       req.session.data['late-submission'] = 'false'
       req.session.data['breakdown'] = 'walk'
       req.session.data['wrong-evidence'] = 'false'
+      req.session.data['read-only'] = 'false'
       res.redirect('/lsf-portal/v5/TDAE-student-claim')
     }
     else if (name === 'Jill Cooper') {
@@ -45,6 +48,7 @@ router.get('/v5/process-claim', (req, res) => {
       req.session.data['late-submission'] = 'true'
       req.session.data['breakdown'] = 'walk'
       req.session.data['wrong-evidence'] = 'false'
+      req.session.data['read-only'] = 'false'
       res.redirect('/lsf-portal/v5/TDAE-student-claim')
     }
     else {

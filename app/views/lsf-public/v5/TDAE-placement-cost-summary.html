@@ -75,7 +75,7 @@ Your costs
             {% endif %}
           {% elif checked('claiming-for', 'accommodation') %}
             £220.00
-          {% elif checked('claiming-for', 'accommodation') & checked('claiming-for', 'car') %}
+          {% elif checked('claiming-for', 'accommodation') and checked('claiming-for', 'car') %}
             {% if data['often-additional-costs'] == 'yes' %}
               £232.90
             {% else %}

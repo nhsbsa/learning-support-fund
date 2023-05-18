@@ -200,9 +200,7 @@ Task list
                             </span>
                             {% endif %}
                           {% elif checked('claiming-for', 'accommodation') %}
-                            {% if
-                                data['accommodation-details'] === 'completed'
-                            %}
+                            {% if data['accommodation-details'] === 'completed' %}
                             <a class="app-task-list__task-name" href="TDAE-placement-cost-summary">
                                 Submit your claim
                             </a>
