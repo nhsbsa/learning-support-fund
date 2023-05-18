@@ -93,16 +93,18 @@ Claim details
             Evidence
           </dt>
           <dd class="nhsuk-summary-list__value">
-            <a href="/images/Hotel-booking-confirmation.pdf" download="Amari Ansari accommodation evidence 17 Apr 2023 to 22 Apr 2023">
+            <a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 17 Apr 2023 to 22 Apr 2023">
               Download (PDF)<span class="nhsuk-u-visually-hidden"> evidence</span>
             </a>
           </dd>
         </div>
       </dl>
 
+      {% if data['wrong-evidence'] === 'false' %}
       <h3 class="nhsuk-heading-xs">Accommodation comments</h3>
 
       <p>I stayed an extra night on the Friday due to the shift finishing too late to travel home.</p>
+      {% endif %}
 
       {% if data['read-only'] != 'true' %}
       <a class="nhsuk-button" href="TDAE-accommodation-check">Continue</a>

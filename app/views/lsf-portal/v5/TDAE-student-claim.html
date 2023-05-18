@@ -33,7 +33,7 @@
 
     {% if data['read-only'] != 'true' %}
     <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Claim checks incomplete</h2>
-    <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed {% if data['status'] === 'Returned from NHSBSA' %}1{% else %}0{% endif %} of 3 sections.</p>
+    <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed {% if data['status'] === 'Returned from NHSBSA' %}1{% else %}0{% endif %} of {% if data['scenario'] === 'accommodation-travel' %}3{% else %}2{% endif %} sections.</p>
     {% endif %}
 
     {% if data['status'] == 'University processing' %}
@@ -47,7 +47,7 @@
 
       <div class="nhsuk-grid-column-two-thirds">
 
-      {% if data['name'] === 'Ben Bloggs' %}
+      {% if data['late-submission'] === 'true' %}
         <div class="nhsuk-warning-callout">
           <h3 class="nhsuk-warning-callout__label">
             <span role="text">
@@ -230,6 +230,7 @@
   <div class="nhsuk-grid-column-two-thirds">
 
     <ol class="app-task-list">
+      {% if data['scenario'] !== 'accommodation-only' %}
       <li>
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">1. </span> Travel details
@@ -265,10 +266,18 @@
           </li>
         </ul>
       </li>
+      {% endif %}
 
+      {% if data['scenario'] !== 'travel-only' %}
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">2. </span> Accommodation details
+          <span class="app-task-list__section-number">
+            {% if data['scenario'] === 'accommodation-only' %}
+              1.
+            {% else %}
+              2.
+            {% endif %}
+          </span> Accommodation details
         </h2>
         <ul class="app-task-list__items">
           <li class="app-task-list__item nhsuk-u-clear">
@@ -287,17 +296,24 @@
           </li>
         </ul>
       </li>
+      {% endif %}
 
       {% if data['read-only'] != 'true' %}
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">3. </span> Finish checking claim
+          <span class="app-task-list__section-number">
+            {% if data['scenario'] === 'accommodation-only' or data['scenario'] === 'travel-only' %}
+              2.
+            {% else %}
+              3.
+            {% endif %}
+          </span> Finish checking claim
         </h2>
         <ul class="app-task-list__items">
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
               {% if data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' and data['accommodation-completed'] === 'completed' %}
-                {% if data['name'] === 'Ben Bloggs' %}
+                {% if data['late-submission'] === 'true' %}
                   <a class="app-task-list__task-name" href="TDAE-nhsbsa-comments?submitted=late">
                     Submit claim checks
                   </a>
@@ -306,6 +322,14 @@
                     Submit claim checks
                   </a>
                 {% endif %}
+              {% elif data['scenario'] === 'travel-only' and data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' %}
+                <a class="app-task-list__task-name" href="TDAE-provide-nhsbsa-comments">
+                  Submit claim checks
+                </a>
+              {% elif data['scenario'] === 'accommodation-only' and data['accommodation-completed'] === 'completed' %}
+                <a class="app-task-list__task-name" href="TDAE-provide-nhsbsa-comments">
+                  Submit claim checks
+                </a>
               {% else %}
               <span class="app-task-list__task-name">
                 Submit claim checks
@@ -320,6 +344,10 @@
               {% else %}
                 <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
               {% endif %}
+            {% elif data['scenario'] === 'travel-only' and data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' %}
+              <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
+            {% elif data['scenario'] === 'accommodation-only' and data['accommodation-completed'] === 'completed' %}
+              <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
             {% else %}
               <strong class="nhsuk-tag nhsuk-tag--grey" style="float: right;" id="eligibility-status">Cannot start yet</strong>
             {% endif %}
@@ -336,7 +364,7 @@
       <li>what needs changing for them to re-submit the claim</li>
       <li>why the claim is being declined</li>
     </ul>
-    {% if data['university-completed'] === 'in-progress' or data['evidence-completed'] === 'in-progress' %}
+    {% if data['university-completed'] === 'in-progress' or data['evidence-completed'] === 'in-progress' or data['accommodation-completed'] === 'in-progress' %}
     <a class="nhsuk-button" href="TDAE-return-decline">Send to student</a>
     {% else %}
     <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Send to student</a>

@@ -8,6 +8,53 @@ const router = express.Router();
 
 // ********************************
 
+// Claims list
+router.get('/v5/process-claim', (req, res) => {
+
+    const name = req.session.data['name']
+
+    req.session.data['status'] = 'To be completed'
+
+    if (name === 'Emmit Mar') {
+        req.session.data['status'] = 'To be completed'
+        req.session.data['scenario'] = 'accommodation-only'
+        req.session.data['late-submission'] = 'false'
+        req.session.data['breakdwon'] = 'walk'
+        req.session.data['wrong-evidence'] = 'false'
+        res.redirect('/lsf-portal/v5/TDAE-student-claim')
+    }
+    else if (name === 'Ben Bloggs') {
+      req.session.data['status'] = 'To be completed'
+      req.session.data['scenario'] = 'accommodation-only'
+      req.session.data['late-submission'] = 'false'
+      req.session.data['breakdwon'] = 'walk'
+      req.session.data['wrong-evidence'] = 'true'
+      res.redirect('/lsf-portal/v5/TDAE-student-claim')
+    }
+    else if (name === 'Jill Cooper') {
+      req.session.data['status'] = 'To be completed'
+      req.session.data['scenario'] = 'accommodation-travel'
+      req.session.data['late-submission'] = 'true'
+      req.session.data['breakdwon'] = 'walk'
+      req.session.data['wrong-evidence'] = 'false'
+      res.redirect('/lsf-portal/v5/TDAE-student-claim')
+    }
+    else {
+        res.redirect('/lsf-portal/v5/TDAE-student-claim')
+    }
+
+})
+
+//{% if data['Ansari'] == 'submitted' %}
+//<a class="nhsuk-link--no-visited-state"
+//    href="TDAE-student-claim?name=Emmit Mar&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
+//    claim</a>
+//{% else %}
+//<a class="nhsuk-link--no-visited-state"
+//    href="TDAE-student-claim?name=Emmit Mar&status=To be completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=">Process
+//    claim</a>
+//{% endif %}
+
 // Return to student decline or return
 router.post('/v5/returnordecline', (req, res) => {
 
