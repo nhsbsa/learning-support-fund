@@ -19,7 +19,7 @@ router.get('/v5/process-claim', (req, res) => {
         req.session.data['status'] = 'To be completed'
         req.session.data['scenario'] = 'accommodation-only'
         req.session.data['late-submission'] = 'false'
-        req.session.data['breakdwon'] = 'walk'
+        req.session.data['breakdown'] = 'walk'
         req.session.data['wrong-evidence'] = 'false'
         res.redirect('/lsf-portal/v5/TDAE-student-claim')
     }
@@ -27,15 +27,23 @@ router.get('/v5/process-claim', (req, res) => {
       req.session.data['status'] = 'To be completed'
       req.session.data['scenario'] = 'accommodation-only'
       req.session.data['late-submission'] = 'false'
-      req.session.data['breakdwon'] = 'walk'
+      req.session.data['breakdown'] = 'walk'
       req.session.data['wrong-evidence'] = 'true'
+      res.redirect('/lsf-portal/v5/TDAE-student-claim')
+    }
+    else if (name === 'Chet Cheema') {
+      req.session.data['status'] = 'To be completed'
+      req.session.data['scenario'] = 'travel-only'
+      req.session.data['late-submission'] = 'false'
+      req.session.data['breakdown'] = 'walk'
+      req.session.data['wrong-evidence'] = 'false'
       res.redirect('/lsf-portal/v5/TDAE-student-claim')
     }
     else if (name === 'Jill Cooper') {
       req.session.data['status'] = 'To be completed'
       req.session.data['scenario'] = 'accommodation-travel'
       req.session.data['late-submission'] = 'true'
-      req.session.data['breakdwon'] = 'walk'
+      req.session.data['breakdown'] = 'walk'
       req.session.data['wrong-evidence'] = 'false'
       res.redirect('/lsf-portal/v5/TDAE-student-claim')
     }

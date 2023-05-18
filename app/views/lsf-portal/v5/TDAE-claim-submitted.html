@@ -10,6 +10,8 @@ Claim outcome
     <div class="nhsuk-grid-column-two-thirds">
       {% if data['name'] == 'Emmit Mar' %}
       <form action="TDAE-claims-list?Ansari=submitted" method="POST">
+      {% elif data['name'] == 'Chet Cheema' %}
+      <form action="TDAE-claims-list?Cheema=submitted" method="POST">
       {% else %}
       <form action="TDAE-claims-list" method="POST">
       {% endif %}

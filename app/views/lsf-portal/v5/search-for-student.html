@@ -12,6 +12,7 @@
         "href": "javascript:history.go(-1)",
         "text": "Go back"
     }) }}
+    <form action="search-for-student-results" method="POST">
         <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>Search for a student</h1>
 
         <div class="nhsuk-grid-row">
@@ -27,7 +28,7 @@
                         <label class="nhsuk-label" for="example">
                             Surname
                         </label>
-                        <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+                        <input class="nhsuk-input nhsuk-input--width-20" id="surname" name="surname" type="text">
                     </div>
                 </div>
             </div>
@@ -39,7 +40,7 @@
                           Date of birth
                         </h1>
                       </legend>
-                  
+
                       <div class="nhsuk-date-input" id="example">
                         <div class="nhsuk-date-input__item">
                           <div class="nhsuk-form-group">
@@ -67,7 +68,7 @@
                         </div>
                       </div>
                     </fieldset>
-                  
+
                 </div>
             </div>
             <div class="nhsuk-grid-column-two-thirds">
@@ -98,7 +99,8 @@
             </div>
         </div>
 
-        <a class="nhsuk-button" href="search-for-student-results">Search</a><br>
+        <button class="nhsuk-button" type="submit">Search</button>
+        </form>
         <p><a href="/">Clear search</a></p>
 
 
