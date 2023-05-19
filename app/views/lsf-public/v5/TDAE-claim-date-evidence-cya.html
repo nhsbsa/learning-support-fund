@@ -420,12 +420,24 @@ Check your answers
               </div>
             </details> -->
 
-            <h2 class="nhsuk-heading-m">Total cost travelling to placement</h2>
+            <h2 class="nhsuk-heading-m">Total travel costs reimbursed</h2>
             <dl class="nhsuk-summary-list">
 
               <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width: 50%;">
+                  University travel daily claim
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['mode-of-transport'] == 'walk' and data['normal-often-additional-costs']  === 'no' %}
+      							£0
+      						{% else %}
+      							£0.98
+      						{% endif %}
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-                  Daily claim
+                  Placement travel daily claim
                 </dt>
                 <dd class="nhsuk-summary-list__value">
                   {% if data['often-additional-costs'] == 'yes' %}
