@@ -14,134 +14,353 @@ What is the return mileage to your placement?
 </div>
 
 <div class="nhsuk-grid-row">
-	<div class="nhsuk-grid-column-two-thirds">
-
+	<div class="nhsuk-grid-column-full">
 		<p>Add your journey mileage to and from your placement, additional costs incurred and community mileage for each day of your placement.</p>
 
-		<h2 class="nhsuk-heading-s" style="float: left">Monday 5 June 2023</h2>
-		<!-- <p style="float: right; padding-top: 8px"><a href="#">Remove day</a></p>-->
-		{% if data['same-journey'] === "yes" %}
-		<dl class="nhsuk-summary-list">
-		  <div class="nhsuk-summary-list__row">
-		    <dt class="nhsuk-summary-list__key">Mileage to placement</dt>
-		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
-		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage to placement</span></a></dd>
-		  </div>
-			<div class="nhsuk-summary-list__row">
-		    <dt class="nhsuk-summary-list__key">Mileage returning from placement</dt>
-		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
-		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage returning from placement</span></a></dd>
-		  </div>
-		</dl>
-		{% elif data['journey-mileage'] === "1" %}
-		<dl class="nhsuk-summary-list">
-		  <div class="nhsuk-summary-list__row">
-		    <dt class="nhsuk-summary-list__key">Mileage to placement</dt>
-		    <dd class="nhsuk-summary-list__value">48 miles</dd>
-		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage to placement</span></a></dd>
-		  </div>
-			<div class="nhsuk-summary-list__row">
-		    <dt class="nhsuk-summary-list__key">Mileage returning from placement</dt>
-		    <dd class="nhsuk-summary-list__value">3.4 miles</dd>
-		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage returning from placement</span></a></dd>
-		  </div>
-		</dl>
-		{% else %}
-		<p style="clear: both">You have not added any journey details for this day.</p>
-		{% endif %}
-
-		<h2 class="nhsuk-heading-s" style="float: left">Tuesday 6 June 2023</h2>
-		<!-- <p style="float: right; padding-top: 8px"><a href="#">Remove day</a></p>-->
-		{% if data['same-journey'] === "yes" %}
-		<dl class="nhsuk-summary-list">
-		  <div class="nhsuk-summary-list__row">
-		    <dt class="nhsuk-summary-list__key">Mileage to placement</dt>
-		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
-		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage to placement</span></a></dd>
-		  </div>
-			<div class="nhsuk-summary-list__row">
-		    <dt class="nhsuk-summary-list__key">Mileage returning from placement</dt>
-		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
-		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage returning from placement</span></a></dd>
-		  </div>
-		</dl>
-		{% else %}
-		<p style="clear: both">You have not added any journey details for this day.</p>
-		{% endif %}
-
-		<h2 class="nhsuk-heading-s" style="float: left">Wednesday 7 June 2023</h2>
-		<!-- <p style="float: right; padding-top: 8px"><a href="#">Remove day</a></p>-->
-		{% if data['same-journey'] === "yes" %}
-		<dl class="nhsuk-summary-list">
-		  <div class="nhsuk-summary-list__row">
-		    <dt class="nhsuk-summary-list__key">Mileage to placement</dt>
-		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
-		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage to placement</span></a></dd>
-		  </div>
-			<div class="nhsuk-summary-list__row">
-		    <dt class="nhsuk-summary-list__key">Mileage returning from placement</dt>
-		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
-		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage returning from placement</span></a></dd>
-		  </div>
-		</dl>
-		{% else %}
-		<p style="clear: both">You have not added any journey details for this day.</p>
-		{% endif %}
-
-		<h2 class="nhsuk-heading-s" style="float: left">Thursday 8 June 2023</h2>
-		<!-- <p style="float: right; padding-top: 8px"><a href="#">Remove day</a></p>-->
-		{% if data['same-journey'] === "yes" %}
-		<dl class="nhsuk-summary-list">
-		  <div class="nhsuk-summary-list__row">
-		    <dt class="nhsuk-summary-list__key">Mileage to placement</dt>
-		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
-		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage to placement</span></a></dd>
-		  </div>
-			<div class="nhsuk-summary-list__row">
-		    <dt class="nhsuk-summary-list__key">Mileage returning from placement</dt>
-		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
-		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage returning from placement</span></a></dd>
-		  </div>
-		</dl>
-		{% else %}
-		<p style="clear: both">You have not added any journey details for this day.</p>
-		{% endif %}
-
-		<h2 class="nhsuk-heading-s" style="float: left">Friday 9 June 2023</h2>
-		<!-- <p style="float: right; padding-top: 8px"><a href="#">Remove day</a></p>-->
-		{% if data['same-journey'] === "yes" %}
-		<dl class="nhsuk-summary-list">
-		  <div class="nhsuk-summary-list__row">
-		    <dt class="nhsuk-summary-list__key">Mileage to placement</dt>
-		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
-		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage to placement</span></a></dd>
-		  </div>
-			<div class="nhsuk-summary-list__row">
-		    <dt class="nhsuk-summary-list__key">Mileage returning from placement</dt>
-		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
-		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage returning from placement</span></a></dd>
-		  </div>
-		</dl>
-		{% else %}
-		<p style="clear: both">You have not added any journey details for this day.</p>
-		{% endif %}
-
-	</div>
-
-	<div class="nhsuk-grid-column-one-third">
 		<div  class="action-block">
 			<h2 class="nhsuk-heading-s">What you can do</h2>
-			{% if data['same-journey'] === "yes" %}
-			<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-same-journey">Change journey mileage</a>
-			{% else %}
-			<a class="nhsuk-button nhsuk-button--secondary">Add journey mileage</a>
-			{% endif %}
-			<a class="nhsuk-button nhsuk-button--secondary">Add additional costs</a>
-			<a class="nhsuk-button nhsuk-button--secondary">Add community mileage</a>
-			<a class="nhsuk-button">Complete placement travel</a>
+			<div class="nhsuk-grid-row">
+				<div class="nhsuk-grid-column-one-quarter">
+					{% if data['same-journey'] === "yes" %}
+					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-same-journey">Change journey mileage</a>
+					{% else %}
+					<a class="nhsuk-button nhsuk-button--secondary" href="v6/add-journey-mileage">Add journey mileage</a>
+					{% endif %}
+				</div>
+				<div class="nhsuk-grid-column-one-quarter">
+					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-evidence-type">Add additional costs</a>
+				</div>
+				{% if checked('claiming-for', 'community') %}
+				<div class="nhsuk-grid-column-one-quarter">
+				<a class="nhsuk-button nhsuk-button--secondary">Add community mileage</a>
+				</div>
+				{% endif %}
+				<div class="nhsuk-grid-column-one-quarter">
+				<a class="nhsuk-button">Complete placement travel</a>
+				</div>
+			</div>
 			<p><a href="#">Reset placement dates</a></p>
 		</div>
 	</div>
+	<div class="nhsuk-grid-column-full">
+
+		<table role="table" class="nhsuk-table-responsive">
+		  <caption class="nhsuk-table__caption">Placement travel itinerary and costs</caption>
+		  <thead role="rowgroup" class="nhsuk-table__head">
+		    <tr role="row">
+		      <th role="columnheader" class="" scope="col">
+		        Date
+		      </th>
+		      <th role="columnheader" class="" scope="col">
+		        Type
+		      </th>
+		      <th role="columnheader" class="" scope="col">
+		        Value
+		      </th>
+					<th role="columnheader" class="" scope="col">
+		        Action
+		      </th>
+		    </tr>
+		  </thead>
+		  <tbody class="nhsuk-table__body">
+				{% if data['same-journey'] === "yes" %}
+			    <tr role="row" class="nhsuk-table__row">
+				      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Date </span>Monday 5 June 2023
+				      </td>
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+				      </td>
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+				      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Monday 5 June 2023</span>
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+				{% elif data['journey-mileage'] === "1" or data['journey-mileage'] === "2" or data['journey-mileage'] === "3" %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Monday 5 June 2023
+			      </td>
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>32.4 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+			      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell" {% if data['additional-cost'] === "1" %} style="border: 0; padding-bottom: 0px;" {% endif %}>
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Monday 5 June 2023</span>
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" {% if data['additional-cost'] === "1" %} style="border: 0; padding-bottom: 0px;" {% endif %}>
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" {% if data['additional-cost'] === "1" %} style="border: 0; padding-bottom: 0px;" {% endif %}>
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>2.4 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell" {% if data['additional-cost'] === "1" %} style="border: 0; padding-bottom: 0px;" {% endif %}>
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+				{% else %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Monday 5 June 2023
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span><span class="nhsuk-u-visually-hidden">No travel entered yet</span>
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span><span class="nhsuk-u-visually-hidden">No cost entered yet</span>
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No actions available</span>
+			      </td>
+			    </tr>
+				{% endif %}
+				{% if data['additional-cost'] === "1" %}
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Monday 5 June 2023</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span><a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target=”_blank”>Car parking</a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>£3.40
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+					</tr>
+				{% endif %}
+				{% if data['same-journey'] === "yes" or data['journey-mileage'] === "2" or data['journey-mileage'] === "3" %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Tuesday 6 June 2023
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+			      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Tuesday 6 June 2023</span>
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Wednesday 7 June 2023
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+			      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Wednesday 7 June 2023</span>
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Thursday 8 June 2023
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+			      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Thursday 8 June 2023</span>
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+				{% else %}
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Date </span>Tuesday 6 June 2023
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span><span class="nhsuk-u-visually-hidden">No travel entered yet</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span><span class="nhsuk-u-visually-hidden">No cost entered yet</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No actions available</span>
+						</td>
+					</tr>
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Date </span>Wednesday 7 June 2023
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span><span class="nhsuk-u-visually-hidden">No travel entered yet</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span><span class="nhsuk-u-visually-hidden">No cost entered yet</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No actions available</span>
+						</td>
+					</tr>
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Date </span>Thursday 8 June 2023
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span><span class="nhsuk-u-visually-hidden">No travel entered yet</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span><span class="nhsuk-u-visually-hidden">No cost entered yet</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No actions available</span>
+						</td>
+					</tr>
+				{% endif %}
+				{% if data['same-journey'] === "yes" %}
+			    <tr role="row" class="nhsuk-table__row">
+				      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Date </span>Friday 9 June 2023
+				      </td>
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+				      </td>
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+				      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Monday 5 June 2023</span>
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+				{% elif data['journey-mileage'] === "3" %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Friday 9 June 2023
+			      </td>
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>2.4 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+			      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Friday 9 June 2023</span>
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>32.4 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+				{% else %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Monday 5 June 2023
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span><span class="nhsuk-u-visually-hidden">No travel entered yet</span>
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span><span class="nhsuk-u-visually-hidden">No cost entered yet</span>
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No actions available</span>
+			      </td>
+			    </tr>
+				{% endif %}
+		  </tbody>
+		</table>
+
+	</div>
+
 
 </div>
 {% endblock %}

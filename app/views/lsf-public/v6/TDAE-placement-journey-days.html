@@ -1,0 +1,106 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Which mode of transport do you take to and from your normal place of study?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+    <form action="v6/TDAE-placement-journey-days" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                    Which days were you travelling these miles for your placement?
+                </h1>
+              </legend>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key" style="width: 75%">
+                    Mileage to your placement
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    32.4
+                  </dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key" style="width: 75%">
+                    Mileage returning from your placement
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    2.4
+                  </dd>
+
+                </div>
+
+              </dl>
+
+              <div class="nhsuk-hint" id="example-hint">
+                Select all the days you travelled these miles for your placement
+              </div>
+
+              <div class="nhsuk-checkboxes">
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                    Monday 5 June 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                    Tuesday 6 June 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    Wednesday 7 June 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    Thursday 8 June 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    Friday 9 June 2023
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+      <button class="nhsuk-button" type="submit">Save and continue</button><br>
+      <a href="TDAE-start-claim">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

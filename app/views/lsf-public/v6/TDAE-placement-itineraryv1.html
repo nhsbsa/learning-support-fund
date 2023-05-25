@@ -1,0 +1,147 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What is the return mileage to your placement?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+	<div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-l">Your placement travel itinerary</h1>
+
+	</div>
+</div>
+
+<div class="nhsuk-grid-row">
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<p>Add your journey mileage to and from your placement, additional costs incurred and community mileage for each day of your placement.</p>
+
+		<h2 class="nhsuk-heading-s" style="float: left">Monday 5 June 2023</h2>
+		<!-- <p style="float: right; padding-top: 8px"><a href="#">Remove day</a></p>-->
+		{% if data['same-journey'] === "yes" %}
+		<dl class="nhsuk-summary-list">
+		  <div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">Mileage to placement</dt>
+		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
+		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage to placement</span></a></dd>
+		  </div>
+			<div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">Mileage returning from placement</dt>
+		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
+		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage returning from placement</span></a></dd>
+		  </div>
+		</dl>
+		{% elif data['journey-mileage'] === "1" %}
+		<dl class="nhsuk-summary-list">
+		  <div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">Mileage to placement</dt>
+		    <dd class="nhsuk-summary-list__value">32.4 miles</dd>
+		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage to placement</span></a></dd>
+		  </div>
+			<div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">Mileage returning from placement</dt>
+		    <dd class="nhsuk-summary-list__value">2.4 miles</dd>
+		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage returning from placement</span></a></dd>
+		  </div>
+		</dl>
+		{% else %}
+		<p style="clear: both">You have not added any journey details for this day.</p>
+		{% endif %}
+
+		<h2 class="nhsuk-heading-s" style="float: left">Tuesday 6 June 2023</h2>
+		<!-- <p style="float: right; padding-top: 8px"><a href="#">Remove day</a></p>-->
+		{% if data['same-journey'] === "yes" %}
+		<dl class="nhsuk-summary-list">
+		  <div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">Mileage to placement</dt>
+		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
+		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage to placement</span></a></dd>
+		  </div>
+			<div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">Mileage returning from placement</dt>
+		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
+		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage returning from placement</span></a></dd>
+		  </div>
+		</dl>
+		{% else %}
+		<p style="clear: both">You have not added any journey details for this day.</p>
+		{% endif %}
+
+		<h2 class="nhsuk-heading-s" style="float: left">Wednesday 7 June 2023</h2>
+		<!-- <p style="float: right; padding-top: 8px"><a href="#">Remove day</a></p>-->
+		{% if data['same-journey'] === "yes" %}
+		<dl class="nhsuk-summary-list">
+		  <div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">Mileage to placement</dt>
+		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
+		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage to placement</span></a></dd>
+		  </div>
+			<div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">Mileage returning from placement</dt>
+		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
+		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage returning from placement</span></a></dd>
+		  </div>
+		</dl>
+		{% else %}
+		<p style="clear: both">You have not added any journey details for this day.</p>
+		{% endif %}
+
+		<h2 class="nhsuk-heading-s" style="float: left">Thursday 8 June 2023</h2>
+		<!-- <p style="float: right; padding-top: 8px"><a href="#">Remove day</a></p>-->
+		{% if data['same-journey'] === "yes" %}
+		<dl class="nhsuk-summary-list">
+		  <div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">Mileage to placement</dt>
+		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
+		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage to placement</span></a></dd>
+		  </div>
+			<div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">Mileage returning from placement</dt>
+		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
+		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage returning from placement</span></a></dd>
+		  </div>
+		</dl>
+		{% else %}
+		<p style="clear: both">You have not added any journey details for this day.</p>
+		{% endif %}
+
+		<h2 class="nhsuk-heading-s" style="float: left">Friday 9 June 2023</h2>
+		<!-- <p style="float: right; padding-top: 8px"><a href="#">Remove day</a></p>-->
+		{% if data['same-journey'] === "yes" %}
+		<dl class="nhsuk-summary-list">
+		  <div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">Mileage to placement</dt>
+		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
+		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage to placement</span></a></dd>
+		  </div>
+			<div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">Mileage returning from placement</dt>
+		    <dd class="nhsuk-summary-list__value">6.3 miles</dd>
+		    <dd class="nhsuk-summary-list__actions"><a href="#">Change<span class="nhsuk-u-visually-hidden"> mileage returning from placement</span></a></dd>
+		  </div>
+		</dl>
+		{% else %}
+		<p style="clear: both">You have not added any journey details for this day.</p>
+		{% endif %}
+
+	</div>
+
+	<div class="nhsuk-grid-column-one-third">
+		<div  class="action-block">
+			<h2 class="nhsuk-heading-s">What you can do</h2>
+			{% if data['same-journey'] === "yes" %}
+			<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-same-journey">Change journey mileage</a>
+			{% else %}
+			<a class="nhsuk-button nhsuk-button--secondary" href="v6/add-journey-mileage">Add journey mileage</a>
+			{% endif %}
+			<a class="nhsuk-button nhsuk-button--secondary">Add additional costs</a>
+			<a class="nhsuk-button nhsuk-button--secondary">Add community mileage</a>
+			<a class="nhsuk-button">Complete placement travel</a>
+			<p><a href="#">Reset placement dates</a></p>
+		</div>
+	</div>
+
+</div>
+{% endblock %}

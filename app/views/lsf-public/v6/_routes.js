@@ -11,6 +11,54 @@ const router = express.Router();
 
 // ********************************
 
+// Placement evidence
+router.get('/v6/TDAE-placement-evidence', (req, res) => {
+
+  req.session.data['additional-cost'] = "1"
+
+  res.redirect('/lsf-public/v6/TDAE-placement-itinerary')
+
+})
+
+// Placement evidence type
+router.post('/v6/TDAE-placement-evidence-days', (req, res) => {
+
+  res.redirect('/lsf-public/v6/TDAE-placement-evidence')
+
+})
+
+// Placement evidence type
+router.post('/v6/TDAE-placement-evidence-type', (req, res) => {
+
+  res.redirect('/lsf-public/v6/TDAE-placement-evidence-days')
+
+})
+
+// Placement journey days
+router.get('/v6/TDAE-placement-journey-days', (req, res) => {
+
+  const journeys = req.session.data['journey-mileage']
+
+  if (journeys === '1') {
+    req.session.data['journey-mileage'] = "2"
+  } else if (journeys === '2') {
+    req.session.data['journey-mileage'] = "3"
+  } else {
+  req.session.data['journey-mileage'] = "1"
+  }
+
+  res.redirect('/lsf-public/v6/TDAE-placement-itinerary')
+
+})
+
+// Add journey mileage
+router.get('/v6/add-journey-mileage', (req, res) => {
+
+  req.session.data['new-journey'] = 'yes'
+  res.redirect('/lsf-public/v6/TDAE-placement-to-mileage')
+
+})
+
 // Wrong costs
 router.post('/v6/wrong-costs', (req, res) => {
 
@@ -494,7 +542,13 @@ router.post('/v6/TDAE-placement-to-mileage', (req, res) => {
 
 router.post('/v6/TDAE-placement-return-mileage', (req, res) => {
 
+  const newJourney = req.session.data['new-journey']
+
+  if (newJourney === 'yes') {
+    res.redirect('/lsf-public/v6/TDAE-placement-journey-days')
+  } else {
     res.redirect('/lsf-public/v6/TDAE-placement-itinerary')
+  }
 
 })
 

@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Which type of evidence does this relate to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v6/TDAE-placement-evidence-type" method="POST">
+
+            <div class="nhsuk-form-group">
+
+              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  <h1 class="nhsuk-fieldset__heading">
+                    Which type of additional cost did you incur?
+                  </h1>
+                </legend>
+
+                <div class="nhsuk-radios">
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="additional-cost-type-1" name="additional-cost-type" type="radio" value="Car parking">
+                    <label class="nhsuk-label nhsuk-radios__label" for="additional-cost-type-1">
+                      Car parking
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="additional-cost-type-2" name="additional-cost-type" type="radio" value="Tunnel and toll charges">
+                    <label class="nhsuk-label nhsuk-radios__label" for="additional-cost-type-2">
+                      Tunnel and toll charges
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="additional-cost-type-2" name="additional-cost-type" type="radio" value="Congestion and clean air charges">
+                    <label class="nhsuk-label nhsuk-radios__label" for="additional-cost-type-2">
+                      Congestion and clean air charges
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+
+            </div>
+
+            <button class="nhsuk-button">Continue</button><br>
+            <a href="TDAE-start-claim">Cancel</a>
+
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

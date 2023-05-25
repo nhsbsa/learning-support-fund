@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Upload your evidence for week 2
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <!-- <form action="#" method="POST"> -->
+
+    <h1 class="nhsuk-heading-l">Upload evidence for the additional cost</h1>
+
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          What evidence do I need?
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>This should include where relevant:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>car parking - receipts, permits or invoices</li>
+          <li>tunnel and toll charges - receipts</li>
+          <li>Congestion and clean air charges - receipts, permits or invoices</li>
+        </ul>
+      </div>
+    </details>
+
+    <p class="nhsuk-hint">The file you choose must:</p>
+      <ul class="nhsuk-list nhsuk-list--bullet nhsuk-hint">
+        <li>not be larger than 8MB in file size</li>
+        <li>be a JPEG, PNG or PDF</li>
+      </ul>
+
+    <div class="nhsuk-form-group nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-7">
+      <label class="nhsuk-label nhsuk-u-visually-hidden" for="file-upload-1">
+          Upload your evidence file
+      </label>
+      <input class="nhsuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+    </div>
+
+    <a class="nhsuk-button" href="v6/TDAE-placement-evidence">Upload evidence</a><br>
+
+    <!-- {% if data['add-more-evidence'] === 'yes' %}
+      <form action="v6/TDAE-more-evidence-added" method="POST">
+        <button class="nhsuk-button" type="submit">Next</button><br>
+      </form>
+    {% else %}
+      <form action="v6/TDAE-provide-journey-evidence" method="POST">
+        <button class="nhsuk-button" type="submit">Next</button><br>
+      </form>
+    {% endif %} -->
+
+    <a href="TDAE-start-claim">Cancel</a>
+
+    <!-- </form> -->
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

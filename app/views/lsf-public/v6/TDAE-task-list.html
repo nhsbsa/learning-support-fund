@@ -65,25 +65,6 @@ Task list
                         </li>
                         <li class="app-task-list__item nhsuk-u-clear">
                             <span class="app-task-list__task-name">
-                            {% if data['travel-details'] === 'completed' %}
-                                <a href="TDAE-placement-journey-cya" aria-describedby="eligibility-status">
-                                    Placement travel details
-                                </a>
-                            {% else %}
-                                <a href="TDAE-placement-return-mileage" aria-describedby="eligibility-status">
-                                    Placement travel details
-                                </a>
-                            {% endif %}
-                            </span>
-                            {% if data['placement-details'] === 'completed' %}
-                            <strong class="nhsuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
-                            {% else %}
-                            <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag" id="eligibility-status">Not
-                                started</strong>
-                            {% endif %}
-                        </li>
-                        <li class="app-task-list__item nhsuk-u-clear">
-                            <span class="app-task-list__task-name">
                             {% if data['submit-claim'] === 'completed' %}
                                 {% if data['any-additional-costs'] === 'no' %}
                                     <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">
