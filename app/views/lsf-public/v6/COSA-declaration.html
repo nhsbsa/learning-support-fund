@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Student declaration
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="v6/COSA-declaration" method="POST">
+
+        <h1 class="nhsuk-heading-xl">Student declaration</h1>
+
+        <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+              <span role="text">
+                <span class="nhsuk-u-visually-hidden">Important: </span>
+                Declaration
+              </span>
+            </h3>
+            <p>Review all information you have provided before completing this declaration. Read this declaration carefully before accepting it. If you choose not to accept it, your funding will not be processed.</p>
+        <p>I declare that:</p>
+        <ol class="nhsuk-list nhsuk-list--number nhsuk-u-margin-bottom-7">
+            <li>I solemnly swear that I am up to no good.</li>
+        </ol>
+          </div>
+
+
+
+        <div class="nhsuk-checkboxes__item nhsuk-u-margin-bottom-7">
+            <input class="nhsuk-checkboxes__input" id="COSA-declaration" name="COSA-declaration" type="checkbox" value="accepted">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="COSA-declaration">
+              Accept declaration
+            </label>
+        </div>
+
+        <button class="nhsuk-button" type="submit">Submit confirmation of attendance</button><br>
+        <a href="TDAE-start-claim">Cancel</a>
+
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

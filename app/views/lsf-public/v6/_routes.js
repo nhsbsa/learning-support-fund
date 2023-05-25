@@ -11,6 +11,33 @@ const router = express.Router();
 
 // ********************************
 
+// COSA confirmation
+router.post('/v6/COSA-confirmation', (req, res) => {
+
+  res.redirect('/lsf-public/v6/dashboard?questionnaire-completed=Completed&COSA=completed#tab-one')
+
+})
+
+// COSA declaration
+router.post('/v6/COSA-declaration', (req, res) => {
+
+      const cosaDeclaration = req.session.data['COSA-declaration']
+
+      if (cosaDeclaration) {
+          res.redirect('/lsf-public/v6/COSA-confirmation')
+      } else {
+          res.redirect('/lsf-public/v6/COSA-declaration')
+      }
+
+  })
+
+// COSA confirm attendance
+router.post('/v6/COSA-confirm-attendance', (req, res) => {
+
+  res.redirect('/lsf-public/v6/COSA-declaration')
+
+})
+
 // Placement evidence
 router.get('/v6/TDAE-placement-evidence', (req, res) => {
 

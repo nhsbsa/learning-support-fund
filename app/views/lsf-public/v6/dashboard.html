@@ -88,17 +88,19 @@
                                     <span class="nhsuk-table-responsive__heading">Action </span> <a href="http://localhost:4000/lsf-public/v5/TDAE-returning-student/TDAE-task-list-actions?claiming-for=accommodation&accommodation-details=action">Review claim</a>
                                 </td>
                             </tr>
+                            {% if data['COSA'] != 'completed' %}
                             <tr role="row" class="nhsuk-table__row">
                                 <td role="cell" class="nhsuk-table__cell">
-                                    <span class="nhsuk-table-responsive__heading">Notification</span> Equality and diversity questionnaire
+                                    <span class="nhsuk-table-responsive__heading">Notification</span> Confirm term 1 attendance
                                 </td>
                                 <td role="cell" class="nhsuk-table__cell">
-                                    <span class="nhsuk-table-responsive__heading">Description </span> This is an anonymous questinnaire and will be used by the Department of Health and Social Care for monitoring purposes.
+                                    <span class="nhsuk-table-responsive__heading">Description </span> You need to confirm whether you are still attending your course. You will need to confirm attendance to receive Learning Support Fund payment.
                                 </td>
                                 <td role="cell" class="nhsuk-table__cell">
-                                    <span class="nhsuk-table-responsive__heading">Action </span> <a href="#">Answer</a>
+                                    <span class="nhsuk-table-responsive__heading">Action </span> <a href="COSA-confirm-attendance">Answer</a>
                                 </td>
                             </tr>
+                            {% endif %}
                         </tbody>
                     </table>
                 </div>
