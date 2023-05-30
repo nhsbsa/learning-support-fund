@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Course intake
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/js/main.js"></script>
+<script>
+  function change() // no ';' here
+{
+  var btn = document.getElementById("toggle-filter");
+  if(btn.innerText=="Show filter"){
+     btn.innerText="Hide filter";
+    }
+  else{
+    btn.innerText="Show filter";
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+        {{ backLink({
+          "href": "javascript:history.go(-1)",
+          "text": "Go back"
+        }) }}
+        <form action="v5/COSA-student-status-change" method="POST">
+        <h1 class="nhsuk-heading-l">
+          <span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>
+          What is the status of Joe Bloggs?
+        </h1>
+
+        <p class="nhsuk-body-s">
+          <b>Course name:</b> Diagnostic Radiography<br>
+          <b>Academic year:</b> September 2023<br>
+          <b>Study year:</b> Year 1
+        </p>
+
+        <div class="nhsuk-form-group">
+
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-hints-1" name="example-hints" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-hints-1">
+                In attendance
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-hints-2" name="example-hints" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
+                Discontinued
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-hints-3" name="example-hints" type="radio" value="not sure">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-hints-3">
+                Information mismatch
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-hints-3" name="example-hints" type="radio" value="not sure">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-hints-3">
+                Not enrolled
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-hints-3" name="example-hints" type="radio" value="not sure">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-hints-3">
+                Maternity leave
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+        <button class="nhsuk-button" type="submit">Save and continue</button>
+
+        </form>
+    </div>
+
+  </div>
+
+{% endblock %}

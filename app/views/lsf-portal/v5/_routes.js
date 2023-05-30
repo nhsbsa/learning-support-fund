@@ -8,6 +8,19 @@ const router = express.Router();
 
 // ********************************
 
+// Return to student decline or return
+router.post('/v5/COSA-student-status-change', (req, res) => {
+
+    const location = req.session.data['location']
+
+    if (location === 'confirmation') {
+        res.redirect('/lsf-portal/v5/COSA-students-waiting-confirmation')
+    } else {
+        res.redirect('/lsf-portal/v5/COSA-students-declined')
+    }
+
+})
+
 // Claims list
 router.get('/v5/process-claim', (req, res) => {
 

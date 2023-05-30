@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Course intake
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  function change() // no ';' here
+{
+  var btn = document.getElementById("toggle-filter");
+  if(btn.innerText=="Show filter"){
+     btn.innerText="Hide filter";
+    }
+  else{
+    btn.innerText="Show filter";
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+        <h1 class="nhsuk-heading-l">
+          <span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>
+          Term 1 confirmation of students attendance overview
+        </h1>
+
+        <p class="nhsuk-body-s">
+          <b>Course name:</b> Diagnostic Radiography<br>
+          <b>Academic year:</b> September 2023<br>
+          <b>Study year:</b> Year 1
+        </p>
+
+    </div>
+
+    <div class="nhsuk-grid-column-one-third">
+
+      <div class="action-block">
+        <h2 class="nhsuk-heading-xl" style="text-align: center; margin-bottom: 24px; font-size: 5rem;">45</h2>
+        <p style="text-align: center;">Students who have confirmed their attendance</p>
+        <a class="nhsuk-button" href="COSA-confirm-students">Confirm attendance</a>
+        <a class="nhsuk-button nhsuk-button--secondary" href="COSA-students-waiting-confirmation">View students</a>
+      </div>
+
+    </div>
+
+    <div class="nhsuk-grid-column-one-third">
+
+      <div class="action-block">
+        <h2 class="nhsuk-heading-xl" style="text-align: center; margin-bottom: 24px; font-size: 5rem;">2</h2>
+        <p style="text-align: center;">Students marked themselves as no longer in attendance</p>
+        <a class="nhsuk-button" href="COSA-students-declined">View students</a>
+      </div>
+
+    </div>
+
+    <div class="nhsuk-grid-column-one-third">
+
+      <div class="action-block">
+        <h2 class="nhsuk-heading-xl" style="text-align: center; margin-bottom: 24px; font-size: 5rem;">96</h2>
+        <p style="text-align: center;">Students not responded</p>
+        <a class="nhsuk-button nhsuk-button--secondary" href="COSA-students-not-responded">View students</a>
+      </div>
+
+    </div>
+
+  </div>
+{% endblock %}
