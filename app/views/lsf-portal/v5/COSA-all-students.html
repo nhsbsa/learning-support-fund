@@ -1,0 +1,252 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Course intake
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/js/main.js"></script>
+<script>
+  function change() // no ';' here
+{
+  var btn = document.getElementById("toggle-filter");
+  if(btn.innerText=="Show filter"){
+     btn.innerText="Hide filter";
+    }
+  else{
+    btn.innerText="Show filter";
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+        {{ backLink({
+          "href": "javascript:history.go(-1)",
+          "text": "Go back"
+        }) }}
+        <h1 class="nhsuk-heading-l">
+          <span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>
+          All Students studying Diagnostic Radiography at SHEFFIELD HALLAM UNIVERSITY
+        </h1>
+
+        <p class="nhsuk-body-s">
+          <b>Course name:</b> Diagnostic Radiography<br>
+          <b>Academic year:</b> September 2023<br>
+          <b>Study year:</b> Year 1
+        </p>
+
+    </div>
+
+    <div class="nhsuk-grid-column-full">
+
+      <!--<p>These students are yet to respond. They need to respond through the link sent to them by email or notifications in their LSF account.</p>
+
+      <p><a href="#">Download details of students yet to respond (CSV, 432KB)</a></p>-->
+
+      <div class="nhsuk-table-responsive">
+                  <table class="nhsuk-table">
+                    <thead class="nhsuk-table__head">
+                      <tr class="nhsuk-table__row">
+                        <th class="nhsuk-table__header" scope="col">Name</th>
+                        <th class="nhsuk-table__header" scope="col">Date of birth</th>
+                        <th class="nhsuk-table__header" scope="col">Attendance type</th>
+                        <th class="nhsuk-table__header" scope="col">Term</th>
+                        <th class="nhsuk-table__header" scope="col">Status</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="nhsuk-table__body">
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">Term 1</td>
+                        <td class="nhsuk-table__cell ">In attendance</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+                        <td class="nhsuk-table__cell ">07833123456</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+                <nav class="nav" role="navigation" aria-label="Pagination">
+
+                  <ul class="pagination">
+                      <li class="pagination__item pagination-li"><a class="pagination__link current" href="#" aria-current="true"
+                              aria-label="Page 1, current page">1</a></li>
+                      <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">2</a></li>
+                      <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">3</a></li>
+                      <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">4</a></li>
+                      <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">5</a></li>
+                  </ul>
+
+                  <a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true"
+                          role="presentation">&nbsp;&raquo;</span></a>
+
+                  <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 20 of 96 students
+                  </div>
+              </nav>
+
+
+    </div>
+
+  </div>
+
+{% endblock %}
