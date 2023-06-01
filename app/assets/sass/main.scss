@@ -204,3 +204,90 @@ box-shadow: inset 0 0 0 4px #0b0c0c;
     margin-top: 60px;
     margin-bottom: 15px;
 }
+
+
+/* small checkbox from gov */
+.nhsuk-checkboxes--small .nhsuk-checkboxes__item {
+    min-height: 0;
+    margin-bottom: 0;
+    padding-left: 34px;
+    float: left;
+  }
+
+  .nhsuk-checkboxes--small .nhsuk-checkboxes__item:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .nhsuk-checkboxes--small .nhsuk-checkboxes__input {
+    left: -10px;
+  }
+
+  .nhsuk-checkboxes--small .nhsuk-checkboxes__label {
+    margin-top: -2px;
+    padding: 13px 15px 13px 1px;
+    float: left;
+  }
+
+  @media(min-width: 40.0625em) {
+    .nhsuk-checkboxes--small .nhsuk-checkboxes__label {
+      padding: 11px 15px 10px 1px;
+    }
+  }
+
+  .nhsuk-checkboxes--small .nhsuk-checkboxes__label:before {
+    top: 8px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .nhsuk-checkboxes--small .nhsuk-checkboxes__label:after {
+    top: 15px;
+    left: 6px;
+    width: 12px;
+    height: 6.5px;
+    border-width: 0 0 3px 3px;
+  }
+
+  .nhsuk-checkboxes--small .nhsuk-checkboxes__hint {
+    padding: 0;
+    clear: both;
+  }
+
+  .nhsuk-checkboxes--small .nhsuk-checkboxes__conditional {
+    margin-left: 10px;
+    padding-left: 20px;
+    clear: both;
+  }
+
+  .nhsuk-checkboxes--small .nhsuk-checkboxes__item:hover .nhsuk-checkboxes__input:not(:disabled)+.nhsuk-checkboxes__label:before {
+    box-shadow: 0 0 0 10px #b1b4b6;
+  }
+
+  .nhsuk-checkboxes--small .nhsuk-checkboxes__item:hover .nhsuk-checkboxes__input:focus+.nhsuk-checkboxes__label:before {
+    box-shadow: 0 0 0 3px #ffeb3b, 0 0 0 10px #b1b4b6
+  }
+
+  @media(hover: none),
+  (pointer: coarse) {
+    .nhsuk-checkboxes--small .nhsuk-checkboxes__item:hover .nhsuk-checkboxes__input:not(:disabled)+.nhsuk-checkboxes__label:before {
+      box-shadow: initial;
+    }
+
+    .nhsuk-checkboxes--small .nhsuk-checkboxes__item:hover .nhsuk-checkboxes__input:focus+.nhsuk-checkboxes__label:before {
+      box-shadow: 0 0 0 3px #ffeb3b;
+    }
+  }
+/* Small checkboxes in table */
+td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > .nhsuk-checkboxes__label:before {
+    top: 0px;
+}
+td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > .nhsuk-checkboxes__label:after{
+    top: 7px;
+}
+@media only screen and (min-width:769px) {
+    td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item {
+        margin-left: 10px;
+    }
+}
