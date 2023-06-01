@@ -81,7 +81,7 @@ Course intake
     </div>
 
     <div class="nhsuk-table-responsive">
-      <table class="nhsuk-table">
+      <table class="nhsuk-table nhsbsa-table-select">
         <thead class="nhsuk-table__head">
           <tr class="nhsuk-table__row">
             <th class="nhsuk-table__header" scope="col">
@@ -461,4 +461,19 @@ Course intake
 
 </div>
 
+<script>
+  var checkboxes = document.querySelectorAll('.nhsuk-checkboxes__input');
+
+checkboxes.forEach(function (checkbox) {
+  checkbox.addEventListener('change', function () {
+    var row = this.closest('tr');
+    if (this.checked) {
+      row.classList.add('nhsbsa-row--selected');
+    } else {
+      row.classList.remove('nhsbsa-row--selected');
+    }
+  });
+});
+ 
+</script>
 {% endblock %}

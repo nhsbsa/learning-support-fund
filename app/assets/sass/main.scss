@@ -207,6 +207,10 @@ box-shadow: inset 0 0 0 4px #0b0c0c;
 
 
 /* small checkbox from gov */
+.nhsbsa-table-select > tbody > tr td:first-child {
+    border-left: 3px solid transparent;
+}
+
 .nhsuk-checkboxes--small .nhsuk-checkboxes__item {
     min-height: 0;
     margin-bottom: 0;
@@ -290,4 +294,10 @@ td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > .nhsuk-checkboxes__lab
     td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item {
         margin-left: 10px;
     }
+}  
+.nhsbsa-row--selected {
+    background-color: #fff;
+} 
+.nhsbsa-row--selected td:first-child {
+    border-left:3px solid #225EB8 !important;
 }

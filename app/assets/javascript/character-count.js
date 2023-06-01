@@ -3,8 +3,6 @@
 (function (root) {
   "use strict";
 
-  console.log('dfgdfgdgfg');
-
   var updateCharacterCount = function updateCharacterCount(selectedElement, maxCharacterCount, isRichTextEditor) {
     var characterCount = isRichTextEditor ? selectedElement.text().length : selectedElement.val().length;
     var charactersRemaining = parseInt(maxCharacterCount) - parseInt(characterCount);
