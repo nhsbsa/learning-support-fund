@@ -31,7 +31,7 @@
         }) }}
         <h1 class="nhsuk-heading-l">
           <span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>
-          Student who marked themselves as no longer in attendance for term 1
+          Student who marked themselves as no longer in attendance for term {% if data['term'] %}{{ data['term'] }}{% else %}1{% endif %}
         </h1>
 
         <p class="nhsuk-body-s">

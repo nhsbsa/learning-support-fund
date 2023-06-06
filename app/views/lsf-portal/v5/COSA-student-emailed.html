@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Claim outcome
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="v5/COSA-student-emailed" method="POST">
+            <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+                <div class="nhsuk-card__content">
+                    <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                        {% if data['student-status'] == 'In attendance' %}
+                          Emit Mar emailed to confirm status
+                        {% else %}
+                          Emit Mar course status confirmed
+                        {% endif %}
+                    </h1>
+                </div>
+            </div>
+
+            <h2 class="nhsuk-heading-m">What happens next</h2>
+
+            {% if data['student-status'] == 'In attendance' and data['location'] != 'confirmation' %}
+              <p>Because Emit Mar previously claimed they are not attending their course. We have emailed them to re-confirm their attendance.</p>
+              <p>When they have confirmed their attendance they will appear in the list of students who have confirmed their attendance and will need your confirmation to receive payments.</p>
+            {% elif data['student-status'] == 'Discontinued' %}
+              <p>Emit Mar has been emailed confirming they have discontinued the course and will not receive Learning Support Fund payments.</p>
+              <p>If they return to their course a change request can be submitted.</p>
+            {% elif data['student-status'] == 'Information mismatch' %}
+              <p>Emit Mar has been emailed that their is an information mismatch and their payments have been held.</p>
+              <p>Once the information has been correctly updated a change request must need submitting for them to receive payments.</p>
+            {% elif data['student-status'] == 'Not enrolled' %}
+              <p>Emit Mar has been emailed confirming they not enrolled for the course and will not receive Learning Support Fund payments.</p>
+            {% endif %}
+
+            <button class="nhsuk-button" type="submit">Continue</button>
+      </form>
+    </div>
+
+</div>
+{% endblock %}

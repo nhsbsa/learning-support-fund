@@ -41,47 +41,73 @@
         </p>
 
         <div class="nhsuk-form-group">
-
+          {% if data['term'] == '2' or data['term'] == '3' %}
           <div class="nhsuk-radios">
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-hints-1" name="example-hints" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-hints-1">
+              <input class="nhsuk-radios__input" id="student-status-1" name="student-status" type="radio" value="In attendance">
+              <label class="nhsuk-label nhsuk-radios__label" for="student-status-1">
                 In attendance
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-hints-2" name="example-hints" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
-                Discontinued
+              <input class="nhsuk-radios__input" id="student-status-2" name="student-status" type="radio" value="Interruption">
+              <label class="nhsuk-label nhsuk-radios__label" for="student-status-2">
+                Interruption
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-hints-3" name="example-hints" type="radio" value="not sure">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-hints-3">
-                Information mismatch
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-hints-3" name="example-hints" type="radio" value="not sure">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-hints-3">
-                Not enrolled
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-hints-3" name="example-hints" type="radio" value="not sure">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-hints-3">
+              <input class="nhsuk-radios__input" id="student-status-3" name="student-status" type="radio" value="Maternity leave">
+              <label class="nhsuk-label nhsuk-radios__label" for="student-status-3">
                 Maternity leave
               </label>
             </div>
 
           </div>
         </div>
+        {% else %}
+          <div class="nhsuk-radios">
 
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="student-status-1" name="student-status" type="radio" value="In attendance">
+              <label class="nhsuk-label nhsuk-radios__label" for="student-status-1">
+                In attendance
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="student-status-2" name="student-status" type="radio" value="Discontinued">
+              <label class="nhsuk-label nhsuk-radios__label" for="student-status-2">
+                Discontinued
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="student-status-3" name="student-status" type="radio" value="Information mismatch">
+              <label class="nhsuk-label nhsuk-radios__label" for="student-status-3">
+                Information mismatch
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="student-status-3" name="student-status" type="radio" value="Not enrolled">
+              <label class="nhsuk-label nhsuk-radios__label" for="student-status-3">
+                Not enrolled
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="student-status-3" name="student-status" type="radio" value="Maternity leave">
+              <label class="nhsuk-label nhsuk-radios__label" for="student-status-3">
+                Maternity leave
+              </label>
+            </div>
+
+          </div>
+        </div>
+        {% endif %}
         <button class="nhsuk-button" type="submit">Save and continue</button>
 
         </form>

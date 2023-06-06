@@ -18,7 +18,7 @@ Claim outcome
             </div>
 
             <a class="nhsuk-button" href="COSA-students-waiting-confirmation">View students awaiting confirmation</a>
-            <a class="nhsuk-button nhsuk-button--secondary" href="COSA-term-1-overview">View Term 1 attendance overview</a>
+            <a class="nhsuk-button nhsuk-button--secondary" href="COSA-term-1-overview">View Term {% if data['term'] %}{{ data['term'] }}{% else %}1{% endif %} attendance overview</a>
     </div>
 
 </div>

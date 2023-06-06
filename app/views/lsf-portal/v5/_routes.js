@@ -9,7 +9,7 @@ const router = express.Router();
 // ********************************
 
 // Return to student decline or return
-router.post('/v5/COSA-student-status-change', (req, res) => {
+router.post('/v5/COSA-student-emailed', (req, res) => {
 
     const location = req.session.data['location']
 
@@ -17,6 +17,21 @@ router.post('/v5/COSA-student-status-change', (req, res) => {
         res.redirect('/lsf-portal/v5/COSA-students-waiting-confirmation')
     } else {
         res.redirect('/lsf-portal/v5/COSA-students-declined')
+    }
+
+})
+
+// Return to student decline or return
+router.post('/v5/COSA-student-status-change', (req, res) => {
+
+    const status = req.session.data['student-status']
+
+    if (status === 'Discontinued' || status === 'Not enrolled' || status === 'Information mismatch' || status === 'In attendance') {
+        res.redirect('/lsf-portal/v5/COSA-student-emailed')
+    } else if (status === 'Interruption') {
+      res.redirect('/lsf-portal/v5/interruption')
+    } else {
+        res.redirect('#')
     }
 
 })
