@@ -8,6 +8,20 @@ const router = express.Router();
 
 // ********************************
 
+// COSA Maternity comments
+router.post('/v5/COSA-maternity-comments', (req, res) => {
+
+    res.redirect('/lsf-portal/v5/COSA-maternity-confirmation')
+
+})
+
+// COSA Maternity dates
+router.post('/v5/COSA-maternity-dates', (req, res) => {
+
+    res.redirect('/lsf-portal/v5/COSA-maternity-comments')
+
+})
+
 // Return to student decline or return
 router.post('/v5/COSA-student-emailed', (req, res) => {
 
@@ -31,7 +45,7 @@ router.post('/v5/COSA-student-status-change', (req, res) => {
     } else if (status === 'Interruption') {
       res.redirect('/lsf-portal/v5/interruption')
     } else {
-        res.redirect('#')
+        res.redirect('/lsf-portal/v5/COSA-maternity-dates')
     }
 
 })
