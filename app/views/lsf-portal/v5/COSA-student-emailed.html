@@ -26,6 +26,8 @@ Claim outcome
             {% if data['student-status'] == 'In attendance' and data['location'] != 'confirmation' %}
               <p>Because Emit Mar previously claimed they are not attending their course. We have emailed them to re-confirm their attendance.</p>
               <p>When they have confirmed their attendance they will appear in the list of students who have confirmed their attendance and will need your confirmation to receive payments.</p>
+            {% elif data['student-status'] == 'In attendance' and data['location'] == 'confirmation' %}
+              <p>Emit Mar has been emailed confirming their attendance. They will receive their Learning Support Fund payment at the next termly payment date.</p>
             {% elif data['student-status'] == 'Discontinued' %}
               <p>Emit Mar has been emailed confirming they have discontinued the course and will not receive Learning Support Fund payments.</p>
               <p>If they return to their course a change request can be submitted.</p>

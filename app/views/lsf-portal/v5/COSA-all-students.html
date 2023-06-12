@@ -78,6 +78,43 @@
 
                   <div class="nhsuk-form-group">
 
+                    <label class="nhsuk-label" for="student-name">
+                      Term
+                    </label>
+
+                    <div class="nhsuk-hint" id="contact-hint">
+                      Select the terms you want shown.
+                    </div>
+
+                    <div class="nhsuk-checkboxes nhsuk-checkboxes--small nhsuk-u-padding-bottom-5" data-module="nhsuk-checkboxes">
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="status" name="status" type="checkbox" value="1">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="status">
+                          Term 1 (96)
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="status-2">
+                          Term 2 (0)
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
+                          Term 3 (0)
+                        </label>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="nhsuk-form-group" style="clear: both;">
+
                     <fieldset class="nhsuk-fieldset">
 
                       <label class="nhsuk-label" for="student-name">
@@ -93,35 +130,35 @@
                         <div class="nhsuk-checkboxes__item">
                           <input class="nhsuk-checkboxes__input" id="status" name="status" type="checkbox" value="1">
                           <label class="nhsuk-label nhsuk-checkboxes__label" for="status">
-                            Pending (5)
+                            Student not responded (5)
                           </label>
                         </div>
 
                         <div class="nhsuk-checkboxes__item">
                           <input class="nhsuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
                           <label class="nhsuk-label nhsuk-checkboxes__label" for="status-2">
-                            Discontinued (1)
+                            University confirmation needed (1)
                           </label>
                         </div>
 
                         <div class="nhsuk-checkboxes__item">
                           <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
                           <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
-                            Information mismatch (2)
+                            In attendance (2)
                           </label>
                         </div>
 
                         <div class="nhsuk-checkboxes__item">
                           <input class="nhsuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
                           <label class="nhsuk-label nhsuk-checkboxes__label" for="status-4">
-                            Interruption (1)
+                            Discontinued and Interrupted (1)
                           </label>
                         </div>
 
                         <div class="nhsuk-checkboxes__item">
                           <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="4">
                           <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
-                            Matched student - in attendance (7)
+                            Information mismatch (7)
                           </label>
                         </div>
 
@@ -135,15 +172,13 @@
                         <div class="nhsuk-checkboxes__item">
                           <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="6">
                           <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
-                            Pending nhsbsa (4)
+                            Maternity leave (4)
                           </label>
                         </div>
 
-
-
                       </div>
                       <form style="" action="course-intake?filter=yes" method="POST">
-                        <button style="float: left;" class="nhsuk-button" data-module="nhsuk-button" style="margin-bottom: 0px;">
+                        <button style="float: left; clear: left;" class="nhsuk-button" data-module="nhsuk-button" style="margin-bottom: 0px;">
                           Apply filters
                         </button>
                       </form>
