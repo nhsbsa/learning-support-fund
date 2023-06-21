@@ -14,7 +14,7 @@ What is your placement address?
 		"text": "Go back"
 		}) }}
 
-		<form action="TDAE-eligibility-cya" method="POST">
+		<form action="TDAE-placement-address-cya" method="POST">
 
 
 			<fieldset class="nhsuk-fieldset">
@@ -29,7 +29,7 @@ What is your placement address?
 						Building name or number
 					</label>
 					{% if data['address-number'] == '1' %}
-					<input class="nhsuk-input" id="placement-building-name" name="placement-building-name-" type="text">
+					<input class="nhsuk-input" id="placement-building-name" name="placement-building-name" type="text">
 					{% elif data['address-number'] == '2' %}
 					<input class="nhsuk-input" id="placement-2-building-name" name="placement-2-building-name" type="text">
 					{% elif data['address-number'] == '3' %}
@@ -104,8 +104,8 @@ What is your placement address?
 
 			</fieldset>
 
-			<a class="nhsuk-button" href="TDAE-placement-address-cya">Continue</a><br>
-			<a href="TDAE-start-claim">Cancel</a>
+			<button class="nhsuk-button" type="submit">Save and continue</button>
+			<p><a href="TDAE-start-claim">Cancel</a></p>
 
 		</form>
 
