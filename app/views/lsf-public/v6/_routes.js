@@ -439,6 +439,39 @@ router.post('/v6/TDAE-academic-year', (req, res) => {
 
 })
 
+router.post('/v6/TDAE-placement-address-cya', (req, res) => {
+
+    const addAnother = req.session.data['add-another']
+    const addressNumber = req.session.data['address-number']
+
+    if (addAnother === 'yes' && addressNumber === '1') {
+        req.session.data['address-number'] = '2'
+        res.redirect('/lsf-public/v6/TDAE-placement-address-more')
+    } else if (addAnother === 'yes' && addressNumber === '2') {
+        req.session.data['address-number'] = '3'
+        res.redirect('/lsf-public/v6/TDAE-placement-address-more')
+    } else if (addAnother === 'yes' && addressNumber === '3') {
+        req.session.data['address-number'] = '4'
+        res.redirect('/lsf-public/v6/TDAE-placement-address-more')
+    } else {
+        res.redirect('/lsf-public/v6/TDAE-eligibility-cya')
+    }
+
+})
+
+router.post('/v6/TDAE-placement-address-multiple', (req, res) => {
+
+    const multipleAddresses = req.session.data['one-address']
+
+    if (multipleAddresses === 'yes') {
+        req.session.data['address-number'] = '1'
+        res.redirect('/lsf-public/v6/TDAE-placement-address-more')
+    } else {
+        res.redirect('/lsf-public/v6/TDAE-placement-address')
+    }
+
+})
+
 router.post('/v6/TDAE-travel-accommodation', (req, res) => {
 
     const claimingFor = req.session.data['claiming-for']
@@ -450,15 +483,15 @@ router.post('/v6/TDAE-travel-accommodation', (req, res) => {
         req.session.data['eligible-online'] = 'yes'
         req.session.data['claiming-travel'] = 'no'
         req.session.data['claiming-accommodation'] = 'yes'
-        res.redirect('/lsf-public/v6/TDAE-placement-address')
+        res.redirect('/lsf-public/v6/TDAE-placement-address-multiple')
     } else if (claimingFor.includes('car') && !claimingFor.includes('accommodation')){
         req.session.data['claiming-travel'] = 'yes'
         req.session.data['claiming-accommodation'] = 'no'
-        res.redirect('/lsf-public/v6/TDAE-placement-address')
+        res.redirect('/lsf-public/v6/TDAE-placement-address-multiple')
     } else if (claimingFor.includes('car', 'accommodation')) {
         req.session.data['claiming-travel'] = 'yes'
         req.session.data['claiming-accommodation'] = 'yes'
-        res.redirect('/lsf-public/v6/TDAE-placement-address')
+        res.redirect('/lsf-public/v6/TDAE-placement-address-multiple')
     } else {
         res.redirect('/lsf-public/v6/TDAE-travel-accommodation')
     }

@@ -66,31 +66,37 @@ Task list
                         <li class="app-task-list__item nhsuk-u-clear">
                             <span class="app-task-list__task-name">
                             {% if data['submit-claim'] === 'completed' %}
-                                {% if data['any-additional-costs'] === 'no' %}
-                                    <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">
-                                        Placement travel dates
-                                {% else %}
-                                    <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">
-                                        Placement travel dates and evidence
-                                    </a>
-                                {% endif %}
+                              <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">
+                                Placement travel details
+                              </a>
                             {% else %}
-                                {% if data['any-additional-costs'] === 'no' %}
-                                    <a class="app-task-list__task-name" href="TDAE-start-claim">
-                                        Placement travel dates
-                                    </a>
-                                {% else %}
-                                    <a class="app-task-list__task-name" href="TDAE-start-claim">
-                                        Placement travel dates and evidence
-                                    </a>
-                                {% endif %}
+                              <a class="app-task-list__task-name" href="TDAE-start-claim">
+                                Placement travel details
+                              </a>
                             {% endif %}
                             </span>
                             {% if data['add-travel-date-evidence'] === 'completed' %}
-                            <strong class="nhsuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                              <strong class="nhsuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
                             {% else %}
-                            <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag" id="eligibility-status">Not
-                                started</strong>
+                              <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag" id="eligibility-status">Not started</strong>
+                            {% endif %}
+                        </li>
+                        <li class="app-task-list__item nhsuk-u-clear">
+                            <span class="app-task-list__task-name">
+                            {% if data['submit-claim'] === 'completed' %}
+                              <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">
+                                Placement travel evidence
+                              </a>
+                            {% else %}
+                              <a class="app-task-list__task-name" href="TDAE-start-claim">
+                                Placement travel evidence
+                              </a>
+                            {% endif %}
+                            </span>
+                            {% if data['add-travel-date-evidence'] === 'completed' %}
+                              <strong class="nhsuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                            {% else %}
+                              <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag" id="eligibility-status">Not started</strong>
                             {% endif %}
                         </li>
                     </ul>
