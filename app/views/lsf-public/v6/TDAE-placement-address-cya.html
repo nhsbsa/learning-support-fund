@@ -28,7 +28,7 @@
 
                   <div class="nhsuk-summary-list__row">
                     <dt class="nhsuk-summary-list__key">
-                      Placement address 1 {{ data['placement-building-name'] }}
+                      Placement address 1
                     </dt>
                     <dd class="nhsuk-summary-list__value">
                       {% if data['placement-building-name'] %}
@@ -54,23 +54,85 @@
                       </a>
                     </dd>
                   </div>
-                  {% if data['address-number'] == '2' %}
+                  {% if data['placement-2-building-name'] %}
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Placement address 2
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        {% if data['placement-2-building-name'] %}
+                          {{ data['placement-2-building-name'] }}<br>
+                          {{ data['placement-2-address-line-1'] }}<br>
+                          {% if data['placement-2-address-line-2'] %}
+                            {{ data['placement-2-address-line-2'] }}<br>
+                          {% endif %}
+                          {% if data['placement-2-address-line-3'] %}
+                            {{ data['placement-2-address-line-3'] }}<br>
+                          {% endif %}
+                          {{ data['placement-2-address-town'] }}<br>
+                          {{ data['placement-2-address-postcode'] }}<br>
+                        {% else %}
+                        123 Practice Placement<br>
+                        Newcastle Tyne and Wear<br>
+                        NE12 3AB
+                        {% endif %}
+                      </dd>
+                      <dd class="nhsuk-summary-list__actions">
+                        <a href="TDAE-placement-address">
+                          Change<span class="nhsuk-u-visually-hidden"> placement address</span>
+                        </a>
+                      </dd>
+                    </div>
+                  {% endif %}
+
+                  {% if data['placement-3-building-name'] %}
                   <div class="nhsuk-summary-list__row">
                     <dt class="nhsuk-summary-list__key">
-                      Placement address 2
+                      Placement address 3
                     </dt>
                     <dd class="nhsuk-summary-list__value">
-                      {% if data['placement-2-building-name'] %}
-                        {{ data['placement-2-building-name'] }}<br>
-                        {{ data['placement-2-address-line-1'] }}<br>
-                        {% if data['placement-2-address-line-2'] %}
-                          {{ data['placement-2-address-line-2'] }}<br>
+                      {% if data['placement-3-building-name'] %}
+                        {{ data['placement-3-building-name'] }}<br>
+                        {{ data['placement-3-address-line-1'] }}<br>
+                        {% if data['placement-3-address-line-2'] %}
+                          {{ data['placement-3-address-line-2'] }}<br>
                         {% endif %}
-                        {% if data['placement-2-address-line-3'] %}
-                          {{ data['placement-2-address-line-3'] }}<br>
+                        {% if data['placement-3-address-line-3'] %}
+                          {{ data['placement-3-address-line-3'] }}<br>
                         {% endif %}
-                        {{ data['placement-2-address-town'] }}<br>
-                        {{ data['placement-2-address-postcode'] }}<br>
+                        {{ data['placement-3-address-town'] }}<br>
+                        {{ data['placement-3-address-postcode'] }}<br>
+                      {% else %}
+                      123 Practice Placement<br>
+                      Newcastle Tyne and Wear<br>
+                      NE12 3AB
+                      {% endif %}
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions">
+                      <a href="TDAE-placement-address">
+                        Change<span class="nhsuk-u-visually-hidden"> placement address</span>
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
+
+                  {% if data['placement-4-building-name'] %}
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Placement address 4
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      {% if data['placement-4-building-name'] %}
+                        {{ data['placement-4-building-name'] }}<br>
+                        {{ data['placement-4-address-line-1'] }}<br>
+                        {% if data['placement-4-address-line-2'] %}
+                          {{ data['placement-4-address-line-2'] }}<br>
+                        {% endif %}
+                        {% if data['placement-4-address-line-3'] %}
+                          {{ data['placement-4-address-line-3'] }}<br>
+                        {% endif %}
+                        {{ data['placement-4-address-town'] }}<br>
+                        {{ data['placement-4-address-postcode'] }}<br>
                       {% else %}
                       123 Practice Placement<br>
                       Newcastle Tyne and Wear<br>
