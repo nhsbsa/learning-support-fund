@@ -97,16 +97,28 @@ Check your answers
                   {% endif %}
                   {{ data['placement-address-town'] }}<br>
                   {{ data['placement-address-postcode'] }}<br>
+                {% elif data['address-number'] == '2' %}
+                  2 placement addresses added
+                {% elif data['address-number'] == '3' %}
+                  3 placement addresses added
+                {% elif data['address-number'] == '4' %}
+                  4 placement addresses added
                 {% else %}
-                123 Practice Placement<br>
-                Newcastle Tyne and Wear<br>
-                NE12 3AB
+                  123 Practice Placement<br>
+                  Newcastle Tyne and Wear<br>
+                  NE12 3AB
                 {% endif %}
               </dd>
               <dd class="nhsuk-summary-list__actions">
-                <a href="TDAE-placement-address">
-                  Change<span class="nhsuk-u-visually-hidden"> placement address</span>
-                </a>
+                {% if data['address-number'] == '2' or data['address-number'] == '3' or data['address-number'] == '4' %}
+                  <a href="TDAE-placement-address-cya">
+                    View<span class="nhsuk-u-visually-hidden"> placement addresses</span>
+                  </a>
+                {% else %}
+                  <a href="TDAE-placement-address">
+                    Change<span class="nhsuk-u-visually-hidden"> placement address</span>
+                  </a>
+                {% endif %}
               </dd>
             </div>
 

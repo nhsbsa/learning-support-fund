@@ -464,10 +464,11 @@ router.post('/v6/TDAE-placement-address-multiple', (req, res) => {
     const multipleAddresses = req.session.data['one-address']
 
     if (multipleAddresses === 'yes') {
-        req.session.data['address-number'] = '1'
-        res.redirect('/lsf-public/v6/TDAE-placement-address-more')
+      req.session.data['address-number'] = '1'
+      res.redirect('/lsf-public/v6/TDAE-placement-address-more')
     } else {
-        res.redirect('/lsf-public/v6/TDAE-placement-address')
+      req.session.data['address-number'] = '0'
+      res.redirect('/lsf-public/v6/TDAE-placement-address')
     }
 
 })
@@ -478,7 +479,6 @@ router.post('/v6/TDAE-travel-accommodation', (req, res) => {
 
     if (claimingFor.includes('none')) {
         res.redirect('/lsf-public/v6/TDAE-signpost/TDAE-alternative-journey-signpost')
-
     } else if (!claimingFor.includes('car') && claimingFor.includes('accommodation')){
         req.session.data['eligible-online'] = 'yes'
         req.session.data['claiming-travel'] = 'no'
@@ -502,7 +502,15 @@ router.post('/v6/TDAE-normal-transport', (req, res) => {
 
     const modeOfTransport = req.session.data['mode-of-transport']
 
-    res.redirect('/lsf-public/v6/TDAE-same-term-time-address')
+    if (modeOfTransport.includes('drive')) {
+        res.redirect('/lsf-public/v6/TDAE-normal-return-mileage')
+    } else if (modeOfTransport.includes('cycle')){
+        res.redirect('/lsf-public/v6/TDAE-normal-cycle-return-mileage')
+    } else if (modeOfTransport.includes('public')){
+        res.redirect('/lsf-public/v6/TDAE-normal-public-additional-costs-often')
+    } else {
+        res.redirect('/lsf-public/v6/TDAE-additional-costs-comments')
+    }
 
 })
 
@@ -526,13 +534,7 @@ router.post('/v6/TDAE-term-time-address', (req, res) => {
 
 router.post('/v6/TDAE-normal-place-study', (req, res) => {
 
-    const modeOfTransport = req.session.data['mode-of-transport']
-
-    if (modeOfTransport === 'walk' || modeOfTransport === 'public') {
-        res.redirect('/lsf-public/v6/TDAE-normal-additional-costs-often')
-    } else {
-        res.redirect('/lsf-public/v6/TDAE-normal-return-mileage')
-    }
+    res.redirect('/lsf-public/v6/TDAE-normal-transport')
 
 })
 
@@ -542,21 +544,85 @@ router.post('/v6/TDAE-normal-return-mileage', (req, res) => {
 
 })
 
+router.post('/v6/TDAE-normal-cycle-return-mileage', (req, res) => {
+
+    res.redirect('/lsf-public/v6/TDAE-normal-cycle-additional-costs-often')
+
+})
+
 router.post('/v6/TDAE-normal-additional-costs-often', (req, res) => {
 
     const normalOftenAdditionalCosts = req.session.data['normal-often-additional-costs']
+    const modeOfTransport = req.session.data['mode-of-transport']
 
-    if (normalOftenAdditionalCosts === 'no') {
-        res.redirect('/lsf-public/v6/TDAE-normal-summary-cya')
+    if (normalOftenAdditionalCosts === 'no' & modeOfTransport.includes('cycle')) {
+        res.redirect('/lsf-public/v6/TDAE-normal-cycle-return-mileage')
+    } else if (normalOftenAdditionalCosts === 'no' & modeOfTransport.includes('public')) {
+        res.redirect('/lsf-public/v6/TDAE-normal-public-additional-costs-often')
+    } else if (normalOftenAdditionalCosts === 'no') {
+        res.redirect('/lsf-public/v6/TDAE-additional-costs-comments')
     } else {
         res.redirect('/lsf-public/v6/TDAE-additional-costs')
     }
 
 })
 
+router.post('/v6/TDAE-normal-cycle-additional-costs-often', (req, res) => {
+
+    const normalOftenCycleAdditionalCosts = req.session.data['normal-cycle-often-additional-costs']
+    const modeOfTransport = req.session.data['mode-of-transport']
+
+    if (normalOftenCycleAdditionalCosts === 'no' & modeOfTransport.includes('public')) {
+        res.redirect('/lsf-public/v6/TDAE-normal-public-additional-costs-often')
+    } else if (normalOftenCycleAdditionalCosts === 'no') {
+        res.redirect('/lsf-public/v6/TDAE-additional-costs-comments')
+    } else {
+        res.redirect('/lsf-public/v6/TDAE-cycle-additional-costs')
+    }
+
+})
+
+router.post('/v6/TDAE-normal-public-additional-costs-often', (req, res) => {
+
+    const normalOftenPublicAdditionalCosts = req.session.data['normal-public-often-additional-costs']
+
+    if (normalOftenPublicAdditionalCosts === 'no') {
+        res.redirect('/lsf-public/v6/TDAE-additional-costs-comments')
+    } else {
+        res.redirect('/lsf-public/v6/TDAE-public-additional-costs')
+    }
+
+})
+
 router.post('/v6/TDAE-additional-costs', (req, res) => {
 
-    res.redirect('/lsf-public/v6/TDAE-additional-costs-comments')
+  const modeOfTransport = req.session.data['mode-of-transport']
+
+  if (modeOfTransport.includes('cycle')) {
+      res.redirect('/lsf-public/v6/TDAE-normal-cycle-return-mileage')
+  } else if (modeOfTransport.includes('public')) {
+      res.redirect('/lsf-public/v6/TDAE-normal-public-additional-costs-often')
+  } else {
+      res.redirect('/lsf-public/v6/TDAE-additional-costs-comments')
+  }
+
+})
+
+router.post('/v6/TDAE-cycle-additional-costs', (req, res) => {
+
+  const modeOfTransport = req.session.data['mode-of-transport']
+
+  if (modeOfTransport.includes('public')) {
+      res.redirect('/lsf-public/v6/TDAE-normal-public-additional-costs-often')
+  } else {
+      res.redirect('/lsf-public/v6/TDAE-additional-costs-comments')
+  }
+
+})
+
+router.post('/v6/TDAE-public-additional-costs', (req, res) => {
+
+      res.redirect('/lsf-public/v6/TDAE-additional-costs-comments')
 
 })
 
