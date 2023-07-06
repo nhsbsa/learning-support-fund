@@ -10,19 +10,19 @@ Student search
     <div class="nhsuk-grid-column-full">
         <h1 class="nhsuk-heading-xl">Student search</h1>
     </div>
-    
 
-    <div class="nhsuk-grid-column-one-third"> 
+    <form action="v3/current-search-student" method="POST">
+    <div class="nhsuk-grid-column-one-third">
 
         <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="input-width-20">
               Student reference
             </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+            <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="student-ref" type="text" value="{{ data['studentRef'] }}">
           </div>
 
     </div>
-    <div class="nhsuk-grid-column-one-third"> 
+    <div class="nhsuk-grid-column-one-third">
 
         <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="input-width-20">
@@ -32,7 +32,7 @@ Student search
           </div>
 
     </div>
-    <div class="nhsuk-grid-column-one-third"> 
+    <div class="nhsuk-grid-column-one-third">
 
         <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="input-width-20">
@@ -43,7 +43,7 @@ Student search
 
     </div>
 
-    <div class="nhsuk-grid-column-one-third"> 
+    <div class="nhsuk-grid-column-one-third">
 
         <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="input-width-20">
@@ -54,7 +54,7 @@ Student search
 
     </div>
 
-    <div class="nhsuk-grid-column-one-third"> 
+    <div class="nhsuk-grid-column-one-third">
 
         <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="input-width-20">
@@ -65,7 +65,7 @@ Student search
 
     </div>
 
-    <div class="nhsuk-grid-column-one-third"> 
+    <div class="nhsuk-grid-column-one-third">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
@@ -74,7 +74,7 @@ Student search
                   Date of birth
                 </p>
               </legend>
-          
+
               <div class="nhsuk-date-input" id="example">
                 <div class="nhsuk-date-input__item">
                   <div class="nhsuk-form-group">
@@ -102,15 +102,16 @@ Student search
                 </div>
               </div>
             </fieldset>
-          
+
           </div>
 
     </div>
 
     <div class="nhsuk-grid-column-two-thirds">
-        <a class="nhsuk-button" href="current-search-student-results">Search</a><a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-left-5" href="#">Locked by me</a><br>
+        <button class="nhsuk-button" type="submit">Search</button><a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-left-5" href="#">Locked by me</a><br>
         <a href="TDAE-claims-list">Clear search</a>
     </div>
+    </form>
 </div>
 
 <div class="nhsuk-grid-row">
@@ -157,10 +158,10 @@ Student search
                         <span class="nhsuk-table-responsive__heading">Email </span>ben.bloggs@myemail.com
                     </td>
                 </tr>
-            {% else %}
+            {% elif data['studentRef'] === 'SSRN0010001' %}
                 <tr role="row" class="nhsuk-table__row">
                     <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Student ref </span><a href="student-details?student number=SSRN0010001&activity number=1411&name=Emmit Mar&email=amari.ansari@myemail.com&username=Amari.Ansari">SSRN0010001</a>
+                    <span class="nhsuk-table-responsive__heading">Student ref </span><a href="student-details?student number=SSRN0010001&activity number=1411&name=Emmit Mar&email=Emmit.Mar@myemail.com&username=Emmit.Mar">SSRN0010001</a>
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                     <span class="nhsuk-table-responsive__heading">Name </span>Emmit Mar
@@ -172,7 +173,42 @@ Student search
                         <span class="nhsuk-table-responsive__heading">Postcode </span>NE11 1AB
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Email </span>Amari.ansari@myemail.com
+                        <span class="nhsuk-table-responsive__heading">Email </span>emmit.mar@myemail.com
+                    </td>
+                </tr>
+              {% else %}
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Student ref </span><a href="student-details?student number=SSRN0010002&activity number=1922&name=Ben Bloggs&email=ben.bloggs@myemail.com&username=Ben.Bloggs">SSRN0010002</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Name </span>Ben Bloggs
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">DOB </span>24 August 2001
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Postcode </span>NE11 1AC
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Email </span>ben.bloggs@myemail.com
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Student ref </span><a href="student-details?student number=SSRN0010001&activity number=1411&name=Emmit Mar&email=emmit.mar@myemail.com&username=Emmit.Mar">SSRN0010001</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Name </span>Emmit Mar
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">DOB </span>15 November 2000
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Postcode </span>NE11 1AB
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Email </span>emmit.mar@myemail.com
                     </td>
                 </tr>
             {% endif %}
@@ -181,6 +217,6 @@ Student search
       </table>
 
       </div>
-    
+
   </div>
 {% endblock %}

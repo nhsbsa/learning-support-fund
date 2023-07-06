@@ -25,7 +25,7 @@ Claim details
             Start date
           </dt>
           <dd class="nhsuk-summary-list__value">
-            05 December 2022
+            17 April 2023
           </dd>
         </div>
 
@@ -34,7 +34,7 @@ Claim details
             End date
           </dt>
           <dd class="nhsuk-summary-list__value">
-            09 December 2022
+            21 April 2023
           </dd>
         </div>
 
@@ -62,9 +62,9 @@ Claim details
           </dt>
           <dd class="nhsuk-summary-list__value">
             {% if data['status'] === 'Returned from NHSBSA' %}
-            8400 miles
+              8400 miles
             {% else %}
-            30 miles
+              30 miles
             {% endif %}
           </dd>
         </div>
@@ -74,9 +74,9 @@ Claim details
           </dt>
           <dd class="nhsuk-summary-list__value">
             {% if data['status'] === 'Returned from NHSBSA' %}
-            £840.00
+              £840.00
             {% else %}
-            £8.40
+              £8.40
             {% endif %}
           </dd>
         </div>
@@ -94,7 +94,7 @@ Claim details
               Number of days at placement
             </dt>
             <dd class="nhsuk-summary-list__value">
-              3
+              5
             </dd>
           </div>
           <div class="nhsuk-summary-list__row">
@@ -103,13 +103,13 @@ Claim details
             </dt>
             <dd class="nhsuk-summary-list__value">
               {% if data['status'] === 'Returned from NHSBSA' %}
-              £2,509.98
+                £2,509.98
               {% elif data['breakdown'] === 'walk' %}
-              £31.20
+                £31.20
               {% elif data['breakdown'] ==='public-transport' %}
-              £20.85
+                £20.85
               {% else %}
-              £15.18
+                £25.30
               {% endif %}
             </dd>
           </div>
@@ -139,16 +139,16 @@ Claim details
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
               <td class="nhsuk-table__cell" style="font-size: 1rem;">
-                  <b>Type of travel</b>
+                <b>Type of travel</b>
               </td>
               <td class="nhsuk-table__cell" style="font-size: 1rem;">
-                  {% if data['breakdown'] === 'walk' %}
+                {% if data['breakdown'] === 'walk' %}
                   Walk
-                  {% elif data['breakdown'] ==='public-transport' %}
+                {% elif data['breakdown'] ==='public-transport' %}
                   Public transport
-                  {% else %}
+                {% else %}
                   Car
-                  {% endif %}
+                {% endif %}
               </td>
               <td class="nhsuk-table__cell " style="font-size: 1rem;">
                   Car
@@ -156,53 +156,53 @@ Claim details
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td class="nhsuk-table__cell" style="font-size: 1rem;">
-                  <b>Daily return mileage cost</b>
+                <b>Daily return mileage cost</b>
               </td>
               <td class="nhsuk-table__cell" style="font-size: 1rem;">
                 {% if data['breakdown'] === 'walk' %}
-                <span class="nhsuk-u-visually-hidden">No cost</span>
+                  <span class="nhsuk-u-visually-hidden">No cost</span>
                 {% elif data['breakdown'] ==='public-transport' %}
-                <span class="nhsuk-u-visually-hidden">No cost</span>
+                  <span class="nhsuk-u-visually-hidden">No cost</span>
                 {% else %}
-                £4.34
+                  £4.34
                 {% endif %}
               </td>
               <td class="nhsuk-table__cell " style="font-size: 1rem;">
-                  £8.40
+                £8.40
               </td>
             </tr>
             <tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
               <td class="nhsuk-table__cell" style="font-size: 1rem;">
-                  <b>Daily additional costs</b>
+                <b>Daily additional costs</b>
               </td>
               <td class="nhsuk-table__cell" style="font-size: 1rem;">
                 {% if data['breakdown'] === 'walk' %}
-                <span class="nhsuk-u-visually-hidden">No cost</span>
+                  <span class="nhsuk-u-visually-hidden">No cost</span>
                 {% elif data['breakdown'] ==='public-transport' %}
-                £3.45
+                  £3.45
                 {% else %}
-                £1.00
+                  £1.00
                 {% endif %}
               </td>
               <td class="nhsuk-table__cell " style="font-size: 1rem;">
-                  £2.00
+                £2.00
               </td>
             </tr>
             <tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
               <td class="nhsuk-table__cell" style="font-size: 1rem;">
-                  <b>Daily cost</b>
+                <b>Daily cost</b>
               </td>
               <td class="nhsuk-table__cell" style="font-size: 1rem;">
                 {% if data['breakdown'] === 'walk' %}
-                £0.00
+                  £0.00
                 {% elif data['breakdown'] ==='public-transport' %}
-                £3.45
+                  £3.45
                 {% else %}
-                £5.34
+                  £5.34
                 {% endif %}
               </td>
               <td class="nhsuk-table__cell " style="font-size: 1rem;">
-                  £10.40
+                £10.40
               </td>
             </tr>
           </tbody>
@@ -216,11 +216,11 @@ Claim details
               </dt>
               <dd class="nhsuk-summary-list__value">
                 {% if data['breakdown'] === 'walk' %}
-                £10.40
+                  £10.40
                 {% elif data['breakdown'] ==='public-transport' %}
-                £6.95
+                  £6.95
                 {% else %}
-                £5.06
+                  £5.06
                 {% endif %}
               </dd>
             </div>
@@ -229,7 +229,7 @@ Claim details
                 Days on placement
               </dt>
               <dd class="nhsuk-summary-list__value">
-                3
+                5
               </dd>
             </div>
             <div class="nhsuk-summary-list__row" style="font-size: 1rem;">
@@ -238,11 +238,11 @@ Claim details
               </dt>
               <dd class="nhsuk-summary-list__value">
                 {% if data['breakdown'] === 'walk' %}
-                £31.20
+                  £31.20
                 {% elif data['breakdown'] ==='public-transport' %}
-                £20.85
+                  £20.85
                 {% else %}
-                £15.18
+                  £25.30
                 {% endif %}
               </dd>
             </div>
@@ -255,7 +255,7 @@ Claim details
       <h3 class="nhsuk-heading-xs">Student comments</h3>
 
 
-          <p>I have uploaded parking ticket receipts for parking at the placement Hospital</p>
+          <p>I have uploaded parking ticket receipts for parking at the placement Hospital, but I cannot find the Thursday ticket.</p>
 
 
 
@@ -270,121 +270,10 @@ Claim details
           </span>
         </summary>
         <div class="nhsuk-details__text">
-          <p>Evidence for the dates between 5 December 2022 and 9 December 2022.</p>
-          <p>Days attended: Monday, Thursday, Friday</p>
-            {% if data['wrong-evidence'] === 'true' %}
-            <table class="nhsuk-table">
-            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                    Day
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    Date
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    Type of evidence
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    Action
-                </th>
-              </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">
-                    Monday,<br> Thursday
-                </td>
-                <td class="nhsuk-table__cell">
-                    5 December 2022,<br> 8 December 2022
-                </td>
-                <td class="nhsuk-table__cell ">
-                    Parking receipt
-                </td>
-                <td class="nhsuk-table__cell ">
-                  <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target=”_blank”>
-                    View <span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-            </table>
-            <!--<div class="nhsuk-warning-callout">
-              <h3 class="nhsuk-warning-callout__label">
-                <span role="text">
-                  Removed evidence
-                </span>
-              </h3>
-              <table class="nhsuk-table">
-              <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Removed evidence</caption>
-              <thead role="rowgroup" class="nhsuk-table__head">
-                <tr role="row">
-                  <th role="columnheader" class="" scope="col">
-                      Day
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                      Type of evidence
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                      Action
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="nhsuk-table__body">
-                <tr role="row" class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell">
-                      Monday
-                  </td>
-                  <td class="nhsuk-table__cell">
-                      Parking receipt
-                  </td>
-                  <td class="nhsuk-table__cell ">
-                    <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target=”_blank”>
-                      View (opens in new tab)<span class="nhsuk-u-visually-hidden"> evidence</span>
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-              </table>
-            </div>-->
-            <!--<h4 class="nhsuk-heading-xs">Removed evidence</h4>
-            <div class="nhsuk-hint" id="contact-hint">
-              This evidence has been removed by Emmit Mar but is available for some reason.
-            </div>
-            <table class="nhsuk-table">
-            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Removed evidence</caption>
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                    Day
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    Type of evidence
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    Action
-                </th>
-              </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">
-                    Monday
-                </td>
-                <td class="nhsuk-table__cell">
-                    Parking receipt
-                </td>
-                <td class="nhsuk-table__cell ">
-                  <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target=”_blank”>
-                    View (opens in new tab)<span class="nhsuk-u-visually-hidden"> evidence</span>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-            </table>-->
-            {% else %}
-            <table class="nhsuk-table">
+          <p>Evidence for the dates between 17 April 2023 and 21 April 2023.</p>
+          <p>Days attended: Monday, Tuesday, Wednesday, Thursday, Friday</p>
+
+          <table class="nhsuk-table">
             <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
             <thead role="rowgroup" class="nhsuk-table__head">
               <tr role="row">
@@ -408,7 +297,7 @@ Claim details
                     Monday
                 </td>
                 <td class="nhsuk-table__cell">
-                    5 December 2022
+                    17 April 2023
                 </td>
                 <td class="nhsuk-table__cell ">
                     Parking receipt
@@ -421,10 +310,26 @@ Claim details
               </tr>
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">
-                    Thursday
+                    Tuesday
                 </td>
                 <td class="nhsuk-table__cell">
-                    8 December 2022
+                    18 April 2023
+                </td>
+                <td class="nhsuk-table__cell ">
+                    Parking receipt
+                </td>
+                <td class="nhsuk-table__cell ">
+                  <a href="#">
+                    View <span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span>
+                  </a>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                    Wednesday
+                </td>
+                <td class="nhsuk-table__cell">
+                    19 April 2023
                 </td>
                 <td class="nhsuk-table__cell ">
                     Parking receipt
@@ -440,7 +345,7 @@ Claim details
                     Friday
                 </td>
                 <td class="nhsuk-table__cell">
-                    9 December 2022
+                    21 April 2023
                 </td>
                 <td class="nhsuk-table__cell ">
                     Parking receipt
@@ -453,7 +358,6 @@ Claim details
               </tr>
             </tbody>
             </table>
-            {% endif %}
         </div>
       </details>
 

@@ -18,43 +18,70 @@ Claim summary
 
     <dl class="nhsuk-summary-list">
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Student number
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {{ data['student number'] }}
-          </dd>
-        </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Payment approval date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <div id="currentDate"></div>
+        </dd>
+      </div>
 
-        <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Student name
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              {{ data['name'] }}
-            </dd>
-          </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['student number'] }}
+        </dd>
+      </div>
 
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Course
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              Adult Nursing
-            </dd>
-          </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['name'] }}
+        </dd>
+      </div>
 
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Payment to student
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              £290.18
-            </dd>
-          </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Course
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Adult Nursing
+        </dd>
+      </div>
 
-          </dl>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Placement travel payment
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £25.30
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Accommodation payment
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £275.00
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Total payment to student
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £300.30
+        </dd>
+      </div>
+
+    </dl>
 
       <a class="nhsuk-button" href="TDAE-payment-authorised">Authorise payment</a>
 
@@ -62,4 +89,20 @@ Claim summary
   </div>
 
 </div>
+
+<script>
+    // JavaScript code
+    var currentDateElement = document.getElementById("currentDate");
+
+    // Get the current date
+    var currentDate = new Date();
+
+    // Format the date as desired
+    var options = { day: 'numeric', month: 'long', year: 'numeric' };
+    var formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+    // Set the formatted date as the content of the element
+    currentDateElement.textContent = formattedDate;
+  </script>
+
 {% endblock %}

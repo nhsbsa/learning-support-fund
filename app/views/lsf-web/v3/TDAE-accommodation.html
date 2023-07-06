@@ -66,7 +66,7 @@ Claim details
         </div>
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Nightly accommodation cost
+            Nightly accommodation cost student paid
           </dt>
           <dd class="nhsuk-summary-list__value">
             £65.00
@@ -74,10 +74,10 @@ Claim details
         </div>
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Accommodation cost reimbursement
+            Total accommodation cost reimbursed to student
           </dt>
           <dd class="nhsuk-summary-list__value">
-            £275.00
+              £275.00
           </dd>
         </div>
         <div class="nhsuk-summary-list__row">
@@ -85,16 +85,26 @@ Claim details
             Evidence
           </dt>
           <dd class="nhsuk-summary-list__value">
-            <a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 17 Apr 2023 to 22 Apr 2023">
-              Download (PDF)<span class="nhsuk-u-visually-hidden"> evidence</span>
-            </a>
+            {% if data['username'] !== 'Ben.Bloggs' %}
+              <a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 17 Apr 2023 to 22 Apr 2023">
+                Download (PDF)<span class="nhsuk-u-visually-hidden"> evidence</span>
+              </a>
+            {% else %}
+              <a href="/images/Hotel-booking-confirmation-ben.pdf" download="Ben Bloggs accommodation evidence 17 Apr 2023 to 21 Apr 2023">
+                Download (PDF)<span class="nhsuk-u-visually-hidden"> evidence</span>
+              </a>
+            {% endif %}
           </dd>
         </div>
       </dl>
 
-      <h3 class="nhsuk-heading-xs">Accommodation comments</h3>
 
-      <p>I stayed an extra night on the Friday due to the shift finishing too late to travel home.</p>
+
+      {% if data['username'] !== 'Ben.Bloggs' %}
+        <h3 class="nhsuk-heading-xs">Accommodation comments</h3>
+
+        <p>I stayed an extra night on the Friday due to the shift finishing too late to travel home.</p>
+      {% endif %}
 
       {% if data['read-only'] != 'true' %}
       <a class="nhsuk-button" href="TDAE-accommodation-check">Continue</a>
