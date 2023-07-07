@@ -12,16 +12,22 @@ Claim outcome
         <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
             <div class="nhsuk-card__content">
                 <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
-                      Emit Mar maternity leave status confirmed
+                      Status confirmed for Emmit Mar
                 </h1>
             </div>
         </div>
 
         <h2 class="nhsuk-heading-m">What happens next</h2>
 
-          <p>Emit Mar has been been emailed confirmation of their LSF maternity leave status and will continue to receive Learning Support Fund payments.</p>
+        <p>We have emailed Emmit Mar to tell them they will receive their NHS Learning Support Payment as you have confirmed their maternity status.</p>
 
-        <button class="nhsuk-button" type="submit">Continue</button>
+        <p>They will receive this on the next termly payment date.</p>
+
+        {% if data['location'] == 'confirmation' %}
+          <button class="nhsuk-button" type="submit">Review students who told us they're attending</button>
+        {% else %}
+          <button class="nhsuk-button" type="submit">Review students who told us they're not attending</button>
+        {% endif %}
       </form>
     </div>
 

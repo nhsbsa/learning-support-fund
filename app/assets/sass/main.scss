@@ -22,6 +22,16 @@
 ///
 ///
 
+.nhsuk-u-width-one-fifth {
+  width: 100%!important
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-u-width-one-fifth {
+      width:20%!important
+  }
+}
+
 .nhsbsa-count-error-message{
   color: #d5281b;
 }
@@ -312,10 +322,10 @@ td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > .nhsuk-checkboxes__lab
     td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > .nhsuk-checkboxes__label:after{
         top: 7px;
     }
-}  
+}
 .nhsbsa-row--selected {
     background-color: #fff;
-} 
+}
 .nhsbsa-row--selected td:first-child {
     border-left:3px solid #225EB8 !important;
 }

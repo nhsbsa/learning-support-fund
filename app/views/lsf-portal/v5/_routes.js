@@ -7,6 +7,13 @@ const express = require('express');
 const router = express.Router();
 
 // ********************************
+// COSA Maternity comments
+router.post('/v5/COSA-status-reason', (req, res) => {
+
+    res.redirect('/lsf-portal/v5/COSA-student-emailed')
+
+})
+
 
 // COSA Maternity comments
 router.post('/v5/COSA-maternity-comments', (req, res) => {
@@ -39,8 +46,11 @@ router.post('/v5/COSA-student-emailed', (req, res) => {
 router.post('/v5/COSA-student-status-change', (req, res) => {
 
     const status = req.session.data['student-status']
+    const location = req.session.data['location']
 
-    if (status === 'Discontinued' || status === 'Not enrolled' || status === 'Information mismatch' || status === 'In attendance') {
+    if (status === 'In attendance' && location === 'declined') {
+        res.redirect('/lsf-portal/v5/COSA-status-reason')
+    } else if (status === 'Discontinued' || status === 'Not enrolled' || status === 'Information mismatch' || status === 'In attendance') {
         res.redirect('/lsf-portal/v5/COSA-student-emailed')
     } else if (status === 'Interruption') {
       res.redirect('/lsf-portal/v5/interruption')

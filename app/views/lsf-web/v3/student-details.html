@@ -36,7 +36,7 @@ Student details
 
                 </div>
                 <div class="nhsuk-grid-column-one-third">
-                    
+
                         <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Phone</h2>
                         <p id="studentPhone">07777777777</p>
 
@@ -65,7 +65,7 @@ Student details
 
                                 <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Sort code</h3>
                                 <p id="sortcode">11-22-33</p>
-                                
+
                                 <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account holder</h3>
                                 <p id="accountholder">Emmit Mar</p>
 
@@ -81,10 +81,10 @@ Student details
                                 <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M0 0h24v34H0z" fill="none"></path>
                                     <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-                                </svg> 
+                                </svg>
                                 <span class="nhsuk-action-link__text">Edit student details</span>
                             </a>
-                        </div>										
+                        </div>
                     </div>
                 </div>
             </div>
@@ -141,7 +141,7 @@ Student details
                                     Cipher: drobe
                                 </div>
                                 <a href="student-course-details">Assess</a>
-                            </div>  
+                            </div>
                           </details>
                     </div>
                 </div>
@@ -149,11 +149,18 @@ Student details
 
             <div class="nhsuk-tabs__panel" id="tab-Notes">
                 <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-one-third">
-                        <h2 class="nhsuk-heading-l">Notes</h2>
-                    </div>
-                    <div class="nhsuk-grid-column-two-thirds">
-                        
+                    <div class="nhsuk-grid-column-full">
+                      <h2 class="nhsuk-heading-xs">Notes</h2>
+                      <hr>
+                      <h3 class="nhsuk-heading-m">HEI overruled student's COSA on 13 July 2023 at 4:13pm</h3>
+
+                      <p>{{ data['name'] }} told us they were not attending their course. The HEI has overruled this with the following reason:</p>
+
+                      <p>[reason]</p>
+
+                      <p>We have sent an email to {{ data['name'] }} asking them to re-confirm their attendance.</p>
+
+                      <p>Last modified by <b>Katie Jennings</b></p>
                     </div>
                 </div>
             </div>
@@ -176,7 +183,7 @@ Student details
                     <h2 class="nhsuk-heading-l">Next payment</h2>
                 </div>
                 <div class="nhsuk-column-full">
-                    
+
                 </div>
             </div>
 

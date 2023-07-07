@@ -27,11 +27,11 @@
     <div class="nhsuk-grid-column-full">
         {{ backLink({
             "href": "COSA-term-1-overview",
-            "text": "Go back to term 1 overview"
+            "text": "Go to Attendance overview for term 1"
         }) }}
         <h1 class="nhsuk-heading-l">
           <span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>
-          Students who marked themselves as no longer in attendance for term {% if data['term'] %}{{ data['term'] }}{% else %}1{% endif %}
+          Students who told us they're not attending
         </h1>
 
         <p class="nhsuk-body-s">
@@ -44,9 +44,9 @@
 
     <div class="nhsuk-grid-column-full">
 
-      <p>These students have declared themselves as no longer attending the course. You can confirm the status of the individual students.</p>
+      <p>You need to confirm the status of these students individually.</p>
 
-      <p><a href="#">Download details of students who are no longer in attendance (CSV, 432KB)</a></p>
+      <p><a href="#">Download details of students who told us they're not attending (CSV, 432KB)</a></p>
 
       <div class="nhsuk-table-responsive">
                   <table class="nhsuk-table">
@@ -55,7 +55,7 @@
                         <th class="nhsuk-table__header" scope="col">Name</th>
                         <th class="nhsuk-table__header" scope="col">Date of birth</th>
                         <th class="nhsuk-table__header" scope="col">Attendance type</th>
-                        <th class="nhsuk-table__header" scope="col">Actions</th>
+                        <th class="nhsuk-table__header" scope="col">Action</th>
                       </tr>
                     </thead>
 
@@ -65,14 +65,14 @@
                         <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
                         <td class="nhsuk-table__cell ">15 June 2003</td>
                         <td class="nhsuk-table__cell ">Full time</td>
-                        <td class="nhsuk-table__cell "><a href="COSA-student-status-change?location=declined">Confirm status</a></td>
+                        <td class="nhsuk-table__cell "><a href="COSA-student-status-change?location=declined">Select status</a></td>
                       </tr>
 
                       <tr class="nhsuk-table__row">
                         <td class="nhsuk-table__cell "><a href="student-details-amara">Emmit Mar</a></td>
                         <td class="nhsuk-table__cell ">15 June 2003</td>
                         <td class="nhsuk-table__cell ">Full time</td>
-                        <td class="nhsuk-table__cell "><a href="COSA-student-status-change?location=declined">Confirm status</a></td>
+                        <td class="nhsuk-table__cell "><a href="COSA-student-status-change?location=declined">Select status</a></td>
                       </tr>
 
                     </tbody>

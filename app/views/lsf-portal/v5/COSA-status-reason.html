@@ -9,19 +9,26 @@ test{% extends 'layout.html' %}
 
     <div class="nhsuk-grid-column-two-thirds">
       {{ backLink({
-          "href": "javascript:history.go(-1)",
-          "text": "Go back"
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
       }) }}
 
-    <form action="v5/COSA-maternity-comments" method="POST">
+    <form action="v5/COSA-status-reason" method="POST">
 
-        <div class="nhsuk-form-group">
-          <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>
-            Tell us about the maternity leave status (optional)
-          </h1>
-          </div>
+        <h1 class="nhsuk-heading-l">
+          <span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>
+          Tell us about the status change for Emmit Mar
+        </h1>
 
-          <textarea class="nhsuk-textarea" id="maternityLeaveComment" name="return-more-detail" rows="8"></textarea>
+        <p class="nhsuk-body-s">
+          <b>Course name:</b> Diagnostic Radiography<br>
+          <b>Academic year:</b> September 2023<br>
+          <b>Study year:</b> Year 1
+        </p>
+
+        <p>Emit Mar told us they are not attending their course. You need to tell us why you disagree with this.</p>
+
+          <textarea class="nhsuk-textarea" id="additionalCostsComment" name="return-more-detail" rows="8"></textarea>
           <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">500 characters remaining</p>
           <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 500 characters</p>
 

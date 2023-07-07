@@ -25,11 +25,11 @@
     <div class="nhsuk-grid-column-full">
         {{ backLink({
             "href": "course-intake",
-            "text": "Go back to students studying Diagnostic Radiography"
+            "text": "Go back to Students studying Diagnostic Radiography"
         }) }}
         <h1 class="nhsuk-heading-l">
           <span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>
-          Term {% if data['term'] %}{{ data['term'] }}{% else %}1{% endif %} confirmation of students attendance overview
+          Attendance overview for term {% if data['term'] %}{{ data['term'] }}{% else %}1{% endif %}
         </h1>
 
         <p class="nhsuk-body-s">
@@ -44,7 +44,7 @@
 
       <div class="action-block">
         <h2 class="nhsuk-heading-xl" style="text-align: center; margin-bottom: 24px; font-size: 5rem;">45</h2>
-        <p style="text-align: center;">Students who have confirmed their attendance</p>
+        <p style="text-align: center;">Students told us they're attending</p>
         <a class="nhsuk-button" href="COSA-confirm-students">Confirm attendance</a>
         <a class="nhsuk-button nhsuk-button--secondary" href="COSA-students-waiting-confirmation">View students</a>
       </div>
@@ -55,7 +55,7 @@
 
       <div class="action-block">
         <h2 class="nhsuk-heading-xl" style="text-align: center; margin-bottom: 24px; font-size: 5rem;">2</h2>
-        <p style="text-align: center;">Students marked themselves as no longer in attendance</p>
+        <p style="text-align: center;">Students told us they're not attending</p>
         <a class="nhsuk-button" href="COSA-students-declined">View students</a>
       </div>
 
@@ -65,7 +65,7 @@
 
       <div class="action-block">
         <h2 class="nhsuk-heading-xl" style="text-align: center; margin-bottom: 24px; font-size: 5rem;">96</h2>
-        <p style="text-align: center;">Students not responded</p>
+        <p style="text-align: center;">Students have not responded</p>
         <a class="nhsuk-button nhsuk-button--secondary" href="COSA-students-not-responded">View students</a>
       </div>
 
