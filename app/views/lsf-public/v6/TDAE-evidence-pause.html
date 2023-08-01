@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What is the start date of your claim?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<style>
+		ul, .nhsuk-list--circle {
+		  list-style-type: circle;
+		    padding-left: 20px;
+		}
+
+		.nhsuk-list-style-none{
+		  list-style: none;
+		}
+		</style>
+
+		<form action="v6/TDAE-evidence-pause" method="POST">
+
+			<div class="nhsuk-form-group">
+				<fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+				  <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+					<h1 class="nhsuk-fieldset__heading">
+					  Placement travel additional costs evidence
+					</h1>
+				  </legend>
+
+					<p>You will need to provide evidence for the following travel costs you incurred:</p>
+
+					<ul class="nhsuk-list nhsuk-list--bullet">
+					  <li>Car parking</li>
+						<li class="nhsuk-list-style-none">
+					    <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
+					       <li>Monday 5 June 2023</li>
+					       <li>Monday 5 June 2023</li>
+					    </ul>
+					  </li>
+					  <li>Tunnel and toll charges</li>
+					  <li>Congestion and clean air charges</li>
+
+					</ul>
+
+					<p>Your evidence can be an image or screenshot and can cover more than one of the costs.</p>
+
+
+				</fieldset>
+
+			  </div>
+
+			<button class="nhsuk-button" type="submit">Upload evidence</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

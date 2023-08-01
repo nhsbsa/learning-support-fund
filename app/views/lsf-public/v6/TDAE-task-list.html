@@ -44,25 +44,27 @@ Task list
                         <span class="app-task-list__section-number">2. </span> Travel costs
                     </h2>
                     <ul class="app-task-list__items">
-                        <li class="app-task-list__item nhsuk-u-clear">
-                            <span class="app-task-list__task-name">
-                            {% if data['university-details'] === 'completed' %}
-                                <a href="TDAE-normal-summary-cya" aria-describedby="eligibility-status">
-                                    University travel details
-                                </a>
-                            {% else %}
-                                <a href="TDAE-same-term-time-address" aria-describedby="eligibility-status">
-                                    University travel details
-                                </a>
-                            {% endif %}
-                            </span>
-                            {% if data['university-details'] === 'completed' %}
-                            <strong class="nhsuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
-                            {% else %}
-                            <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag" id="eligibility-status">Not
-                                started</strong>
-                            {% endif %}
-                        </li>
+                        {% if data['blended-learning'] != 'yes' %}
+                          <li class="app-task-list__item nhsuk-u-clear">
+                              <span class="app-task-list__task-name">
+                              {% if data['university-details'] === 'completed' %}
+                                  <a href="TDAE-normal-summary-cya" aria-describedby="eligibility-status">
+                                      University travel details
+                                  </a>
+                              {% else %}
+                                  <a href="TDAE-same-term-time-address" aria-describedby="eligibility-status">
+                                      University travel details
+                                  </a>
+                              {% endif %}
+                              </span>
+                              {% if data['university-details'] === 'completed' %}
+                              <strong class="nhsuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                              {% else %}
+                              <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag" id="eligibility-status">Not
+                                  started</strong>
+                              {% endif %}
+                          </li>
+                        {% endif %}
                         <li class="app-task-list__item nhsuk-u-clear">
                             <span class="app-task-list__task-name">
                             {% if data['submit-claim'] === 'completed' %}
@@ -88,7 +90,7 @@ Task list
                                 Placement travel evidence
                               </a>
                             {% else %}
-                              <a class="app-task-list__task-name" href="TDAE-start-claim">
+                              <a class="app-task-list__task-name" href="TDAE-evidence-pause">
                                 Placement travel evidence
                               </a>
                             {% endif %}
@@ -99,6 +101,26 @@ Task list
                               <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag" id="eligibility-status">Not started</strong>
                             {% endif %}
                         </li>
+                        {% if checked('claiming-for', 'hire-car') %}
+                        <li class="app-task-list__item nhsuk-u-clear">
+                            <span class="app-task-list__task-name">
+                            {% if data['submit-claim'] === 'completed' %}
+                              <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">
+                                Hire car
+                              </a>
+                            {% else %}
+                              <a class="app-task-list__task-name" href="TDAE-start-claim">
+                                Hire car
+                              </a>
+                            {% endif %}
+                            </span>
+                            {% if data['hire-car'] === 'completed' %}
+                              <strong class="nhsuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                            {% else %}
+                              <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag" id="eligibility-status">Not started</strong>
+                            {% endif %}
+                        </li>
+                        {% endif %}
                     </ul>
                 </li>
             {% endif %}
@@ -127,7 +149,7 @@ Task list
                                 </a>
                             {% endif %}
                             </span>
-                            {% if data['accommodation-details'] === 'completed' %}
+                            {% if data['evidence-details'] === 'completed' %}
                             <strong class="nhsuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
                             {% else %}
                             <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag" id="eligibility-status">Not

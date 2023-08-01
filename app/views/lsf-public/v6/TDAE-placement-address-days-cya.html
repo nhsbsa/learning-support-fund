@@ -1,0 +1,109 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Which days does this evidence relate to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v6/TDAE-placement-address-days-cya" method="POST">
+
+
+            <div class="nhsuk-form-group">
+
+              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  <h1 class="nhsuk-fieldset__heading">
+                    Check days at each placement address
+                  </h1>
+                </legend>
+
+                <dl class="nhsuk-summary-list">
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key" style="font-weight: 400; width: 50%;">
+                      <strong>Placement address 1</strong><br>
+                      {% if data['placement-building-name'] %}
+                        {{ data['placement-building-name'] }}<br>
+                        {{ data['placement-address-line-1'] }}<br>
+                        {% if data['placement-address-line-2'] %}
+                          {{ data['placement-address-line-2'] }}<br>
+                        {% endif %}
+                        {% if data['placement-address-line-3'] %}
+                          {{ data['placement-address-line-3'] }}<br>
+                        {% endif %}
+                        {{ data['placement-address-town'] }}<br>
+                        {{ data['placement-address-postcode'] }}<br>
+                      {% else %}
+                      Newcastle Hospital<br>
+                      Newcastle Street<br>
+                      Newcastle Tyne and Wear<br>
+                      NE12 3AB
+                      {% endif %}
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      Monday 5 June 2023<br>
+      								Tuesday 6 June 2023
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions">
+                      <a href="TDAE-placement-address-days?address-days=1">
+                        Change<span class="nhsuk-u-visually-hidden"> placement address 1</span>
+                      </a>
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key" style="font-weight: 400; width: 50%;">
+                      <strong>Placement address 2</strong><br>
+                      {% if data['placement-2-building-name'] %}
+                        {{ data['placement-2-building-name'] }}<br>
+                        {{ data['placement-2-address-line-1'] }}<br>
+                        {% if data['placement-2-address-line-2'] %}
+                          {{ data['placement-2-address-line-2'] }}<br>
+                        {% endif %}
+                        {% if data['placement-2-address-line-3'] %}
+                          {{ data['placement-2-address-line-3'] }}<br>
+                        {% endif %}
+                        {{ data['placement-2-address-town'] }}<br>
+                        {{ data['placement-2-address-postcode'] }}<br>
+                      {% else %}
+                      Alnwick Hospital<br>
+                      Ashington Road<br>
+                      Alnwick<br>
+                      NE6 4EA
+                      {% endif %}
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      Wednesday 7 June 2023<br>
+                      Thursday 8 June 2023<br>
+                      Friday 9 June 2023
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions">
+                      <a href="TDAE-placement-address-days?address-days=2">
+                        Change<span class="nhsuk-u-visually-hidden"> placement address 2</span>
+                      </a>
+                    </dd>
+                  </div>
+
+                </dl>
+
+            <button class="nhsuk-button">Continue</button><br>
+            <a href="TDAE-start-claim">Cancel</a>
+
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

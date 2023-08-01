@@ -1,0 +1,107 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What is the start date of your claim?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<style>
+		ul, .nhsuk-list--circle {
+		  list-style-type: circle;
+		    padding-left: 20px;
+		}
+
+		.nhsuk-list-style-none{
+		  list-style: none;
+		}
+		</style>
+
+		<form action="v6/TDAE-evidence-pause" method="POST">
+
+			<div class="nhsuk-form-group">
+				<fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+				  <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+					<h1 class="nhsuk-fieldset__heading">
+					  Placement travel additional costs evidence
+					</h1>
+				  </legend>
+
+					<p>You will need to provide evidence for the additional travel costs you incurred. Because of the high number of costs you have entered you will need to upload them for each 7 day period.</p>
+
+					<!--<ul class="nhsuk-list nhsuk-list--bullet">
+					  <li>Wednesday 7 June 2023 to Tuesday 13 June 2023</li>
+						<li>Wednesday 14 June 2023 to Friday 16 June 2023</li>
+					</ul>-->
+
+					<table role="table" class="nhsuk-table-responsive">
+					  <!--<caption class="nhsuk-table__caption">Ibuprofen tablet dosages for children</caption>-->
+					  <thead role="rowgroup" class="nhsuk-table__head">
+					    <tr role="row">
+								<th role="columnheader" class="" scope="col">
+					        Week
+					      </th>
+								<th role="columnheader" class="" scope="col">
+					        Dates
+					      </th>
+					      <th role="columnheader" class="" scope="col">
+					        Status
+					      </th>
+					      <th role="columnheader" class="" scope="col">
+					        Action
+					      </th>
+					    </tr>
+					  </thead>
+					  <tbody class="nhsuk-table__body">
+					    <tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+					        <span class="nhsuk-table-responsive__heading">Week </span>1
+					      </td>
+								<td role="cell" class="nhsuk-table__cell">
+					        <span class="nhsuk-table-responsive__heading">Dates </span>Wednesday 7 June 2023 to Tuesday 13 June 2023
+					      </td>
+					      <td role="cell" class="nhsuk-table__cell">
+					        <span class="nhsuk-table-responsive__heading">Status </span>To be completed
+					      </td>
+					      <td role="cell" class="nhsuk-table__cell">
+					        <span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No action available</span>
+					      </td>
+					    </tr>
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+					        <span class="nhsuk-table-responsive__heading">Week </span>2
+					      </td>
+					      <td role="cell" class="nhsuk-table__cell">
+					        <span class="nhsuk-table-responsive__heading">Dates </span>Wednesday 14 June 2023 to Friday 16 June 2023
+					      </td>
+					      <td role="cell" class="nhsuk-table__cell">
+					        <span class="nhsuk-table-responsive__heading">Status </span>Cannot be completed yet
+					      </td>
+					      <td role="cell" class="nhsuk-table__cell">
+					        <span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No action available</span>
+					      </td>
+					    </tr>
+					  </tbody>
+					</table>
+
+				</fieldset>
+
+			  </div>
+
+			<button class="nhsuk-button" type="submit">Upload evidence for week 1</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

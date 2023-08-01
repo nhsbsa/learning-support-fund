@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Additional costs for your normal daily journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v6/TDAE-placement-community-mileage-cya" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+					<h1 class="nhsuk-heading-l">
+						<h1 class="nhsuk-heading-l">Check community mileage</h1>
+					</h1>
+
+					<dl class="nhsuk-summary-list">
+
+					  <div class="nhsuk-summary-list__row">
+					    <dt class="nhsuk-summary-list__key">
+					      Day
+					    </dt>
+					    <dd class="nhsuk-summary-list__value">
+					      {{ data['community-mileage-day'] }}
+					    </dd>
+					    <dd class="nhsuk-summary-list__actions">
+					      <a href="TDAE-placement-evidence-type">
+					        Change<span class="nhsuk-u-visually-hidden"> day</span>
+					      </a>
+					    </dd>
+					  </div>
+
+						<div class="nhsuk-summary-list__row">
+					    <dt class="nhsuk-summary-list__key">
+					      Total miles
+					    </dt>
+					    <dd class="nhsuk-summary-list__value">
+					      {{ data['community-mileage-miles']}}
+					    </dd>
+					    <dd class="nhsuk-summary-list__actions">
+					      <a href="TDAE-placement-additional-daily-total">
+					        Change<span class="nhsuk-u-visually-hidden"> total miles</span>
+					      </a>
+					    </dd>
+					  </div>
+
+					</dl>
+
+			</div>
+			<button class="nhsuk-button" type="submit">Add community mileage</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

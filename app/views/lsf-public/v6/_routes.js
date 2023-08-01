@@ -11,6 +11,41 @@ const router = express.Router();
 
 // ********************************
 
+// TDAE community mileage
+router.post('/v6/TDAE-placement-community-mileage-cya', (req, res) => {
+
+  res.redirect('/lsf-public/v6/TDAE-placement-itinerary')
+
+})
+
+// TDAE community mileage
+router.post('/v6/TDAE-placement-community-mileage-costs', (req, res) => {
+
+  res.redirect('/lsf-public/v6/TDAE-placement-community-mileage-cya')
+
+})
+
+// TDAE community mileage
+router.post('/v6/TDAE-placement-community-mileage-day', (req, res) => {
+
+  res.redirect('/lsf-public/v6/TDAE-placement-community-mileage-costs')
+
+})
+
+// TDAE Evidence match
+router.post('/v6/TDAE-evidence-match', (req, res) => {
+
+  res.redirect('/lsf-public/v6/TDAE-evidence-cya')
+
+})
+
+// TDAE Evidence pause
+router.post('/v6/TDAE-evidence-pause', (req, res) => {
+
+  res.redirect('/lsf-public/v6/TDAE-placement-evidence')
+
+})
+
 // COSA confirmation
 router.post('/v6/COSA-confirmation', (req, res) => {
 
@@ -41,23 +76,37 @@ router.post('/v6/COSA-confirm-attendance', (req, res) => {
 // Placement evidence
 router.get('/v6/TDAE-placement-evidence', (req, res) => {
 
-  req.session.data['additional-cost'] = "1"
-
-  res.redirect('/lsf-public/v6/TDAE-placement-itinerary')
+  res.redirect('/lsf-public/v6/TDAE-evidence-match')
 
 })
 
 // Placement evidence type
 router.post('/v6/TDAE-placement-evidence-days', (req, res) => {
 
-  res.redirect('/lsf-public/v6/TDAE-placement-evidence')
+  res.redirect('/lsf-public/v6/TDAE-placement-additional-costs-cya')
+
+})
+
+// Placement evidence type
+router.post('/v6/TDAE-placement-additional-costs-cya', (req, res) => {
+
+    req.session.data['additional-cost'] = "1"
+
+  res.redirect('/lsf-public/v6/TDAE-placement-itinerary')
+
+})
+
+// Placement evidence type
+router.post('/v6/TDAE-placement-additional-daily-total', (req, res) => {
+
+  res.redirect('/lsf-public/v6/TDAE-placement-additional-costs')
 
 })
 
 // Placement evidence type
 router.post('/v6/TDAE-placement-evidence-type', (req, res) => {
 
-  res.redirect('/lsf-public/v6/TDAE-placement-evidence-days')
+  res.redirect('/lsf-public/v6/TDAE-placement-additional-daily-total')
 
 })
 
@@ -73,6 +122,13 @@ router.get('/v6/TDAE-placement-journey-days', (req, res) => {
   } else {
   req.session.data['journey-mileage'] = "1"
   }
+
+  res.redirect('/lsf-public/v6/TDAE-placement-journey-cya')
+
+})
+
+// Placement journey cya
+router.post('/v6/TDAE-placement-journey-cya', (req, res) => {
 
   res.redirect('/lsf-public/v6/TDAE-placement-itinerary')
 
@@ -439,6 +495,25 @@ router.post('/v6/TDAE-academic-year', (req, res) => {
 
 })
 
+router.post('/v6/TDAE-placement-address-days', (req, res) => {
+
+    const addressDays = req.session.data['address-days']
+
+    if (addressDays === '2') {
+        res.redirect('/lsf-public/v6/TDAE-placement-address-days-cya')
+    } else {
+        req.session.data['address-days'] = '2'
+        res.redirect('/lsf-public/v6/TDAE-placement-address-days')
+    }
+
+})
+
+router.post('/v6/TDAE-placement-address-days-cya', (req, res) => {
+
+    res.redirect('/lsf-public/v6/TDAE-placement-itinerary')
+
+})
+
 router.post('/v6/TDAE-placement-address-cya', (req, res) => {
 
     const addAnother = req.session.data['add-another']
@@ -454,7 +529,7 @@ router.post('/v6/TDAE-placement-address-cya', (req, res) => {
         req.session.data['address-number'] = '4'
         res.redirect('/lsf-public/v6/TDAE-placement-address-more')
     } else {
-        res.redirect('/lsf-public/v6/TDAE-eligibility-cya')
+        res.redirect('/lsf-public/v6/TDAE-same-term-time-address')
     }
 
 })
@@ -476,9 +551,12 @@ router.post('/v6/TDAE-placement-address-multiple', (req, res) => {
 router.post('/v6/TDAE-travel-accommodation', (req, res) => {
 
     const claimingFor = req.session.data['claiming-for']
+    const change = req.session.data['change']
 
     if (claimingFor.includes('none')) {
         res.redirect('/lsf-public/v6/TDAE-signpost/TDAE-alternative-journey-signpost')
+    } else if (change.includes('yes')) {
+        res.redirect('/lsf-public/v6/TDAE-eligibility-cya')
     } else if (!claimingFor.includes('car') && claimingFor.includes('accommodation')){
         req.session.data['eligible-online'] = 'yes'
         req.session.data['claiming-travel'] = 'no'
@@ -519,7 +597,7 @@ router.post('/v6/TDAE-same-term-time-address', (req, res) => {
     const sameTermTimeAddress = req.session.data['same-term-address']
 
     if (sameTermTimeAddress === 'yes') {
-        res.redirect('/lsf-public/v6/TDAE-normal-place-study')
+        res.redirect('/lsf-public/v6/TDAE-blended-learning')
     } else {
         res.redirect('/lsf-public/v6/TDAE-term-time-address')
     }
@@ -528,7 +606,14 @@ router.post('/v6/TDAE-same-term-time-address', (req, res) => {
 
 router.post('/v6/TDAE-term-time-address', (req, res) => {
 
-    res.redirect('/lsf-public/v6/TDAE-normal-place-study')
+    res.redirect('/lsf-public/v6/TDAE-eligibility-cya')
+
+})
+
+router.post('/v6/TDAE-blended-learning', (req, res) => {
+
+      res.redirect('/lsf-public/v6/TDAE-eligibility-cya')
+
 
 })
 
@@ -694,7 +779,7 @@ router.post('/v6/TDAE-placement-additional-costs-often', (req, res) => {
 
 router.post('/v6/TDAE-placement-additional-costs', (req, res) => {
 
-    res.redirect('/lsf-public/v6/TDAE-placement-additional-comments')
+    res.redirect('/lsf-public/v6/TDAE-placement-evidence-days')
 
 })
 
@@ -720,19 +805,10 @@ router.post('/v6/TDAE-placement-comments', (req, res) => {
 
 router.post('/v6/TDAE-placement-address', (req, res) => {
 
-    req.session.data['placement-address'] = 'completed'
-    res.redirect('/lsf-public/v6/TDAE-task-list')
+    res.redirect('/lsf-public/v6/TDAE-same-term-time-address')
 
 })
 
-router.post('/v6/TDAE-placement-journey-cya', (req, res) => {
-
-    console.log('testing')
-
-    req.session.data['placement-details'] = 'completed'
-    res.redirect('/lsf-public/v6/TDAE-task-list')
-
-})
 
 router.post('/v6/TDAE-start-claim', (req, res) => {
 
