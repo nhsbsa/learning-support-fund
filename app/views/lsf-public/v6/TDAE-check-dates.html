@@ -17,51 +17,46 @@ Check your answers
 
             <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-                    Start date
+                    Week 1 placement travel days
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                    5 June 2023
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="TDAE-start-claim">
-                        Change<span class="nhsuk-u-visually-hidden"> start date</span>
-                    </a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                    End date
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                    9 June 2023
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="TDAE-end-claim">
-                        Change<span class="nhsuk-u-visually-hidden"> end date</span>
-                    </a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                    Placement travel days
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                    Monday 5 June 2023,<br>
-                    Tuesday 6 June 2023,<br>
                     Wednesday 7 June 2023,<br>
                     Thursday 8 June 2023,<br>
                     Friday 9 June 2023<br>
+                    Saturday 10 June 2023<br>
+                    Sunday 11 June 2023<br>
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
                     <a href="TDAE-placement-days">
-                        Change<span class="nhsuk-u-visually-hidden"> placement travel days</span>
+                        Change<span class="nhsuk-u-visually-hidden"> week 1 placement travel days</span>
                     </a>
                 </dd>
             </div>
+            {% if data['placement-week'] == '2' %}
+              <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                      Week 2 placement travel days
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                      Wednesday 14 June 2023,<br>
+                      Thursday 15 June 2023,<br>
+                      Friday 16 June 2023<br>
+                      Saturday 17 June 2023<br>
+                      Sunday 18 June 2023<br>
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                      <a href="TDAE-placement-days">
+                          Change<span class="nhsuk-u-visually-hidden"> week 1 placement travel days</span>
+                      </a>
+                  </dd>
+              </div>
+            {% endif %}
 
         </dl>
+
+        <p><a href="TDAE-start-claim">Reset all placement travel days</a></p>
+
+        <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-week-days?placement-week=2">Add a week</a>
 
         <form action="v6/TDAE-check-dates" method="POST">
             <button class="nhsuk-button" type="submit">Save and continue</button><br>

@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Is your term time address the same?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v6/TDAE-accommodation-stays" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  How many accommodation stays are you claiming for?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-radios nhsuk-radios--conditional">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="contact-1" name="stays" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="2">
+                  <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                    1
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="contact-2" name="stays" type="radio" value="phone" aria-controls="conditional-contact-2" aria-expanded="2">
+                  <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+                    2
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="contact-3" name="stays" type="radio" value="text" aria-controls="conditional-contact-3" aria-expanded="3">
+                  <label class="nhsuk-label nhsuk-radios__label" for="contact-3">
+                    3
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="contact-4" name="stays" type="radio" value="text" aria-controls="conditional-contact-4" aria-expanded="More than 3">
+                  <label class="nhsuk-label nhsuk-radios__label" for="contact-4">
+                    More than 3
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-4">
+
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="mobile">
+                      Number of accommodation stays
+                    </label>
+                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="text">
+                  </div>
+
+                </div>
+
+              </div>
+
+            </fieldset>
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

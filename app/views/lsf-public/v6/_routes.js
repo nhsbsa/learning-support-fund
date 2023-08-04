@@ -11,6 +11,19 @@ const router = express.Router();
 
 // ********************************
 
+
+router.post('/v6/TDAE-accommodation-stays', (req, res) => {
+
+    res.redirect('/lsf-public/v6/TDAE-accommodation-start-date')
+
+})
+
+router.post('/v6/TDAE-placement-week-days', (req, res) => {
+
+    res.redirect('/lsf-public/v6/TDAE-check-dates')
+
+})
+
 // TDAE community mileage
 router.post('/v6/TDAE-placement-community-mileage-cya', (req, res) => {
 
@@ -812,7 +825,7 @@ router.post('/v6/TDAE-placement-address', (req, res) => {
 
 router.post('/v6/TDAE-start-claim', (req, res) => {
 
-    res.redirect('/lsf-public/v6/TDAE-end-claim')
+    res.redirect('/lsf-public/v6/TDAE-placement-week-days')
 
 })
 
@@ -1064,8 +1077,20 @@ router.post('/v6/TDAE-accommodation-type', (req, res) => {
     if (accommodationAction === 'action') {
         res.redirect('/lsf-public/v6/TDAE-accommodation-check')
     } else {
-        res.redirect('/lsf-public/v6/TDAE-accommodation-cost')
+        res.redirect('/lsf-public/v6/TDAE-accommodation-same-cost')
     }
+
+})
+
+router.post('/v6/TDAE-accommodation-same-cost', (req, res) => {
+
+        const accommodationAction = req.session.data['accommodation-same-cost']
+
+        if (accommodationAction === 'Yes') {
+            res.redirect('/lsf-public/v6/TDAE-accommodation-cost')
+        } else {
+            res.redirect('/lsf-public/v6/TDAE-accommodation-cost-different')
+        }
 
 })
 

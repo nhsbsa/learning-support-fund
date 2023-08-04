@@ -1,0 +1,117 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<!-- <form action="" method="POST"> -->
+
+		<h1 class="nhsuk-heading-xl">Check your placement travel details</h1>
+
+	    <dl class="nhsuk-summary-list">
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Miles travelled to and from placement
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						54
+					</dd>
+				</div>
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Community miles travelled
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						13
+					</dd>
+				</div>
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Types of additional costs
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						Car parking<br>
+						Tunnel and toll charges<br>
+						Congestion and clean air charges
+					</dd>
+				</div>
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Additional costs total amount
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						£72.00
+					</dd>
+				</div>
+	    </dl>
+
+			<h2 class="nhsuk-heading-m">Total accommodation costs reimbursed to you</h2>
+	    <dl class="nhsuk-summary-list">
+
+				<div class="nhsuk-summary-list__row">
+	        <dt class="nhsuk-summary-list__key">
+	          Placement travel money to be reimbursed
+	        </dt>
+	        <dd class="nhsuk-summary-list__value">
+	            £76.32
+	        </dd>
+	      </div>
+
+	    </dl>
+
+
+			{% if data['submit-claim'] != 'completed' %}
+				<form action="v6/TDAE-accommodation-check" method="POST">
+					<button class="nhsuk-button" type="submit">Save and continue</button><br>
+					<a href="TDAE-start-claim">Cancel</a>
+				</form>
+			{% endif %}
+
+		<!-- </form> -->
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			const months = {
+				"01": "January",
+				"02": "February",
+				"03": "March",
+				"04": "April",
+				"05": "May",
+				"06": "June",
+				"07": "July",
+				"08": "August",
+				"09": "September",
+				"1": "January",
+				"2": "February",
+				"3": "March",
+				"4": "April",
+				"5": "May",
+				"6": "June",
+				"7": "July",
+				"8": "August",
+				"9": "September",
+				"10": "October",
+				"11": "November",
+				"12": "December",
+			};
+
+			$(".cya-month").text(function () {
+				const month = $(this).text();
+				console.log("month:", month);
+				console.log("months[month]:", months[month]);
+				return months[month];
+			});
+		});
+		</script>
+
+</div>
+{% endblock %}
