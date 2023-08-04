@@ -568,7 +568,7 @@ router.post('/v6/TDAE-travel-accommodation', (req, res) => {
 
     if (claimingFor.includes('none')) {
         res.redirect('/lsf-public/v6/TDAE-signpost/TDAE-alternative-journey-signpost')
-    } else if (change.includes('yes')) {
+    } else if (change == ('yes')) {
         res.redirect('/lsf-public/v6/TDAE-eligibility-cya')
     } else if (!claimingFor.includes('car') && claimingFor.includes('accommodation')){
         req.session.data['eligible-online'] = 'yes'
