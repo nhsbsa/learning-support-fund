@@ -46,7 +46,11 @@ Check your answers
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
                       <a href="TDAE-placement-days">
-                          Change<span class="nhsuk-u-visually-hidden"> week 1 placement travel days</span>
+                          Change<span class="nhsuk-u-visually-hidden"> week 2 placement travel days</span>
+                      </a>
+                      or
+                      <a href="TDAE-week-warning">
+                          remove<span class="nhsuk-u-visually-hidden"> week 2 placement travel days</span>
                       </a>
                   </dd>
               </div>
@@ -54,14 +58,13 @@ Check your answers
 
         </dl>
 
-        <p><a href="TDAE-start-claim">Reset all placement travel days</a></p>
-
-        <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-week-days?placement-week=2">Add a week</a>
+        <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-week-days?placement-week=2">Add more dates</a>
 
         <form action="v6/TDAE-check-dates" method="POST">
             <button class="nhsuk-button" type="submit">Save and continue</button><br>
-            <a href="#">Cancel</a>
         </form>
+
+        <a class="nhsuk-button nhsuk-button--warning" href="TDAE-dates-warning" style="background-color: #d4351c;">Reset all placement travel days</a>
 
         <!-- </form> -->
 

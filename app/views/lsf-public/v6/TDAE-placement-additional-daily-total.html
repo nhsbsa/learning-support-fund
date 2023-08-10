@@ -19,46 +19,35 @@ Which type of evidence does this relate to?
               <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                   <h1 class="nhsuk-fieldset__heading">
-                    How do you want to enter your additional cost?
+                    Was this cost repeated?
                   </h1>
                 </legend>
                 <div class="nhsuk-form-group">
 
+                  <div class="nhsuk-hint" id="contact-hint">
+                    Select Yes, if you incurred the same cost on multiple days.
+                  </div>
+
                   <div class="nhsuk-radios">
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="additional-cost-type-1" name="additional-cost-frequency" type="radio" value="Daily">
-                      <label class="nhsuk-label nhsuk-radios__label" for="additional-cost-type-1">
-                        Daily amount
+                      <input class="nhsuk-radios__input" id="repeated-cost-yes" name="repeated-cost" type="radio" value="No">
+                      <label class="nhsuk-label nhsuk-radios__label" for="repeated-cost-yes">
+                        Yes
                       </label>
                     </div>
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="additional-cost-type-2" name="additional-cost-frequency" type="radio" value="Total">
-                      <label class="nhsuk-label nhsuk-radios__label" for="additional-cost-type-2">
-                        Total amount
+                      <input class="nhsuk-radios__input" id="repeated-cost-no" name="repeated-cost" type="radio" value="Yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="repeated-cost-no">
+                        No
                       </label>
                     </div>
 
                   </div>
                 </div>
 
-                <div class="nhsuk-form-group">
 
-                  <details class="nhsuk-details">
-            				<summary class="nhsuk-details__summary">
-            					<span class="nhsuk-details__summary-text">
-            						What if your additional cost covers outside your claim dates?
-            					</span>
-            				</summary>
-            				<div class="nhsuk-details__text">
-            					<p>If you purchase a pass for example a monthly parking ticket, you will need to provide this additional costs as a daily amount</p>
-            					<h2 class="nhsuk-heading-s">Breaking down to daily</h2>
-            					<p>The total for a 1 month parking ticket to be divided by the amount of days you attended placement for the period you are claiming for.</p>
-            					<p>For example:</p>
-            					<p>£20 monthly parking pass divided by 10 days at placement, totals a daily additional cost of £2.</p>
-            				</div>
-            			</details>
 
               </fieldset>
 

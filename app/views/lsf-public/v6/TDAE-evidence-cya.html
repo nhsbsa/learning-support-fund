@@ -14,6 +14,17 @@ Evidence you have uploaded
     "text": "Go back"
     }) }}
 
+    <style>
+		ul, .nhsuk-list--circle {
+		  list-style-type: circle;
+		    padding-left: 20px;
+		}
+
+		.nhsuk-list-style-none{
+		  list-style: none;
+		}
+		</style>
+
     {% if data['end-of-upload-2'] === 'yes' %}
       <form action="v6/TDAE-evidence-mini-cya-complete" method="POST">
     {% else %}
@@ -32,10 +43,12 @@ Evidence you have uploaded
           <li class="nhsuk-list-style-none">
             <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
                <li>Monday 5 June 2023</li>
-               <li>Monday 5 June 2023</li>
+               <li>Tuesday 6 June 2023</li>
+               <li>Wednesday 7 June 2023</li>
+               <li>Thursday 8 June 2023</li>
+               <li>Friday 9 June 2023</li>
             </ul>
           </li>
-          <li>Tunnel and toll charges</li>
         </ul>
         {% endif %}
 

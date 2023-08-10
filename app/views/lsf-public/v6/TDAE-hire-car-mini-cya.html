@@ -1,0 +1,98 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Evidence you have uploaded
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+      <form action="v6/TDAE-hire-car-mini-cya" method="POST">
+
+        <h1 class="nhsuk-heading-l">Evidence you have uploaded for hire car costs</h1>
+
+        {% if data['evidence'] === 'removed' %}
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>You have removed all evidence and will need to add new evidence.</p>
+          </div>
+        {% else %}
+        <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                    File
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Action
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell ">
+                    <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
+                      snapshot-032-07-03-2023.jpg
+                    </a>
+                </td>
+                <td class="nhsuk-table__cell ">
+                    <a href="TDAE-evidence-mini-cya?evidence=removed">Remove</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          {% endif %}
+
+          {% if data['evidence'] === 'removed' %}
+            <p style="margin-bottom:0px;"><a href="TDAE-provide-journey-evidence-2?evidence=added" class="nhsuk-button">Add evidence</a></p>
+          {% else %}
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                <h2 class="nhsuk-fieldset__heading">
+                  Do you want to add more evidence?
+                </h2>
+              </legend>
+
+              <div class="nhsuk-radios nhsuk-radios--inline">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="more-evidence-yes" name="more-evidence" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="more-evidence-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="more-evidence-no" name="more-evidence" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="more-evidence-no">
+                    No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        {% endif %}
+        <a href="TDAE-task-list">Cancel</a>
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

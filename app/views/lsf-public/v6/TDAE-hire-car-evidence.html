@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Upload your evidence for week 2
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v6/TDAE-hire-car-evidence" method="POST">
+
+    <h1 class="nhsuk-heading-l">Upload evidence for hire car</h1>
+
+      <p class="nhsuk-hint">The file you choose must:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet nhsuk-hint">
+          <li>not be larger than 8MB in file size</li>
+          <li>be a JPEG, PNG or PDF</li>
+        </ul>
+
+      <div class="nhsuk-form-group nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-7">
+        <label class="nhsuk-label nhsuk-u-visually-hidden" for="file-upload-1">
+            Upload your evidence file
+        </label>
+        <input class="nhsuk-input" id="file-upload-1" name="file-upload-1" type="file">
+      </div>
+
+      <button class="nhsuk-button" type="submit">Upload evidence</button><br>
+
+      <a href="TDAE-task-list">Cancel</a>
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

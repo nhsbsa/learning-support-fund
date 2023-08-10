@@ -51,7 +51,7 @@ Task list
                                       University travel details
                                   </a>
                               {% else %}
-                                  <a href="TDAE-same-term-time-address">
+                                  <a href="TDAE-normal-place-study">
                                       University travel details
                                   </a>
                               {% endif %}
@@ -89,7 +89,7 @@ Task list
                                 Placement travel evidence
                               </a>
                             {% else %}
-                              <a class="app-task-list__task-name" href="TDAE-evidence-pause">
+                              <a class="app-task-list__task-name" href="TDAE-evidence-pause-multiple">
                                 Placement travel evidence
                               </a>
                             {% endif %}
@@ -108,7 +108,7 @@ Task list
                                 Hire car
                               </a>
                             {% else %}
-                              <a class="app-task-list__task-name" href="TDAE-start-claim">
+                              <a class="app-task-list__task-name" href="TDAE-hire-car-cost">
                                 Hire car
                               </a>
                             {% endif %}
@@ -143,12 +143,12 @@ Task list
                                     Placement accommodation details and evidence
                                 </a>
                             {% else %}
-                                <a href="TDAE-accommodation-start-date">
+                                <a href="TDAE-accommodation-stays">
                                     Placement accommodation details and evidence
                                 </a>
                             {% endif %}
                             </span>
-                            {% if data['evidence-details'] === 'completed' %}
+                            {% if data['accommodation-details'] === 'completed' %}
                             <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
                             {% else %}
                             <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not
@@ -267,20 +267,20 @@ Task list
 
     // Get all elements with the class 'container'
     const containers = document.querySelectorAll('.section-item');
-  
+
     // Create an object to store container IDs and their values
     const containerValues = {};
-  
+
     // Initialize all container IDs with a value of 1
     containers.forEach((container, index) => {
       containerValues[index] = 1;
     });
-  
+
     // Function to search within each 'container' element
     function searchWithinContainer(container, index) {
       // Find elements with class 'searchable' within the 'container'
       const searchables = container.querySelectorAll('.task-status');
-  
+
       // Log the content of each 'searchable' element within the 'container'
       searchables.forEach((searchable) => {
         console.log(searchable.textContent);
@@ -291,22 +291,22 @@ Task list
         }
       });
     }
-  
+
     // Search each container
     containers.forEach((container, index) => {
       searchWithinContainer(container, index);
     });
-  
+
     var completedSectionCount = document.getElementById('completedCount');
     var totalSectionCount = document.getElementById('sectionLength');
-  
+
     // Calculate the completed section count
     var completedSections = Object.values(containerValues).reduce(
       (total, value) => total + value,
       0
     );
     console.log('completed sections: ' + completedSections)
-  
+
     completedSectionCount.innerHTML = completedSections;
     totalSectionCount.innerHTML = containers.length;
   </script>

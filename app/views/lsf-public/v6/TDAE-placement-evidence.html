@@ -31,17 +31,20 @@ Upload your evidence for week 2
       <input class="nhsuk-input" id="file-upload-1" name="file-upload-1" type="file">
     </div>
 
-    <a class="nhsuk-button" href="v6/TDAE-placement-evidence">Upload evidence</a><br>
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          I cannot provide evidence for a cost
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>If you cannot provide evidence the NHSBSA may not be able to reimburse you for the cost.</p>
+        <p>You can <a href="TDAE-no-evidence-cost">remove the cost from the claim or give a reason as to why you are unable to provide evidence</a>.</p>
 
-    <!-- {% if data['add-more-evidence'] === 'yes' %}
-      <form action="v6/TDAE-more-evidence-added" method="POST">
-        <button class="nhsuk-button" type="submit">Next</button><br>
-      </form>
-    {% else %}
-      <form action="v6/TDAE-provide-journey-evidence" method="POST">
-        <button class="nhsuk-button" type="submit">Next</button><br>
-      </form>
-    {% endif %} -->
+      </div>
+    </details>
+
+    <a class="nhsuk-button" href="v6/TDAE-placement-evidence">Upload evidence</a><br>
 
     <a href="TDAE-start-claim">Cancel</a>
 

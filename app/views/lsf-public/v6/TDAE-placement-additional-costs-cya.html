@@ -41,10 +41,10 @@ Additional costs for your normal daily journey
 
 						<div class="nhsuk-summary-list__row">
 					    <dt class="nhsuk-summary-list__key">
-					      Additional cost frequency
+					      Cost applies to a single day
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
-					      {{ data['additional-cost-frequency']}}
+					      {{ data['additional-cost-single-day'] }}
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
 					      <a href="TDAE-placement-additional-daily-total">
@@ -55,14 +55,14 @@ Additional costs for your normal daily journey
 
 						<div class="nhsuk-summary-list__row">
 					    <dt class="nhsuk-summary-list__key">
-					      {% if data['additional-cost-frequency'] == 'Daily' %}Daily additional {% else %}Additional {% endif %}cost amount
+					      Repeated cost
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
-					      £4.00
+					      {% if data['repeated-cost'] == 'No' %}Yes{% else %}No{% endif %}
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
-					      <a href="TDAE-placement-additional-costs">
-					        Change<span class="nhsuk-u-visually-hidden"> Additional cost amount</span>
+					      <a href="TDAE-placement-additional-daily-total">
+					        Change<span class="nhsuk-u-visually-hidden"> Additional cost frequency</span>
 					      </a>
 					    </dd>
 					  </div>
@@ -84,7 +84,22 @@ Additional costs for your normal daily journey
 					      </a>
 					    </dd>
 					  </div>
-						{% if data['additional-cost-frequency'] == 'Daily' %}
+
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								{% if data['repeated-cost'] == 'No' %}Daily additional {% else %}Additional {% endif %}cost amount
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								£4.00
+							</dd>
+							<dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-placement-additional-costs">
+									Change<span class="nhsuk-u-visually-hidden"> Additional cost amount</span>
+								</a>
+							</dd>
+						</div>
+
+						{% if data['repeated-cost'] == 'No' %}
 						<div class="nhsuk-summary-list__row">
 					    <dt class="nhsuk-summary-list__key">
 					      Total additional cost amount

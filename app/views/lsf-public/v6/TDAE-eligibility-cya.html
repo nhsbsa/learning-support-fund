@@ -15,20 +15,6 @@ Check your answers
 
         <dl class="nhsuk-summary-list">
 
-          <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                  Receive travel support from Disabled Students Allowance
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                No
-              </dd>
-              <dd class="nhsuk-summary-list__actions">
-                <a href="TDAE-dsa-help">
-                  Change<span class="nhsuk-u-visually-hidden"> if you receive travel support from Disabled Students Allowance</span>
-                </a>
-              </dd>
-            </div>
-
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
                 Last day incurred costs
@@ -61,9 +47,11 @@ Check your answers
                 </span>
               </dd>
               <dd class="nhsuk-summary-list__actions">
+                {% if data['academic-year'] %}
                 <a href="TDAE-academic-year">
                   Change<span class="nhsuk-u-visually-hidden"> academic year</span>
                 </a>
+                {% endif %}
               </dd>
             </div>
 

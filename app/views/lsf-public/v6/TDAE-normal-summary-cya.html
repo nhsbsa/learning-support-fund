@@ -17,42 +17,6 @@ Check your answers
 
 			<div class="nhsuk-summary-list__row">
 				<dt class="nhsuk-summary-list__key">
-					Term time address
-				</dt>
-				<dd class="nhsuk-summary-list__value">
-					{% if data['term-building-name'] %}
-						{{ data['term-building-name'] }}<br>
-						{{ data['term-address-line-1'] }}<br>
-						{% if data['term-address-line-2'] %}
-							{{ data['term-address-line-2'] }}<br>
-						{% endif %}
-						{% if data['term-address-line-3'] %}
-							{{ data['term-address-line-3'] }}<br>
-						{% endif %}
-						{{ data['term-address-town'] }}<br>
-						{{ data['term-address-postcode'] }}<br>
-					{% else %}
-						123<br>
-						Building street 1,<br>
-						Building street 2,<br>
-						Town,<br>
-						County,<br>
-						NE33 3AB
-					{% endif %}
-				</dd>
-				{% if data['submit-claim'] != 'completed' %}
-				<dd class="nhsuk-summary-list__actions">
-
-					<a href="TDAE-term-time-address">
-						Change<span class="nhsuk-u-visually-hidden"> term time address</span>
-					</a>
-
-				</dd>
-		{% endif %}
-			</div>
-
-			<div class="nhsuk-summary-list__row">
-				<dt class="nhsuk-summary-list__key">
 					Normal place of study
 				</dt>
 				<dd class="nhsuk-summary-list__value">
