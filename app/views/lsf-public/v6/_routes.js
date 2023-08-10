@@ -800,27 +800,27 @@ router.post('/v6/TDAE-normal-cycle-return-mileage', (req, res) => {
 
 router.post('/v6/TDAE-normal-additional-costs-often', (req, res) => {
 
-    const normalOftenAdditionalCosts = req.session.data['normal-often-additional-costs']
-    const modeOfTransport = req.session.data['mode-of-transport']
+    const normalOftenAdditionalCosts = req.session.data['normal-often-additional-costs'];
+    const modeOfTransport = req.session.data['mode-of-transport'];
 
-    if (normalOftenAdditionalCosts === 'no' & modeOfTransport.includes('cycle')) {
-        res.redirect('/lsf-public/v6/TDAE-normal-cycle-return-mileage')
-    } else if (normalOftenAdditionalCosts === 'no' & modeOfTransport.includes('public')) {
-        res.redirect('/lsf-public/v6/TDAE-normal-public-additional-costs-often')
+    if (normalOftenAdditionalCosts === 'no' && modeOfTransport.includes('cycle')) {
+        res.redirect('/lsf-public/v6/TDAE-normal-cycle-return-mileage');
+    } else if (normalOftenAdditionalCosts === 'no' && modeOfTransport.includes('public')) {
+        res.redirect('/lsf-public/v6/TDAE-normal-public-additional-costs-often');
     } else if (normalOftenAdditionalCosts === 'no') {
-        res.redirect('/lsf-public/v6/TDAE-additional-costs-comments')
+        res.redirect('/lsf-public/v6/TDAE-additional-costs-comments');
     } else {
-        res.redirect('/lsf-public/v6/TDAE-additional-costs')
+        res.redirect('/lsf-public/v6/TDAE-additional-costs');
     }
 
-})
+});
 
 router.post('/v6/TDAE-normal-cycle-additional-costs-often', (req, res) => {
 
     const normalOftenCycleAdditionalCosts = req.session.data['normal-cycle-often-additional-costs']
     const modeOfTransport = req.session.data['mode-of-transport']
 
-    if (normalOftenCycleAdditionalCosts === 'no' & modeOfTransport.includes('public')) {
+    if (normalOftenCycleAdditionalCosts === 'no' && modeOfTransport.includes('public')) {
         res.redirect('/lsf-public/v6/TDAE-normal-public-additional-costs-often')
     } else if (normalOftenCycleAdditionalCosts === 'no') {
         res.redirect('/lsf-public/v6/TDAE-additional-costs-comments')

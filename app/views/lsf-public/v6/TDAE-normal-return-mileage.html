@@ -16,18 +16,17 @@ What is the return mileage to your normal place of study?
 
 		<form action="v6/TDAE-normal-return-mileage" method="POST">
 
-
-
-            <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="return-mileage">
-                    <h1 class="nhsuk-heading-l">What mileage do you drive to and from your normal place of study?</h1>
-                </label>
-                <div class="nhsuk-hint" id="contact-hint">
-                    This is the total miles it takes you to drive from your term-time address to your normal place of study and return. For example, 15.5.
-                  </div>
-                <input class="nhsuk-input__suffix-input nhsuk-input nhsuk-input--width-5" id="return-mileage" name="return-mileage" type="text">
-								<div class="nhsuk-input__suffix" aria-hidden="true">miles</div>
+      <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="return-mileage">
+              <h1 class="nhsuk-heading-l">How many miles does it take to drive to and from university?</h1>
+          </label>
+          <div class="nhsuk-hint" id="contact-hint">
+              You should calculate this from your term-time address to your university.
             </div>
+          <input class="nhsuk-input__suffix-input nhsuk-input nhsuk-input--width-5" id="return-mileage" name="return-mileage" type="text">
+					<div class="nhsuk-input__suffix" aria-hidden="true">miles</div>
+      </div>
+
 			<details class="nhsuk-details">
 				<summary class="nhsuk-details__summary">
 				  <span class="nhsuk-details__summary-text">
@@ -35,13 +34,10 @@ What is the return mileage to your normal place of study?
 				  </span>
 				</summary>
 				<div class="nhsuk-details__text">
-					<p>Ways you can check your mileage:</p>
-					<ul class="nhsuk-list nhsuk-list--bullet">
-						{% if 'drive' in data['mode-of-transport'] %}<li>reset the mileage trip on your car dashboard at the start of your journey to track the miles you do for a return journey</li>{% endif %}
-						<li>enter your term-time address and placement address into Google maps and see the mileage results for that journey</li>
-					</ul>
+					<p>You can get directions for your journey on Google Maps. This will tell you how many miles it is.</p>
 				</div>
-			  </details>
+		  </details>
+
 			<button class="nhsuk-button" type="submit">Continue</button><br>
 			<a href="TDAE-start-claim">Cancel</a>
 
