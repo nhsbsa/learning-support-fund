@@ -16,7 +16,7 @@ Evidence you have uploaded
 
       <form action="v6/TDAE-accommodation-next-stay" method="POST">
 
-        <h1 class="nhsuk-heading-l">Accommodation bookings you have told us about</h1>
+        <h1 class="nhsuk-heading-l">Your accommodation bookings</h1>
 
         {% if data['evidence'] === 'removed' %}
         <div class="nhsuk-inset-text">
@@ -28,7 +28,8 @@ Evidence you have uploaded
 
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
-              Accomodation 17 April 2023 to 21 April 2023
+              Accomodation<br>
+              <div style="font-weight: 400">17 April 2023 to 21 April 2023</div>
             </dt>
             <dd class="nhsuk-summary-list__value">
               {% if data['accommodation-building-name'] %}

@@ -11,12 +11,12 @@ Check your answers
 
 		<!-- <form action="" method="POST"> -->
 
-		<h1 class="nhsuk-heading-xl">Check your hire car cost answers</h1>
+		<h1 class="nhsuk-heading-xl">Check your answers</h1>
 
 		<dl class="nhsuk-summary-list">
 			<div class="nhsuk-summary-list__row">
 				<dt class="nhsuk-summary-list__key">
-					Hire car amount
+					Hire vehicle total amount
 				</dt>
 				<dd class="nhsuk-summary-list__value">
 					{% if data['hire-car-cost'] %}
@@ -37,11 +37,11 @@ Check your answers
 					Evidence
 				</dt>
 				<dd class="nhsuk-summary-list__value">
-					1 evidence provided
+					1 evidence uploaded
 				</dd>
 				<dd class="nhsuk-summary-list__actions">
 					<a href="TDAE-hire-car-mini-cya">
-						View and change<span class="nhsuk-u-visually-hidden"> hire car evidence</span>
+						Review<span class="nhsuk-u-visually-hidden"> hire car evidence</span>
 					</a>
 				</dd>
 			</div>
@@ -67,23 +67,23 @@ Check your answers
 
 			</dl>
 
-						<h2 class="nhsuk-heading-m">Hire car costs to be reimbursed to you</h2>
-						<dl class="nhsuk-summary-list">
+			<h2 class="nhsuk-heading-m">Hire vehicle costs to be reimbursed</h2>
+			<dl class="nhsuk-summary-list">
 
-							<div class="nhsuk-summary-list__row">
-								<dt class="nhsuk-summary-list__key" style="width: 50%;">
-									Hire car cost
-								</dt>
-								<dd class="nhsuk-summary-list__value">
-									{% if data['hire-car-cost'] %}
-									 {{ data['hire-car-cost'] }}
-									{% else %}
-										£104.00
-									{% endif %}
-								</dd>
-							</div>
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key" style="width: 50%;">
+						Cost to be reimbursed
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['hire-car-cost'] %}
+						 {{ data['hire-car-cost'] }}
+						{% else %}
+							£104.00
+						{% endif %}
+					</dd>
+				</div>
 
-						</dl>
+			</dl>
 
 			{% if data['submit-claim'] != 'completed' %}
 				<form action="v6/TDAE-hire-car-cya" method="POST">

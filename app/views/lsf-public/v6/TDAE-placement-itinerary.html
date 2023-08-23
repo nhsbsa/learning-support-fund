@@ -8,14 +8,14 @@ What is the return mileage to your placement?
 <div class="nhsuk-grid-row">
 	<div class="nhsuk-grid-column-two-thirds">
 
-    <h1 class="nhsuk-heading-l">Your placement travel itinerary</h1>
+    <h1 class="nhsuk-heading-l">Your placement travel details</h1>
 
 	</div>
 </div>
 
 <div class="nhsuk-grid-row">
 	<div class="nhsuk-grid-column-full">
-		<p>Add your journey mileage to and from your placement, additional costs incurred and community mileage for each day of your placement.</p>
+		<p>You can add information about journey mileage, extra costs you paid, or community mileage details for each day of your placement.</p>
 
 		<div  class="action-block">
 			<h2 class="nhsuk-heading-s">What you can do</h2>
@@ -27,25 +27,25 @@ What is the return mileage to your placement?
 					<a class="nhsuk-button nhsuk-button--secondary" href="v6/add-journey-mileage">Add journey mileage</a>
 					{% endif %}
 				</div>
-				<div class="nhsuk-grid-column-one-quarter">
-					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-evidence-type">Add additional costs</a>
+				<div class="nhsuk-grid-column-one-quarter" style="width: 20%;">
+					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-evidence-type">Add extra costs</a>
 				</div>
 				{% if checked('claiming-for', 'community') %}
 				<div class="nhsuk-grid-column-one-quarter">
 				<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-community-mileage-day">Add community mileage</a>
 				</div>
 				{% endif %}
-				<div class="nhsuk-grid-column-one-quarter">
-				<a href="TDAE-placement-cya" class="nhsuk-button">Complete placement travel</a>
+				<div class="nhsuk-grid-column-one-quarter" style="width: 30%;">
+				<a href="TDAE-placement-cya" class="nhsuk-button">Complete placement travel details</a>
 				</div>
 			</div>
 			<p><a href="#">Save and come back later</a></p>
 			<h3 class="nhsuk-heading-xs">Change previous answers</h3>
 			<!--<p>You can: </p>-->
 				{% if data['one-address'] == 'yes' %}
-					<p><a href="TDAE-placement-address-days-cya">change travel cost days and placement address for travel days</a></p>
+					<p><a href="TDAE-placement-address-days-cya">Change placement travel dates or addresses</a></p>
 				{% else %}
-					<p><a href="TDAE-check-dates">change the days you incurred travel costs</a></p>
+					<p><a href="TDAE-check-dates">Change placement travel dates</a></p>
 				{% endif %}
 		</div>
 	</div>
@@ -113,7 +113,7 @@ What is the return mileage to your placement?
 		{% endif %}
 
 		<table role="table" class="nhsuk-table-responsive">
-		  <caption class="nhsuk-table__caption">Placement travel itinerary and costs</caption>
+		  <caption class="nhsuk-table__caption">Placement travel details and costs</caption>
 		  <thead role="rowgroup" class="nhsuk-table__head">
 		    <tr role="row">
 		      <th role="columnheader" class="" scope="col">
@@ -125,7 +125,7 @@ What is the return mileage to your placement?
 		      </th>
 					{% endif %}
 		      <th role="columnheader" class="" scope="col">
-		        Type
+		        Travel details
 		      </th>
 		      <th role="columnheader" class="" scope="col">
 		        Value
@@ -246,7 +246,7 @@ What is the return mileage to your placement?
 						</td>
 						{% endif %}
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Travel type </span>Car parking
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Parking charges
 						</td>
 						<td role="cell" class="nhsuk-table__cell">
 							<span class="nhsuk-table-responsive__heading">Travel cost </span>£3.40

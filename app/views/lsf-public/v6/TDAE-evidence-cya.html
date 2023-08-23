@@ -31,15 +31,15 @@ Evidence you have uploaded
       <form action="v6/TDAE-evidence-mini-cya" method="POST">
     {% endif %}
 
-        <h1 class="nhsuk-heading-l">Additional cost evidence</h1>
+        <h1 class="nhsuk-heading-l">Uploaded evidence for period 1</h1>
 
         {% if data['evidenceNumber'] === '2' or data['evidenceNumber'] === '3' %}
-          <p>You have uploaded evidence for all the additional costs. You can still upload more evidence.</p>
+          <p>You have uploaded evidence for all the extra costs. You can still upload more evidence if you want to.</p>
         {% else %}
-        <p>You still need to provide evidence for the following travel costs you incurred:</p>
+        <p>You still need to give us evidence for:</p>
 
         <ul class="nhsuk-list nhsuk-list--bullet">
-          <li>Car parking</li>
+          <li>Parking charges</li>
           <li class="nhsuk-list-style-none">
             <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
                <li>Monday 5 June 2023</li>
@@ -74,7 +74,7 @@ Evidence you have uploaded
                     File
                 </th>
                 <th role="columnheader" class="" scope="col">
-                    Additional cost
+                    Cost type
                 </th>
                 <th role="columnheader" class="" scope="col">
                     Action
@@ -89,7 +89,7 @@ Evidence you have uploaded
                     </a>
                 </td>
                 <td class="nhsuk-table__cell ">
-                  Congestion and clean air charges
+                  Congestion or clean air charges on Monday 5 June 2023
                 </td>
                 <td class="nhsuk-table__cell ">
                     <a href="TDAE-evidence-mini-cya?evidence=removed">Remove</a>

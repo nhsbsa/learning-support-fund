@@ -30,7 +30,7 @@ Check your answers
 
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Number of accommodation stays
+						Accommodation bookings
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						1
@@ -166,6 +166,20 @@ Check your answers
 					{% endif %}
 				</div>
 
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Nights stayed
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						4
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						<span class="nhsuk-u-visually-hidden">Cannot be changed</span>
+					</dd>
+					{% endif %}
+				</div>
+
 				{% if data['accommodation-same-cost'] === 'No' %}
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
@@ -212,7 +226,7 @@ Check your answers
 				{% else %}
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Cost per night
+							Nightly cost
 						</dt>
 						<dd class="nhsuk-summary-list__value">
 							{% if data['accommodation-cost'] %}
@@ -251,13 +265,13 @@ Check your answers
 
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Comment
+						Comments
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['accommodation-comment']  === 'yes' %}
 						 	Provided
 						{% else %}
-							Not provided
+							None
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
@@ -280,7 +294,7 @@ Check your answers
 				<dl class="nhsuk-summary-list">
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Number of accommodation stays
+							Accommodation bookings
 						</dt>
 						<dd class="nhsuk-summary-list__value">
 							2
@@ -300,7 +314,7 @@ Check your answers
 				<details class="nhsuk-details nhsuk-expander">
 				  <summary class="nhsuk-details__summary">
 				    <span class="nhsuk-details__summary-text">
-				      Accomodation 17 April 2023 to 21 April 2023
+				      17 April 2023 to 21 April 2023
 				    </span>
 				  </summary>
 				  <div class="nhsuk-details__text">
@@ -471,7 +485,7 @@ Check your answers
 							{% else %}
 								<div class="nhsuk-summary-list__row">
 									<dt class="nhsuk-summary-list__key">
-										Cost per night
+										Nightly cost
 									</dt>
 									<dd class="nhsuk-summary-list__value">
 										{% if data['accommodation-cost'] %}
@@ -510,13 +524,13 @@ Check your answers
 
 							<div class="nhsuk-summary-list__row">
 								<dt class="nhsuk-summary-list__key">
-									Comment
+									Comments
 								</dt>
 								<dd class="nhsuk-summary-list__value">
 									{% if data['accommodation-comment']  === 'yes' %}
 										Provided
 									{% else %}
-										Not provided
+										None
 									{% endif %}
 								</dd>
 								{% if data['submit-claim'] != 'completed' %}
@@ -543,7 +557,7 @@ Check your answers
 				<details class="nhsuk-details nhsuk-expander">
 				  <summary class="nhsuk-details__summary">
 				    <span class="nhsuk-details__summary-text">
-				      Accomodation 24 April 2023 to 27 April 2023
+				      24 April 2023 to 27 April 2023
 				    </span>
 				  </summary>
 				  <div class="nhsuk-details__text">
@@ -668,6 +682,20 @@ Check your answers
 								{% endif %}
 							</div>
 
+							<div class="nhsuk-summary-list__row">
+								<dt class="nhsuk-summary-list__key">
+									Nights stayed
+								</dt>
+								<dd class="nhsuk-summary-list__value">
+									4
+								</dd>
+								{% if data['submit-claim'] != 'completed' %}
+								<dd class="nhsuk-summary-list__actions">
+									<span class="nhsuk-u-visually-hidden">Cannot be changed</span>
+								</dd>
+								{% endif %}
+							</div>
+
 							{% if data['accommodation-same-cost'] === 'No' %}
 								<div class="nhsuk-summary-list__row">
 									<dt class="nhsuk-summary-list__key">
@@ -714,7 +742,7 @@ Check your answers
 							{% else %}
 								<div class="nhsuk-summary-list__row">
 									<dt class="nhsuk-summary-list__key">
-										Cost per night
+										Nightly cost
 									</dt>
 									<dd class="nhsuk-summary-list__value">
 										{% if data['accommodation-cost'] %}
@@ -753,13 +781,13 @@ Check your answers
 
 							<div class="nhsuk-summary-list__row">
 								<dt class="nhsuk-summary-list__key">
-									Comment
+									Comments
 								</dt>
 								<dd class="nhsuk-summary-list__value">
 									{% if data['accommodation-comment']  === 'yes' %}
 										Provided
 									{% else %}
-										Not provided
+										None
 									{% endif %}
 								</dd>
 								{% if data['submit-claim'] != 'completed' %}
@@ -784,12 +812,12 @@ Check your answers
 
 			{% endif %}
 
-			<h2 class="nhsuk-heading-m">Total accommodation costs reimbursed to you</h2>
+			<h2 class="nhsuk-heading-m">Total accommodation costs to be reimbursed</h2>
 	    <dl class="nhsuk-summary-list">
 
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Accomodation cost to you
+						Total accommodation costs
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 							£350.00
@@ -797,7 +825,7 @@ Check your answers
 				</div>
 				<div class="nhsuk-summary-list__row">
 	        <dt class="nhsuk-summary-list__key">
-	          Accomodation money to be reimbursed
+	          Capped costs to be reimbursed
 	        </dt>
 	        <dd class="nhsuk-summary-list__value">
 	            £220.00

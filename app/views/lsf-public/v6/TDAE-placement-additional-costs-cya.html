@@ -20,17 +20,17 @@ Additional costs for your normal daily journey
 
 			<div class="nhsuk-form-group">
 					<h1 class="nhsuk-heading-l">
-						<h1 class="nhsuk-heading-l">Check additional cost</h1>
+						<h1 class="nhsuk-heading-l">Check your answers</h1>
 					</h1>
 
 					<dl class="nhsuk-summary-list">
 
 					  <div class="nhsuk-summary-list__row">
 					    <dt class="nhsuk-summary-list__key">
-					      Additional cost type
+					      Extra cost type
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
-					      Car parking
+					      Parking charges
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
 					      <a href="TDAE-placement-evidence-type">
@@ -41,7 +41,7 @@ Additional costs for your normal daily journey
 
 						<div class="nhsuk-summary-list__row">
 					    <dt class="nhsuk-summary-list__key">
-					      Cost applies to a single day
+					      Cost is for a single day
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
 					      {{ data['additional-cost-single-day'] }}
@@ -69,7 +69,7 @@ Additional costs for your normal daily journey
 
 						<div class="nhsuk-summary-list__row">
 					    <dt class="nhsuk-summary-list__key">
-					      Additional cost days
+					      Days with extra cost
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
 								Monday 5 June 2023<br>
@@ -87,7 +87,7 @@ Additional costs for your normal daily journey
 
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
-								{% if data['repeated-cost'] == 'No' %}Daily additional {% else %}Additional {% endif %}cost amount
+								{% if data['repeated-cost'] == 'No' %}Daily extra {% else %}Extra {% endif %}cost amount
 							</dt>
 							<dd class="nhsuk-summary-list__value">
 								£4.00
@@ -102,7 +102,7 @@ Additional costs for your normal daily journey
 						{% if data['repeated-cost'] == 'No' %}
 						<div class="nhsuk-summary-list__row">
 					    <dt class="nhsuk-summary-list__key">
-					      Total additional cost amount
+					      Total extra cost amount
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
 								£20.00
@@ -116,7 +116,7 @@ Additional costs for your normal daily journey
 					</dl>
 
 			</div>
-			<button class="nhsuk-button" type="submit">Add additional cost</button><br>
+			<button class="nhsuk-button" type="submit">Add extra cost</button><br>
 			<a href="TDAE-start-claim">Cancel</a>
 
 		</form>
