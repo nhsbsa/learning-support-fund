@@ -31,58 +31,99 @@ Which days does this evidence relate to?
                 </div>
 
 
-                <div class="nhsuk-checkboxes">
+              {% if data['week'] != '2' %}
+              <div class="nhsuk-checkboxes">
 
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                      Parking charges on Monday 5 June 2023
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                      Parking charges on Tuesday 6 June 2023
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                      Parking charges on Wednesday 7 June 2023
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                      Parking charges on Thursday 8 June 2023
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                      Parking charges on Friday 9 June 2023
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                      Tunnel and toll charges on Monday 5 June 2023
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                      Congestion and clean air charges on Monday 5 June 2023
-                    </label>
-                  </div>
-
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                    Parking charges on Monday 5 June 2023
+                  </label>
                 </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                    Parking charges on Tuesday 6 June 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    Parking charges on Wednesday 7 June 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    Parking charges on Thursday 8 June 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    Parking charges on Friday 9 June 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                    Tunnel and toll charges on Monday 5 June 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                    Congestion and clean air charges on Monday 5 June 2023
+                  </label>
+                </div>
+
+              </div>
+              {% else %}
+              <div class="nhsuk-checkboxes">
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                    Parking charges on Monday 12 June 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                    Parking charges on Tuesday 13 June 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    Parking charges on Wednesday 14 June 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    Parking charges on Thursday 15 June 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    Parking charges on Friday 16 June 2023
+                  </label>
+                </div>
+
+              </div>
+              {% endif %}
               </fieldset>
 
             </div>

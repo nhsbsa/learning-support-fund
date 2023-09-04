@@ -20,6 +20,14 @@ Task list
             <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed <span id="completedCount">0</span> of <span id="sectionLength">5</span> sections.</p>
         {% endif %}
 
+        {% if data['submit-claim'] == 'completed' %}
+        <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Claim history: </span>
+        <p>Claim submitted: Monday 4 September 2023</p>
+        <p>Payment approved by NHSBSA: Wednesday 6 September 2023</p>
+        </div>
+        {% endif %}
+
         <ol class="app-task-list">
             <li class="section-item">
                 <h2 class="app-task-list__section">
@@ -66,8 +74,12 @@ Task list
                         {% endif %}
                         <li class="app-task-list__item nhsuk-u-clear">
                             <span class="app-task-list__task-name">
-                            {% if data['submit-claim'] === 'completed' %}
-                              <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">
+                            {% if data['submit-claim'] == 'completed' %}
+                              <a class="app-task-list__task-name" href="TDAE-placement-itinerary">
+                                Placement travel details
+                              </a>
+                            {% elif data['add-placement-travel'] == 'completed' %}
+                              <a class="app-task-list__task-name" href="TDAE-placement-itinerary">
                                 Placement travel details
                               </a>
                             {% else %}
@@ -76,7 +88,7 @@ Task list
                               </a>
                             {% endif %}
                             </span>
-                            {% if data['add-travel-date-evidence'] === 'completed' %}
+                            {% if data['add-placement-travel'] === 'completed' %}
                               <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
                             {% else %}
                               <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
@@ -177,7 +189,7 @@ Task list
                             {% if
                                 data['university-details'] === 'completed'
                                 and
-                                data['placement-details'] === 'completed'
+                                data['add-placement-travel'] === 'completed'
                                 and
                                 data['add-travel-date-evidence'] === 'completed'
                                 and
@@ -195,7 +207,7 @@ Task list
                             {% if
                                 data['university-details'] === 'completed'
                                 and
-                                data['placement-details'] === 'completed'
+                                data['add-placement-travel'] === 'completed'
                                 and
                                 data['add-travel-date-evidence'] === 'completed'
                             %}
@@ -225,7 +237,7 @@ Task list
                         {% if checked('claiming-for', 'car') and checked('claiming-for', 'accommodation') %}
                           {% if data['submit-claim'] === 'completed' %}
                               <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
-                          {% elif data['university-details'] === 'completed' and data['placement-details'] === 'completed' and data['add-travel-date-evidence'] === 'completed' and data['accommodation-details'] === 'completed' %}
+                          {% elif data['university-details'] === 'completed' and data['add-placement-travel'] === 'completed' and data['add-travel-date-evidence'] === 'completed' and data['accommodation-details'] === 'completed' %}
                               <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not Started</strong>
                           {% else %}
                           <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag task-status">Cannot start yet</strong>
@@ -233,7 +245,7 @@ Task list
                         {% elif checked('claiming-for', 'car') %}
                           {% if data['submit-claim'] === 'completed' %}
                               <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
-                          {% elif data['university-details'] === 'completed' and data['placement-details'] === 'completed' and data['add-travel-date-evidence'] === 'completed' %}
+                          {% elif data['university-details'] === 'completed' and data['add-placement-travel'] === 'completed' and data['add-travel-date-evidence'] === 'completed' %}
                               <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not Started</strong>
                           {% else %}
                           <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag task-status">Cannot start yet</strong>
@@ -310,4 +322,18 @@ Task list
     completedSectionCount.innerHTML = completedSections;
     totalSectionCount.innerHTML = containers.length;
   </script>
+  <script>
+      // JavaScript code
+      var currentDateElement = document.getElementById("currentDate");
+
+      // Get the current date
+      var currentDate = new Date();
+
+      // Format the date as desired
+      var options = { day: 'numeric', month: 'long', year: 'numeric' };
+      var formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+      // Set the formatted date as the content of the element
+      currentDateElement.textContent = formattedDate;
+    </script>
 {% endblock %}

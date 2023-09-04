@@ -9,6 +9,11 @@ Check your answers
 
 	<div class="nhsuk-grid-column-two-thirds">
 
+		{{ backLink({
+        "href": "TDAE-placement-itinerary",
+        "text": "Back to your placement travel details"
+    }) }}
+
 		<!-- <form action="" method="POST"> -->
 
 		<h1 class="nhsuk-heading-xl">Check your placement travel details</h1>
@@ -71,7 +76,6 @@ Check your answers
 			{% if data['submit-claim'] != 'completed' %}
 				<form action="v6/TDAE-placement-cya" method="POST">
 					<button class="nhsuk-button" type="submit">Save and continue</button><br>
-					<a href="TDAE-start-claim">Cancel</a>
 				</form>
 			{% endif %}
 

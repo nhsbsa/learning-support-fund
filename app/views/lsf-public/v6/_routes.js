@@ -57,6 +57,8 @@ router.post('/v6/TDAE-hire-car-add-comment', (req, res) => {
 
 router.post('/v6/TDAE-hire-car-cya', (req, res) => {
 
+    req.session.data['hire-car'] = "completed"
+
     res.redirect('/lsf-public/v6/TDAE-task-list')
 
 })
@@ -195,6 +197,13 @@ router.post('/v6/TDAE-evidence-pause', (req, res) => {
 // TDAE Evidence pause multiple
 router.post('/v6/TDAE-evidence-pause-multiple', (req, res) => {
 
+  const week1 = req.session.data['week-1']
+
+  if (week1 === 'completed') {
+    req.session.data['week'] = "2"
+  } else {
+    req.session.data['week'] = "1"
+  }
   res.redirect('/lsf-public/v6/TDAE-evidence-pause')
 
 })
@@ -895,7 +904,7 @@ router.post('/v6/TDAE-comments', (req, res) => {
 
 router.post('/v6/TDAE-placement-cya', (req, res) => {
 
-    req.session.data['add-travel-date-evidence'] = "completed"
+    req.session.data['add-placement-travel'] = "completed"
     res.redirect('/lsf-public/v6/TDAE-task-list')
 
 })

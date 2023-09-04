@@ -16,7 +16,7 @@ Upload your evidence for week 2
 
     <!-- <form action="#" method="POST"> -->
 
-    <h1 class="nhsuk-heading-l">Upload evidence for period 1</h1>
+    <h1 class="nhsuk-heading-l">Upload evidence for period {% if data['week'] != '2' %}1{% else %}2{% endif %}</h1>
 
     <p class="nhsuk-hint">Evidence must be:</p>
       <ul class="nhsuk-list nhsuk-list--bullet nhsuk-hint">
