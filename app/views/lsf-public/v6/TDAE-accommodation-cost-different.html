@@ -13,20 +13,20 @@ Is your term time address the same?
         "text": "Go back"
       }) }}
 
-    <form action="TDAE-accommodation-evidence" method="POST">
+    <form action="v6/TDAE-accommodation-cost-different" method="POST">
 
         <div class="nhsuk-form-group">
 
             <fieldset class="nhsuk-fieldset">
               <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  First cost per night
+                  {% if data['accommodation-different-cost-number'] == '2' %}Second{% else %}First{% endif %} cost per night
                 </h1>
               </legend>
 
               <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="example">
-                  Enter the first cost per night
+                  Enter the {% if data['accommodation-different-cost-number'] == '2' %}second{% else %}first{% endif %} cost per night
                 </label>
                 <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
                 <input class="nhsuk-input__prefix-input nhsuk-input nhsuk-input--width-5" id="accommodation-cost" name="accommodation-cost" type="text">
@@ -52,7 +52,7 @@ Is your term time address the same?
                   Select all that apply
                 </div>
                 <div class="nhsuk-checkboxes">
-
+                  {% if data['accommodation-different-cost-number'] != '2' %}
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
@@ -66,6 +66,7 @@ Is your term time address the same?
                       Thursday 8 June 2023
                     </label>
                   </div>
+                  {% endif %}
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">

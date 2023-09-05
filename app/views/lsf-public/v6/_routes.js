@@ -1255,7 +1255,21 @@ router.post('/v6/TDAE-accommodation-same-cost', (req, res) => {
         if (accommodationAction === 'Yes') {
             res.redirect('/lsf-public/v6/TDAE-accommodation-cost')
         } else {
-            res.redirect('/lsf-public/v6/TDAE-accommodation-cost-different')
+          req.session.data['accommodation-different-cost-number'] = '1'
+          res.redirect('/lsf-public/v6/TDAE-accommodation-cost-different')
+        }
+
+})
+
+router.post('/v6/TDAE-accommodation-cost-different', (req, res) => {
+
+        const accommodationDifferentCostNumber = req.session.data['accommodation-different-cost-number']
+
+        if (accommodationDifferentCostNumber == '1') {
+          req.session.data['accommodation-different-cost-number'] = '2'
+          res.redirect('/lsf-public/v6/TDAE-accommodation-cost-different')
+        } else {
+            res.redirect('/lsf-public/v6/TDAE-accommodation-evidence')
         }
 
 })
