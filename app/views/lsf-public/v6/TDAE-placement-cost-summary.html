@@ -38,15 +38,7 @@ Your costs
           Travel
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {% if data['TDAE-multiple-weeks'] == 'yes' %}
-            £22.80
-          {% else %}
-            {% if data['mode-of-transport'] !== 'drive' %}
-              £28.20
-            {% else %}
-              £15.18
-            {% endif %}
-          {% endif %}
+          £119.32
         </dd>
       </div>
       {% endif %}
@@ -74,7 +66,7 @@ Your costs
           {% if checked('claiming-for', 'accommodation') %}
             £220.00
           {% else %}
-            £22.80
+            £119.32
           {% endif %}
         </dd>
       </div>

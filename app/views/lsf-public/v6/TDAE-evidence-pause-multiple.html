@@ -56,18 +56,20 @@ What is the start date of your claim?
 					      <th role="columnheader" class="" scope="col">
 					        Status
 					      </th>
-					      <th role="columnheader" class="" scope="col">
-					        Action
-					      </th>
+					      {% if data['week-1'] === 'completed' or data['week-2'] === 'completed' %}
+									<th role="columnheader" class="" scope="col">
+						        Action
+						      </th>
+								{% endif %}
 					    </tr>
 					  </thead>
 					  <tbody class="nhsuk-table__body">
 					    <tr role="row" class="nhsuk-table__row">
 								<td role="cell" class="nhsuk-table__cell">
-					        <span class="nhsuk-table-responsive__heading">Week </span>1
+					        <span class="nhsuk-table-responsive__heading">Period </span>1
 					      </td>
 								<td role="cell" class="nhsuk-table__cell">
-					        <span class="nhsuk-table-responsive__heading">Dates </span>Wednesday 7 June 2023 to Tuesday 13 June 2023
+					        <span class="nhsuk-table-responsive__heading">Dates </span>Monday 14 August 2023 to Thursday 17 August 2023
 					      </td>
 					      <td role="cell" class="nhsuk-table__cell">
 					        <span class="nhsuk-table-responsive__heading">Status </span>
@@ -77,15 +79,17 @@ What is the start date of your claim?
 										<strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
 									{% endif %}
 					      </td>
-					      <td role="cell" class="nhsuk-table__cell">
-									{% if data['week-1'] === 'completed' or data['week-2'] === 'completed' %}
-										<a href="TDAE-evidence-cya">Review</a>
-									{% else %}
-										<span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No action available</span>
-									{% endif %}
-					      </td>
+					      {% if data['week-1'] === 'completed' or data['week-2'] === 'completed' %}
+									<td role="cell" class="nhsuk-table__cell">
+										{% if data['week-1'] === 'completed' or data['week-2'] === 'completed' %}
+											<a href="TDAE-evidence-cya">Review</a>
+										{% else %}
+											<span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No action available</span>
+										{% endif %}
+						      </td>
+								{% endif %}
 					    </tr>
-							<tr role="row" class="nhsuk-table__row">
+							<!--<tr role="row" class="nhsuk-table__row">
 								<td role="cell" class="nhsuk-table__cell">
 					        <span class="nhsuk-table-responsive__heading">Week </span>2
 					      </td>
@@ -102,14 +106,16 @@ What is the start date of your claim?
 										<strong class="nhsuk-tag nhsuk-tag--grey">Cannot be completed yet</strong>
 									{% endif %}
 					      </td>
-					      <td role="cell" class="nhsuk-table__cell">
-									{% if data['week-2'] === 'completed' %}
-									<a href="TDAE-evidence-cya">Review</a>
-									{% else %}
-					        <span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No action available</span>
-									{% endif %}
-					      </td>
-					    </tr>
+								{% if data['week-1'] === 'completed' or data['week-2'] === 'completed' %}
+						      <td role="cell" class="nhsuk-table__cell">
+										{% if data['week-2'] === 'completed' %}
+										<a href="TDAE-evidence-cya">Review</a>
+										{% else %}
+						        <span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No action available</span>
+										{% endif %}
+						      </td>
+								{% endif %}
+					    </tr>-->
 					  </tbody>
 					</table>
 
@@ -117,7 +123,7 @@ What is the start date of your claim?
 
 			  </div>
 
-			{% if data['week-2'] === 'completed' %}
+			{% if data['week-1'] === 'completed' %}
 				<a class="nhsuk-button" href="TDAE-task-list?add-travel-date-evidence=completed">Save and continue</a><br>
 			{% elif data['week-1'] === 'completed' %}
 				<button class="nhsuk-button" type="submit">Upload evidence for period 2</button><br>
