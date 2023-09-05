@@ -213,11 +213,7 @@ Check your answers
 
 						<h2 class="nhsuk-heading-m">Total daily cost</h2>
 
-						<p>Your total daily cost of travelling to your university is {% if data['mode-of-transport'] == 'walk' and data['normal-often-additional-costs']  === 'no' %}
-										£0.
-									{% else %}
-										£0.98.
-									{% endif %}
+						<p>Your total daily cost of travelling to your university is £0.00.
 
 			{% if data['submit-claim'] != 'completed' %}
 				<form action="v6/TDAE-normal-summary-cya" method="POST">

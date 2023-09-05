@@ -169,6 +169,13 @@ router.post('/v6/TDAE-placement-community-mileage-cya', (req, res) => {
 // TDAE community mileage
 router.post('/v6/TDAE-placement-community-mileage-costs', (req, res) => {
 
+  const numberCommunityMiles = req.session.data['number-community-miles']
+
+  if (numberCommunityMiles === '1') {
+      req.session.data['number-community-miles'] = "2"
+  } else {
+      req.session.data['number-community-miles'] = "1"
+  }
   res.redirect('/lsf-public/v6/TDAE-placement-community-mileage-cya')
 
 })

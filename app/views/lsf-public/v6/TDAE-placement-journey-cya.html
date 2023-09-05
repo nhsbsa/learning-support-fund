@@ -30,7 +30,7 @@ Additional costs for your normal daily journey
 					      Mileage to placement
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
-					      8.2
+					      {{ data['placement-to-mileage'] }}
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
 					      <a href="TDAE-placement-to-mileage">
@@ -44,7 +44,7 @@ Additional costs for your normal daily journey
 					      Mileage returning from placement
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
-					      8.2
+					      {{ data['placement-return-mileage'] }}
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
 					      <a href="TDAE-placement-return-mileage">
@@ -58,11 +58,17 @@ Additional costs for your normal daily journey
 					      Days travelled
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
-								Monday 5 June 2023<br>
-								Tuesday 6 June 2023<br>
-								Wednesday 7 June 2023<br>
-								Thursday 8 June 2023<br>
-								Friday 9 June 2023
+							{% if data['journey-mileage'] == "2" %}					
+								Sunday 20 August 2023<br>
+								Monday 21 August 2023<br>
+								Tuesday 22 August 2023<br>
+								Wednesday 23 August 2023
+							{% else %}
+								Monday 14 August 2023<br>
+								Tuesday 15 August 2023<br>
+								Wednesday 16 August 2023<br>
+								Thursday 17 August 2023
+							{% endif %}
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
 					      <a href="TDAE-placement-journey-days">
