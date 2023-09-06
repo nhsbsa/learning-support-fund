@@ -21,7 +21,7 @@ Additional costs for your normal daily journey
 			<div class="nhsuk-form-group">
 				<label class="nhsuk-label" for="placement-additional-costs">
 					<h1 class="nhsuk-heading-l">
-						<h1 class="nhsuk-heading-l">How much is the extra cost?</h1>
+						<h1 class="nhsuk-heading-l">How much is the extra cost{% if data['additional-cost-single-day'] == "Yes" %} per day{% endif %}?</h1>
 					</h1>
 				</label>
 				<div class="nhsuk-input__prefix" aria-hidden="true">£</div>
