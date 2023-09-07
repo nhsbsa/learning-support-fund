@@ -23,13 +23,12 @@ Evidence you have uploaded
           <span class="nhsuk-u-visually-hidden">Information: </span>
           <p>You have removed all booking and will need to add a new accommodation booking.</p>
           </div>
-        {% else %}
+        {% elif data['accommodation-stays'] === '2' %}
         <dl class="nhsuk-summary-list">
 
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
-              Accomodation<br>
-              <div style="font-weight: 400">17 April 2023 to 21 April 2023</div>
+              14 August 2023 to 17 August 2023
             </dt>
             <dd class="nhsuk-summary-list__value">
               {% if data['accommodation-building-name'] %}
@@ -52,15 +51,79 @@ Evidence you have uploaded
               NE33 3AB
               {% endif %}
             </dd>
-
             <dd class="nhsuk-summary-list__actions">
-
               <a href="TDAE-accommodation-remove-booking?evidence=removed">
                 Remove<span class="nhsuk-u-visually-hidden"> accommodation</span>
               </a>
-
             </dd>
+          </div>
 
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              20 August 2023 to 23 August 2023
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {% if data['accommodation-2-building-name'] %}
+                {{ data['accommodation-2-building-name'] }}<br>
+                {{ data['accommodation-2-address-line-1'] }}<br>
+                {% if data['accommodation-2-address-line-2'] %}
+                  {{ data['accommodation-2-address-line-2'] }}<br>
+                {% endif %}
+                {% if data['accommodation-2-address-line-3'] %}
+                  {{ data['accommodation-2-address-line-3'] }}<br>
+                {% endif %}
+                {{ data['accommodation-2-address-town'] }}<br>
+                {{ data['accommodation-2-address-postcode'] }}<br>
+              {% else %}
+              123<br>
+              Building street 1,<br>
+              Building street 2,<br>
+              Town,<br>
+              County,<br>
+              NE33 3AB
+              {% endif %}
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="TDAE-accommodation-remove-booking?evidence=removed">
+                Remove<span class="nhsuk-u-visually-hidden"> accommodation</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+        {% else %}
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              14 August 2023 to 17 August 2023
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {% if data['accommodation-building-name'] %}
+                {{ data['accommodation-building-name'] }}<br>
+                {{ data['accommodation-address-line-1'] }}<br>
+                {% if data['accommodation-address-line-2'] %}
+                  {{ data['accommodation-address-line-2'] }}<br>
+                {% endif %}
+                {% if data['accommodation-address-line-3'] %}
+                  {{ data['accommodation-address-line-3'] }}<br>
+                {% endif %}
+                {{ data['accommodation-address-town'] }}<br>
+                {{ data['accommodation-address-postcode'] }}<br>
+              {% else %}
+              123<br>
+              Building street 1,<br>
+              Building street 2,<br>
+              Town,<br>
+              County,<br>
+              NE33 3AB
+              {% endif %}
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="TDAE-accommodation-remove-booking?evidence=removed">
+                Remove<span class="nhsuk-u-visually-hidden"> accommodation</span>
+              </a>
+            </dd>
           </div>
 
         </dl>

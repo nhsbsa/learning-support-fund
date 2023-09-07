@@ -324,7 +324,7 @@ router.post('/v6/TDAE-accommodation-comment', (req, res) => {
     const accommodationComment = req.session.data['accommodation-comment']
     const stays = req.session.data['stays']
 
-    if (accommodationComment === 'no'&& stays === '2') {
+    if (accommodationComment === 'no' && stays === '2') {
         res.redirect('/lsf-public/v6/TDAE-accommodation-next-stay')
     } else if (accommodationComment === 'no') {
         res.redirect('/lsf-public/v6/TDAE-accommodation-check')
@@ -340,6 +340,7 @@ router.post('/v6/TDAE-accommodation-next-stay', (req, res) => {
     const moreAccommodation = req.session.data['more-accommodation']
 
     if (moreAccommodation === 'yes') {
+        req.session.data['accommodation-stays'] = '2'
         res.redirect('/lsf-public/v6/TDAE-accommodation-start-date')
     } else {
         res.redirect('/lsf-public/v6/TDAE-accommodation-check')
