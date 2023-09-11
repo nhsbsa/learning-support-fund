@@ -76,7 +76,7 @@ What is the start date of your claim?
 									{% if data['week-1'] === 'completed' or data['week-2'] === 'completed' %}
 										<strong class="nhsuk-tag">Completed</strong
 									{% else %}
-										<strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
+										<strong class="nhsuk-tag nhsuk-tag--white">Not started</strong>
 									{% endif %}
 					      </td>
 					      {% if data['week-1'] === 'completed' or data['week-2'] === 'completed' %}
@@ -101,7 +101,7 @@ What is the start date of your claim?
 									{% if data['week-2'] === 'completed' %}
 										<strong class="nhsuk-tag">Completed</strong>
 									{% elif data['week-1'] === 'completed' %}
-										<strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
+										<strong class="nhsuk-tag nhsuk-tag--white">Not started</strong>
 									{% else %}
 										<strong class="nhsuk-tag nhsuk-tag--grey">Cannot be completed yet</strong>
 									{% endif %}

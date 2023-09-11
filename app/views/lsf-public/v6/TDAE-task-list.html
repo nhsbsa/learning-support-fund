@@ -16,16 +16,18 @@ Task list
         {% endif %}
 
         {% if data['submit-claim'] != 'completed' %}
-            <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Claim tasks incomplete</h2>
+            <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are tasks incomplete</h2>
             <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed <span id="completedCount">0</span> of <span id="sectionLength">5</span> sections.</p>
         {% endif %}
 
         {% if data['submit-claim'] == 'completed' %}
-        <div class="nhsuk-inset-text">
-        <span class="nhsuk-u-visually-hidden">Claim history: </span>
-        <p>Claim submitted: Monday 4 September 2023</p>
-        <p>Payment approved by NHSBSA: Wednesday 6 September 2023</p>
-        </div>
+          <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Claim history: </span>
+          <p>Claim submitted: Monday 4 September 2023</p>
+          <p>Claim submitted to NHSBSA: Wednesday 6 September 2023</p>
+          <p>Payment approved by NHSBSA: Friday 8 September 2023</p>
+          <p>Claim paid: Monday 11 September 2023</p>
+          </div>
         {% endif %}
 
         <ol class="app-task-list">
@@ -117,11 +119,11 @@ Task list
                             <span class="app-task-list__task-name">
                             {% if data['submit-claim'] === 'completed' %}
                               <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">
-                                Hire car
+                                Hire vehicle
                               </a>
                             {% else %}
                               <a class="app-task-list__task-name" href="TDAE-hire-car-cost">
-                                Hire car
+                                Hire vehicle
                               </a>
                             {% endif %}
                             </span>
@@ -171,7 +173,7 @@ Task list
                 </li>
             {% endif %}
 
-
+            {% if data['submit-claim'] != 'completed' %}
             <li class="section-item">
                 <h2 class="app-task-list__section">
                     <span class="app-task-list__section-number">
@@ -266,6 +268,7 @@ Task list
         </ol>
 
         <p><a href="TDAE-returning-student/academic-year-details">Save and come back later</a></p>
+        {% endif %}
 
     </div>
 
