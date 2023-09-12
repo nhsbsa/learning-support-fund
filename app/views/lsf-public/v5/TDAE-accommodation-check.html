@@ -147,7 +147,7 @@ Check your answers
 					{% if data['accommodation-cost'] %}
 						£{{ data['accommodation-cost'] }}
 					{% else %}
-						£60.00
+						£100.00
 					{% endif %}
 				</dd>
 				{% if data['submit-claim'] != 'completed' %}
@@ -216,15 +216,23 @@ Check your answers
 
 			</dl>
 
-			<h2 class="nhsuk-heading-m">Total accommodation costs reimbursed to you</h2>
+			<h2 class="nhsuk-heading-m">Total accommodation costs to be reimbursed</h2>
 	    <dl class="nhsuk-summary-list">
 
-	      <div class="nhsuk-summary-list__row">
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Total accommodation costs
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+							£400.00
+					</dd>
+				</div>
+				<div class="nhsuk-summary-list__row">
 	        <dt class="nhsuk-summary-list__key">
-	          Accomodation total
+	          Capped costs to be reimbursed
 	        </dt>
 	        <dd class="nhsuk-summary-list__value">
-	            £220.00
+	            £350.00
 	        </dd>
 	      </div>
 
