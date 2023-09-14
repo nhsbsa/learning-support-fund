@@ -978,15 +978,14 @@ router.post('/v6/TDAE-placement-additional-comments', (req, res) => {
         res.redirect('/lsf-public/v6/TDAE-placement-comments')
     } else {
         // req.session.data['travel-details'] = 'completed'
-        res.redirect('/lsf-public/v6/TDAE-placement-journey-cya')
+        res.redirect('/lsf-public/v6/TDAE-placement-cya')
     }
 
 })
 
 router.post('/v6/TDAE-placement-comments', (req, res) => {
 
-    req.session.data['travel-details'] = 'completed'
-    res.redirect('/lsf-public/v6/TDAE-placement-journey-cya')
+    res.redirect('/lsf-public/v6/TDAE-placement-cya')
 
 })
 

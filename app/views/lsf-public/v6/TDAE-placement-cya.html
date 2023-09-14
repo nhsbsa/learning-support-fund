@@ -10,9 +10,9 @@ Check your answers
 	<div class="nhsuk-grid-column-two-thirds">
 
 		{{ backLink({
-        "href": "TDAE-placement-itinerary",
-        "text": "Back to your placement travel details"
-    }) }}
+			"href": "javascript:history.go(-1)",
+			"text": "Go back"
+		}) }}
 
 		<!-- <form action="" method="POST"> -->
 
@@ -52,7 +52,25 @@ Check your answers
 						£16.00
 					</dd>
 				</div>
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Comments
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['placement-related-comments']  === 'yes' %}
+						<a href="TDAE-placement-comments-view">
+							<span class="nhsuk-u-visually-hidden">Additional costs comments </span>Provided
+						</a>
+						{% else %}
+							<a href="TDAE-placement-additional-comments">
+								<span class="nhsuk-u-visually-hidden">Additional costs comments </span>Not provided
+							</a>
+						{% endif %}
+					</dd>
+				</div>
 	    </dl>
+
+			<a href="TDAE-placement-itinerary" class="nhsuk-button nhsuk-button--secondary">Change your placement travel details</a>
 
 			<h2 class="nhsuk-heading-m">Total placement travel costs to be reimbursed</h2>
 	    <dl class="nhsuk-summary-list">
