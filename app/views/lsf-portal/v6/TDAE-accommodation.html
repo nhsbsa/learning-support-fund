@@ -1,0 +1,116 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Accommodation details</h1>
+
+    <p>This information outlines the student's accommodation costs and evidence.</p>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Placement accommodation address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Village Toby Carvery<br>
+          Beverley Rd<br>
+          Willerby<br>
+          Hull<br>
+          HU10 6NT
+        </dd>
+      </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Start date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            17 April 2023
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            End date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            22 April 2023
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Number of nights
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            5
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Accommodation type
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['wrong-evidence'] === 'true' %}
+              Non-commercial
+            {% else %}
+              Commercial
+            {% endif %}
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Nightly accommodation cost
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £65.00
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Accommodation cost reimbursement
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['wrong-evidence'] === 'true' %}
+              £125.00
+            {% else %}
+              £275.00
+            {% endif %}
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Evidence
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 17 Apr 2023 to 22 Apr 2023">
+              Download (PDF)<span class="nhsuk-u-visually-hidden"> evidence</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      {% if data['wrong-evidence'] === 'false' %}
+      <h3 class="nhsuk-heading-xs">Accommodation comments</h3>
+
+      <p>I stayed an extra night on the Friday due to the shift finishing too late to travel home.</p>
+      {% endif %}
+
+      {% if data['read-only'] != 'true' %}
+      <a class="nhsuk-button" href="TDAE-accommodation-check">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

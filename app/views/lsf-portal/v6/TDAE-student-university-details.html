@@ -1,0 +1,127 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">University travel details</h1>
+
+    <p>This information outlines the student's journey to and from their university.</p>
+
+    <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Academic year
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            2021/22
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Course
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Adult nursing
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Term-time address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            123 Term Time Street,<br>
+            Newcastle,<br>
+            NE11 1AB
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            University address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            321 University street,<br>
+            Newcastle,<br>
+            NE22 2AB
+            <!--<br>
+            <p><a class="nhsuk-link--no-visited-state" href="https://www.google.com/maps/dir/NE11+0JY/NE22">Google Maps directions</a></p>-->
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Type of travel
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['breakdown'] == "walk" %}
+            Walk
+            {% else %}
+            Car
+            {% endif %}
+          </dd>
+        </div>
+        {% if data['breakdown'] != "walk" %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Daily return mileage
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            15.5 miles
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Daily return mileage costs
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              £4.34
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Daily additional costs
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              £1.00
+            </dd>
+          </div>
+          {% endif %}
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Total daily travel costs
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {% if data['breakdown'] == "walk" %}
+              £0.00
+              {% else %}
+              £5.34
+              {% endif %}
+            </dd>
+          </div>
+      </dl>
+      {% if data['breakdown'] != "walk" %}
+      <h3 class="nhsuk-heading-xs">Daily additional costs comments</h3>
+
+      <p>I pay a pound to park at university parking.</p>
+      {% endif %}
+      {% if data['read-only'] != 'true' %}
+      <a class="nhsuk-button" href="TDAE-checked-university-details">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

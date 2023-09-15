@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Claim outcome
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="v5/COSA-student-emailed" method="POST">
+            <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+                <div class="nhsuk-card__content">
+                    <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                        {% if data['student-status'] == 'Information mismatch' %}
+                          Action needed for Emmit Mar
+                        {% elif data['student-status'] == 'In attendance' and data['location'] != 'confirmation' %}
+                          Action needed for Emmit Mar
+                        {% else %}
+                          Status confirmed for Emmit Mar
+                        {% endif %}
+                    </h1>
+                </div>
+            </div>
+
+            <h2 class="nhsuk-heading-m">What happens next</h2>
+
+            {% if data['student-status'] == 'In attendance' and data['location'] != 'confirmation' %}
+              <p>Emmit Mar told us they were not attending their course. We have emailed them to re-confirm their status.</p>
+              <p>If they confirm their attendance, they will appear in the list of students needing confirmation. You will then need to re-confirm their attendance.</p>
+            {% elif data['student-status'] == 'In attendance' and data['location'] == 'confirmation' %}
+              <p>We have emailed Emmit Mar to tell them they will receive their NHS Learning Support Fund payment because you have confirmed their attendance.</p>
+              <p>They will receive this on the next termly payment date.</p>
+            {% elif data['student-status'] == 'Discontinued' %}
+              <p>We have emailed Emmit Mar to tell them they will not receive NHS Learning Support Fund payments because they have discontinued their course.</p>
+              <p>If they return to their course, you can update their status by submitting a change request.</p>
+            {% elif data['student-status'] == 'Information mismatch' %}
+              <p>We have emailed Emmit Mar to tell them they will not receive NHS Learning Support Fund payments because there is an information mismatch.</p>
+              <p>When they have updated their information, you will need to submit a change request to receive payments.</p>
+            {% elif data['student-status'] == 'Not enrolled' %}
+              <p>We have emailed Emmit Mar to tell them they will not receive NHS Learning Support Fund payments because they are not enrolled on this course.</p>
+            {% endif %}
+
+            {% if data['location'] == 'confirmation' %}
+              <button class="nhsuk-button" type="submit">Review students who told us they're attending</button>
+            {% else %}
+              <button class="nhsuk-button" type="submit">Review students who told us they're not attending</button>
+            {% endif %}
+      </form>
+    </div>
+
+</div>
+{% endblock %}

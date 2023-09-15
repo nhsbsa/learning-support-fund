@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Claim outcome
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="v5/COSA-student-emailed" method="POST">
+        <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+            <div class="nhsuk-card__content">
+                <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                      Status confirmed for Emmit Mar
+                </h1>
+            </div>
+        </div>
+
+        <h2 class="nhsuk-heading-m">What happens next</h2>
+
+        <p>We have emailed Emmit Mar to tell them they will receive their NHS Learning Support Payment as you have confirmed their maternity status.</p>
+
+        <p>They will receive this on the next termly payment date.</p>
+
+        {% if data['location'] == 'confirmation' %}
+          <button class="nhsuk-button" type="submit">Review students who told us they're attending</button>
+        {% else %}
+          <button class="nhsuk-button" type="submit">Review students who told us they're not attending</button>
+        {% endif %}
+      </form>
+    </div>
+
+</div>
+{% endblock %}
