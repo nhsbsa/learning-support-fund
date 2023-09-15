@@ -22,12 +22,12 @@
 {% block content %}
   <div class="nhsuk-grid-row">
 
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-full">
         {{ backLink({
             "href": "javascript:history.go(-1)",
             "text": "Go back"
         }) }}
-        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>Students studying Diagnostic Radiography at SHEFFIELD HALLAM UNIVERSITY</h1>
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>Course details for Diagnostic Radiography at SHEFFIELD HALLAM UNIVERSITY</h1>
 
     </div>
 
@@ -47,9 +47,7 @@
             </div>
         </div>
 
-        <p><a href="COSA-all-students">View all students on this course</a>
-
-        <table role="table" class="nhsuk-table-responsive">
+        <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-6">
           <caption class="nhsuk-table__caption">Review the attendance status of students</caption>
           <thead role="rowgroup" class="nhsuk-table__head">
             <tr role="row">
@@ -85,7 +83,7 @@
                 <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag">Open</strong>
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Action </span><a href="COSA-term-1-overview?term=1">Review</a>
+                <span class="nhsuk-table-responsive__heading">Action </span><a href="COSA-term-1-overview?term=1">Review attendance</a>
               </td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
@@ -102,7 +100,7 @@
                 <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--red">Closed</strong>
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Action </span><a href="COSA-term-1-overview?term=2">Review</a>
+                <span class="nhsuk-table-responsive__heading">Action </span><a href="COSA-term-1-overview?term=2">Review attendance</a>
               </td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
@@ -124,6 +122,8 @@
             </tr>
           </tbody>
         </table>
+
+        <p><a href="COSA-all-students">View all students on this course</a></p>
 
     </div>
 
