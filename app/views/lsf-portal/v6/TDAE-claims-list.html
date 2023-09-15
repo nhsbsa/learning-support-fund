@@ -143,31 +143,10 @@ Travel and Dual Accommodation Expense claims
                             </label>
                           </div>
 
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="4">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
-                              Returned to student (7)
-                            </label>
-                          </div>
-
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="5">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
-                              Submitted to NHSBSA (15)
-                            </label>
-                          </div>
-
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="6">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
-                              Payment approved (4)
-                            </label>
-                          </div>
-
                         </div>
 
                         <form action="TDAE-claims-list?filter=yes" method="POST">
-                          <button style="float: left;" class="nhsuk-button" data-module="nhsuk-button">
+                          <button style="float: left; clear: left;" class="nhsuk-button" data-module="nhsuk-button">
                             Apply filters
                           </button>
                         </form>
@@ -377,15 +356,14 @@ Travel and Dual Accommodation Expense claims
                                 <span class="nhsuk-table-responsive__heading">Claim submitted date </span>29 April 2023
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Status </span>
-                                <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
+                                <span class="nhsuk-table-responsive__heading">Status </span><strong
+                                    class="nhsuk-tag nhsuk-tag--blue">Being assessed</strong>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">Action </span>
-                                <a class="nhsuk-link--no-visited-state"
-                                    href="v6/process-claim?name=Jill Cooper">Process
-                                    claim
-                                </a>
+                                <span class="nhsuk-table-responsive__heading">Action </span><a
+                                    class="nhsuk-link--no-visited-state"
+                                    href="TDAE-student-claim?name=Philip Wilkes&status=University processing&evidence-completed=&university-completed=completed&approve-in-progress=&read-only=true">View
+                                    claim</a>
                             </td>
                         </tr>
                         <tr role="row" class="nhsuk-table__row">
