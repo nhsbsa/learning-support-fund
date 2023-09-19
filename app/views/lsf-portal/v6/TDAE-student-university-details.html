@@ -25,7 +25,7 @@ Student and University details
             Academic year
           </dt>
           <dd class="nhsuk-summary-list__value">
-            2021/22
+            2023/24
           </dd>
         </div>
 
@@ -57,8 +57,8 @@ Student and University details
             321 University street,<br>
             Newcastle,<br>
             NE22 2AB
-            <!--<br>
-            <p><a class="nhsuk-link--no-visited-state" href="https://www.google.com/maps/dir/NE11+0JY/NE22">Google Maps directions</a></p>-->
+            <!--<br><br>
+            <p><a class="nhsuk-link--no-visited-state" href="https://www.google.com/maps/dir/NE11+0JY/NE22" target=”_blank”>Google Maps directions</a></p>-->
           </dd>
         </div>
         <div class="nhsuk-summary-list__row">
@@ -66,57 +66,55 @@ Student and University details
             Type of travel
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {% if data['breakdown'] == "walk" %}
-            Walk
-            {% else %}
-            Car
-            {% endif %}
+            Drive and public transport
           </dd>
         </div>
-        {% if data['breakdown'] != "walk" %}
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Daily return mileage
           </dt>
           <dd class="nhsuk-summary-list__value">
-            15.5 miles
+            5.5 miles
           </dd>
         </div>
         <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Daily return mileage costs
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              £4.34
-            </dd>
-          </div>
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Daily additional costs
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              £1.00
-            </dd>
-          </div>
-          {% endif %}
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Total daily travel costs
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              {% if data['breakdown'] == "walk" %}
-              £0.00
-              {% else %}
-              £5.34
-              {% endif %}
-            </dd>
-          </div>
+          <dt class="nhsuk-summary-list__key">
+            Daily drive return mileage costs
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £2.31
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Daily drive additional costs
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £3.00
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Daily public transport costs
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £3.20
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total daily travel costs
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £8.51
+          </dd>
+        </div>
       </dl>
-      {% if data['breakdown'] != "walk" %}
+
       <h3 class="nhsuk-heading-xs">Daily additional costs comments</h3>
 
-      <p>I pay a pound to park at university parking.</p>
-      {% endif %}
+      <p>I use the park and ride.</p>
+
       {% if data['read-only'] != 'true' %}
       <a class="nhsuk-button" href="TDAE-checked-university-details">Continue</a>
       {% endif %}

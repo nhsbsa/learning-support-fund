@@ -47,51 +47,6 @@
 
       <div class="nhsuk-grid-column-two-thirds">
 
-      {% if data['late-submission'] === 'true' %}
-        <div class="nhsuk-warning-callout">
-          <h3 class="nhsuk-warning-callout__label">
-            <span role="text">
-              <span class="nhsuk-u-visually-hidden">Important: </span>
-              Claim submitted late
-            </span>
-          </h3>
-          <p>The student submitted their claim over 6 months after their placement dates.</p>
-        </div>
-        <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
-          <summary class="nhsuk-details__summary">
-            <span class="nhsuk-details__summary-text">
-              Claim feedback and history
-            </span>
-          </summary>
-          <div class="nhsuk-details__text">
-
-            <table class="nhsuk-table-responsive">
-              <thead role="rowgroup" class="nhsuk-table__head">
-                <tr role="row">
-                  <th role="columnheader" class="" scope="col">
-                    From
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Date
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Feedback
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="nhsuk-table__body">
-                <tr role="row" class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell">Ben Bloggs (Student)</td>
-                  <td class="nhsuk-table__cell">31 November 2022</td>
-                  <td class="nhsuk-table__cell ">Sorry for submitting it late I forgot about this placement.</td>
-                </tr>
-              </tbody>
-            </table>
-
-          </div>
-        </details>
-      {% endif %}
-
     {% if data['status'] === 'Submitted to NHSBSA' %}
     <div class="nhsuk-warning-callout">
       <h3 class="nhsuk-warning-callout__label">
@@ -230,7 +185,6 @@
   <div class="nhsuk-grid-column-two-thirds">
 
     <ol class="app-task-list">
-      {% if data['scenario'] !== 'accommodation-only' %}
       <li>
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">1. </span> Travel details
@@ -266,9 +220,7 @@
           </li>
         </ul>
       </li>
-      {% endif %}
 
-      {% if data['scenario'] !== 'travel-only' %}
       <li>
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">
@@ -296,7 +248,6 @@
           </li>
         </ul>
       </li>
-      {% endif %}
 
       {% if data['read-only'] != 'true' %}
       <li>
