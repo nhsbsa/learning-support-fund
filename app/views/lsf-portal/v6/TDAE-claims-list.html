@@ -1,122 +1,89 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Travel and Dual Accommodation Expense claims
-{% endblock %}
-
-{% block pageScripts %}
-<script>
-  function change() // no ';' here
-{
-  var btn = document.getElementById("toggle-filter");
-  if(btn.innerText=="Show filter"){
-     btn.innerText="Hide filter";
-    }
-  else{
-    btn.innerText="Show filter";
-    }
-}
-</script>
+  Travel and Dual Accommodation Expense claims
 {% endblock %}
 
 {% block content %}
-
-<div class="nhsuk-grid-row">
-
-
+  <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-
       {{ backLink({
         "href": "dashboard",
         "text": "Go back"
       }) }}
 
-        <h1 class="nhsuk-heading-l">Travel and Dual Accommodation Expenses</h1>
+      <h1 class="nhsuk-heading-l">Travel and Dual Accommodation Expenses</h1>
     </div>
     <div class="nhsuk-grid-column-two-thirds">
-        <p>This is a list of claims submitted by students. Claims are displayed in order of when they were submitted, oldest at the top.</p>
+      <p>This is a list of claims submitted by students. Claims are displayed in order of when they were submitted, oldest at the top.</p>
     </div>
     <div class="nhsuk-grid-column-full">
-        <p><a class="nhsuk-link--no-visited-state" href="TDAE-previous-claims-list">View previously processed claims</a></p>
+      <p><a class="nhsuk-link--no-visited-state" href="TDAE-previous-claims-list">View previously processed claims</a></p>
 
-        <p><a href="/images/TDAE-claims-list.csv" download="TDAE claims list 18 September 2023 11:41">Download list of claims that need processing (CSV, 4KB)</a></p>
+      <p><a href="/images/TDAE-claims-list.csv" download="TDAE claims list 18 September 2023 11:41">Download list of claims that need processing (CSV, 4KB)</a></p>
 
-        <button class="nhsuk-button nhsuk-button--secondary" id="toggle-filter" style="margin-bottom: 24px;" value="Show filter" onclick="change()">Show filter</button>
+      <button class="nhsuk-button nhsuk-button--secondary" id="toggle-filter" style="margin-bottom: 24px;" value="Show filter" onclick="change()">Show filter</button>
 
-        <div class="moj-filter-layout">
-
-            <div class="nhsuk-grid-column-full nhsuk-u-padding-0 moj-filter-layout__filter nhsbsa-hide-filter" id="filter-column">
-
-              <div class="moj-filter">
-
-                <div class="moj-filter__header">
-
-                  <div class="moj-filter__header-title">
-                    <h2 class="nhsuk-heading-m">Filter</h2>
-                  </div>
-
-                  <div class="moj-filter__header-action">
-
-                  </div>
-
+      <div class="moj-filter-layout">
+        <div class="nhsuk-grid-column-full nhsuk-u-padding-0 moj-filter-layout__filter nhsbsa-hide-filter" id="filter-column">
+          <div class="moj-filter">
+            <div class="moj-filter__header">
+              <div class="moj-filter__header-title">
+                <h2 class="nhsuk-heading-m">Filter</h2>
+              </div>
+              <div class="moj-filter__header-action">
+                
+              </div>
+            </div>
+            <div class="moj-filter__content">
+              <div class="moj-filter__options nhsuk-u-margin-bottom-6">
+                <div style="width: 50%;" class="nhsuk-form-group nhsuk-u-padding-right-5">
+                  <label class="nhsuk-label" for="student-name">Student name</label>
+                  <input class="nhsuk-input" id="student-name" name="student-name" type="text">
+                </div>
+                
+                <div class="nhsuk-form-group nhsuk-u-padding-right-5" style="width:50%;">
+                  <label for="course" class="nhsuk-label" id="courseSelectLabel">Course</label> 
+                  <select id="course" name="course" class="nhsuk-select nhsuk-u-width-three-quarters" aria-labelledby="courseSelectLabel">
+                    <option value="">Select a course</option>
+                    <option value="ad">Adult nursing</option>
+                    <option value="ch">Child nursing</option>
+                    <option value="me">Mental health nursing</option>
+                    <option value="ra">Radiography</option>
+                    <option value="ph">Physiotherapy</option>
+                    <option value="mi">Midwifery</option>
+                  </select>
                 </div>
 
-                <div class="moj-filter__content">
-
-                  <div class="moj-filter__options nhsuk-u-margin-bottom-6">
-
-                    <div style="width: 50%;" class="nhsuk-form-group nhsuk-u-padding-right-5">
-                      <label class="nhsuk-label" for="student-name">
-                        Student name
-                      </label>
-                      <input class="nhsuk-input nhsuk-input--width-20" id="student-name" name="student-name" type="text">
+                
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label" for="course">Course year</label>
+                  
+                  <div class="nhsuk-hint" id="contact-hint">Select the statuses you want shown.</div>
+                  
+                  <div style="display: inline-flex;" class="nhsuk-checkboxes nhsuk-checkboxes--small" data-module="nhsuk-checkboxes">
+                    <div class="nhsuk-checkboxes__item nhsuk-u-margin-right-5">
+                      <input class="nhsuk-checkboxes__input" id="year" name="year" type="checkbox" value="1" {% if data['filter'] == 'yes' %}checked{% endif %}>
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="year">Year 1</label>
                     </div>
-                    <div class="nhsuk-form-group">
-                      <label class="nhsuk-label" for="course">
-                        Course
-                      </label>
-                      <input class="nhsuk-input nhsuk-input--width-20" id="course" name="course" type="text">
+                    <div class="nhsuk-checkboxes__item nhsuk-u-margin-right-5">
+                      <input class="nhsuk-checkboxes__input" id="year-2" name="year" type="checkbox" value="2">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="year-2">Year 2</label>
                     </div>
-                    <div class="nhsuk-form-group">
-                      <label class="nhsuk-label" for="course">
-                        Course year
-                      </label>
-                      <div class="nhsuk-hint" id="contact-hint">
-                        Select the statuses you want shown.
-                      </div>
-                      <div style="display: inline-flex;" class="nhsuk-checkboxes nhsuk-checkboxes--small" data-module="nhsuk-checkboxes">
-                        <div class="nhsuk-checkboxes__item nhsuk-u-margin-right-5">
-                          <input class="nhsuk-checkboxes__input" id="status" name="status" type="checkbox" value="1" {% if data['filter'] == 'yes' %}checked{% endif %}>
-                          <label class="nhsuk-label nhsuk-checkboxes__label" for="status">
-                            Year 1
-                          </label>
-                        </div>
-                        <div class="nhsuk-checkboxes__item nhsuk-u-margin-right-5">
-                          <input class="nhsuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
-                          <label class="nhsuk-label nhsuk-checkboxes__label" for="status-2">
-                            Year 2
-                          </label>
-                        </div>
-                        <div class="nhsuk-checkboxes__item nhsuk-u-margin-right-5">
-                          <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
-                          <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
-                            Year 3
-                          </label>
-                        </div>
-                        <div class="nhsuk-checkboxes__item nhsuk-u-margin-right-5">
-                          <input class="nhsuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
-                          <label class="nhsuk-label nhsuk-checkboxes__label" for="status-4">
-                            Year 4
-                          </label>
-                        </div>
-                        <div class="nhsuk-checkboxes__item nhsuk-u-margin-right-5">
-                          <input class="nhsuk-checkboxes__input" id="status-5" name="status" type="checkbox" value="5">
-                          <label class="nhsuk-label nhsuk-checkboxes__label" for="status-5">
-                            Year 5
-                          </label>
-                        </div>
-                      </div>
+                    <div class="nhsuk-checkboxes__item nhsuk-u-margin-right-5">
+                      <input class="nhsuk-checkboxes__input" id="year-3" name="year" type="checkbox" value="3">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="year-3">Year 3</label>
                     </div>
+                    <div class="nhsuk-checkboxes__item nhsuk-u-margin-right-5">
+                      <input class="nhsuk-checkboxes__input" id="year-4" name="year" type="checkbox" value="4">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="year-4">Year 4</label>
+                    </div>
+                    <div class="nhsuk-checkboxes__item nhsuk-u-margin-right-5">
+                      <input class="nhsuk-checkboxes__input" id="year-5" name="year" type="checkbox" value="5">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="year-5">Year 5</label>
+                    </div>
+                  </div>
+                </div>
 
                     <div class="nhsuk-form-group">
 
@@ -126,7 +93,7 @@ Travel and Dual Accommodation Expense claims
                           Status
                         </label>
 
-                        <div class="nhsuk-hint" id="contact-hint">
+                        <div class="nhsuk-hint" id="contact-hint-2">
                           Select the statuses you want shown.
                         </div>
 
@@ -150,8 +117,8 @@ Travel and Dual Accommodation Expense claims
                             </label>
                           </div>
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-2">
+                            <input class="nhsuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-4">
                               Being assessed (1)
                             </label>
                           </div>
@@ -480,4 +447,29 @@ Travel and Dual Accommodation Expense claims
     </div>
 
 </div>
+{% endblock %}
+
+
+{% block pageScripts %}
+<script>
+  function change() // no ';' here
+{
+  var btn = document.getElementById("toggle-filter");
+  if(btn.innerText=="Show filter"){
+     btn.innerText="Hide filter";
+    }
+  else{
+    btn.innerText="Show filter";
+    }
+}
+</script>
+
+<!-- Autocomplete script -->
+<script>
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue : '',
+    autoselect : true,	
+    selectElement: document.querySelector('#course')
+  });
+</script>
 {% endblock %}
