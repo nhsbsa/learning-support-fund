@@ -1,0 +1,260 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Period 1 placement journey overview</h1>
+
+    <p>This information outlines the full journey costs for their placement during period 1.</p>
+
+    <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Period start date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            14 August 2023
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Period end date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            20 August 2023
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Placement address 1
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Newcastle Hospital<br>
+            Main Street<br>
+            Newcastle<br>
+            NE1 1AA
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Placement address 2
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Alnwick Hospital<br>
+            Ashington Road<br>
+            Alnwick<br>
+            NE6 4EA
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Type of travel
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Car
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Period placement journey mileage
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            112
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Period placement journey mileage cost
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['status'] === 'Returned from NHSBSA' %}
+            £840.00
+            {% else %}
+            £8.40
+            {% endif %}
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Period community mileage
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            112
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Period community mileage cost
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['status'] === 'Returned from NHSBSA' %}
+            £840.00
+            {% else %}
+            £8.40
+            {% endif %}
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Additional costs
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £2.00
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Number of days on placement during period
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            5
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total claim for period (university journey deducted)
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £15.18
+          </dd>
+        </div>
+      </dl>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Breakdown of period journey costs
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <table class="nhsuk-table">
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+
+              </th>
+              <th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+                  University journey
+              </th>
+              <th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+                  Placement journey
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                  <b>Type of travel</b>
+              </td>
+              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                  {% if data['breakdown'] === 'walk' %}
+                  Walk
+                  {% elif data['breakdown'] ==='public-transport' %}
+                  Public transport
+                  {% else %}
+                  Car
+                  {% endif %}
+              </td>
+              <td class="nhsuk-table__cell " style="font-size: 1rem;">
+                  Car
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                <b>Placement journey mileage cost</b>
+              </td>
+              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                {% if data['breakdown'] === 'walk' %}
+                <span class="nhsuk-u-visually-hidden">No cost</span>
+                {% elif data['breakdown'] ==='public-transport' %}
+                <span class="nhsuk-u-visually-hidden">No cost</span>
+                {% else %}
+                £4.34
+                {% endif %}
+              </td>
+              <td class="nhsuk-table__cell " style="font-size: 1rem;">
+                  £8.40
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                <b>Community mileage cost</b>
+              </td>
+              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                {% if data['breakdown'] === 'walk' %}
+                <span class="nhsuk-u-visually-hidden">No cost</span>
+                {% elif data['breakdown'] ==='public-transport' %}
+                <span class="nhsuk-u-visually-hidden">No cost</span>
+                {% else %}
+                £4.34
+                {% endif %}
+              </td>
+              <td class="nhsuk-table__cell " style="font-size: 1rem;">
+                  £8.40
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                  <b>Additional costs</b>
+              </td>
+              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                {% if data['breakdown'] === 'walk' %}
+                <span class="nhsuk-u-visually-hidden">No cost</span>
+                {% elif data['breakdown'] ==='public-transport' %}
+                £3.45
+                {% else %}
+                £1.00
+                {% endif %}
+              </td>
+              <td class="nhsuk-table__cell " style="font-size: 1rem;">
+                  £2.00
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                  <b>Total cost</b>
+              </td>
+              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                {% if data['breakdown'] === 'walk' %}
+                £0.00
+                {% elif data['breakdown'] ==='public-transport' %}
+                £3.45
+                {% else %}
+                £5.34
+                {% endif %}
+              </td>
+              <td class="nhsuk-table__cell " style="font-size: 1rem;">
+                  £10.40
+              </td>
+            </tr>
+          </tbody>
+          </table>
+
+          <p><b>Total to claim: £15.18</b></p>
+        </div>
+      </details>
+
+      <h2 class="nhsuk-heading-s">Student placement travel comments</h2>
+
+      <p>Some sort of comment here about the mileage / additional costs.</p>
+
+      {% if data['read-only'] != 'true' %}
+      <a class="nhsuk-button" href="TDAE-evidence-match">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}
