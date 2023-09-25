@@ -189,13 +189,33 @@ router.post('/v6/TDAE-accommodation-check', (req, res) => {
 
 router.post('/v6/TDAE-evidence-match', (req, res) => {
 
-    const evidenceMatch = req.session.data['evidence-match']
+  const evidenceMatch = req.session.data['evidence-match']
 
-    if (evidenceMatch === 'yes') {
-        req.session.data['evidence-completed'] = 'completed'
-    } else {
-        req.session.data['evidence-completed'] = 'in-progress'
-    }
+  if (evidenceMatch === 'yes') {
+      req.session.data['evidence-completed'] = 'completed'
+  } else {
+      req.session.data['evidence-completed'] = 'in-progress'
+  }
+
+  res.redirect('/lsf-portal/v6/TDAE-student-claim')
+
+})
+
+router.post('/v6/TDAE-evidence-match-2', (req, res) => {
+
+  const evidenceMatch2 = req.session.data['evidence-match-2']
+
+  if (evidenceMatch2 === 'yes') {
+      req.session.data['evidence-completed-2'] = 'completed'
+  } else {
+      req.session.data['evidence-completed-2'] = 'in-progress'
+  }
+
+  res.redirect('/lsf-portal/v6/TDAE-student-claim')
+
+})
+
+router.post('/v6/TDAE-checked-hire-vehicle', (req, res) => {
 
     res.redirect('/lsf-portal/v6/TDAE-student-claim')
 

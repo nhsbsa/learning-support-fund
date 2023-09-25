@@ -206,7 +206,7 @@
           </li>
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
-              <a href="TDAE-placement-mileage-details" aria-describedby="eligibility-status">
+              <a href="TDAE-placement-mileage-details-table" aria-describedby="eligibility-status">
                 Check period 1 placement travel details
               </a>
             </span>
@@ -220,7 +220,7 @@
           </li>
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
-              <a href="TDAE-claim-evidence-2" aria-describedby="eligibility-status">
+              <a href="TDAE-placement-mileage-details-table-2" aria-describedby="eligibility-status">
                 Check period 2 placement travel details
               </a>
             </span>
@@ -238,7 +238,13 @@
                 Check hire vehicle details
               </a>
             </span>
-            <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
+            {% if data['vehicle-hire-check'] === 'yes' %}
+              <strong class="nhsuk-tag" style="float: right;" id="eligibility-status">Completed</strong>
+            {% elif data['vehicle-hire-check'] === 'no' %}
+              <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to student</strong>
+            {% else %}
+              <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
+            {% endif %}
           </li>
         </ul>
       </li>
