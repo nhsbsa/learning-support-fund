@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Which type of evidence does this relate to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v7/TDAE-placement-additional-daily-total" method="POST">
+
+              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  <h1 class="nhsuk-fieldset__heading">
+                    Did you pay this cost again on any other days?
+                  </h1>
+                </legend>
+                <div class="nhsuk-form-group">
+
+                  <div class="nhsuk-radios">
+
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="repeated-cost-yes" name="repeated-cost" type="radio" value="No">
+                      <label class="nhsuk-label nhsuk-radios__label" for="repeated-cost-yes">
+                        Yes
+                      </label>
+                    </div>
+
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="repeated-cost-no" name="repeated-cost" type="radio" value="Yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="repeated-cost-no">
+                        No
+                      </label>
+                    </div>
+
+                  </div>
+                </div>
+
+
+
+              </fieldset>
+
+
+            <button class="nhsuk-button">Continue</button><br>
+            <a href="TDAE-start-claim">Cancel</a>
+
+
+            </form>
+          </div>
+
+  </div>
+
+
+</script>
+{% endblock %}

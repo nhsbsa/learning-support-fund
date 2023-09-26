@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Your residency
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <div class="nhsuk-form-group">
+
+            <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Eligibility</span>Your
+                residency</h1>
+
+            <p>Tell us where you have lived throughout the {% if data['nationality'] === 'uk national' %}3{% elif
+                data['nationality'] === 'eu eea swiss national'%}5{% else %}3{% endif %} years preceding the first day
+                of the first academic year of your course.</p>
+
+
+            {% if data['country'] and data['reason'] %}
+
+                <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+                    <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Added residencies</caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" class="" scope="col">
+                                Country
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Reason
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Date from
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Date to
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Country </span>{{ data['country'] }}
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Reason </span>{{ data['reason'] }}
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Date from </span>{{ data['from-date-day'] }} / {{ data['from-date-month'] }} / {{ data['from-date-year'] }}
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Date to </span>{{ data['to-date-day'] }} / {{ data['to-date-month'] }} / {{ data['to-date-year'] }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            {% endif %}
+
+
+
+            <a class="nhsuk-button" href="APPLY-add-residency">Add residency</a><br>
+            {% if data['country'] and data['reason'] %}
+                <a class="nhsuk-button" href="APPLY-add-residency">Clear all residencies</a><br>
+                <a class="nhsuk-button" href="APPLY-bank-details">Next</a><br>
+            {% endif %}
+            <a href="dashboard">Cancel</a>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

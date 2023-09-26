@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  What is your email address?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-heading-xl"><span class="nhsuk-caption-xl nhsuk-caption--bottom">Recover your username</span>What is your email address?</h1>
+
+        <p>If your email address is associated with an NHS Learning Support Fund account we'll send your a reminder of your username.</p>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="recover-username">
+              Email address
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="recover-username" name="recover-username" type="text">
+        </div>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              I no longer have access to this email account
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>If you no longer have access to your email account. you can call us on:</p>
+            <ul class="nhsuk-list nhsuk-u-font-weight-bold">
+              <li>Telephone: 0300 330 0521</li>
+              <li>Text relay service: 0800 7311 888</li>
+            </ul>
+            <p>We are open Monday to Friday 8am to 6pm and Saturday 9am to 3pm.</p>
+        
+          </div>
+        </details>
+
+        <a class="nhsuk-button" href="recovery-sent">Send</a><br>
+        <a href="sign-in">Cancel</a>        
+
+    </div>
+
+  </div>
+{% endblock %}

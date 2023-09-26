@@ -1,0 +1,93 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Is your term time address the same?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v7/TDAE-accommodation-cost-different" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  {% if data['accommodation-different-cost-number'] == '2' %}Second{% else %}First{% endif %} cost per night
+                </h1>
+              </legend>
+
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="example">
+                  Enter the {% if data['accommodation-different-cost-number'] == '2' %}second{% else %}first{% endif %} cost per night
+                </label>
+                <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+                <input class="nhsuk-input__prefix-input nhsuk-input nhsuk-input--width-5" id="accommodation-cost" name="accommodation-cost" type="text">
+              </div>
+
+              <details class="nhsuk-details">
+                <summary class="nhsuk-details__summary">
+                  <span class="nhsuk-details__summary-text">
+                    What if your costs were split with someone else?
+                  </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                  <p>If you shared accommodation with someone else and shared costs, you should only enter your own cost.</p>
+                  <p>For example, a hotel room cost £100 per night. You shared the room with your friend and paid half of the costs. Your cost is £50.</p>
+                </div>
+              </details>
+
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="example">
+                  Which nights cost this amount?
+                </label>
+                <div class="nhsuk-hint" id="example-hint">
+                  Select all that apply
+                </div>
+                <div class="nhsuk-checkboxes">
+                  {% if data['accommodation-different-cost-number'] != '2' %}
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                      Sunday 20 August 2023
+                    </label>
+                  </div>
+                  {% endif %}
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                      Monday 21 August 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                      Tuesday 22 August 2023
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+            </fieldset>
+
+          </div>
+
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

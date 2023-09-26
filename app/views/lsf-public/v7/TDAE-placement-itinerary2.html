@@ -1,0 +1,152 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What is the return mileage to your placement?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+	<div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-l">Your placement travel itinerary</h1>
+
+	</div>
+</div>
+
+<div class="nhsuk-grid-row">
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<p>Add your journey mileage to and from your placement, additional costs incurred and community mileage for each day of your placement.</p>
+
+		<dl class="nhsuk-summary-list">
+
+		  <div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">
+		      Monday 5 June 2023
+		    </dt>
+		    <dd class="nhsuk-summary-list__value">
+				{% if data['same-journey'] === "yes" %}
+		      <strong>Mileage to placement:</strong> 6.3 miles <br>
+					<strong>Mileage returning from placement:</strong> 6.3 miles <br>
+				{% elif data['journey-mileage'] === "1" %}
+					<strong>Mileage to placement:</strong> 48 miles <br>
+					<strong>Mileage returning from placement:</strong> 3.5 miles <br>
+				{% endif %}
+		    </dd>
+		    <dd class="nhsuk-summary-list__actions">
+					{% if data['same-journey'] === "yes" %}
+		      <a href="#">
+		        Change<span class="nhsuk-u-visually-hidden"> Monday 5 June 2023 travel</span>
+		      </a>
+					{% endif %}
+		    </dd>
+		  </div>
+
+			<div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">
+		      Tuesday 6 June 2023
+		    </dt>
+		    <dd class="nhsuk-summary-list__value">
+				{% if data['same-journey'] === "yes" %}
+		      <strong>Mileage to placement:</strong> 6.3 miles <br>
+					<strong>Mileage returning from placement:</strong> 6.3 miles <br>
+				{% elif data['journey-mileage'] === "1" %}
+					<strong>Mileage to placement:</strong> 48 miles <br>
+					<strong>Mileage returning from placement:</strong> 3.5 miles <br>
+				{% endif %}
+		    </dd>
+		    <dd class="nhsuk-summary-list__actions">
+					{% if data['same-journey'] === "yes" %}
+		      <a href="#">
+		        Change<span class="nhsuk-u-visually-hidden"> Monday 5 June 2023 travel</span>
+		      </a>
+					{% endif %}
+		    </dd>
+		  </div>
+
+			<div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">
+		      Wednesday 7 June 2023
+		    </dt>
+		    <dd class="nhsuk-summary-list__value">
+				{% if data['same-journey'] === "yes" %}
+		      <strong>Mileage to placement:</strong> 6.3 miles <br>
+					<strong>Mileage returning from placement:</strong> 6.3 miles <br>
+				{% elif data['journey-mileage'] === "1" %}
+					<strong>Mileage to placement:</strong> 48 miles <br>
+					<strong>Mileage returning from placement:</strong> 3.5 miles <br>
+				{% endif %}
+		    </dd>
+		    <dd class="nhsuk-summary-list__actions">
+					{% if data['same-journey'] === "yes" %}
+		      <a href="#">
+		        Change<span class="nhsuk-u-visually-hidden"> Monday 5 June 2023 travel</span>
+		      </a>
+					{% endif %}
+		    </dd>
+		  </div>
+
+			<div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">
+		      Thursday 8 June 2023
+		    </dt>
+		    <dd class="nhsuk-summary-list__value">
+				{% if data['same-journey'] === "yes" %}
+		      <strong>Mileage to placement:</strong> 6.3 miles <br>
+					<strong>Mileage returning from placement:</strong> 6.3 miles <br>
+				{% elif data['journey-mileage'] === "1" %}
+					<strong>Mileage to placement:</strong> 48 miles <br>
+					<strong>Mileage returning from placement:</strong> 3.5 miles <br>
+				{% endif %}
+		    </dd>
+		    <dd class="nhsuk-summary-list__actions">
+					{% if data['same-journey'] === "yes" %}
+		      <a href="#">
+		        Change<span class="nhsuk-u-visually-hidden"> Monday 5 June 2023 travel</span>
+		      </a>
+					{% endif %}
+		    </dd>
+		  </div>
+
+			<div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">
+		      Friday 9 June 2023
+		    </dt>
+		    <dd class="nhsuk-summary-list__value">
+				{% if data['same-journey'] === "yes" %}
+		      <strong>Mileage to placement:</strong> 6.3 miles <br>
+					<strong>Mileage returning from placement:</strong> 6.3 miles <br>
+				{% elif data['journey-mileage'] === "1" %}
+					<strong>Mileage to placement:</strong> 48 miles <br>
+					<strong>Mileage returning from placement:</strong> 3.5 miles <br>
+				{% endif %}
+		    </dd>
+		    <dd class="nhsuk-summary-list__actions">
+					{% if data['same-journey'] === "yes" %}
+		      <a href="#">
+		        Change<span class="nhsuk-u-visually-hidden"> Monday 5 June 2023 travel</span>
+		      </a>
+					{% endif %}
+		    </dd>
+		  </div>
+
+		</dl>
+
+	</div>
+
+	<div class="nhsuk-grid-column-one-third">
+		<div  class="action-block">
+			<h2 class="nhsuk-heading-s">What you can do</h2>
+			{% if data['same-journey'] === "yes" %}
+			<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-same-journey">Change journey mileage</a>
+			{% else %}
+			<a class="nhsuk-button nhsuk-button--secondary">Add journey mileage</a>
+			{% endif %}
+			<a class="nhsuk-button nhsuk-button--secondary">Add additional costs</a>
+			<a class="nhsuk-button nhsuk-button--secondary">Add community mileage</a>
+			<a class="nhsuk-button">Complete placement travel</a>
+			<p><a href="#">Reset placement dates</a></p>
+		</div>
+	</div>
+</div>
+{% endblock %}

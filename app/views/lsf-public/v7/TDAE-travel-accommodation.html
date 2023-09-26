@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  What will you be claiming for?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+    <form action="v7/TDAE-travel-accommodation" method="POST">
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              What did you pay costs for?
+            </h1>
+          </legend>
+
+          <!--<div class="nhsuk-hint" id="example-hint">
+            These are the costs you'll be claiming for your placement.
+          </div>-->
+
+          <div class="nhsuk-checkboxes">
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="claiming-for-car" name="claiming-for" type="checkbox" value="car" {{ checked('car') }}>
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-car">
+                Car journey
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="claiming-for-community" name="claiming-for" type="checkbox" value="community" {{ checked('community') }}>
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-community">
+                Community mileage
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="claiming-for-hire" name="claiming-for" type="checkbox" value="hire-car" {{ checked('hire-car') }}>
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-hire">
+                Hire vehicle
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="claiming-for-accommodation" name="claiming-for" type="checkbox" value="accommodation" {{ checked('accommodation') }}>
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-accommodation">
+                Accommodation
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__divider">or</div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="claiming-for-none" name="claiming-for" type="checkbox" value="none">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-none">
+                None of these
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>
+
+      <button class="nhsuk-button" type="submit">Continue</button><br>
+      <a href="TDAE-start-claim">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

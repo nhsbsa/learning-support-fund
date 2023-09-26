@@ -1,0 +1,176 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Evidence you have uploaded
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+      <form action="v7/TDAE-accommodation-next-stay" method="POST">
+
+        <h1 class="nhsuk-heading-l">Your accommodation bookings</h1>
+
+        {% if data['evidence'] === 'removed' %}
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>You have removed all booking and will need to add a new accommodation booking.</p>
+          </div>
+        {% elif data['accommodation-stays'] === '2' %}
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              14 August 2023 to 17 August 2023
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {% if data['accommodation-building-name'] %}
+                {{ data['accommodation-building-name'] }}<br>
+                {{ data['accommodation-address-line-1'] }}<br>
+                {% if data['accommodation-address-line-2'] %}
+                  {{ data['accommodation-address-line-2'] }}<br>
+                {% endif %}
+                {% if data['accommodation-address-line-3'] %}
+                  {{ data['accommodation-address-line-3'] }}<br>
+                {% endif %}
+                {{ data['accommodation-address-town'] }}<br>
+                {{ data['accommodation-address-postcode'] }}<br>
+              {% else %}
+              123<br>
+              Building street 1,<br>
+              Building street 2,<br>
+              Town,<br>
+              County,<br>
+              NE33 3AB
+              {% endif %}
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="TDAE-accommodation-remove-booking?evidence=removed">
+                Remove<span class="nhsuk-u-visually-hidden"> accommodation</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              20 August 2023 to 23 August 2023
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {% if data['accommodation-2-building-name'] %}
+                {{ data['accommodation-2-building-name'] }}<br>
+                {{ data['accommodation-2-address-line-1'] }}<br>
+                {% if data['accommodation-2-address-line-2'] %}
+                  {{ data['accommodation-2-address-line-2'] }}<br>
+                {% endif %}
+                {% if data['accommodation-2-address-line-3'] %}
+                  {{ data['accommodation-2-address-line-3'] }}<br>
+                {% endif %}
+                {{ data['accommodation-2-address-town'] }}<br>
+                {{ data['accommodation-2-address-postcode'] }}<br>
+              {% else %}
+              123<br>
+              Building street 1,<br>
+              Building street 2,<br>
+              Town,<br>
+              County,<br>
+              NE33 3AB
+              {% endif %}
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="TDAE-accommodation-remove-booking?evidence=removed">
+                Remove<span class="nhsuk-u-visually-hidden"> accommodation</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+        {% else %}
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              14 August 2023 to 17 August 2023
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {% if data['accommodation-building-name'] %}
+                {{ data['accommodation-building-name'] }}<br>
+                {{ data['accommodation-address-line-1'] }}<br>
+                {% if data['accommodation-address-line-2'] %}
+                  {{ data['accommodation-address-line-2'] }}<br>
+                {% endif %}
+                {% if data['accommodation-address-line-3'] %}
+                  {{ data['accommodation-address-line-3'] }}<br>
+                {% endif %}
+                {{ data['accommodation-address-town'] }}<br>
+                {{ data['accommodation-address-postcode'] }}<br>
+              {% else %}
+              123<br>
+              Building street 1,<br>
+              Building street 2,<br>
+              Town,<br>
+              County,<br>
+              NE33 3AB
+              {% endif %}
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="TDAE-accommodation-remove-booking?evidence=removed">
+                Remove<span class="nhsuk-u-visually-hidden"> accommodation</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+          {% endif %}
+
+          {% if data['evidence'] === 'removed' %}
+            <p style="margin-bottom:0px;"><a href="TDAE-provide-journey-evidence-2?evidence=added" class="nhsuk-button">Add evidence</a></p>
+          {% else %}
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                <h2 class="nhsuk-fieldset__heading">
+                  Do you want to add more accommodation bookings?
+                </h2>
+              </legend>
+
+              <div class="nhsuk-radios nhsuk-radios--inline">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="more-evidence-yes" name="more-accommodation" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="more-evidence-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="more-evidence-no" name="more-accommodation" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="more-evidence-no">
+                    No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        {% endif %}
+        <a href="TDAE-task-list">Cancel</a>
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

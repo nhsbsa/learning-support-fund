@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Upload your evidence for week 2
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <!-- <form action="#" method="POST"> -->
+
+    <h1 class="nhsuk-heading-l">Upload your evidence for this week</h1>
+    <p>You must now upload evidence for your claim, you can upload multiple files at once here.
+    </p>
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          What evidence do I need?
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>This should include where relevant:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>car parking - receipts, permits or invoices</li>
+          <li>tunnel and toll charges - receipts</li>
+          <li>Congestion and clean air charges - receipts, permits or invoices</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- MoJ multi file upload -->
+    <div class="moj-multi-file-upload__upload">
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label nhsuk-label--m" for="documents">
+          Upload a file
+        </label>
+        <div class="moj-multi-file-upload__dropzone"><input class="govuk-file-upload moj-multi-file-upload__input"
+            id="documents" name="documents" type="file" multiple="">
+          <p class="nhsuk-body">Drag and drop files here or</p><label for="documents"
+            class="nhsuk-button nhsuk-button--secondary">Choose files</label>
+          <div aria-live="polite" role="status" class="nhsuk-visually-hidden"></div>
+        </div>
+      </div>
+    </div>
+    <!-- MoJ end -->
+
+    <a class="nhsuk-button" href="TDAE-evidence-summary">Next</a><br>
+
+    <a href="TDAE-start-claim">Cancel</a>
+
+    <!-- </form> -->
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

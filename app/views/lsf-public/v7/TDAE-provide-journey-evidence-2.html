@@ -1,0 +1,100 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Upload your evidence for week 2
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <!-- <form action="#" method="POST"> -->
+
+    <h1 class="nhsuk-heading-l">Upload your evidence for this week</h1>
+    <p>You must now provide evidence to support your additional costs. You will be able to provide more evidence once you have chosen a day this relates to and the type of evidence.</p>
+
+    {% if data['TDAE-multiple-weeks'] %}
+      <div class="nhsuk-hint" id="example-hint">
+        This evidence should relate between
+        {% if data['upload-week-2'] === 'yes' %}
+          24 April 2023 and 28 April 2022.
+        {% else %}
+          17 April 2023 and 21 April 2023.
+        {% endif %}
+      </div>
+    {% else %}
+      <div class="nhsuk-hint" id="example-hint">
+        This evidence should relate between 17 April 2023 and 21 April 2023.
+      </div>
+    {% endif %}
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          What evidence do I need?
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>This should include where relevant:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>car parking - receipts, permits or invoices</li>
+          <li>tunnel and toll charges - receipts</li>
+          <li>Congestion and clean air charges - receipts, permits or invoices</li>
+        </ul>
+      </div>
+    </details>
+
+    <p class="nhsuk-hint">The file you choose must:</p>
+      <ul class="nhsuk-list nhsuk-list--bullet nhsuk-hint">
+        <li>not be larger than 8MB in file size</li>
+        <li>be a JPEG, PNG or PDF</li>
+      </ul>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          I'm using an iPhone image
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>If you're using an Apple device, any photos you take of your evidence may be in HEIC format. This is also known as HEIF. We cannot accept photos in this format.</p>
+
+        <p>To check if you need to change your Camera settings to make JPEG your default image format, visit <a href="https://support.apple.com/en-gb/HT207022#:~:text=Capturing%20this%20media">Apple Support's advice</a> on this.</p>
+      </div>
+    </details>
+
+    <div class="nhsuk-form-group nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-7">
+      <label class="nhsuk-label nhsuk-u-visually-hidden" for="file-upload-1">
+          Upload your evidence file
+      </label>
+      <input class="nhsuk-input" id="file-upload-1" name="file-upload-1" type="file">
+    </div>
+
+    <a class="nhsuk-button" href="TDAE-evidence-day">Upload evidence</a><br>
+
+    <!-- {% if data['add-more-evidence'] === 'yes' %}
+      <form action="v7/TDAE-more-evidence-added" method="POST">
+        <button class="nhsuk-button" type="submit">Next</button><br>
+      </form>
+    {% else %}
+      <form action="v7/TDAE-provide-journey-evidence" method="POST">
+        <button class="nhsuk-button" type="submit">Next</button><br>
+      </form>
+    {% endif %} -->
+
+    <a href="TDAE-start-claim">Cancel</a>
+
+    <!-- </form> -->
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

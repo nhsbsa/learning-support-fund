@@ -1,0 +1,137 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+			"href": "javascript:history.go(-1)",
+			"text": "Go back"
+		}) }}
+
+		<!-- <form action="" method="POST"> -->
+
+		<h1 class="nhsuk-heading-xl">Check your placement travel details</h1>
+
+	    <dl class="nhsuk-summary-list">
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Miles travelled to and from placement
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						208
+					</dd>
+				</div>
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Community miles travelled
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						38
+					</dd>
+				</div>
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Types of extra costs
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						Parking charges
+					</dd>
+				</div>
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Extra costs total amount
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						£16.00
+					</dd>
+				</div>
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Comments
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['placement-related-comments']  === 'yes' %}
+						<a href="TDAE-placement-comments-view">
+							<span class="nhsuk-u-visually-hidden">Additional costs comments </span>Provided
+						</a>
+						{% else %}
+							<a href="TDAE-placement-additional-comments">
+								<span class="nhsuk-u-visually-hidden">Additional costs comments </span>Not provided
+							</a>
+						{% endif %}
+					</dd>
+				</div>
+	    </dl>
+
+			<a href="TDAE-placement-itinerary" class="nhsuk-button nhsuk-button--secondary">Change your placement travel details</a>
+
+			<h2 class="nhsuk-heading-m">Total placement travel costs to be reimbursed</h2>
+	    <dl class="nhsuk-summary-list">
+
+				<div class="nhsuk-summary-list__row">
+	        <dt class="nhsuk-summary-list__key">
+	          Amount to be reimbursed
+	        </dt>
+	        <dd class="nhsuk-summary-list__value">
+	            £119.32
+	        </dd>
+	      </div>
+
+	    </dl>
+
+
+			{% if data['submit-claim'] != 'completed' %}
+				<form action="v7/TDAE-placement-cya" method="POST">
+					<button class="nhsuk-button" type="submit">Save and continue</button><br>
+				</form>
+			{% endif %}
+
+		<!-- </form> -->
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			const months = {
+				"01": "January",
+				"02": "February",
+				"03": "March",
+				"04": "April",
+				"05": "May",
+				"06": "June",
+				"07": "July",
+				"08": "August",
+				"09": "September",
+				"1": "January",
+				"2": "February",
+				"3": "March",
+				"4": "April",
+				"5": "May",
+				"6": "June",
+				"7": "July",
+				"8": "August",
+				"9": "September",
+				"10": "October",
+				"11": "November",
+				"12": "December",
+			};
+
+			$(".cya-month").text(function () {
+				const month = $(this).text();
+				console.log("month:", month);
+				console.log("months[month]:", months[month]);
+				return months[month];
+			});
+		});
+		</script>
+
+</div>
+{% endblock %}

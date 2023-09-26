@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Student declaration
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="v7/TDAE-student-declaration" method="POST">
+
+        <h1 class="nhsuk-heading-xl">Student declaration</h1>
+
+        <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+              <span role="text">
+                <span class="nhsuk-u-visually-hidden">Important: </span>
+                Declaration
+              </span>
+            </h3>
+            <p>Review all information you have provided before completing this declaration. Read this declaration carefully before accepting it. If you choose not to accept it, your funding application will not be processed.</p>
+
+            <p>I declare that:</p>
+            <ul>
+              <li>I am undertaking a pre-registration healthcare programme at a university in England that is eligible for Travel and Dual Accommodation Expenses (TDAE)</li>
+              <li>I have read and understood any relevant booklets and information about claiming TDAE</li>
+              <li>the information I gave on this form and in any supporting evidence is complete and accurate</li>
+            </ul>
+
+            <p>I confirm that:</p>
+            <ul>
+              <li>I have enrolled and started my study programme and am still in active training</li>
+              <li>I have only claimed for expenses that were essential for attending my practice placements</li>
+              <li>I have deducted my normal daily costs of travelling to university from my expenses</li>
+              <li>I have used the cheapest transport available to access my practice placements</li>
+              <li>I had appropriate insurance for any private vehicles I claimed expenses for</li>
+            </ul>
+
+            <p>I understand that:</p>
+            <ul>
+              <li>NHS Business Services Authority (NHSBSA) are responsible for administrating TDAE, as well as counter-fraud and security management matters</li>
+              <li>NHSBSA Student Services may share information I gave with the NHS Counter Fraud Authority for the prevention, detection, investigation, and prosecution of fraud or any other unlawful activity affecting the NHS</li>
+            </ul>
+
+            <p>I understand and accept that:</p>
+            <ul>
+              <li>if I fail to give sufficient notice of changes to my bank or building society account details, or provide incorrect details, NHSBSA Student Services cannot take responsibility for delayed payments, non-payment, or payments made to an incorrect account</li>
+              <li>the terms and conditions of TDAE, including its rates, may change at any time without notice</li>
+              <li>TDAE is subject to continued government funding which may stop at any time without notice</li>
+            </ul>
+
+            <p>I understand and accept that if I withhold information from NHSBSA Student Services, or provide false or misleading information:</p>
+            <ul>
+              <li>Financial support may be refused</li>
+              <li>Financial support may be withdrawn</li>
+              <li>I may be liable for prosecution and civil proceedings</li>
+            </ul>
+
+            <p>By signing this declaration, I am also aware of the main terms and conditions of the NHS Learning Support Fund (LSF). This includes the Privacy Notice and Consent to share information clauses, as set out in the declaration I signed when I registered for my NHS LSF account.</p>
+
+            <p>I declare that the information I gave on this form and in any supporting evidence is complete and accurate.</p>
+        </div>
+
+
+
+        <div class="nhsuk-checkboxes__item nhsuk-u-margin-bottom-7">
+            <input class="nhsuk-checkboxes__input" id="student-declaration" name="student-declaration" type="checkbox" value="email">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="student-declaration">
+              Accept declaration
+            </label>
+        </div>
+
+        <button class="nhsuk-button" type="submit">Submit claim</button><br>
+        <a href="TDAE-start-claim">Cancel</a>
+
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

@@ -263,12 +263,26 @@
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
               <a href="TDAE-accommodation" aria-describedby="eligibility-status">
-                Check accommodation details
+                Check accommodation booking 1 details
               </a>
             </span>
             {% if data['accommodation-completed'] === 'completed' %}
               <strong class="nhsuk-tag" style="float: right;" id="eligibility-status">Completed</strong>
             {% elif data['accommodation-completed'] === 'in-progress' %}
+              <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to student</strong>
+            {% else %}
+              <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              <a href="TDAE-accommodation-2" aria-describedby="eligibility-status">
+                Check accommodation booking 2 details
+              </a>
+            </span>
+            {% if data['accommodation-completed-2'] === 'completed' %}
+              <strong class="nhsuk-tag" style="float: right;" id="eligibility-status">Completed</strong>
+            {% elif data['accommodation-completed-2'] === 'in-progress' %}
               <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to student</strong>
             {% else %}
               <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>

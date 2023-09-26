@@ -1,0 +1,981 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What is the return mileage to your placement?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+	<div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-l">Your placement travel details</h1>
+
+	</div>
+</div>
+
+<div class="nhsuk-grid-row">
+	<div class="nhsuk-grid-column-full">
+		<p>You can add information about journey mileage, extra costs you paid, or community mileage details for each day of your placement.</p>
+
+		<div  class="action-block">
+			<h2 class="nhsuk-heading-s">What you can do</h2>
+			<div class="nhsuk-grid-row">
+				<div class="nhsuk-grid-column-one-quarter">
+					{% if data['same-journey'] === "yes" %}
+					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-same-journey">Change journey mileage</a>
+					{% else %}
+					<a class="nhsuk-button nhsuk-button--secondary" href="v7/add-journey-mileage">Add journey mileage</a>
+					{% endif %}
+				</div>
+				<div class="nhsuk-grid-column-one-quarter" style="width: 20%;">
+					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-evidence-type">Add extra costs</a>
+				</div>
+				{% if checked('claiming-for', 'community') %}
+				<div class="nhsuk-grid-column-one-quarter">
+				<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-community-mileage-day">Add community mileage</a>
+				</div>
+				{% endif %}
+				<div class="nhsuk-grid-column-one-quarter" style="width: 30%;">
+				<a href="TDAE-placement-additional-comments" class="nhsuk-button">Complete placement travel details</a>
+				</div>
+			</div>
+			<p><a href="#">Save and come back later</a></p>
+			<h3 class="nhsuk-heading-xs">Change previous answers</h3>
+			<!--<p>You can: </p>-->
+				{% if data['one-address'] == 'yes' %}
+					<p><a href="TDAE-placement-address-days-cya">Change placement travel dates or addresses</a></p>
+				{% else %}
+					<p><a href="TDAE-check-dates">Change placement travel dates</a></p>
+				{% endif %}
+		</div>
+	</div>
+	<div class="nhsuk-grid-column-full">
+		{% if data['one-address'] == 'yes' %}
+		<details class="nhsuk-details">
+		  <summary class="nhsuk-details__summary">
+		    <span class="nhsuk-details__summary-text">
+		      Placement addresses
+		    </span>
+		  </summary>
+		  <div class="nhsuk-details__text">
+				<dl class="nhsuk-summary-list">
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Placement address 1
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['placement-building-name'] %}
+								{{ data['placement-building-name'] }}<br>
+								{{ data['placement-address-line-1'] }}<br>
+								{% if data['placement-address-line-2'] %}
+									{{ data['placement-address-line-2'] }}<br>
+								{% endif %}
+								{% if data['placement-address-line-3'] %}
+									{{ data['placement-address-line-3'] }}<br>
+								{% endif %}
+								{{ data['placement-address-town'] }}<br>
+								{{ data['placement-address-postcode'] }}<br>
+							{% else %}
+							Newcastle Hospital<br>
+							Newcastle Street<br>
+							Newcastle Tyne and Wear<br>
+							NE1 1AA
+							{% endif %}
+						</dd>
+					</div>
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Placement address 2
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['placement-2-building-name'] %}
+								{{ data['placement-2-building-name'] }}<br>
+								{{ data['placement-2-address-line-1'] }}<br>
+								{% if data['placement-2-address-line-2'] %}
+									{{ data['placement-2-address-line-2'] }}<br>
+								{% endif %}
+								{% if data['placement-2-address-line-3'] %}
+									{{ data['placement-2-address-line-3'] }}<br>
+								{% endif %}
+								{{ data['placement-2-address-town'] }}<br>
+								{{ data['placement-2-address-postcode'] }}<br>
+							{% else %}
+							Alnwick Hospital<br>
+							Ashington Road<br>
+							Alnwick<br>
+							NE6 4EA
+							{% endif %}
+						</dd>
+					</div>
+				</dl>
+		  </div>
+		</details>
+		{% endif %}
+
+		<table role="table" class="nhsuk-table-responsive">
+		  <caption class="nhsuk-table__caption">Placement travel details and costs</caption>
+		  <thead role="rowgroup" class="nhsuk-table__head">
+		    <tr role="row">
+		      <th role="columnheader" class="" scope="col">
+		        Date
+		      </th>
+					{% if data['one-address'] == 'yes' %}
+					<th role="columnheader" class="" scope="col">
+		        Placement address
+		      </th>
+					{% endif %}
+		      <th role="columnheader" class="" scope="col">
+		        Travel details
+		      </th>
+		      <th role="columnheader" class="" scope="col">
+		        Value
+		      </th>
+					<th role="columnheader" class="" scope="col">
+		        Action
+		      </th>
+		    </tr>
+		  </thead>
+		  <tbody class="nhsuk-table__body">
+				{% if data['same-journey'] === "yes" %}
+			    <tr role="row" class="nhsuk-table__row">
+				      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Date </span>Monday 14 August 2023
+				      </td>
+							{% if data['one-address'] == 'yes' %}
+							<td role="cell" class="nhsuk-table__cell">
+				        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+				      </td>
+							{% endif %}
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+				      </td>
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+				      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Monday 14 August 2023</span>
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 1, NE1 1AA</span>
+						</td>
+						{% endif %}
+			      <td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+				{% elif data['journey-mileage'] === "1" or data['journey-mileage'] === "2" or data['journey-mileage'] === "3" %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Monday 14 August 2023
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+			      </td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>10.0 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+			      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell" {% if data['additional-cost'] === "1" %} style="border: 0; padding-bottom: 0px;" {% endif %}>
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Monday 14 August 2023</span>
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell" {% if data['additional-cost'] === "1" %} style="border: 0; padding-bottom: 0px;" {% endif %}>
+			        <span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 1, NE1 1AA</span>
+			      </td>
+						{% endif %}
+			      <td role="cell" class="nhsuk-table__cell" {% if data['additional-cost'] === "1" %} style="border: 0; padding-bottom: 0px;" {% endif %}>
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" {% if data['additional-cost'] === "1" %} style="border: 0; padding-bottom: 0px;" {% endif %}>
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>10.0 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell" {% if data['additional-cost'] === "1" %} style="border: 0; padding-bottom: 0px;" {% endif %}>
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+				{% else %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Monday 14 August 2023
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+			      </td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span><span class="nhsuk-u-visually-hidden">No travel entered yet</span>
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span><span class="nhsuk-u-visually-hidden">No cost entered yet</span>
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No actions available</span>
+			      </td>
+			    </tr>
+				{% endif %}
+				{% if data['additional-cost'] === "1" %}
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Monday 14 August 2023</span>
+						</td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 1, NE1 1AA</span>
+						</td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Parking charges
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>£4.00
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+					</tr>
+				{% endif %}
+				{% if data['same-journey'] === "yes" or data['journey-mileage'] === "1" or data['journey-mileage'] === "2" or data['journey-mileage'] === "3" %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Tuesday 15 August 2023
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+			      </td>
+						{% endif %}
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>10.0 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+			      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      {% if data['additional-cost'] === "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">
+						{% endif %}
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Tuesday 15 August 2023</span>
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						{% if data['additional-cost'] === "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">
+						{% endif %}
+			        <span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 1, NE1 1AA</span>
+			      </td>
+						{% endif %}
+						{% if data['additional-cost'] === "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">
+						{% endif %}
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+						{% if data['additional-cost'] === "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">
+						{% endif %}
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>10.0 miles
+			      </td>
+						{% if data['additional-cost'] === "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">
+						{% endif %}
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+					{% if data['additional-cost'] === "1" %}
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Tuesday August 2023</span>
+							</td>
+							{% if data['one-address'] == 'yes' %}
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 1, NE1 1AA</span>
+							</td>
+							{% endif %}
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Parking charges
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>£4.00
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+							</td>
+						</tr>
+					{% endif %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Wednesday 16 August 2023
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+			      </td>
+						{% endif %}
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>10.0 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+			      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+						{% if data['additional-cost'] === "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">
+						{% endif %}
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Wednesday 16 August 2023</span>
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						{% if data['additional-cost'] === "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">
+						{% endif %}
+			        <span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 1, NE1 1AA</span>
+			      </td>
+						{% endif %}
+						{% if data['additional-cost'] === "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">
+						{% endif %}
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+						{% if data['additional-cost'] === "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">
+						{% endif %}
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>10.0 miles
+			      </td>
+						{% if data['additional-cost'] === "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">
+						{% endif %}
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+					{% if data['additional-cost'] === "1" %}
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Wednesday 16 August 2023</span>
+							</td>
+							{% if data['one-address'] == 'yes' %}
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 1, NE1 1AA</span>
+							</td>
+							{% endif %}
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Parking charges
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>£4.00
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+							</td>
+						</tr>
+					{% endif %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Thursday 17 August 2023
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+			      </td>
+						{% endif %}
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>10.0 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+			      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+						{% if data['additional-cost'] === "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">
+						{% endif %}
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Thursday 17 August 2023</span>
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						{% if data['additional-cost'] === "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">
+						{% endif %}
+			        <span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 1, NE1 1AA</span>
+			      </td>
+						{% endif %}
+						{% if data['additional-cost'] === "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">
+						{% endif %}
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+						{% if data['additional-cost'] === "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">
+						{% endif %}
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>10.0 miles
+			      </td>
+						{% if data['additional-cost'] === "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">
+						{% endif %}
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+					{% if data['additional-cost'] === "1" %}
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Thursday 17 August 2023</span>
+							</td>
+							{% if data['one-address'] == 'yes' %}
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 1, NE1 1AA</span>
+							</td>
+							{% endif %}
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Parking charges
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>£4.00
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+							</td>
+						</tr>
+					{% endif %}
+				{% else %}
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Date </span>Tuesday 15 August 2023
+						</td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+			      </td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span><span class="nhsuk-u-visually-hidden">No travel entered yet</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span><span class="nhsuk-u-visually-hidden">No cost entered yet</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No actions available</span>
+						</td>
+					</tr>
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Date </span>Wednesday 16 August 2023
+						</td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+			      </td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span><span class="nhsuk-u-visually-hidden">No travel entered yet</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span><span class="nhsuk-u-visually-hidden">No cost entered yet</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No actions available</span>
+						</td>
+					</tr>
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Date </span>Thursday 17 August 2023
+						</td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+			      </td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span><span class="nhsuk-u-visually-hidden">No travel entered yet</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span><span class="nhsuk-u-visually-hidden">No cost entered yet</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No actions available</span>
+						</td>
+					</tr>
+				{% endif %}
+				{% if data['same-journey'] === "yes" %}
+			    <tr role="row" class="nhsuk-table__row">
+				      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Date </span>Sunday 20 August 2023
+				      </td>
+							{% if data['one-address'] == 'yes' %}
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+				      </td>
+							{% endif %}
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+				      </td>
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+				      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Sunday 20 August 2023</span>
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 2, NE6 4EA</span>
+			      </td>
+						{% endif %}
+			      <td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+				{% elif data['journey-mileage'] === "2" or data['journey-mileage'] === "3" %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Sunday 20 August 2023
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+			      </td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>16.0 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+			      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Sunday 20 August 2023</span>
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 2, NE6 4EA</span>
+			      </td>
+						{% endif %}
+			      <td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>16.0 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+				{% else %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Sunday 20 August 2023
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+			      </td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span><span class="nhsuk-u-visually-hidden">No travel entered yet</span>
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span><span class="nhsuk-u-visually-hidden">No cost entered yet</span>
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No actions available</span>
+			      </td>
+			    </tr>
+				{% endif %}
+				{% if data['same-journey'] === "yes" %}
+			    <tr role="row" class="nhsuk-table__row">
+				      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Date </span>Monday 21 August 2023
+				      </td>
+							{% if data['one-address'] == 'yes' %}
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+				      </td>
+							{% endif %}
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+				      </td>
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+				      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Monday 21 August 2023</span>
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 2, NE6 4EA</span>
+			      </td>
+						{% endif %}
+			      <td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+				{% elif data['journey-mileage'] === "2" or data['journey-mileage'] === "3" %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Monday 21 August 2023
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+			      </td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>16.0 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+			      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Monday 21 August 2023</span>
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 2, NE6 4EA</span>
+			      </td>
+						{% endif %}
+			      <td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>16.0 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+				{% else %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Monday 21 August 2023
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+			      </td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span><span class="nhsuk-u-visually-hidden">No travel entered yet</span>
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span><span class="nhsuk-u-visually-hidden">No cost entered yet</span>
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No actions available</span>
+			      </td>
+			    </tr>
+				{% endif %}
+				{% if data['same-journey'] === "yes" %}
+			    <tr role="row" class="nhsuk-table__row">
+				      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Date </span>Tuesday 22 August 2023
+				      </td>
+							{% if data['one-address'] == 'yes' %}
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+				      </td>
+							{% endif %}
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+				      </td>
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+				      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Tuesday 22 August 2023</span>
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 2, NE6 4EA</span>
+			      </td>
+						{% endif %}
+			      <td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+				{% elif data['journey-mileage'] === "2" or data['journey-mileage'] === "3" %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Tuesday 22 August 2023
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+			      </td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>16.0 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+			      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      {% if data['number-community-miles'] == "2" or data['number-community-miles'] == "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">{% endif %}
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Tuesday 22 August 2023</span>
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						{% if data['number-community-miles'] == "2" or data['number-community-miles'] == "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">{% endif %}
+			        <span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 2, NE6 4EA</span>
+			      </td>
+						{% endif %}
+						{% if data['number-community-miles'] == "2" or data['number-community-miles'] == "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">{% endif %}
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+						{% if data['number-community-miles'] == "2" or data['number-community-miles'] == "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">{% endif %}
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>16.0 miles
+			      </td>
+						{% if data['number-community-miles'] == "2" or data['number-community-miles'] == "1" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+						{% else %}<td role="cell" class="nhsuk-table__cell">{% endif %}
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+					{% if data['number-community-miles'] == "2" or data['number-community-miles'] == "1" %}
+						<tr role="row" class="nhsuk-table__row">
+				      <td role="cell" class="nhsuk-table__cell">
+				        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Wednesday 23 August 2023</span>
+				      </td>
+							{% if data['one-address'] == 'yes' %}
+							<td role="cell" class="nhsuk-table__cell">
+				        <span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 2, NE6 4EA</span>
+				      </td>
+							{% endif %}
+				      <td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Community mileage
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell">
+				        <span class="nhsuk-table-responsive__heading">Travel cost </span>20.0 miles
+				      </td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+							</td>
+				    </tr>
+					{% endif %}
+				{% else %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Tuesday 22 August 2023
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+			      </td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span><span class="nhsuk-u-visually-hidden">No travel entered yet</span>
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span><span class="nhsuk-u-visually-hidden">No cost entered yet</span>
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No actions available</span>
+			      </td>
+			    </tr>
+				{% endif %}
+				{% if data['same-journey'] === "yes" %}
+			    <tr role="row" class="nhsuk-table__row">
+				      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Date </span>Wednesday 23 August 2023
+				      </td>
+							{% if data['one-address'] == 'yes' %}
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+				      </td>
+							{% endif %}
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+				      </td>
+							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+				        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+				      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Wednesday 23 August 2023</span>
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 2, NE6 4EA</span>
+			      </td>
+						{% endif %}
+			      <td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>6.3 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+				{% elif data['journey-mileage'] === "2" or data['journey-mileage'] === "3" %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Wednesday 23 August 2023
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+			      </td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>16.0 miles
+			      </td>
+						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+			      </td>
+			    </tr>
+					<tr role="row" class="nhsuk-table__row">
+						{% if data['number-community-miles'] == "2" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			      {% else %}<td role="cell" class="nhsuk-table__cell">{% endif %}
+			        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Wednesday 23 August 2023</span>
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						{% if data['number-community-miles'] == "2" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			      {% else %}<td role="cell" class="nhsuk-table__cell">{% endif %}
+			        <span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 2, NE6 4EA</span>
+			      </td>
+						{% endif %}
+						{% if data['number-community-miles'] == "2" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			      {% else %}<td role="cell" class="nhsuk-table__cell">{% endif %}
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+			      </td>
+						{% if data['number-community-miles'] == "2" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			      {% else %}<td role="cell" class="nhsuk-table__cell">{% endif %}
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span>16.0 miles
+			      </td>
+						{% if data['number-community-miles'] == "2" %}<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
+			      {% else %}<td role="cell" class="nhsuk-table__cell">{% endif %}
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+						</td>
+			    </tr>
+					{% if data['number-community-miles'] == "2" %}
+						<tr role="row" class="nhsuk-table__row">
+				      <td role="cell" class="nhsuk-table__cell">
+				        <span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Wednesday 23 August 2023</span>
+				      </td>
+							{% if data['one-address'] == 'yes' %}
+							<td role="cell" class="nhsuk-table__cell">
+				        <span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 2, NE6 4EA</span>
+				      </td>
+							{% endif %}
+				      <td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Community mileage
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell">
+				        <span class="nhsuk-table-responsive__heading">Travel cost </span>18.0 miles
+				      </td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Change</a>
+							</td>
+				    </tr>
+					{% endif %}
+				{% else %}
+					<tr role="row" class="nhsuk-table__row">
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Date </span>Wednesday 23 August 2023
+			      </td>
+						{% if data['one-address'] == 'yes' %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+			      </td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel type </span><span class="nhsuk-u-visually-hidden">No travel entered yet</span>
+			      </td>
+			      <td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Travel cost </span><span class="nhsuk-u-visually-hidden">No cost entered yet</span>
+			      </td>
+						<td role="cell" class="nhsuk-table__cell">
+			        <span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No actions available</span>
+			      </td>
+			    </tr>
+				{% endif %}
+		  </tbody>
+		</table>
+
+	</div>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<!-- <form action="" method="POST"> -->
+
+		<h1 class="nhsuk-heading-xl">Check your answers</h1>
+
+		<dl class="nhsuk-summary-list">
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Hire vehicle total amount
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{% if data['hire-car-cost'] %}
+					 £{{ data['hire-car-cost'] }}
+					{% else %}
+						£120.00
+					{% endif %}
+				</dd>
+				<dd class="nhsuk-summary-list__actions">
+					<a href="TDAE-hire-car-cost">
+						Change<span class="nhsuk-u-visually-hidden"> hire car ammount</span>
+					</a>
+				</dd>
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Evidence
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					1 evidence uploaded
+				</dd>
+				<dd class="nhsuk-summary-list__actions">
+					<a href="TDAE-hire-car-mini-cya">
+						Review<span class="nhsuk-u-visually-hidden"> hire car evidence</span>
+					</a>
+				</dd>
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Comments
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{% if data['hire-car-comments']  === 'yes' %}
+					 {{ data['hire-car-comment'] }}
+					{% else %}
+						Not provided
+					{% endif %}
+				</dd>
+				<dd class="nhsuk-summary-list__actions">
+					<a href="TDAE-hire-car-comment">
+						Change<span class="nhsuk-u-visually-hidden"> hire car comments</span>
+					</a>
+				</dd>
+
+			</div>
+
+			</dl>
+
+			<h2 class="nhsuk-heading-m">Hire vehicle costs to be reimbursed</h2>
+			<dl class="nhsuk-summary-list">
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key" style="width: 50%;">
+						Cost to be reimbursed
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['hire-car-cost'] %}
+						 £{{ data['hire-car-cost'] }}
+						{% else %}
+							£120.00
+						{% endif %}
+					</dd>
+				</div>
+
+			</dl>
+
+			{% if data['submit-claim'] != 'completed' %}
+				<form action="v7/TDAE-hire-car-cya" method="POST">
+					<button class="nhsuk-button" type="submit">Save and continue</button><br>
+				</form>
+			{% endif %}
+
+		<!-- </form> -->
+
+	</div>
+
+</div>
+{% endblock %}

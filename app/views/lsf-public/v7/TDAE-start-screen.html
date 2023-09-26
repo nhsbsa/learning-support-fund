@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Claim Travel and Dual Accommodation Expenses
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <!-- <form action="" method="POST"> -->
+
+            <h1 class="nhsuk-heading-xl">Claim Travel and Dual Accommodation Expenses</h1>
+
+            <p>When claiming online you need to tell us your university address, your placement addresses, and information about your travel and accommodation costs.</p>
+
+            <p>You will also need to give us evidence for the travel or accommodation costs you paid.</p>
+
+            <p>Examples of evidence you need to show us are:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>parking charges</li>
+                <li>tunnel or toll charges</li>
+                <li>congestion or clean air charges</li>
+                <li>accommodation charges</li>
+            </ul>
+
+            <p>You do not need to give us evidence of petrol costs.</p>
+
+            <p>Evidence can be images, screenshots, or PDFs of receipts, permits, or invoices.</p>
+
+            <a class="nhsuk-button nhsuk-u-margin-top-3" href="TDAE-incur-costs">Start now</a>
+
+        <!-- </form> -->
+
+    </div>
+
+</div>
+{% endblock %}

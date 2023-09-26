@@ -1,0 +1,342 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Task list
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {% if data['submit-claim'] != 'completed' %}
+            <h1 class="nhsuk-heading-l">Travel and Dual Accommodation Expenses task list</h1>
+        {% else %}
+            <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-9">Travel and Dual Accommodation Expenses task list</h1>
+        {% endif %}
+
+        {% if data['submit-claim'] != 'completed' %}
+            <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are tasks incomplete</h2>
+            <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed <span id="completedCount">0</span> of <span id="sectionLength">5</span> sections.</p>
+        {% endif %}
+
+        {% if data['submit-claim'] == 'completed' %}
+          <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Claim history: </span>
+          <p>Claim submitted: Monday 4 September 2023</p>
+          <p>Claim submitted to NHSBSA: Wednesday 6 September 2023</p>
+          <p>Payment approved by NHSBSA: Friday 8 September 2023</p>
+          <p>Claim paid: Monday 11 September 2023</p>
+          </div>
+        {% endif %}
+
+        <ol class="app-task-list">
+            <li class="section-item">
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">1. </span> Claim overview
+                </h2>
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item nhsuk-u-clear">
+                        <span class="app-task-list__task-name">
+                            <a href="TDAE-eligibility-cya">
+                                Claim overview
+                            </a>
+                        </span>
+                        <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
+                    </li>
+                </ul>
+            </li>
+
+            {% if checked('claiming-for', 'car') %}
+                <li class="section-item">
+                    <h2 class="app-task-list__section">
+                        <span class="app-task-list__section-number">2. </span> Travel costs
+                    </h2>
+                    <ul class="app-task-list__items">
+                        {% if data['blended-learning'] != 'yes' %}
+                          <li class="app-task-list__item nhsuk-u-clear">
+                              <span class="app-task-list__task-name">
+                              {% if data['university-details'] === 'completed' %}
+                                  <a href="TDAE-normal-summary-cya">
+                                      University travel details
+                                  </a>
+                              {% else %}
+                                  <a href="TDAE-normal-place-study">
+                                      University travel details
+                                  </a>
+                              {% endif %}
+                              </span>
+                              {% if data['university-details'] === 'completed' %}
+                              <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
+                              {% else %}
+                              <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not
+                                  started</strong>
+                              {% endif %}
+                          </li>
+                        {% endif %}
+                        <li class="app-task-list__item nhsuk-u-clear">
+                            <span class="app-task-list__task-name">
+                            {% if data['submit-claim'] == 'completed' %}
+                              <a class="app-task-list__task-name" href="TDAE-placement-itinerary">
+                                Placement travel details
+                              </a>
+                            {% elif data['add-placement-travel'] == 'completed' %}
+                              <a class="app-task-list__task-name" href="TDAE-placement-itinerary">
+                                Placement travel details
+                              </a>
+                            {% else %}
+                              <a class="app-task-list__task-name" href="TDAE-start-claim">
+                                Placement travel details
+                              </a>
+                            {% endif %}
+                            </span>
+                            {% if data['add-placement-travel'] === 'completed' %}
+                              <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
+                            {% else %}
+                              <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
+                            {% endif %}
+                        </li>
+                        <li class="app-task-list__item nhsuk-u-clear">
+                            <span class="app-task-list__task-name">
+                            {% if data['submit-claim'] === 'completed' %}
+                              <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">
+                                Placement travel evidence
+                              </a>
+                            {% else %}
+                              <a class="app-task-list__task-name" href="TDAE-evidence-pause-multiple">
+                                Placement travel evidence
+                              </a>
+                            {% endif %}
+                            </span>
+                            {% if data['add-travel-date-evidence'] === 'completed' %}
+                              <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
+                            {% else %}
+                              <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
+                            {% endif %}
+                        </li>
+                        {% if checked('claiming-for', 'hire-car') %}
+                        <li class="app-task-list__item nhsuk-u-clear">
+                            <span class="app-task-list__task-name">
+                            {% if data['submit-claim'] === 'completed' %}
+                              <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">
+                                Hire vehicle
+                              </a>
+                            {% else %}
+                              <a class="app-task-list__task-name" href="TDAE-hire-car-cost">
+                                Hire vehicle
+                              </a>
+                            {% endif %}
+                            </span>
+                            {% if data['hire-car'] === 'completed' %}
+                              <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
+                            {% else %}
+                              <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
+                            {% endif %}
+                        </li>
+                        {% endif %}
+                    </ul>
+                </li>
+            {% endif %}
+
+            {% if checked('claiming-for', 'accommodation') %}
+                <li class="section-item">
+                    <h2 class="app-task-list__section">
+                        <span class="app-task-list__section-number">
+                            {% if checked('claiming-for', 'car') %}
+                                3.
+                            {% else %}
+                                2.
+                            {% endif %}
+                        </span> Accommodation costs
+                    </h2>
+                    <ul class="app-task-list__items">
+                        <li class="app-task-list__item nhsuk-u-clear">
+                            <span class="app-task-list__task-name">
+                            {% if data['accommodation-details'] === 'completed' %}
+                                <a href="TDAE-accommodation-check">
+                                    Placement accommodation details and evidence
+                                </a>
+                            {% else %}
+                                <a href="TDAE-accommodation-stays">
+                                    Placement accommodation details and evidence
+                                </a>
+                            {% endif %}
+                            </span>
+                            {% if data['accommodation-details'] === 'completed' %}
+                            <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
+                            {% else %}
+                            <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not
+                                started</strong>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </li>
+            {% endif %}
+
+            {% if data['submit-claim'] != 'completed' %}
+            <li class="section-item">
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">
+                        {% if checked('claiming-for', 'car') and checked('claiming-for', 'accommodation') %}
+                            4.
+                        {% else %}
+                            3.
+                        {% endif %}
+                    </span> Submit claim
+                </h2>
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item nhsuk-u-clear">
+                        <span class="app-task-list__task-name">
+                          {% if checked('claiming-for', 'car') and checked('claiming-for', 'accommodation') %}
+                            {% if
+                                data['university-details'] === 'completed'
+                                and
+                                data['add-placement-travel'] === 'completed'
+                                and
+                                data['add-travel-date-evidence'] === 'completed'
+                                and
+                                data['accommodation-details'] === 'completed'
+                            %}
+                            <a class="app-task-list__task-name" href="TDAE-placement-cost-summary">
+                                Submit your claim
+                            </a>
+                            {% else %}
+                            <span class="app-task-list__task-name">
+                                Submit your claim
+                            </span>
+                            {% endif %}
+                          {% elif checked('claiming-for', 'car') %}
+                            {% if
+                                data['university-details'] === 'completed'
+                                and
+                                data['add-placement-travel'] === 'completed'
+                                and
+                                data['add-travel-date-evidence'] === 'completed'
+                            %}
+                            <a class="app-task-list__task-name" href="TDAE-placement-cost-summary">
+                                Submit your claim
+                            </a>
+                            {% else %}
+                            <span class="app-task-list__task-name">
+                                Submit your claim
+                            </span>
+                            {% endif %}
+                          {% elif checked('claiming-for', 'accommodation') %}
+                            {% if
+                                data['accommodation-details'] === 'completed'
+                            %}
+                            <a class="app-task-list__task-name" href="TDAE-placement-cost-summary">
+                                Submit your claim
+                            </a>
+                            {% else %}
+                            <span class="app-task-list__task-name">
+                                Submit your claim
+                            </span>
+                            {% endif %}
+                          {% endif %}
+                        </span>
+
+                        {% if checked('claiming-for', 'car') and checked('claiming-for', 'accommodation') %}
+                          {% if data['submit-claim'] === 'completed' %}
+                              <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
+                          {% elif data['university-details'] === 'completed' and data['add-placement-travel'] === 'completed' and data['add-travel-date-evidence'] === 'completed' and data['accommodation-details'] === 'completed' %}
+                              <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not Started</strong>
+                          {% else %}
+                          <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag task-status">Cannot start yet</strong>
+                          {% endif %}
+                        {% elif checked('claiming-for', 'car') %}
+                          {% if data['submit-claim'] === 'completed' %}
+                              <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
+                          {% elif data['university-details'] === 'completed' and data['add-placement-travel'] === 'completed' and data['add-travel-date-evidence'] === 'completed' %}
+                              <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not Started</strong>
+                          {% else %}
+                          <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag task-status">Cannot start yet</strong>
+                          {% endif %}
+                        {% elif checked('claiming-for', 'accommodation') %}
+                          {% if data['submit-claim'] === 'completed' %}
+                              <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
+                          {% elif data['accommodation-details'] === 'completed' %}
+                              <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not Started</strong>
+                          {% else %}
+                          <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag task-status">Cannot start yet</strong>
+                          {% endif %}
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+
+        </ol>
+
+        <p><a href="TDAE-returning-student/academic-year-details">Save and come back later</a></p>
+        {% endif %}
+
+    </div>
+
+</div>
+{% endblock %}
+{% block pageScripts %}
+<script>
+    // To get the counter to work, you need two things:
+    // 1. This class on your section <li class="section-item">
+    // 2. This class on your status tag <strong class="task-status">
+
+    // Get all elements with the class 'container'
+    const containers = document.querySelectorAll('.section-item');
+
+    // Create an object to store container IDs and their values
+    const containerValues = {};
+
+    // Initialize all container IDs with a value of 1
+    containers.forEach((container, index) => {
+      containerValues[index] = 1;
+    });
+
+    // Function to search within each 'container' element
+    function searchWithinContainer(container, index) {
+      // Find elements with class 'searchable' within the 'container'
+      const searchables = container.querySelectorAll('.task-status');
+
+      // Log the content of each 'searchable' element within the 'container'
+      searchables.forEach((searchable) => {
+        console.log(searchable.textContent);
+        if (searchable.textContent !== 'Completed') {
+          console.log('Not all tasks in this container are completed');
+          // Set the value of the container ID to 0 if a task is not completed
+          containerValues[index] = 0;
+        }
+      });
+    }
+
+    // Search each container
+    containers.forEach((container, index) => {
+      searchWithinContainer(container, index);
+    });
+
+    var completedSectionCount = document.getElementById('completedCount');
+    var totalSectionCount = document.getElementById('sectionLength');
+
+    // Calculate the completed section count
+    var completedSections = Object.values(containerValues).reduce(
+      (total, value) => total + value,
+      0
+    );
+    console.log('completed sections: ' + completedSections)
+
+    completedSectionCount.innerHTML = completedSections;
+    totalSectionCount.innerHTML = containers.length;
+  </script>
+  <script>
+      // JavaScript code
+      var currentDateElement = document.getElementById("currentDate");
+
+      // Get the current date
+      var currentDate = new Date();
+
+      // Format the date as desired
+      var options = { day: 'numeric', month: 'long', year: 'numeric' };
+      var formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+      // Set the formatted date as the content of the element
+      currentDateElement.textContent = formattedDate;
+    </script>
+{% endblock %}

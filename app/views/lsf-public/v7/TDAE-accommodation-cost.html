@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Is your term time address the same?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="TDAE-accommodation-evidence" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  What was the cost per night?
+                </h1>
+              </legend>
+              <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+              <input class="nhsuk-input__prefix-input nhsuk-input nhsuk-input--width-5" id="accommodation-cost" name="accommodation-cost" type="text">
+
+
+
+            </fieldset>
+
+          </div>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                What if your costs were split with someone else?
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>If you shared accommodation with someone else and shared costs, you should only enter your own cost.</p>
+              <p>For example, a hotel room cost £100 per night. You shared the room with your friend and paid half of the costs. Your cost is £50.</p>
+            </div>
+          </details>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}
