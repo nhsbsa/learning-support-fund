@@ -1281,5 +1281,17 @@ router.post('/v6/TDAE-accommodation-cost-different', (req, res) => {
 
 })
 
+router.post('/v6/TDAE-evidence-comment', (req, res) => {
+
+  const evidenceComments = req.session.data['evidence-comments']
+
+  if (evidenceComments === 'yes') {
+    res.redirect('/lsf-public/v6/TDAE-evidence-add-comment')
+  } else {
+    res.redirect('/lsf-public/v6/TDAE-evidence-pause-multiple')
+  }
+
+})
+
 
 module.exports = router;
