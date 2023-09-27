@@ -32,7 +32,7 @@
     {% endif %}
 
     {% if data['read-only'] != 'true' %}
-    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Claim checks incomplete</h2>
+    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim.</h2>
     <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed {% if data['status'] === 'Returned from NHSBSA' %}1{% else %}0{% endif %} of {% if data['scenario'] === 'accommodation-travel' %}3{% else %}2{% endif %} sections.</p>
     {% endif %}
 
@@ -358,9 +358,9 @@
       <li>why the claim is being declined</li>
     </ul>
     {% if data['university-completed'] === 'in-progress' or data['evidence-completed'] === 'in-progress' or data['accommodation-completed'] === 'in-progress' %}
-    <a class="nhsuk-button" href="TDAE-return-decline">Send to student</a>
+    <a class="nhsuk-button" href="TDAE-return-decline">Return to student</a>
     {% else %}
-    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Send to student</a>
+    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Return to student</a>
     {% endif %}
     {% endif %}
 
