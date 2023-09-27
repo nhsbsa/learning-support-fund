@@ -17,11 +17,11 @@
 
         <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="return-more-detail">
-              <h1 class="nhsuk-heading-l">Give feedback to {% if data['name'] %}
+              <h1 class="nhsuk-heading-l">Tell {% if data['name'] %}
               {{ data['name'] }}
               {% else %}
               Joe Bloggs
-              {% endif %} for
+              {% endif %} why you're
               {% if data['return-student'] == 'Decline claim' %}
               declining
               {% else %}
@@ -32,7 +32,7 @@
             </label>
             {% if data['return-student'] != 'Decline claim' %}
             <div class="nhsuk-hint" id="return-more-detail-hint">
-              Describe to the student clearly what needs changing for them to re-submit their claim.
+              Include details of what needs changing before they re-submit the claim.
             </div>
             {% endif %}
 

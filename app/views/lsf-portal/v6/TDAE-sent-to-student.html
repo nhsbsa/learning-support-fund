@@ -24,20 +24,15 @@ Send to student
                         {% if data['name'] %}
                         {{ data['name'] }}
                         {% else %}
-                        Ben Bloggs
+                        Joe Bloggs
                         {% endif %}
                     </h1>
                 </div>
             </div>
 
-            <p>The claim has returned to the student with feedback on {% if data['return-student'] == 'Decline claim' %}
-            why it has been declined.
-            {% else %}
-            the issues that need changing.
-            {% endif %}
-            </p>
+            <p>You have returned the claim to the student and told them why.</p>
 
-            <button class="nhsuk-button" type="submit">Return to claims list</button>
+            <button class="nhsuk-button" type="submit">Return to Active TDAE claims</button>
         </form>
 
         <a href="https://docs.google.com/document/d/1X8kw8t50C2Ts8ozpmwJP9sn6XbkoNgU1KgOTcFP7vAY/edit?usp=sharing" target="_blank"><p class="nhsuk-body-s">[Google Doc - Emails sent to student (opens in new tab)]</p></a>

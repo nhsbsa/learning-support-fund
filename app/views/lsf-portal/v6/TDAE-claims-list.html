@@ -12,10 +12,10 @@
         "text": "Go back"
       }) }}
 
-      <h1 class="nhsuk-heading-l">Travel and Dual Accommodation Expenses</h1>
+      <h1 class="nhsuk-heading-l">Active Travel and Dual Accommodation Expenses claims</h1>
     </div>
     <div class="nhsuk-grid-column-two-thirds">
-      <p>This is a list of claims submitted by students. Claims are displayed in order of when they were submitted, oldest at the top.</p>
+      <p>These are claims that you need to start processing or complete. Claims are displayed in order of when they were submitted, with the oldest at the top.</p>
     </div>
     <div class="nhsuk-grid-column-full">
       <p><a class="nhsuk-link--no-visited-state" href="TDAE-previous-claims-list">View previously processed claims</a></p>
@@ -32,7 +32,7 @@
                 <h2 class="nhsuk-heading-m">Filter</h2>
               </div>
               <div class="moj-filter__header-action">
-                
+
               </div>
             </div>
             <div class="moj-filter__content">
@@ -41,9 +41,9 @@
                   <label class="nhsuk-label" for="student-name">Student name</label>
                   <input class="nhsuk-input" id="student-name" name="student-name" type="text">
                 </div>
-                
+
                 <div class="nhsuk-form-group nhsuk-u-padding-right-5" style="width:50%;">
-                  <label for="course" class="nhsuk-label" id="courseSelectLabel">Course</label> 
+                  <label for="course" class="nhsuk-label" id="courseSelectLabel">Course</label>
                   <select id="course" name="course" class="nhsuk-select nhsuk-u-width-three-quarters" aria-labelledby="courseSelectLabel">
                     <option value="">Select a course</option>
                     <option value="ad">Adult nursing</option>
@@ -55,12 +55,10 @@
                   </select>
                 </div>
 
-                
+
                 <div class="nhsuk-form-group">
                   <label class="nhsuk-label" for="course">Course year</label>
-                  
-                  <div class="nhsuk-hint" id="contact-hint">Select the statuses you want shown.</div>
-                  
+
                   <div style="display: inline-flex;" class="nhsuk-checkboxes nhsuk-checkboxes--small" data-module="nhsuk-checkboxes">
                     <div class="nhsuk-checkboxes__item nhsuk-u-margin-right-5">
                       <input class="nhsuk-checkboxes__input" id="year" name="year" type="checkbox" value="1" {% if data['filter'] == 'yes' %}checked{% endif %}>
@@ -92,10 +90,6 @@
                         <label class="nhsuk-label" for="student-name">
                           Status
                         </label>
-
-                        <div class="nhsuk-hint" id="contact-hint-2">
-                          Select the statuses you want shown.
-                        </div>
 
                         <div class="nhsuk-checkboxes nhsuk-checkboxes--small nhsuk-u-padding-bottom-5" data-module="nhsuk-checkboxes">
                           <div class="nhsuk-checkboxes__item">
@@ -129,7 +123,7 @@
                           </button>
                         </form>
                         {% if data['filter'] == 'yes' %}
-                        <p style="float: left; padding-top: 15px; padding-left: 15px;"><a href="#?filter=no">Reset filters</a></p>
+                        <p style="float: left; padding-top: 15px; padding-left: 15px;"><a href="?filter=no">Reset filters</a></p>
                         {% endif %}
                       </fieldset>
                     </div>
@@ -141,7 +135,7 @@
 
           {% if data['filter'] == 'yes' %}
           <table role="table" class="nhsuk-table-responsive"><caption class="nhsuk-table__caption">TDAE claims list</caption></table>
-          <p>There are no results for the filter applied. You can <a href="#?filter=no">reset filter</a> to view all active claims.</p>
+          <p>There are no matching results. <a href="?filter=no">Reset the filter</a> to view all active claims.</p>
           {% else %}
           <table role="table" class="nhsuk-table-responsive">
               <caption class="nhsuk-table__caption">TDAE claims list
@@ -174,7 +168,7 @@
                           <span class="nhsuk-table-responsive__heading">Student name </span>Emmit Mar
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Course </span>Nursing
+                          <span class="nhsuk-table-responsive__heading">Course </span>Adult nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Claim submitted date </span>3 September 2023
@@ -205,7 +199,7 @@
                           <span class="nhsuk-table-responsive__heading">Student name </span>Ben Bloggs
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Course </span>Nursing
+                          <span class="nhsuk-table-responsive__heading">Course </span>Child nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Claim submitted date </span>4 September 2023
@@ -298,7 +292,7 @@
                           <span class="nhsuk-table-responsive__heading">Student name </span>Jill Cooper
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Course </span>Nursing
+                          <span class="nhsuk-table-responsive__heading">Course </span>Mental health nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Claim submitted date </span>12 September 2023
@@ -323,7 +317,7 @@
                           <span class="nhsuk-table-responsive__heading">Student name </span>Philip Wilkes
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Course </span>Dental
+                          <span class="nhsuk-table-responsive__heading">Course </span>Radiography
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Claim submitted date </span>14 September 2023
@@ -344,7 +338,7 @@
                           <span class="nhsuk-table-responsive__heading">Student name </span>Mia Smith
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Course </span>Medicine
+                          <span class="nhsuk-table-responsive__heading">Course </span>Physiotherapy
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Claim submitted date </span>14 September 2023
@@ -366,7 +360,7 @@
                           <span class="nhsuk-table-responsive__heading">Student name </span>George Hill
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Course </span>Podiatry
+                          <span class="nhsuk-table-responsive__heading">Course </span>Midwifery
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Claim submitted date </span>14 September 2023
@@ -388,7 +382,7 @@
                           <span class="nhsuk-table-responsive__heading">Student name </span>Douglas Reynholm
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Course </span>Medicine
+                          <span class="nhsuk-table-responsive__heading">Course </span>Midwifery
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Claim submitted date </span>15 September 2023
@@ -411,7 +405,7 @@
                           <span class="nhsuk-table-responsive__heading">Student name </span>Michelle Moutton
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Course </span>Nursing
+                          <span class="nhsuk-table-responsive__heading">Course </span>Adult nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Claim submitted date </span>16 September 2023
@@ -468,7 +462,7 @@
 <script>
   accessibleAutocomplete.enhanceSelectElement({
     defaultValue : '',
-    autoselect : true,	
+    autoselect : true,
     selectElement: document.querySelector('#course')
   });
 </script>
