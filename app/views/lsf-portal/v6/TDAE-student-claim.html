@@ -308,24 +308,24 @@
               {% if data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' and data['accommodation-completed'] === 'completed' %}
                 {% if data['late-submission'] === 'true' %}
                   <a class="app-task-list__task-name" href="TDAE-nhsbsa-comments?submitted=late">
-                    Submit claim checks
+                    Submit checked claim
                   </a>
                 {% else %}
                   <a class="app-task-list__task-name" href="TDAE-provide-nhsbsa-comments">
-                    Submit claim checks
+                    Submit checked claim
                   </a>
                 {% endif %}
               {% elif data['scenario'] === 'travel-only' and data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' %}
                 <a class="app-task-list__task-name" href="TDAE-provide-nhsbsa-comments">
-                  Submit claim checks
+                  Submit checked claim
                 </a>
               {% elif data['scenario'] === 'accommodation-only' and data['accommodation-completed'] === 'completed' %}
                 <a class="app-task-list__task-name" href="TDAE-provide-nhsbsa-comments">
-                  Submit claim checks
+                  Submit checked claim
                 </a>
               {% else %}
               <span class="app-task-list__task-name">
-                Submit claim checks
+                Submit checked claim
               </span>
               {% endif %}
             </span>
@@ -352,10 +352,10 @@
 
     {% if data['read-only'] != 'true' %}
     <h2 class="nhsuk-heading-m">Return to student</h2>
-    <p>If there are any issues with the claim you can send it back to the student either explaining:</p>
+    <p>You can return this claim to the student if there are any issues with it. You will need to explain:</p>
     <ul>
       <li>what needs changing for them to re-submit the claim</li>
-      <li>why the claim is being declined</li>
+      <li>why you have declined the claim</li>
     </ul>
     {% if data['university-completed'] === 'in-progress' or data['evidence-completed'] === 'in-progress' or data['accommodation-completed'] === 'in-progress' %}
     <a class="nhsuk-button" href="TDAE-return-decline">Return to student</a>
