@@ -24,7 +24,7 @@ Claim details
           Placement accommodation address
         </dt>
         <dd class="nhsuk-summary-list__value">
-          Village Toby Carvery, HU10 6NT
+          Village Toby Carvery, NE2 2UY
           <details class="nhsuk-details" style="margin-bottom: 0;">
             <summary class="nhsuk-details__summary">
               <span class="nhsuk-details__summary-text">
@@ -35,8 +35,8 @@ Claim details
               Village Toby Carvery<br>
               Beverley Rd<br>
               Willerby<br>
-              Hull<br>
-              HU10 6NT
+              Newcastle upon Tyne<br>
+              NE2 2UY
             </div>
           </details>
         </dd>
@@ -89,7 +89,7 @@ Claim details
             Start date
           </dt>
           <dd class="nhsuk-summary-list__value">
-            17 April 2023
+            14 August 2023
           </dd>
         </div>
 
@@ -98,7 +98,7 @@ Claim details
             End date
           </dt>
           <dd class="nhsuk-summary-list__value">
-            22 April 2023
+            17 August 2023
           </dd>
         </div>
         <div class="nhsuk-summary-list__row">
@@ -106,7 +106,7 @@ Claim details
             Number of nights
           </dt>
           <dd class="nhsuk-summary-list__value">
-            5
+            3
           </dd>
         </div>
         <div class="nhsuk-summary-list__row">
@@ -114,11 +114,7 @@ Claim details
             Accommodation type
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {% if data['wrong-evidence'] === 'true' %}
-              Non-commercial
-            {% else %}
-              Commercial
-            {% endif %}
+            Commercial
           </dd>
         </div>
         <div class="nhsuk-summary-list__row">
@@ -126,23 +122,11 @@ Claim details
             Nightly cost
           </dt>
           <dd class="nhsuk-summary-list__value">
-            £110.00 Sunday 20 August 2023<br>
-            £100.00 Monday 21 August 2023<br>
-            £100.00 Tuesday 22 August 2023
+            £110.00 Monday 14 August 2023<br>
+            £100.00 Tuesday 15 August 2023<br>
+            £100.00 Wednesday 16 August 2023
           </dd>
         </div>
-        <!--<div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Nightly cost<br>
-						<div style="font-weight: 400">
-							Monday 21 August 2023<br>
-							Tuesday 22 August 2023
-						</div>
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            £100.00
-          </dd>
-        </div>-->
         <div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Capped nightly cost to be reimbursed
@@ -156,11 +140,7 @@ Claim details
             Cost to be reimbursed
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {% if data['wrong-evidence'] === 'true' %}
-              £125.00
-            {% else %}
-              £275.00
-            {% endif %}
+            £262.50
           </dd>
         </div>
         <div class="nhsuk-summary-list__row">
@@ -174,10 +154,6 @@ Claim details
           </dd>
         </div>
       </dl>
-
-      <h3 class="nhsuk-heading-xs">Student comments</h3>
-
-      <p>I stayed an extra night on the Friday due to the shift finishing too late to travel home.</p>
 
       {% if data['read-only'] != 'true' %}
       <a class="nhsuk-button" href="TDAE-accommodation-check">Continue</a>

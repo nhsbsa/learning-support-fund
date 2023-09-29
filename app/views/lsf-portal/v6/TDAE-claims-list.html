@@ -163,6 +163,7 @@
                 </tr>
               </thead>
               <tbody class="nhsuk-table__body">
+                {% if data['Ansari'] != 'submitted' %}
                   <tr role="row" class="nhsuk-table__row">
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Student name </span>Emmit Mar
@@ -183,17 +184,12 @@
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Action </span>
-                          {% if data['Ansari'] == 'submitted' %}
-                          <a class="nhsuk-link--no-visited-state"
-                              href="TDAE-student-claim?name=Emmit Mar&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
-                              claim</a>
-                          {% else %}
                           <a class="nhsuk-link--no-visited-state"
                               href="v6/process-claim?name=Emmit Mar">Process
                               claim</a>
-                          {% endif %}
                       </td>
                   </tr>
+                  {% endif %}
                   <tr role="row" class="nhsuk-table__row">
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Student name </span>Ben Bloggs

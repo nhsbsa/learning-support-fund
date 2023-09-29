@@ -41,12 +41,35 @@ Travel and Dual Accommodation Expense claims
                 </tr>
                 </thead>
                 <tbody class="nhsuk-table__body">
+                {% if data['Ansari'] == 'submitted' %}
+                  <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Student name </span>Emmit Mar
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Course </span>Adult nursing
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>3 September 2023
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Status </span>
+                          <strong class="nhsuk-tag nhsuk-tag--green">Submitted to NHSBSA</strong>
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span>
+                          <a class="nhsuk-link--no-visited-state"
+                              href="TDAE-student-claim?name=Emmit Mar&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
+                              claim</a>
+                      </td>
+                  </tr>
+                  {% endif %}
                   <tr role="row" class="nhsuk-table__row">
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Student name </span>Mia Smith
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Course </span>Medicine
+                          <span class="nhsuk-table-responsive__heading">Course </span>Mental health nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Claim submitted date </span>30 April 2023
@@ -88,7 +111,7 @@ Travel and Dual Accommodation Expense claims
                           <span class="nhsuk-table-responsive__heading">Student name </span>Douglas Reynholm
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Course </span>Medicine
+                          <span class="nhsuk-table-responsive__heading">Course </span>Mental health nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Claim submitted date </span>1 May 2023
@@ -109,7 +132,7 @@ Travel and Dual Accommodation Expense claims
                           <span class="nhsuk-table-responsive__heading">Student name </span>Craig Breen
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Course </span>Nursing
+                          <span class="nhsuk-table-responsive__heading">Course </span>Child nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Claim submitted date </span>4 May 2023
@@ -130,7 +153,7 @@ Travel and Dual Accommodation Expense claims
                           <span class="nhsuk-table-responsive__heading">Student name </span>Michelle Moutton
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Course </span>Nursing
+                          <span class="nhsuk-table-responsive__heading">Course </span>Adult nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Claim submitted date </span>7 May 2023

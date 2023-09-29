@@ -9,8 +9,8 @@
 
   <div class="nhsuk-grid-column-two-thirds">
     {{ backLink({
-    "href": "javascript:history.go(-1)",
-    "text": "Go back"
+    "href": "TDAE-claims-list",
+    "text": "Back to Active Travel and Dual Accommodation Expenses claims"
     }) }}
 
     <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Travel and Dual Accommodation Expenses</span>
@@ -48,15 +48,6 @@
       <div class="nhsuk-grid-column-two-thirds">
 
     {% if data['status'] === 'Submitted to NHSBSA' %}
-    <div class="nhsuk-warning-callout">
-      <h3 class="nhsuk-warning-callout__label">
-        <span role="text">
-          <span class="nhsuk-u-visually-hidden">Important: </span>
-          Claim submitted late
-        </span>
-      </h3>
-      <p>The student submitted their claim over 6 months after their placement dates.</p>
-    </div>
     <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
       <summary class="nhsuk-details__summary">
         <span class="nhsuk-details__summary-text">
@@ -91,8 +82,8 @@
               </tr>
             <tr role="row" class="nhsuk-table__row">
               <td class="nhsuk-table__cell">Mark Hirst (University)</td>
-              <td class="nhsuk-table__cell">31 November 2022</td>
-              <td class="nhsuk-table__cell "><strong>Claim checks submitted</strong><br>Student has only been able to upload 2 receipts as they have lost one but we are happy to accept they will have had this additional cost.</td>
+              <td class="nhsuk-table__cell">16 September 2023</td>
+              <td class="nhsuk-table__cell "><strong>Claim checks submitted</strong><br>Hire vehicle was approved by unviersity.</td>
             </tr>
           </tbody>
         </table>
@@ -367,31 +358,17 @@
         <ul class="app-task-list__items">
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
-              {% if data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' and data['accommodation-completed'] === 'completed' %}
-                {% if data['late-submission'] === 'true' %}
-                  <a class="app-task-list__task-name" href="TDAE-nhsbsa-comments?submitted=late">
-                    Submit checked claim
-                  </a>
-                {% else %}
+              {% if data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' and data['accommodation-completed'] === 'completed' and data['accommodation-completed-2'] === 'completed' %}
                   <a class="app-task-list__task-name" href="TDAE-provide-nhsbsa-comments">
                     Submit checked claim
                   </a>
-                {% endif %}
-              {% elif data['scenario'] === 'travel-only' and data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' %}
-                <a class="app-task-list__task-name" href="TDAE-provide-nhsbsa-comments">
-                  Submit checked claim
-                </a>
-              {% elif data['scenario'] === 'accommodation-only' and data['accommodation-completed'] === 'completed' %}
-                <a class="app-task-list__task-name" href="TDAE-provide-nhsbsa-comments">
-                  Submit checked claim
-                </a>
               {% else %}
               <span class="app-task-list__task-name">
                 Submit checked claim
               </span>
               {% endif %}
             </span>
-            {% if data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' and data['accommodation-completed'] === 'completed' %}
+            {% if data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' and data['accommodation-completed'] === 'completed' and data['accommodation-completed-2'] === 'completed' %}
               {% if data['approve-in-progress'] === 'in-progress' %}
                 <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to student</strong>
               {% elif data['approve-in-progress'] === 'completed' %}
@@ -399,10 +376,6 @@
               {% else %}
                 <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
               {% endif %}
-            {% elif data['scenario'] === 'travel-only' and data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' %}
-              <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
-            {% elif data['scenario'] === 'accommodation-only' and data['accommodation-completed'] === 'completed' %}
-              <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
             {% else %}
               <strong class="nhsuk-tag nhsuk-tag--grey" style="float: right;" id="eligibility-status">Cannot start yet</strong>
             {% endif %}
