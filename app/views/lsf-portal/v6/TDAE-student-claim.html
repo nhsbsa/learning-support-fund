@@ -81,6 +81,15 @@
           </thead>
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">{% if data['name'] %}
+                {{ data['name'] }}
+                {% else %}
+                Joe Bloggs
+                {% endif %}</td>
+                <td class="nhsuk-table__cell">3 September 2023</td>
+                <td class="nhsuk-table__cell "><strong>Claim submitted</strong><br></td>
+              </tr>
+            <tr role="row" class="nhsuk-table__row">
               <td class="nhsuk-table__cell">Mark Hirst (University)</td>
               <td class="nhsuk-table__cell">31 November 2022</td>
               <td class="nhsuk-table__cell "><strong>Claim checks submitted</strong><br>Student has only been able to upload 2 receipts as they have lost one but we are happy to accept they will have had this additional cost.</td>
@@ -90,8 +99,7 @@
 
       </div>
     </details>
-    {% endif %}
-    {% if data['status'] === 'Returned from NHSBSA' %}
+    {% elif data['status'] === 'Returned from NHSBSA' %}
     <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0" open>
       <summary class="nhsuk-details__summary">
         <span class="nhsuk-details__summary-text">
@@ -115,6 +123,15 @@
           </thead>
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">{% if data['name'] %}
+              {{ data['name'] }}
+              {% else %}
+              Joe Bloggs
+              {% endif %}</td>
+              <td class="nhsuk-table__cell">3 September 2023</td>
+              <td class="nhsuk-table__cell "><strong>Claim submitted</strong><br></td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
               <td class="nhsuk-table__cell">Mark Hirst (University)</td>
               <td class="nhsuk-table__cell">31 November 2022</td>
               <td class="nhsuk-table__cell "><strong>Claim checks submitted</strong><br></td>
@@ -129,8 +146,7 @@
 
       </div>
     </details>
-    {% endif %}
-    {% if data['status'] === 'Returned to student' %}
+    {% elif data['status'] === 'Returned to student' %}
     <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
       <summary class="nhsuk-details__summary">
         <span class="nhsuk-details__summary-text">
@@ -154,6 +170,15 @@
           </thead>
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">{% if data['name'] %}
+              {{ data['name'] }}
+              {% else %}
+              Joe Bloggs
+              {% endif %}</td>
+              <td class="nhsuk-table__cell">3 September 2023</td>
+              <td class="nhsuk-table__cell "><strong>Claim submitted</strong><br></td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
               <td class="nhsuk-table__cell">Mark Hirst (University)</td>
               <td class="nhsuk-table__cell">31 November 2022</td>
               <td class="nhsuk-table__cell "><strong>Claim checks submitted</strong><br></td>
@@ -167,6 +192,43 @@
               <td class="nhsuk-table__cell">Dean Cobb (University)</td>
               <td class="nhsuk-table__cell">11 October 2022</td>
               <td class="nhsuk-table__cell "><strong>Evidence is incorrect</strong><br>You need to add a receipt of your parking ticket for us to accept the additional cost.</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </details>
+    {% else %}
+    <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Claim feedback and history
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <table class="nhsuk-table-responsive">
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                From
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Date
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Feedback
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">{% if data['name'] %}
+              {{ data['name'] }}
+              {% else %}
+              Joe Bloggs
+              {% endif %}</td>
+              <td class="nhsuk-table__cell">3 September 2023</td>
+              <td class="nhsuk-table__cell "><strong>Claim submitted</strong><br></td>
             </tr>
           </tbody>
         </table>
