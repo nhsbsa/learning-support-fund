@@ -13,7 +13,7 @@
             "href": "javascript:history.go(-1)",
             "text": "Go back"
         }) }}
-        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>Emmit Mar</h1>
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>George Hill</h1>
     </div>
 
     <div class="nhsuk-grid-column-one-half">
@@ -22,10 +22,15 @@
         <h2 class="nhsuk-heading-s">Date of birth</h2>
         <p>01 November 2000</p>
         <h2 class="nhsuk-heading-s">Email</h2>
+        <p>George.hill@university.ac.uk</p>
     </div>
     <div class="nhsuk-grid-column-one-half">
         <h2 class="nhsuk-heading-s">Address</h2>
-        <p>1<br>Street<br>Blackpool<br>FY2 1AA</p>
+        <p>Stephenson House<br>
+        Stoddart St<br>
+        Shieldfield<br>
+        Newcastle upon Tyne <br>
+        NE2 1AW</p>
         <h2 class="nhsuk-heading-s">Phone number</h2>
         <p>07777777777</p>
     </div>
@@ -119,32 +124,20 @@
             <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
                     <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Date of claim</span>15 November 2022
+                        <span class="nhsuk-table-responsive__heading">Date of claim</span>1 August 2023
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Status </span>
-                        {% if data['Ansari'] == 'submitted' %}
-                        <strong class="nhsuk-tag nhsuk-tag--green">Submitted to NHSBSA</strong>
-                        {% else %}
-                        <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
-                        {% endif %}
+                        <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Action </span>
-                        {% if data['Ansari'] == 'submitted' %}
-                        <a class="nhsuk-link--no-visited-state"
-                            href="TDAE-student-claim?name=Emmit Mar&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
-                            claim</a>
-                        {% else %}
-                        <a class="nhsuk-link--no-visited-state"
-                            href="v6/process-claim?name=Emmit Mar">Process
-                            claim</a>
-                        {% endif %}
+                        <a class="nhsuk-link--no-visited-state" href="TDAE-student-claim?name=George Hill&status=Returned to student&evidence-completed=in-progress&evidence-completed-2=completed&accommodation-completed=completed&vehicle-hire-check=yes&accommodation-completed-2=completed&university-completed=completed&approve-in-progress=&read-only=true">View claim</a>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <p><a href="TDAE-student-previous-claims-list?name=Emmit Mar">View previous claims</a></p>
+        <p><a href="TDAE-student-previous-claims-list?name=George Hill">View previous claims</a></p>
     </div>
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-top-5">
 

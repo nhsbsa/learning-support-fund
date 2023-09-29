@@ -183,7 +183,9 @@ Claim details
         </div>
       </details>
 
-      {% if data['read-only'] != 'true' %}
+      {% if data['read-only'] == 'true' %}
+      <a class="nhsuk-button" href="TDAE-student-claim">Continue</a>
+      {% else %}
       <a class="nhsuk-button" href="TDAE-evidence-match-2">Continue</a>
       {% endif %}
 
