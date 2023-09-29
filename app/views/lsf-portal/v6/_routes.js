@@ -69,7 +69,7 @@ router.get('/v6/process-claim', (req, res) => {
 
     if (name === 'Emmit Mar') {
         req.session.data['status'] = 'To be completed'
-        req.session.data['scenario'] = 'none'
+        req.session.data['scenario'] = 'accommodation-travel'
         req.session.data['late-submission'] = 'false'
         req.session.data['breakdown'] = 'walk'
         req.session.data['wrong-evidence'] = 'false'
