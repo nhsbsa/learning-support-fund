@@ -47,7 +47,7 @@ Additional costs for your normal daily journey
 					      {{ data['additional-cost-single-day'] }}
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
-					      <a href="TDAE-placement-additional-daily-total">
+					      <a href="TDAE-placement-additional-cost-single-day">
 					        Change<span class="nhsuk-u-visually-hidden"> Additional cost frequency</span>
 					      </a>
 					    </dd>
@@ -97,7 +97,19 @@ Additional costs for your normal daily journey
 								</a>
 							</dd>
 						</div>
+						{% if data['additional-cost-single-day'] == "No" %}
+						<div class="nhsuk-summary-list__row">
+					    <dt class="nhsuk-summary-list__key">
+					      Daily Extra cost amount
+					    </dt>
+					    <dd class="nhsuk-summary-list__value">
+								£1.00
+					    </dd>
+					    <dd class="nhsuk-summary-list__actions">
 
+					    </dd>
+					  </div>
+						{% endif %}
 						{% if data['repeated-cost'] == 'No' %}
 						<div class="nhsuk-summary-list__row">
 					    <dt class="nhsuk-summary-list__key">
