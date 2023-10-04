@@ -1,0 +1,89 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Authoriser details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+
+        <h1 class="nhsuk-heading-l">Authoriser details</h1>
+
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Date submitted by student
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    10 December 2022
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Date authorised by University
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    11 December 2022
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    University name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Cumbria University
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Authoriser name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Deacon Robert
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Authoriser position
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    TDAE processor
+                </dd>
+            </div>
+            <!-- <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Authoriser comments
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Student has provided all the relevant evidence based on their additional costs
+                </dd>
+            </div> -->
+
+
+        </dl>
+        <div class="nhsuk-form-group nhsuk-u-margin-bottom-6">
+            <h2 class="nhsuk-heading-m">Comments</h2>
+            <p>Student has provided all the relevant evidence based on their additional costs</p>
+        </div>
+
+        {% if data['read-only'] != 'true' %}
+            <a class="nhsuk-button" href="TDAE-authoriser-approved">Continue</a>
+        {% endif %}
+
+
+    </div>
+
+</div>
+{% endblock %}

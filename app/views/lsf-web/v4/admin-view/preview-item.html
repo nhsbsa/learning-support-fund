@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html lang="en" id="adminTheme" class="html-admin">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+  <title>Manage knowledge base</title>
+  <link href="/css/old-admin-view.css"  rel="stylesheet">
+</head>
+
+<body class="nhs-bsa">
+  <div id="skiplink-container">
+    <div>
+      <a href="#adminContent" class="skiplink">Skip to main content</a>
+    </div>
+  </div>
+  <header class="with-proposition" id="global-header" role="banner">
+    <div class="header-wrapper">
+      <div class="header-proposition">
+        <div class="content">
+          <nav id="proposition-menu">
+            <a href="/lsf/admin/menu">
+              <img class="header-logo" src="/images/nhslogo.png" alt="NHS Business Services Authority">
+            </a>
+            <div class="user-menu">
+              <p style="float: right;">
+                Signed in as user.lastname7@user.com (<a id="signOut" href="#">Sign out</a>)
+              </p>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="side-nav dft-sidebar" role="navigation" aria-label="Navigation">
+    <ul role="list">
+      <li class="side-nav__item"><a id="studentSearchButton" href="#">Student search</a></li>
+      <li class="side-nav__item"><a id="manageUsersButton" href="#">Manage users</a></li>
+      <li class="side-nav__item"><a id="manageCollegesButton" href="#">Manage universities</a></li>
+      <li class="side-nav__item"><a id="manageCoursesButton" href="#">Manage courses</a></li>
+      <li class="side-nav__item"><a id="manageRatesButton" href="#">Manage rates</a></li>
+      <li class="side-nav__item"><a id="manageTermPaymentPercentsButton" href="#">Manage term payment percentages</a></li>
+      <li class="side-nav__item active"><a id="manageKnowledgeBaseButton" href="/lsf-web/v4/admin-view/knowledge-base">Manage knowledge base</a></li>
+      <li class="side-nav__item"><a id="manageEnrolmentYearsButton" href="#">Manage enrolment year</a></li>
+      <li class="side-nav__item"><a id="manageCosaButton" href="#">Manage attendance status</a>
+      </li>
+      <li class="side-nav__item"><a id="manageNoteTypes" href="#">Manage note types</a>
+      </li>
+      <li class="side-nav__item"><a id="manageFormsButton" href="#">Manage forms</a></li>
+      <li class="side-nav__item"><a id="managePaymentRunButton" href="#">Manage payment runs</a></li>
+      <li class="side-nav__item"><a id="invalidBankDetailsButton" href="#">Invalid bank details</a></li>
+      <li class="side-nav__item"><a id="reportMenuButton" href="#">Reporting menu</a></li>
+      <li class="side-nav__item"><a id="accessibility-statement" href="#">Accessibility</a></li>
+    </ul>
+  </nav>
+
+  <main class="elements-index" id="adminContent" role="main">
+    <div class="content-wrapper">
+      <div class="admin-page-header">
+        <div class="grid-row">
+          <div class="column-full">
+            <div class="phase-banner">
+              <p>
+                <strong class="phase-tag" style="float: left;">ALPHA</strong><span style="float: left;">This is a new service</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <a class="link-back" href="/lsf-web/v4/admin-view/add-item" id="backButton">Back</a>
+      </div>
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <h1 class="heading-large mt-0">Preview knowledge item</h1>
+          <p>Your knowledge base item will display to universities as:</p>
+          <details class="form-group" role="group">
+            <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary" id="display-area-1">Knowledge base item title</span></summary>
+            <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+              <p id="display-area-5">Textarea content</p>
+              <p><a href="#">For more information visit the NHS website</a></p>
+            </div>
+          </details>
+
+          <div class="form-group">
+            <h2  class="heading-medium mt-0">Do you want to enable this knowledge item?</h2>
+          </div>
+
+          <div class="form-group">
+            <div class="multiple-choice">
+              <input type="radio" id="enabled" name="enabled" value="true">
+              <label for="enabled" class="form-label">Yes</label>
+            </div>
+            <div class="multiple-choice">
+              <input type="radio" id="enabled" name="enabled" value="true">
+              <label for="enabled" class="form-label">No</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <a href="/lsf-web/v4/admin-view/knowledge-base" class="button" id="submit-button" role="button">Save</a>
+          </div>
+
+          <div class="form-group">
+            <a href="/lsf-web/v4/admin-view/knowledge-base">Cancel</a>
+          </div>
+        </div>
+      </div>
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <div style="background-color: #f1f1f1; border:1px solid #333; padding:20px; margin-top:100px;">
+            <h2 class="heading-m" style="margin-bottom:20px; font-weight:800">For prototype purposes only</h2>
+            <p><a href="/lsf-web/v4/admin-view/portal-kb-view">View how it would display on LSF portal</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<style>
+  /* Details component */
+summary:before {
+    bottom: 0;
+    content: '';
+    left: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    border-width: 7px 0 7px 12.124px;
+    border-left-color: inherit;
+}
+details[open] > summary:before {
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+    border-width: 12.124px 7px 0 7px;
+    border-top-color: inherit;
+}
+span.summary {
+    display: inline-block;
+    -webkit-padding-start: 24px;
+}
+/* firefox styles */
+@-moz-document url-prefix() {
+    summary {
+        display:inline-block !important;
+        padding-left: 24px;
+    }
+    summary::marker, details[open] > summary::marker  {
+        display: none;
+        content: "";
+    }
+  }
+/* Safari margin fix */
+@media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) {
+        span.summary {
+            display: inline-block;
+            -webkit-padding-start: 5px;
+        }
+    }
+}
+p#display-area-5 {
+    word-break: break-all;
+}
+</style>
+
+<script src="/js/jquery-3.5.1.min.js"></script>
+
+<script>
+  const displayAreas = [
+    document.getElementById('display-area-1'),
+    document.getElementById('display-area-2'),
+    document.getElementById('display-area-3'),
+    document.getElementById('display-area-4'),
+    document.getElementById('display-area-5')
+  ];
+
+  for (let i = 0; i < displayAreas.length; i++) {
+    const enteredData = localStorage.getItem(`enteredData-${i}`);
+    if (enteredData) {
+      displayAreas[i].textContent = enteredData;
+    } else {
+      // displayAreas[i].textContent = 'No data entered.';
+    }
+  }
+
+</script>
+</html>

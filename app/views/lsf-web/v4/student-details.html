@@ -1,0 +1,203 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Student details
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-xl">
+            <span class="nhsuk-caption-l" id="studentRef">
+                <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+            Student details
+        </h1>
+        <p>
+            Account status: <strong class="nhsuk-tag">Active</strong>
+        </p>
+    </div>
+    <div class="nhsuk-grid-column-one-third">
+        <button class="nhsuk-button nhsuk-button--secondary">Lock</button>
+    </div>
+    <div class="nhsuk-grid-column-full clear-float">
+        <div>
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-one-third">
+                    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Name</h2>
+                    <p id="studentName">{{ data['name'] }}</p>
+
+                    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Date of birth</h2>
+                    <p id="studentDOB">15 November 2000</p>
+
+                    <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Username</h2>
+                    <p id="studentUsername">{{ data['username'] }}</p>
+
+                </div>
+                <div class="nhsuk-grid-column-one-third">
+
+                        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Phone</h2>
+                        <p id="studentPhone">07777777777</p>
+
+                    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Email</h2>
+                    <p id="studentEmail">{{ data['email'] }}</p>
+                </div>
+
+                <div class="nhsuk-grid-column-one-third">
+                    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Address</h2>
+                    <p>
+                        123 Term Time Street,<br>
+                        Newcastle,<br>
+                        NE11 1AB
+                    </p>
+                </div>
+                <div class="nhsuk-grid-column-full">
+                    <div>
+                        <details class="nhsuk-details nhsuk-u-margin-bottom-5">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">Bank details</span>
+                            </summary>
+
+                            <div class="nhsuk-details__text">
+                                <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account number</h3>
+                                <p id="accountNumber">123456</p>
+
+                                <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Sort code</h3>
+                                <p id="sortcode">11-22-33</p>
+
+                                <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account holder</h3>
+                                <p id="accountholder">Emmit Mar</p>
+
+                                <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Building society number</h3>
+                                <p>
+                                    24680
+                                </p>
+                            </div>
+                        </details>
+
+                        <div class="nhsuk-action-link" >
+                            <a class="nhsuk-action-link__link" id="updateDetails">
+                                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M0 0h24v44H0z" fill="none"></path>
+                                    <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                                </svg>
+                                <span class="nhsuk-action-link__text">Edit student details</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+            <div class="tabs-nav">
+                <ul class="nhsuk-tabs__list">
+                    <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+                        <a href="#tab-Activities" class="nhsuk-tabs__tab">Activities</a>
+                    </li>
+                    <li class="nhsuk-tabs__list-item">
+                        <a href="#tab-Notes" class="nhsuk-tabs__tab">Notes</a>
+                    </li>
+                    <li class="nhsuk-tabs__list-item">
+                        <a href="#tab-Enrolments" class="nhsuk-tabs__tab">Course details</a>
+                    </li>
+                    <li class="nhsuk-tabs__list-item">
+                        <a href="#tab-Payments" class="nhsuk-tabs__tab">Next payment</a>
+                    </li>
+                    <li class="nhsuk-tabs__list-item">
+                        <a href="#tab-accountActions" class="nhsuk-tabs__tab">Actions</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nhsuk-tabs__panel" id="tab-Activities">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-one-third">
+                        <h2 class="nhsuk-heading-l">Activities</h2>
+                        <div class="nhsuk-form-group">
+                            <p><a id="viewDocuments" href="#">View documents</a></p>
+                        </div>
+                    </div>
+                    <div class="nhsuk-grid-column-two-thirds">
+                        <details class="nhsuk-details">
+                            <summary class="nhsuk-details__summary">
+                              <span class="nhsuk-details__summary-text">
+                                TDAE (Active)
+                              </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <div class="nhsuk-hint" id="example-hint">
+                                    <!-- Start Date: 01/11/2022<br>
+                                    End date: 15/08/2024<br> -->
+                                    Date created: 23/11/2022 11:10:58<br>
+                                    Date last updated: 15/12/2022 10:32:51<br>
+                                    Last updated by: Deacon Robert<br>
+                                    Cipher: drobe
+                                </div>
+                                <a href="student-course-details">Assess</a>
+                            </div>
+                          </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nhsuk-tabs__panel" id="tab-Notes">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                      <h2 class="nhsuk-heading-xs">Notes</h2>
+                      <hr>
+                      <h3 class="nhsuk-heading-m">HEI overruled student's COSA on 13 July 2023 at 4:13pm</h3>
+
+                      <p>{{ data['name'] }} told us they were not attending their course. The HEI has overruled this with the following reason:</p>
+
+                      <p>[reason]</p>
+
+                      <p>We have sent an email to {{ data['name'] }} asking them to re-confirm their attendance.</p>
+
+                      <p>Last modified by <b>Katie Jennings</b></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nhsuk-tabs__panel" id="tab-Enrolments">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-one-third">
+                        <h2 class="nhsuk-heading-l">Enrolments</h2>
+                    </div>
+                </div>
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="nhsuk-tabs__panel" id="tab-Payments">
+                <div class="nhsuk-column-one-third">
+                    <h2 class="nhsuk-heading-l">Next payment</h2>
+                </div>
+                <div class="nhsuk-column-full">
+
+                </div>
+            </div>
+
+            <div id="tab-accountActions" class="nhsuk-tabs__panel">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-one-third">
+                        <h2 class="nhsuk-heading-l">Account actions</h2>
+                    </div>
+                    <div class="nhsuk-grid-column-two-thirds">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
