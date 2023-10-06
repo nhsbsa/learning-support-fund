@@ -170,7 +170,7 @@ Student details
 										<td role="cell" class="nhsuk-table__cell">
 											<span class="nhsuk-table-responsive__heading">Academic year reference </span>
 											<span class="nhsuk-u-visually-hidden">0000000034</span>
-											<a href="#">
+											<a href="/lsf-web/v4/student-course-details">
 												<span id="enrolmentNo0">SSRN0000074-3</span>
 											</a>
 										</td>
@@ -191,7 +191,7 @@ Student details
 										<td role="cell" class="nhsuk-table__cell">
 											<span class="nhsuk-table-responsive__heading">Academic year reference </span>
 											<span class="nhsuk-u-visually-hidden">0000000031</span>
-											<a href="#">
+											<a href="/lsf-web/v4/student-course-details">
 												<span id="enrolmentNo1">SSRN0000074-2</span>
 											</a>
 										</td>
@@ -212,7 +212,7 @@ Student details
 										<td role="cell" class="nhsuk-table__cell">
 											<span class="nhsuk-table-responsive__heading">Academic year reference </span>
 											<span class="nhsuk-u-visually-hidden">0000000017</span>
-											<a href="#">
+											<a href="/lsf-web/v4/student-course-details">
 												<span id="enrolmentNo2">SSRN0000074-1</span>
 											</a>
 										</td>
@@ -256,7 +256,7 @@ Student details
 								<tr role="row" class="nhsuk-table__row">
 									<td role="cell" class="nhsuk-table__cell" scope="row">
 										<span class="nhsuk-table-responsive__heading">Enrolment No </span>
-										<a href="#">
+										<a href="/lsf-web/v4/student-course-details">
 											<span id="studentPayment">SSRN0000120-1</span>
 										</a>
 									</td>
@@ -301,10 +301,16 @@ Student details
 											<option id="5" value="Application form received">Application form received</option>
 										</select>
 									</div>
+									<div id="emailSentMsg" style="display: none;">
+										<div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
+											<span class="nhsuk-u-visually-hidden">Information: </span>
+											<p class="emailSent">Email has been sent</p>
+										</div>
+									</div>
 									<div class="nhsuk-form-group">
 										<button class="nhsuk-button" type="submit" id="emailButton">Send</button>
 										
-										<p><a id="sendGeneralEmail" href="#">Send general email</a></p>
+										<p><a id="sendGeneralEmail" href="/lsf-web/v4/general-correspondence">Send general email</a></p>
 									</div>
 								</fieldset>
 							</form>
@@ -314,4 +320,17 @@ Student details
 			</div>
     </div>
 	</div>
+{% endblock %}
+
+{% block pageScripts %}
+	<script>
+		const sendBtn = document.getElementById('emailButton');
+		const sendConfirm = document.getElementById('emailSentMsg');
+
+		sendBtn.addEventListener("click", function (event) {
+			sendConfirm.setAttribute("style", "display:block");
+		});
+
+
+	</script>
 {% endblock %}
