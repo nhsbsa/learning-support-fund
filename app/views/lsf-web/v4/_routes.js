@@ -49,6 +49,20 @@ router.post('/v4/TDAE-accommodation-check', (req, res) => {
 
 })
 
+router.post('/v4/TDAE-accommodation-check-2', (req, res) => {
+
+    const accommodationCheck2 = req.session.data['accommodation-check-2']
+
+    if (accommodationCheck2 === 'yes') {
+        req.session.data['accommodation-completed-2'] = 'completed'
+    } else {
+        req.session.data['accommodation-completed-2'] = 'in-progress'
+    }
+
+    res.redirect('/lsf-web/v4/TDAE-student-claim')
+
+})
+
 router.post('/v4/TDAE-evidence-match', (req, res) => {
 
     const evidenceMatch = req.session.data['evidence-match']
@@ -58,6 +72,26 @@ router.post('/v4/TDAE-evidence-match', (req, res) => {
     } else {
         req.session.data['evidence-completed'] = 'in-progress'
     }
+
+    res.redirect('/lsf-web/v4/TDAE-student-claim')
+
+})
+
+router.post('/v4/TDAE-evidence-match-2', (req, res) => {
+
+    const evidenceMatch2 = req.session.data['evidence-match-2']
+
+    if (evidenceMatch2 === 'yes') {
+        req.session.data['evidence-completed-2'] = 'completed'
+    } else {
+        req.session.data['evidence-completed-2'] = 'in-progress'
+    }
+
+    res.redirect('/lsf-web/v4/TDAE-student-claim')
+
+})
+
+router.post('/v4/TDAE-checked-hire-vehicle', (req, res) => {
 
     res.redirect('/lsf-web/v4/TDAE-student-claim')
 

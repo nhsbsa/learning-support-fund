@@ -23,7 +23,7 @@ Student details
         <hr>
         <div class="nhsuk-form-group" style="display: inline-block;">
             <label class="nhsuk-label" for="select-1">
-              Label text goes here
+              Attendance status
             </label>
             <select class="nhsuk-select" id="select-1" name="select-1">
               <option value="1">Pending</option>
@@ -72,12 +72,25 @@ Student details
                         Eligible
                     </p>
                 </div>
+                <div class="nhsuk-grid-column-one-third">
+                    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Repeat year</h2>
+                    <p>
+                        No
+                    </p>
+                </div>
                 <div class="nhsuk-grid-column-full">
                     <div>
                         <details class="nhsuk-details nhsuk-u-margin-bottom-5">
                             <summary class="nhsuk-details__summary">
                                 <span class="nhsuk-details__summary-text">Enrolment actions</span>
                             </summary>
+                            <div class="nhsuk-details__text">
+                              <p><a href="#">Edit</a></p>
+                              <p><a href="#">Withdraw student</a></p>
+                              <p><a href="#">View calculations</a></p>
+                              <p><a href="#">View student declaration</a></p>
+                              <p><a href="#">View student's application</a></p>
+                            </div>
                         </details>
                     </div>
                 </div>
@@ -109,6 +122,9 @@ Student details
                     </li>
                     <li class="nhsuk-tabs__list-item">
                         <a href="#tab-Payments" class="nhsuk-tabs__tab">Payments</a>
+                    </li>
+                    <li class="nhsuk-tabs__list-item">
+                        <a href="#tab-Cosa" class="nhsuk-tabs__tab">COSA</a>
                     </li>
                 </ul>
             </div>
@@ -156,27 +172,39 @@ Student details
             </div>
 
             <div class="nhsuk-tabs__panel" id="tab-Training-Grants">
-                <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-one-third">
-                        <h2 class="nhsuk-heading-l">Training Grant</h2>
-                    </div>
-                    <div class="nhsuk-grid-column-two-thirds">
-
-                    </div>
+              <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-one-third">
+                  <h2 class="nhsuk-heading-l">Training Grant</h2>
                 </div>
+
+                <div class="nhsuk-grid-column-two-thirds">
+                  <hr aria-hidden="true" />
+                  <p>
+                    <a id="assessTrainingSupport" href="#">
+                      <span class="wordbreak">SSRN0000108-4 Training Grant 09/08/2023 17:08:37 (Active)</span>
+                    </a>
+                  </p>
+                  <hr aria-hidden="true" />
+                </div>
+              </div>
             </div>
 
             <div class="nhsuk-tabs__panel" id="tab-Parental-Support">
-                <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-one-third">
-                        <h2 class="nhsuk-heading-l">Parental support</h2>
-                    </div>
+              <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-one-third">
+                  <h2 class="nhsuk-heading-l">Parental Support</h2>
                 </div>
-                <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-full">
 
-                    </div>
+                <div class="nhsuk-grid-column-two-thirds">
+                  <hr aria-hidden="true" />
+                  <p>
+                    <a id="assessParentalResponsibility" href="#">
+                      <span class="wordbreak">SSRN0000108-4 Parental Support 09/08/2023 17:12:36 (Active)</span>
+                    </a>
+                  </p>
+                  <hr aria-hidden="true" />
                 </div>
+              </div>
             </div>
 
             <div class="nhsuk-tabs__panel" id="tab-TDAE">
@@ -497,24 +525,278 @@ Student details
             </div>
 
             <div class="nhsuk-tabs__panel" id="tab-ESF">
-                <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-one-third">
-                        <h2 class="nhsuk-heading-l">ESF</h2>
-                    </div>
-                    <div class="nhsuk-grid-column-two-thirds">
+              <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-one-third">
+                  <h2 class="nhsuk-heading-l">ESF</h2>
 
-                    </div>
                 </div>
+                <div class="nhsuk-grid-column-two-thirds">
+                  <hr aria-hidden="true" />
+                  <p class="nhsuk-u-font-weight-bold nhsuk-u-text-align-centre" id="noESF">This enrolment has no ESF applications</p>
+                  <hr aria-hidden="true" />
+                </div>
+
+              </div>
             </div>
             <div class="nhsuk-tabs__panel" id="tab-Payments">
-                <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-one-third">
-                        <h2 class="nhsuk-heading-l">Payments</h2>
-                    </div>
-                    <div class="nhsuk-grid-column-two-thirds">
+              <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-one-third">
+                  <h2 class="nhsuk-heading-l">Payments</h2>
 
-                    </div>
+                  <a href="/lsf/payment/details?studentId=1" class="nhsuk-button" id="paymentButton" role="button">Manage payments</a>
                 </div>
+
+                <div class="nhsuk-grid-column-full">
+                  <table role="table" class="nhsuk-table-responsive" id="paymentsTable">
+                    <caption class="nhsuk-u-visually-hidden">Payments table</caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                      <tr role="row">
+                        <th role="columnheader" class="" scope="col">Date of next payment</th>
+                        <th role="columnheader" class="" scope="col">Value</th>
+                        <th role="columnheader" class="" scope="col">Award element</th>
+                        <th role="columnheader" class="" scope="col">Held</th>
+                        <th role="columnheader" class="" scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Date of next payment </span>
+                          <span class="nhsuk-u-visually-hidden">2020-09-01</span>
+                          <span>01/09/2020</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Value </span>
+                          <span>2475.00</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Award element </span>
+                          <span>Training Grant</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Held </span>
+                          <span>No</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Status </span>
+                          <span>Pending</span>
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Date of next payment </span>
+                          <span class="nhsuk-u-visually-hidden">2021-01-01</span>
+                          <span>01/01/2021</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Value </span>
+                          <span>2475.00</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Award element </span>
+                          <span>Training Grant</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Held </span>
+                          <span>No</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Status </span>
+                          <span>Pending</span>
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Date of next payment </span>
+                          <span class="nhsuk-u-visually-hidden">2021-05-01</span>
+                          <span>01/05/2021</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Value </span>
+                          <span>2550.00</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Award element </span>
+                          <span>Training Grant</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Held </span>
+                          <span>No</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Status </span>
+                          <span>Pending</span>
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Date of next payment </span>
+                          <span class="nhsuk-u-visually-hidden">2020-09-01</span>
+                          <span>01/09/2020</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Value </span>
+                          <span>990.00</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Award element </span>
+                          <span>Parental Support</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Held </span>
+                          <span>No</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Status </span>
+                          <span>Pending</span>
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Date of next payment </span>
+                          <span class="nhsuk-u-visually-hidden">2021-01-01</span>
+                          <span>01/01/2021</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Value </span>
+                          <span>990.00</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Award element </span>
+                          <span>Parental Support</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Held </span>
+                          <span>No</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Status </span>
+                          <span>Pending</span>
+                        </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Date of next payment </span>
+                          <span class="nhsuk-u-visually-hidden">2021-05-01</span>
+                          <span>01/05/2021</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Value </span>
+                          <span>1020.00</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Award element </span>
+                          <span>Parental Support</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Held </span>
+                          <span>No</span>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Status </span>
+                          <span>Pending</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="nhsuk-tabs__panel" id="tab-Cosa">
+              <div class="nhsuk-grid-row">
+									<div class="nhsuk-grid-column-one-third">
+										<h2 class="nhsuk-heading-l">COSA</h2>
+									</div>
+									<div class="nhsuk-grid-column-full">
+										<table role="table" class="nhsuk-table-responsive" id="cosaTable">
+											<caption class="nhsuk-u-visually-hidden">Cosa table</caption>
+											<thead role="rowgroup" class="nhsuk-table__head">
+												<tr role="row">
+													<th role="columnheader" class="" scope="col">Term</th>
+													<th role="columnheader" class="" scope="col">Student confirmed</th>
+													<th role="columnheader" class="" scope="col">Date updated by student</th>
+													<th role="columnheader" class="" scope="col">HEI confirmed</th>
+													<th role="columnheader" class="" scope="col">Date updated by HEI</th>
+												</tr>
+											</thead>
+											<tbody class="nhsuk-table__body">
+												<tr role="row" class="nhsuk-table__row">
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Term </span>
+														<span >1</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Student confirmed </span>
+
+														<span id="term1StudentInAttendance">Yes</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Date updated by student </span>
+														<span id="term1StudentDateUpdated">26 July 2023</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">HEI confirmed </span>
+
+														<span id="term1UniversityConfirmed">Yes</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Date updated by HEI </span>
+														<span id="term1HeiDateUpdated">26 July 2023</span>
+													</td>
+												</tr>
+												<tr role="row" class="nhsuk-table__row">
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Term </span>
+														<span >2</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Student confirmed </span>
+
+														<span id="term2StudentInAttendance">Yes</span>
+
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Date updated by student </span>
+														<span id="term2StudentDateUpdated">26 July 2023</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">HEI confirmed </span>
+
+														<span id="term2UniversityConfirmed">No</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Date updated by HEI </span>
+														<span id="term2HeiDateUpdated">01 August 2023</span>
+													</td>
+												</tr>
+												<tr role="row" class="nhsuk-table__row">
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Term </span>
+														<span >3</span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Student confirmed </span>
+														<span id="term3StudentInAttendance"></span>
+
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Date updated by student </span>
+														<span id="term3StudentDateUpdated"></span>
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">HEI confirmed </span>
+														<span id="term3UniversityConfirmed"></span>
+
+													</td>
+													<td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Date updated by HEI </span>
+														<span id="term3HeiDateUpdated"></span>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
             </div>
         </div>
     </div>
