@@ -35,8 +35,8 @@ Claim outcome
               <p>We have emailed Emmit Mar to tell them they will not receive NHS Learning Support Fund payments because they have discontinued their course.</p>
               <p>If they return to their course, you can update their status by submitting a change request.</p>
             {% elif data['student-status'] == 'Information mismatch' %}
-              <p>We have emailed Emmit Mar to tell them they will not receive NHS Learning Support Fund payments because there is an information mismatch.</p>
-              <p>When they have updated their information, you will need to submit a change request to receive payments.</p>
+              <p>We have emailed Emmit Mar to tell them their information is incorrect. They will not currently receive NHS Learning Support Fund payments.</p>
+              <p>After they've confirmed their information has changed, you will be able to re-confirm their attendance.</p>
             {% elif data['student-status'] == 'Not enrolled' %}
               <p>We have emailed Emmit Mar to tell them they will not receive NHS Learning Support Fund payments because they are not enrolled on this course.</p>
             {% endif %}

@@ -49,7 +49,7 @@
           <h2 class="nhsuk-tabs__title">Contents</h2>
           <ul class="nhsuk-tabs__list">
             <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
-              <a class="nhsuk-tabs__tab" href="#tab-one">Notifications (2)</a>
+              <a class="nhsuk-tabs__tab" href="#tab-one">Notifications (3)</a>
             </li>
             <li class="nhsuk-tabs__list-item">
               <a class="nhsuk-tabs__tab" href="#tab-two">Personal details</a>
@@ -80,6 +80,28 @@
                   <tbody class="nhsuk-table__body">
                       <tr role="row" class="nhsuk-table__row">
                           <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Notification</span> Information change needed
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Description </span>
+                            Your university has told us your information is incorrect. You need to update your personal or course details before confirming the change.
+                            <details class="nhsuk-details" style="margin-bottom: 0px;">
+                              <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                  What you need to change
+                                </span>
+                              </summary>
+                              <div class="nhsuk-details__text">
+                                <p>Your name on Learning Support Fund does not match University records.</p>
+                              </div>
+                            </details>
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Action </span> <a href="information-mismatch-confirm">Confirm change</a>
+                          </td>
+                      </tr>
+                      <tr role="row" class="nhsuk-table__row">
+                          <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Notification</span> Travel and Dual Accommodation Expense claim
                           </td>
                           <td role="cell" class="nhsuk-table__cell">
@@ -108,99 +130,131 @@
           <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="tab-two">
 
               <div class="nhsuk-grid-row">
-                  <div class="nhsuk-grid-column-one-third">
+                  <div class="nhsuk-grid-column-full">
                       <h2 class="nhsuk-heading-m">Personal details</h2>
-                  </div>
-                  <div class="nhsuk-grid-column-two-thirds">
-                      <div class="nhsuk-grid-row">
-                          <div class="nhsuk-grid-column-one-half">
-                              <p><strong>Name</strong><br>
-                              Joe Bloggs<br><br>
-                              <strong>Date of birth</strong><br>
-                              10/10/1992<br><br>
-                              <strong>Phone</strong><br>
-                              07777777777</p>
-                          </div>
-                          <div class="nhsuk-grid-column-one-half">
-                              <p><strong>Address</strong><br>
-                              10<br>
-                              House Avenue<br>
-                              Newcastle<br>
-                              NE11 1AB<br><br>
-                              <a href="#">Edit</a></p>
-                          </div>
-                          <div class="nhsuk-grid-column-full">
-                              <hr>
-                          </div>
+
+                    <dl class="nhsuk-summary-list">
+											<div class="nhsuk-summary-list__row">
+												<dt class="nhsuk-summary-list__key">Name</dt>
+												<dd class="nhsuk-summary-list__value">Dave Test</dd>
+												<dd class="nhsuk-summary-list__actions">
+													<a id="updateName" href="#">
+														Update<span class="nhsuk-u-visually-hidden"> name</span>
+													</a>
+												</dd>
+											</div>
+											<div class="nhsuk-summary-list__row">
+												<dt class="nhsuk-summary-list__key">Date of birth</dt>
+												<dd class="nhsuk-summary-list__value">01 September 2020</dd>
+												<dd class="nhsuk-summary-list__actions">
+													<a id="updateDOB" href="#">
+														Update<span class="nhsuk-u-visually-hidden"> date of birth</span>
+													</a>
+												</dd>
+											</div>
+											<div class="nhsuk-summary-list__row">
+												<dt class="nhsuk-summary-list__key">Phone number</dt>
+												<dd class="nhsuk-summary-list__value">2343</dd>
+												<dd class="nhsuk-summary-list__actions">
+													<a id="updatePhone" href="#">
+														Update<span class="nhsuk-u-visually-hidden"> phone number</span>
+													</a>
+												</dd>
+											</div>
+											<div class="nhsuk-summary-list__row">
+												<dt class="nhsuk-summary-list__key">Address</dt>
+												<dd class="nhsuk-summary-list__value">
+													<p>
+														<span id="studentAddressNameOrNumber" class="wordbreak">22</span><br>
+														<span id="studentAddress1" class="wordbreak">line 1</span><br />
+
+
+														<span id="studentAddressTown" class="wordbreak">Town</span><br />
+														<span id="studentPostcode">NE1 1NE</span>
+													</p>
+												</dd>
+												<dd class="nhsuk-summary-list__actions">
+													<a id="updateAddress" href="#">
+														Update<span class="nhsuk-u-visually-hidden"> address</span>
+													</a>
+												</dd>
+											</div>
+										</dl>
                       </div>
-                  </div>
-              </div>
+              <div class="nhsuk-grid-column-full">
+								<h2 class="nhsuk-heading-m">Bank details</h2>
+							</div>
+							<div class="nhsuk-grid-column-two-thirds">
+								<details class="nhsuk-details" id="userBank">
+									<summary class="nhsuk-details__summary">
+										<span id="showBankDetailsHeader" class="nhsuk-details__summary-text">Show bank details</span>
+									</summary>
+									<div class="nhsuk-details__text" id="details-content-bank-details">
+										<div class="nhsuk-grid-row">
+											<div class="nhsuk-grid-column-half">
+												<h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Account number</h3>
 
-              <div class="nhsuk-grid-row">
-                  <div class="nhsuk-grid-column-one-third">
-                      <h2 class="nhsuk-heading-m">Account details</h2>
-                  </div>
-                  <div class="nhsuk-grid-column-two-thirds">
-                      <dl class="nhsuk-summary-list">
+													<p id="accountNumber">*****003</p>
 
-                          <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                              Username
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                              JoeBloggs
-                            </dd>
 
-                            <dd class="nhsuk-summary-list__actions">
 
-                              <a href="#">
-                                Edit<span class="nhsuk-u-visually-hidden"> username</span>
-                              </a>
+												<h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Sort code</h3>
 
-                            </dd>
+													<p id="sortcode">****45</p>
 
-                          </div>
 
-                          <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                              Email
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                              joebloggs@email.com
-                            </dd>
+											</div>
+											<div class="nhsuk-grid-column-half">
+												<h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Account holder</h3>
+												<p id="accountholder">Dave</p>
 
-                            <dd class="nhsuk-summary-list__actions">
+												<h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Building society number</h3>
 
-                              <a href="#">
-                                Edit<span class="nhsuk-u-visually-hidden"> email</span>
-                              </a>
 
-                            </dd>
 
-                          </div>
+													<p id="buildingSocietyNo">************</p>
 
-                          <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                              Password
-                            </dt>
-                            <dd class="nhsuk-summary-list__value">
-                              ********
-                            </dd>
 
-                            <dd class="nhsuk-summary-list__actions">
 
-                              <a href="#">
-                                Edit<span class="nhsuk-u-visually-hidden"> password</span>
-                              </a>
+													<a id="bankDetailsEdit" href="#">Edit<span class="nhsuk-u-visually-hidden"> bank details</span></a>
 
-                            </dd>
+											</div>
+										</div>
+									</div>
+								</details>
+							</div>
+							<div class="nhsuk-grid-column-full">
+								<hr aria-hidden="true" />
+							</div>
 
-                          </div>
-
-                        </dl>
-                  </div>
-              </div>
-
+							<div class="nhsuk-grid-column-full">
+								<h2 class="nhsuk-heading-m">Account details</h2>
+							</div>
+							<div class="nhsuk-grid-column-full">
+								<dl class="nhsuk-summary-list">
+									<div class="nhsuk-summary-list__row">
+										<dt class="nhsuk-summary-list__key">Username</dt>
+										<dd class="nhsuk-summary-list__value"><span id="username" class="wordbreak">dave02</span></dd>
+										<dd class="nhsuk-summary-list__actions">
+											<a id="editUsername" href="#">Edit<span class="nhsuk-u-visually-hidden"> username</span></a>
+										</dd>
+									</div>
+									<div class="nhsuk-summary-list__row">
+										<dt class="nhsuk-summary-list__key">Email</dt>
+										<dd class="nhsuk-summary-list__value"><span id="studentEmail" class="wordbreak">marshall.dave2000+1@gmail.com</span></dd>
+										<dd class="nhsuk-summary-list__actions">
+											<a id="editEmail" href="#">Edit<span class="nhsuk-u-visually-hidden"> email address</span></a>
+										</dd>
+									</div>
+									<div class="nhsuk-summary-list__row">
+										<dt class="nhsuk-summary-list__key">Password</dt>
+										<dd class="nhsuk-summary-list__value"><span>********</span></dd>
+										<dd class="nhsuk-summary-list__actions">
+											<a id="editPassword" href="#">Edit<span class="nhsuk-u-visually-hidden"> password</span></a>
+										</dd>
+									</div>
+								</dl>
+							</div>
           </div>
           <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="tab-three">
           </div>

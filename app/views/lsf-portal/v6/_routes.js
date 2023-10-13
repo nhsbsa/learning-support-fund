@@ -50,10 +50,12 @@ router.post('/v6/COSA-student-status-change', (req, res) => {
 
     if (status === 'In attendance' && location === 'declined') {
         res.redirect('/lsf-portal/v6/COSA-status-reason')
-    } else if (status === 'Discontinued' || status === 'Not enrolled' || status === 'Information mismatch' || status === 'In attendance') {
+    } else if (status === 'Discontinued' || status === 'Not enrolled' || status === 'In attendance') {
         res.redirect('/lsf-portal/v6/COSA-student-emailed')
     } else if (status === 'Interruption') {
       res.redirect('/lsf-portal/v6/interruption')
+    } else if (status === 'Information mismatch') {
+      res.redirect('/lsf-portal/v6/COSA-information-mismatch-comment')
     } else {
         res.redirect('/lsf-portal/v6/COSA-maternity-dates')
     }
