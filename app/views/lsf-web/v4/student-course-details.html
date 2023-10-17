@@ -714,9 +714,10 @@ Student details
 												<tr role="row">
 													<th role="columnheader" class="" scope="col">Term</th>
 													<th role="columnheader" class="" scope="col">Student confirmed</th>
-													<th role="columnheader" class="" scope="col">Date updated by student</th>
+													<th role="columnheader" class="" scope="col">Date updated</th>
 													<th role="columnheader" class="" scope="col">HEI confirmed</th>
-													<th role="columnheader" class="" scope="col">Date updated by HEI</th>
+													<th role="columnheader" class="" scope="col">Date updated</th>
+                          <th role="columnheader" class="" scope="col">Action</th>
 												</tr>
 											</thead>
 											<tbody class="nhsuk-table__body">
@@ -728,11 +729,11 @@ Student details
 													<td role="cell" class="nhsuk-table__cell">
 														<span class="nhsuk-table-responsive__heading">Student confirmed </span>
 
-														<span id="term1StudentInAttendance">Yes</span>
+														<span id="term1StudentInAttendance">Not required</span>
 													</td>
 													<td role="cell" class="nhsuk-table__cell">
-														<span class="nhsuk-table-responsive__heading">Date updated by student </span>
-														<span id="term1StudentDateUpdated">26 July 2023</span>
+														<span class="nhsuk-table-responsive__heading">Date updated</span>
+														<span class="nhsuk-u-visually-hidden" id="term1StudentDateUpdated">26 July 2023</span>
 													</td>
 													<td role="cell" class="nhsuk-table__cell">
 														<span class="nhsuk-table-responsive__heading">HEI confirmed </span>
@@ -740,8 +741,12 @@ Student details
 														<span id="term1UniversityConfirmed">Yes</span>
 													</td>
 													<td role="cell" class="nhsuk-table__cell">
-														<span class="nhsuk-table-responsive__heading">Date updated by HEI </span>
+														<span class="nhsuk-table-responsive__heading">Date updated</span>
 														<span id="term1HeiDateUpdated">26 July 2023</span>
+													</td>
+                          <td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Action </span>
+														<span id="term1HeiDateUpdated"><a href="reset-attendance-comments">Reset</a></span>
 													</td>
 												</tr>
 												<tr role="row" class="nhsuk-table__row">
@@ -768,6 +773,10 @@ Student details
 														<span class="nhsuk-table-responsive__heading">Date updated by HEI </span>
 														<span id="term2HeiDateUpdated">01 August 2023</span>
 													</td>
+                          <td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Action </span>
+														<span class="nhsuk-u-visually-hidden" id="term1HeiDateUpdated"><a href="#">Reset</a></span>
+													</td>
 												</tr>
 												<tr role="row" class="nhsuk-table__row">
 													<td role="cell" class="nhsuk-table__cell">
@@ -791,6 +800,10 @@ Student details
 													<td role="cell" class="nhsuk-table__cell">
 														<span class="nhsuk-table-responsive__heading">Date updated by HEI </span>
 														<span id="term3HeiDateUpdated"></span>
+													</td>
+                          <td role="cell" class="nhsuk-table__cell">
+														<span class="nhsuk-table-responsive__heading">Action </span>
+														<span class="nhsuk-u-visually-hidden" id="term1HeiDateUpdated"><a href="#">Reset</a></span>
 													</td>
 												</tr>
 											</tbody>
