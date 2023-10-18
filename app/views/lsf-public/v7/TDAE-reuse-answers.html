@@ -13,38 +13,32 @@
         "text": "Go back"
       }) }}
 
-    <form action="information-mismatch-confirmed" method="POST">
+    <form action="v7/TDAE-reuse-answers" method="POST">
 
         <div class="nhsuk-form-group">
 
             <fieldset class="nhsuk-fieldset">
               <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  Have you corrected your NHS Learning Support Fund information?
+                  Would you like to reuse answers from a previous claim?
                 </h1>
               </legend>
 
-              <div class="nhsuk-warning-callout">
-                <h3 class="nhsuk-warning-callout__label">
-                  <span role="text">
-                    <span class="nhsuk-u-visually-hidden">Important: </span>
-                    What you needed to change
-                  </span>
-                </h3>
-                <p>Your name on Learning Support Fund does not match University records.</p>
+              <div class="nhsuk-hint" id="contact-hint">
+                You can reuse certain answers from your last 10 claims.
               </div>
 
-              <div class="nhsuk-radios nhsuk-radios--inline">
+              <div class="nhsuk-radios">
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="placement-related-comments-yes" name="placement-related-comments" type="radio" value="yes">
+                  <input class="nhsuk-radios__input" id="reuse-answers-yes" name="reuse-answers" type="radio" value="yes">
                   <label class="nhsuk-label nhsuk-radios__label" for="placement-related-comments-yes">
                     Yes
                   </label>
                 </div>
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="placement-related-comments-no" name="placement-related-comments" type="radio" value="no">
+                  <input class="nhsuk-radios__input" id="reuse-answers-no" name="reuse-answers" type="radio" value="no">
                   <label class="nhsuk-label nhsuk-radios__label" for="placement-related-comments-no">
                     No
                   </label>
@@ -55,7 +49,8 @@
 
           </div>
 
-        <button class="nhsuk-button" type="submit">Save and continue</button><br>
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
 
     </form>
 

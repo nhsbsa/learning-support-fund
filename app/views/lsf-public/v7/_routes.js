@@ -11,6 +11,18 @@ const router = express.Router();
 
 // ********************************
 
+router.post('/v7/TDAE-reuse-answers', (req, res) => {
+
+  const reuseAnswers = req.session.data['reuse-answers']
+
+  if (reuseAnswers === 'yes') {
+    res.redirect('/lsf-public/v7/TDAE-reuse-claim')
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-placement-address-multiple')
+  }
+
+})
+
 // TDAE Hire car
 
 router.post('/v7/TDAE-hire-car-cost', (req, res) => {
@@ -741,15 +753,15 @@ router.post('/v7/TDAE-travel-accommodation', (req, res) => {
         req.session.data['eligible-online'] = 'yes'
         req.session.data['claiming-travel'] = 'no'
         req.session.data['claiming-accommodation'] = 'yes'
-        res.redirect('/lsf-public/v7/TDAE-placement-address-multiple')
+        res.redirect('/lsf-public/v7/TDAE-reuse-answers')
     } else if (claimingFor.includes('car') && !claimingFor.includes('accommodation')){
         req.session.data['claiming-travel'] = 'yes'
         req.session.data['claiming-accommodation'] = 'no'
-        res.redirect('/lsf-public/v7/TDAE-placement-address-multiple')
+        res.redirect('/lsf-public/v7/TDAE-reuse-answers')
     } else if (claimingFor.includes('car', 'accommodation')) {
         req.session.data['claiming-travel'] = 'yes'
         req.session.data['claiming-accommodation'] = 'yes'
-        res.redirect('/lsf-public/v7/TDAE-placement-address-multiple')
+        res.redirect('/lsf-public/v7/TDAE-reuse-answers')
     } else {
         res.redirect('/lsf-public/v7/TDAE-travel-accommodation')
     }
