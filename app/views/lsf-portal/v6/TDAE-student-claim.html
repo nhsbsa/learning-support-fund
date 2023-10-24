@@ -375,8 +375,8 @@
         <h2 class="nhsuk-heading-m">Return to student</h2>
         <p>You can return this claim to the student if there are any issues with it. You will need to explain:</p>
         <ul>
-          <li>what needs changing for them to re-submit the claim</li>
-          <li>why you have declined the claim</li>
+          <li>why you have returned the claim</li>
+          <li>what they need to change to re-submit the claim</li>
         </ul>
         {% if data['university-completed'] === 'in-progress' or data['evidence-completed'] === 'in-progress' or data['accommodation-completed'] === 'in-progress' %}
           <a class="nhsuk-button" href="TDAE-return-decline">Return to student</a>
@@ -437,5 +437,5 @@
 
     completedSectionCount.innerHTML = completedSections;
     totalSectionCount.innerHTML = containers.length;
-  </script> 
+  </script>
 {% endblock %}

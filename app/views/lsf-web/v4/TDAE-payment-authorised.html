@@ -7,7 +7,7 @@ Payment authorised
 {% block content %}
   <div class="nhsuk-grid-row">
 
-    <div class="nhsuk-grid-column-two-thirds"> 
+    <div class="nhsuk-grid-column-two-thirds">
 
     <!-- <form action="v4/TDAE-approve-pend-reject" method="POST"> -->
 
@@ -17,11 +17,11 @@ Payment authorised
                     Payment authorised for {{ data['name'] }}
                     <span class="nhsuk-heading-m nhsuk-u-margin-top-5">Student number: {{ data['student number'] }}</span>
                 </h1>
-                
+
             </div>
         </div>
 
-        <p>Payment has been authorised and a notification has been sent to the student with the outcome of their claim.</p>
+        <p>We have emailed {{ data['name'] }} to tell them their claim has been approved. They will receive their payment within the next 15 working days.</p>
 
         <a class="nhsuk-button nhsuk-u-margin-right-4" href="student-course-details?Ansari=submitted">Student course details</a>
 

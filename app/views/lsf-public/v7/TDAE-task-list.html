@@ -53,12 +53,16 @@
                   <span class="app-task-list__task-name">
                     {% if data['university-details'] === 'completed' %}
                       <a href="TDAE-normal-summary-cya">University travel details</a>
+                    {% elif data['university-details'] === 'reused' %}
+                      <a href="TDAE-normal-summary-cya?mode-of-transport=walk">University travel details</a>
                     {% else %}
                       <a href="TDAE-normal-place-study">University travel details</a>
                     {% endif %}
                   </span>
                   {% if data['university-details'] === 'completed' %}
                     <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
+                  {% elif data['university-details'] === 'reused' %}
+                    <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag task-status">Needs reviewing</strong>
                   {% else %}
                     <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
                   {% endif %}
@@ -113,7 +117,7 @@
             </ul>
           </li>
         {% endif %}
-        
+
         {% if checked('claiming-for', 'accommodation') %}
           <li class="section-item">
             <h2 class="app-task-list__section">
@@ -211,9 +215,9 @@
                               <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag task-status">Cannot start yet</strong>
                             {% endif %}
                           {% endif %}
-                        
 
-                        
+
+
               </li>
             </ul>
           </li>

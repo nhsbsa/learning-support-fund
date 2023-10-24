@@ -20,19 +20,23 @@ University details
             <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
                 <div class="nhsuk-card__content">
                     <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
-                        Claim returned to University
+                        {% if data['return-student'] == 'Decline claim' %}
+                        Claim declined
+                        {% else %}
+                        Claim returned to university
+                        {% endif %}
                     </h1>
                 </div>
             </div>
 
-            <p>The claim has returned to the University with feedback on {% if data['return-student'] == 'Decline claim' %}
-            why it has been declined.
+            <p>The claim has returned to the university. They will see your {% if data['return-student'] == 'Decline claim' %}
+            reasons for declining the claim.
             {% else %}
-            the issues that need changing.
+            comments about what the student needs to change.
             {% endif %}
             </p>
 
-            <button class="nhsuk-button" type="submit">Return to course details</button>
+            <button class="nhsuk-button" type="submit">Return to Course details</button>
         </form>
 
     </div>

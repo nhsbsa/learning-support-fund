@@ -9,7 +9,7 @@ University details
 
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1 class="nhsuk-heading-l">Check reasons for returning to University</h1>
+      <h1 class="nhsuk-heading-l">Check reasons for returning to university</h1>
 
       <dl class="nhsuk-summary-list">
 
@@ -29,11 +29,7 @@ University details
         {% if data['return-student'] != 'Decline claim' %}
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
-              What is the reason to send the claim back to {% if data['name'] %}
-              {{ data['name'] }}
-              {% else %}
-              Joe Bloggs
-              {% endif %}?
+              Reasons for returning the claim
             </dt>
             <dd class="nhsuk-summary-list__value">
               {{ data['return-reason'] }}
@@ -48,13 +44,7 @@ University details
 
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
-              Feedback for
-              {% if data['return-student'] == 'Decline claim' %}
-              declining
-              {% else %}
-              returning
-              {% endif %}
-              the claim
+              Comments about the claim
             </dt>
             <dd class="nhsuk-summary-list__value">
               {{ data['return-more-detail'] }}
@@ -72,7 +62,7 @@ University details
 
         </dl>
 
-      <a class="nhsuk-button" href="TDAE-sent-to-student">Submit to University</a>
+      <a class="nhsuk-button" href="TDAE-sent-to-student">Return to university</a>
 
 
     </div>

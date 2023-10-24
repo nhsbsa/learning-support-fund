@@ -39,6 +39,13 @@
             </div>
 
             <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="claiming-for-car" name="claiming-for" type="checkbox" value="Public transport" {{ checked('car') }}>
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-car">
+                Public transport
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="claiming-for-community" name="claiming-for" type="checkbox" value="community" {{ checked('community') }}>
               <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-community">
                 Community mileage
