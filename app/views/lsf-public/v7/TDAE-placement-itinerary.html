@@ -27,6 +27,11 @@ What is the return mileage to your placement?
 					<a class="nhsuk-button nhsuk-button--secondary" href="v7/add-journey-mileage">Add journey mileage</a>
 					{% endif %}
 				</div>
+				{% if checked('claiming-for', 'Public transport') %}
+				<div class="nhsuk-grid-column-one-quarter">
+					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-public-transport-type?new-journey=yes">Add public transport journey</a>
+				</div>
+				{% endif %}
 				<div class="nhsuk-grid-column-one-quarter" style="width: 20%;">
 					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-evidence-type">Add extra costs</a>
 				</div>

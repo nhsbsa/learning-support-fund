@@ -11,6 +11,63 @@ const router = express.Router();
 
 // ********************************
 
+// TDAE public transport
+
+router.post('/v7/TDAE-public-transport-type', (req, res) => {
+
+    res.redirect('/lsf-public/v7/TDAE-public-transport-ticket')
+
+})
+
+router.post('/v7/TDAE-public-transport-ticket', (req, res) => {
+
+    res.redirect('/lsf-public/v7/TDAE-public-transport-daily-cost')
+
+})
+
+router.post('/v7/TDAE-public-transport-daily-cost', (req, res) => {
+
+  const newJourney = req.session.data['new-journey']
+  const claimingFor = req.session.data['claiming-for']
+
+  if (newJourney === 'yes') {
+    res.redirect('/lsf-public/v7/TDAE-public-transport-repeated')
+  } else {
+    if (claimingFor.includes('Cycle')) {
+      res.redirect('/lsf-public/v7/TDAE-cycle');
+    } else {
+      res.redirect('/lsf-public/v7/TDAE-placement-itinerary');
+    }
+  }
+
+})
+
+router.post('/v7/TDAE-public-transport-repeated', (req, res) => {
+
+  const publicTransportRepeated = req.session.data['public-transport-repeated']
+
+  if (publicTransportRepeated === 'Yes') {
+    res.redirect('/lsf-public/v7/TDAE-public-transport-days')
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-public-transport-day');
+  }
+
+})
+
+router.post('/v7/TDAE-public-transport-days', (req, res) => {
+
+  res.redirect('/lsf-public/v7/TDAE-public-transport-check')
+
+})
+
+router.post('/v7/TDAE-public-transport-check', (req, res) => {
+
+  req.session.data['public-transport'] = "1"
+
+  res.redirect('/lsf-public/v7/TDAE-placement-itinerary')
+
+})
+
 // TDAE Reuse previous claim answers
 
 router.post('/v7/TDAE-reuse-details', (req, res) => {
@@ -995,11 +1052,16 @@ router.post('/v7/TDAE-placement-to-mileage', (req, res) => {
 router.post('/v7/TDAE-placement-return-mileage', (req, res) => {
 
   const newJourney = req.session.data['new-journey']
+  const claimingFor = req.session.data['claiming-for']
 
   if (newJourney === 'yes') {
     res.redirect('/lsf-public/v7/TDAE-placement-journey-days')
   } else {
-    res.redirect('/lsf-public/v7/TDAE-placement-itinerary')
+    if (claimingFor.includes('Public transport')) {
+      res.redirect('/lsf-public/v7/TDAE-public-transport-type');
+    } else {
+      res.redirect('/lsf-public/v7/TDAE-placement-itinerary');
+    }
   }
 
 })
@@ -1111,9 +1173,14 @@ router.post('/v7/TDAE-check-dates', (req, res) => {
 router.post('/v7/TDAE-same-journey', (req, res) => {
 
   const sameJourney = req.session.data['same-journey']
+  const claimingFor = req.session.data['claiming-for']
 
   if (sameJourney === 'yes'){
+    if (claimingFor.includes('car')){
       res.redirect('/lsf-public/v7/TDAE-placement-return-mileage')
+    } else {
+      res.redirect('/lsf-public/v7/TDAE-public-transport-type')
+    }
   } else {
       res.redirect('/lsf-public/v7/TDAE-placement-itinerary')
   }

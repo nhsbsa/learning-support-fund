@@ -1,0 +1,113 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Additional costs for your normal daily journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v7/TDAE-public-transport-check" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+					<h1 class="nhsuk-heading-l">
+						<h1 class="nhsuk-heading-l">Check your answers</h1>
+					</h1>
+
+					<dl class="nhsuk-summary-list">
+
+					  <div class="nhsuk-summary-list__row">
+					    <dt class="nhsuk-summary-list__key">
+					      public transport type
+					    </dt>
+					    <dd class="nhsuk-summary-list__value">
+					     	{{ data['public-transport-type'] }}
+					    </dd>
+					    <dd class="nhsuk-summary-list__actions">
+					      <a href="TDAE-public-transport-type">
+					        Change<span class="nhsuk-u-visually-hidden"> public transport type</span>
+					      </a>
+					    </dd>
+					  </div>
+
+						<div class="nhsuk-summary-list__row">
+					    <dt class="nhsuk-summary-list__key">
+					      Ticket type
+					    </dt>
+					    <dd class="nhsuk-summary-list__value">
+					      {{ data['public-transport-ticket'] }}
+					    </dd>
+					    <dd class="nhsuk-summary-list__actions">
+					      <a href="TDAE-public-transport-ticket">
+					        Change<span class="nhsuk-u-visually-hidden"> ticket type</span>
+					      </a>
+					    </dd>
+					  </div>
+
+						<div class="nhsuk-summary-list__row">
+					    <dt class="nhsuk-summary-list__key">
+					      Daily cost
+					    </dt>
+					    <dd class="nhsuk-summary-list__value">
+					      {{ data['public-transport-daily-cost']}}
+					    </dd>
+					    <dd class="nhsuk-summary-list__actions">
+					      <a href="TDAE-public-transport-daily-cost">
+					        Change<span class="nhsuk-u-visually-hidden"> daily cost</span>
+					      </a>
+					    </dd>
+					  </div>
+
+						<div class="nhsuk-summary-list__row">
+					    <dt class="nhsuk-summary-list__key">
+					      Repeated cost
+					    </dt>
+					    <dd class="nhsuk-summary-list__value">
+								{{ data['public-transport-repeated'] }}
+					    </dd>
+					    <dd class="nhsuk-summary-list__actions">
+					      <a href="TDAE-public-transport-repeated">
+					        Change<span class="nhsuk-u-visually-hidden"> repeated cost</span>
+					      </a>
+					    </dd>
+					  </div>
+
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								{% if data['public-transport-repeated'] == 'No' %}
+									Placement date
+								{% else %}
+									Placement dates
+								{% endif %}
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{{ data['public-transport-days'] }}
+							</dd>
+							<dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-placement-additional-costs">
+									Change<span class="nhsuk-u-visually-hidden"> Additional cost amount</span>
+								</a>
+							</dd>
+						</div>
+
+					</dl>
+
+			</div>
+			<button class="nhsuk-button" type="submit">Add public transport journey</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}
