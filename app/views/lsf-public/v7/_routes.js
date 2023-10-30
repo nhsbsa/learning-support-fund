@@ -14,10 +14,15 @@ const router = express.Router();
 // TDAE public transport
 
 router.post('/v7/TDAE-public-transport-type', (req, res) => {
+  // Check if req.session.data['public-transport-type'] is defined and convert to string
+  if (req.session.data['public-transport-type']) {
+    const transportTypeReplaceCommas = req.session.data['public-transport-type'].toString().replace(/,/g, '');
 
-    res.redirect('/lsf-public/v7/TDAE-public-transport-ticket')
+    req.session.data['public-transport-type'] = transportTypeReplaceCommas;
+  }
 
-})
+  res.redirect('/lsf-public/v7/TDAE-public-transport-ticket');
+});
 
 router.post('/v7/TDAE-public-transport-ticket', (req, res) => {
 
@@ -77,15 +82,19 @@ router.post('/v7/TDAE-reuse-details', (req, res) => {
   if (reusedDetails.indexOf('placement-address-1') === -1 && reusedDetails.indexOf('placement-address-2') === -1) {
     res.redirect('/lsf-public/v7/TDAE-placement-address-multiple')
   } else if (reusedDetails.indexOf('term-time-address') === -1) {
-    req.session.data['address-number'] = "2"
+    req.session.data['address-number'] = "1"
     res.redirect('/lsf-public/v7/TDAE-same-term-time-address')
   } else {
-    req.session.data['address-number'] = "2"
+    req.session.data['address-number'] = "1"
     req.session.data['term-building-name'] = "Stephenson House"
     req.session.data['term-address-line-1'] = "Stoddart St"
     req.session.data['term-address-line-2'] = "Shieldfield"
     req.session.data['term-address-town'] = "Newcastle upon Tyne"
     req.session.data['term-address-postcode'] = "NE2 1AW"
+    req.session.data['placement-building-name'] = "Newcastle Hospital"
+    req.session.data['placement-address-line-1'] = "Main Street"
+    req.session.data['placement-address-town'] = "Newcastle upon Tyne"
+    req.session.data['placement-address-postcode'] = "NE1 1AA"
     if (reusedDetails.indexOf('university-travel-details') !== -1) {
         req.session.data['university-details'] = "reused";
     }
@@ -290,6 +299,8 @@ router.post('/v7/TDAE-placement-community-mileage-day', (req, res) => {
 
 // TDAE Evidence match
 router.post('/v7/TDAE-evidence-match', (req, res) => {
+
+  req.session.data['evidenceNumber'] = '2'
 
   res.redirect('/lsf-public/v7/TDAE-evidence-cya')
 
@@ -848,21 +859,8 @@ router.post('/v7/TDAE-travel-accommodation', (req, res) => {
         res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-alternative-journey-signpost')
     } else if (change == ('yes')) {
         res.redirect('/lsf-public/v7/TDAE-eligibility-cya')
-    } else if (!claimingFor.includes('car') && claimingFor.includes('accommodation')){
-        req.session.data['eligible-online'] = 'yes'
-        req.session.data['claiming-travel'] = 'no'
-        req.session.data['claiming-accommodation'] = 'yes'
-        res.redirect('/lsf-public/v7/TDAE-reuse-answers')
-    } else if (claimingFor.includes('car') && !claimingFor.includes('accommodation')){
-        req.session.data['claiming-travel'] = 'yes'
-        req.session.data['claiming-accommodation'] = 'no'
-        res.redirect('/lsf-public/v7/TDAE-reuse-answers')
-    } else if (claimingFor.includes('car', 'accommodation')) {
-        req.session.data['claiming-travel'] = 'yes'
-        req.session.data['claiming-accommodation'] = 'yes'
-        res.redirect('/lsf-public/v7/TDAE-reuse-answers')
     } else {
-        res.redirect('/lsf-public/v7/TDAE-travel-accommodation')
+        res.redirect('/lsf-public/v7/TDAE-reuse-answers')
     }
 
 })

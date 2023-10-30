@@ -22,9 +22,6 @@
         <div class="nhsuk-inset-text">
           <span class="nhsuk-u-visually-hidden">Claim history: </span>
           <p>Claim submitted: Monday 4 September 2023</p>
-          <p>Claim submitted to NHSBSA: Wednesday 6 September 2023</p>
-          <p>Payment approved by NHSBSA: Friday 8 September 2023</p>
-          <p>Claim paid: Monday 11 September 2023</p>
         </div>
       {% endif %}
 
@@ -42,7 +39,7 @@
             </li>
           </ul>
         </li>
-        {% if checked('claiming-for', 'car') %}
+        {% if checked('claiming-for', 'car') or checked('claiming-for', 'Public transport') %}
           <li class="section-item">
             <h2 class="app-task-list__section">
               <span class="app-task-list__section-number">2. </span> Travel costs
@@ -182,6 +179,15 @@
                   {% else %}
                     <span class="app-task-list__task-name">Submit your claim</span>
                   {% endif %}
+                  {% elif checked('claiming-for', 'Public transport') %}
+                    {% if data['university-details'] === 'completed'
+                      and data['add-placement-travel'] === 'completed'
+                      and data['add-travel-date-evidence'] === 'completed'
+                    %}
+                    <a class="app-task-list__task-name" href="TDAE-placement-cost-summary">Submit your claim</a>
+                  {% else %}
+                    <span class="app-task-list__task-name">Submit your claim</span>
+                  {% endif %}
                   {% elif checked('claiming-for', 'accommodation') %}
                     {% if data['accommodation-details'] === 'completed' %}
                       <a class="app-task-list__task-name" href="TDAE-placement-cost-summary">Submit your claim</a>
@@ -200,21 +206,29 @@
                     {% endif %}
                     {% elif checked('claiming-for', 'car') %}
                       {% if data['submit-claim'] === 'completed' %}
+                      <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
+                      {% elif data['university-details'] === 'completed' and data['add-placement-travel'] === 'completed' and data['add-travel-date-evidence'] === 'completed' %}
+                        <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not Started</strong>
+                      {% else %}
+                        <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag task-status">Cannot start yet</strong>
+                      {% endif %}
+                    {% elif checked('claiming-for', 'Public transport') %}
+                      {% if data['submit-claim'] === 'completed' %}
+                      <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
+                      {% elif data['university-details'] === 'completed' and data['add-placement-travel'] === 'completed' and data['add-travel-date-evidence'] === 'completed' %}
+                        <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not Started</strong>
+                      {% else %}
+                        <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag task-status">Cannot start yet</strong>
+                      {% endif %}
+                    {% elif checked('claiming-for', 'accommodation') %}
+                      {% if data['submit-claim'] === 'completed' %}
                         <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
-                        {% elif data['university-details'] === 'completed' and data['add-placement-travel'] === 'completed' and data['add-travel-date-evidence'] === 'completed' %}
+                        {% elif data['accommodation-details'] === 'completed' %}
                           <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not Started</strong>
                         {% else %}
                           <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag task-status">Cannot start yet</strong>
                         {% endif %}
-                        {% elif checked('claiming-for', 'accommodation') %}
-                          {% if data['submit-claim'] === 'completed' %}
-                            <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
-                            {% elif data['accommodation-details'] === 'completed' %}
-                              <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not Started</strong>
-                            {% else %}
-                              <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag task-status">Cannot start yet</strong>
-                            {% endif %}
-                          {% endif %}
+                      {% endif %}
 
 
 

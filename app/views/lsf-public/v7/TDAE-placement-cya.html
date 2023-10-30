@@ -20,6 +20,7 @@ Check your answers
 
 	    <dl class="nhsuk-summary-list">
 
+				{% if data['claiming-for'] == 'car' %}
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Miles travelled to and from placement
@@ -52,6 +53,15 @@ Check your answers
 						£16.00
 					</dd>
 				</div>
+				{% endif %}
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Total public transport tickets cost
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						£12.80
+					</dd>
+				</div>
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Comments
@@ -80,7 +90,11 @@ Check your answers
 	          Amount to be reimbursed
 	        </dt>
 	        <dd class="nhsuk-summary-list__value">
-	            £119.32
+	            {% if data['claiming-for'] == 'car' %}
+							£119.32
+							{% else %}
+							£12.80
+							{% endif %}
 	        </dd>
 	      </div>
 

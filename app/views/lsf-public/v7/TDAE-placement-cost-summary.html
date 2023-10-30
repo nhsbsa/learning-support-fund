@@ -42,6 +42,16 @@ Your costs
         </dd>
       </div>
       {% endif %}
+      {% if checked('claiming-for', 'Public transport') %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Travel
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £12.80
+        </dd>
+      </div>
+      {% endif %}
       {% if checked('claiming-for', 'hire-car') %}
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
@@ -78,7 +88,7 @@ Your costs
           {% elif checked('claiming-for', 'hire-car') %}
             £239.32
           {% else %}
-            £119.32
+            £12.80
           {% endif %}
         </dd>
       </div>
