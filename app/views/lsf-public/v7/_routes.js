@@ -822,7 +822,7 @@ router.post('/v7/TDAE-placement-address-cya', (req, res) => {
         req.session.data['address-number'] = '4'
         res.redirect('/lsf-public/v7/TDAE-placement-address-more')
     } else {
-      if (reusedDetails.indexOf('term-time-address') !== -1) {
+      if (reusedDetails && reusedDetails.indexOf('term-time-address') !== -1) {
         req.session.data['term-building-name'] = "Stephenson House"
         req.session.data['term-address-line-1'] = "Stoddart St"
         req.session.data['term-address-line-2'] = "Shieldfield"
@@ -1104,21 +1104,19 @@ router.post('/v7/TDAE-placement-comments', (req, res) => {
 })
 
 router.post('/v7/TDAE-placement-address', (req, res) => {
+  const reusedDetails = req.session.data['reused-details'];
 
-  const reusedDetails = req.session.data['reused-details']
-
-  if (reusedDetails.indexOf('term-time-address') !== -1) {
-    req.session.data['term-building-name'] = "Stephenson House"
-    req.session.data['term-address-line-1'] = "Stoddart St"
-    req.session.data['term-address-line-2'] = "Shieldfield"
-    req.session.data['term-address-town'] = "Newcastle upon Tyne"
-    req.session.data['term-address-postcode'] = "NE2 1AW"
-    res.redirect('/lsf-public/v7/TDAE-eligibility-cya')
+  if (reusedDetails && reusedDetails.indexOf('term-time-address') !== -1) {
+    req.session.data['term-building-name'] = "Stephenson House";
+    req.session.data['term-address-line-1'] = "Stoddart St";
+    req.session.data['term-address-line-2'] = "Shieldfield";
+    req.session.data['term-address-town'] = "Newcastle upon Tyne";
+    req.session.data['term-address-postcode'] = "NE2 1AW";
+    res.redirect('/lsf-public/v7/TDAE-eligibility-cya');
   } else {
-    res.redirect('/lsf-public/v7/TDAE-same-term-time-address')
+    res.redirect('/lsf-public/v7/TDAE-same-term-time-address');
   }
-
-})
+});
 
 
 router.post('/v7/TDAE-start-claim', (req, res) => {
