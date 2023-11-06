@@ -51,10 +51,10 @@
                     <dd class="nhsuk-summary-list__actions">
                       <a href="TDAE-placement-address">
                         Change<span class="nhsuk-u-visually-hidden"> placement address</span>
-                      </a> or
+                      </a>{% if data['placement-2-building-name'] %} or
                       <a href="TDAE-placement-address-cya">
                         Remove<span class="nhsuk-u-visually-hidden"> placement address</span>
-                      </a>
+                      </a>{% endif %}
                     </dd>
                   </div>
                   {% if data['placement-2-building-name'] %}
@@ -164,6 +164,8 @@
               <h2 class="nhsuk-heading-m">
                 Do you want to add another placement address?
               </h2>
+
+              <div class="nhsuk-hint">Select yes if you are claiming for costs relating to spoke placements as well as your hub placement.</div>
 
               <div class="nhsuk-radios">
 
