@@ -357,7 +357,15 @@ router.post('/v7/COSA-confirm-attendance', (req, res) => {
 // Placement evidence
 router.get('/v7/TDAE-placement-evidence', (req, res) => {
 
-  res.redirect('/lsf-public/v7/TDAE-evidence-match')
+  const further = req.session.data['evidence-type']
+
+  if (further === 'further') {
+    res.redirect('/lsf-public/v7/TDAE-evidence-cya')
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-evidence-match')
+  }
+
+
 
 })
 

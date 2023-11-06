@@ -31,123 +31,98 @@ Evidence you have uploaded
       <form action="v7/TDAE-evidence-mini-cya" method="POST">
     {% endif %}
 
-    {% if data['week'] != '2' %}
-
-        <h1 class="nhsuk-heading-l">Uploaded evidence for period 1</h1>
-
-        {% if data['evidenceNumber'] === '2' or data['evidenceNumber'] === '3' %}
-          <p>You have uploaded evidence for all the extra costs. You can still upload more evidence if you want to.</p>
-        {% else %}
-        <p>You still need to give us evidence for:</p>
-
-        <ul class="nhsuk-list nhsuk-list--bullet">
-          <li>Parking charges</li>
-          <li class="nhsuk-list-style-none">
-            <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
-              <li>Tuesday 15 August 2023</li>
-              <li>Wednesday 16 August 2023</li>
-              <li>Thursday 17 August 2023</li>
-            </ul>
-          </li>
-        </ul>
-        {% endif %}
-
-        {% if data['evidenceNumber'] == '2' or data['evidenceNumber'] == '3' %}
-          <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-evidence?evidenceNumber=3">Upload evidence</a>
-        {% else %}
-          <a class="nhsuk-button" href="TDAE-placement-evidence?evidenceNumber=2">Upload evidence</a>
-        {% endif %}
-
-        <h2 class="nhsuk-heading-m">Evidence you have uploaded</h2>
-
-        <table class="nhsuk-table">
-            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                    File
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    Cost type
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    Action
-                </th>
-              </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell ">
-                    <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
-                      snapshot-032-07-03-2023.jpg
-                    </a>
-                </td>
-                <td class="nhsuk-table__cell ">
-                  {{ data['public-transport-type'] }} ticket on Monday 6 October 2023<br>
-                  {{ data['public-transport-type'] }} ticket on Tuesday 7 October 2023<br>
-                  {{ data['public-transport-type'] }} ticket on Wednesday 8 October 2023<br>
-                  {{ data['public-transport-type'] }} ticket on Thursday 9 October 2023
-                </td>
-                <td class="nhsuk-table__cell ">
-                    <a href="TDAE-evidence-mini-cya?evidence=removed">Remove</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <a class="nhsuk-button" href="TDAE-evidence-comment?week-1=completed">Save and continue</a>
-
-      {% else %}
-
-      <h1 class="nhsuk-heading-l">Uploaded evidence for period 2</h1>
+      <h1 class="nhsuk-heading-l">Uploaded evidence for period 1</h1>
 
       <p>You have uploaded evidence for all the extra costs. You can still upload more evidence if you want to.</p>
 
-      <a class="nhsuk-button nhsuk-button--secondary" href="#">Upload evidence</a>
+      </div>
 
-      <h2 class="nhsuk-heading-m">Evidence you have uploaded</h2>
+      <div class="nhsuk-grid-column-full">
 
-        <table class="nhsuk-table">
-          <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
-          <thead role="rowgroup" class="nhsuk-table__head">
-            <tr role="row">
-              <th role="columnheader" class="" scope="col">
-                  File
-              </th>
-              <th role="columnheader" class="" scope="col">
-                  Cost type
-              </th>
-              <th role="columnheader" class="" scope="col">
-                  Action
-              </th>
-            </tr>
-          </thead>
-          <tbody class="nhsuk-table__body">
-            <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell ">
-                  <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
-                    snapshot-032-07-03-2023.jpg
-                  </a>
-              </td>
-              <td class="nhsuk-table__cell ">
-                Parking charges on Monday 12 June 2023<br>
-                Parking charges on Tuesday 13 June 2023<br>
-                Parking charges on Wednesday 14 June 2023<br>
-                Parking charges on Thursday 15 June 2023<br>
-                Parking charges on Friday 16 June 2023<br>
-              </td>
-              <td class="nhsuk-table__cell ">
-                  <a href="TDAE-evidence-mini-cya?evidence=removed">Remove</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <h2 class="nhsuk-heading-m">Evidence you have uploaded</h2>
 
-        <a class="nhsuk-button" href="TDAE-evidence-pause-multiple?week-2=completed">Save and continue</a>
+          <table class="nhsuk-table">
+              <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                      Cost type and date
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                      File
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                      Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">
+                      {{ data['public-transport-type'] }} ticket on Monday 6 October 2023
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link--no-visited-state" href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
+                      snapshot-032-07-03-2023.jpg
+                    </a></p>
+                    {% if data['evidence-type'] == 'further' %}
+                      <a class="nhsuk-link--no-visited-state" href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
+                        Ticket07-0323.jpg
+                      </a>
+                    {% endif %}
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                      <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link--no-visited-state" href="TDAE-evidence-remove">Remove</a></p>
+                      {% if data['evidence-type'] == 'further' %}<p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link--no-visited-state" href="TDAE-evidence-remove">Remove</a></p>{% endif %}
+                      <a class="nhsuk-link--no-visited-state" href="TDAE-placement-evidence?evidence-type=further">Add more evidence</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">
+                      {{ data['public-transport-type'] }} ticket on Tuesday 7 October 2023
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <a class="nhsuk-link--no-visited-state" href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
+                      snapshot-032-07-03-2023.jpg
+                    </a>
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link--no-visited-state" href="TDAE-evidence-remove">Remove</a></p>
+                    <a class="nhsuk-link--no-visited-state" href="TDAE-placement-evidence?evidence-type=further">Add more evidence</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">
+                      {{ data['public-transport-type'] }} ticket on Wednesday 8 October 2023
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <a class="nhsuk-link--no-visited-state" href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
+                      snapshot-032-07-03-2023.jpg
+                    </a>
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link--no-visited-state" href="TDAE-evidence-remove">Remove</a></p>
+                    <a class="nhsuk-link--no-visited-state" href="TDAE-placement-evidence?evidence-type=further">Add more evidence</a>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">
+                      {{ data['public-transport-type'] }} ticket on Thursday 9 October 2023
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <a class="nhsuk-link--no-visited-state" href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
+                      snapshot-032-07-03-2023.jpg
+                    </a>
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link--no-visited-state" href="TDAE-evidence-remove">Remove</a></p>
+                    <a class="nhsuk-link--no-visited-state" href="TDAE-placement-evidence?evidence-type=further">Add more evidence</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-      {% endif %}
-
-    </form>
+          <a class="nhsuk-button" href="TDAE-evidence-comment?week-1=completed">Save and continue</a>
 
   </div>
 
