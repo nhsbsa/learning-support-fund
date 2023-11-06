@@ -79,8 +79,10 @@ router.post('/v7/TDAE-reuse-details', (req, res) => {
 
   const reusedDetails = req.session.data['reused-details']
 
+  req.session.data['submit-claim'] = "incomplete"
+
   if (reusedDetails.indexOf('placement-address-1') === -1 && reusedDetails.indexOf('placement-address-2') === -1) {
-    res.redirect('/lsf-public/v7/TDAE-placement-address-multiple')
+    res.redirect('/lsf-public/v7/TDAE-placement-address')
   } else if (reusedDetails.indexOf('term-time-address') === -1) {
     req.session.data['address-number'] = "1"
     res.redirect('/lsf-public/v7/TDAE-same-term-time-address')
@@ -116,7 +118,7 @@ router.post('/v7/TDAE-reuse-answers', (req, res) => {
   if (reuseAnswers === 'yes') {
     res.redirect('/lsf-public/v7/TDAE-reuse-claim')
   } else {
-    res.redirect('/lsf-public/v7/TDAE-placement-address-multiple')
+    res.redirect('/lsf-public/v7/TDAE-placement-address')
   }
 
 })
@@ -1122,7 +1124,8 @@ router.post('/v7/TDAE-placement-address', (req, res) => {
     req.session.data['term-address-postcode'] = "NE2 1AW";
     res.redirect('/lsf-public/v7/TDAE-eligibility-cya');
   } else {
-    res.redirect('/lsf-public/v7/TDAE-same-term-time-address');
+    req.session.data['address-number'] = '1'
+    res.redirect('/lsf-public/v7/TDAE-placement-address-cya');
   }
 });
 
