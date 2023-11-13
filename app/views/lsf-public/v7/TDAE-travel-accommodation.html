@@ -25,10 +25,6 @@
             </h1>
           </legend>
 
-          <!--<div class="nhsuk-hint" id="example-hint">
-            These are the costs you'll be claiming for your placement.
-          </div>-->
-
           <div class="nhsuk-checkboxes">
 
             <div class="nhsuk-checkboxes__item">
@@ -48,7 +44,7 @@
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="claiming-for-cycle" name="claiming-for" type="checkbox" value="Cycle" {{ checked('Cycle') }}>
               <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-cycle">
-                Cycling journey to placement
+                Cycle journey to placement
               </label>
             </div>
 
@@ -62,7 +58,7 @@
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="claiming-for-hire" name="claiming-for" type="checkbox" value="hire-car" {{ checked('hire-car') }}>
               <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-hire">
-                Hire vehicle
+                Hiring a vehicle
               </label>
             </div>
 
@@ -86,6 +82,24 @@
         </fieldset>
 
       </div>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            When can I hire a vehicle?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>You need permission from your university to hire a vehicle. Contact your university before hiring a vehicle for approval. To claim the costs of this, you will need to tell us:</p>
+          <ul>
+            <li>which dates you hired a vehicle on</li>
+            <li>why you had to hire a vehicle</li>
+            <li>who at your university approved your request</li>
+            <li>when this request was approved</li>
+          </ul>
+
+        </div>
+      </details>
 
       <button class="nhsuk-button" type="submit">Continue</button><br>
       <a href="TDAE-start-claim">Cancel</a>

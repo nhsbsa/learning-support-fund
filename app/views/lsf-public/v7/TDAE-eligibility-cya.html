@@ -15,22 +15,27 @@ Check your answers
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Last day you’re claiming for
+                Claim dates
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {% if data['incur-cost-day'] %}
-                  {{ data['incur-cost-day'] }} <span class="cya-month">{{ data['incur-cost-month'] }}</span> {{ data['incur-cost-year'] }}
+                {% if data['claim-start-day'] %}
+                  {{ data['claim-start-day'] }} <span class="cya-month">{{ data['claim-start-month'] }}</span> {{ data['claim-start-year'] }}
+                {% else %}
+                  6 October 2023
+                {% endif %}
+                 to
+                {% if data['claim-end-day'] %}
+                  {{ data['claim-end-day'] }} <span class="cya-month">{{ data['claim-end-month'] }}</span> {{ data['claim-end-year'] }}
                 {% else %}
                   9 October 2023
                 {% endif %}
               </dd>
               <dd class="nhsuk-summary-list__actions">
                 <a href="TDAE-incur-costs">
-                  Change<span class="nhsuk-u-visually-hidden"> last day you’re claiming for</span>
+                  Change<span class="nhsuk-u-visually-hidden"> claim start date</span>
                 </a>
               </dd>
             </div>
-
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
                 Academic year

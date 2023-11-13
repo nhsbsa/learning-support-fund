@@ -20,36 +20,80 @@
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  When was the last day you’re claiming for?
+                  What is the start and end date of your claim?
                 </h1>
               </legend>
+
+          <div class="nhsuk-form-group">
+            <legend class="nhsuk-fieldset__legend nhsuk-label--s">
+               <h2 class="nhsuk-fieldset__heading">
+                 Claim start date
+               </h2>
+             </legend>
               <div class="nhsuk-hint" id="example-hint">
                 For example, 15 09 2023
               </div>
-
               <div class="nhsuk-date-input" id="example">
                 <div class="nhsuk-date-input__item">
                   <div class="nhsuk-form-group">
-                    <label class="nhsuk-label nhsuk-date-input__label" for="incur-cost-day">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="incur-cost-start-day">
                       Day
                     </label>
-                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="incur-cost-day" name="incur-cost-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="incur-cost-start-day" name="incur-cost-start-day" type="text" pattern="[0-9]*" inputmode="numeric">
                   </div>
                 </div>
                 <div class="nhsuk-date-input__item">
                   <div class="nhsuk-form-group">
-                    <label class="nhsuk-label nhsuk-date-input__label" for="incur-cost-month">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="incur-cost-start-month">
                       Month
                     </label>
-                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="incur-cost-month" name="incur-cost-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="incur-cost-start-month" name="incur-cost-start-month" type="text" pattern="[0-9]*" inputmode="numeric">
                   </div>
                 </div>
                 <div class="nhsuk-date-input__item">
                   <div class="nhsuk-form-group">
-                    <label class="nhsuk-label nhsuk-date-input__label" for="incur-cost-year">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="incur-cost-start-year">
                       Year
                     </label>
-                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="incur-cost-year" name="incur-cost-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="incur-cost-start-year" name="incur-cost-start-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="nhsuk-form-group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--s">
+                 <h2 class="nhsuk-fieldset__heading">
+                   Claim end date
+                 </h2>
+               </legend>
+                <div class="nhsuk-hint" id="example-hint">
+                  For example, 22 09 2023
+                </div>
+                <div class="nhsuk-date-input" id="example">
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="incur-cost-day">
+                        Day
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="incur-cost-day" name="incur-cost-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="incur-cost-month">
+                        Month
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="incur-cost-month" name="incur-cost-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="incur-cost-year">
+                        Year
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="incur-cost-year" name="incur-cost-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
                   </div>
                 </div>
               </div>

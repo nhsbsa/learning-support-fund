@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  Do you want to provide any related comments to your placement additional costs?
+Is your term time address the same?
 {% endblock %}
 
 {% block content %}
@@ -13,29 +13,34 @@
         "text": "Go back"
       }) }}
 
-    <form action="v7/TDAE-placement-additional-comments" method="POST">
+    <form action="v7/TDAE-accommodation-same-end-date" method="POST">
 
         <div class="nhsuk-form-group">
 
             <fieldset class="nhsuk-fieldset">
               <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  Do you want to tell us anything more about your placement travel details?
+                  Was 9 October 2023 the end date of your booking?
                 </h1>
               </legend>
+
+              <!--<div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+                <p>13 September 2023</p>
+              </div>-->
 
               <div class="nhsuk-radios">
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="placement-related-comments-yes" name="placement-related-comments" type="radio" value="yes">
-                  <label class="nhsuk-label nhsuk-radios__label" for="placement-related-comments-yes">
+                  <input class="nhsuk-radios__input" id="same-accommodation-end-date-yes" name="same-accommodation-end-date" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="same-accommodation-end-date-yes">
                     Yes
                   </label>
                 </div>
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="placement-related-comments-no" name="placement-related-comments" type="radio" value="no">
-                  <label class="nhsuk-label nhsuk-radios__label" for="placement-related-comments-no">
+                  <input class="nhsuk-radios__input" id="same-accommodation-end-date-no" name="same-accommodation-end-date" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="same-accommodation-end-date-no">
                     No
                   </label>
                 </div>

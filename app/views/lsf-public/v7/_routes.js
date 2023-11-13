@@ -11,6 +11,19 @@ const router = express.Router();
 
 // ********************************
 
+router.post('/v7/TDAE-costs-already-claimed', (req, res) => {
+
+  const alreadyClaimed = req.session.data['already-claimed']
+
+  if (alreadyClaimed === 'yes') {
+      res.redirect('/lsf-public/v7/TDAE-reuse-answers')
+  } else {
+      res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-costs-already-claimed')
+  }
+
+
+})
+
 // TDAE public transport
 
 router.post('/v7/TDAE-public-transport-type', (req, res) => {
@@ -254,7 +267,37 @@ router.post('/v7/TDAE-dates-warning', (req, res) => {
 
 router.post('/v7/TDAE-accommodation-stays', (req, res) => {
 
-    res.redirect('/lsf-public/v7/TDAE-accommodation-start-date')
+  const separateBookings = req.session.data['stays']
+
+  if (separateBookings === '2') {
+      res.redirect('/lsf-public/v7/TDAE-accommodation-start-date')
+  } else {
+      res.redirect('/lsf-public/v7/TDAE-accommodation-same-start-date')
+  }
+
+})
+
+router.post('/v7/TDAE-accommodation-same-start-date', (req, res) => {
+
+  const sameStartDate = req.session.data['same-accommodation-start-date']
+
+  if (sameStartDate === 'yes') {
+      res.redirect('/lsf-public/v7/TDAE-accommodation-same-end-date')
+  } else {
+      res.redirect('/lsf-public/v7/TDAE-accommodation-start-date')
+  }
+
+})
+
+router.post('/v7/TDAE-accommodation-same-end-date', (req, res) => {
+
+  const sameEndDate = req.session.data['same-accommodation-end-date']
+
+  if (sameEndDate === 'yes') {
+      res.redirect('/lsf-public/v7/TDAE-accommodation-address')
+  } else {
+      res.redirect('/lsf-public/v7/TDAE-accommodation-end-date')
+  }
 
 })
 
@@ -275,6 +318,19 @@ router.post('/v7/TDAE-placement-week-days', (req, res) => {
 router.post('/v7/TDAE-placement-community-mileage-cya', (req, res) => {
 
   res.redirect('/lsf-public/v7/TDAE-placement-itinerary')
+
+})
+
+router.post('/v7/TDAE-placement-same-start-date', (req, res) => {
+
+  const sameDate = req.session.data['same-placement-start-date']
+
+  if (sameDate === 'yes') {
+      res.redirect('/lsf-public/v7/TDAE-placement-week-days')
+  } else {
+      res.redirect('/lsf-public/v7/TDAE-start-claim')
+  }
+
 
 })
 

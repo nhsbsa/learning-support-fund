@@ -20,7 +20,7 @@ Is your term time address the same?
             <fieldset class="nhsuk-fieldset">
               <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  {% if data['accommodation-different-cost-number'] == '2' %}Second{% else %}First{% endif %} cost per night
+                  What was the {% if data['accommodation-different-cost-number'] == '2' %}second{% else %}first{% endif %} cost per night for this booking?
                 </h1>
               </legend>
 
@@ -49,7 +49,7 @@ Is your term time address the same?
                   Which nights cost this amount?
                 </label>
                 <div class="nhsuk-hint" id="example-hint">
-                  Select all that apply
+                  Select all that apply.
                 </div>
                 <div class="nhsuk-checkboxes">
                   {% if data['accommodation-different-cost-number'] != '2' %}

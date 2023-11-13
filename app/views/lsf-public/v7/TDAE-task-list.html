@@ -14,7 +14,7 @@
       {% endif %}
 
       {% if data['submit-claim'] != 'completed' %}
-        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are tasks incomplete</h2>
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete tasks</h2>
         <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed <span id="completedCount">0</span> of <span id="sectionLength">5</span> sections.</p>
       {% endif %}
 
@@ -72,7 +72,7 @@
                   {% elif data['add-placement-travel'] == 'completed' %}
                     <a class="app-task-list__task-name" href="TDAE-placement-itinerary">Placement travel details</a>
                   {% else %}
-                    <a class="app-task-list__task-name" href="TDAE-start-claim">Placement travel details</a>
+                    <a class="app-task-list__task-name" href="TDAE-placement-same-start-date">Placement travel details</a>
                   {% endif %}
                 </span>
                 {% if data['add-placement-travel'] === 'completed' %}
@@ -99,9 +99,9 @@
                 <li class="app-task-list__item nhsuk-u-clear">
                   <span class="app-task-list__task-name">
                     {% if data['submit-claim'] === 'completed' %}
-                      <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">Hire vehicle</a>
+                      <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">Hiring a vehicle</a>
                     {% else %}
-                      <a class="app-task-list__task-name" href="TDAE-hire-car-cost">Hire vehicle</a>
+                      <a class="app-task-list__task-name" href="TDAE-hire-car-cost">Hiring a vehicle</a>
                     {% endif %}
                   </span>
                   {% if data['hire-car'] === 'completed' %}
