@@ -1,0 +1,206 @@
+{% extends 'layout-admin.html' %}
+
+{% block pageTitle %}
+Update user
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+	<div class="admin-page-header">
+		<a class="link-back" href="/lsf/admin/user/search" id="backButton">Back</a>
+	</div>
+	<form name="userDetailsForm" action="/lsf-web/v4/admin-view/update-user-done" method="post" novalidate="">
+		<div class="grid-row">
+			<div class="column-full">
+
+
+				<h1 class="heading-large mt-0">Update user</h1>
+			</div>
+
+			<div class="column-half">
+				<div class="form-group">
+					<label id="email-label" for="email" class="form-label-bold">Email</label>
+
+
+					<input name="email" id="email" class="form-control w-100" type="text" spellcheck="false" inputmode="email"
+						autocomplete="off" maxlength="254" value="nhs.nhsbsa+1@gmail.com">
+				</div>
+
+				<div class="form-group">
+					<label id="lastName-label" for="lastName" class="form-label-bold">Surname</label>
+
+					<input name="lastName" id="lastName" class="form-control w-100" type="text" maxlength="35" value="Processor">
+				</div>
+
+				<div class="form-group">
+					<label id="firstname-label" for="firstname" class="form-label-bold">First name</label>
+
+
+					<input class="form-control w-100" name="firstName" id="firstname" type="text" maxlength="35" value="Role">
+				</div>
+
+				<div class="form-group">
+					<label id="role-label" for="roleDrop" class="form-label-bold">Role(s)</label>
+
+					<label id="hiddenSearchRole-label" for="hiddenSearch" class="visually-hidden">Role(s)</label>
+
+					<select class="select-multiple form-control w-100" multiple="multiple" th:field="*{roles}" id="roleDrop" onchange="showColleges()">
+						<option value="" disabled="disabled">Please Select...</option>
+						<option value="2" selected="selected" data-select2-id="select2-data-16-aro0">ROLE_PROCESSOR</option>
+						<option value="3">ROLE_TECHNICAL_SUPPORT_OFFICER</option>
+						<option value="4">ROLE_MANAGEMENT_SUPPORT</option>
+						<option value="5">ROLE_TEAM_MANAGER</option>
+						<option value="6">ROLE_CALL_CENTRE</option>
+						<option value="7">ROLE_CALL_CENTRE_MANAGER</option>
+						<option value="8">ROLE_FINANCE</option>
+						<option value="9">ROLE_SUPER_USER</option>
+						<option value="10">ROLE_HEI_USER</option>
+						<option value="11">ROLE_HEI_ADMIN</option>
+						<option value="12">ROLE_HEI_READ</option>
+					</select>
+				</div>
+
+				<div id="locationContainer" class="form-group" style="display: block;">
+					<label id="location-label" for="location" class="form-label-bold">Location</label>
+					<input class="form-control w-100" name="location" id="location" type="text" maxlength="100" value="">
+				</div>
+			</div>
+		</div>
+
+		<div class="grid-row">
+			<div class="column-one-half" id="collegeContainer" style="display: none;">
+				<div class="form-group">
+					<label id="college-label" for="collegeDrop" class="form-label-bold">College</label>
+
+
+					<select class="form-control w-100" id="collegeDrop" name="college">
+						<option value="">Please select...</option>
+						<option value="1">ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</option>
+						<option value="2">ANGLIA RUSKIN UNIVERSITY - CHELMSFORD</option>
+						<option value="3">ANGLIA RUSKIN UNIVERSITY - PETERBOROUGH</option>
+						<option value="4">BIRMINGHAM CITY UNIVERSITY</option>
+						<option value="5">BIRMINGHAM METROPOLITAN COLLEGE</option>
+						<option value="6">BOURNEMOUTH UNIVERSITY</option>
+						<option value="7">BPP UNIVERSITY LTD</option>
+						<option value="8">BRUNEL UNIVERSITY LONDON</option>
+						<option value="9">BUCKS NEW UNIVERSITY</option>
+						<option value="10">CANTERBURY CHRIST CHURCH UNIVERSITY</option>
+						<option value="11">CITY UNIVERSITY LONDON</option>
+						<option value="12">COLCHESTER INSTITUTE</option>
+						<option value="13">COVENTRY UNIVERSITY</option>
+						<option value="14">DE MONTFORT UNIVERSITY</option>
+						<option value="15">EDGE HILL UNIVERSITY</option>
+						<option value="16">KEELE UNIVERSITY</option>
+						<option value="17">KINGS COLLEGE LONDON</option>
+						<option value="18">KINGSTON UNIVERSITY</option>
+						<option value="19">LEEDS BECKETT UNIVERSITY</option>
+						<option value="20">LIVERPOOL JOHN MOORES UNIVERSITY</option>
+						<option value="21">LONDON METROPOLITAN UNIVERSITY</option>
+						<option value="22">LONDON SOUTH BANK UNIVERSITY</option>
+						<option value="23">MANCHESTER METROPOLITAN UNIVERSITY</option>
+						<option value="24">MIDDLESEX UNIVERSITY</option>
+						<option value="25">NEW COLLEGE DURHAM</option>
+						<option value="26">NORTHUMBRIA UNIVERSITY</option>
+						<option value="27">OXFORD BROOKES UNIVERSITY</option>
+						<option value="28">SHEFFIELD HALLAM UNIVERSITY</option>
+						<option value="29">SOLENT UNIVERSITY</option>
+						<option value="31">STAFFORDSHIRE UNIVERSITY</option>
+						<option value="30">ST GEORGE'S - UNIVERSITY OF LONDON</option>
+						<option value="32">UNIVERSITY COLLEGE LONDON</option>
+						<option value="33">UNIVERSITY OF BEDFORDSHIRE</option>
+						<option value="34">UNIVERSITY OF BIRMINGHAM</option>
+						<option value="35">UNIVERSITY OF BOLTON</option>
+						<option value="36">UNIVERSITY OF BRADFORD</option>
+						<option value="37">UNIVERSITY OF BRIGHTON</option>
+						<option value="38">UNIVERSITY OF BRISTOL</option>
+						<option value="39">UNIVERSITY OF CENTRAL LANCASHIRE</option>
+						<option value="40">UNIVERSITY OF CHESTER</option>
+						<option value="41">UNIVERSITY OF CUMBRIA</option>
+						<option value="42">UNIVERSITY OF DERBY</option>
+						<option value="43">UNIVERSITY OF EAST ANGLIA</option>
+						<option value="44">UNIVERSITY OF EAST LONDON</option>
+						<option value="45">UNIVERSITY OF ESSEX</option>
+						<option value="46">UNIVERSITY OF EXETER</option>
+						<option value="47">UNIVERSITY OF GLOUCESTERSHIRE</option>
+						<option value="48">UNIVERSITY OF GREENWICH</option>
+						<option value="49">UNIVERSITY OF HERTFORDSHIRE</option>
+						<option value="50">UNIVERSITY OF HUDDERSFIELD</option>
+						<option value="51">UNIVERSITY OF HULL</option>
+						<option value="52">UNIVERSITY OF LEEDS</option>
+						<option value="53">UNIVERSITY OF LEICESTER</option>
+						<option value="54">UNIVERSITY OF LINCOLN</option>
+						<option value="55">UNIVERSITY OF LIVERPOOL</option>
+						<option value="56">UNIVERSITY OF MANCHESTER</option>
+						<option value="57">UNIVERSITY OF NEWCASTLE</option>
+						<option value="58">UNIVERSITY OF NORTHAMPTON</option>
+						<option value="59">UNIVERSITY OF NOTTINGHAM</option>
+						<option value="60">UNIVERSITY OF PLYMOUTH</option>
+						<option value="61">UNIVERSITY OF PORTSMOUTH</option>
+						<option value="62">UNIVERSITY OF READING</option>
+						<option value="63">UNIVERSITY OF ROEHAMPTON</option>
+						<option value="64">UNIVERSITY OF SALFORD</option>
+						<option value="65">UNIVERSITY OF SHEFFIELD</option>
+						<option value="66">UNIVERSITY OF SOUTHAMPTON</option>
+						<option value="67">UNIVERSITY OF ST MARK AND ST JOHN</option>
+						<option value="68">UNIVERSITY OF SUFFOLK</option>
+						<option value="69">UNIVERSITY OF SUNDERLAND</option>
+						<option value="70">UNIVERSITY OF SURREY</option>
+						<option value="71">UNIVERSITY OF TEESSIDE</option>
+						<option value="72">UNIVERSITY OF THE WEST OF ENGLAND</option>
+						<option value="73">UNIVERSITY OF WEST LONDON</option>
+						<option value="74">UNIVERSITY OF WINCHESTER</option>
+						<option value="75">UNIVERSITY OF WOLVERHAMPTON</option>
+						<option value="76">UNIVERSITY OF WORCESTER</option>
+						<option value="77">UNIVERSITY OF YORK</option>
+						<option value="78">UNIVERSIYT OF PLYMOUTH</option>
+						<option value="79">YORK ST JOHN UNIVERSITY</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label id="job-label" for="job" class="form-label-bold">Job/Department</label>
+
+
+					<input class="form-control w-100" name="job" id="job" type="text" maxlength="35" value="">
+				</div>
+
+				<div class="form-group">
+					<label id="contactNumber-label" for="contactNumber" class="form-label-bold">Contact number</label>
+
+					<input class="form-control w-100" name="contactNumber" id="contactNumber" type="text" maxlength="20" value="">
+				</div>
+			</div>
+		</div>
+		<div class="grid-row">
+			<div class="column-two-thirds">
+				<div class="form-group">
+					<fieldset class="inline">
+						<legend class="visually-hidden">Login active</legend>
+						<span class="form-label-bold">Login active?</span>
+
+
+
+						<div class="multiple-choice">
+							<input type="radio" id="optionsActiveYes" value="1" checked="checked" name="active"> <label
+								for="optionsActiveYes">Yes</label>
+						</div>
+						<div class="multiple-choice">
+							<input type="radio" id="optionsActiveNo" value="0" name="active"> <label for="optionsActiveNo">No</label>
+						</div>
+					</fieldset>
+				</div>
+
+
+				<div class="form-group">
+					<button class="button" type="submit" id="saveUser">Update</button>
+
+				</div>
+				<a class="" href="/lsf/admin/user/search">Cancel</a>
+
+
+			</div>
+		</div>
+	</form>
+
+</div>
+{% endblock %}

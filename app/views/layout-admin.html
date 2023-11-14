@@ -1,0 +1,155 @@
+
+<!-- Extends the layout from /docs/views/template.html -->
+{% extends "template-admin.html" %}
+
+<!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% block headCSS %}
+  <link href="/css/admin-screen.css" rel="stylesheet" />
+{% endblock %}
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Learning Support Fund
+{% endblock %}
+
+<!-- Edit the header -->
+<!-- Header code examples can be found at https://service-manual.nhs.uk/design-system/components/header -->
+{% block header %}
+<header class="with-proposition" id="global-header" role="banner">
+  <div class="header-wrapper">
+    <div class="header-proposition">
+      <div class="content">
+        <nav id="proposition-menu">
+          <a class="ml-20" href="/lsf/admin/menu">
+            <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 16" height="40" width="100">
+              <path class="nhsuk-logo__background" fill="#005eb8" d="M0 0h40v16H0z"></path>
+              <path class="nhsuk-logo__text" fill="#fff" d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"></path>
+            </svg>
+            <span class="visually-hidden">NHS Learning Support Fund - Admin view</span>
+          </a>
+          <div class="user-menu">
+            <p style="float: right;">
+              Signed in as user.lastname7@user.com (<a id="signOut" href="/lsf/login" data-toggle="modal" data-target="confirmSignOut">Sign out</a>)
+            </p>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+<!-- Edit the footer -->
+<!-- Footer code examples can be found at https://service-manual.nhs.uk/design-system/components/footer -->
+{% block footer %}
+<footer class="group js-footer" id="footer" role="contentinfo">
+  <div class="footer-wrapper">
+    <div class="footer-meta">
+      <div class="footer-meta-inner">
+        <div class="bsa-footer-links">
+          <ul>
+            <li>
+              <a id="accessibilityLink" href="https://nhsbsauk.sharepoint.com/sites/Accessibility/SitePages/Accessibility-statement-for-NHS-Learning-Support-Fund.aspx">Accessibility</a>
+            </li>
+            <li >
+              <a id="cookie-footer-link" href="/lsf/cookies-policy/cookies">Cookies</a>
+            </li>
+            <li >
+              <a id="privacy-footer-link" href="https://www.nhsbsa.nhs.uk/our-policies/privacy/student-services-privacy-notice">Privacy</a>
+            </li>
+            <li >
+              <a id="terms-footer-link" href="https://www.nhsbsa.nhs.uk/our-policies/terms-and-conditions">Terms and conditions</a>
+            </li>
+          </ul>
+          <p>Find more information about <a href="http://www.nhsbsa.nhs.uk">NHS Business Services Authority</a></p>
+          <div class="copy">
+            <p>Copyright NHS Business Services Authority <span id="currentYear">2023</span>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/admin/swb.js"></script>
+<script src="/js/admin/govuk.js"></script>
+<script src="/js/admin/jquery-3.6.js"></script>
+<script src="/js/admin/elements.js"></script>
+<script src="/js/admin/select2.js"></script>
+
+<script>
+  if (typeof window.GOVUK === 'undefined')
+    document.body.className = document.body.className.replace(
+    'js-enabled', '');
+</script>
+
+
+<noscript>
+  <style>
+    .js-disabled {
+      display:none;
+    }
+  </style>
+</noscript>
+
+	
+<script>
+  $(document).ready(function() {
+
+    $('.select-multiple').select2();
+    $('.select-multiple-responsive').select2({
+      width : 'resolve'
+    });
+
+    $('.select-multiple').select2({
+      placeholder : {
+        text : 'Select user role(s)',
+        id : 'select-1'
+      }		
+    }).on('select2:unselecting', function() {
+      $(this).data('unselecting', true);
+    }).on('select2:opening', function(e) {
+      if ($(this).data('unselecting')) {
+        $(this).removeData('unselecting');
+        e.preventDefault();
+      }
+    });
+				
+    var hiddenSearch = document.getElementsByClassName("select2-search__field");
+    hiddenSearch[0].setAttribute("id", "hiddenSearch");
+    
+    showColleges();
+  });
+		
+  function showColleges() {
+    var collegeDiv = document.getElementById("collegeContainer");
+    var locationDiv = document.getElementById("locationContainer");
+    var roleDrop = document.getElementById("roleDrop");
+    var saveButton = document.getElementById("saveUser");
+
+    var roleId;
+    collegeDiv.style.display = "none";
+    collegeDiv.removeAttribute('aria-live');
+    locationDiv.style.display = "block";
+    //Note: the array is zero based, so rows 9 and 10 equate to Role Ids 10 and 11 on the database
+    for (roleId = 0; roleId < roleDrop.options.length; roleId++) {
+      if (roleDrop.options[roleId].selected) {
+        if (roleId === 9 || roleId === 10 || roleId === 11) {
+          collegeDiv.style.display = "block";
+          collegeDiv.setAttribute('aria-live', 'polite');
+          locationDiv.style.display = "none";
+          saveUser.innerText = "Continue"
+        }
+      }
+    }
+
+	}
+		</script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				// A11y fix
+				const dropDownSpan = document.querySelector('span.select2-selection');
+				dropDownSpan.setAttribute('aria-labelledby','hiddenSearchRole-label')
+			});
+		</script>
+{% endblock %}

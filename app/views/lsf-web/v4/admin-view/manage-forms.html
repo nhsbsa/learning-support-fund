@@ -1,0 +1,57 @@
+{% extends 'layout-admin.html' %}
+
+{% block pageTitle %}
+Manage forms
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+  <div class="admin-page-header">
+    <h1 class="heading-large mt-15">Manage forms</h1>
+  </div>
+  <div class="grid-row">
+    <div class="column-full">
+               
+      <table id="documentsTable" class="js-table-sortable">
+        <caption class="visually-hidden">Forms table</caption>
+        <thead> 			
+          <tr>
+            <th class="bold" scope="col" data-sort="string" width="20%">Form name</th>
+            <th class="bold" scope="col" data-sort="string" width="60%">Comments</th>
+            <th class="bold" scope="col" data-sort="string" width="10%">Enabled</th>
+            <th class="bold" scope="col" data-sort="string" width="10%">Actions</th>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td><span>ESF</span></td>
+              <td>New Form added for ESF</td>			            	
+              <td>Yes</td>
+              <td>
+                <a href="#">Edit<span class="visually-hidden"> ESF</span></a>
+                <span> | 
+                  <a href="#" target="_blank" rel="noopener">View<span class="visually-hidden"> ESF (opens in a new tab)</span></a>
+                </span>
+              </td> 
+            </tr>
+          
+            <tr>
+              <td><span>TDAE</span></td>
+              <td>New Form added for TDAE</td>			            	
+              <td>Yes</td>
+              <td>
+                <a href="#">Edit<span class="visually-hidden"> TDAE</span></a>
+                <span> | 
+                  <a href="#" target="_blank" rel="noopener">View<span class="visually-hidden"> TDAE (opens in a new tab)</span></a>
+                </span>
+              </td> 
+            </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

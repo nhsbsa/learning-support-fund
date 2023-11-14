@@ -1,0 +1,335 @@
+{% extends 'layout-admin.html' %}
+
+{% block pageTitle %}
+Search users
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+	<div class="admin-page-header">
+
+		<form action="/lsf/admin/user/search" method="POST"><input type="hidden" name="_csrf" value="4025ee3a-5bf7-4777-87e5-e654c205ca60">
+			<div class="grid-row">
+				<div class="column-full">
+					<h1 class="heading-large mt-15">Search users</h1>
+					<div class="grid-row">
+						<div class="column-third">
+							<div class="form-group" id="lastname-group">
+								<label for="lastname" class="form-label-bold">Surname</label>
+								
+								<input id="lastname" class="form-control full-width" type="text" name="lastName" value="">
+							</div>
+						</div>
+						<div class="column-third">
+							<div class="form-group" id="email-group">
+								<label for="mail" class="form-label-bold">Email</label>
+								
+								<input id="mail" class="form-control full-width" type="text" name="email" value="">
+							</div>
+						</div>
+						<div class="column-third">
+							<div class="form-group" id="role-group">
+								<label id="role-label" for="roleDrop" class="form-label-bold">Role</label>
+								
+								<select class="form-control full-width" id="roleDrop" name="role">
+									<option value="" selected="selected">Please select...</option>
+									<option value="ROLE_PROCESSOR">PROCESSOR</option>
+									<option value="ROLE_TECHNICAL_SUPPORT_OFFICER">TECHNICAL SUPPORT OFFICER</option>
+									<option value="ROLE_MANAGEMENT_SUPPORT">MANAGEMENT SUPPORT</option>
+									<option value="ROLE_TEAM_MANAGER">TEAM MANAGER</option>
+									<option value="ROLE_CALL_CENTRE">CALL CENTRE</option>
+									<option value="ROLE_CALL_CENTRE_MANAGER">CALL CENTRE MANAGER</option>
+									<option value="ROLE_FINANCE">FINANCE</option>
+									<option value="ROLE_SUPER_USER">SUPER USER</option>
+									<option value="ROLE_HEI_USER">HEI USER</option>
+									<option value="ROLE_HEI_ADMIN">HEI ADMIN</option>
+									<option value="ROLE_HEI_READ">HEI READ</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					
+					<div class="grid-row">
+						<div class="column-full">
+							<div class="form-group">
+								<button class="btn-md-w100 button mr-md-20" type="submit" value="Search" id="searchButton">Search</button>
+								
+									<a class="btn-md-w100 button mr-md-20 mt-sm-20" href="/lsf/admin/user/create?lastname=&amp;firstname=&amp;email=" id="createButton" role="button">Create user</a>
+								
+								
+									<a class="btn-md-w100 button mt-sm-20" href="/lsf/admin/user/export?lastname=&amp;firstname=&amp;email=" id="exportButton" role="button">Export</a>
+								
+							</div>
+							<a href="#" id="clearButton" onclick="window.location.href='/lsf/admin/user/search'">Cancel</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+
+	<h2 class="heading-large">Search results</h2>
+	<table id="searchresultsTable" class="js-table-sortable">
+		<caption class="visually-hidden">Search results table</caption>
+		<thead>
+			<tr>
+				<th class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Email</a></th>
+				<th class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Name</a></th>
+				<th class="bold" scope="col">Role(s)</th>
+				<th class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Active</a></th>
+				<th class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Locked</a></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>sdsds@gmail.com</span></a></td>
+				<td>Tin Cooper</td>
+				<td>HEI USER</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>jhhj@gmail.com</span></a></td>
+				<td>Tony Yeboah</td>
+				<td>HEI USER</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>loopikp@gmail.com</span></a></td>
+				<td>Gary Lucas</td>
+				<td>HEI USER</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>rthft@gmail.com</span></a></td>
+				<td>Liam Cooper</td>
+				<td>HEI USER</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>nhs.nhsbsa+1@gmail.com</span></a></td>
+				<td>Role Processor</td>
+				<td>PROCESSOR</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>nhs.nhsbsa+2@gmail.com</span></a></td>
+				<td>Role TechSupport</td>
+				<td>TECHNICAL SUPPORT OFFICER</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>nhs.nhsbsa+3@gmail.com</span></a></td>
+				<td>Role ManSupport</td>
+				<td>MANAGEMENT SUPPORT</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>nhs.nhsbsa+4@gmail.com</span></a></td>
+				<td>Role TeamManager</td>
+				<td>TEAM MANAGER</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>nhs.nhsbsa+5@gmail.com</span></a></td>
+				<td>Role CallCentre</td>
+				<td>CALL CENTRE</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>nhs.nhsbsa+6@gmail.com</span></a></td>
+				<td>Role CallManager</td>
+				<td>CALL CENTRE MANAGER</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>nhs.nhsbsa+7@gmail.com</span></a></td>
+				<td>Role Finance</td>
+				<td>FINANCE</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>nhs.nhsbsa+8@gmail.com</span></a></td>
+				<td>Role SuperUser</td>
+				<td>SUPER USER</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>nhs.nhsbsa+9@gmail.com</span></a></td>
+				<td>Role HeiUser</td>
+				<td>HEI USER</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>nhs.nhsbsa+10@gmail.com</span></a></td>
+				<td>Role HeiAdmin</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>michael.lee7@nhs.net</span></a></td>
+				<td>Michael Lee</td>
+				<td>SUPER USER</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei1@gmail.com</span></a></td>
+				<td>Hei One</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei2@gmail.com</span></a></td>
+				<td>Hei Two</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei3@gmail.com</span></a></td>
+				<td>Hei Three</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei4@gmail.com</span></a></td>
+				<td>Hei Four</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei5@gmail.com</span></a></td>
+				<td>Hei Five</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei6@gmail.com</span></a></td>
+				<td>Hei Six</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei7@gmail.com</span></a></td>
+				<td>Hei Seven</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei8@gmail.com</span></a></td>
+				<td>Hei Eight</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei9@gmail.com</span></a></td>
+				<td>Hei Nine</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei10@gmail.com</span></a></td>
+				<td>Hei Ten</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei11@gmail.com</span></a></td>
+				<td>Hei Eleven</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei12@gmail.com</span></a></td>
+				<td>Hei Twelve</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei13@gmail.com</span></a></td>
+				<td>Hei Thirteen</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei14@gmail.com</span></a></td>
+				<td>Hei Fourteen</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei15@gmail.com</span></a></td>
+				<td>Hei Fifteen</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei16@gmail.com</span></a></td>
+				<td>Hei Sixteen</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei17@gmail.com</span></a></td>
+				<td>Hei Seventeen</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>NHSBSAUAT+hei18@gmail.com</span></a></td>
+				<td>Hei Eighteen</td>
+				<td>HEI ADMIN</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>gfgf3@gmail.com</span></a></td>
+				<td>John Sampson</td>
+				<td>HEI READ</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+			<tr>
+				<td class="chwidth"><a href="/lsf-web/v4/admin-view/update-user"><span>wdtg@gmail.com</span></a></td>
+				<td>Daisy Wilkinson</td>
+				<td>HEI USER</td>
+				<td>Yes</td>
+				<td>No</td>					
+			</tr>
+		</tbody>
+	</table>
+ 
+
+</div>
+{% endblock %}

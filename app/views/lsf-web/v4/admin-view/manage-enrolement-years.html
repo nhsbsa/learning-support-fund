@@ -1,0 +1,92 @@
+{% extends 'layout-admin.html' %}
+
+{% block pageTitle %}
+Manage enrolment years
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+	<div class="admin-page-header">
+	</div>
+	<div class="grid-row">
+		<div class="column-full">
+			<h1 class="heading-large mt-15">Manage enrolment years</h1>
+			<div class="filterBox">
+				<form action="" class="search-box js-disabled">
+					<div class="inline-search-wrapper">
+						<label for="filterText" class="visually-hidden">Filter enrolment year</label>
+						<input class="search-box__input form-control" type="text" name="search-box" placeholder="Filter enrolment year" value="" id="filterText" onkeyup="filterTable('filterText', 'enrolmentYearsListTable')">
+						<span class="inline-search-button">
+							<span class="visually-hidden">Search</span>
+						</span>
+					</div>
+				</form>
+				<a class="button right-float" href="/lsf/admin/enrolmentYear/details/new" role="button">Add enrolment year</a>
+			</div>
+
+			<table id="enrolmentYearsListTable">
+				<caption class="visually-hidden">Current enrolment years table</caption>
+				<thead>
+					<tr>
+						<th class="bold" scope="col">Enrolment Year</th>
+						<th class="bold" scope="col">Cosa Start Date</th>
+						<th class="bold" scope="col">Cosa End Date</th>
+						<th class="bold" scope="col">Enabled</th>
+						<th class="bold" scope="col" colspan="2">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><span>2023-Sep</span></td>
+						<td>2023-09-01</td>
+						<td>2023-12-09</td>
+						<td>Yes</td>
+						<td><a id="addPaymentSchedule0" href="#">Manage payment dates</a></td>
+						<td><a id="edit0" href="#">Edit</a></td>
+					</tr>
+					<tr>
+						<td><span>2023-Aug</span></td>
+						<td>2023-08-01</td>
+						<td>2023-12-01</td>
+						<td>No</td>
+						<td><a id="addPaymentSchedule1" href="#">Manage payment dates</a></td>
+						<td><a id="edit1" href="#">Edit</a></td>
+					</tr>
+					<tr>
+						<td><span>2023-Jun</span></td>
+						<td>2023-09-06</td>
+						<td>2023-12-30</td>
+						<td>Yes</td>
+						<td><a id="addPaymentSchedule2" href="#">Manage payment dates</a></td>
+						<td><a id="edit2" href="#">Edit</a></td>
+					</tr>
+					<tr>
+						<td><span>2022-Sep</span></td>
+						<td>2022-09-01</td>
+						<td>2023-08-01</td>
+						<td>Yes</td>
+						<td><a id="addPaymentSchedule3" href="#">Manage payment dates</a></td>
+						<td><a id="edit3" href="#">Edit</a></td>
+					</tr>
+					<tr>
+						<td><span>2020-Oct</span></td>
+						<td></td>
+						<td></td>
+						<td>Yes</td>
+						<td><a id="addPaymentSchedule4" href="#">Manage payment dates</a></td>
+						<td><a id="edit4" href="#">Edit</a></td>
+					</tr>
+					<tr>
+						<td><span>2020-Sep</span></td>
+						<td></td>
+						<td></td>
+						<td>Yes</td>
+						<td><a id="addPaymentSchedule5" href="#">Manage payment dates</a></td>
+						<td><a id="edit5" href="#">Edit</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}

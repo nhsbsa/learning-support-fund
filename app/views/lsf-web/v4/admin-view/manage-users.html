@@ -1,0 +1,64 @@
+{% extends 'layout-admin.html' %}
+
+{% block pageTitle %}
+Search users
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+  <div class="admin-page-header">
+    <form action="/lsf-web/v4/admin-view/user-results" method="POST">
+      <div class="grid-row">
+        <div class="column-full">
+          <h1 class="heading-large mt-15">Search users</h1>
+          <div class="grid-row">
+            <div class="column-third">
+              <div class="form-group" id="lastname-group">
+                <label for="lastname" class="form-label-bold">Surname</label>
+                
+                <input id="lastname" class="form-control full-width" type="text" name="lastName" value="">
+              </div>
+            </div>
+            <div class="column-third">
+              <div class="form-group" id="email-group">
+                <label for="mail" class="form-label-bold">Email</label>
+                
+                <input id="mail" class="form-control full-width" type="text" name="email" value="">
+              </div>
+            </div>
+            <div class="column-third">
+              <div class="form-group" id="role-group">
+                <label id="role-label" for="roleDrop" class="form-label-bold">Role</label>
+                
+                <select class="form-control full-width" id="roleDrop" name="role">
+                  <option value="">Please select...</option>
+                  <option value="ROLE_PROCESSOR">PROCESSOR</option>
+                  <option value="ROLE_TECHNICAL_SUPPORT_OFFICER">TECHNICAL SUPPORT OFFICER</option>
+                  <option value="ROLE_MANAGEMENT_SUPPORT">MANAGEMENT SUPPORT</option>
+                  <option value="ROLE_TEAM_MANAGER">TEAM MANAGER</option>
+                  <option value="ROLE_CALL_CENTRE">CALL CENTRE</option>
+                  <option value="ROLE_CALL_CENTRE_MANAGER">CALL CENTRE MANAGER</option>
+                  <option value="ROLE_FINANCE">FINANCE</option>
+                  <option value="ROLE_SUPER_USER">SUPER USER</option>
+                  <option value="ROLE_HEI_USER">HEI USER</option>
+                  <option value="ROLE_HEI_ADMIN">HEI ADMIN</option>
+                  <option value="ROLE_HEI_READ">HEI READ</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="grid-row">
+            <div class="column-full">
+              <div class="form-group">
+                <button class="btn-md-w100 button mr-md-20" type="submit" value="Search" id="searchButton">Search</button>
+              </div>
+              <a href="#" id="clearButton">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

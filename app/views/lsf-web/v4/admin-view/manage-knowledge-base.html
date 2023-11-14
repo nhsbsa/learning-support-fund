@@ -1,0 +1,59 @@
+{% extends 'layout-admin.html' %}
+
+{% block pageTitle %}
+Manage knowledge base
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+	<div class="admin-page-header">
+	</div>
+	<div class="grid-row">
+		<div class="column-full">
+			<h1 class="heading-large mt-15">Manage knowledge base</h1>
+			<div class="filterBox">
+				<form action="" class="search-box js-disabled">
+					<div class="inline-search-wrapper">
+						<label for="filterText" class="visually-hidden">Filter title</label>
+						<input class="search-box__input form-control" type="text" name="search-box" placeholder="Filter title" value="" id="filterText" onkeyup="filterTable('filterText', 'knowledgeListTable')">
+						<span class="inline-search-button">
+							<span class="visually-hidden">Search</span>
+						</span>
+					</div>
+				</form>
+				<a class="button right-float" href="#" role="button">Add Knowledge Item</a>
+			</div>
+	
+			<table id="knowledgeListTable">
+				<caption class="visually-hidden">List of knowledge items</caption>
+				<thead role="rowgroup">
+					<tr role="row">
+						<th class="bold" role="columnheader" scope="col">Title</th>	
+						<th class="bold" role="columnheader" scope="col">Content</th>															
+						<th class="bold" role="columnheader" scope="col">Enabled</th>					
+						<th class="bold" role="columnheader" scope="col">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr role="row">
+						<td class="wordbreak">test 1</td>
+						<td class="wordbreak">ssdss</td>
+						<td>Yes</td>
+						<td>
+							<a id="edit0" href="#">Edit<span class="visually-hidden">: test 1</span></a>
+						</td>
+					</tr>
+					<tr role="row">
+						<td class="wordbreak">asasasa</td>
+						<td class="wordbreak">asasasasa</td>
+						<td>No</td>
+						<td>
+							<a id="edit1" href="#">Edit<span class="visually-hidden">: asasasa</span></a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div> 
+</div>
+{% endblock %}

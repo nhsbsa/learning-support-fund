@@ -1,0 +1,57 @@
+{% extends 'layout-admin.html' %}
+
+{% block pageTitle %}
+Manage term payment percentages
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+	<div class="admin-page-header">
+		<h1 class="heading-large mt-15">Manage term payment percentages</h1>
+	</div>
+	<div class="grid-row">
+		<div class="column-full">
+			<div class="filterBox">
+				<form action="" class="search-box js-disabled">
+					<div class="inline-search-wrapper">
+						<label for="filterText" class="visually-hidden">Filter</label>
+						<input class="search-box__input form-control" type="text" name="search-box" placeholder="Filter" value="" id="filterText" onkeyup="filterTable('filterText', 'percentsTable')">
+						<span class="inline-search-button">
+							<span class="visually-hidden">Search</span>
+						</span>
+					</div>
+				</form>
+				<a class="button right-float" href="/lsf/admin/addTermPercentages" role="button">Add new term payment
+					percentages</a>
+				
+			</div>
+			<table id="percentsTable" class="js-table-sortable">
+				<caption class="visually-hidden">term percentages table</caption>
+				<thead>
+					<tr>
+						<th class="bold" scope="col" data-sort="string">Valid from</th>
+						<th class="bold" scope="col" data-sort="string">Enabled</th>
+						<th class="bold" scope="col" data-sort="string" width="25%">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td><span class="hidden">2000-01-01T00:00</span>
+								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=1"><span>01/01/2000</span></a>
+							</td>
+							<td>Yes</td>
+							<td>
+								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=1">Copy term
+									percentages</a>
+								
+							</td>
+
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}
