@@ -1,0 +1,100 @@
+{% extends 'layout-admin.html' %}
+
+{% block pageTitle %}
+Add enrolment year
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+  <div class="admin-page-header">
+    <a class="link-back" href="/lsf-web/v4/admin-view/manage-enrolment-years" id="backButton">Back</a>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="/lsf-web/v4/admin-view/manage-enrolment-years" method="POST">
+        <h1 class="heading-large mt-0">Add enrolment year</h1>
+        <div class="form-group">
+          <label for="courseYear" class="form-label-bold">Year</label>
+
+          <input class="form-control" type="number" pattern="[0-9]*" maxlength="4" id="courseYear" name="year" value="">
+        </div>
+
+        <div class="form-group" id="courseMonth-group">
+          <label for="courseMonthDrop" class="form-label-bold">Course
+            start month</label>
+          
+          <select class="form-control" id="courseMonthDrop" name="courseMonth">
+            <option value="">Please select...</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <span class="form-label-bold">Start of cosa window</span>
+          
+          <div class="form-date">
+            <fieldset id="cosaStartDate">
+              <legend class="visually-hidden">Start of cosa window</legend>
+              <div class="form-group form-group-day">
+                <label id="start-day-label-paydate" class="form-hint" for="start-day">Day</label> 
+                <input class="form-control date-tab" id="start-day" name="startDay" value="" type="number" pattern="[0-9]*" min="1" max="31" maxlength="2" oninput="this.value=this.value.slice(0,this.maxLength)">
+              </div>
+              <div class="form-group form-group-month">
+                <label id="start-month-label-paydate" class="form-hint" for="start-month">Month</label> <input class="form-control date-tab" id="start-month" name="startMonth" value="" type="number" pattern="[0-9]*" min="1" max="12" maxlength="2" oninput="this.value=this.value.slice(0,this.maxLength)">
+              </div>
+              <div class="form-group form-group-year">
+                <label id="start-year-label-paydate" class="form-hint" for="start-year">Year</label> <input class="form-control date-tab" id="start-year" name="startYear" value="" type="number" pattern="[0-9]*" min="2000" max="3000" maxlength="4" oninput="this.value=this.value.slice(0,this.maxLength)">
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <span class="form-label-bold">End of cosa window</span>
+          
+          <div class="form-date">
+            <fieldset id="cosaEndDate">
+              <legend class="visually-hidden">End of cosa window</legend>
+              <div class="form-group form-group-day">
+                <label id="end-day-label-paydate" class="form-hint" for="end-day">Day</label> 
+                <input class="form-control date-tab" id="end-day" name="endDay" value="" type="number" pattern="[0-9]*">
+              </div>
+              <div class="form-group form-group-month">
+                <label id="end-month-label-paydate" class="form-hint" for="end-month">Month</label> <input class="form-control date-tab" id="end-month" name="endMonth" value="" type="number" pattern="[0-9]*">
+              </div>
+              <div class="form-group form-group-year">
+                <label id="end-year-label-paydate" class="form-hint" for="end-year">Year</label> <input class="form-control date-tab" id="end-year" name="endYear" value="" type="number" pattern="[0-9]*">
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="multiple-choice">
+            <input type="checkbox" id="enabled" name="enabled" value="true"><input type="hidden" name="_enabled" value="on"> <label for="enabled" class="form-label">Enabled</label> 
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button class="button" type="submit" value="Save" name="Save">Save</button>
+          
+        </div>
+        <div class="form-group">
+          <a href="/lsf/admin/enrolmentYearsDetails">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
