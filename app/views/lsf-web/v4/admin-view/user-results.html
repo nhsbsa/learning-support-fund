@@ -8,7 +8,7 @@ Search users
 <div class="content-wrapper">
 	<div class="admin-page-header">
 
-		<form action="/lsf/admin/user/search" method="POST"><input type="hidden" name="_csrf" value="4025ee3a-5bf7-4777-87e5-e654c205ca60">
+		<form action="/lsf-web/v4/admin-view/user-results" method="POST">
 			<div class="grid-row">
 				<div class="column-full">
 					<h1 class="heading-large mt-15">Search users</h1>
@@ -54,13 +54,13 @@ Search users
 							<div class="form-group">
 								<button class="btn-md-w100 button mr-md-20" type="submit" value="Search" id="searchButton">Search</button>
 								
-									<a class="btn-md-w100 button mr-md-20 mt-sm-20" href="/lsf/admin/user/create?lastname=&amp;firstname=&amp;email=" id="createButton" role="button">Create user</a>
+									<a class="btn-md-w100 button mr-md-20 mt-sm-20" href="/lsf-web/v4/admin-view/create-user" id="createButton" role="button">Create user</a>
 								
 								
-									<a class="btn-md-w100 button mt-sm-20" href="/lsf/admin/user/export?lastname=&amp;firstname=&amp;email=" id="exportButton" role="button">Export</a>
+									<a class="btn-md-w100 button mt-sm-20" href="#" id="exportButton" role="button">Export</a>
 								
 							</div>
-							<a href="#" id="clearButton" onclick="window.location.href='/lsf/admin/user/search'">Cancel</a>
+							<a href="/lsf-web/v4/admin-view/manage-users" id="clearButton">Cancel</a>
 						</div>
 					</div>
 				</div>

@@ -1,7 +1,7 @@
 {% extends 'layout-admin.html' %}
 
 {% block pageTitle %}
-Update user
+Create user
 {% endblock %}
 
 {% block content %}
@@ -9,44 +9,44 @@ Update user
 	<div class="admin-page-header">
 		<a class="link-back" href="/lsf-web/v4/admin-view/user-results" id="backButton">Back</a>
 	</div>
-	<form name="userDetailsForm" action="/lsf-web/v4/admin-view/update-user-done" method="post" novalidate="">
+	<form name="userDetailsForm" action="/lsf-web/v4/admin-view/user-results" method="post" novalidate="">
 		<div class="grid-row">
 			<div class="column-full">
 
-
-				<h1 class="heading-large mt-0">Update user</h1>
+				<h1 class="heading-large mt-0">Create user</h1>
 			</div>
 
 			<div class="column-half">
 				<div class="form-group">
 					<label id="email-label" for="email" class="form-label-bold">Email</label>
-
-
-					<input name="email" id="email" class="form-control w-100" type="text" spellcheck="false" inputmode="email"
-						autocomplete="off" maxlength="254" value="nhs.nhsbsa+1@gmail.com">
+					
+					
+					<input name="email" id="email" class="form-control w-100" type="text" spellcheck="false" inputmode="email" autocomplete="off" maxlength="254" value="">
 				</div>
 
 				<div class="form-group">
 					<label id="lastName-label" for="lastName" class="form-label-bold">Surname</label>
-
-					<input name="lastName" id="lastName" class="form-control w-100" type="text" maxlength="35" value="Processor">
+					
+					
+					<input name="lastName" id="lastName" class="form-control w-100" type="text" maxlength="35" value="">
 				</div>
 
 				<div class="form-group">
 					<label id="firstname-label" for="firstname" class="form-label-bold">First name</label>
-
-
-					<input class="form-control w-100" name="firstName" id="firstname" type="text" maxlength="35" value="Role">
+					
+					
+					<input class="form-control w-100" name="firstName" id="firstname" type="text" maxlength="35" value="">
 				</div>
 
 				<div class="form-group">
 					<label id="role-label" for="roleDrop" class="form-label-bold">Role(s)</label>
+					
+					<label id="hiddenSearchRole-label" for="hiddenSearch" class="visually-hidden">Role(s)</label>					
+					
 
-					<label id="hiddenSearchRole-label" for="hiddenSearch" class="visually-hidden">Role(s)</label>
-
-					<select class="select-multiple form-control w-100" multiple="multiple" th:field="*{roles}" id="roleDrop" onchange="showColleges()">
+				<select class="select-multiple form-control w-100" multiple="" id="roleDrop" onchange="showColleges()" name="roles" tabindex="-1" aria-hidden="true" data-select2-id="select2-data-roleDrop">
 						<option value="" disabled="disabled">Please Select...</option>
-						<option value="2" selected="selected" data-select2-id="select2-data-16-aro0">ROLE_PROCESSOR</option>
+						<option value="2">ROLE_PROCESSOR</option>
 						<option value="3">ROLE_TECHNICAL_SUPPORT_OFFICER</option>
 						<option value="4">ROLE_MANAGEMENT_SUPPORT</option>
 						<option value="5">ROLE_TEAM_MANAGER</option>
@@ -71,7 +71,7 @@ Update user
 			<div class="column-one-half" id="collegeContainer" style="display: none;">
 				<div class="form-group">
 					<label id="college-label" for="collegeDrop" class="form-label-bold">College</label>
-
+					
 
 					<select class="form-control w-100" id="collegeDrop" name="college">
 						<option value="">Please select...</option>
@@ -156,17 +156,17 @@ Update user
 						<option value="79">YORK ST JOHN UNIVERSITY</option>
 					</select>
 				</div>
-
+		
 				<div class="form-group">
 					<label id="job-label" for="job" class="form-label-bold">Job/Department</label>
-
-
+				
+					
 					<input class="form-control w-100" name="job" id="job" type="text" maxlength="35" value="">
 				</div>
-
+		
 				<div class="form-group">
 					<label id="contactNumber-label" for="contactNumber" class="form-label-bold">Contact number</label>
-
+					
 					<input class="form-control w-100" name="contactNumber" id="contactNumber" type="text" maxlength="20" value="">
 				</div>
 			</div>
@@ -176,31 +176,46 @@ Update user
 				<div class="form-group">
 					<fieldset class="inline">
 						<legend class="visually-hidden">Login active</legend>
-						<span class="form-label-bold">Login active?</span>
-
-
+						<span class="form-label-bold">Login active?</span> 
+					
+						
 
 						<div class="multiple-choice">
-							<input type="radio" id="optionsActiveYes" value="1" checked="checked" name="active"> <label
-								for="optionsActiveYes">Yes</label>
+							<input type="radio" id="optionsActiveYes" value="1" checked="checked" name="active"> <label for="optionsActiveYes">Yes</label>
 						</div>
 						<div class="multiple-choice">
 							<input type="radio" id="optionsActiveNo" value="0" name="active"> <label for="optionsActiveNo">No</label>
 						</div>
 					</fieldset>
 				</div>
+				
 
-
-				<div class="form-group">
-					<button class="button" type="submit" id="saveUser">Update</button>
-
+				<div class="form-group">						
+					<button class="button" type="submit" id="saveUser">Create</button>
+					
 				</div>
 				<a class="" href="/lsf-web/v4/admin-view/user-results">Cancel</a>
 
+				<div class="dialog" id="dialog-deleteUser" aria-hidden="true">
+					<div class="dialog-holder" aria-labelledby="dialog-title" role="alertdialog">
+						<div class="dialog-content">
 
+							<h1 class="dialog-heading" id="dialog-title">Delete User</h1>
+
+							
+								<p>Are you sure you want to delete this user?</p>
+								<div class="dialog-actions">
+									<button class="button" type="submit" value="Delete" name="Delete">Yes</button>
+									<a class="dialog-cancel" href="/">Cancel</a>
+								</div>
+								<a class="dialog-close" aria-label="close" type="button"> <span class="icon icon-close">x</span>
+								</a>
+							
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-	</form>
-
+		</div></form>
+	
 </div>
 {% endblock %}

@@ -1,0 +1,91 @@
+{% extends 'layout-admin.html' %}
+
+{% block pageTitle %}
+Admin menu
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+	<div class="admin-page-header">
+		<div class="breadcrumbs">
+			<ol>
+				<li><a href="/lsf-web/v4/admin-view/manage-unis">Manage universities</a></li>
+				<li><a>Manage courses</a></li>
+			</ol>
+		</div>
+	</div>
+	<div class="grid-row">
+		<div class="column-full">
+			<h1 class="heading-large mt-0 wordbreak">Courses for - ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</h1>
+			<div class="filterBox">
+				<form action="" class="search-box js-disabled">
+					<div class="inline-search-wrapper">
+						<label for="filterText" class="visually-hidden">Filter courses</label>
+						<input class="search-box__input form-control" type="text" name="search-box" placeholder="Filter courses"
+							value="" id="filterText" onkeyup="filterTable('filterText', 'coursesTable')">
+						<span class="inline-search-button">
+							<span class="visually-hidden">Search</span>
+						</span>
+					</div>
+				</form>
+				<a class="button right-float" href="/lsf-web/v4/admin-view/add-course" role="button">Add course</a>
+			</div>
+			<table id="coursesTable">
+				<thead>
+					<tr>
+						<th class="bold" scope="col">Course name</th>
+						<th class="bold" scope="col">Course Uplift</th>
+						<th class="bold" scope="col">Enabled</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr>
+						<td><a href="/lsf-web/v4/admin-view/course-details"><span class="wordbreak">Adult Nursing</span></a></td>
+						<td>No</td>
+						<td>Yes</td>
+					</tr>
+
+					<tr>
+						<td><a href="/lsf-web/v4/admin-view/course-details"><span class="wordbreak">Child Nursing</span></a></td>
+						<td>No</td>
+						<td>Yes</td>
+					</tr>
+
+					<tr>
+						<td><a href="/lsf-web/v4/admin-view/course-details7"><span class="wordbreak">Fitness</span></a></td>
+						<td>Yes</td>
+						<td>Yes</td>
+					</tr>
+
+					<tr>
+						<td><a href="/lsf-web/v4/admin-view/course-details"><span class="wordbreak">Mental Health Nursing</span></a>
+						</td>
+						<td>Yes</td>
+						<td>Yes</td>
+					</tr>
+
+					<tr>
+						<td><a href="/lsf-web/v4/admin-view/course-details"><span class="wordbreak">Midwifery</span></a></td>
+						<td>No</td>
+						<td>Yes</td>
+					</tr>
+
+					<tr>
+						<td><a href="/lsf-web/v4/admin-view/course-details"><span class="wordbreak">Operating Department Practitioner</span></a></td>
+						<td>No</td>
+						<td>Yes</td>
+					</tr>
+
+					<tr>
+						<td><a href="/lsf-web/v4/admin-view/course-details"><span class="wordbreak">Therapeutic Radiography</span></a></td>
+						<td>Yes</td>
+						<td>Yes</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}
