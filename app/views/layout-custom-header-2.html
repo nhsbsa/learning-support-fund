@@ -1,0 +1,139 @@
+<!--
+    This is the main layout where you can:
+      - change the header and footer
+      - add custom CSS and JavaScript
+  -->
+
+  <!-- Extends the layout from /docs/views/template.html -->
+  {% extends "template-custom.html" %}
+
+  <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+  {% block headCSS %}
+    <link href="/css/main.css" rel="stylesheet">
+  {% endblock %}
+
+  <!-- Set the page title -->
+  {% block pageTitle %}
+    Learning Support Fund
+  {% endblock %}
+
+  <!-- Edit the header -->
+  <!-- Header code examples can be found at https://service-manual.nhs.uk/design-system/components/header -->
+  {% block header %}
+
+    <header class="nhsuk-header" role="banner">
+
+
+      <script>
+      function clearSessionData() {
+        // Perform actions to clear session data here
+        // For example:
+        sessionStorage.clear(); // Clears all data stored in sessionStorage
+
+        // Optionally, you can redirect to the desired page after clearing session data
+        window.location.href = "current-search-student";
+      }
+    </script>
+
+      <div class="nhsuk-width-container nhsuk-header__container">
+        <div class="nhsuk-header__logo nhsuk-header__logo--only nhsbsa-custom-header">
+          <a class="nhsuk-header__link nhsuk-header__link--service " href="/" aria-label="NHS homepage">
+            <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 16" height="40" width="100">
+            <path class="nhsuk-logo__background" fill="#005eb8" d="M0 0h40v16H0z"></path>
+            <path class="nhsuk-logo__text" fill="#fff" d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"></path>
+            </svg>
+
+            <span class="nhsuk-header__service-name">
+            Learning Support Fund
+            </span>
+          </a>
+        </div>
+        <hr class="nhsbsa-custom-hr">
+        <div class="nhsbsa-header--content">
+
+          
+            <div class="nhsuk-grid-column-one-quarter nhsbsa-custom-header-link">
+              <a href="/lsf-web/v5/admin-view/admin-menu">Admin menu</a>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter nhsbsa-custom-header-link">
+              <a href="/lsf-web/v5/current-search-student" onclick="clearSessionData()">Student search</a>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter nhsbsa-custom-header-link">
+              <a href="#">Change password</a>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter nhsbsa-custom-header-link">
+              <a href="#">Log out</a>
+            </div>
+
+        </div>
+      </div>
+
+
+    </header>
+  {% endblock %}
+
+
+
+  {% block main %}
+  <div class="page-container">
+    <nav class="side-nav dft-sidebar" role="navigation" aria-label="Navigation">
+      <ul role="list">
+        <li class="side-nav__item"><a id="studentSearchButton" href="/lsf-web/v5/current-search-student">Student search</a></li>
+        <li class="side-nav__item"><a id="manageUsersButton" href="/lsf-web/v5/admin-view/manage-users">Manage users</a></li>
+        <li class="side-nav__item"><a id="manageCollegesButton" href="/lsf-web/v5/admin-view/manage-unis">Manage universities</a></li>
+        <li class="side-nav__item"><a id="manageCoursesButton" href="/lsf-web/v5/admin-view/manage-courses">Manage courses</a></li>
+        <li class="side-nav__item"><a id="manageRatesButton" href="/lsf-web/v5/admin-view/manage-calc-rates">Manage calculation rates</a></li>
+        <li class="side-nav__item"><a id="manageTdaeRatesButton" href="/lsf-web/v5/admin-view/manage-tdae-rates">Manage TDAE rates</a></li>
+        <li class="side-nav__item"><a id="manageTermPaymentPercentsButton" href="/lsf-web/v5/admin-view/manage-term-percentages">Manage term payment percentages</a></li>
+        <li class="side-nav__item"><a id="manageKnowledgeBaseButton" href="/lsf-web/v5/admin-view/manage-knowledge-base">Manage knowledge base</a></li>
+        <li class="side-nav__item"><a id="manageEnrolmentYearsButton" href="/lsf-web/v5/admin-view/manage-enrolment-years">Manage enrolment year</a>
+        </li>
+        <li class="side-nav__item"><a id="manageCosaButton" href="/lsf-web/v5/admin-view/manage-attendance-status">Manage attendance status</a></li>
+        <li class="side-nav__item"><a id="manageNoteTypes" href="/lsf-web/v5/admin-view/manage-note-types">Manage note types</a></li> 
+        <li class="side-nav__item"><a id="manageFormsButton" href="/lsf-web/v5/admin-view/manage-forms">Manage forms</a></li>
+        <li class="side-nav__item"><a id="managePaymentRunButton" href="/lsf-web/v5/admin-view/manage-payment-runs">Manage payment runs</a></li>
+        <li class="side-nav__item"><a id="invalidBankDetailsButton" href="/lsf-web/v5/admin-view/invalid-bank-details">Invalid bank details</a>
+        </li>
+        <li class="side-nav__item"><a id="reportMenuButton" href="/lsf-web/v5/admin-view/reporting-menu">Reporting menu</a></li>
+      </ul>
+    </nav>
+    {% block outerContent %}{% endblock %}
+    <main class="elements-index" id="adminContent" role="main">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+{% endblock %}
+
+
+
+
+
+  <!-- Edit the footer -->
+  <!-- Footer code examples can be found at https://service-manual.nhs.uk/design-system/components/footer -->
+  {% block footer %}
+    {{ footer({
+      "links": [
+        {
+          "URL": "/",
+          "label": "Home"
+        },
+        {
+          "URL": "/clear-data",
+          "label": "Clear data"
+        },
+        {
+          "URL": "/page-example",
+          "label": "Example page"
+        }
+      ]
+    })}}
+  {% endblock %}
+
+  {% block bodyEnd %}
+    {% block scripts %}
+      <!-- Custom JavaScript files can be added to this file -->
+      {% include "includes/scripts.html" %}
+      <!-- For adding page specific JavsScript -->
+      {% block pageScripts %}{% endblock %}
+    {% endblock %}
+  {% endblock %}

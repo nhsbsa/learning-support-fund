@@ -7561,3 +7561,17 @@ footer#footer {
 .ml-20 {
 	margin-left:20px;
 }
+
+/* bsa-admin update user */
+.nhsuk-checkboxes {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+  margin-right: 10px; /* Adjust the margin between columns as needed */
+}
+
+.nhsuk-checkboxes__item {
+  margin-bottom: 10px;
+}

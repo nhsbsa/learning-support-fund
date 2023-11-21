@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html lang="en" id="adminTheme" class="html-admin">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+  <title>Manage knowledge base</title>
+  <link href="/css/old-admin-view.css"  rel="stylesheet">
+</head>
+
+<body class="nhs-bsa">
+  <div id="skiplink-container">
+    <div>
+      <a href="#adminContent" class="skiplink">Skip to main content</a>
+    </div>
+  </div>
+  <header class="with-proposition" id="global-header" role="banner">
+    <div class="header-wrapper">
+      <div class="header-proposition">
+        <div class="content">
+          <nav id="proposition-menu">
+            <a href="/lsf/admin/menu">
+              <img class="header-logo" src="/images/nhslogo.png" alt="NHS Business Services Authority">
+            </a>
+            <div class="user-menu">
+              <p style="float: right;">
+                Signed in as
+                user.lastname7@user.com
+                (<a id="signOut" href="#">Sign out</a>)
+              </p>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="side-nav dft-sidebar" role="navigation" aria-label="Navigation">
+    <ul role="list">
+      <li class="side-nav__item"><a id="studentSearchButton" href="#">Student search</a></li>
+      <li class="side-nav__item"><a id="manageUsersButton" href="#">Manage users</a></li>
+      <li class="side-nav__item"><a id="manageCollegesButton" href="#">Manage universities</a></li>
+      <li class="side-nav__item"><a id="manageCoursesButton" href="#">Manage courses</a></li>
+      <li class="side-nav__item"><a id="manageRatesButton" href="#">Manage rates</a></li>
+      <li class="side-nav__item"><a id="manageTermPaymentPercentsButton" href="#">Manage term payment percentages</a></li>
+      <li class="side-nav__item active"><a id="manageKnowledgeBaseButton" href="/lsf-web/v4/admin-view/knowledge-base">Manage knowledge base</a></li>
+      <li class="side-nav__item"><a id="manageEnrolmentYearsButton" href="#">Manage enrolment year</a></li>
+      <li class="side-nav__item"><a id="manageCosaButton" href="#">Manage attendance status</a>
+      </li>
+      <li class="side-nav__item"><a id="manageNoteTypes" href="#">Manage note types</a>
+      </li>
+      <li class="side-nav__item"><a id="manageFormsButton" href="#">Manage forms</a></li>
+      <li class="side-nav__item"><a id="managePaymentRunButton" href="#">Manage payment runs</a></li>
+      <li class="side-nav__item"><a id="invalidBankDetailsButton" href="#">Invalid bank details</a></li>
+      <li class="side-nav__item"><a id="reportMenuButton" href="#">Reporting menu</a></li>
+      <li class="side-nav__item"><a id="accessibility-statement" href="#">Accessibility</a></li>
+    </ul>
+  </nav>
+
+
+  <main class="elements-index" id="adminContent" role="main">
+    <div class="content-wrapper">
+      <div class="admin-page-header">
+        <div class="grid-row">
+          <div class="column-full">
+            <div class="phase-banner">
+              <p>
+                <strong class="phase-tag" style="float: left;">ALPHA</strong><span style="float: left;">This is a new service</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <a class="link-back" href="/lsf-web/v4/admin-view/knowledge-base" id="backButton">Back</a>
+      </div>
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <form action="/lsf-web/v4/admin-view/preview-item" method="POST">
+            <h1 class="heading-large mt-0">Edit knowledge item</h1>
+
+            <div class="form-group">
+              <label class="form-label-bold" for="title">Title</label>
+              <input class="form-control" type="text" maxlength="100" id="title" name="title" value="">
+            </div>
+
+            <div class="form-group">
+              <label for="textContent" class="form-label-bold" id="content-label">Content</label>
+              <textarea style="width: 100%" class="form-control" rows="8" id="textContent" maxlength="1000" aria-labelledby="content-label" name="content"></textarea>
+              <div id="charactersRemaining">1000 characters remaining</div>
+            </div>
+
+            <div id="linkContainer">
+              <div class="form-group">
+                <label class="form-label-bold" for="link1">Hyperlink (optional)</label>
+                <div class="nhsuk-hint" id="link1-hint">
+                  For example, https://nhs.uk
+                </div>
+                <input class="form-control" style="width: 100%;" type="text" id="link1" name="title" value="">
+              </div>
+              <div class="form-group">
+                <label class="form-label-bold" for="link1-text">Hyperlink display text (optional)</label>
+                <div class="nhsuk-hint" id="link1-text-hint">
+                  For example, Find out more information on the NHS UK website
+                </div>
+                <input class="form-control" style="width: 100%;" type="text" id="link1-text" name="title" value="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <button class="button" type="submit" value="Save" name="Save" role="button" style="margin-right: 20px;">Preview</button>
+              <a href="#" id="deleteButton" class="button" role="button">Delete</a>
+            </div>
+
+            <div class="form-group">
+              <a href="/lsf-web/v4/admin-view/knowledge-base">Cancel</a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<script>
+  const inputFields = [
+    document.getElementById('title'),
+    document.getElementById('link1'),
+    document.getElementById('link2'),
+    document.getElementById('link3'),
+    document.getElementById('textContent')
+  ];
+  const submitButton = document.getElementById('submit-button');
+
+  submitButton.addEventListener('click', () => {
+    const enteredData = [];
+    for (let i = 0; i < inputFields.length; i++) {
+      enteredData.push(inputFields[i].value);
+      localStorage.setItem(`enteredData-${i}`, inputFields[i].value);
+    }
+    localStorage.setItem('enteredData', JSON.stringify(enteredData));
+  });
+</script>
+</html>

@@ -1,0 +1,153 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <h1 class="nhsuk-heading-l">Accommodation booking 2 details</h1>
+
+    <p>These are the details for the student's second accommodation booking.</p>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Placement accommodation address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          The Hog's Head Inn, NE66 2BF
+          <details class="nhsuk-details" style="margin-bottom: 0;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              The Hog's Head Inn<br>
+              Hawfinch Dr<br>
+              Alnwick<br>
+              NE66 2BF
+            </div>
+          </details>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Term-time address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Stephenson House, NE2 1AW
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              Stephenson House<br>
+              Stoddart St<br>
+              Shieldfield<br>
+              Newcastle upon Tyne <br>
+              NE2 1AW
+            </div>
+          </details>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Placement address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Alnwick Hospital, NE6 4EA
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              Alnwick Hospital<br>
+              Ashington Road<br>
+              Alnwick<br>
+              NE6 4EA
+            </div>
+          </details>
+        </dd>
+      </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Start date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            20 October 2023
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            End date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            21 October 2023
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Number of nights
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            1
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Accommodation type
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Commercial
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Nightly accommodation cost paid
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £85.00
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Cost to be reimbursed
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £85.00
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Evidence
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 17 Apr 2023 to 22 Apr 2023">
+              Download (PDF)<span class="nhsuk-u-visually-hidden"> evidence</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      {% if data['read-only'] != 'true' %}
+      <a class="nhsuk-button" href="TDAE-accommodation-check-2">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

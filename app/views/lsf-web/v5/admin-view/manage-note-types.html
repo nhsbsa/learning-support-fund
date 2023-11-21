@@ -1,0 +1,316 @@
+{% extends 'layout-admin.html' %}
+
+{% block pageTitle %}
+Manage note types
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+	<div class="admin-page-header">
+		<h1 class="heading-large">Manage note types</h1>
+	</div>
+	<div class="grid-row">
+		<div class="column-full">
+			<div class="filterBox">
+				<form action="" class="search-box js-disabled">
+					<div class="inline-search-wrapper" id="filterForm">
+						<label for="filterNoteTypes" class="visually-hidden">Filter notes</label>
+						<input class="search-box__input form-control" type="text" name="search-box" placeholder="Filter notes" value="" id="filterNoteTypes" onkeyup="filterTable('filterNoteTypes', 'noteTable')">
+						<span class="inline-search-button"> <span class="visually-hidden">Search</span>
+						</span>
+					</div>
+				</form>
+				<a class="button right-float" href="/lsf/admin/noteType" role="button">Add note type</a>
+			</div>
+			<table id="noteTable">
+				<thead>
+					<tr>
+						<th class="bold" scope="col">Note name</th>
+						<th class="bold" scope="col">System note</th>
+						<th class="bold" scope="col">Enabled</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Attendance discontinued</span></a></td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Bank details updated</span></a></td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Call referrals</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Change of Circumstances</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Change of email address</span></a></td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Change to course details</span></a></td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Eligibility</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Email notification of ESF further evidence request sent</span></a></td>
+							<td>Yes</td>
+							<td>No</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Email notification of ESF rejected sent</span></a></td>
+							<td>Yes</td>
+							<td>No</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Email notification of Parental support further evidence request sent</span></a></td>
+							<td>Yes</td>
+							<td>No</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Email notification of Parental support non-funded year sent</span></a></td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Email notification of Parental support rejectedsent</span></a></td>
+							<td>Yes</td>
+							<td>No</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Email notification of TDAE further evidence request sent</span></a></td>
+							<td>Yes</td>
+							<td>No</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Email notification of TDAE rejected sent</span></a></td>
+							<td>Yes</td>
+							<td>No</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Email notification of Training grant further evidence request sent</span></a></td>
+							<td>Yes</td>
+							<td>No</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Email notification of Training grant non-funded year sent</span></a></td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Email notification of Training grant rejected sent</span></a></td>
+							<td>Yes</td>
+							<td>No</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Email Sent</span></a></td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Enrolment confirmation</span></a></td>
+							<td>Yes</td>
+							<td>No</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">ESF</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Finance</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">General</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">HEI overruled student COSA</span></a></td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Maintenance Award</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Management Information</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Matched student - Attendance confirmed</span></a></td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Matched student - Maternity confirmed</span></a></td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Maternity</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">New payments Scheduled</span></a></td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Not enrolled</span></a></td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Over payment</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Parental support</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Password has been changed</span></a></td>
+							<td>Yes</td>
+							<td>No</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Password reset</span></a></td>
+							<td>Yes</td>
+							<td>No</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Payments Held</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Pending - Attendance reset</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Personal details updated</span></a></td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Quality Assurance</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Repeat</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Return debtors</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">TDAE</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Termly COSA status reset</span></a></td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Unmatched - Attendance not confirmed</span></a></td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Username reminder</span></a></td>
+							<td>Yes</td>
+							<td>No</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Withdrawal</span></a></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#"><span class="wordbreak">Withdrawn - Attendance withdrawn</span></a></td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}

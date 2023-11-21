@@ -2,6 +2,7 @@
 @import 'node_modules/nhsuk-frontend/packages/nhsuk';
 
 // Components that are not in the NHS.UK frontend library
+@import 'components/panel-confirmation';
 @import 'components/list-border';
 @import 'components/related-nav';
 @import 'components/phase-banner';
@@ -333,4 +334,31 @@ td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > .nhsuk-checkboxes__lab
 }
 .nhsbsa-row--selected td:first-child {
     border-left:3px solid #225EB8 !important;
+}
+
+/* confirmation-panel */
+.done-panel {
+	background-color: #005EB8;
+	text-align: center; 
+	color: white;
+	padding: 30px;
+	margin: 0px 0px 30px 0px;
+}
+
+.done-tick {
+  background-image: url(../images/done-tick.png);
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: 0 px;
+  padding-left: 50px;
+ }
+
+
+ .button-container {
+  display: flex;
+  }
+
+  /* Solid border */
+hr.solid {
+  border-top: 2px solid #d8dde0;
 }

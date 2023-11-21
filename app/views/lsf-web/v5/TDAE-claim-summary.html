@@ -1,0 +1,117 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Claim summary
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Authorising payment</h1>
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Payment approval date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <div id="currentDate"></div>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['student number'] }}
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['name'] }}
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Course
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Adult Nursing
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Placement travel payment
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £36.50
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Vehicle hire payment
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £125.00
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Accommodation payment
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £347.50
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Total payment to student
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £509.00
+        </dd>
+      </div>
+
+    </dl>
+
+      <a class="nhsuk-button" href="TDAE-payment-authorised">Authorise payment</a>
+
+
+  </div>
+
+</div>
+
+<script>
+    // JavaScript code
+    var currentDateElement = document.getElementById("currentDate");
+
+    // Get the current date
+    var currentDate = new Date();
+
+    // Format the date as desired
+    var options = { day: 'numeric', month: 'long', year: 'numeric' };
+    var formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+    // Set the formatted date as the content of the element
+    currentDateElement.textContent = formattedDate;
+  </script>
+
+{% endblock %}

@@ -1,0 +1,144 @@
+{% extends 'layout-admin.html' %}
+
+{% block pageTitle %}
+Admin menu
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<a class="link-back" href="/lsf-web/v4/admin-view/manage-enrolment-years" id="backButton">Back</a>
+
+			<h1 class="heading-large mt-0">Add scheduled payment date for academic year: 2024-Jan</h1>
+
+			<form action="/lsf-web/v4/admin-view/manage-enrolment-years" method="POST">
+				<div class="form-group" id="term-group">
+					<label id="term-label" for="termDrop" class="form-label-bold">Term</label>
+					
+					<select class="form-control" id="termDrop" name="term.id">
+						<option value="">Please select...</option>
+						<option value="1">Term 1</option>
+						<option value="2">Term 2</option>
+						<option value="3">Term 3</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<span id="payment-date-label" class="form-label-bold">Payment date</span>
+					
+					<div class="form-date">
+						<fieldset id="paymentDateFieldset">
+							<legend class="visually-hidden">Payment date fields</legend>
+							<div class="form-group form-group-day">
+								<label id="payment-day-label" class="form-hint" for="day">Day</label>
+								<input class="form-control date-tab" id="day" name="day" value="" type="number" pattern="[0-9]*">
+							</div>
+							<div class="form-group form-group-month">
+								<label id="payment-month-label" class="form-hint" for="month">Month</label>
+								<input class="form-control date-tab" id="month" name="month" value="" type="number" pattern="[0-9]*">
+							</div>
+							<div class="form-group form-group-year">
+								<label id="payment-year-label" class="form-hint" for="year">Year</label>
+								<input class="form-control date-tab" id="year" type="number" pattern="[0-9]*" >
+							</div>
+						</fieldset>
+					</div>
+				</div>
+		
+				<div class="form-group">
+					<span id="start-date-label" class="form-label-bold">Start of cosa window</span>
+					
+					<div class="form-date">
+						<fieldset id="startDateFieldeset">
+							<legend class="visually-hidden">Cosa start date fields</legend>
+							<div class="form-group form-group-day">
+								<label id="startDay-label" class="form-hint" for="startDay">Day</label>
+								<input class="form-control date-tab" id="startDay" name="startDay" value="" type="number" pattern="[0-9]*">
+							</div>
+							<div class="form-group form-group-month">
+								<label id="startMonth-label" class="form-hint" for="startMonth">Month</label>
+								<input class="form-control date-tab" id="startMonth" name="startMonth" value="" type="number" pattern="[0-9]*" min="1" max="12" maxlength="2" oninput="this.value=this.value.slice(0,this.maxLength)">
+							</div>
+							<div class="form-group form-group-year">
+								<label id="startYear-label" class="form-hint" for="startYear">Year</label>
+								<input class="form-control date-tab" id="startYear" type="number" pattern="[0-9]*" name="startYear" value="">
+							</div>
+						</fieldset>
+					</div>
+				</div>	
+
+				<div class="form-group">
+					<span id="end-date-label" class="form-label-bold">End of cosa window</span>
+					
+					<div class="form-date">
+						<fieldset id="endDateFieldset">
+							<legend class="visually-hidden">Cosa end date fields</legend>
+							<div class="form-group form-group-day">
+								<label id="endDay-label" class="form-hint" for="endDay">Day</label>
+								<input class="form-control date-tab" id="endDay" name="endDay" value="" type="number" pattern="[0-9]*">
+							</div>
+							<div class="form-group form-group-month">
+								<label id="endMonth-label" class="form-hint" for="endMonth">Month</label>
+								<input class="form-control date-tab" id="endMonth" name="endMonth" value="" type="number" pattern="[0-9]*">
+							</div>
+							<div class="form-group form-group-year">
+								<label id="endYear-label" class="form-hint" for="endYear">Year</label>
+								<input class="form-control date-tab" id="endYear" type="number" pattern="[0-9]*" name="endYear" value="">
+							</div>
+						</fieldset>
+					</div>
+				</div>	
+				<div class="form-group">
+					<div class="form-group">
+						<button class="button" type="submit" name="action" id="action">Add</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="column-two-thirds">
+			<h2 class="heading-large mt-0">Payment schedule dates</h2>
+			<table id="paymentScheduleDatesListTable">
+				<caption class="visually-hidden">Payment schedule dates table</caption>
+				<thead>
+					<tr>
+						<th class="bold" scope="col">Term</th>
+						<th class="bold" scope="col">Schedule payment date</th>
+						<th class="bold" scope="col">Cosa start date</th>
+						<th class="bold" scope="col">Cosa end date</th>
+						<th class="bold" scope="col">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><span>Term 1</span></td>
+						<td>2023-09-01</td>
+						<td>2023-09-01</td>
+						<td>2023-09-30</td>
+						<td>
+							<a id="edit0" href="/lsf-web/v4/admin-view/edit-payment-schedule">Edit</a>
+						</td>
+					</tr>
+					<tr>
+						<td><span>Term 2</span></td>
+						<td>2023-11-01</td>
+						<td>2023-10-01</td>
+						<td>2023-11-30</td>
+						<td>
+							<a id="edit1" href="/lsf-web/v4/admin-view/edit-payment-schedule">Edit</a>
+						</td>
+					</tr>
+					<tr>
+						<td><span>Term 3</span></td>
+						<td>2023-12-01</td>
+						<td>2023-12-01</td>
+						<td>2024-08-30</td>
+						<td>
+							<a id="edit2" href="/lsf-web/v4/admin-view/edit-payment-schedule">Edit</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% endblock %}

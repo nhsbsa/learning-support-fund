@@ -1,0 +1,45 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+        <form action="v4/TDAE-accommodation-check-2" method="POST">
+            <div class="nhsuk-form-group">
+                <fieldset class="nhsuk-fieldset">
+                  <h1 class="nhsuk-heading-l">Can you process accommodation booking 2?</h1>
+                  <div class="nhsuk-hint">Use the evidence and notes you have seen to choose whether you can accept these details.</div>
+                  <div class="nhsuk-radios" data-module="nhsuk-radios">
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="evidence-match-yes" name="accommodation-check-2" type="radio" value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="evidence-match-yes">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="evidence-match-no" name="accommodation-check-2" type="radio" value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="evidence-match-no">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+            </div>
+            <button class="nhsuk-button" type="submit">
+                Save and continue
+            </button>
+        </form>
+
+  </div>
+
+</div>
+{% endblock %}

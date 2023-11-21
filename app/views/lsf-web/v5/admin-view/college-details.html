@@ -1,0 +1,73 @@
+{% extends 'layout-admin.html' %}
+
+{% block pageTitle %}
+University details
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="/lsf-web/v4/admin-view/manage-unis" method="POST">
+        <a class="link-back" href="/lsf-web/v4/admin-view/manage-unis">Back</a>
+        <h1 class="heading-large mt-0">University details</h1>
+
+        <div class="form-group">
+          <label class="form-label-bold" for="universityName">University name</label>
+          <input class="form-control" type="text" maxlength="100" id="universityName" name="name" value="ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label-bold" for="glCode">Payment Code</label>  
+          <input class="form-control" type="text" maxlength="3" id="glCode" name="glCode" value="AA0">
+        </div>
+    
+        <div class="form-group">
+          <fieldset>
+            <legend class="visually-hidden">Does the regional maintenance grant uplift apply?</legend>
+            <div class="multiple-choice">
+              <input type="checkbox" id="regional" name="regionalUplift" value="true">
+              <label class="form-label" for="regional">Regional maintenance grant uplift applies</label>
+            </div>
+          </fieldset>
+        </div>
+    
+        <div class="form-group">
+          <fieldset>
+            <legend class="visually-hidden">Do you want to enable this university?</legend>
+            <div class="multiple-choice">
+              <input type="checkbox" id="enabled" name="enabled" value="true" checked="checked">
+              <label class="form-label" for="enabled">Enabled</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <button class="button" type="submit" value="Save" name="Save">Save</button>
+          
+            <a href="#" id="deleteButton" class="button" data-toggle="dialog" data-target="dialog-deleteCollege" role="button">Delete</a>
+        </div>
+        <p><a href="/lsf/admin/colleges">Cancel</a></p>
+    
+        <div class="dialog" id="dialog-deleteCollege" aria-hidden="true">
+          <div class="dialog-holder" aria-labelledby="dialog-title-1" aria-describedby="dialog-content-1" role="alertdialog">
+            <div class="dialog-content" id="dialog-content-1" role="document" tabindex="0">
+              <h1 class="dialog-heading" id="dialog-title-1">Delete university</h1>
+              
+                <p>Are you sure you want to delete this university?</p>
+                <div class="dialog-actions">
+                  <button class="button" type="submit" value="Delete" name="Delete">Yes</button>
+                  <a class="dialog-cancel" href="/lsf-web/v4/admin-view/college-details">Cancel</a>
+                </div>
+                <a class="dialog-close" aria-label="close" type="button">
+                  <span class="icon icon-close">x</span>
+                </a>
+              
+            </div>
+          </div>
+        </div></form>
+      
+    </div>
+  </div>
+</div>
+{% endblock %}

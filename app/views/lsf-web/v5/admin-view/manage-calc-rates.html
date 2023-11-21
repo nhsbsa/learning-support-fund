@@ -1,0 +1,87 @@
+{% extends 'layout-admin.html' %}
+
+{% block pageTitle %}
+Manage calculation rates
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+	<div class="admin-page-header">
+		<h1 class="heading-large mt-15">Manage calculation rates</h1>
+	</div>
+	<div class="grid-row">
+		<div class="column-full">
+			<div class="filterBox">
+				<form action="" class="search-box js-disabled">
+					<div class="inline-search-wrapper">
+						<label for="filterText" class="visually-hidden">Filter rates</label>
+						<input class="search-box__input form-control" type="text" name="search-box" placeholder="Filter rates"
+							value="" id="filterText" onkeyup="filterTable('filterText', 'documentsTable')">
+						<span class="inline-search-button">
+							<span class="visually-hidden">Search</span>
+						</span>
+					</div>
+				</form>
+				<a class="button right-float" href="/lsf/admin/addRates" role="button">Add new calculation rates</a>
+			</div>
+			<table id="documentsTable" class="js-table-sortable">
+				<caption class="visually-hidden"> table</caption>
+				<thead>
+					<tr>
+						<th class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Valid from</a></th>
+						<th class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Enabled</a></th>
+						<th class="bold sortable" scope="col" data-sort="string" width="15%"><a href="#" class="table-header__button">Action</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<a href="#"><span>01/11/2023</span></a>
+						</td>
+						<td>No</td>
+						<td>
+							<a id="copyButton" href="#">Copy rates</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="#"><span>01/10/2023</span></a>
+						</td>
+						<td>No</td>
+						<td>
+							<a id="copyButton" href="#">Copy rates</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="#"><span>06/06/2023</span></a>
+						</td>
+						<td>No</td>
+						<td>
+							<a id="copyButton" href="#">Copy rates</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="#"><span>01/06/2023</span></a>
+						</td>
+						<td>No</td>
+						<td>
+							<a id="copyButton" href="#">Copy rates</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="#"><span>01/01/2000</span></a>
+						</td>
+						<td>Yes</td>
+						<td>
+							<a id="copyButton" href="#">Copy rates</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}

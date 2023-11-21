@@ -1,0 +1,59 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Hire vehicle details</h1>
+
+    <p>These are the details for the student's vehicle hire.</p>
+
+    <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total amount spent on hire vehicles
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £125.00
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Evidence
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">View <span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span></a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Student comments
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Spoke to Karen in the office for approval.
+          </dd>
+        </div>
+
+      </dl>
+
+      {% if data['read-only'] != 'true' %}
+      <a class="nhsuk-button" href="TDAE-checked-hire-vehicle">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}
