@@ -1,30 +1,29 @@
-{% extends 'layout-custom-header.html' %}
+{% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
 Search users
 {% endblock %}
 
 {% block content %}
-<div class="content-wrapper">
-	<div class="admin-page-header">
+<div class="nhsuk-grid-row">
+</div>
 
-		<form action="/lsf-web/v4/admin-view/user-results" method="POST">
-			<div class="grid-row">
-				<div class="column-full">
-					<h1 class="heading-large mt-15">Search users</h1>
+		<div class="nhsuk-grid-column-full">
+			<h1 class="nhsuk-heading-l">Search users</h1>
+		</div>
 					
-
-          <div class="grid-row">
-            <div class="column-third">
+		<form action="/lsf-web/v5/admin-view/user-results" method="POST">
+			<div class="nhsuk-grid-column-one-third"> 
               <div class="nhsuk-form-group" id="lastname-group">
                 <label class="nhsuk-label" for="lastname">
                   Surname
                 </label>
                 <input class="nhsuk-input" id="lastname" name="lastName" type="text">
               </div>
-            </div>
+			  </div>
+            
 
-            <div class="column-third">
+			  <div class="nhsuk-grid-column-one-third"> 
               <div class="nhsuk-form-group" id="email-group">
                 <label class="nhsuk-label" for="mail">
                   Email
@@ -33,7 +32,7 @@ Search users
               </div>
             </div>
 
-            <div class="column-third">
+			<div class="nhsuk-grid-column-one-third"> 
               <div class="nhsuk-form-group" id="role-group">
                 <label class="nhsuk-label" for="roleDrop" id="role-label">
                   Role
@@ -54,49 +53,25 @@ Search users
                 </select>
               </div>
             </div>
-          </div>
-					
-					
-					
-					<div class="grid-row">
-						<div class="column-full">
-							<div class="form-group">
-								<div class="form-group">
-									<div class="button-container">
-            
-										<div class="button-container">
-											<form action="/v5/admin-view/user-results">
-									<button style="margin-right:20px;" class="nhsuk-button" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">
-									  Search
-									</button>
-								</form>
-								  
-								<form action="/v5/admin-view/create-user">
-								  <button style="margin-right:600px;" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit" id="createButton">
-									Create user
-								  </button>
-								</form>
-								</div>
-								
+          
 
-								<form action="#">
-									<button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" id="exportButton">
-									  Export
-									</button>
-								  </form>
-								  </div>	
-							</div>
+			<div class="nhsuk-grid-column-full">
+				<button style="margin-right: 20px;"class="nhsuk-button" type="submit">Search</button>
+				<button class="nhsuk-button nhsuk-button--secondary">Create user</button>
+				<button style="float: right;" class="nhsuk-button nhsuk-button--secondary" href="#">Export</button>
+				
 
-							<p><a href="/lsf-web/v5/admin-view/manage-users" id="clearButton">Cancel</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</form>
-	</div>
+				<br>
+				<p><a href="#">Clear search</a></p>
+			
+		</form>	 
 
+		
+				
 <br>
-	<h2 class="heading-large">Search results</h2>
+
+
+	<h2 class="nhsuk-heading-m">Search results</h2>
 	<hr class="" style="border-color: #005eb8; border-width: 4px">
 	<table id="searchresultsTable" class="js-table-sortable">
 		
@@ -358,20 +333,20 @@ Search users
 		</tbody>
 	</table>
  
-	<nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
-		<ul class="nhsuk-list nhsuk-pagination__list">
-			<li class="nhsuk-pagination-item--next">
-				<a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="#">
-				  <span class="nhsuk-pagination__title">Next</span>
-				  <span class="nhsuk-u-visually-hidden">:</span>
-				  <span class="nhsuk-pagination__page">Page 2 of 5</span>
-				  <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
-					<path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-				  </svg>
-				</a>
-			  </li>
-			</ul>
-		  </nav>
+	<nav class="nav" role="navigation" aria-label="Pagination">
+		<ul class="pagination">
+		  <li class="pagination__item pagination-li"><a class="pagination__link current" href="#" aria-current="true" aria-label="Page 1, current page">1</a></li>
+		  <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">2</a></li>
+		  <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 3">3</a></li>
+		  <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 4">4</a></li>
+		</ul>
+		<a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;&raquo;</span></a>
+
+		<div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 10 of 32 results</div>
+	</nav>
+	 
 
 </div>
+
+
 {% endblock %}

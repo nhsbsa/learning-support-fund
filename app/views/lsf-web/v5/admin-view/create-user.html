@@ -1,11 +1,13 @@
-{% extends 'layout-custom-header.html' %}
+{% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
-Create user
+Update user
 {% endblock %}
 
 {% block content %}
+<div class="nhsuk-grid-column-two-thirds">
 <div class="content-wrapper">
+	
 	<div class="admin-page-header">
 		<div class="nhsuk-back-link">
 
@@ -18,18 +20,16 @@ Create user
 	</div>
 
 
-	<form name="userDetailsForm" action="/lsf-web/v5/admin-view/update-user-done" method="post" novalidate="">
-		<div class="grid-row">
-			<div class="column-full">
+	<form name="userDetailsForm" action="/lsf-web/v5/admin-view/create-user-done" method="post" novalidate="">
+		
+			
 
 
-				<h1 class="heading-large mt-0">Create user</h1>
-			</div>
-
-			<div class="column-half">
+		<h1 class="nhsuk-heading-l">Create user</h1>
+			
 					<div class="nhsuk-form-group">
 						<label class="nhsuk-label" id="email-label" for="email" class="form-label-bold">
-						  Email
+						  Email address
 						</label>
 						<div class="nhsuk-hint" id="contact-hint">
 							For example, jane.doe@gmail.com
@@ -46,6 +46,7 @@ Create user
 						<input class="nhsuk-input" id="lastName" name="lastName" type="text" spellcheck="false"
 						autocomplete="off" maxlength="35">
 					  </div>
+
 
 					  <div class="nhsuk-form-group">
 						<label class="nhsuk-label" id="firstname-label" for="firstname" class="form-label-bold">
@@ -65,7 +66,7 @@ Create user
                         Select all that apply.
                     </span>
                     <p class="nhsuk-body">
-                        <a class="nhsuk-link govuk-link--no-visited-state" style="float:right;" href="/lsf-web/v5/admin-view/update-user">Clear all</a>
+                        <a class="nhsuk-link govuk-link--no-visited-state" style="float:right;" href="#">Clear all</a>
                     </p>
                 
                     <br>
@@ -181,7 +182,7 @@ Create user
 
 				
 			  <div class="nhsuk-form-group">
-				<label class="nhsuk-label" id="college-label" for="college" class="form-label-bold">
+				<label class="nhsuk-label" id="college-label" for="college" class="form-label">
 				  College
 				</label>
 		
@@ -317,7 +318,7 @@ Create user
 
 
 				<div class="form-group">
-					<button class="nhsuk-button" type="submit" id="createUser">Create</button>
+					<button class="nhsuk-button" type="submit" id="saveUser">Create</button>
 
 				</div>
 				<a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a>
@@ -339,7 +340,7 @@ Create user
 	  checkboxes.forEach(function(checkbox) {
 		var roleLabel = document.querySelector('label[for="' + checkbox.id + '"]').innerText;
 		var listItem = document.createElement('li');
-		listItem.innerHTML = '<a class="app-filter__tag app-filter__tag--grey" href="#"><span class="sr-only">Remove this role</span>' + roleLabel + '</a>';
+		listItem.innerHTML = '<a class="app-filter__tag app-filter__tag--blue" href="#"><span class="sr-only">Remove this role</span>' + roleLabel + '</a>';
 		selectedRolesContainer.appendChild(listItem);
 	  });
   
@@ -363,7 +364,12 @@ Create user
 	}
 </script>
 
-  
-  <!-- ... your other HTML content ... -->
+
+
+<style>
+	.column-half {
+	  margin-right: 40px; /* Adjust the margin as needed */
+	}
+</style>
   
 {% endblock %}
