@@ -1556,9 +1556,9 @@ footer#footer {
 }
 
 /* bsa-admin update user */
-.nhsuk-checkboxes {
+/* .nhsuk-checkboxes {
   display: flex;
-}
+} */
 
 .column {
   flex: 1;
