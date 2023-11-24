@@ -30,19 +30,21 @@ What is the return mileage to your placement?
 					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-public-transport-type?new-journey=yes">Add daily public transport journey</a>
 				</div>
 				{% endif %}
+				{% if checked('claiming-for', 'car') %}
 				<div class="nhsuk-grid-column-one-quarter" style="width: 20%;">
 					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-evidence-type">Add extra costs</a>
 				</div>
+				{% endif %}
 				{% if checked('claiming-for', 'community') %}
 				<div class="nhsuk-grid-column-one-quarter">
 				<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-community-mileage-day">Add community mileage</a>
 				</div>
 				{% endif %}
-				<div class="nhsuk-grid-column-one-quarter" style="width: 30%;">
+				<!--<div class="nhsuk-grid-column-one-quarter" style="width: 30%;">
 				<a href="TDAE-placement-additional-comments" class="nhsuk-button">Complete placement travel details</a>
-				</div>
+				</div>-->
 			</div>
-			<p><a href="#">Save and come back later</a></p>
+			<!--<p><a href="#">Save and come back later</a></p>-->
 			<h3 class="nhsuk-heading-xs">Change previous answers</h3>
 			<!--<p>You can: </p>-->
 				{% if data['one-address'] == 'yes' %}
@@ -115,7 +117,7 @@ What is the return mileage to your placement?
 		</details>
 		{% endif %}
 
-		<table role="table" class="nhsuk-table-responsive">
+		<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
 		  <caption class="nhsuk-table__caption">Placement travel details and costs</caption>
 		  <thead role="rowgroup" class="nhsuk-table__head">
 		    <tr role="row">
@@ -217,6 +219,8 @@ What is the return mileage to your placement?
 			    </tr>
 		  </tbody>
 		</table>
+		<a href="TDAE-placement-additional-comments" class="nhsuk-button">Save placement travel details</a>
+		<p><a href="#">Save and come back later</a></p>
 
 	</div>
 

@@ -11,6 +11,79 @@ const router = express.Router();
 
 // ********************************
 
+router.post('/v7/TDAE-sure-remove', (req, res) => {
+
+  const remove = req.session.data['remove']
+
+  if (remove === 'yes') {
+      res.redirect('/lsf-public/v7/TDAE-task-list')
+  } else {
+      res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-invalid-costs-partial')
+  }
+
+
+})
+
+router.post('/v7/TDAE-invalid-costs-partial', (req, res) => {
+
+  const invalidCostsPartial = req.session.data['invalid-costs-partial']
+
+  if (invalidCostsPartial === 'change-details') {
+      res.redirect('/lsf-public/v7/TDAE-placement-itinerary')
+  }  else if (invalidCostsPartial === 'remove') {
+      res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-sure-remove')
+  } else {
+      res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-invalid-costs-partial')
+  }
+
+
+})
+
+router.post('/v7/TDAE-sure-delete', (req, res) => {
+
+  const deleteClaim = req.session.data['delete']
+
+  if (deleteClaim === 'yes') {
+      res.redirect('/lsf-public/v7/TDAE-returning-student/academic-year-details')
+  } else {
+      res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-invalid-costs-all')
+  }
+
+
+})
+
+router.post('/v7/TDAE-sure-remove-all', (req, res) => {
+
+  const removeAll = req.session.data['remove-all']
+
+  if (removeAll === 'yes') {
+      res.redirect('/lsf-public/v7/TDAE-task-list')
+  } else {
+      res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-invalid-costs-all')
+  }
+
+
+})
+
+router.post('/v7/TDAE-invalid-costs-all', (req, res) => {
+
+  const invalidCostsAll = req.session.data['invalid-costs-all']
+
+  if (invalidCostsAll === 'change-details') {
+      res.redirect('/lsf-public/v7/TDAE-placement-itinerary')
+  }
+  else if (invalidCostsAll === 'remove-all') {
+      res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-sure-remove-all')
+  }
+  else if (invalidCostsAll === 'delete') {
+      res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-sure-delete')
+  } else {
+      res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-invalid-costs-all')
+  }
+
+
+})
+
 router.post('/v7/TDAE-costs-already-claimed', (req, res) => {
 
   const alreadyClaimed = req.session.data['already-claimed']
@@ -348,10 +421,29 @@ router.post('/v7/TDAE-placement-community-mileage-costs', (req, res) => {
 
 })
 
+// TDAE community mileage transport
+router.post('/v7/TDAE-placement-community-mileage-transport', (req, res) => {
+
+  const communityMileageTransport = req.session.data['community-mileage-transport']
+
+  if (communityMileageTransport === 'Car journey') {
+    res.redirect('/lsf-public/v7/TDAE-placement-community-mileage-costs')
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-placement-community-mileage-costs-pt')
+  }
+
+})
+
 // TDAE community mileage
 router.post('/v7/TDAE-placement-community-mileage-day', (req, res) => {
 
-  res.redirect('/lsf-public/v7/TDAE-placement-community-mileage-costs')
+  const claimingFor = req.session.data['claiming-for']
+
+  if (claimingFor.includes('car') && claimingFor.includes('Public transport')) {
+    res.redirect('/lsf-public/v7/TDAE-placement-community-mileage-transport')
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-placement-community-mileage-costs')
+  }
 
 })
 
@@ -921,7 +1013,7 @@ router.post('/v7/TDAE-travel-accommodation', (req, res) => {
     const claimingFor = req.session.data['claiming-for']
     const change = req.session.data['change']
 
-    if (claimingFor.includes('none')) {
+    if (claimingFor.includes('overseas') || claimingFor.includes('taxi')) {
         res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-alternative-journey-signpost')
     } else if (change == ('yes')) {
         res.redirect('/lsf-public/v7/TDAE-eligibility-cya')

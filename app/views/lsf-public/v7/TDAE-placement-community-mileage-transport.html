@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Which type of evidence does this relate to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v7/TDAE-placement-community-mileage-transport" method="POST">
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="community-mileage-transport-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Which method of transport did you use for community mileage on this day?
+            </h1>
+          </legend>
+
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="community-mileage-transport-1" name="community-mileage-transport" type="radio" value="Car journey">
+              <label class="nhsuk-label nhsuk-radios__label" for="community-mileage-transport-1">
+                Car journey
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="community-mileage-transport-2" name="community-mileage-transport" type="radio" value="Public transport">
+              <label class="nhsuk-label nhsuk-radios__label" for="community-mileage-transport-2">
+                Public transport
+              </label>
+            </div>
+
+        </fieldset>
+
+      </div>
+
+      <button class="nhsuk-button">Continue</button><br>
+      <a href="TDAE-start-claim">Cancel</a>
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

@@ -49,6 +49,13 @@
             </div>
 
             <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="claiming-for-taxi" name="claiming-for" type="checkbox" value="taxi">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-taxi">
+                Taxi journey to placement
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="claiming-for-community" name="claiming-for" type="checkbox" value="community" {{ checked('community') }}>
               <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-community">
                 Community mileage
@@ -69,12 +76,10 @@
               </label>
             </div>
 
-            <div class="nhsuk-checkboxes__divider">or</div>
-
             <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="claiming-for-none" name="claiming-for" type="checkbox" value="none">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-none">
-                None of these
+              <input class="nhsuk-checkboxes__input" id="claiming-for-overseas" name="claiming-for" type="checkbox" value="overseas">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-overseas">
+                Overseas costs
               </label>
             </div>
 

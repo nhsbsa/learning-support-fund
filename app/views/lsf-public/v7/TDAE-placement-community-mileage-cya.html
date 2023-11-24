@@ -38,20 +38,50 @@ Additional costs for your normal daily journey
 					      </a>
 					    </dd>
 					  </div>
-
-						<div class="nhsuk-summary-list__row">
-					    <dt class="nhsuk-summary-list__key">
-					      Total miles
-					    </dt>
-					    <dd class="nhsuk-summary-list__value">
-					      {{ data['community-mileage-miles']}}
-					    </dd>
-					    <dd class="nhsuk-summary-list__actions">
-					      <a href="TDAE-placement-community-mileage-costs">
-					        Change<span class="nhsuk-u-visually-hidden"> total miles</span>
-					      </a>
-					    </dd>
-					  </div>
+						{% if 'car' in data['claiming-for'] and 'Public transport' in data['claiming-for'] %}
+							<div class="nhsuk-summary-list__row">
+								<dt class="nhsuk-summary-list__key">
+									Transport method
+								</dt>
+								<dd class="nhsuk-summary-list__value">
+									{{ data['community-mileage-transport']}}
+								</dd>
+								<dd class="nhsuk-summary-list__actions">
+									<a href="TDAE-placement-community-mileage-transport">
+										Change<span class="nhsuk-u-visually-hidden"> transport method</span>
+									</a>
+								</dd>
+							</div>
+						{% endif %}
+						{% if data['community-mileage-transport'] == 'Car journey' %}
+							<div class="nhsuk-summary-list__row">
+						    <dt class="nhsuk-summary-list__key">
+						      Total miles
+						    </dt>
+						    <dd class="nhsuk-summary-list__value">
+						      {{ data['community-mileage-miles']}}
+						    </dd>
+						    <dd class="nhsuk-summary-list__actions">
+						      <a href="TDAE-placement-community-mileage-costs">
+						        Change<span class="nhsuk-u-visually-hidden"> total miles</span>
+						      </a>
+						    </dd>
+						  </div>
+						{% else %}
+							<div class="nhsuk-summary-list__row">
+						    <dt class="nhsuk-summary-list__key">
+						      Total cost
+						    </dt>
+						    <dd class="nhsuk-summary-list__value">
+						      {{ data['community-mileage-miles']}}
+						    </dd>
+						    <dd class="nhsuk-summary-list__actions">
+						      <a href="TDAE-placement-community-mileage-costs-pt">
+						        Change<span class="nhsuk-u-visually-hidden"> total cost</span>
+						      </a>
+						    </dd>
+						  </div>
+						{% endif %}
 
 					</dl>
 
