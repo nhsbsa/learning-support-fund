@@ -5,371 +5,356 @@ Update user
 {% endblock %}
 
 {% block content %}
-<div class="nhsuk-grid-column-two-thirds">
-<div class="content-wrapper">
-	
-	<div class="admin-page-header">
-		<div class="nhsuk-back-link">
-
-			<a class="nhsuk-back-link__link" href="#">
-			  <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
-				<path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
-			  </svg>
-			  Go back</a>
-		  </div>
+	<div class="nhsuk-back-link">
+		<a class="nhsuk-back-link__link" href="/lsf-web/v5/admin-view/user-results">
+			<svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+				<path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+				</path>
+			</svg>
+			Go back
+		</a>
 	</div>
 
-
-	<form name="userDetailsForm" action="/lsf-web/v5/admin-view/update-user-done" method="post" novalidate="">
-		
-			
-
-
-		<h1 class="nhsuk-heading-l">Update user</h1>
-			
-					<div class="nhsuk-form-group">
-						<label class="nhsuk-label" id="email-label" for="email" class="form-label-bold">
-						  Email address
-						</label>
-						<div class="nhsuk-hint" id="contact-hint">
-							For example, jane.doe@gmail.com
-						  </div>
-						<input class="nhsuk-input" id="email" name="email" type="text" spellcheck="false" inputmode="email"
-						autocomplete="off" maxlength="254">
-					  </div>
-					
-
-					  <div class="nhsuk-form-group">
-						<label class="nhsuk-label" id="lastName-label" for="lastName" class="form-label-bold">
-						  Surname
-						</label>
-						<input class="nhsuk-input" id="lastName" name="lastName" type="text" spellcheck="false"
-						autocomplete="off" maxlength="35">
-					  </div>
-
-
-					  <div class="nhsuk-form-group">
-						<label class="nhsuk-label" id="firstname-label" for="firstname" class="form-label-bold">
-						  First name
-						</label>
-						<div class="nhsuk-hint" id="contact-hint">
-							Do not include any middle name(s).
-						  </div>
-						<input class="nhsuk-input" id="firstName" name="firstName" type="text" spellcheck="false"
-						autocomplete="off" maxlength="35">
-					  </div>
-				
-
-				<div class="form-group">
-                    <label id="role-label" class="nhsuk-label" for="role">Select Role(s)</label>
-                    <span class="nhsuk-hint" id="role-hint">
-                        Select all that apply.
-                    </span>
-                    <p class="nhsuk-body">
-                        <a class="nhsuk-link govuk-link--no-visited-state" style="float:right;" href="/lsf-web/v5/admin-view/update-user">Clear all</a>
-                    </p>
-                
-                    <br>
-
-                    <div id="selectedRolesContainer" class="selected-roles-container">
-                        <!-- Selected roles will be displayed here -->
-					</div>
-
-					<br>
-                <form>
-                <div class="nhsuk-form-group">
-                    <div class="nhsuk-checkboxes">
-						
-						<div class="column-half">
-							<!-- First column -->
-
-                        <div class="nhsuk-checkboxes__item">
-                          <input class="nhsuk-checkboxes__input" id="role-1" name="role" type="checkbox" value="processor" onchange="updateSelectedRoles()">
-                          <label class="nhsuk-label nhsuk-checkboxes__label" for="role-1">
-                            Processor
-                          </label>
-                        </div>
-                
-                        <div class="nhsuk-checkboxes__item">
-                          <input class="nhsuk-checkboxes__input" id="role-2" name="role" type="checkbox" value="technical support officer" onchange="updateSelectedRoles()">
-                          <label class="nhsuk-label nhsuk-checkboxes__label" for="role-2">
-                            Technical support officer
-                          </label>
-                        </div>
-                
-                        <div class="nhsuk-checkboxes__item">
-                          <input class="nhsuk-checkboxes__input" id="role-3" name="role" type="checkbox" value="management support" onchange="updateSelectedRoles()">
-                          <label class="nhsuk-label nhsuk-checkboxes__label" for="role-3">
-                            Management support
-                          </label>
-                        </div>
-                
-                        <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="role-4" name="role" type="checkbox" value="team manager" onchange="updateSelectedRoles()">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="role-4">
-                              Team manager
-                            </label>
-                          </div>
-                  
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="role-5" name="role" type="checkbox" value="call centre" onchange="updateSelectedRoles()">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="role-5">
-                              Call centre
-                            </label>
-                          </div>
-                  
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="role-6" name="role" type="checkbox" value="call centre manager" onchange="updateSelectedRoles()">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="role-6">
-                              Call centre manager
-                            </label>
-                          </div>
-						</div>
-
-						<br>
-
-						  <div class="column">
-							<!-- Second column -->
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="role-7" name="role" type="checkbox" value="finance" onchange="updateSelectedRoles()">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="role-7">
-                              Finance
-                            </label>
-                          </div>
-                  
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="role-8" name="role" type="checkbox" value="super user" onchange="updateSelectedRoles()">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="role-8">
-                              Super user
-                            </label>
-                          </div>
-                  
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="role-9" name="role" type="checkbox" value="HEI user" onchange="showColleges()">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="role-9">
-                             HEI user
-                            </label>
-                          </div>
-
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="role-10" name="role" type="checkbox" value="HEI admin" onchange="showColleges()">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="role-10">
-                             HEI admin
-                            </label>
-                          </div>
-
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="role-11" name="role" type="checkbox" value="HEI read" onchange="showColleges()">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="role-11">
-                             HEI read
-                            </label>
-                          </div>
-						  </div>
-
-                      </div>
-                    </div>
-                </form>
-            </div>
-
-
-			<div class="nhsuk-form-group">
-				<label class="nhsuk-label" id="location-label" for="location" class="form-label-bold">
-				  Location
-				</label>
-				<input class="nhsuk-input" id="location" name="location" type="text" spellcheck="false"
-				autocomplete="off" maxlength="100">
-			  </div>
-
-				
-			  <div class="nhsuk-form-group">
-				<label class="nhsuk-label" id="college-label" for="college" class="form-label-bold">
-				  College
-				</label>
-		
-				
-					<select class="nhsuk-select" id="collegeDrop" name="college">
-						<option value="">Select...</option>
-						<option value="1">ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</option>
-						<option value="2">ANGLIA RUSKIN UNIVERSITY - CHELMSFORD</option>
-						<option value="3">ANGLIA RUSKIN UNIVERSITY - PETERBOROUGH</option>
-						<option value="4">BIRMINGHAM CITY UNIVERSITY</option>
-						<option value="5">BIRMINGHAM METROPOLITAN COLLEGE</option>
-						<option value="6">BOURNEMOUTH UNIVERSITY</option>
-						<option value="7">BPP UNIVERSITY LTD</option>
-						<option value="8">BRUNEL UNIVERSITY LONDON</option>
-						<option value="9">BUCKS NEW UNIVERSITY</option>
-						<option value="10">CANTERBURY CHRIST CHURCH UNIVERSITY</option>
-						<option value="11">CITY UNIVERSITY LONDON</option>
-						<option value="12">COLCHESTER INSTITUTE</option>
-						<option value="13">COVENTRY UNIVERSITY</option>
-						<option value="14">DE MONTFORT UNIVERSITY</option>
-						<option value="15">EDGE HILL UNIVERSITY</option>
-						<option value="16">KEELE UNIVERSITY</option>
-						<option value="17">KINGS COLLEGE LONDON</option>
-						<option value="18">KINGSTON UNIVERSITY</option>
-						<option value="19">LEEDS BECKETT UNIVERSITY</option>
-						<option value="20">LIVERPOOL JOHN MOORES UNIVERSITY</option>
-						<option value="21">LONDON METROPOLITAN UNIVERSITY</option>
-						<option value="22">LONDON SOUTH BANK UNIVERSITY</option>
-						<option value="23">MANCHESTER METROPOLITAN UNIVERSITY</option>
-						<option value="24">MIDDLESEX UNIVERSITY</option>
-						<option value="25">NEW COLLEGE DURHAM</option>
-						<option value="26">NORTHUMBRIA UNIVERSITY</option>
-						<option value="27">OXFORD BROOKES UNIVERSITY</option>
-						<option value="28">SHEFFIELD HALLAM UNIVERSITY</option>
-						<option value="29">SOLENT UNIVERSITY</option>
-						<option value="31">STAFFORDSHIRE UNIVERSITY</option>
-						<option value="30">ST GEORGE'S - UNIVERSITY OF LONDON</option>
-						<option value="32">UNIVERSITY COLLEGE LONDON</option>
-						<option value="33">UNIVERSITY OF BEDFORDSHIRE</option>
-						<option value="34">UNIVERSITY OF BIRMINGHAM</option>
-						<option value="35">UNIVERSITY OF BOLTON</option>
-						<option value="36">UNIVERSITY OF BRADFORD</option>
-						<option value="37">UNIVERSITY OF BRIGHTON</option>
-						<option value="38">UNIVERSITY OF BRISTOL</option>
-						<option value="39">UNIVERSITY OF CENTRAL LANCASHIRE</option>
-						<option value="40">UNIVERSITY OF CHESTER</option>
-						<option value="41">UNIVERSITY OF CUMBRIA</option>
-						<option value="42">UNIVERSITY OF DERBY</option>
-						<option value="43">UNIVERSITY OF EAST ANGLIA</option>
-						<option value="44">UNIVERSITY OF EAST LONDON</option>
-						<option value="45">UNIVERSITY OF ESSEX</option>
-						<option value="46">UNIVERSITY OF EXETER</option>
-						<option value="47">UNIVERSITY OF GLOUCESTERSHIRE</option>
-						<option value="48">UNIVERSITY OF GREENWICH</option>
-						<option value="49">UNIVERSITY OF HERTFORDSHIRE</option>
-						<option value="50">UNIVERSITY OF HUDDERSFIELD</option>
-						<option value="51">UNIVERSITY OF HULL</option>
-						<option value="52">UNIVERSITY OF LEEDS</option>
-						<option value="53">UNIVERSITY OF LEICESTER</option>
-						<option value="54">UNIVERSITY OF LINCOLN</option>
-						<option value="55">UNIVERSITY OF LIVERPOOL</option>
-						<option value="56">UNIVERSITY OF MANCHESTER</option>
-						<option value="57">UNIVERSITY OF NEWCASTLE</option>
-						<option value="58">UNIVERSITY OF NORTHAMPTON</option>
-						<option value="59">UNIVERSITY OF NOTTINGHAM</option>
-						<option value="60">UNIVERSITY OF PLYMOUTH</option>
-						<option value="61">UNIVERSITY OF PORTSMOUTH</option>
-						<option value="62">UNIVERSITY OF READING</option>
-						<option value="63">UNIVERSITY OF ROEHAMPTON</option>
-						<option value="64">UNIVERSITY OF SALFORD</option>
-						<option value="65">UNIVERSITY OF SHEFFIELD</option>
-						<option value="66">UNIVERSITY OF SOUTHAMPTON</option>
-						<option value="67">UNIVERSITY OF ST MARK AND ST JOHN</option>
-						<option value="68">UNIVERSITY OF SUFFOLK</option>
-						<option value="69">UNIVERSITY OF SUNDERLAND</option>
-						<option value="70">UNIVERSITY OF SURREY</option>
-						<option value="71">UNIVERSITY OF TEESSIDE</option>
-						<option value="72">UNIVERSITY OF THE WEST OF ENGLAND</option>
-						<option value="73">UNIVERSITY OF WEST LONDON</option>
-						<option value="74">UNIVERSITY OF WINCHESTER</option>
-						<option value="75">UNIVERSITY OF WOLVERHAMPTON</option>
-						<option value="76">UNIVERSITY OF WORCESTER</option>
-						<option value="77">UNIVERSITY OF YORK</option>
-						<option value="78">UNIVERSIYT OF PLYMOUTH</option>
-						<option value="79">YORK ST JOHN UNIVERSITY</option>
-					</select>
-				</div>
-
+	<form name="userDetailsForm" action="/lsf-web/v5/admin-view/create-user-done" method="post" novalidate="">
+		<div class="nhsuk-grid-row">
+			<div class="nhsuk-grid-column-two-thirds">	
+				<h1 class="nhsuk-heading-l">Update user</h1>
 
 				<div class="nhsuk-form-group">
-					<label class="nhsuk-label" id="job-label" for="job" class="form-label-bold">
-					  Job/Department
-					</label>
-					<input class="nhsuk-input" id="job" name="job" type="text" spellcheck="false"
-					autocomplete="off" maxlength="35">
-				  </div>
-
-				  <div class="nhsuk-form-group">
-					<label class="nhsuk-label" id="contactNumber-label" for="contactNumber" class="form-label-bold">
-					  Preferred contact number
-					</label>
-					<input class="nhsuk-input" id="contactNumber" name="contactNumber" type="text" spellcheck="false"
-					autocomplete="off" maxlength="20">
-				  </div>
-
-				
-
-			</div>
-		
-
-		<div class="nhsuk-form-group">
-			<label class="nhsuk-label" id="contactNumber-label" for="contactNumber" class="form-label-bold">
-			  Is the user's login active?
-			</label>
-			
-
-			<div class="nhsuk-radios nhsuk-radios--inline">
-				<div class="nhsuk-radios__item">
-				  <input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="1" checked="checked">
-				  <label class="nhsuk-label nhsuk-radios__label" for="optionsActiveYes">
-					Yes
-				  </label>
+					<label class="nhsuk-label" id="email-label" for="email" class="form-label-bold">Email address</label>
+					<div class="nhsuk-hint" id="contact-hint">For example, jane.doe@gmail.com</div>
+					<input class="nhsuk-input" id="email" name="email" type="text" spellcheck="false" inputmode="email" autocomplete="off" value="sdsds@gmail.com">
 				</div>
-		  
-				<div class="nhsuk-radios__item">
-				  <input class="nhsuk-radios__input" id="optionsActiveNo" name="active" type="radio" value="0">
-				  <label class="nhsuk-label nhsuk-radios__label" for="optionsActiveNo">
-					No
-				  </label>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" id="lastName-label" for="lastName" class="form-label-bold">Surname</label>
+					<input class="nhsuk-input" id="lastName" name="lastName" type="text" spellcheck="false" autocomplete="off" value="Cooper">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" id="firstname-label" for="firstname" class="form-label-bold">First name</label>
+					<div class="nhsuk-hint" id="contact-hint">Do not include any middle name(s).</div>
+					<input class="nhsuk-input" id="firstName" name="firstName" type="text" spellcheck="false" autocomplete="off" value="Tin">
+				</div>
+			</div>
+
+			<div class="nhsuk-grid-column-full">	
+				<fieldset class="nhsuk-fieldset">
+					<legend class="nhsuk-fieldset__legend nhsuk-label">Select role(s)</legend>
+
+					<div class="nhsuk-form-group">
+						<span class="nhsuk-hint" id="role-hint">Select all that apply.</span>
+						<p class="nhsuk-body">
+							<a class="nhsuk-link govuk-link--no-visited-state" href="#">Clear all</a>
+						</p>
+				
+						<ul id="selectedRolesContainer" class="selected-roles-container">
+							<!-- Selected roles will be displayed here -->
+							<li><button id="hei-user-btn" class="delete" aria-label="Remove HEI user from the list">HEI user</button></li>
+						</ul>
+				
+						<div class="nhsuk-grid-row">
+							<div class="nhsuk-grid-column-one-half">
+								<div class="nhsuk-checkboxes">
+									<!-- First column -->
+									<div class="nhsuk-checkboxes__item">
+										<input class="nhsuk-checkboxes__input" id="role-1" name="role" type="checkbox" value="processor" onchange="updateSelectedRoles()">
+										<label class="nhsuk-label nhsuk-checkboxes__label" for="role-1">
+											Processor
+										</label>
+									</div>
+
+									<div class="nhsuk-checkboxes__item">
+										<input class="nhsuk-checkboxes__input" id="role-2" name="role" type="checkbox"
+											value="technical support officer" onchange="updateSelectedRoles()">
+										<label class="nhsuk-label nhsuk-checkboxes__label" for="role-2">
+											Technical support officer
+										</label>
+									</div>
+
+									<div class="nhsuk-checkboxes__item">
+										<input class="nhsuk-checkboxes__input" id="role-3" name="role" type="checkbox"
+											value="management support" onchange="updateSelectedRoles()">
+										<label class="nhsuk-label nhsuk-checkboxes__label" for="role-3">
+											Management support
+										</label>
+									</div>
+
+									<div class="nhsuk-checkboxes__item">
+										<input class="nhsuk-checkboxes__input" id="role-4" name="role" type="checkbox" value="team manager" onchange="updateSelectedRoles()">
+										<label class="nhsuk-label nhsuk-checkboxes__label" for="role-4">
+											Team manager
+										</label>
+									</div>
+
+									<div class="nhsuk-checkboxes__item">
+										<input class="nhsuk-checkboxes__input" id="role-5" name="role" type="checkbox" value="call centre" onchange="updateSelectedRoles()">
+										<label class="nhsuk-label nhsuk-checkboxes__label" for="role-5">
+											Call centre
+										</label>
+									</div>
+
+									<div class="nhsuk-checkboxes__item">
+										<input class="nhsuk-checkboxes__input" id="role-6" name="role" type="checkbox"
+											value="call centre manager" onchange="updateSelectedRoles()">
+										<label class="nhsuk-label nhsuk-checkboxes__label" for="role-6">
+											Call centre manager
+										</label>
+									</div>
+								</div>
+							</div>
+						
+							<div class="nhsuk-grid-column-one-half">
+								<div class="nhsuk-form-group">
+									<div class="nhsuk-checkboxes">
+										<div class="nhsuk-checkboxes__item">
+											<input class="nhsuk-checkboxes__input" id="role-7" name="role" type="checkbox" value="finance" onchange="updateSelectedRoles()">
+											<label class="nhsuk-label nhsuk-checkboxes__label" for="role-7">
+												Finance
+											</label>
+										</div>
+
+										<div class="nhsuk-checkboxes__item">
+											<input class="nhsuk-checkboxes__input" id="role-8" name="role" type="checkbox" value="super user" onchange="updateSelectedRoles()">
+											<label class="nhsuk-label nhsuk-checkboxes__label" for="role-8">
+												Super user
+											</label>
+										</div>
+
+										<div class="nhsuk-checkboxes__item">
+											<input class="nhsuk-checkboxes__input" id="role-9" name="role" type="checkbox" value="HEI user" onchange="updateSelectedRoles()" checked>
+											<label class="nhsuk-label nhsuk-checkboxes__label" for="role-9">
+												HEI user
+											</label>
+										</div>
+
+										<div class="nhsuk-checkboxes__item">
+											<input class="nhsuk-checkboxes__input" id="role-10" name="role" type="checkbox" value="HEI admin" onchange="updateSelectedRoles()">
+											<label class="nhsuk-label nhsuk-checkboxes__label" for="role-10">
+												HEI admin
+											</label>
+										</div>
+
+										<div class="nhsuk-checkboxes__item">
+											<input class="nhsuk-checkboxes__input" id="role-11" name="role" type="checkbox" value="HEI read" onchange="updateSelectedRoles()">
+											<label class="nhsuk-label nhsuk-checkboxes__label" for="role-11">
+												HEI read
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="nhsuk-grid-column-two-thirds">
+				<div id="locationContainer">
+					<div class="nhsuk-form-group">
+						<label class="nhsuk-label" id="location-label" for="location" class="form-label-bold">Location</label>
+						<input class="nhsuk-input" id="location" name="location" type="text" spellcheck="false" autocomplete="off">
+					</div>
+				</div>
+
+				<div id="hiddenDiv" style="display:none;">
+					<div class="nhsuk-form-group">
+						<label class="nhsuk-label" id="college-label" for="college" class="form-label">
+							College
+						</label>
+						<select class="nhsuk-select nhsuk-u-width-full" id="collegeDrop" name="college">
+							<option value="">Select...</option>
+							<option value="1" selected>ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</option>
+							<option value="2">ANGLIA RUSKIN UNIVERSITY - CHELMSFORD</option>
+							<option value="3">ANGLIA RUSKIN UNIVERSITY - PETERBOROUGH</option>
+							<option value="4">BIRMINGHAM CITY UNIVERSITY</option>
+							<option value="5">BIRMINGHAM METROPOLITAN COLLEGE</option>
+							<option value="6">BOURNEMOUTH UNIVERSITY</option>
+							<option value="7">BPP UNIVERSITY LTD</option>
+							<option value="8">BRUNEL UNIVERSITY LONDON</option>
+							<option value="9">BUCKS NEW UNIVERSITY</option>
+							<option value="10">CANTERBURY CHRIST CHURCH UNIVERSITY</option>
+							<option value="11">CITY UNIVERSITY LONDON</option>
+							<option value="12">COLCHESTER INSTITUTE</option>
+							<option value="13">COVENTRY UNIVERSITY</option>
+							<option value="14">DE MONTFORT UNIVERSITY</option>
+							<option value="15">EDGE HILL UNIVERSITY</option>
+							<option value="16">KEELE UNIVERSITY</option>
+							<option value="17">KINGS COLLEGE LONDON</option>
+							<option value="18">KINGSTON UNIVERSITY</option>
+							<option value="19">LEEDS BECKETT UNIVERSITY</option>
+							<option value="20">LIVERPOOL JOHN MOORES UNIVERSITY</option>
+							<option value="21">LONDON METROPOLITAN UNIVERSITY</option>
+							<option value="22">LONDON SOUTH BANK UNIVERSITY</option>
+							<option value="23">MANCHESTER METROPOLITAN UNIVERSITY</option>
+							<option value="24">MIDDLESEX UNIVERSITY</option>
+							<option value="25">NEW COLLEGE DURHAM</option>
+							<option value="26">NORTHUMBRIA UNIVERSITY</option>
+							<option value="27">OXFORD BROOKES UNIVERSITY</option>
+							<option value="28">SHEFFIELD HALLAM UNIVERSITY</option>
+							<option value="29">SOLENT UNIVERSITY</option>
+							<option value="31">STAFFORDSHIRE UNIVERSITY</option>
+							<option value="30">ST GEORGE'S - UNIVERSITY OF LONDON</option>
+							<option value="32">UNIVERSITY COLLEGE LONDON</option>
+							<option value="33">UNIVERSITY OF BEDFORDSHIRE</option>
+							<option value="34">UNIVERSITY OF BIRMINGHAM</option>
+							<option value="35">UNIVERSITY OF BOLTON</option>
+							<option value="36">UNIVERSITY OF BRADFORD</option>
+							<option value="37">UNIVERSITY OF BRIGHTON</option>
+							<option value="38">UNIVERSITY OF BRISTOL</option>
+							<option value="39">UNIVERSITY OF CENTRAL LANCASHIRE</option>
+							<option value="40">UNIVERSITY OF CHESTER</option>
+							<option value="41">UNIVERSITY OF CUMBRIA</option>
+							<option value="42">UNIVERSITY OF DERBY</option>
+							<option value="43">UNIVERSITY OF EAST ANGLIA</option>
+							<option value="44">UNIVERSITY OF EAST LONDON</option>
+							<option value="45">UNIVERSITY OF ESSEX</option>
+							<option value="46">UNIVERSITY OF EXETER</option>
+							<option value="47">UNIVERSITY OF GLOUCESTERSHIRE</option>
+							<option value="48">UNIVERSITY OF GREENWICH</option>
+							<option value="49">UNIVERSITY OF HERTFORDSHIRE</option>
+							<option value="50">UNIVERSITY OF HUDDERSFIELD</option>
+							<option value="51">UNIVERSITY OF HULL</option>
+							<option value="52">UNIVERSITY OF LEEDS</option>
+							<option value="53">UNIVERSITY OF LEICESTER</option>
+							<option value="54">UNIVERSITY OF LINCOLN</option>
+							<option value="55">UNIVERSITY OF LIVERPOOL</option>
+							<option value="56">UNIVERSITY OF MANCHESTER</option>
+							<option value="57">UNIVERSITY OF NEWCASTLE</option>
+							<option value="58">UNIVERSITY OF NORTHAMPTON</option>
+							<option value="59">UNIVERSITY OF NOTTINGHAM</option>
+							<option value="60">UNIVERSITY OF PLYMOUTH</option>
+							<option value="61">UNIVERSITY OF PORTSMOUTH</option>
+							<option value="62">UNIVERSITY OF READING</option>
+							<option value="63">UNIVERSITY OF ROEHAMPTON</option>
+							<option value="64">UNIVERSITY OF SALFORD</option>
+							<option value="65">UNIVERSITY OF SHEFFIELD</option>
+							<option value="66">UNIVERSITY OF SOUTHAMPTON</option>
+							<option value="67">UNIVERSITY OF ST MARK AND ST JOHN</option>
+							<option value="68">UNIVERSITY OF SUFFOLK</option>
+							<option value="69">UNIVERSITY OF SUNDERLAND</option>
+							<option value="70">UNIVERSITY OF SURREY</option>
+							<option value="71">UNIVERSITY OF TEESSIDE</option>
+							<option value="72">UNIVERSITY OF THE WEST OF ENGLAND</option>
+							<option value="73">UNIVERSITY OF WEST LONDON</option>
+							<option value="74">UNIVERSITY OF WINCHESTER</option>
+							<option value="75">UNIVERSITY OF WOLVERHAMPTON</option>
+							<option value="76">UNIVERSITY OF WORCESTER</option>
+							<option value="77">UNIVERSITY OF YORK</option>
+							<option value="78">UNIVERSIYT OF PLYMOUTH</option>
+							<option value="79">YORK ST JOHN UNIVERSITY</option>
+						</select>
+					</div>
+
+					<div class="nhsuk-form-group">
+						<label class="nhsuk-label" id="job-label" for="job" class="form-label-bold">
+							Job/Department
+						</label>
+						<input class="nhsuk-input" id="job" name="job" type="text" spellcheck="false" autocomplete="off" value="Test office">
+					</div>
+
+					<div class="nhsuk-form-group">
+						<label class="nhsuk-label" id="contactNumber-label" for="contactNumber" class="form-label-bold">
+							Preferred contact number
+						</label>
+						<input class="nhsuk-input" id="contactNumber" name="contactNumber" type="text" spellcheck="false" autocomplete="off" value="012843121112">
+					</div>
+				</div>
+			
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" id="contactNumber-label" for="contactNumber" class="form-label-bold">
+						Is the user's login active?
+					</label>
+
+					<div class="nhsuk-radios nhsuk-radios--inline">
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="1" checked="checked">
+							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveYes">
+								Yes
+							</label>
+						</div>
+
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="optionsActiveNo" name="active" type="radio" value="0">
+							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveNo">
+								No
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="nhsuk-form-group">
+					<button class="nhsuk-button" type="submit" id="saveUser">Create</button>
+					<p><a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a></p>
 				</div>
 			</div>
 		</div>
-
-
-				<div class="form-group">
-					<button class="nhsuk-button" type="submit" id="saveUser">Update</button>
-
-				</div>
-				<a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a>
-
-
-			</div>
 	</form>
-
-</div>
-
-
+{% endblock %}
+{% block pageScripts %}
 <script>
 	function updateSelectedRoles() {
-	  var selectedRolesContainer = document.getElementById("selectedRolesContainer");
-	  var checkboxes = document.querySelectorAll('input[name="role"]:checked');
-  
-	  selectedRolesContainer.innerHTML = ""; // Clear the container
-  
-	  checkboxes.forEach(function(checkbox) {
-		var roleLabel = document.querySelector('label[for="' + checkbox.id + '"]').innerText;
-		var listItem = document.createElement('li');
-		listItem.innerHTML = '<a class="app-filter__tag app-filter__tag--blue" href="#"><span class="sr-only">Remove this role</span>' + roleLabel + '</a>';
-		selectedRolesContainer.appendChild(listItem);
-	  });
-  
-	  // Call the function to check if additional fields should be shown
-	  showAdditionalFields();
-	}
-  
-	function showAdditionalFields() {
-	  var heiUserCheckbox = document.getElementById("role-9");
-	  var heiAdminCheckbox = document.getElementById("role-10");
-	  var heiReadCheckbox = document.getElementById("role-11");
-  
-	  var collegeContainer = document.getElementById("collegeContainer");
-	  var locationContainer = document.getElementById("locationContainer");
-	  var jobContainer = document.getElementById("jobContainer");
-	  var contactNumberContainer = document.getElementById("contactNumberContainer");
-  
-	  // Show/hide college field based on HEI User, HEI Admin, or HEI Read checkbox
-	  collegeContainer.style.display = heiUserCheckbox.checked || heiAdminCheckbox.checked || heiReadCheckbox.checked ? 'block' : 'none';
-  
-	}
+		var selectedRolesContainer = document.getElementById("selectedRolesContainer");
+		var checkboxes = document.querySelectorAll('input[name="role"]:checked');
+
+		selectedRolesContainer.innerHTML = ""; // Clear the container
+
+		checkboxes.forEach(function (checkbox) {
+			var roleLabel = document.querySelector('label[for="' + checkbox.id + '"]').innerText;
+			var listItem = document.createElement('li');
+			var deleteButton = document.createElement('button');
+			deleteButton.className = "delete";
+			deleteButton.setAttribute('aria-label', 'Remove ' + roleLabel + ' from the list');
+			deleteButton.innerText = roleLabel;
+
+			// Add click event listener to the delete button
+			deleteButton.addEventListener('click', function () {
+				// Remove the tile
+				listItem.remove();
+
+				// Uncheck the corresponding checkbox
+				checkbox.checked = false;
+			});
+
+			listItem.appendChild(deleteButton);
+				selectedRolesContainer.appendChild(listItem);
+			});
+		}
+</script>
+<script>
+	document.getElementById('hei-user-btn').addEventListener('click', function (event) {
+		event.preventDefault();
+		var checkbox = document.getElementById('role-9');
+		checkbox.checked = false;
+		document.getElementById('hei-user-btn').style.display = 'none';
+	});
 </script>
 
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+ 		var checkbox1 = document.getElementById('role-11');
+		var checkbox2 = document.getElementById('role-10');
+		var checkbox3 = document.getElementById('role-9');
+		var hiddenDiv = document.getElementById('hiddenDiv');
+		var location = document.getElementById('locationContainer');
 
+ 		// Add an event listener to each checkbox
+		checkbox1.addEventListener('change', updateHiddenDiv);
+		checkbox2.addEventListener('change', updateHiddenDiv);
+		checkbox3.addEventListener('change', updateHiddenDiv);
 
-<style>
-	.column-half {
-	  margin-right: 40px; /* Adjust the margin as needed */
-	}
-</style>
-  
+		// Function to update the visibility of the hidden div
+		function updateHiddenDiv() {
+			// Check if any of the checkboxes are checked
+			if (checkbox1.checked || checkbox2.checked || checkbox3.checked) {
+				hiddenDiv.style.display = 'block';
+				location.style.display = 'none';
+			} else {
+				hiddenDiv.style.display = 'none';
+				location.style.display = 'block';
+			}
+		}
+		updateHiddenDiv();
+	});
+</script>
 {% endblock %}

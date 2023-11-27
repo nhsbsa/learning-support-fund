@@ -124,14 +124,14 @@
 
 
 <script src="/js/admin/swb.js"></script>
-<script src="/js/admin/govuk.js"></script>
+<!-- <script src="/js/admin/govuk.js"></script> -->
 <script src="/js/jquery-3.5.1.min.js"></script>
-<script src="/js/admin/elements.js"></script>
+<!-- <script src="/js/admin/elements.js"></script>
 <script>
   if (typeof window.GOVUK === 'undefined')
   document.body.className = document.body.className.replace('js-enabled', '');
-</script>
-<script src="/js/admin/test.js"></script>
+</script> -->
+<!-- <script src="/js/admin/test.js"></script> -->
 <script src="/js/admin/modal.js"></script>
 <script src="/js/admin/sort.js"></script>
 <script src="/js/admin/select2.js"></script>
@@ -145,35 +145,35 @@
   </style>
 </noscript>
 
-	
-<script>
+<!-- <script>
   $(document).ready(function() {
+    if ($('.select-multiple').length > 0) {
+      $('.select-multiple').select2();
+      $('.select-multiple-responsive').select2({
+        width : 'resolve'
+      });
 
-    $('.select-multiple').select2();
-    $('.select-multiple-responsive').select2({
-      width : 'resolve'
-    });
-
-    $('.select-multiple').select2({
-      placeholder : {
-        text : 'Select user role(s)',
-        id : 'select-1'
-      }		
-    }).on('select2:unselecting', function() {
-      $(this).data('unselecting', true);
-    }).on('select2:opening', function(e) {
-      if ($(this).data('unselecting')) {
-        $(this).removeData('unselecting');
-        e.preventDefault();
-      }
-    });
+      $('.select-multiple').select2({
+        placeholder : {
+          text : 'Select user role(s)',
+          id : 'select-1'
+        }		
+      }).on('select2:unselecting', function() {
+        $(this).data('unselecting', true);
+      }).on('select2:opening', function(e) {
+        if ($(this).data('unselecting')) {
+          $(this).removeData('unselecting');
+          e.preventDefault();
+        }
+      });
 				
-    var hiddenSearch = document.getElementsByClassName("select2-search__field");
-    hiddenSearch[0].setAttribute("id", "hiddenSearch");
+      var hiddenSearch = document.getElementsByClassName("select2-search__field");
+      hiddenSearch[0].setAttribute("id", "hiddenSearch");
     
     showColleges();
+    }
   });
-		
+  	
   function showColleges() {
     var collegeDiv = document.getElementById("collegeContainer");
     var locationDiv = document.getElementById("locationContainer");
@@ -197,12 +197,17 @@
     }
 
 	}
-		</script>
-		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				// A11y fix
-				const dropDownSpan = document.querySelector('span.select2-selection');
-				dropDownSpan.setAttribute('aria-labelledby','hiddenSearchRole-label')
-			});
-		</script>
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // A11y fix
+    const dropDownSpan = document.querySelector('span.select2-selection');
+    dropDownSpan.setAttribute('aria-labelledby','hiddenSearchRole-label')
+  });
+</script> -->
+{% endblock %}
+{% block bodyEnd %}
+  {% block scripts %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
 {% endblock %}

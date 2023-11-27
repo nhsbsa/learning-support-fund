@@ -105,7 +105,7 @@
 .select2-container--focus{
 	border: 2px solid #212b32;
 	box-shadow: inset 0 0 0 2px;
-	outline: 4px solid #FFBF47;
+	outline: 4px solid #FFEB3B;
 	outline-offset: 0;
 }
 
@@ -388,22 +388,22 @@
 }
 
 .tabs .tabs-navNote .tabs-list li a:focus {
-	outline: 3px solid #ffbf47;
+	outline: 3px solid #ffeb3b;
 }
 
 .navigation-secondary ul li a:focus {
-	/*  background-color: #ffbf47; */
-	outline: 3px solid #ffbf47;
+	/*  background-color: #ffeb3b; */
+	outline: 3px solid #ffeb3b;
 }
 
 .tabs .tabs-nav .tabs-list li a:focus {
-	/*  background-color: #ffbf47; */
-	outline: 3px solid #ffbf47;
+	/*  background-color: #ffeb3b; */
+	outline: 3px solid #ffeb3b;
 	border: 1px solid transparent;
 }
 
 .faButton:focus {
-	outline: 3px solid #ffbf47;
+	outline: 3px solid #ffeb3b;
 }
 
 .flex {
@@ -711,7 +711,7 @@ p#display-area-5 {
 	width:100%;
 }
 textarea.bsa-elements-textarea:focus {
-	outline: 3px solid #ffbf47;
+	outline: 3px solid #ffeb3b;
   outline-offset: 0;
 }
 
@@ -933,7 +933,7 @@ textarea.bsa-elements-textarea:focus {
 }
 .nhsuk-checkboxes__input:focus+.nhsuk-checkboxes__label::before {
 	border: 4px solid #212b32;
-	box-shadow: 0 0 0 4px #ffbf47;
+	box-shadow: 0 0 0 4px #ffeb3b;
 }
 .nhsuk-checkboxes__input:checked+.nhsuk-checkboxes__label::after {
 	opacity: 1;
@@ -1016,7 +1016,7 @@ textarea.bsa-elements-textarea:focus {
 
 .nhsuk-checkboxes__input:focus+input+.nhsuk-checkboxes__label::before {
   border: 4px solid #212b32;
-  box-shadow: 0 0 0 4px #ffbf47;
+  box-shadow: 0 0 0 4px #ffeb3b;
 }
 
 .nhsuk-checkboxes__input:checked+input+.nhsuk-checkboxes__label::after {
@@ -1080,14 +1080,14 @@ textarea.bsa-elements-textarea:focus {
   box-shadow: 0 0 0 10px #b1b4b6;
 }
 .nhsuk-checkboxes--small .nhsuk-checkboxes__item:hover .nhsuk-checkboxes__input:focus+.nhsuk-checkboxes__label:before {
-  box-shadow: 0 0 0 3px #ffbf47, 0 0 0 10px #b1b4b6
+  box-shadow: 0 0 0 3px #ffeb3b, 0 0 0 10px #b1b4b6
 }
 @media(hover: none), (pointer: coarse) {
   .nhsuk-checkboxes--small .nhsuk-checkboxes__item:hover .nhsuk-checkboxes__input:not(:disabled)+.nhsuk-checkboxes__label:before {
     box-shadow: initial;
   }
   .nhsuk-checkboxes--small .nhsuk-checkboxes__item:hover .nhsuk-checkboxes__input:focus+.nhsuk-checkboxes__label:before {
-    box-shadow: 0 0 0 3px #ffbf47;
+    box-shadow: 0 0 0 3px #ffeb3b;
   }
 }
 /* Small checkboxes in table */
@@ -1169,14 +1169,14 @@ td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > .nhsuk-checkboxes__lab
   box-shadow: 0 0 0 10px #b1b4b6;
 }
 .nhsuk-checkboxes--small .nhsuk-checkboxes__item:hover .nhsuk-checkboxes__input:focus+input+.nhsuk-checkboxes__label:before {
-  box-shadow: 0 0 0 3px #ffbf47, 0 0 0 10px #b1b4b6
+  box-shadow: 0 0 0 3px #ffeb3b, 0 0 0 10px #b1b4b6
 }
 @media(hover: none), (pointer: coarse) {
   .nhsuk-checkboxes--small .nhsuk-checkboxes__item:hover .nhsuk-checkboxes__input:not(:disabled)+input+.nhsuk-checkboxes__label:before {
     box-shadow: initial;
   }
   .nhsuk-checkboxes--small .nhsuk-checkboxes__item:hover .nhsuk-checkboxes__input:focus+input+.nhsuk-checkboxes__label:before {
-    box-shadow: 0 0 0 3px #ffbf47;
+    box-shadow: 0 0 0 3px #ffeb3b;
   }
 }
 
@@ -1266,7 +1266,7 @@ td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > input+.nhsuk-checkboxe
 	color: #0b0c0c;
 }
 .gem-c-modal-dialogue__box:focus {
-	outline: 3px solid #ffbf47;
+	outline: 3px solid #ffeb3b;
 }
 
 @media print {
@@ -1407,24 +1407,24 @@ td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > input+.nhsuk-checkboxe
 .gem-c-modal-dialogue__close-button:focus,
 .gem-c-modal-dialogue__close-button:hover {
 	outline: 3px solid transparent;
-	color: #ffbf47;
+	color: #ffeb3b;
 	background-color: #fd0;
-	box-shadow: 0 -2px #ffbf47, 0 4px #212b32;
+	box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
 	text-decoration: none;
 	outline: none;
 	box-shadow: none;
 	color: #0b0c0c;
-	background: #ffbf47;
+	background: #ffeb3b;
 }
 
 /* accessible focus styles */
 a:hover {
 	color: #7c2855;
-	text-decoration: none; /* a11y fix so hover doesn't rely on colour*/
+	text-decoration: none; 
 }
 a:focus {
-	background-color: #FFBF47;
-	box-shadow: 0 -2px #FFBF47, 0 4px #212b32;
+	background-color: #FFEB3B;
+	box-shadow: 0 -2px #FFEB3B, 0 4px #212b32;
 	color: #212b32;
 	outline: 4px solid transparent;
 	text-decoration: none;
@@ -1432,15 +1432,16 @@ a:focus {
 input:focus, select:focus, textarea:focus {
 	border: 2px solid #212b32;
 	box-shadow: inset 0 0 0 2px;
-	outline: 4px solid #FFBF47;
+	outline: 4px solid #FFEB3B;
 	outline-offset: 0;
 }
 button:focus {
-	background: #FFBF47;
+	background: #FFEB3B;
 	box-shadow: 0 4px 0 #212b32;
 	color: #212b32;
 	outline: 4px solid transparent;
 }
+
 .multiple-choice:focus-within {
 	outline:2px solid #333;
 }
@@ -1448,8 +1449,8 @@ h1:focus-visible {
 	outline: none;
 }
 summary:focus {
-	background-color: #FFBF47;
-	box-shadow: 0 -2px #FFBF47, 0 4px #212b32;
+	background-color: #FFEB3B;
+	box-shadow: 0 -2px #FFEB3B, 0 4px #212b32;
 	color: #333;
 	outline: 4px solid transparent !important;
 	text-decoration: none;
@@ -1459,7 +1460,7 @@ summary:focus > span.summary {
 	color: #333;
 }
 .button:focus {
-	background: #FFBF47;
+	background: #FFEB3B;
 	box-shadow: 0 4px 0 #212b32;
 	color: #212b32 !important;
 	outline: 4px solid transparent;

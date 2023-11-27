@@ -1,7 +1,7 @@
 {% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
-Update user
+Create user
 {% endblock %}
 
 {% block content %}
@@ -38,7 +38,7 @@ Update user
 				</div>
 			</div>
 
-			<div class="nhsuk-grid-column-full">	
+			<div class="nhsuk-grid-column-two-thirds">	
 				<fieldset class="nhsuk-fieldset">
 					<legend class="nhsuk-fieldset__legend nhsuk-label">Select role(s)</legend>
 
@@ -48,10 +48,9 @@ Update user
 							<a class="nhsuk-link govuk-link--no-visited-state" href="#">Clear all</a>
 						</p>
 				
-						<div id="selectedRolesContainer" class="selected-roles-container">
+						<ul id="selectedRolesContainer" class="selected-roles-container">
 							<!-- Selected roles will be displayed here -->
-						</div>
-				
+						</ul>
 						<div class="nhsuk-grid-row">
 							<div class="nhsuk-grid-column-one-half">
 								<div class="nhsuk-checkboxes">
@@ -290,49 +289,62 @@ Update user
 			</div>
 		</div>
 	</form>
+{% endblock %}
+{% block pageScripts %}
+<script>
+	function updateSelectedRoles() {
+		var selectedRolesContainer = document.getElementById("selectedRolesContainer");
+		var checkboxes = document.querySelectorAll('input[name="role"]:checked');
 
-	<script>
-		function updateSelectedRoles() {
-			var selectedRolesContainer = document.getElementById("selectedRolesContainer");
-			var checkboxes = document.querySelectorAll('input[name="role"]:checked');
+		selectedRolesContainer.innerHTML = ""; // Clear the container
 
-			selectedRolesContainer.innerHTML = ""; // Clear the container
+		checkboxes.forEach(function (checkbox) {
+			var roleLabel = document.querySelector('label[for="' + checkbox.id + '"]').innerText;
+			var listItem = document.createElement('li');
+			var deleteButton = document.createElement('button');
+			deleteButton.className = "delete";
+			deleteButton.setAttribute('aria-label', 'Remove ' + roleLabel + ' from the list');
+			deleteButton.innerText = roleLabel;
 
-			checkboxes.forEach(function (checkbox) {
-				var roleLabel = document.querySelector('label[for="' + checkbox.id + '"]').innerText;
-				var listItem = document.createElement('li');
-				listItem.innerHTML = '<a class="app-filter__tag app-filter__tag--blue" href="#"><span class="nhsuk-u-visually-hidden">Remove this role</span>' + roleLabel + '</a>';
-				selectedRolesContainer.appendChild(listItem);
+			// Add click event listener to the delete button
+			deleteButton.addEventListener('click', function () {
+				// Remove the tile
+				listItem.remove();
+
+				// Uncheck the corresponding checkbox
+				checkbox.checked = false;
 			});
 
-			// Call the function to check if additional fields should be shown
-			showAdditionalFields();
+			listItem.appendChild(deleteButton);
+				selectedRolesContainer.appendChild(listItem);
+			});
 		}
-	</script>
-	<script>
-	 document.addEventListener('DOMContentLoaded', function() {
-   var checkbox1 = document.getElementById('role-11');
-   var checkbox2 = document.getElementById('role-10');
-   var checkbox3 = document.getElementById('role-9');
-   var hiddenDiv = document.getElementById('hiddenDiv');
-	 var location = document.getElementById('locationContainer');
+</script>
 
-   // Add an event listener to each checkbox
-   checkbox1.addEventListener('change', updateHiddenDiv);
-   checkbox2.addEventListener('change', updateHiddenDiv);
-   checkbox3.addEventListener('change', updateHiddenDiv);
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+ 		var checkbox1 = document.getElementById('role-11');
+		var checkbox2 = document.getElementById('role-10');
+		var checkbox3 = document.getElementById('role-9');
+		var hiddenDiv = document.getElementById('hiddenDiv');
+		var location = document.getElementById('locationContainer');
 
-   // Function to update the visibility of the hidden div
-   function updateHiddenDiv() {
-		// Check if any of the checkboxes are checked
-		if (checkbox1.checked || checkbox2.checked || checkbox3.checked) {
-			hiddenDiv.style.display = 'block';
-			location.style.display = 'none';
-		} else {
-			hiddenDiv.style.display = 'none';
-			location.style.display = 'block';
+ 		// Add an event listener to each checkbox
+		checkbox1.addEventListener('change', updateHiddenDiv);
+		checkbox2.addEventListener('change', updateHiddenDiv);
+		checkbox3.addEventListener('change', updateHiddenDiv);
+
+		// Function to update the visibility of the hidden div
+		function updateHiddenDiv() {
+			// Check if any of the checkboxes are checked
+			if (checkbox1.checked || checkbox2.checked || checkbox3.checked) {
+				hiddenDiv.style.display = 'block';
+				location.style.display = 'none';
+			} else {
+				hiddenDiv.style.display = 'none';
+				location.style.display = 'block';
+			}
 		}
-   }
-});
- 	</script>
+	});
+</script>
 {% endblock %}

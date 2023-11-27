@@ -7219,3 +7219,43 @@ b,strong {
     font-size: 16px;
   }
 }
+
+/* role tiles */
+ul.selected-roles-container {
+  font-size: 16px;
+  padding-left: 0px;
+}
+
+.selected-roles-container li {
+  display: inline-block;
+  background-color: #fff;
+  color: #212b32;
+  font-weight: bold;
+  margin: .25rem;
+  padding: 0px;
+}
+
+.selected-roles-container li button:after {
+  content: "X";
+  margin: .25rem .25rem .25rem .75rem;
+  padding-left: .4rem;
+  border-left: .15rem solid #212b32;
+}
+
+.selected-roles-container button {
+  background-color: transparent;
+  border: none;
+  color: #212b32;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: .25rem;
+  text-decoration: underline;
+  padding: 10px;
+  border: 1px solid #d8dde0;
+}
+
+.selected-roles-container button:hover,
+.selected-roles-container button:focus {
+  text-decoration: none;
+  border:1px solid #212b32;
+}
