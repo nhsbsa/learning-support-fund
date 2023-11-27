@@ -99,6 +99,12 @@ router.post('/v7/TDAE-costs-already-claimed', (req, res) => {
 
 // TDAE public transport
 
+router.post('/v7/TDAE-public-transport-pause', (req, res) => {
+
+    res.redirect('/lsf-public/v7/TDAE-public-transport-type')
+
+})
+
 router.post('/v7/TDAE-public-transport-type', (req, res) => {
   // Check if req.session.data['public-transport-type'] is defined and convert to string
   if (req.session.data['public-transport-type']) {
@@ -107,29 +113,32 @@ router.post('/v7/TDAE-public-transport-type', (req, res) => {
     req.session.data['public-transport-type'] = transportTypeReplaceCommas;
   }
 
-  res.redirect('/lsf-public/v7/TDAE-public-transport-ticket');
+  res.redirect('/lsf-public/v7/TDAE-public-transport-daily-cost');
 });
 
 router.post('/v7/TDAE-public-transport-ticket', (req, res) => {
 
-    res.redirect('/lsf-public/v7/TDAE-public-transport-daily-cost')
+  const publicTransportTicket = req.session.data['public-transport-ticket']
+
+  if (publicTransportTicket === 'Daily ticket') {
+    req.session.data['daily'] = 'yes';
+    res.redirect('/lsf-public/v7/TDAE-public-transport-repeated');
+  } else {
+    req.session.data['multiple'] = 'yes';
+    res.redirect('/lsf-public/v7/TDAE-public-transport-dates');
+  }
 
 })
 
 router.post('/v7/TDAE-public-transport-daily-cost', (req, res) => {
 
-  const newJourney = req.session.data['new-journey']
-  const claimingFor = req.session.data['claiming-for']
+  res.redirect('/lsf-public/v7/TDAE-public-transport-ticket');
 
-  if (newJourney === 'yes') {
-    res.redirect('/lsf-public/v7/TDAE-public-transport-repeated')
-  } else {
-    if (claimingFor.includes('Cycle')) {
-      res.redirect('/lsf-public/v7/TDAE-cycle');
-    } else {
-      res.redirect('/lsf-public/v7/TDAE-placement-itinerary');
-    }
-  }
+})
+
+router.post('/v7/TDAE-public-transport-dates', (req, res) => {
+
+  res.redirect('/lsf-public/v7/TDAE-public-transport-days');
 
 })
 
@@ -153,9 +162,19 @@ router.post('/v7/TDAE-public-transport-days', (req, res) => {
 
 router.post('/v7/TDAE-public-transport-check', (req, res) => {
 
-  req.session.data['public-transport'] = "1"
+  res.redirect('/lsf-public/v7/TDAE-public-transport-overview')
 
-  res.redirect('/lsf-public/v7/TDAE-placement-itinerary')
+})
+
+router.post('/v7/TDAE-public-transport-overview', (req, res) => {
+
+  const publicTransportAddAnother = req.session.data['public-transport-add-another']
+
+  if (publicTransportAddAnother === 'Yes') {
+    res.redirect('/lsf-public/v7/TDAE-public-transport-type')
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-placement-itinerary');
+  }
 
 })
 
@@ -164,6 +183,7 @@ router.post('/v7/TDAE-public-transport-check', (req, res) => {
 router.post('/v7/TDAE-reuse-details', (req, res) => {
 
   const reusedDetails = req.session.data['reused-details']
+  const claimReused = req.session.data['claim-reused']
 
   req.session.data['submit-claim'] = "incomplete"
 
@@ -179,10 +199,17 @@ router.post('/v7/TDAE-reuse-details', (req, res) => {
     req.session.data['term-address-line-2'] = "Shieldfield"
     req.session.data['term-address-town'] = "Newcastle upon Tyne"
     req.session.data['term-address-postcode'] = "NE2 1AW"
-    req.session.data['placement-building-name'] = "Newcastle Hospital"
-    req.session.data['placement-address-line-1'] = "Main Street"
-    req.session.data['placement-address-town'] = "Newcastle upon Tyne"
-    req.session.data['placement-address-postcode'] = "NE1 1AA"
+    if (claimReused === 'Alnwick') {
+      req.session.data['placement-building-name'] = "Alnwick Hospital"
+      req.session.data['placement-address-line-1'] = "Main Street"
+      req.session.data['placement-address-town'] = "Alnwick"
+      req.session.data['placement-address-postcode'] = "NE6 4EA"
+    } else {
+      req.session.data['placement-building-name'] = "Newcastle Hospital"
+      req.session.data['placement-address-line-1'] = "Main Street"
+      req.session.data['placement-address-town'] = "Newcastle upon Tyne"
+      req.session.data['placement-address-postcode'] = "NE1 1AA"
+    }
     if (reusedDetails.indexOf('university-travel-details') !== -1) {
         req.session.data['university-details'] = "reused";
     }
@@ -450,7 +477,11 @@ router.post('/v7/TDAE-placement-community-mileage-day', (req, res) => {
 // TDAE Evidence match
 router.post('/v7/TDAE-evidence-match', (req, res) => {
 
-  req.session.data['evidenceNumber'] = '2'
+  const evidenceNo = req.session.data['evidenceNumber']
+
+  if (evidenceNo === '') {
+    req.session.data['evidenceNumber'] = '2'
+  }
 
   res.redirect('/lsf-public/v7/TDAE-evidence-cya')
 
@@ -960,7 +991,15 @@ router.post('/v7/TDAE-placement-address-days', (req, res) => {
 
 router.post('/v7/TDAE-placement-address-days-cya', (req, res) => {
 
-    res.redirect('/lsf-public/v7/TDAE-placement-itinerary')
+  const claimingFor = req.session.data['claiming-for']
+
+  if (claimingFor.includes('Public transport')) {
+    res.redirect('/lsf-public/v7/TDAE-public-transport-pause');
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-placement-itinerary');
+  }
+
+
 
 })
 
@@ -1321,7 +1360,13 @@ router.post('/v7/TDAE-placement-days', (req, res) => {
 
 router.post('/v7/TDAE-check-dates', (req, res) => {
 
+  const claimingFor = req.session.data['claiming-for']
+
+  if (claimingFor.includes('Public transport')){
+    res.redirect('/lsf-public/v7/TDAE-public-transport-pause')
+  } else {
     res.redirect('/lsf-public/v7/TDAE-same-journey')
+  }
 
 })
 

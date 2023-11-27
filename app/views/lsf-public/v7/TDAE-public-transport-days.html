@@ -21,8 +21,12 @@ Which days does this evidence relate to?
 
               <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-                  <h1 class="nhsuk-fieldset__heading">
-                    Which days did you repeatedly get this ticket?
+                  <h1 class="nhsuk-heading-l">
+                  {% if data['public-transport-ticket'] == 'Multiple day ticket' %}
+                    On which days did you use this ticket?
+                  {% else %}
+                    On which days did you buy this ticket?
+                  {% endif %}
                   </h1>
                 </legend>
 
@@ -30,64 +34,36 @@ Which days does this evidence relate to?
                   Select all that apply.
                 </div>
 
-
                 <div class="nhsuk-checkboxes">
 
                   <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-1" name="public-transport-days" type="checkbox" value="Monday 14 August 2023">
+                    <input class="nhsuk-checkboxes__input" id="example-1" name="public-transport-days" type="checkbox" value="Friday 6 October 2023">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                      Monday 14 August 2023
+                      Friday 6 October 2023
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-2" name="public-transport-days" type="checkbox" value="Tuesday 15 August 2023">
+                    <input class="nhsuk-checkboxes__input" id="example-2" name="public-transport-days" type="checkbox" value="Saturday 7 October 2023">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                      Tuesday 15 August 2023
+                      Saturday 7 October 2023
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="public-transport-days" type="checkbox" value="Wednesday 16 August 2023">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="public-transport-days" type="checkbox" value="Sunday 8 October 2023">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                      Wednesday 16 August 2023
+                      Sunday 8 October 2023
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="public-transport-days" type="checkbox" value="Thursday 17 August 2023">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="public-transport-days" type="checkbox" value="Monday 9 October 2023">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                      Thursday 17 August 2023
+                      Monday 9 October 2023
                     </label>
                   </div>
 
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="public-transport-days" type="checkbox" value="Sunday 20 August 2023">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                      Sunday 20 August 2023
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="public-transport-days" type="checkbox" value="Monday 21 August 2023">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                      Monday 21 August 2023
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="public-transport-days" type="checkbox" value="Tuesday 22 August 2023">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                      Tuesday 22 August 2023
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="public-transport-days" type="checkbox" value="Wednesday 23 August 2023">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                      Wednesday 23 August 2023
-                    </label>
-                  </div>
                 </div>
               </fieldset>
 

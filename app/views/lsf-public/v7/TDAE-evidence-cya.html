@@ -33,7 +33,27 @@ Evidence you have uploaded
 
       <h1 class="nhsuk-heading-l">Uploaded evidence for period 1</h1>
 
-      <p>You have uploaded evidence for all the extra costs. You can still upload more evidence if you want to.</p>
+      {% if data['evidenceNumber'] === '2' or data['evidenceNumber'] === '3' %}
+        <p>You have uploaded evidence for all the extra costs. You can still add more evidence if you want to.</p>
+      {% else %}
+      <p>You still need to give us evidence for:</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Train tickets</li>
+        <li class="nhsuk-list-style-none">
+          <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
+             <li>Friday 6 October 2023</li>
+             <li>Saturday 7 October 2023</li>
+             <li>Sunday 8 October 2023</li>
+             <li>Monday 9 October 2023</li>
+          </ul>
+        </li>
+      </ul>
+      {% endif %}
+
+      {% if data['evidenceNumber'] !== '2' %}
+        <a class="nhsuk-button" href="TDAE-placement-evidence?evidenceNumber=2">Upload evidence</a>
+      {% endif %}
 
       </div>
 
@@ -59,7 +79,22 @@ Evidence you have uploaded
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell ">
-                      {{ data['public-transport-type'] }} ticket on Friday 6 October 2023
+                      Bus ticket from Friday 6 October 2023 to Thursday 12 October 2023
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link--no-visited-state" href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
+                      Ticket07-0323.jpg
+                    </a></p>
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                      <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link--no-visited-state" href="TDAE-evidence-remove">Remove</a></p>
+                      <a class="nhsuk-link--no-visited-state" href="TDAE-placement-evidence?evidence-type=further">Add more evidence</a>
+                  </td>
+                </tr>
+                {% if data['evidenceNumber'] === '2' %}
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">
+                      Train ticket on Friday 6 October 2023
                   </td>
                   <td class="nhsuk-table__cell ">
                     <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link--no-visited-state" href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
@@ -79,7 +114,7 @@ Evidence you have uploaded
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell ">
-                      {{ data['public-transport-type'] }} ticket on Saturday 7 October 2023
+                      Train ticket on Saturday 7 October 2023
                   </td>
                   <td class="nhsuk-table__cell ">
                     <a class="nhsuk-link--no-visited-state" href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
@@ -93,7 +128,7 @@ Evidence you have uploaded
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell ">
-                      {{ data['public-transport-type'] }} ticket on Sunday 8 October 2023
+                      Train ticket on Sunday 8 October 2023
                   </td>
                   <td class="nhsuk-table__cell ">
                     <a class="nhsuk-link--no-visited-state" href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
@@ -107,7 +142,7 @@ Evidence you have uploaded
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell ">
-                      {{ data['public-transport-type'] }} ticket on Monday 9 October 2023
+                      Train ticket on Monday 9 October 2023
                   </td>
                   <td class="nhsuk-table__cell ">
                     <a class="nhsuk-link--no-visited-state" href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
@@ -119,10 +154,13 @@ Evidence you have uploaded
                     <a class="nhsuk-link--no-visited-state" href="TDAE-placement-evidence?evidence-type=further">Add more evidence</a>
                   </td>
                 </tr>
+                {% endif %}
               </tbody>
             </table>
 
-          <a class="nhsuk-button" href="TDAE-evidence-comment?week-1=completed">Save and continue</a>
+            {% if data['evidenceNumber'] === '2' or data['evidenceNumber'] === '3' %}
+              <a class="nhsuk-button" href="TDAE-evidence-comment?week-1=completed">Save and continue</a>
+            {% endif %}
 
   </div>
 

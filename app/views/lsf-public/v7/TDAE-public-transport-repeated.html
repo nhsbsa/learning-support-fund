@@ -20,10 +20,32 @@
 
             <fieldset class="nhsuk-fieldset">
               <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-                <h1 class="nhsuk-fieldset__heading">
-                  Was this daily ticket repeated on more than one day?
+                <h1 class="nhsuk-heading-l">
+                  Did you buy this ticket again on any other days?
                 </h1>
               </legend>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Public transport type
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {{ data['public-transport-type']}}
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Ticket cost
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    £8.60
+                  </dd>
+                </div>
+
+              </dl>
 
               <div class="nhsuk-radios">
 

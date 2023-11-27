@@ -28,6 +28,8 @@
                 Select all that apply.
               </div>
 
+            {% if data['claim-reused'] == 'Newcastle' %}
+
               <div class="nhsuk-checkboxes">
 
                 <div class="nhsuk-checkboxes__item">
@@ -111,7 +113,70 @@
                 </div>
 
               </div>
+            {% else %}
 
+            <div class="nhsuk-checkboxes">
+
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="placement-address-1" name="reused-details" type="checkbox" value="placement-address-1" aria-describedby="placement-address-1-hint">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="placement-address-1">
+                  Placement address
+                </label>
+                <div class="nhsuk-hint nhsuk-checkboxes__hint" id="placement-address-1-hint">
+                  Alnwick Hospital, NE6 4EA
+                  <details class="nhsuk-details">
+                    <summary class="nhsuk-details__summary">
+                      <span class="nhsuk-details__summary-text">
+                        View placement address 1
+                      </span>
+                    </summary>
+                    <div class="nhsuk-details__text">
+                      Alnwick Hospital<br>
+                      Main Street<br>
+                      Alniwck<br>
+                      NE6 4EA
+                    </div>
+                  </details>
+                </div>
+              </div>
+
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="term-time-address" name="reused-details" type="checkbox" value="term-time-address" aria-describedby="term-time-address-hint">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="term-time-address">
+                  Term-time address
+                </label>
+                <div class="nhsuk-hint nhsuk-checkboxes__hint" id="term-time-address-hint">
+                  Stephenson House, NE2 1AW
+                  <details class="nhsuk-details">
+                    <summary class="nhsuk-details__summary">
+                      <span class="nhsuk-details__summary-text">
+                        View term-time address
+                      </span>
+                    </summary>
+                    <div class="nhsuk-details__text">
+                      Stephenson House<br>
+                      Stoddart St<br>
+                      Shieldfield<br>
+                      Newcastle upon Tyne <br>
+                      NE2 1AW
+                    </div>
+                  </details>
+                </div>
+              </div>
+
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="university-travel-details" name="reused-details" type="checkbox" value="university-travel-details" aria-describedby="university-travel-details-hint">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="university-travel-details">
+                  University travel details
+                </label>
+                <div class="nhsuk-hint nhsuk-checkboxes__hint" id="university-travel-details-hint">
+                  <a href="TDAE-normal-summary-cya?submit-claim=completed&mode-of-transport=walk">View university travel details</a>
+                </div>
+              </div>
+
+            </div>
+
+            {% endif %}
 
             </fieldset>
 

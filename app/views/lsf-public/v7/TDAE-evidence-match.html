@@ -63,83 +63,73 @@ Which days does this evidence relate to?
 
               </div>
               {% elif data['evidenceNumber'] == '2' %}
-              <div class="nhsuk-form-group">
-                <div class="nhsuk-checkboxes">
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                      {{ data['public-transport-type'] }} ticket on Tuesday 7 October 2023
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                      {{ data['public-transport-type'] }} ticket on Wednesday 8 October 2023
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                      {{ data['public-transport-type'] }} ticket on Thursday 9 October 2023
-                    </label>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="nhsuk-form-group">
-                <details class="nhsuk-details">
-                  <summary class="nhsuk-details__summary">
-                    <span class="nhsuk-details__summary-text">
-                      Costs evidence has already been provided for
-                    </span>
-                  </summary>
-                  <div class="nhsuk-details__text">
-                    <div class="nhsuk-checkboxes">
-
-                      <div class="nhsuk-checkboxes__item">
-                        <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
-                        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                          {{ data['public-transport-type'] }} ticket on Monday 6 October 2023
-                        </label>
-                      </div>
-
-                    </div>
-                  </div>
-                </details>
-              </div>
-
-              {% else %}
               <div class="nhsuk-checkboxes">
 
                 <div class="nhsuk-checkboxes__item">
                   <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                    {{ data['public-transport-type'] }} ticket on Friday 6 October 2023
+                    Train ticket on Friday 6 October 2023
                   </label>
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
                   <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                    {{ data['public-transport-type'] }} ticket on Saturday 7 October 2023
+                    Train ticket on Saturday 7 October 2023
                   </label>
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
                   <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                    {{ data['public-transport-type'] }} ticket on Sunday 8 October 2023
+                    Train ticket on Sunday 8 October 2023
                   </label>
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
                   <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                    {{ data['public-transport-type'] }} ticket on Monday 9 October 2023
+                    Train ticket on Monday 9 October 2023
+                  </label>
+                </div>
+
+              </div>
+
+              {% else %}
+              <div class="nhsuk-checkboxes">
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    Bus ticket from Friday 6 October 2023 to Thursday 12 October 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                    Train ticket on Friday 6 October 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                    Train ticket on Saturday 7 October 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    Train ticket on Sunday 8 October 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    Train ticket on Monday 9 October 2023
                   </label>
                 </div>
 
