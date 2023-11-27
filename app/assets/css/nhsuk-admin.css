@@ -7225,7 +7225,12 @@ ul.selected-roles-container {
   font-size: 16px;
   padding-left: 0px;
 }
-
+.selected-roles-container li:first-child {
+  margin-left: 0px;
+}
+.delete {
+  cursor: pointer;
+}
 .selected-roles-container li {
   display: inline-block;
   background-color: #fff;
