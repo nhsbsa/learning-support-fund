@@ -7244,19 +7244,19 @@ ul.selected-roles-container {
   content: "X";
   margin: .25rem .25rem .25rem .75rem;
   padding-left: .4rem;
-  border-left: .15rem solid #212b32;
+  border-left: .15rem solid #fff;
 }
 
 .selected-roles-container button {
-  background-color: transparent;
+  background-color: #0055a6;
   border: none;
-  color: #212b32;
+  color: #fff;
   font-weight: bold;
   font-size: 1rem;
   padding: .25rem;
   text-decoration: underline;
   padding: 10px;
-  border: 1px solid #d8dde0;
+  border: 1px solid #212b32;
 }
 
 .selected-roles-container button:hover,

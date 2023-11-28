@@ -38,16 +38,18 @@ Update user
 				</div>
 			</div>
 
-			<div class="nhsuk-grid-column-full">	
+			<div class="nhsuk-grid-column-two-thirds">		
 				<fieldset class="nhsuk-fieldset">
 					<legend class="nhsuk-fieldset__legend nhsuk-label">Select role(s)</legend>
 
 					<div class="nhsuk-form-group">
 						<span class="nhsuk-hint" id="role-hint">Select all that apply.</span>
 						<p class="nhsuk-body">
-							<a class="nhsuk-link govuk-link--no-visited-state" href="#">Clear all</a>
+							<a class="nhsuk-link govuk-link--no-visited-state" style="float: right" href="#">Clear all</a>
 						</p>
-				
+				<br>
+
+					
 						<ul id="selectedRolesContainer" class="selected-roles-container">
 							<!-- Selected roles will be displayed here -->
 							<li><button id="hei-user-btn" class="delete" aria-label="Remove HEI user from the list">HEI user</button></li>
@@ -284,7 +286,7 @@ Update user
 				</div>
 
 				<div class="nhsuk-form-group">
-					<button class="nhsuk-button" type="submit" id="saveUser">Create</button>
+					<button class="nhsuk-button" type="submit" id="saveUser">Update</button>
 					<p><a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a></p>
 				</div>
 			</div>

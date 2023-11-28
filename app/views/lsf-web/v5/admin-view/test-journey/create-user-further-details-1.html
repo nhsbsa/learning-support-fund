@@ -1,0 +1,66 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Create user
+{% endblock %}
+
+{% block content %}
+	<div class="nhsuk-back-link">
+		<a class="nhsuk-back-link__link" href="/lsf-web/v5/admin-view/user-results">
+			<svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+				<path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+				</path>
+			</svg>
+			Go back
+		</a>
+	</div>
+
+	<form name="userDetailsForm" action="/lsf-web/v5/admin-view/test-journey/create-user-check-answers-1" method="post" novalidate="">
+		<div class="nhsuk-grid-row">
+			<div class="nhsuk-grid-column-two-thirds">	
+				
+				<div class="nhsuk-form-group">
+				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+					<h2 class="nhsuk-fieldset__heading">Further details</h2>
+				</legend>
+			
+				<div id="locationContainer">
+					<div class="nhsuk-form-group">
+						<label class="nhsuk-label" id="location-label" for="location" class="form-label-bold">Location</label>
+						<input class="nhsuk-input" id="location" name="location" type="text" spellcheck="false" autocomplete="off">
+					</div>
+				
+					<div class="nhsuk-form-group">
+						<label class="nhsuk-label" id="contactNumber-label" for="contactNumber" class="form-label-bold">
+							Is the user's login currently active?
+						</label>
+						<div class="nhsuk-hint" id="contact-hint">
+							Hint text providing context around this question to be placed here.
+						  </div>
+
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="1" checked="checked">
+								<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveYes">
+									Yes
+								</label>
+							</div>
+	
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="optionsActiveNo" name="active" type="radio" value="0">
+								<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveNo">
+									No
+								</label>
+							</div>
+						</div>
+					</div>
+
+				<div class="nhsuk-form-group">
+					<button class="nhsuk-button" type="submit" id="saveUser">Continue</button>
+					<p><a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a></p>
+				</div>
+			</div>
+			
+		</div>
+	</form>
+{% endblock %}

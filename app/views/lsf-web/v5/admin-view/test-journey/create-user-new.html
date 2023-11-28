@@ -1,0 +1,51 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Create user
+{% endblock %}
+
+{% block content %}
+	<div class="nhsuk-back-link">
+		<a class="nhsuk-back-link__link" href="/lsf-web/v5/admin-view/test-journey/user-results">
+			<svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+				<path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+				</path>
+			</svg>
+			Go back
+		</a>
+	</div>
+
+	<form name="userDetailsForm" action="/lsf-web/v5/admin-view/test-journey/create-user-roles-2" method="post" novalidate="">
+		<div class="nhsuk-grid-row">
+			<div class="nhsuk-grid-column-two-thirds">	
+				<h1 class="nhsuk-heading-l">Create user</h1>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" id="email-label" for="email" class="form-label-bold">Email address</label>
+					<div class="nhsuk-hint" id="contact-hint">For example, jane.doe@gmail.com</div>
+					<input class="nhsuk-input" id="email" name="email" type="text" spellcheck="false" inputmode="email" autocomplete="off">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" id="lastName-label" for="lastName" class="form-label-bold">Surname</label>
+					<input class="nhsuk-input" id="lastName" name="lastName" type="text" spellcheck="false" autocomplete="off">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" id="firstname-label" for="firstname" class="form-label-bold">First name</label>
+					<div class="nhsuk-hint" id="contact-hint">Do not include any middle name(s).</div>
+					<input class="nhsuk-input" id="firstName" name="firstName" type="text" spellcheck="false" autocomplete="off">
+				</div>
+				<br>
+			</div>
+			
+</div>
+			
+				<div class="nhsuk-form-group">
+					<button class="nhsuk-button" type="submit" id="saveUser">Continue</button>
+					<p><a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a></p>
+				</div>
+			</div>
+		</div>
+	</form>
+{% endblock %}
