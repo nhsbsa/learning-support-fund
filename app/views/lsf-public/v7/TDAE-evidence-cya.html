@@ -17,7 +17,7 @@ Evidence you have uploaded
     <style>
 		ul, .nhsuk-list--circle {
 		  list-style-type: circle;
-		    padding-left: 20px;
+		    pUploading-left: 20px;
 		}
 
 		.nhsuk-list-style-none{
@@ -34,7 +34,7 @@ Evidence you have uploaded
       <h1 class="nhsuk-heading-l">Uploaded evidence for period 1</h1>
 
       {% if data['evidenceNumber'] === '2' or data['evidenceNumber'] === '3' %}
-        <p>You have uploaded evidence for all the extra costs. You can still add more evidence if you want to.</p>
+        <p>You have uploaded evidence for all the extra costs. You can still upload more evidence if you want to.</p>
       {% else %}
       <p>You still need to give us evidence for:</p>
 
@@ -88,7 +88,7 @@ Evidence you have uploaded
                   </td>
                   <td class="nhsuk-table__cell ">
                       <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link--no-visited-state" href="TDAE-evidence-remove">Remove</a></p>
-                      <a class="nhsuk-link--no-visited-state" href="TDAE-placement-evidence?evidence-type=further">Add more evidence</a>
+                      <a class="nhsuk-link--no-visited-state" href="TDAE-placement-evidence?evidence-type=further">Upload more evidence</a>
                   </td>
                 </tr>
                 {% if data['evidenceNumber'] === '2' %}
@@ -109,7 +109,7 @@ Evidence you have uploaded
                   <td class="nhsuk-table__cell ">
                       <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link--no-visited-state" href="TDAE-evidence-remove">Remove</a></p>
                       {% if data['evidence-type'] == 'further' %}<p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link--no-visited-state" href="TDAE-evidence-remove">Remove</a></p>{% endif %}
-                      <a class="nhsuk-link--no-visited-state" href="TDAE-placement-evidence?evidence-type=further">Add more evidence</a>
+                      <a class="nhsuk-link--no-visited-state" href="TDAE-placement-evidence?evidence-type=further">Upload more evidence</a>
                   </td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
@@ -123,7 +123,7 @@ Evidence you have uploaded
                   </td>
                   <td class="nhsuk-table__cell ">
                     <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link--no-visited-state" href="TDAE-evidence-remove">Remove</a></p>
-                    <a class="nhsuk-link--no-visited-state" href="TDAE-placement-evidence?evidence-type=further">Add more evidence</a>
+                    <a class="nhsuk-link--no-visited-state" href="TDAE-placement-evidence?evidence-type=further">Upload more evidence</a>
                   </td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
@@ -137,7 +137,7 @@ Evidence you have uploaded
                   </td>
                   <td class="nhsuk-table__cell ">
                     <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link--no-visited-state" href="TDAE-evidence-remove">Remove</a></p>
-                    <a class="nhsuk-link--no-visited-state" href="TDAE-placement-evidence?evidence-type=further">Add more evidence</a>
+                    <a class="nhsuk-link--no-visited-state" href="TDAE-placement-evidence?evidence-type=further">Upload more evidence</a>
                   </td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
@@ -151,7 +151,7 @@ Evidence you have uploaded
                   </td>
                   <td class="nhsuk-table__cell ">
                     <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link--no-visited-state" href="TDAE-evidence-remove">Remove</a></p>
-                    <a class="nhsuk-link--no-visited-state" href="TDAE-placement-evidence?evidence-type=further">Add more evidence</a>
+                    <a class="nhsuk-link--no-visited-state" href="TDAE-placement-evidence?evidence-type=further">Upload more evidence</a>
                   </td>
                 </tr>
                 {% endif %}
