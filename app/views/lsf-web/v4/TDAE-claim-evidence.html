@@ -74,7 +74,7 @@ Claim details
           </dt>
           <dd class="nhsuk-summary-list__value">
             {% if data['status'] === 'Returned from NHSBSA' %}
-              £840.00
+              £840
             {% else %}
               £8.40
             {% endif %}
@@ -86,7 +86,7 @@ Claim details
               Daily additional costs
             </dt>
             <dd class="nhsuk-summary-list__value">
-              £2.00
+              £2
             </dd>
           </div>
           <div class="nhsuk-summary-list__row">
@@ -181,11 +181,11 @@ Claim details
                 {% elif data['breakdown'] ==='public-transport' %}
                   £3.45
                 {% else %}
-                  £1.00
+                  £1
                 {% endif %}
               </td>
               <td class="nhsuk-table__cell " style="font-size: 1rem;">
-                £2.00
+                £2
               </td>
             </tr>
             <tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
@@ -194,7 +194,7 @@ Claim details
               </td>
               <td class="nhsuk-table__cell" style="font-size: 1rem;">
                 {% if data['breakdown'] === 'walk' %}
-                  £0.00
+                  £0
                 {% elif data['breakdown'] ==='public-transport' %}
                   £3.45
                 {% else %}
