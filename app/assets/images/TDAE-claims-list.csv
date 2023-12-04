@@ -1,11 +1,11 @@
-Student Name,Course,Claim submitted,Status
-"Emmit Mar","Nursing","3 September 2023","To be completed"
-"Ben Bloggs","Nursing","4 September 2023","To be completed"
-"Chet Cheema","Paramedic","10 September 2023","To be completed"
-"Bethany Thompson","Adult Nursing","10 September 2023","In progress"
-"Jill Cooper","Nursing","12 September 2023","To be completed"
-"Philip Wilkes","Dental","14 September 2023","Being assessed"
-"Mia Smith","Medicine","14 September 2023","To be completed"
-"George Hill","Podiatry","14 September 2023","To be completed"
-"Douglas Reynholm","Medicine","15 September 2023","To be completed"
-"Michelle Moutton","Nursing","16 September 2023","To be completed" 
+Student Name,Course,Claim submitted,Cost reimbursed,Status
+Emmit Mar,Nursing,03-Sep-23,£32.50 ,To be completed
+Ben Bloggs,Nursing,04-Sep-23,£41 ,To be completed
+Chet Cheema,Paramedic,10-Sep-23,£9.12 ,To be completed
+Bethany Thompson,Adult Nursing,10-Sep-23,£13.78 ,In progress
+Jill Cooper,Nursing,12-Sep-23,£210 ,To be completed
+Philip Wilkes,Dental,14-Sep-23,£106.32 ,Being assessed
+Mia Smith,Medicine,14-Sep-23,£24.60 ,To be completed
+George Hill,Podiatry,14-Sep-23,£16.10 ,To be completed
+Douglas Reynholm,Medicine,15-Sep-23,£98.02 ,To be completed
+Michelle Moutton,Nursing,16-Sep-23,£76 ,To be completed 

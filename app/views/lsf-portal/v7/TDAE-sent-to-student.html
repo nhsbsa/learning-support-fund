@@ -17,21 +17,35 @@ Send to student
       <form action="TDAE-claims-list" method="POST">
       {% endif %}
 
-            <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
-                <div class="nhsuk-card__content">
-                    <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
-                        Claim returned to
-                        {% if data['name'] %}
-                        {{ data['name'] }}
-                        {% else %}
-                        Joe Bloggs
-                        {% endif %}
-                    </h1>
-                </div>
-            </div>
+      {% if data['return-student'] != 'Decline claim' %}
+          <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+              <div class="nhsuk-card__content">
+                  <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                      Claim returned to
+                      {% if data['name'] %}
+                      {{ data['name'] }}
+                      {% else %}
+                      Joe Bloggs
+                      {% endif %}
+                  </h1>
+              </div>
+          </div>
+      {% else %}
+      <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+          <div class="nhsuk-card__content">
+              <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                  Claim declined
+              </h1>
+          </div>
+      </div>
+      {% endif %}
 
-            <p>You have returned the claim to the student and told them why. We will email the student to let them know.</p>
-
+      {% if data['return-student'] != 'Decline claim' %}
+        <p>You have returned the claim to the student and told them why. We will email the student to let them know.</p>
+      {% else %}
+        <p>You have declined this claim. We will email the student to tell them why.</p>
+      {% endif %}
+      
             <button class="nhsuk-button" type="submit">Return to Active TDAE claims</button>
         </form>
 
