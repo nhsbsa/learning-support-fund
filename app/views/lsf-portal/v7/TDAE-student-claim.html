@@ -48,11 +48,11 @@
           <h3 class="nhsuk-warning-callout__label">
             <span role="text">
               <span class="nhsuk-u-visually-hidden">Important: </span>
-              Another claim was submitted on these dates
+              Another claim was submitted for these dates
             </span>
           </h3>
-          <p>Joe Bloggs has previously submitted a claim for costs on the same dates as this claim.</p>
-          <p><a target="_blank" href="TDAE-student-claim-previous">Check the previous claim (opens in new tab)</a> to ensure the student is not paid for the same costs twice.</p>
+          <p>{% if data['name'] %}{{ data['name'] }}{% else %}Joe Bloggs{% endif %} has previously submitted a claim with costs on these dates.</p>
+          <p>You need to <a target="_blank" href="TDAE-student-claim-previous">check the previous claim (opens in new tab)</a> to make sure they have not claimed for the same costs again.</p>
         </div>
       {% endif %}
       {% if data['status'] === 'Submitted to NHSBSA' %}
@@ -92,7 +92,7 @@
             </tr>
           </tbody>
           </table>
-          <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a feedback note</a></p>
+          <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></p>
         </div>
       </details>
       {% elif data['status'] === 'Returned from NHSBSA' %}
@@ -139,7 +139,7 @@
                 </tr>
               </tbody>
             </table>
-            <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a feedback note</a></p>
+            <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></p>
           </div>
         </details>
       {% elif data['status'] === 'Returned to student' %}
@@ -191,7 +191,7 @@
                 </tr>
               </tbody>
             </table>
-            <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a feedback note</a></p>
+            <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></p>
           </div>
         </details>
      {% else %}
@@ -235,7 +235,7 @@
                 {% endif %}
               </tbody>
             </table>
-            <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a feedback note</a></p>
+            <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></p>
           </div>
         </details>
       {% endif %}
