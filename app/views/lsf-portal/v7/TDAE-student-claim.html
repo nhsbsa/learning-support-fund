@@ -52,7 +52,7 @@
             </span>
           </h3>
           <p>Joe Bloggs has previously submitted a claim for costs on the same dates as this claim.</p>
-          <p><a href="TDAE-student-claim?name=George%20Hill&status=Submitted%20to%20NHSBSA&evidence-completed=completed&evidence-completed-2=completed&accommodation-completed=completed&vehicle-hire-check=yes&accommodation-completed-2=completed&university-completed=completed&approve-in-progress=&read-only=true">Check the previous claim</a> to ensure the student is not paid for the same costs twice.</p>
+          <p><a target="_blank" href="TDAE-student-claim?name=George%20Hill&status=Submitted%20to%20NHSBSA&evidence-completed=completed&evidence-completed-2=completed&accommodation-completed=completed&vehicle-hire-check=yes&accommodation-completed-2=completed&university-completed=completed&approve-in-progress=&read-only=true">Check the previous claim (opens in new tab)</a> to ensure the student is not paid for the same costs twice.</p>
         </div>
       {% endif %}
       {% if data['status'] === 'Submitted to NHSBSA' %}
@@ -92,6 +92,7 @@
             </tr>
           </tbody>
           </table>
+          <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a feedback note</a></p>
         </div>
       </details>
       {% elif data['status'] === 'Returned from NHSBSA' %}
@@ -138,7 +139,7 @@
                 </tr>
               </tbody>
             </table>
-
+            <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a feedback note</a></p>
           </div>
         </details>
       {% elif data['status'] === 'Returned to student' %}
@@ -190,7 +191,7 @@
                 </tr>
               </tbody>
             </table>
-
+            <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a feedback note</a></p>
           </div>
         </details>
      {% else %}
@@ -225,9 +226,16 @@
                   <td class="nhsuk-table__cell">3 September 2023</td>
                   <td class="nhsuk-table__cell "><strong>Claim submitted</strong><br></td>
                 </tr>
+                {% if data['feedback-note'] == 'yes' %}
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Mark Hirst (University)</td>
+                  <td class="nhsuk-table__cell">3 September 2023</td>
+                  <td class="nhsuk-table__cell ">{{ data['feedbacknote'] }}</td>
+                </tr>
+                {% endif %}
               </tbody>
             </table>
-
+            <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a feedback note</a></p>
           </div>
         </details>
       {% endif %}

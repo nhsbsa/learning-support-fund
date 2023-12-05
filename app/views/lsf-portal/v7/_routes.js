@@ -7,6 +7,16 @@ const express = require('express');
 const router = express.Router();
 
 // ********************************
+
+// TDAE Add feedback note
+router.post('/v7/TDAE-add-feedback-note', (req, res) => {
+
+    req.session.data['feedback-note'] = 'yes'
+
+    res.redirect('/lsf-portal/v7/TDAE-student-claim')
+
+})
+
 // COSA Maternity comments
 router.post('/v7/COSA-status-reason', (req, res) => {
 
