@@ -49,7 +49,7 @@ Student and University details
 
       </dl>
 
-      {% if data['read-only'] != 'true' %}
+      {% if (data['read-only'] != 'true') and (data['scenario'] != 'previous') %}
       <a class="nhsuk-button" href="TDAE-checked-hire-vehicle">Continue</a>
       {% endif %}
 
