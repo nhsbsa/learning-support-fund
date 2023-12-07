@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Additional costs for your normal daily journey
+How much did vehicle 1 cost you?
 {% endblock %}
 
 {% block content %}
@@ -14,24 +14,23 @@ Additional costs for your normal daily journey
 		"text": "Go back"
 		}) }}
 
-		<form action="v7/TDAE-hire-car-cost" method="POST">
+		<form action="/lsf-public/v7/TDAE-hire-car-return" method="POST">
 
 
 
 			<div class="nhsuk-form-group">
 				<label class="nhsuk-label" for="placement-additional-costs">
-					{% if data['more-vehicles'] === "yes" %}
-						<h1 class="nhsuk-heading-l">How much did hiring a second vehicle cost you?</h1>
-					{% else %}
-						<h1 class="nhsuk-heading-l">How much did hiring a vehicle cost you?</h1>
-					{% endif %}
+					<h1 class="nhsuk-heading-l">
+						<h1 class="nhsuk-heading-l">How much did hiring Vehicle 1 cost you?</h1>
+					</h1>
 				</label>
 
+				<p>Enter the cost for the entire time you're claiming for.</p>
 				<label class="nhsuk-label" for="example">
 					Cost in pounds
 				</label>
 				<div class="nhsuk-input__prefix" aria-hidden="true">£</div>
-				<input class="nhsuk-input__prefix-input nhsuk-input nhsuk-input--width-5" id="hire-vehicle-cost" name="hire-vehicle-cost" type="text">
+				<input class="nhsuk-input__prefix-input nhsuk-input nhsuk-input--width-5" id="placement-additional-costs" name="hire-car-cost" type="text">
 			</div>
 
 			<button class="nhsuk-button" type="submit">Continue</button><br>

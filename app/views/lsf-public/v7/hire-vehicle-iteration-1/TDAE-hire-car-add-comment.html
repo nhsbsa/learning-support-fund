@@ -17,16 +17,16 @@
 
 
       <div class="nhsuk-form-group">
-				<label class="nhsuk-label" for="additionalCostsComment">
+				<label class="nhsuk-label" for="placement-additional-costs">
 					{% if data['more-vehicles'] === "yes" %}
-						<h1 class="nhsuk-heading-l">Tell us more about the second hire vehicle</h1>
+						<h1 class="nhsuk-heading-l">Tell us more about the hire of Vehicle 1</h1>
 					{% else %}
-						<h1 class="nhsuk-heading-l">Tell us more about the hire vehicle</h1>
+						<h1 class="nhsuk-heading-l">Tell us more about the vehicle hire</h1>
 					{% endif %}
 				</label>
 
             <div class="nhsuk-form-group ">
-              <textarea class="nhsuk-textarea" id="additionalCostsComment" name="additionalCostsComment" rows="8"></textarea>
+              <textarea class="nhsuk-textarea" id="additionalCostsComment" name="hire-car-comment" rows="8"></textarea>
               <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">500 characters remaining</p>
               <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 500 characters</p>
             </div>

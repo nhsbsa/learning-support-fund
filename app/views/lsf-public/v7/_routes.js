@@ -237,12 +237,48 @@ router.post('/v7/TDAE-reuse-answers', (req, res) => {
 })
 
 // TDAE Hire car
+router.post('/v7/TDAE-hire-car-pause', (req, res) => {
+
+    res.redirect('/lsf-public/v7/TDAE-hire-car-cost')
+
+})
 
 router.post('/v7/TDAE-hire-car-cost', (req, res) => {
+
+    res.redirect('/lsf-public/v7/TDAE-hire-car-return')
+
+})
+
+router.post('/v7/TDAE-hire-car-return', (req, res) => {
+
+    const hireCarReturn = req.session.data['hire-car-return']
+  
+    if (hireCarReturn === 'yes') {
+      res.redirect('/lsf-public/v7/TDAE-hire-car-authorisation')
+    } else {
+      res.redirect('/lsf-public/v7/TDAE-hire-car-dates')
+    }
+  
+  })
+
+router.post('/v7/TDAE-hire-car-dates', function (req, res) {
+
+    res.redirect('/lsf-public/v7/TDAE-hire-car-authorisation')
+
+})
+
+router.post('/v7/TDAE-hire-car-authorisation', function (req, res) {
+
+    res.redirect('/lsf-public/v7/TDAE-hire-car-reason')
+
+})
+
+router.post('/v7/TDAE-hire-car-reason', function (req, res) {
 
     res.redirect('/lsf-public/v7/TDAE-hire-car-evidence')
 
 })
+
 
 router.post('/v7/TDAE-hire-car-evidence', (req, res) => {
 
@@ -269,22 +305,46 @@ router.post('/v7/TDAE-hire-car-comment', (req, res) => {
   if (hireCarComments === 'yes') {
     res.redirect('/lsf-public/v7/TDAE-hire-car-add-comment')
   } else {
-    res.redirect('/lsf-public/v7/TDAE-hire-car-cya')
+    res.redirect('/lsf-public/v7/TDAE-hire-car-add-more')
   }
 
 })
 
 router.post('/v7/TDAE-hire-car-add-comment', (req, res) => {
 
-    res.redirect('/lsf-public/v7/TDAE-hire-car-cya')
+    res.redirect('/lsf-public/v7/TDAE-hire-car-add-more')
 
 })
 
-router.post('/v7/TDAE-hire-car-cya', (req, res) => {
+router.post('/v7/TDAE-hire-car-add-more', (req, res) => {
+
+  const moreVehicles = req.session.data['more-vehicles']
+
+  if (moreVehicles === 'yes') {
+    res.redirect('/lsf-public/v7/TDAE-hire-car-cost')
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-hire-car-check')
+  }
+
+})
+
+router.post('/v7/TDAE-hire-car-check', (req, res) => {
 
     req.session.data['hire-car'] = "completed"
 
     res.redirect('/lsf-public/v7/TDAE-task-list')
+
+})
+
+router.post('/v7/TDAE-hire-car-remove-vehicle', (req, res) => {
+
+  const removeVehicle = req.session.data['remove-vehicle']
+
+  if (removeVehicle === 'yes') {
+    res.redirect('/lsf-public/v7/TDAE-hire-car-check')
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-hire-car-check')
+  }
 
 })
 

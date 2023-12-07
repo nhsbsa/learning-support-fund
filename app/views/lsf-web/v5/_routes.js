@@ -12,6 +12,55 @@ const router = express.Router();
 // TDAE Claim
 // ********************************
 
+// Test journey //
+// Create new user
+router.post('/v5/admin-view/test-journey/create-user-new', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/test-journey/create-user-roles-new')
+
+})
+
+// Select user role
+router.post('/v5/admin-view/test-journey/create-user-roles-new', (req, res) => {
+
+    const userRole = req.session.data['user-role']
+  
+    if (userRole === 'role-1') {
+      res.redirect('/lsf-web/v5/admin-view/test-journey/create-user-location')
+    } else {
+      res.redirect('/lsf-web/v5/admin-view/test-journey/university')
+    }
+  
+  })
+
+// Enter user location
+router.post('/v5/admin-view/test-journey/create-user-location', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/test-journey/create-user-location-cya')
+
+})
+
+// Enter university, job/department and contact number
+router.post('/v5/admin-view/test-journey/create-user-university', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/test-journey/create-user-university-cya')
+
+})
+
+// User created successfully
+router.post('/v5/admin-view/test-journey/create-user-location-cya', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/test-journey/create-user-done')
+
+})
+
+// User created successfully
+router.post('/v5/admin-view/test-journey/create-user-university-cya', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/test-journey/create-user-done')
+
+})
+
 // Return to student decline or return
 router.post('/v5/returnordecline', (req, res) => {
 

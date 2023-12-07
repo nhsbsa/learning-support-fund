@@ -26,8 +26,50 @@ Check your answers
 					{% endif %}
 				</dd>
 				<dd class="nhsuk-summary-list__actions">
-					<a href="TDAE-hire-car-cost">
+					<a href="/lsf-public/v7/TDAE-hire-car-cost">
 						Change<span class="nhsuk-u-visually-hidden"> hire car ammount</span>
+					</a>
+				</dd>
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Date(s) vehicle hired
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					30 November 2023
+				</dd>
+				<dd class="nhsuk-summary-list__actions">
+					<a href="/lsf-public/v7/TDAE-hire-car-dates">
+						Change<span class="nhsuk-u-visually-hidden">Date vehicle hired</span>
+					</a>
+				</dd>
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Reason for hiring vehicle
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					I had an emergency situation
+				</dd>
+				<dd class="nhsuk-summary-list__actions">
+					<a href="/lsf-public/v7/TDAE-hire-car-reason">
+						Change<span class="nhsuk-u-visually-hidden">Reason for vehicle hire</span>
+					</a>
+				</dd>
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Approved by
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					John Doe
+				</dd>
+				<dd class="nhsuk-summary-list__actions">
+					<a href="/lsf-public/v7/TDAE-hire-car-reason">
+						Change<span class="nhsuk-u-visually-hidden">Approver</span>
 					</a>
 				</dd>
 			</div>
@@ -40,7 +82,7 @@ Check your answers
 					1 evidence uploaded
 				</dd>
 				<dd class="nhsuk-summary-list__actions">
-					<a href="TDAE-hire-car-mini-cya">
+					<a href="/lsf-public/v7/TDAE-hire-car-mini-cya">
 						Review<span class="nhsuk-u-visually-hidden"> hire car evidence</span>
 					</a>
 				</dd>
@@ -58,7 +100,7 @@ Check your answers
 					{% endif %}
 				</dd>
 				<dd class="nhsuk-summary-list__actions">
-					<a href="TDAE-hire-car-comment">
+					<a href="/lsf-public/v7/TDAE-hire-car-comment">
 						Change<span class="nhsuk-u-visually-hidden"> hire car comments</span>
 					</a>
 				</dd>
@@ -86,7 +128,7 @@ Check your answers
 			</dl>
 
 			{% if data['submit-claim'] != 'completed' %}
-				<form action="v7/TDAE-hire-car-cya" method="POST">
+				<form action="/lsf-public/v7/TDAE-hire-car-cya" method="POST">
 					<button class="nhsuk-button" type="submit">Save and continue</button><br>
 				</form>
 			{% endif %}

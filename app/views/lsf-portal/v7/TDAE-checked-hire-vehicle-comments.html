@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v7/TDAE-checked-hire-vehicle" method="POST">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-l">Tell us more about the details and evidence provided by the student (optional)</h1>
+          </legend>
+          <p>Use the box below to tell us anything else that may support the student's claim. For example, you may want to tell us more about xyz.</p>
+          
+          <p>Otherwise click Save and continue to return to xyz.</p>
+          <div class="nhsuk-form-group">
+            <div class="nhsuk-hint" id="example-hint">
+              Do not include personal or financial information, like the student's credit card details.
+            </div>
+            <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
+          </div>
+          
+        </fieldset>
+      </div>
+      <button class="nhsuk-button" type="submit">
+          Save and continue
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}
