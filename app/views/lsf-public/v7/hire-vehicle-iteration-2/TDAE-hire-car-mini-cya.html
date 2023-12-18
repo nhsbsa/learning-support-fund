@@ -18,7 +18,11 @@ Evidence you have uploaded
        
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="placement-additional-costs">
-              <h1 class="nhsuk-heading-l">Uploaded evidence for this hire vehicle</h1>
+            {% if data['more-vehicles'] === "yes" %}
+              <h1 class="nhsuk-heading-l">Evidence uploaded for the second vehicle</h1>
+            {% else %}
+              <h1 class="nhsuk-heading-l">Evidence uploaded for the vehicle</h1>
+            {% endif %}
           </label>
 
         {% if data['evidence'] === 'removed' %}
@@ -62,7 +66,7 @@ Evidence you have uploaded
             <fieldset class="nhsuk-fieldset">
               <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
                 <h2 class="nhsuk-fieldset__heading">
-                  Do you want to upload more evidence?
+                  Do you want to add more evidence?
                 </h2>
               </legend>
 

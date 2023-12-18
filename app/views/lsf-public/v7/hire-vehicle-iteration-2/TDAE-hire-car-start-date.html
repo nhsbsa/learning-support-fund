@@ -20,12 +20,16 @@ Additional costs for your normal daily journey
 
 			<div class="nhsuk-form-group">
 				<label class="nhsuk-label" for="placement-additional-costs">
-						<h1 class="nhsuk-heading-l">When did this vehicle hire start?</h1>
+					{% if data['more-vehicles'] === "yes" %}
+						<h1 class="nhsuk-heading-l">Enter the start date which you hired the second vehicle</h1>
+					{% else %}
+						<h1 class="nhsuk-heading-l">Enter the start date which you hired the vehicle</h1>
+					{% endif %}
 				</label>
 
 				<div class="nhsuk-form-group">
-					<label class="nhsuk-label" for="start-date">Start date
-					  <div class="nhsuk-hint" id="contact-hint">For example, 15/09/2023</div>
+					<label class="nhsuk-label" for="start-date"> <b>Start date</b>
+					  <div class="nhsuk-hint" id="contact-hint">For example, 27 11 2023</div>
 					</label>
 		
 					<div class="nhsuk-date-input" id="example">

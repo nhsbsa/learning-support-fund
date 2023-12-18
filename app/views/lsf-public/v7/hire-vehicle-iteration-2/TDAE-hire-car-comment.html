@@ -17,10 +17,15 @@
 
       <div class="nhsuk-form-group">
 				<label class="nhsuk-label" for="placement-additional-costs">
-						<h1 class="nhsuk-heading-l">Do you want to tell us anything more about hiring this vehicle?</h1>
+					{% if data['more-vehicles'] === "yes" %}
+						<h1 class="nhsuk-heading-l">Do you want to tell us anything more about the second hire vehicle?</h1>
+					{% else %}
+						<h1 class="nhsuk-heading-l">Do you want to tell us anything more about the hire vehicle?</h1>
+					{% endif %}
 				</label>
 
-              <p>For example, if you want to give us more details about your reason for hiring a vehicle.</p>
+              <p>Select yes if you'd like to further explain anything about hiring a vehicle you feel would help support your claim.</p>
+              <p>For example, if you'd like to tell us more about the evidence you have uploaded.</p>
 
               <div class="nhsuk-radios">
 

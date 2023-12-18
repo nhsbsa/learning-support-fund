@@ -26,7 +26,7 @@
               <dl class="nhsuk-summary-list">
                 <div class="nhsuk-summary-list__row">
   								<dt class="nhsuk-summary-list__key">
-  									Total amount
+  									Cost
   								</dt>
   								<dd class="nhsuk-summary-list__value">
   									{% if data['vehicle-hire-cost'] %}
@@ -40,11 +40,25 @@
 
   							<div class="nhsuk-summary-list__row">
   								<dt class="nhsuk-summary-list__key">
-  									Date hired
+  									Start date
   								</dt>
   								<dd class="nhsuk-summary-list__value">
   									{% if data['vehicle-hire-start-day'] %}
   										{{ data['vehicle-hire-start-day'] }} <span class="cya-month">{{ data['vehicle-hire-start-month'] }}</span> {{ data['vehicle-hire-start-year'] }}
+  									{% else %}
+  										30 November 2023
+  									{% endif %}
+  								</dd>
+  							</div>
+
+
+                <div class="nhsuk-summary-list__row">
+  								<dt class="nhsuk-summary-list__key">
+  									End date
+  								</dt>
+  								<dd class="nhsuk-summary-list__value">
+  									{% if data['vehicle-hire-end-day'] %}
+  										{{ data['vehicle-hire-end-day'] }} <span class="cya-month">{{ data['vehicle-hire-end-month'] }}</span> {{ data['vehicle-end-start-year'] }}
   									{% else %}
   										30 November 2023
   									{% endif %}
@@ -68,7 +82,7 @@
 
                 <div class="nhsuk-summary-list__row">
   								<dt class="nhsuk-summary-list__key">
-  									Reason for hiring a vehicle
+  									Reason for hire vehicle
   								</dt>
   								<dd class="nhsuk-summary-list__value">
   									{% if data['reason-for-hire'] %}

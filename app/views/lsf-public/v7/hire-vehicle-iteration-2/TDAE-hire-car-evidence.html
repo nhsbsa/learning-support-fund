@@ -18,7 +18,11 @@ Upload your evidence for week 2
 
       <div class="nhsuk-form-group">
 				<label class="nhsuk-label" for="placement-additional-costs">
-						<h1 class="nhsuk-heading-l">Upload evidence for hiring this vehicle</h1>
+					{% if data['more-vehicles'] === "yes" %}
+						<h1 class="nhsuk-heading-l">Upload evidence for hiring the second vehicle</h1>
+					{% else %}
+						<h1 class="nhsuk-heading-l">Upload evidence for hiring the vehicle</h1>
+					{% endif %}
 				</label>
 
       <p class="nhsuk-hint">Evidence must be:</p>

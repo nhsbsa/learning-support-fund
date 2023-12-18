@@ -20,7 +20,11 @@ Additional costs for your normal daily journey
 
 			<div class="nhsuk-form-group">
 				<label class="nhsuk-label" for="placement-additional-costs">
-					<h1 class="nhsuk-heading-l">How much did this hire vehicle cost?</h1>
+					{% if data['more-vehicles'] === "yes" %}
+						<h1 class="nhsuk-heading-l">How much did hiring a second vehicle cost you?</h1>
+					{% else %}
+						<h1 class="nhsuk-heading-l">How much did hiring a vehicle cost you?</h1>
+					{% endif %}
 				</label>
 
 				<label class="nhsuk-label" for="example">
