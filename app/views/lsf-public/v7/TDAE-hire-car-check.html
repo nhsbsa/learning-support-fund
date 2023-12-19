@@ -11,7 +11,7 @@ Check your answers
 
 		<!-- <form action="" method="POST"> -->
 
-		<h1 class="nhsuk-heading-xl">Check your hire vehicles</h1>
+		<h1 class="nhsuk-heading-xl">Check your hire vehicle bookings</h1>
 
 		
 
@@ -46,7 +46,7 @@ Check your answers
 						{% if data['hire-vehicle-cost'] %}
 							£{{ data['hire-vehicle-cost'] }}
 							{% else %}
-							£120.00
+							£120
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
@@ -240,7 +240,7 @@ Check your answers
 						{% if data['hire-vehicle-cost'] %}
 							£{{ data['hire-vehicle-cost'] }}
 							{% else %}
-							£120.00
+							£120
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
@@ -277,28 +277,6 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- end date of first hire vehicle -->
-				<div class="nhsuk-summary-list__row">
-					<dt class="nhsuk-summary-list__key">
-						End date
-					</dt>
-					<dd class="nhsuk-summary-list__value">
-						{% if data['hire-vehicle-end-day'] %}
-							{{ data['hire-vehicle-end-day'] }} <span class="cya-month">{{ data['hire-vehicle-end-month'] }}</span> {{ data['hire-vehicle-end-year'] }}
-						{% else %}
-							30 November 2023
-						{% endif %}
-					</dd>
-					{% if data['submit-claim'] != 'completed' %}
-					<dd class="nhsuk-summary-list__actions">
-
-						<a href="TDAE-hire-car-return">
-							Change<span class="nhsuk-u-visually-hidden"> end date</span>
-						</a>
-
-					</dd>
-					{% endif %}
-				</div>
 
 				<!-- first hire vehicle authorised by -->
 				<div class="nhsuk-summary-list__row">
@@ -419,7 +397,7 @@ Check your answers
 				  {% if data['hire-vehicle-cost'] %}
 					  £{{ data['hire-vehicle-cost'] }}
 					  {% else %}
-					  £120.00
+					  £175
 				  {% endif %}
 			  </dd>
 			  {% if data['submit-claim'] != 'completed' %}
@@ -436,13 +414,13 @@ Check your answers
 		  <!-- start date of second hire vehicle -->
 		  <div class="nhsuk-summary-list__row">
 			  <dt class="nhsuk-summary-list__key">
-				  Date hired
+				  Dates hired
 			  </dt>
 			  <dd class="nhsuk-summary-list__value">
 				  {% if data['hire-vehicle-start-day'] %}
 					  {{ data['hire-vehicle-start-day'] }} <span class="cya-month">{{ data['hire-vehicle-start-month'] }}</span> {{ data['hire-vehicle-start-year'] }}
 				  {% else %}
-					  30 November 2023
+					  1 December 2023 to <br> 3 December 2023
 				  {% endif %}
 			  </dd>
 			  {% if data['submit-claim'] != 'completed' %}
@@ -456,28 +434,7 @@ Check your answers
 			  {% endif %}
 		  </div>
 
-		  <!-- end date of second hire vehicle -->
-		  <div class="nhsuk-summary-list__row">
-			  <dt class="nhsuk-summary-list__key">
-				  End date
-			  </dt>
-			  <dd class="nhsuk-summary-list__value">
-				  {% if data['hire-vehicle-end-date'] %}
-					  {{ data['hire-vehicle-end-day'] }} <span class="cya-month">{{ data['hire-vehicle-end-month'] }}</span> {{ data['hire-vehicle-end-year'] }}
-				  {% else %}
-					  30 November 2023
-				  {% endif %}
-			  </dd>
-			  {% if data['submit-claim'] != 'completed' %}
-			  <dd class="nhsuk-summary-list__actions">
-
-				  <a href="TDAE-hire-car-return">
-					  Change<span class="nhsuk-u-visually-hidden"> end date</span>
-				  </a>
-
-			  </dd>
-			  {% endif %}
-		  </div>
+		 
 
 		  <!-- second hire vehicle authorised by -->
 		  <div class="nhsuk-summary-list__row">
@@ -488,7 +445,7 @@ Check your answers
 				  {% if data['authorised-by'] %}
 					  {{ data['authorised-by'] }}
 					  {% else %}
-					  John Doe
+					  Joe Bloggs
 				  {% endif %}
 			  </dd>
 			  {% if data['submit-claim'] != 'completed' %}
@@ -584,7 +541,7 @@ Check your answers
 						Amount to be reimbursed
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-							£240
+							£295
 					</dd>
 				</div>
 	    </dl>
