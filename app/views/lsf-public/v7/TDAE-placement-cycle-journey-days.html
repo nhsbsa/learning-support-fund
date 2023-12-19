@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  Which days did you travel to
+  Which mode of transport do you take to and from your normal place of study?
 {% endblock %}
 
 {% block content %}
@@ -14,44 +14,25 @@
         "text": "Go back"
     }) }}
 
-    <form action="v7/TDAE-placement-journey-days" method="POST">
+    <form action="v7/TDAE-placement-cycle-journey-days" method="POST">
 
         <div class="nhsuk-form-group">
 
             <fieldset class="nhsuk-fieldset">
               <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  Which days did you travel to {{ data['placement-mileage-address']}}?
+                  Which days did you cycle to {{ data['placement-cycle-mileage-address']}}?
                 </h1>
               </legend>
 
-              <!--<dl class="nhsuk-summary-list">
-
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key" style="width: 75%">
-                    Mileage to placement
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    {{ data['placement-to-mileage'] }}
-                  </dd>
-                </div>
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key" style="width: 75%">
-                    Mileage returning from placement
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    {{ data['placement-return-mileage'] }}
-                  </dd>
-                </div>
-
-              </dl>-->
+              <p>Select days where you did the same mileage to and from the placement or accommodation</p>
 
               <div class="nhsuk-hint" id="example-hint">
                 Select all that apply
               </div>
 
               <div class="nhsuk-checkboxes">
-                {% if data['placement-mileage-address'] == 'Newcastle Hospital' %}
+                {% if data['placement-cycle-mileage-address'] == 'Newcastle Hospital' %}
 
                 <div class="nhsuk-checkboxes__item">
                   <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
@@ -113,12 +94,11 @@
 
                 {% endif %}
               </div>
-            </fieldset>
 
-          </div>
+            </div>
 
       <button class="nhsuk-button" type="submit">Continue</button><br>
-      <a href="TDAE-start-claim">Cancel</a>
+      <a href="TDAE-placement-itinerary">Cancel</a>
 
     </form>
 

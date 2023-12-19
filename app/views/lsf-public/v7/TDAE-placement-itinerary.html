@@ -15,14 +15,19 @@ What is the return mileage to your placement?
 
 <div class="nhsuk-grid-row">
 	<div class="nhsuk-grid-column-full">
-		<p>You can add information about journey mileage, extra costs you paid or community mileage details for each day of your placement.</p>
+		<p>You can add information about journey mileage, extra costs you paid or community travel details for each day of your placement.</p>
 
 		<div  class="action-block">
 			<h2 class="nhsuk-heading-s">What you can do</h2>
 			<div class="nhsuk-grid-row">
 				{% if checked('claiming-for', 'car') %}
 				<div class="nhsuk-grid-column-one-quarter">
-					<a class="nhsuk-button nhsuk-button--secondary" href="v7/add-journey-mileage">Add journey mileage</a>
+					<a class="nhsuk-button nhsuk-button--secondary" href="v7/add-journey-mileage">Add car journey mileage</a>
+				</div>
+				{% endif %}
+				{% if checked('claiming-for', 'Cycle') %}
+				<div class="nhsuk-grid-column-one-quarter">
+					<a class="nhsuk-button nhsuk-button--secondary" href="v7/add-cycle-journey-mileage">Add cycling journey mileage</a>
 				</div>
 				{% endif %}
 				{% if checked('claiming-for', 'Public transport') %}
@@ -30,14 +35,14 @@ What is the return mileage to your placement?
 					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-public-transport-overview">Add public transport tickets</a>
 				</div>
 				{% endif %}
-				{% if checked('claiming-for', 'car') %}
+				{% if checked('claiming-for', 'car') or checked('claiming-for', 'Cycle') %}
 				<div class="nhsuk-grid-column-one-quarter" style="width: 20%;">
 					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-evidence-type">Add extra costs</a>
 				</div>
 				{% endif %}
 				{% if checked('claiming-for', 'community') %}
 				<div class="nhsuk-grid-column-one-quarter">
-				<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-community-mileage-day">Add community mileage</a>
+				<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-community-mileage-day">Add Community travel</a>
 				</div>
 				{% endif %}
 				<!--<div class="nhsuk-grid-column-one-quarter" style="width: 30%;">
@@ -157,7 +162,7 @@ What is the return mileage to your placement?
 			        <span class="nhsuk-table-responsive__heading">Travel cost </span>£8.60
 			      </td>
 						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
-							<span class="nhsuk-table-responsive__heading">Action </span><a href="TDAE-public-transport-check">Change</a>
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
 						</td>
 			    </tr>
 					<tr role="row" class="nhsuk-table__row">
@@ -176,7 +181,7 @@ What is the return mileage to your placement?
 			        <span class="nhsuk-table-responsive__heading">Travel cost </span>£1.72
 			      </td>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Action </span><a href="TDAE-public-transport-check">Change</a>
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
 						</td>
 			    </tr>
 					<tr role="row" class="nhsuk-table__row">
@@ -195,7 +200,7 @@ What is the return mileage to your placement?
 			        <span class="nhsuk-table-responsive__heading">Travel cost </span>£8.60
 			      </td>
 						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
-			        <span class="nhsuk-table-responsive__heading">Action </span><a href="TDAE-public-transport-check">Change</a>
+			        <span class="nhsuk-table-responsive__heading">Action </span><a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
 			      </td>
 			    </tr>
 					<tr role="row" class="nhsuk-table__row">
@@ -214,7 +219,7 @@ What is the return mileage to your placement?
 			        <span class="nhsuk-table-responsive__heading">Travel cost </span>£1.72
 			      </td>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Action </span><a href="TDAE-public-transport-check">Change</a>
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
 						</td>
 			    </tr>
 					<tr role="row" class="nhsuk-table__row">
@@ -233,7 +238,7 @@ What is the return mileage to your placement?
 			        <span class="nhsuk-table-responsive__heading">Travel cost </span>£8.60
 			      </td>
 						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
-			        <span class="nhsuk-table-responsive__heading">Action </span><a href="TDAE-public-transport-check">Change</a>
+			        <span class="nhsuk-table-responsive__heading">Action </span><a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
 			      </td>
 			    </tr>
 					<tr role="row" class="nhsuk-table__row">
@@ -252,7 +257,7 @@ What is the return mileage to your placement?
 			        <span class="nhsuk-table-responsive__heading">Travel cost </span>£1.72
 			      </td>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Action </span><a href="TDAE-public-transport-check">Change</a>
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
 						</td>
 			    </tr>
 					<tr role="row" class="nhsuk-table__row">
@@ -271,7 +276,7 @@ What is the return mileage to your placement?
 			        <span class="nhsuk-table-responsive__heading">Travel cost </span>£8.60
 			      </td>
 						<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
-			        <span class="nhsuk-table-responsive__heading">Action </span><a href="TDAE-public-transport-check">Change</a>
+			        <span class="nhsuk-table-responsive__heading">Action </span><a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
 			      </td>
 			    </tr>
 					<tr role="row" class="nhsuk-table__row">
@@ -290,7 +295,7 @@ What is the return mileage to your placement?
 			        <span class="nhsuk-table-responsive__heading">Travel cost </span>£1.72
 			      </td>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Action </span><a href="TDAE-public-transport-check">Change</a>
+							<span class="nhsuk-table-responsive__heading">Action </span><a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
 						</td>
 			    </tr>
 		  </tbody>
@@ -299,13 +304,13 @@ What is the return mileage to your placement?
 		<details class="nhsuk-details">
 			<summary class="nhsuk-details__summary">
 				<span class="nhsuk-details__summary-text">
-					What am I reimbursed for a Multiple day bus ticket?
+					What am I reimbursed for a Multiple day ticket?
 				</span>
 			</summary>
 			<div class="nhsuk-details__text">
 				<p>We divide the cost of your ticket by the number of days it's valid for. We then multiply this by the number of days you used the ticket.</p>
-				<p>For example, if you bought a weekly ticket lasting 7 days for £7, the daily cost is £1. If you used this ticket on 5 days, then you will be reimbursed £5.</p>
-				<p>We will automatically calculate this for you.</p>
+				<p>For example, if you bought a weekly ticket lasting 7 days for £7, the daily cost is £1. If you used this ticket on 5 days, you'll be reimbursed £5.</p>
+				<p>We'll automatically calculate this for you.</p>
 			</div>
 		</details>
 

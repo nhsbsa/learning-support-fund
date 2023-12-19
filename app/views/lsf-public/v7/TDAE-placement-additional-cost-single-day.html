@@ -21,28 +21,30 @@ Which type of evidence does this relate to?
               <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                   <h1 class="nhsuk-fieldset__heading">
-                    Is this cost only for one day?
+                    What type of cost is this?
                   </h1>
                 </legend>
-
-                <div class="nhsuk-hint" id="contact-hint">
-                  For example, a single-use parking ticket only covers one day. A weekly parking pass covers multiple days.
-                </div>
 
                 <div class="nhsuk-radios">
 
                   <div class="nhsuk-radios__item">
                     <input class="nhsuk-radios__input" id="additional-cost-single-day-1" name="additional-cost-single-day" type="radio" value="Yes">
                     <label class="nhsuk-label nhsuk-radios__label" for="additional-cost-single-day-1">
-                      Yes
+                      Daily cost
                     </label>
+                    <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                      This cost covered one day of {{ data['additional-cost-type']}}.
+                    </div>
                   </div>
 
                   <div class="nhsuk-radios__item">
                     <input class="nhsuk-radios__input" id="additional-cost-single-day-2" name="additional-cost-single-day" type="radio" value="No">
                     <label class="nhsuk-label nhsuk-radios__label" for="additional-cost-single-day-2">
-                      No
+                      Multiple day cost
                     </label>
+                    <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                      This cost covered multiple days of {{ data['additional-cost-type']}}.
+                    </div>
                   </div>
 
                 </div>

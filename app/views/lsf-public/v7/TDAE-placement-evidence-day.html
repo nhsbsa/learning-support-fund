@@ -26,6 +26,28 @@ Which days does this evidence relate to?
                   </h1>
                 </legend>
 
+                <dl class="nhsuk-summary-list">
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Cost type
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      {{ data['additional-cost-type']}}
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Cost amount
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      £{{ data['placement-additional-costs']}}
+                    </dd>
+                  </div>
+
+                </dl>
+
                 <div class="nhsuk-radios">
 
                   <div class="nhsuk-radios__item">

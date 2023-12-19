@@ -1,0 +1,95 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Which placement address were you travelling to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v7/TDAE-placement-cycle-mileage-address" method="POST">
+
+            <div class="nhsuk-form-group">
+
+              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  <h1 class="nhsuk-fieldset__heading">
+                    Which placement address were you travelling to?
+                  </h1>
+                </legend>
+            </div>
+
+            <div class="nhsuk-form-group">
+
+                <div class="nhsuk-radios">
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="placement-mileage-address" name="placement-cycle-mileage-address" type="radio" value="Newcastle Hospital">
+                    <label class="nhsuk-label nhsuk-radios__label" for="additional-cost-single-day-2">
+                      Newcastle Hospital, NE1 1AA
+                    </label>
+                    <div class="nhsuk-hint nhsuk-radios__hint" id="placement-mileage-address-hint">
+
+                      <details class="nhsuk-details">
+                        <summary class="nhsuk-details__summary">
+                          <span class="nhsuk-details__summary-text">
+                            View full address
+                          </span>
+                        </summary>
+                        <div class="nhsuk-details__text">
+                          Newcastle Hospital<br>
+                          Main Street<br>
+                          Newcastle<br>
+                          NE1 1AA
+                        </div>
+                      </details>
+                    </div>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="placement-mileage-address" name="placement-cycle-mileage-address" type="radio" value="Alnwick Hospital">
+                    <label class="nhsuk-label nhsuk-radios__label" for="additional-cost-single-day-2">
+                      Alnwick Hospital, NE6 4EA
+                    </label>
+                    <div class="nhsuk-hint nhsuk-radios__hint" id="placement-mileage-address-hint">
+
+                      <details class="nhsuk-details">
+                        <summary class="nhsuk-details__summary">
+                          <span class="nhsuk-details__summary-text">
+                            View full address
+                          </span>
+                        </summary>
+                        <div class="nhsuk-details__text">
+                          Alnwick Hospital<br>
+                          Main Street<br>
+                          Alnwick<br>
+                          NE6 4EA
+                        </div>
+                      </details>
+                    </div>
+                  </div>
+
+                </div>
+              </fieldset>
+
+            </div>
+
+            <button class="nhsuk-button">Continue</button><br>
+            <a href="TDAE-placement-itinerary">Cancel</a>
+
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

@@ -15,7 +15,7 @@
 
     <!-- <form action="v7/TDAE-" method="POST"> -->
 
-        <h1 class="nhsuk-heading-l">Check reasons for returning to student</h1>
+        <h1 class="nhsuk-heading-l">Check reasons for {% if data['return-student'] != 'Decline claim' %}returning to student{% else %}declining the claim{% endif %}</h1>
 
         <dl class="nhsuk-summary-list">
 

@@ -9,7 +9,7 @@ University details
 
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1 class="nhsuk-heading-l">Check reasons for returning to university</h1>
+      <h1 class="nhsuk-heading-l">Check reasons for {% if data['return-student'] != 'Decline claim' %}returning to university{% else %}declining the claim{% endif %}</h1>
 
       <dl class="nhsuk-summary-list">
 

@@ -14,33 +14,33 @@ Additional costs for your normal daily journey
 		"text": "Go back"
 		}) }}
 
-		<form action="v7/TDAE-placement-journey-cya" method="POST">
+		<form action="v7/TDAE-placement-cycle-journey-cya" method="POST">
 
 
 
 			<div class="nhsuk-form-group">
 					<h1 class="nhsuk-heading-l">
-						<h1 class="nhsuk-heading-l">Check placement journey</h1>
+						<h1 class="nhsuk-heading-l">Check placement cycle journey</h1>
 					</h1>
 
 					<dl class="nhsuk-summary-list">
 
 						<div class="nhsuk-summary-list__row">
-					    <dt class="nhsuk-summary-list__key">
-					     Placement address
-					    </dt>
-					    <dd class="nhsuk-summary-list__value">
+							<dt class="nhsuk-summary-list__key">
+							 Placement address
+							</dt>
+							<dd class="nhsuk-summary-list__value">
 								Newcastle Hospital<br>
 								Main Street<br>
 								Newcastle<br>
 								NE1 1AA
-					    </dd>
-					    <dd class="nhsuk-summary-list__actions">
-					      <a href="TDAE-placement-mileage-address">
-					        Change<span class="nhsuk-u-visually-hidden"> Additional cost amount</span>
-					      </a>
-					    </dd>
-					  </div>
+							</dd>
+							<dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-placement-cycle-mileage-address">
+									Change<span class="nhsuk-u-visually-hidden"> placement address</span>
+								</a>
+							</dd>
+						</div>
 
 						<div class="nhsuk-summary-list__row">
 					    <dt class="nhsuk-summary-list__key">
@@ -60,21 +60,21 @@ Additional costs for your normal daily journey
 							{% endif %}
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
-					      <a href="TDAE-placement-journey-days">
+					      <a href="TDAE-placement-cycle-journey-days">
 					        Change<span class="nhsuk-u-visually-hidden"> Additional cost amount</span>
 					      </a>
 					    </dd>
 					  </div>
 
-					  <div class="nhsuk-summary-list__row">
+						<div class="nhsuk-summary-list__row">
 					    <dt class="nhsuk-summary-list__key">
 					      Mileage to placement
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
-					      {{ data['placement-to-mileage'] }}
+					      {{ data['placement-cycle-to-mileage'] }}
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
-					      <a href="TDAE-placement-to-mileage">
+					      <a href="TDAE-placement-cycle-to-mileage">
 					        Change<span class="nhsuk-u-visually-hidden"> Mileage to placement</span>
 					      </a>
 					    </dd>
@@ -85,10 +85,10 @@ Additional costs for your normal daily journey
 					      Mileage returning from placement
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
-					      {{ data['placement-return-mileage'] }}
+					      {{ data['placement-cycle-return-mileage'] }}
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
-					      <a href="TDAE-placement-return-mileage">
+					      <a href="TDAE-placement-cycle-return-mileage">
 					        Change<span class="nhsuk-u-visually-hidden"> Mileage returning from placement</span>
 					      </a>
 					    </dd>
@@ -97,7 +97,7 @@ Additional costs for your normal daily journey
 					</dl>
 
 			</div>
-			<button class="nhsuk-button" type="submit">Add journey mileage</button><br>
+			<button class="nhsuk-button" type="submit">Add cycle journey mileage</button><br>
 			<a href="TDAE-start-claim">Cancel</a>
 
 		</form>

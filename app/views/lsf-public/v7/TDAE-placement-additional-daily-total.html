@@ -19,9 +19,32 @@ Which type of evidence does this relate to?
               <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                   <h1 class="nhsuk-fieldset__heading">
-                    Did you pay this cost again on any other days?
+                    Did you incur this cost on more than one day?
                   </h1>
                 </legend>
+
+                <dl class="nhsuk-summary-list">
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Cost type
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      {{ data['additional-cost-type']}}
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Cost amount
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      £{{ data['placement-additional-costs']}}
+                    </dd>
+                  </div>
+
+                </dl>
+
                 <div class="nhsuk-form-group">
 
                   <div class="nhsuk-radios">
