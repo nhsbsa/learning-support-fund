@@ -18,7 +18,11 @@
 
       <div class="nhsuk-form-group">
 				<label class="nhsuk-label" for="additionalCostsComment">
-						<h1 class="nhsuk-heading-l">Tell us more about hiring this vehicle</h1>
+					{% if data['more-vehicles'] === "yes" %}
+						<h1 class="nhsuk-heading-l">Tell us more about the second hire vehicle</h1>
+					{% else %}
+						<h1 class="nhsuk-heading-l">Tell us more about the hire vehicle</h1>
+					{% endif %}
 				</label>
 
             <div class="nhsuk-form-group ">

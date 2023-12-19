@@ -18,14 +18,16 @@
 
       <div class="nhsuk-form-group">
 				<label class="nhsuk-label" for="placement-additional-costs">
-						<h1 class="nhsuk-heading-l">Why did you hire this vehicle?</h1>
+					{% if data['more-vehicles'] === "yes" %}
+						<h1 class="nhsuk-heading-l">What was the reason for hiring the second vehicle?</h1>
+					{% else %}
+						<h1 class="nhsuk-heading-l">What was the reason for hiring the vehicle?</h1>
+					{% endif %}
 				</label>
 
               <div class="nhsuk-form-group">
-              <p>You can tell us more about this after you've uploaded your evidence.</p>
-
-                <div class="nhsuk-hint" id="reason-for-vehicle-hire">
-                  Select all that apply.
+                <div class="nhsuk-hint" id="reason-for-vehicle-hire-hint">
+                  You will have the opportunity to go into more detail about the reason for hiring a vehicle after you have uploaded evidence.
                 </div>
                
               </div>
@@ -35,14 +37,14 @@
                 <div class="nhsuk-checkboxes__item">
                   <input class="nhsuk-checkboxes__input" id="reason-for-hire" name="reason-for-hire" type="radio" value="I couldn't get public transport to the location I needed and I do not own my own vehicle">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-1">
-                    I do not own a vehicle and public transport was not available
+                    I couldn't get public transport to the location I needed and I do not own my own vehicle
                   </label>
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
                   <input class="nhsuk-checkboxes__input" id="reason-for-hire" name="reason-for-hire" type="radio" value="I had an emergency situation">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-2">
-                    My own vehicle had an issue
+                    I had an emergency situation
                   <div class="nhsuk-hint" id="contact-hint">
                   This covers breakdowns, accidents and repairs.
                   </div>
@@ -59,7 +61,7 @@
                 <div class="nhsuk-checkboxes__item">
                   <input class="nhsuk-checkboxes__input" id="reason-for-hire" name="reason-for-hire" type="radio" value="I needed to transport goods and/or equipment and required more space">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-4">
-                    I needed a large vehicle to transport goods or equipment
+                    I needed to transport goods and/or equipment and required more space
                   </label>
                 </div>                
 
@@ -73,7 +75,7 @@
                 <div class="nhsuk-checkboxes__item">
                   <input class="nhsuk-checkboxes__input" id="reason-for-hire" name="reason-for-hire" type="radio" value="A group of us hired the vehicle">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-6">
-                    A group of us hired a vehicle together
+                    A group of us hired the vehicle
                   </label>
               </div>
 
@@ -87,7 +89,7 @@
                 <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-contact-1">
                   <div class="nhsuk-form-group">
                     <label class="nhsuk-label" for="other-input">
-                      Enter the reason for hiring this vehicle
+                      Provide another reason for hiring the vehicle
                     </label>
                     <input class="nhsuk-input nhsuk-u-width-two-thirds" id="reason-for-hire" name="reason-for-hire" type="text">
                   </div>

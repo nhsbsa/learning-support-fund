@@ -11,7 +11,7 @@ Check your answers
 
 		<!-- <form action="" method="POST"> -->
 
-		<h1 class="nhsuk-heading-xl">Check your hire vehicles</h1>
+		<h1 class="nhsuk-heading-xl">Check your answers</h1>
 
 		
 
@@ -21,7 +21,7 @@ Check your answers
 				<!-- number of hire vehicles -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Number of hire vehicles
+						Hire vehicles
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						1
@@ -40,7 +40,7 @@ Check your answers
 				<!-- cost of first hire vehicle -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Total amount
+						Cost of hire vehicle
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['hire-vehicle-cost'] %}
@@ -63,7 +63,7 @@ Check your answers
 				<!-- start date of first hire vehicle -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Date hired
+						Start date
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['hire-vehicle-start-day'] %}
@@ -130,7 +130,7 @@ Check your answers
 				<!-- reason for first hire vehicle -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Reason for hiring a vehicle
+						Reason for hire vehicle
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['reason-for-hire'] %}
@@ -142,7 +142,7 @@ Check your answers
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
 						<a href="TDAE-hire-car-reason">
-							Change<span class="nhsuk-u-visually-hidden"> reason for hiring a vehicle</span>
+							Change<span class="nhsuk-u-visually-hidden"> reason for hire vehicle</span>
 						</a>
 					</dd>
 					{% endif %}
@@ -204,7 +204,7 @@ Check your answers
 				<dl class="nhsuk-summary-list">
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Number of hire vehicles
+							Vehicles hired
 						</dt>
 						<dd class="nhsuk-summary-list__value">
 							2
@@ -234,7 +234,7 @@ Check your answers
 			<dl class="nhsuk-summary-list">
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Total amount
+						Cost of hire vehicle
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['hire-vehicle-cost'] %}
@@ -257,7 +257,7 @@ Check your answers
 				<!-- start date of first hire vehicle -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Date hired
+						Start date
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['hire-vehicle-start-day'] %}
@@ -324,7 +324,7 @@ Check your answers
 				<!-- reason for first hire vehicle -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Reason for hiring a vehicle
+						Reason for hire vehicle
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['reason-for-hire'] %}
@@ -346,7 +346,7 @@ Check your answers
 				<!-- Evidence uploaded for first hire vehicle -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Evidence
+						Evidence uploaded
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						<a href="/images/snapshot-032-07-03-2023.jpg" download="Joe Bloggs hire vehicle evidence 30 November 2023">
@@ -413,7 +413,7 @@ Check your answers
 	  <dl class="nhsuk-summary-list">
 		  <div class="nhsuk-summary-list__row">
 			  <dt class="nhsuk-summary-list__key">
-				  Total amount
+				  Cost of hire vehicle
 			  </dt>
 			  <dd class="nhsuk-summary-list__value">
 				  {% if data['hire-vehicle-cost'] %}
@@ -436,7 +436,7 @@ Check your answers
 		  <!-- start date of second hire vehicle -->
 		  <div class="nhsuk-summary-list__row">
 			  <dt class="nhsuk-summary-list__key">
-				  Date hired
+				  Start date
 			  </dt>
 			  <dd class="nhsuk-summary-list__value">
 				  {% if data['hire-vehicle-start-day'] %}
@@ -503,7 +503,7 @@ Check your answers
 		  <!-- reason for second hire vehicle -->
 		  <div class="nhsuk-summary-list__row">
 			  <dt class="nhsuk-summary-list__key">
-				  Reason for hiring a vehicle
+				  Reason for hire vehicle
 			  </dt>
 			  <dd class="nhsuk-summary-list__value">
 				  {% if data['reason-for-hire'] %}
@@ -515,7 +515,7 @@ Check your answers
 			  {% if data['submit-claim'] != 'completed' %}
 			  <dd class="nhsuk-summary-list__actions">
 				  <a href="TDAE-hire-car-reason">
-					  Change<span class="nhsuk-u-visually-hidden"> reason for hiring a vehicle</span>
+					  Change<span class="nhsuk-u-visually-hidden"> reason for hire vehicle</span>
 				  </a>
 			  </dd>
 			  {% endif %}
@@ -525,7 +525,7 @@ Check your answers
 		  <!-- Evidence uploaded for second hire vehicle -->
 		  <div class="nhsuk-summary-list__row">
 			  <dt class="nhsuk-summary-list__key">
-				  Evidence
+				  Evidence uploaded
 			  </dt>
 			  <dd class="nhsuk-summary-list__value">
 				  <a href="/images/snapshot-032-07-03-2023.jpg" download="Joe Bloggs hire vehicle evidence 30 November 2023">
@@ -576,12 +576,12 @@ Check your answers
 
 			{% endif %}
 
-			<h2 class="nhsuk-heading-m">Total hire vehicle costs to be reimbursed</h2>
+			<h2 class="nhsuk-heading-m">Total vehicle hire costs to be reimbursed</h2>
 	    <dl class="nhsuk-summary-list">
 
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Amount to be reimbursed
+						Total vehicle hire costs
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 							£240

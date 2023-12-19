@@ -20,9 +20,15 @@ Additional costs for your normal daily journey
 
 			<div class="nhsuk-form-group">
 				<label class="nhsuk-label" for="placement-additional-costs">
-						<h1 class="nhsuk-heading-l">Did you also return this vehicle on 27 November 2023?</h1>
+					{% if data['more-vehicles'] === "yes" %}
+						<h1 class="nhsuk-heading-l">Did you return the second hire vehicle on the 27th November 2023?</h1>
+					{% else %}
+						<h1 class="nhsuk-heading-l">Did you return the hire vehicle on the 27th November 2023?</h1>
+					{% endif %}
 				</label>
 
+				<div class="nhsuk-hint" id="contact-hint">You should select <b>'No, I returned the hire vehicle on a different date'</b> if you hired the vehicle for more than one day.</div>
+				  
 					  
 				<div class="nhsuk-radios nhsuk-radios--conditional">
 
@@ -37,7 +43,7 @@ Additional costs for your normal daily journey
 				  <div class="nhsuk-radios__item">
 					<input class="nhsuk-radios__input" id="contact-1" name="hire-car-return" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
 					<label class="nhsuk-label nhsuk-radios__label" for="contact-1">
-						No
+						No, I returned the hire vehicle on a different date
 					</label>
 				  </div>
 
@@ -46,10 +52,10 @@ Additional costs for your normal daily journey
 									
 						<div class="nhsuk-form-group">
 							<label class="nhsuk-label" for="hire-vehicle-end-date">
-							Date hire vehicle was returned
+							Date hired and returned
 							</label>
 							<div class="nhsuk-hint" id="hire-vehicle-end-date">
-							For example, 15/09/2023
+							For example, 1 12 2023
 							</div>
 						
 							<div class="nhsuk-date-input" id="hire-vehicle-end-date">
