@@ -243,6 +243,18 @@ router.post('/v7/TDAE-evidence-match-2', (req, res) => {
 
 router.post('/v7/TDAE-checked-hire-vehicle', (req, res) => {
 
+    const vehicleHireCheck = req.session.data['vehicle-hire-check']
+  
+    if (vehicleHireCheck === 'yes') {
+      res.redirect('/lsf-portal/v7/TDAE-checked-hire-vehicle-comments')
+    } else {
+      res.redirect('/lsf-portal/v7/TDAE-student-claim')
+    }
+  
+  })
+
+router.post('/v7/TDAE-checked-hire-vehicle-comments', (req, res) => {
+
     res.redirect('/lsf-portal/v7/TDAE-student-claim')
 
 })
