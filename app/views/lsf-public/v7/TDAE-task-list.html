@@ -71,12 +71,16 @@
                     <a class="app-task-list__task-name" href="TDAE-placement-itinerary">Placement travel details</a>
                   {% elif data['add-placement-travel'] == 'completed' %}
                     <a class="app-task-list__task-name" href="TDAE-placement-itinerary">Placement travel details</a>
+                  {% elif data['add-placement-travel'] == 'in-progress' %}
+                    <a class="app-task-list__task-name" href="TDAE-placement-itinerary">Placement travel details</a>
                   {% else %}
                     <a class="app-task-list__task-name" href="TDAE-placement-same-start-date">Placement travel details</a>
                   {% endif %}
                 </span>
                 {% if data['add-placement-travel'] === 'completed' %}
                   <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
+                {% elif data['add-placement-travel'] === 'in-progress' %}
+                  <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag task-status">In progress</strong>
                 {% else %}
                   <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
                 {% endif %}

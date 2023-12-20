@@ -16,6 +16,10 @@ Additional costs for your normal daily journey
 				<h1 class="nhsuk-heading-l">Your public transport tickets</h1>
 			</h1>
 
+			{% if data['multiple'] != 'yes' and data['daily'] != 'yes' %}
+				<p>You do not have any saved public transport tickets.</p>
+			{% else %}
+
 			<p>These are the public transport tickets you have added so far.</p>
 
 			{% if data['multiple'] == 'yes' %}
@@ -145,6 +149,8 @@ Additional costs for your normal daily journey
 			</table>
 			{% endif %}
 
+			{% endif %}
+
 			{% if data['multiple'] == 'yes' %}
 			<details class="nhsuk-details">
 			  <summary class="nhsuk-details__summary">
@@ -162,7 +168,11 @@ Additional costs for your normal daily journey
 
 			<div class="nhsuk-form-group">
 
-				<h2 class="nhsuk-heading-s">Do you want to add another ticket?</h2>
+				{% if data['multiple'] != 'yes' and data['daily'] != 'yes' %}
+					<h2 class="nhsuk-heading-s">Do you want to add a ticket?</h2>
+				{% else %}
+					<h2 class="nhsuk-heading-s">Do you want to add another ticket?</h2>
+				{% endif %}
 
 				<div class="nhsuk-radios">
 

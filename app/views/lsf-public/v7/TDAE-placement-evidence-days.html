@@ -27,7 +27,7 @@ Which days does this evidence relate to?
                     </h1>
                   {% else %}
                     <h1 class="nhsuk-fieldset__heading">
-                      Which days did you pay this cost on?
+                      On which days did you pay this extra cost?
                     </h1>
                   {% endif %}
                 </legend>
@@ -36,7 +36,7 @@ Which days does this evidence relate to?
 
                   <div class="nhsuk-summary-list__row">
                     <dt class="nhsuk-summary-list__key">
-                      Cost type
+                      Extra cost
                     </dt>
                     <dd class="nhsuk-summary-list__value">
                       {{ data['additional-cost-type']}}
@@ -45,7 +45,7 @@ Which days does this evidence relate to?
 
                   <div class="nhsuk-summary-list__row">
                     <dt class="nhsuk-summary-list__key">
-                      Cost amount
+                      Amount
                     </dt>
                     <dd class="nhsuk-summary-list__value">
                       £{{ data['placement-additional-costs']}}
@@ -55,7 +55,7 @@ Which days does this evidence relate to?
                   {% if data['additional-cost-single-day'] == 'No' %}
                     <div class="nhsuk-summary-list__row">
                       <dt class="nhsuk-summary-list__key">
-                        Cost dates
+                        Start and end date
                       </dt>
                       <dd class="nhsuk-summary-list__value">
                         Friday 18 August 2023 to Thursday 24 August 2023
@@ -133,7 +133,7 @@ Which days does this evidence relate to?
             </div>
 
             <button class="nhsuk-button">Continue</button><br>
-            <a href="TDAE-start-claim">Cancel</a>
+            <a href="TDAE-placement-itinerary">Cancel</a>
 
 
     </form>

@@ -70,6 +70,9 @@ router.post('/v7/TDAE-invalid-costs-partial', (req, res) => {
       res.redirect('/lsf-public/v7/TDAE-placement-itinerary')
   }  else if (invalidCostsPartial === 'remove') {
       res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-sure-remove')
+  } else if (invalidCostsPartial === 'save') {
+    req.session.data['add-placement-travel'] = 'in-progress';
+    res.redirect('/lsf-public/v7/TDAE-task-list')
   } else {
       res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-invalid-costs-partial')
   }
@@ -115,7 +118,12 @@ router.post('/v7/TDAE-invalid-costs-all', (req, res) => {
   }
   else if (invalidCostsAll === 'delete') {
       res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-sure-delete')
-  } else {
+  }
+  else if (invalidCostsAll === 'save') {
+      req.session.data['add-placement-travel'] = 'in-progress';
+      res.redirect('/lsf-public/v7/TDAE-task-list')
+  }
+  else {
       res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-invalid-costs-all')
   }
 
@@ -140,6 +148,19 @@ router.post('/v7/TDAE-costs-already-claimed', (req, res) => {
 router.post('/v7/TDAE-public-transport-pause', (req, res) => {
 
     res.redirect('/lsf-public/v7/TDAE-public-transport-type')
+
+})
+
+router.post('/v7/TDAE-public-transport-remove', (req, res) => {
+
+  const publicTransportRemove = req.session.data['public-transport-remove']
+
+  if (publicTransportRemove === 'Yes') {
+    req.session.data['daily'] = 'no';
+    req.session.data['multiple'] = 'no';
+  }
+
+  res.redirect('/lsf-public/v7/TDAE-public-transport-overview')
 
 })
 
