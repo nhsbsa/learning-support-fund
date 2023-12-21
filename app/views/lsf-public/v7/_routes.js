@@ -21,6 +21,14 @@ router.post('/v7/TDAE-placement-cycle-same-mileage', (req, res) => {
 
 router.post('/v7/TDAE-placement-cycle-journey-cya', (req, res) => {
 
+  const cycleJourney = req.session.data['cycle-journey']
+
+  if (cycleJourney === '1'){
+    req.session.data['cycle-journey'] = '2';
+  } else if (cycleJourney != '1' || cycleJourney != '2') {
+    req.session.data['cycle-journey'] = '1';
+  }
+
     res.redirect('/lsf-public/v7/TDAE-placement-itinerary')
 
 })
@@ -540,9 +548,9 @@ router.post('/v7/TDAE-accommodation-same-end-date', (req, res) => {
 
 router.post('/v7/TDAE-placement-week-days', (req, res) => {
 
-  const oneAddress = req.session.data['one-address']
+  const addressNumber = req.session.data['address-number']
 
-  if (oneAddress === 'yes') {
+  if (addressNumber == '2' || addressNumber == '3' || addressNumber == '4') {
       res.redirect('/lsf-public/v7/TDAE-placement-address-days')
   } else {
       res.redirect('/lsf-public/v7/TDAE-check-dates')
@@ -1502,6 +1510,7 @@ router.post('/v7/TDAE-placement-days', (req, res) => {
 router.post('/v7/TDAE-check-dates', (req, res) => {
 
   const claimingFor = req.session.data['claiming-for']
+  const addressNumber = req.session.data['address-number']
 
   if ((claimingFor.includes('car')) && (claimingFor.includes('Cycle'))){
     if (claimingFor.includes('Public transport')){
@@ -1509,6 +1518,8 @@ router.post('/v7/TDAE-check-dates', (req, res) => {
     } else {
       res.redirect('/lsf-public/v7/TDAE-placement-itinerary')
     }
+  } else if (addressNumber === '2' || addressNumber === '3' || addressNumber === '4') {
+    res.redirect('/lsf-public/v7/TDAE-placement-itinerary');
   } else if (claimingFor.includes('car')){
     res.redirect('/lsf-public/v7/TDAE-same-journey')
   } else if (claimingFor.includes('Cycle')){

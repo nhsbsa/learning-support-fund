@@ -54,6 +54,17 @@ Check your answers
 					</dd>
 				</div>
 				{% endif %}
+				{% if checked('claiming-for', 'Cycle') %}
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Cycle miles travelled to and from placement
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						52.8
+					</dd>
+				</div>
+				{% endif %}
+				{% if checked('claiming-for', 'Public transport') %}
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Total public transport tickets cost
@@ -62,6 +73,7 @@ Check your answers
 						£41.28
 					</dd>
 				</div>
+				{% endif %}
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Comments
@@ -92,6 +104,8 @@ Check your answers
 	        <dd class="nhsuk-summary-list__value">
 	            {% if data['claiming-for'] == 'car' %}
 							£119.32
+							{% elif data['claiming-for'] == 'Cycle' %}
+							£15.84
 							{% else %}
 							£41.28
 							{% endif %}

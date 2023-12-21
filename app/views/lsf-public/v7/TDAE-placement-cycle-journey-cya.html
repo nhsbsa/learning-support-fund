@@ -30,10 +30,17 @@ Additional costs for your normal daily journey
 							 Placement address
 							</dt>
 							<dd class="nhsuk-summary-list__value">
-								Newcastle Hospital<br>
-								Main Street<br>
-								Newcastle<br>
-								NE1 1AA
+								{% if data['placement-cycle-mileage-address'] == 'Newcastle Hospital' %}
+									Newcastle Hospital<br>
+									Main Street<br>
+									Newcastle<br>
+									NE1 1AA
+								{% else %}
+									Alnwick Hospital<br>
+									Main Street<br>
+									Alnwick<br>
+									NE6 4EA
+								{% endif %}
 							</dd>
 							<dd class="nhsuk-summary-list__actions">
 								<a href="TDAE-placement-cycle-mileage-address">
@@ -47,16 +54,12 @@ Additional costs for your normal daily journey
 					      Days travelled
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
-							{% if data['journey-mileage'] == "2" %}
-								Sunday 20 August 2023<br>
-								Monday 21 August 2023<br>
-								Tuesday 22 August 2023<br>
-								Wednesday 23 August 2023
+							{% if data['placement-cycle-mileage-address'] == 'Newcastle Hospital' %}
+								Friday 6 October 2023<br>
+								Saturday 7 October 2023
 							{% else %}
-								Monday 14 August 2023<br>
-								Tuesday 15 August 2023<br>
-								Wednesday 16 August 2023<br>
-								Thursday 17 August 2023
+								Sunday 8 October 2023<br>
+								Monday 9 October 2023
 							{% endif %}
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
@@ -71,7 +74,11 @@ Additional costs for your normal daily journey
 					      Mileage to placement
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
-					      {{ data['placement-cycle-to-mileage'] }}
+								{% if data['placement-cycle-mileage-address'] == 'Newcastle Hospital' %}
+									5.2
+								{% else %}
+									8
+								{% endif %}
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
 					      <a href="TDAE-placement-cycle-to-mileage">
@@ -85,7 +92,11 @@ Additional costs for your normal daily journey
 					      Mileage returning from placement
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
-					      {{ data['placement-cycle-return-mileage'] }}
+								{% if data['placement-cycle-mileage-address'] == 'Newcastle Hospital' %}
+									5.2
+								{% else %}
+									8
+								{% endif %}
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
 					      <a href="TDAE-placement-cycle-return-mileage">
