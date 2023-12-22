@@ -21,7 +21,13 @@
             <fieldset class="nhsuk-fieldset">
               <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                 <h1 class="nhsuk-fieldset__heading">
+                  {% if data['address-number'] == '2' or data['address-number'] == '3' or data['address-number'] == '4' %}
+                    Which days did you travel to your placements on?
+                  {% else %}
                     Which days did you travel to your placement?
+                  {% endif %}
+
+
                 </h1>
               </legend>
 
