@@ -7,6 +7,14 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
+
+      {% if data['submit-claim'] == 'completed' %}
+        {{ backLink({
+        "href": "TDAE-returning-student/TDAE-active-claims",
+        "text": "Go back"
+        }) }}
+      {% endif %}
+
       {% if data['submit-claim'] != 'completed' %}
         <h1 class="nhsuk-heading-l">Travel and Dual Accommodation Expenses task list</h1>
       {% else %}
@@ -19,10 +27,41 @@
       {% endif %}
 
       {% if data['submit-claim'] == 'completed' %}
-        <div class="nhsuk-inset-text">
-          <span class="nhsuk-u-visually-hidden">Claim history: </span>
-          <p>Claim submitted: Monday 4 September 2023</p>
+      <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Claim notes and history
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <table class="nhsuk-table-responsive">
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  From
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Date
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Notes
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">{% if data['name'] %}
+                {{ data['name'] }}
+                {% else %}
+                Joe Bloggs
+                {% endif %}</td>
+                <td class="nhsuk-table__cell">3 September 2023</td>
+                <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </details>
       {% endif %}
 
       <ol class="app-task-list">
@@ -264,7 +303,10 @@
         {% endif %}
       </ol>
 
-      <p><a href="TDAE-returning-student/academic-year-details">Save and come back later</a></p>
+      {% if data['submit-claim'] != 'completed' %}
+        <p><a href="TDAE-returning-student/academic-year-details">Save and come back later</a></p>
+      {% endif %}
+
     </div>
   </div>
 {% endblock %}
