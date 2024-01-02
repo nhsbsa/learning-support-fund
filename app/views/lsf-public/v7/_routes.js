@@ -11,6 +11,20 @@ const router = express.Router();
 
 // ********************************
 
+// TDAE Task list
+
+router.post('/v7/TDAE-placement-travel-evidence', (req, res) => {
+
+  const placementWeek = req.session.data['placement-week']
+
+  if (placementWeek === '2'){
+    res.redirect('/lsf-public/v7/TDAE-evidence-pause-multiple')
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-evidence-pause')
+  }
+
+})
+
 // TDAE cycle mileage
 
 router.post('/v7/TDAE-placement-cycle-same-mileage', (req, res) => {
@@ -1773,14 +1787,31 @@ router.post('/v7/TDAE-accommodation-cost-different', (req, res) => {
 
 })
 
+router.post('/v7/TDAE-add-comment', (req, res) => {
+
+  const placementWeek = req.session.data['placement-week']
+
+  if (placementWeek === '2'){
+    res.redirect('/lsf-public/v7/TDAE-evidence-pause-multiple')
+  } else {
+    req.session.data['add-travel-date-evidence'] = 'completed'
+    res.redirect('/lsf-public/v7/TDAE-task-list')
+  }
+
+})
+
 router.post('/v7/TDAE-evidence-comment', (req, res) => {
 
   const evidenceComments = req.session.data['evidence-comments']
+  const placementWeek = req.session.data['placement-week']
 
   if (evidenceComments === 'yes') {
     res.redirect('/lsf-public/v7/TDAE-evidence-add-comment')
-  } else {
+  } else if (placementWeek === '2'){
     res.redirect('/lsf-public/v7/TDAE-evidence-pause-multiple')
+  } else {
+    req.session.data['add-travel-date-evidence'] = 'completed'
+    res.redirect('/lsf-public/v7/TDAE-task-list')
   }
 
 })

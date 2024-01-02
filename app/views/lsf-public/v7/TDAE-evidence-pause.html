@@ -33,7 +33,11 @@ What is the start date of your claim?
 				<fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
 				  <legend class="nhsuk-fieldset__legend nhsuk-label--l">
 					<h1 class="nhsuk-fieldset__heading">
-					  Evidence for period 1
+						{% if data['placement-week'] != '2' %}
+					  	Placement travel evidence
+						{% else %}
+							Evidence for period 1
+						{% endif %}
 					</h1>
 				  </legend>
 

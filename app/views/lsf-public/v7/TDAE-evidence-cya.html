@@ -31,7 +31,7 @@ Evidence you have uploaded
       <form action="v7/TDAE-evidence-mini-cya" method="POST">
     {% endif %}
 
-      <h1 class="nhsuk-heading-l">Uploaded evidence for period 1</h1>
+      <h1 class="nhsuk-heading-l">Uploaded evidence{% if data['placement-week'] == '2' %} for period 1{% endif %}</h1>
 
       {% if data['evidenceNumber'] === '2' or data['evidenceNumber'] === '3' %}
         <p>You have uploaded evidence for all the extra costs. You can still upload more evidence if you want to.</p>
@@ -158,9 +158,9 @@ Evidence you have uploaded
               </tbody>
             </table>
 
-            {% if data['evidenceNumber'] === '2' or data['evidenceNumber'] === '3' %}
-              <a class="nhsuk-button" href="TDAE-evidence-comment?week-1=completed">Save and continue</a>
-            {% endif %}
+              {% if data['evidenceNumber'] === '2' or data['evidenceNumber'] === '3' %}
+                <a class="nhsuk-button" href="TDAE-evidence-comment?week-1=completed">Save and continue</a>
+              {% endif %}
 
   </div>
 

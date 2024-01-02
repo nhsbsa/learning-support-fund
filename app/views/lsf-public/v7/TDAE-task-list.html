@@ -92,7 +92,9 @@
                     {% if data['submit-claim'] === 'completed' %}
                       <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">Placement travel evidence</a>
                     {% else %}
-                      <a class="app-task-list__task-name" href="TDAE-evidence-pause-multiple">Placement travel evidence</a>
+                      <form action="v7/TDAE-placement-travel-evidence" method="POST">
+                        <a class="app-task-list__task-name" onclick="this.closest('form').submit();return false;" href="#">Placement travel evidence</a>
+                      </form>
                     {% endif %}
                   </span>
                   {% if data['add-travel-date-evidence'] === 'completed' %}

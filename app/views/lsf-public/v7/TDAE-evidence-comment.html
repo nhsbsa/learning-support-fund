@@ -20,7 +20,7 @@
             <fieldset class="nhsuk-fieldset">
               <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  Do you want to tell us anything more about your evidence for period {% if data['week'] != '2' %}1{% else %}2{% endif %}?
+                  Do you want to tell us anything more about your evidence{% if data['placement-week'] == '2' %} for period {% if data['week'] != '2' %}1{% else %}2{% endif %}{% endif %}?
                 </h1>
               </legend>
 

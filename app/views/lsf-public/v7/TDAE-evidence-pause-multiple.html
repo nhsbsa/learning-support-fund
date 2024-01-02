@@ -89,7 +89,7 @@ What is the start date of your claim?
 						      </td>
 								{% endif %}
 					    </tr>
-							<!--<tr role="row" class="nhsuk-table__row">
+							<tr role="row" class="nhsuk-table__row">
 								<td role="cell" class="nhsuk-table__cell">
 					        <span class="nhsuk-table-responsive__heading">Week </span>2
 					      </td>
@@ -115,7 +115,7 @@ What is the start date of your claim?
 										{% endif %}
 						      </td>
 								{% endif %}
-					    </tr>-->
+					    </tr>
 					  </tbody>
 					</table>
 
@@ -123,7 +123,7 @@ What is the start date of your claim?
 
 			  </div>
 
-			{% if data['week-1'] === 'completed' %}
+			{% if data['week-2'] === 'completed' %}
 				<a class="nhsuk-button" href="TDAE-task-list?add-travel-date-evidence=completed">Save and continue</a><br>
 			{% elif data['week-1'] === 'completed' %}
 				<button class="nhsuk-button" type="submit">Upload evidence for period 2</button><br>
