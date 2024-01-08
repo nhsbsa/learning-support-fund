@@ -15,7 +15,7 @@ Check your answers
 
 		
 
-		{% if data['vehicles'] == '1' %}
+		{% if data['more-vehicles'] == 'no' %}
 			<dl class="nhsuk-summary-list">
 
 				<!-- number of hire vehicles -->
@@ -30,7 +30,6 @@ Check your answers
 					<dd class="nhsuk-summary-list__actions">
 
 						<a href="">
-							Change<span class="nhsuk-u-visually-hidden"> number of hire vehicles</span>
 						</a>
 
 					</dd>
@@ -213,7 +212,7 @@ Check your answers
 						<dd class="nhsuk-summary-list__actions">
 
 							<a href="">
-								Change<span class="nhsuk-u-visually-hidden"> number of vehicles hired</span>
+							
 							</a>
 
 						</dd>
@@ -541,17 +540,35 @@ Check your answers
 						Amount to be reimbursed
 					</dt>
 					<dd class="nhsuk-summary-list__value">
+						{% if data['more-vehicles'] == 'no' %}
+							£120
+						{% else %}
 							£295
+						{% endif %}
 					</dd>
 				</div>
 	    </dl>
 
-
+		
+		<div class="button-container">
+            
 			{% if data['submit-claim'] != 'completed' %}
 				<form action="/lsf-public/v7/TDAE-task-list" method="POST">
-					<button class="nhsuk-button" type="submit">Save and continue</button><br>
-					<a href="TDAE-start-claim">Cancel</a>
+					<button style="margin-right:20px;" class="nhsuk-button style=padding-right:10px;" type="submit">
+						Save and continue
+					</button>
 				</form>
+
+				<form action="/lsf-public/v7/TDAE-hire-car-cost" method="POST">
+				<button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+					Add another hire vehicle booking
+				</button>
+				</form>
+
+		</div>
+
+				<a href="TDAE-start-claim">Cancel</a>
+				
 			{% endif %}
 
 		<!-- </form> -->
