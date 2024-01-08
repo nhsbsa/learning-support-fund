@@ -23,6 +23,12 @@
 ///
 ///
 
+@media(min-width:769px){
+  .extra-cost-button {
+    width:20%!important;
+  }
+}
+
 .nhsuk-button--warning {
   background-color: #d4351c!important
 }
@@ -339,7 +345,7 @@ td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > .nhsuk-checkboxes__lab
 /* confirmation-panel */
 .done-panel {
 	background-color: #005EB8;
-	text-align: center; 
+	text-align: center;
 	color: white;
 	padding: 30px;
 	margin: 0px 0px 30px 0px;
@@ -364,5 +370,3 @@ td > .nhsuk-checkboxes--small > .nhsuk-checkboxes__item > .nhsuk-checkboxes__lab
 hr.solid {
   border-top: 2px solid #d8dde0;
 }
-
-

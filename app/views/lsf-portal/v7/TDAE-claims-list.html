@@ -190,6 +190,7 @@
                       </td>
                   </tr>
                   {% endif %}
+                  {% if data['Bloggs'] != 'submitted' %}
                   <tr role="row" class="nhsuk-table__row">
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Student name </span>Ben Bloggs
@@ -210,17 +211,11 @@
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Action </span>
-                          {% if data['Bloggs'] == 'returned' %}
-                          <a class="nhsuk-link--no-visited-state"
-                              href="TDAE-student-claim?name=Ben Bloggs&status=Returned to student&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=true&breakdown=walk">View
+                          <a class="nhsuk-link--no-visited-state" href="v7/process-claim?name=Ben Bloggs">Process
                               claim</a>
-                          {% else %}
-                          <a class="nhsuk-link--no-visited-state"
-                              href="v7/process-claim?name=Ben Bloggs">Process
-                              claim</a>
-                          {% endif %}
                       </td>
                   </tr>
+                  {% endif %}
                   <tr role="row" class="nhsuk-table__row">
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Student name </span>Chet Cheema
