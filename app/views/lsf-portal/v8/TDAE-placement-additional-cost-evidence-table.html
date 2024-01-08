@@ -1,0 +1,234 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-full">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Period 1 placement extra costs</h1>
+
+    <p>These are the details for any extra costs the student paid travelling to and from placements in period 1.</p>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Student placement travel comments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Had to use NPC car park one day as the hospital car park was closed.
+        </dd>
+      </div>
+      {% if data['no-evidence'] == "correct" %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Student travel evidence comments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          NPC car park didn't give a receipt so included a screenshot from bank statement.
+        </dd>
+      </div>
+      {% endif %}
+    </dl>
+
+    {% if data['no-evidence'] != "correct" %}
+    <div class="nhsuk-warning-callout">
+      <h3 class="nhsuk-warning-callout__label">
+        <span role="text">
+          <span class="nhsuk-u-visually-hidden">Important: </span>
+          Evidence not given
+        </span>
+      </h3>
+      <p>The student has not given evidence for these extra costs. They have told us the reasons why.</p>
+      <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-4">
+        <caption class="nhsuk-table__caption">Extra costs without evidence</caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Extra cost
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Reason for not having evidence
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Extra cost </span>Parking charges on Monday 14 August 2023
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Reason for not having evidence </span>NPC car park didn't give a receipt as it was out of paper.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    {% endif %}
+    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-4">
+      <caption class="nhsuk-table__caption">Extra costs and evidence</caption>
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+          <th role="columnheader" class="" scope="col">
+            Extra cost
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Date
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Placement address
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Cost
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Evidence
+          </th>
+        </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Additional cost </span>Parking charges
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date </span>Monday 14 August 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Placement address </span>
+            Newcastle Hospital,  NE1 1AA
+            <details class="nhsuk-details" style="margin-bottom: 0;">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                Newcastle Hospital<br>
+                Main Street<br>
+                Newcastle<br>
+                NE1 1AA
+              </div>
+            </details>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Cost </span>£4
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            {% if data['no-evidence'] == "correct" %}<span class="nhsuk-table-responsive__heading">Evidence </span><a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">View <span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span>
+            </a>{% endif %}
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Additional cost </span>Parking charges
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date </span>Tuesday 15 August 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Placement address </span>
+            Newcastle Hospital,  NE1 1AA
+            <details class="nhsuk-details" style="margin-bottom: 0;">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                Newcastle Hospital<br>
+                Main Street<br>
+                Newcastle<br>
+                NE1 1AA
+              </div>
+            </details>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Cost </span>£4
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Evidence </span><a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">View <span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span>
+            </a>
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Additional cost </span>Parking charges
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date </span>Wednesday 16 August 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Placement address </span>
+            Newcastle Hospital,  NE1 1AA
+            <details class="nhsuk-details" style="margin-bottom: 0;">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                Newcastle Hospital<br>
+                Main Street<br>
+                Newcastle<br>
+                NE1 1AA
+              </div>
+            </details>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Cost </span>£4
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Evidence </span><a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">View <span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span></a>
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Additional cost </span>Parking charges
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date </span>Thursday 17 August 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Placement address </span>
+            Newcastle Hospital,  NE1 1AA
+            <details class="nhsuk-details" style="margin-bottom: 0;">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                Newcastle Hospital<br>
+                Main Street<br>
+                Newcastle<br>
+                NE1 1AA
+              </div>
+            </details>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Cost </span>£6
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Evidence </span><a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">View <span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a class="nhsuk-button" href="TDAE-placement-overview">Continue</a>
+
+  </div>
+
+</div>
+{% endblock %}

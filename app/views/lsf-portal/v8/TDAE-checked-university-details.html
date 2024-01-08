@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Has the student provided their University details?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+        <form action="v8/TDAE-university-match" method="POST">
+            <div class="nhsuk-form-group">
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <h1 class="nhsuk-heading-l">Has the student given the correct university travel details?</h1>
+                  </legend>
+                  <div class="nhsuk-radios" data-module="nhsuk-radios">
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="university-match-yes" name="university-match" type="radio" value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="university-match-yes">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="university-match-no" name="university-match" type="radio" value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="university-match-no">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+            </div>
+            <button class="nhsuk-button" type="submit">
+                Save and continue
+            </button>
+        </form>
+
+  </div>
+
+</div>
+{% endblock %}

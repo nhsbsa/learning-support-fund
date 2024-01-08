@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Sign in to university portal
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl"><span class="nhsuk-caption-xl nhsuk-caption--bottom">NHS Learning Support Fund</span>Sign in to university portal</h1>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="example">
+          Email
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20 nhsuk-u-margin-bottom-4" id="example" name="example" type="text">
+
+        <label class="nhsuk-label" for="example">
+        Password
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20 nhsuk-u-margin-bottom-3" id="example" name="example" type="password">
+      </div>
+
+      <a class="nhsuk-button" href="dashboard">Sign in</a><br>
+      <p><a href="forgotten-password">Forgotten your password?</a></p>
+
+    </div>
+
+  </div>
+{% endblock %}
