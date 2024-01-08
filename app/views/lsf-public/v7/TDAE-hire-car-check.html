@@ -16,27 +16,7 @@ Check your answers
 		
 
 		{% if data['more-vehicles'] == 'no' %}
-			<dl class="nhsuk-summary-list">
-
-				<!-- number of hire vehicles -->
-				<div class="nhsuk-summary-list__row">
-					<dt class="nhsuk-summary-list__key">
-						Number of hire vehicles
-					</dt>
-					<dd class="nhsuk-summary-list__value">
-						1
-					</dd>
-					{% if data['submit-claim'] != 'completed' %}
-					<dd class="nhsuk-summary-list__actions">
-
-						<a href="">
-						</a>
-
-					</dd>
-					{% endif %}
-				</div>
-
-				<!-- cost of first hire vehicle -->
+				<!-- if only one hire vehicle booking -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Total amount
@@ -200,31 +180,11 @@ Check your answers
 
 		<!-- Expanders for more than one hire vehicle -->
 			{% else %}
-				<dl class="nhsuk-summary-list">
-					<div class="nhsuk-summary-list__row">
-						<dt class="nhsuk-summary-list__key">
-							Number of hire vehicles
-						</dt>
-						<dd class="nhsuk-summary-list__value">
-							2
-						</dd>
-						{% if data['submit-claim'] != 'completed' %}
-						<dd class="nhsuk-summary-list__actions">
-
-							<a href="">
-							
-							</a>
-
-						</dd>
-						{% endif %}
-					</div>
-				</dl>
-
-<!-- Vehicle 1 -->
+		<!-- Vehicle 1 -->
 				<details class="nhsuk-details nhsuk-expander">
 				  <summary class="nhsuk-details__summary">
 				    <span class="nhsuk-details__summary-text">
-				      Vehicle 1
+				      30 November 2023
 				    </span>
 				  </summary>
 
@@ -381,7 +341,7 @@ Check your answers
 		<details class="nhsuk-details nhsuk-expander">
 			<summary class="nhsuk-details__summary">
 			  <span class="nhsuk-details__summary-text">
-				Vehicle 2
+				1 December 2023 - 3 December 2023
 			  </span>
 			</summary>
 
@@ -444,7 +404,7 @@ Check your answers
 				  {% if data['authorised-by'] %}
 					  {{ data['authorised-by'] }}
 					  {% else %}
-					  Joe Bloggs
+					  John Doe
 				  {% endif %}
 			  </dd>
 			  {% if data['submit-claim'] != 'completed' %}
@@ -506,7 +466,7 @@ Check your answers
 				{% if data['additionalCostsComment'] %}
 					{{ data['additionalCostsComment'] }}
 					{% else %}
-					My car broke down and is currently at the garage being repaired.
+					My car took longer at the garage to get repaired then they originally said it would. So I needed another hire car.
 				{% endif %}
 			</dd>
 			{% if data['submit-claim'] != 'completed' %}
