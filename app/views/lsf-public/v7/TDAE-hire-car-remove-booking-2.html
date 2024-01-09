@@ -32,7 +32,7 @@
   									{% if data['vehicle-hire-cost'] %}
   										{{ data['vehicle-hire-cost'] }} <span class="cya-cost">{{ data['vehicle-hire-cost'] }}</span> {{ data['vehicle-hire-start-year'] }}
   									{% else %}
-  										£120.00
+  										£175.00
   									{% endif %}
   								</dd>
   							</div>
@@ -40,13 +40,13 @@
 
   							<div class="nhsuk-summary-list__row">
   								<dt class="nhsuk-summary-list__key">
-  									Date hired
+  									Dates hired
   								</dt>
   								<dd class="nhsuk-summary-list__value">
   									{% if data['vehicle-hire-start-day'] %}
   										{{ data['vehicle-hire-start-day'] }} <span class="cya-month">{{ data['vehicle-hire-start-month'] }}</span> {{ data['vehicle-hire-start-year'] }}
   									{% else %}
-  										30 November 2023
+  										1 December 2023 to 3 December 2023
   									{% endif %}
   								</dd>
   							</div>
@@ -78,8 +78,35 @@
 				            {% endif %}
   								</dd>
   							</div>
-              </dl>
+              
 
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Evidence
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['file-upload-1'] %}
+                    {{ data['file-upload-1'] }}
+                  {% else %}
+                    1 evidence uploaded.
+                  {% endif %}
+                </dd>
+              </div>
+
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Comments
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['additionalCostsComment'] %}
+                  {{ data['additionalCostsComment'] }}
+                  {% else %}
+                  My car took longer at the garage to get repaired then they originally said it would. So I needed another hire car.
+                {% endif %}
+              </dd>
+            </div>
+          </dl>
   							
 
               <div class="nhsuk-inset-text">
