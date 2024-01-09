@@ -15,7 +15,7 @@ Evidence you have uploaded
     }) }}
 
       <form action="v7/TDAE-hire-car-add-more" method="POST">
-       
+
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="placement-additional-costs">
             <h1 class="nhsuk-heading-l">Your hire vehicle bookings</h1>
@@ -28,26 +28,36 @@ Evidence you have uploaded
               <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
                   <th role="columnheader" class="" scope="col">
-                      Dates hired
+                    Dates hired
                   </th>
                   <th role="columnheader" class="" scope="col">
                     Total amount
-                </th>
+                  </th>
                 </tr>
               </thead>
 
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell ">
-                      <p>30 November 2023</p>
+                    <p>30 November 2023</p>
                   </td>
                   <td class="nhsuk-table__cell ">
                     <p>£120</p>
-                </td>
+                  </td>
                 </tr>
+                {% if data['vehicle-number'] == '2' %}
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell ">
+                      <p>1 December 2023 to 3 December 2023</p>
+                    </td>
+                    <td class="nhsuk-table__cell ">
+                      <p>£175</p>
+                    </td>
+                  </tr>
+                {% endif %}
               </tbody>
             </table>
-         
+
 
           <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset">
@@ -80,7 +90,7 @@ Evidence you have uploaded
         </div>
 
         <button class="nhsuk-button" type="submit">Continue</button><br>
-        
+
         <a href="TDAE-task-list">Cancel</a>
 
     </form>

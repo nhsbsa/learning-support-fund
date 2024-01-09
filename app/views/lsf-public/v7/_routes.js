@@ -400,8 +400,10 @@ router.post('/v7/TDAE-hire-car-add-comment', (req, res) => {
 router.post('/v7/TDAE-hire-car-add-more', (req, res) => {
 
   const moreVehicles = req.session.data['more-vehicles']
+  const vehicleNumber = req.session.data['vehicle-number']
 
   if (moreVehicles === 'yes') {
+    req.session.data['vehicle-number'] = "2"
     res.redirect('/lsf-public/v7/TDAE-hire-car-cost')
   } else {
     res.redirect('/lsf-public/v7/TDAE-hire-car-check')

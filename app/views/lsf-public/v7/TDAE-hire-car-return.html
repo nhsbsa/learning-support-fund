@@ -20,10 +20,10 @@ Additional costs for your normal daily journey
 
 			<div class="nhsuk-form-group">
 				<label class="nhsuk-label" for="placement-additional-costs">
-						<h1 class="nhsuk-heading-l">Did this hire vehicle booking end on 27 November 2023?</h1>
+						<h1 class="nhsuk-heading-l">Did this hire vehicle booking end on {% if data['vehicle-number'] == '2' %}1 December 2023{% else %}30 November 2023{% endif %}?</h1>
 				</label>
 
-					  
+
 				<div class="nhsuk-radios nhsuk-radios--conditional">
 
 					<div class="nhsuk-radios__item">
@@ -32,8 +32,8 @@ Additional costs for your normal daily journey
 							Yes
 						</label>
 					</div>
-				  
-						
+
+
 				  <div class="nhsuk-radios__item">
 					<input class="nhsuk-radios__input" id="contact-1" name="hire-car-return" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
 					<label class="nhsuk-label nhsuk-radios__label" for="contact-1">
@@ -43,7 +43,7 @@ Additional costs for your normal daily journey
 
 
 					<div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
-									
+
 						<div class="nhsuk-form-group">
 							<label class="nhsuk-label" for="hire-vehicle-end-date">
 							Date booking ended
@@ -51,7 +51,7 @@ Additional costs for your normal daily journey
 							<div class="nhsuk-hint" id="hire-vehicle-end-date">
 							For example, 15/09/2023
 							</div>
-						
+
 							<div class="nhsuk-date-input" id="hire-vehicle-end-date">
 							<div class="nhsuk-date-input__item">
 								<div class="nhsuk-form-group">
