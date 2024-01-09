@@ -144,13 +144,14 @@
                 </li>
               {% endif %}
               {% endif %}
+             
               {% if checked('claiming-for', 'hire-car') %}
                 <li class="app-task-list__item nhsuk-u-clear">
                   <span class="app-task-list__task-name">
                     {% if data['submit-claim'] == 'completed' or data['hire-car'] == 'completed' %}
-                      <a class="app-task-list__task-name" href="TDAE-claim-date-evidence-cya">Hiring a vehicle</a>
+                      <a class="app-task-list__task-name" href="TDAE-hire-car-check">Hiring a vehicle</a>
                     {% else %}
-                      <a class="app-task-list__task-name" href="TDAE-hire-car-cost">Hiring a vehicle</a>
+                      <a class="app-task-list__task-name" href="TDAE-hire-car-pause">Hiring a vehicle</a>
                     {% endif %}
                   </span>
                   {% if data['submit-claim'] == 'completed' or data['hire-car'] == 'completed' %}
