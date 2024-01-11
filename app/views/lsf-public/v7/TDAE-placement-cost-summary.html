@@ -38,7 +38,7 @@ Your costs
           Travel
         </dt>
         <dd class="nhsuk-summary-list__value">
-          £119.32
+          £33.60
         </dd>
       </div>
       {% endif %}
@@ -58,7 +58,7 @@ Your costs
           Hire car
         </dt>
         <dd class="nhsuk-summary-list__value">
-          £{% if data['hire-car-cost'] %}{{ data['hire-car-cost']}}{% else %}120{% endif %}
+          £295
         </dd>
       </div>
       {% endif %}
@@ -95,7 +95,7 @@ Your costs
           {% if checked('claiming-for', 'accommodation') %}
             £525
           {% elif checked('claiming-for', 'hire-car') %}
-            £239.32
+            £328.60
           {% elif checked('claiming-for', 'Cycle') %}
             £15.84
           {% else %}
