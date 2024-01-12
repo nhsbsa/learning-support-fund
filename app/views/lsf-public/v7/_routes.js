@@ -326,27 +326,16 @@ router.post('/v7/TDAE-hire-car-pause', (req, res) => {
 
 router.post('/v7/TDAE-hire-car-cost', (req, res) => {
 
-    res.redirect('/lsf-public/v7/TDAE-hire-car-start-date')
+    res.redirect('/lsf-public/v7/TDAE-hire-car-dates')
 
 })
 
-router.post('/v7/TDAE-hire-car-start-date', (req, res) => {
+router.post('/v7/TDAE-hire-car-dates', (req, res) => {
 
-  res.redirect('/lsf-public/v7/TDAE-hire-car-return')
-
-})
-
-router.post('/v7/TDAE-hire-car-return', (req, res) => {
-
-      res.redirect('/lsf-public/v7/TDAE-hire-car-authorisation')
-
-  })
-
-router.post('/v7/TDAE-hire-car-dates', function (req, res) {
-
-    res.redirect('/lsf-public/v7/TDAE-hire-car-authorisation')
+  res.redirect('/lsf-public/v7/TDAE-hire-car-authorisation')
 
 })
+
 
 router.post('/v7/TDAE-hire-car-authorisation', function (req, res) {
 
