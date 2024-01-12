@@ -40,15 +40,24 @@
 
   							<div class="nhsuk-summary-list__row">
   								<dt class="nhsuk-summary-list__key">
-  									Dates hired
+  									Booking start and <br>
+                    end date
   								</dt>
-  								<dd class="nhsuk-summary-list__value">
-  									{% if data['vehicle-hire-start-day'] %}
-  										{{ data['vehicle-hire-start-day'] }} <span class="cya-month">{{ data['vehicle-hire-start-month'] }}</span> {{ data['vehicle-hire-start-year'] }}
-  									{% else %}
-  										1 December 2023 to 3 December 2023
-  									{% endif %}
-  								</dd>
+                  <dd class="nhsuk-summary-list__value">
+                    {% if data['hire-vehicle-start-day'] %}
+                      {{ data['hire-vehicle-start-day'] }} <span class="cya-month">{{ data['hire-vehicle-start-month'] }}</span> {{ data['hire-vehicle-start-year'] }}
+                    {% else %}
+                      1 December 2023 
+                  {% endif %} 
+                      
+                  to <br>
+                    
+                    {% if data['hire-vehicle-end-day'] %}
+                      {{ data['hire-vehicle-end-day'] }} <span class="cya-month">{{ data['hire-vehicle-end-month'] }}</span> {{ data['hire-vehicle-end-year'] }}
+                    {% else %}
+                      3 December 2023
+                    {% endif %}
+                  </dd>
   							</div>
 
 
