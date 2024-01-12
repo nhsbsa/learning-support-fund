@@ -11,6 +11,20 @@ const router = express.Router();
 
 // ********************************
 
+router.post('/v7/TDAE-tickets-already-claimed', (req, res) => {
+
+  const ticketClaimed = req.session.data['ticket-already-claimed']
+
+  if (ticketClaimed === 'yes continue'){
+    res.redirect('/lsf-public/v7/TDAE-public-transport-overview')
+  } else if (ticketClaimed === 'yes cancel'){
+    res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-sure-delete')
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-public-transport-days')
+  }
+
+})
+
 // TDAE Task list
 
 router.post('/v7/TDAE-placement-travel-evidence', (req, res) => {
