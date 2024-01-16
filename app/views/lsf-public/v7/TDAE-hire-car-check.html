@@ -11,12 +11,12 @@ Check your answers
 
 		<!-- <form action="" method="POST"> -->
 
-		<h1 class="nhsuk-heading-xl">Check your hire vehicle bookings</h1>
+		<h1 class="nhsuk-heading-xl">Check your hire car bookings</h1>
 
 
 
 		{% if data['vehicle-number'] != '2' %}
-				<!-- if only one hire vehicle booking -->
+				<!-- if only one hire car booking -->
 				<dl class="nhsuk-summary-list">
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
@@ -33,14 +33,14 @@ Check your answers
 					<dd class="nhsuk-summary-list__actions">
 
 						<a href="TDAE-hire-car-cost">
-							Change<span class="nhsuk-u-visually-hidden">cost of hire vehicle</span>
+							Change<span class="nhsuk-u-visually-hidden">cost of hire car</span>
 						</a>
 
 					</dd>
 					{% endif %}
 				</div>
 
-				<!-- start and end date of first hire vehicle booking -->
+				<!-- start and end date of first hire car booking -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Booking start and end date
@@ -64,7 +64,7 @@ Check your answers
 				</div>
 
 
-				<!-- first hire vehicle booking authorised by -->
+				<!-- first hire car booking authorised by -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Authorised by
@@ -85,7 +85,7 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- reason for first hire vehicle booking -->
+				<!-- reason for first hire car booking -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Reason for booking
@@ -94,7 +94,7 @@ Check your answers
 						{% if data['reason-for-hire'] %}
 							{{ data['reason-for-hire'] }}
 							{% else %}
-							My own vehicle had an issue
+							My own car had an issue
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
@@ -107,13 +107,13 @@ Check your answers
 				</div>
 
 
-				<!-- Evidence uploaded for first hire vehicle booking -->
+				<!-- Evidence uploaded for first hire car booking -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Evidence uploaded
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						<a href="/images/hire-car-booking-confirmation.jpg" download="Joe Bloggs hire vehicle evidence 30 November 2023">
+						<a href="/images/hire-car-booking-confirmation.jpg" download="Hire car evidence 30 November 2023">
 							snapshot-045-28-11-2023.jpg
 						</a>
 					</dd>
@@ -126,7 +126,7 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- Additional comments for first hire vehicle booking -->
+				<!-- Additional comments for first hire car booking -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Comments
@@ -157,9 +157,9 @@ Check your answers
 
 
 
-		<!-- Expanders for more than one hire vehicle booking -->
+		<!-- Expanders for more than one hire car booking -->
 			{% else %}
-		<!-- Vehicle 1 -->
+		<!-- Hire Car Booking 1 -->
 				<details class="nhsuk-details nhsuk-expander">
 				  <summary class="nhsuk-details__summary">
 				    <span class="nhsuk-details__summary-text">
@@ -167,7 +167,7 @@ Check your answers
 				    </span>
 				  </summary>
 
-				 <!-- cost of first hire vehicle booking -->
+				 <!-- cost of first hire car booking -->
 		<div class="nhsuk-details__text">
 			<dl class="nhsuk-summary-list">
 				<div class="nhsuk-summary-list__row">
@@ -185,14 +185,14 @@ Check your answers
 					<dd class="nhsuk-summary-list__actions">
 
 						<a href="TDAE-hire-car-cost">
-							Change<span class="nhsuk-u-visually-hidden">cost of hire vehicle</span>
+							Change<span class="nhsuk-u-visually-hidden">cost of hire car</span>
 						</a>
 
 					</dd>
 					{% endif %}
 				</div>
 
-				<!-- start and end date of first hire vehicle booking -->
+				<!-- start and end date of first hire car booking -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Booking start and end date
@@ -215,7 +215,7 @@ Check your answers
 					{% endif %}
 				</div>
 				
-				<!-- first hire vehicle booking authorised by -->
+				<!-- first hire car booking authorised by -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Authorised by
@@ -236,7 +236,7 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- reason for first hire vehicle booking -->
+				<!-- reason for first hire car booking -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Reason for booking
@@ -245,7 +245,7 @@ Check your answers
 						{% if data['reason-for-hire'] %}
 							{{ data['reason-for-hire'] }}
 							{% else %}
-							My own vehicle had an issue
+							My own car had an issue
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
@@ -258,13 +258,13 @@ Check your answers
 				</div>
 
 
-				<!-- Evidence uploaded for first hire vehicle booking -->
+				<!-- Evidence uploaded for first hire car booking -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Evidence
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						<a href="/images/hire-car-booking-confirmation.jpg" download="Hire vehicle evidence 30 November 2023">
+						<a href="/images/hire-car-booking-confirmation.jpg" download="Hire car evidence 30 November 2023">
 							snapshot-045-28-11-2023.jpg
 						</a>
 					</dd>
@@ -277,7 +277,7 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- Additional comments for first hire vehicle booking -->
+				<!-- Additional comments for first hire car booking -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Comments
@@ -314,7 +314,7 @@ Check your answers
 
 
 
-<!-- Vehicle 2 -->
+<!-- Hire car booking 2 -->
 	<div class="nhsuk-grid-column-two-thirds">
 		<details class="nhsuk-details nhsuk-expander">
 			<summary class="nhsuk-details__summary">
@@ -323,7 +323,7 @@ Check your answers
 			  </span>
 			</summary>
 
-		   <!-- cost of second hire vehicle booking -->
+		   <!-- cost of second hire car booking -->
   <div class="nhsuk-details__text">
 	  <dl class="nhsuk-summary-list">
 		  <div class="nhsuk-summary-list__row">
@@ -341,14 +341,14 @@ Check your answers
 			  <dd class="nhsuk-summary-list__actions">
 
 				  <a href="TDAE-hire-car-cost">
-					  Change<span class="nhsuk-u-visually-hidden">cost of hire vehicle</span>
+					  Change<span class="nhsuk-u-visually-hidden">cost of hire car</span>
 				  </a>
 
 			  </dd>
 			  {% endif %}
 		  </div>
 
-		  <!-- start and end date of second hire vehicle booking -->
+		  <!-- start and end date of second hire car booking -->
 		  <div class="nhsuk-summary-list__row">
 			  <dt class="nhsuk-summary-list__key">
 				  Booking start and end date
@@ -379,7 +379,7 @@ Check your answers
 			  {% endif %}
 		  </div>
 
-		  <!-- second hire vehicle booking authorised by -->
+		  <!-- second hire car booking authorised by -->
 		  <div class="nhsuk-summary-list__row">
 			  <dt class="nhsuk-summary-list__key">
 				  Authorised by
@@ -400,7 +400,7 @@ Check your answers
 			  {% endif %}
 		  </div>
 
-		  <!-- reason for second hire vehicle booking -->
+		  <!-- reason for second hire car booking -->
 		  <div class="nhsuk-summary-list__row">
 			  <dt class="nhsuk-summary-list__key">
 				  Reason for booking
@@ -409,7 +409,7 @@ Check your answers
 				  {% if data['reason-for-hire'] %}
 					  {{ data['reason-for-hire'] }}
 					  {% else %}
-					  My own vehicle had an issue
+					  My own car had an issue
 				  {% endif %}
 			  </dd>
 			  {% if data['submit-claim'] != 'completed' %}
@@ -422,13 +422,13 @@ Check your answers
 		  </div>
 
 
-		  <!-- Evidence uploaded for second hire vehicle booking -->
+		  <!-- Evidence uploaded for second hire car booking -->
 		  <div class="nhsuk-summary-list__row">
 			  <dt class="nhsuk-summary-list__key">
 				  Evidence
 			  </dt>
 			  <dd class="nhsuk-summary-list__value">
-				<a href="/images/hire-car-booking-confirmation-2.jpg" download="Hire vehicle evidence 1 December 2023 to 3 December 2023">
+				<a href="/images/hire-car-booking-confirmation-2.jpg" download="Hire car evidence 1 December 2023 to 3 December 2023">
 					snapshot-081-30-12-2023.jpg
 				  </a>
 			  </dd>
@@ -441,7 +441,7 @@ Check your answers
 			  {% endif %}
 		  </div>
 
-		  <!-- Additional comments for second hire vehicle booking -->
+		  <!-- Additional comments for second hire car booking -->
 		  <div class="nhsuk-summary-list__row">
 			<dt class="nhsuk-summary-list__key">
 				Comments
@@ -476,7 +476,7 @@ Check your answers
 
 			{% endif %}
 
-			<h2 class="nhsuk-heading-m">Total hire vehicle costs to be reimbursed</h2>
+			<h2 class="nhsuk-heading-m">Total hire car costs to be reimbursed</h2>
 	    <dl class="nhsuk-summary-list">
 
 				<div class="nhsuk-summary-list__row">
@@ -505,7 +505,7 @@ Check your answers
 
 				<form action="/lsf-public/v7/TDAE-hire-car-cost?vehicle-number=2" method="POST">
 					<button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
-						Add another hire vehicle booking
+						Add another hire car booking
 					</button>
 				</form>
 
