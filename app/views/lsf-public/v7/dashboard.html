@@ -114,13 +114,25 @@
                       {% if data['COSA'] != 'completed' %}
                       <tr role="row" class="nhsuk-table__row">
                           <td role="cell" class="nhsuk-table__cell">
-                              <span class="nhsuk-table-responsive__heading">Notification</span> Confirm term 1 attendance
+                              <span class="nhsuk-table-responsive__heading">Notification</span> Confirm term 2 attendance
                           </td>
                           <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Description </span> You need to tell us if you are still attending your course to receive you NHS Learning Support Fund payment.
                           </td>
                           <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Action </span> <a href="COSA-confirm-attendance">Answer</a>
+                          </td>
+                      </tr>
+                      {% else %}
+                      <tr role="row" class="nhsuk-table__row">
+                          <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Notification</span> Term 2 attendance submitted
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Description </span> You have already told us you are in attendance for term 2. You can change your answer before your university confirms your attendance.
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Action </span> <a href="COSA-confirm-attendance">Change answer</a>
                           </td>
                       </tr>
                       {% endif %}

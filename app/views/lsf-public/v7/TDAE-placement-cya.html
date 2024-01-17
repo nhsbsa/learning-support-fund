@@ -72,6 +72,9 @@ Check your answers
 					<dd class="nhsuk-summary-list__value">
 						£41.28
 					</dd>
+					<dd class="nhsuk-summary-list__actions">
+
+			    </dd>
 				</div>
 				{% endif %}
 				<div class="nhsuk-summary-list__row">
@@ -80,13 +83,20 @@ Check your answers
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['placement-related-comments']  === 'yes' %}
-						<a href="TDAE-placement-comments-view">
-							<span class="nhsuk-u-visually-hidden">Additional costs comments </span>Review comment
+						 Comment added
+						{% else %}
+							Comment not added
+						{% endif %}
+					</dd>
+					<dd class="nhsuk-summary-list__actions">
+						{% if data['placement-related-comments']  === 'yes' %}
+						<a href="TDAE-normal-comments-view">
+							Review<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
 						</a>
 						{% else %}
-							<a href="TDAE-placement-additional-comments">
-								<span class="nhsuk-u-visually-hidden">Additional costs comments </span>Add comment
-							</a>
+						<a href="TDAE-additional-costs-comments">
+							Change<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
+						</a>
 						{% endif %}
 					</dd>
 				</div>
