@@ -11,6 +11,12 @@ const router = express.Router();
 
 // ********************************
 
+router.post('/v7/TDAE-accommodation-journey', (req, res) => {
+
+  res.redirect('/lsf-public/v7/TDAE-reuse-answers')
+
+})
+
 router.post('/v7/TDAE-tickets-already-claimed', (req, res) => {
 
   const ticketClaimed = req.session.data['ticket-already-claimed']
@@ -1224,6 +1230,8 @@ router.post('/v7/TDAE-travel-accommodation', (req, res) => {
         res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-alternative-journey-signpost')
     } else if (change == ('yes')) {
         res.redirect('/lsf-public/v7/TDAE-eligibility-cya')
+    } else if (claimingFor.includes('accommodation') || claimingFor.includes('car') || claimingFor.includes('Public transport')) {
+        res.redirect('/lsf-public/v7/TDAE-accommodation-journey')
     } else {
         res.redirect('/lsf-public/v7/TDAE-reuse-answers')
     }

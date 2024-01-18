@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Claim Travel and Dual Accommodation Expenses
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="v7/TDAE-hire-car-pause" method="POST">
+
+          <h1 class="nhsuk-heading-l">Add your journey to accommodation</h1>
+
+          <p>You need to tell us about any journeys you travelled from your term time address to accommodation on non-placement days. For each one, we need to know:</p>
+
+          <ul>
+            <li>the cost you paid</li>
+            <li>the start and end date of the booking</li>
+            <li>who from your university authorised the car hire</li>
+            <li>the reason why you hired a car</li>
+          </ul>
+
+          <p>You also need to show us evidence for your car hire, such as receipts or invoices.</p>
+
+          <p>We only need details about your bookings, not the cars themselves. So you can enter a single booking with multiple cars together.
+            However, multiple bookings for the same car need to be separated.</p>
+
+          <p>If you had more than one booking, you can add these after you have told us about the first one.</p>
+
+          <button class="nhsuk-button" type="submit">Add first hire car booking</button><br>
+      		<a href="TDAE-task-list">Cancel</a>
+
+      </form>
+
+    </div>
+
+</div>
+{% endblock %}

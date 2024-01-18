@@ -165,7 +165,7 @@
           </li>
         {% endif %}
 
-        {% if checked('claiming-for', 'accommodation') %}
+        {% if checked('claiming-for', 'accommodation') or data['accommodation-journey'] == 'yes' %}
           <li class="section-item">
             <h2 class="app-task-list__section">
               <span class="app-task-list__section-number">
@@ -178,6 +178,7 @@
               Accommodation costs
             </h2>
             <ul class="app-task-list__items">
+              {% if checked('claiming-for', 'accommodation') %}
               <li class="app-task-list__item nhsuk-u-clear">
                 <span class="app-task-list__task-name">
                   {% if data['accommodation-details'] === 'completed' %}
@@ -192,6 +193,23 @@
                   <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
                 {% endif %}
               </li>
+              {% endif %}
+              {% if data['accommodation-journey'] == 'yes' %}
+              <li class="app-task-list__item nhsuk-u-clear">
+                <span class="app-task-list__task-name">
+                  {% if data['accommodation-journey-task'] === 'completed' %}
+                    <a href="accommodation-journey/TDAE-accommodation-journey-check">Accommodation travel</a>
+                  {% else %}
+                    <a href="accommodation-journey/TDAE-accommodation-journey-pause">Accommodation travel</a>
+                  {% endif %}
+                </span>
+                {% if data['accommodation-journey-task'] === 'completed' %}
+                  <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
+                {% else %}
+                  <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
+                {% endif %}
+              </li>
+              {% endif %}
             </ul>
           </li>
         {% endif %}
