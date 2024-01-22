@@ -15,24 +15,23 @@ Evidence you have uploaded
     }) }}
 
       <form action="v7/TDAE-hire-car-add-more" method="POST">
-       
+
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="placement-additional-costs">
-            <h1 class="nhsuk-heading-l">Your hire vehicles</h1>
+            <h1 class="nhsuk-heading-l">Your hire car bookings</h1>
             </label>
+
+            <p>You can make changes to these details when you have added all of your hire cars.</p>
 
             <table class="nhsuk-table">
               <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
               <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
                   <th role="columnheader" class="" scope="col">
-                      Vehicles
+                    Dates hired
                   </th>
                   <th role="columnheader" class="" scope="col">
-                    
-                </th>
-                  <th role="columnheader" class="" scope="col">
-                      Action
+                    Total amount
                   </th>
                 </tr>
               </thead>
@@ -40,24 +39,31 @@ Evidence you have uploaded
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell ">
-                      <p><b>Vehicle 1</b></p>
+                    <p>30 November 2023</p>
                   </td>
                   <td class="nhsuk-table__cell ">
-                    <p>30 November 2023</p>
-                </td>
-                  <td class="nhsuk-table__cell ">
-                      <a href="/lsf-public/v7/TDAE-hire-car-cost">Change</a>
+                    <p>£120</p>
                   </td>
                 </tr>
+                {% if data['vehicle-number'] == '2' %}
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell ">
+                      <p>1 December 2023 to 3 December 2023</p>
+                    </td>
+                    <td class="nhsuk-table__cell ">
+                      <p>£175</p>
+                    </td>
+                  </tr>
+                {% endif %}
               </tbody>
             </table>
-         
+
 
           <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset">
               <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
                 <h2 class="nhsuk-fieldset__heading">
-                  Do you want to add another hire vehicle?
+                  Do you want to add another hire car booking?
                 </h2>
               </legend>
 
@@ -84,7 +90,7 @@ Evidence you have uploaded
         </div>
 
         <button class="nhsuk-button" type="submit">Continue</button><br>
-        
+
         <a href="TDAE-task-list">Cancel</a>
 
     </form>

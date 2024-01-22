@@ -395,28 +395,14 @@ router.post('/v7/TDAE-hire-car-comment', (req, res) => {
   if (hireCarComments === 'yes') {
     res.redirect('/lsf-public/v7/TDAE-hire-car-add-comment')
   } else {
-    res.redirect('/lsf-public/v7/TDAE-hire-car-add-more')
+    res.redirect('/lsf-public/v7/TDAE-hire-car-check')
   }
 
 })
 
 router.post('/v7/TDAE-hire-car-add-comment', (req, res) => {
 
-    res.redirect('/lsf-public/v7/TDAE-hire-car-add-more')
-
-})
-
-router.post('/v7/TDAE-hire-car-add-more', (req, res) => {
-
-  const moreVehicles = req.session.data['more-vehicles']
-  const vehicleNumber = req.session.data['vehicle-number']
-
-  if (moreVehicles === 'yes') {
-    req.session.data['vehicle-number'] = "2"
-    res.redirect('/lsf-public/v7/TDAE-hire-car-cost')
-  } else {
     res.redirect('/lsf-public/v7/TDAE-hire-car-check')
-  }
 
 })
 
@@ -428,11 +414,11 @@ router.post('/v7/TDAE-hire-car-check', (req, res) => {
 
 })
 
-router.post('/v7/TDAE-hire-car-remove-vehicle', (req, res) => {
+router.post('/v7/TDAE-hire-car-remove-booking-1', (req, res) => {
 
-  const removeVehicle = req.session.data['remove-vehicle']
+  const removeBooking = req.session.data['remove-booking']
 
-  if (removeVehicle === 'yes') {
+  if (removeBooking === 'yes') {
     res.redirect('/lsf-public/v7/TDAE-hire-car-check')
   } else {
     res.redirect('/lsf-public/v7/TDAE-hire-car-check')
@@ -441,6 +427,180 @@ router.post('/v7/TDAE-hire-car-remove-vehicle', (req, res) => {
 })
 
 // TDAE Hire car ENDS
+
+
+// TDAE Travel between Accommodation and Term-time Address
+router.post('/v7/TDAE-accommodation-journey-pause', (req, res) => {
+
+  res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-direction-of-travel')
+
+})
+
+router.post('/v7/TDAE-accommodation-direction-of-travel', (req, res) => {
+
+  res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-date-of-travel')
+
+})
+
+router.post('/v7/TDAE-accommodation-date-of-travel', (req, res) => {
+
+  res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-address')
+
+})
+
+router.post('/v7/TDAE-accommodation-travel-address', (req, res) => {
+
+  res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-transport-method')
+
+})
+
+router.post('/v7/TDAE-accommodation-transport-method', (req, res) => {
+
+  const transportMethods = req.session.data['transport-method'];
+
+  // Check if 'car' is selected
+  const isCarSelected = transportMethods.includes('car');
+
+  // Check if 'public transport' is selected
+  const isPublicTransportSelected = transportMethods.includes('public-transport');
+
+  if (isCarSelected && isPublicTransportSelected) {
+    // Both 'car' and 'public transport' are selected
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-car-journey-mileage');
+  } else if (isCarSelected) {
+    // Only 'car' is selected
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-car-journey-mileage');
+  } else {
+    // Only 'public transport' is selected
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-public-transport-method');
+  }
+
+});
+
+router.post('/v7/TDAE-accommodation-car-journey-mileage', (req, res) => {
+
+  res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-extra-costs')
+
+})
+
+router.post('/v7/TDAE-accommodation-travel-extra-costs', (req, res) => {
+
+  const didPayExtraCosts = req.session.data['extra-costs'];
+
+  const transportMethods = req.session.data['transport-method'];
+
+  // Check if the user previously selected both 'car' and 'public transport'
+  const isCarSelected = transportMethods.includes('car');
+  const isPublicTransportSelected = transportMethods.includes('public-transport');
+
+  if (didPayExtraCosts === 'no') {
+    if (isCarSelected && isPublicTransportSelected) {
+      // Redirect to public transport method page if both car and public transport were selected and no extra costs were paid
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-public-transport-method');
+    } else if (isCarSelected) {
+      // Redirect to travel evidence page if only car was selected and no extra costs were paid
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence');
+    }
+  } else {
+    // User has selected car, or car and public transport and has paid extra costs
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-how-much-extra-costs');
+  }
+
+});
+
+router.post('/v7/TDAE-accommodation-how-much-extra-costs', (req, res) => {
+
+  const transportMethods = req.session.data['transport-method'];
+
+  // Check if the user previously selected 'car' and 'public transport' as transport methods
+  const isCarSelected = transportMethods.includes('car');
+  const isPublicTransportSelected = transportMethods.includes('public-transport');
+
+  if (isCarSelected) {
+    if (isCarSelected && isPublicTransportSelected) {
+      // Redirect to public transport method page if both car and public transport were selected
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-public-transport-method');
+    } else {
+      // Redirect to travel evidence page if only car was selected
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence');
+    }
+  }
+
+});
+
+router.post('/v7/TDAE-accommodation-public-transport-method', (req, res) => {
+
+  res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-public-transport-cost')
+
+})
+
+router.post('/v7/TDAE-accommodation-public-transport-cost', (req, res) => {
+
+  res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence')
+
+})
+
+router.post('/v7/TDAE-accommodation-travel-evidence', (req, res) => {
+
+  res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-mini-cya')
+
+})
+
+router.post('/v7/TDAE-accommodation-travel-mini-cya', (req, res) => {
+
+  const moreEvidence = req.session.data['more-evidence']
+
+  if (moreEvidence === 'yes') {
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence')
+  } else {
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-comment')
+  }
+
+})
+
+router.post('/v7/TDAE-accommodation-travel-comment', (req, res) => {
+
+  const additionalComments = req.session.data['accommodation-travel-comments']
+
+  if (additionalComments === 'yes') {
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-add-comment')
+  } else {
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-check')
+  }
+
+})
+
+router.post('/v7/TDAE-accommodation-travel-add-comment', (req, res) => {
+
+  res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-check')
+
+})
+
+router.post('/v7/TDAE-accommodation-travel-check', (req, res) => {
+
+  req.session.data['accommodation-travel'] = "completed"
+
+  res.redirect('/lsf-public/v7/TDAE-task-list')
+
+})
+
+router.post('/v7/TDAE-accommodation-travel-remove-journey-1', (req, res) => {
+
+  res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-check')
+
+})
+
+router.post('/v7/TDAE-accommodation-travel-remove-journey-2', (req, res) => {
+
+  res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-check')
+
+})
+
+
+
+
+
+
 
 router.post('/v7/TDAE-placement-additional-daily-total', (req, res) => {
 

@@ -1,0 +1,1232 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<!-- <form action="" method="POST"> -->
+
+		<h1 class="nhsuk-heading-xl">Your journey details</h1>
+
+
+		<!-- if only one journey and direction of travel is from term-time address to accommodation -->
+		{% if data['number-of-journeys'] != '2' and data['direction-of-journey'] == 'termtime-to-accommodation' %}
+				
+		<!-- if first journey = term-time to accommodation - direction of travel -->
+				<dl class="nhsuk-summary-list">
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Direction of travel
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['direction-of-travel'] %}
+							{{ data['direction-of-travel'] }}
+							{% else %}
+							Travelling to accommodation from term-time address
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="TDAE-accommodation-direction-of-travel">
+							Change<span class="nhsuk-u-visually-hidden">the direction of travel</span>
+						</a>
+
+					</dd>
+					{% endif %}
+				</div>		
+
+				<!-- if first journey = term-time to accommodation - date of journey -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Date of journey
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['accommodation-travel-day'] %}
+							{{ data['accommodation-travel-day'] }} <span class="cya-month">{{ data['accommodation-travel-month'] }}</span> {{ data['accommodation-travel-year'] }}
+						{% else %}
+							6 October 2023
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="TDAE-accommodation-date-of-travel">
+							Change<span class="nhsuk-u-visually-hidden"> the date of your journey</span>
+						</a>
+
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- if first journey = term-time to accommodation - accommodation address -->
+				<dl class="nhsuk-summary-list">
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Accommodation address
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['accommodation-address'] == 'new-address' %}
+								{{ data['accommodation-building-name'] }}
+								{{ data['address-line-1'] }}
+								{{ data['address-line-2'] }}
+								{{ data['address-line-3'] }}
+								{{ data['address-town'] }}
+								{{ data['address-county'] }}
+								{{ data['address-postcode'] }}
+							{% else %}
+								Premier Inn Alnwick Hotel, <br>
+								Willowburn Industrial Estate, <br>
+								South Road, <br>
+								Alnwick, <br>
+								NE66 2PF
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+	
+							<a href="TDAE-accommodation-travel-address">
+								Change<span class="nhsuk-u-visually-hidden">accommodation address</span>
+							</a>
+	
+						</dd>
+						{% endif %}
+					</div>
+
+				<!-- if first journey = term-time to accommodation, and travelled by car and public transport - transport method -->
+				<dl class="nhsuk-summary-list">
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Travelled by
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['transport-method'] %}
+							{{ data['transport-method'] }}
+							{% else %}
+							Car and Public transport
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="TDAE-accommodation-transport-method">
+							Change<span class="nhsuk-u-visually-hidden">transport method</span>
+						</a>
+
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- if first journey = term-time to accommodation, and travelled by car and public transport - total car mileage -->
+				<dl class="nhsuk-summary-list">
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Total car mileage
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['accommodation-travel-mileage'] %}
+								{{ data['accommodation-travel-mileage'] }}
+								{% else %}
+								2.9
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+	
+							<a href="TDAE-accommodation-car-journey-mileage">
+								Change<span class="nhsuk-u-visually-hidden">total car mileage</span>
+							</a>
+	
+						</dd>
+						{% endif %}
+					</div>
+
+				<!-- if first journey = term-time to accommodation and travelled by both car and public - total car mileage -->
+				<dl class="nhsuk-summary-list">
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Travelled by
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['transport-method'] %}
+								{{ data['transport-method'] }}
+								{% else %}
+								Car and public transport
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+	
+							<a href="TDAE-accommodation-transport-method">
+								Change<span class="nhsuk-u-visually-hidden">transport method</span>
+							</a>
+	
+						</dd>
+						{% endif %}
+					</div>
+
+				<!-- if first journey = term-time to accommodation and travelled by both car and public - extra costs incurred -->
+				<div class="nhsuk-details__text">
+					<dl class="nhsuk-summary-list">
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Extra costs
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['car-extra-costs'] %}
+									£{{ data['car-extra-costs'] }}
+									{% else %}
+									none provided
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+		
+								<a href="TDAE-accommodation-travel-extra-costs">
+									Change<span class="nhsuk-u-visually-hidden">extra costs</span>
+								</a>
+		
+							</dd>
+							{% endif %}
+						</div>
+
+				<!-- if first journey = term-time to accommodation and travelled by both car and public - public transport method -->
+				<dl class="nhsuk-summary-list">
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Method of public transport
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['public-transport-type'] %}
+								{{ data['public-transport-type'] }}
+								{% else %}
+								Train and Bus
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+	
+							<a href="TDAE-accommodation-transport-method">
+								Change<span class="nhsuk-u-visually-hidden">method of public transport</span>
+							</a>
+	
+						</dd>
+						{% endif %}
+					</div>
+
+				<!-- if first journey = term-time to accommodation and travelled by both car and public - total cost of public transport -->
+				<div class="nhsuk-details__text">
+					<dl class="nhsuk-summary-list">
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Extra costs
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['accommodation-travel-public-transport-cost'] %}
+									£{{ data['accommodation-travel-public-transport-cost'] }}
+									{% else %}
+									£8.35
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+		
+								<a href="TDAE-accommodation-travel-extra-costs">
+									Change<span class="nhsuk-u-visually-hidden">total cost of public transport</span>
+								</a>
+		
+							</dd>
+							{% endif %}
+						</div>
+
+				<!-- if first journey = term-time to accommodation and travelled by both car and public - evidence uploaded -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Evidence uploaded
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						<a href="/images/hire-car-booking-confirmation.jpg" download="Supporting evidence for journey between term-time address and accommodation">
+							snapshot-012-06-10-2023.jpg
+						</a>
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						<a href="TDAE-hire-car-evidence">
+							Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+						</a>
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- if first journey = term-time to accommodation and travelled by both car and public - additional comments -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Comments
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['additionalCostsComment'] %}
+							{{ data['additionalCostsComment'] }}
+							{% else %}
+							None provided.
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						{% if data['additional-comments']  === 'yes' %}
+						<a href="TDAE-accommodation-travel-add-comment">
+							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
+						</a>
+						{% else %}
+						<a href="TDAE-accommodation-travel-add-comment">
+							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+						</a>
+						{% endif %}
+						</dd>
+						{% endif %}
+				</div>
+
+				</dl>
+
+
+
+
+		{% elif data['number-of-journeys'] != '2' and data['direction-of-journey'] == 'accommodation-to-termtime' %}
+		<!-- if only one journey and direction of travel is from accommodation to term-time address -->
+						
+		<!-- if first journey = accommodation to term-time address - direction of travel -->
+		<dl class="nhsuk-summary-list">
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Direction of travel
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				{% if data['direction-of-travel'] %}
+					{{ data['direction-of-travel'] }}
+					{% else %}
+					Travelling to term-time address from accommodation
+				{% endif %}
+			</dd>
+			{% if data['submit-claim'] != 'completed' %}
+			<dd class="nhsuk-summary-list__actions">
+
+				<a href="TDAE-accommodation-direction-of-travel">
+					Change<span class="nhsuk-u-visually-hidden">the direction of travel</span>
+				</a>
+
+			</dd>
+			{% endif %}
+		</div>		
+
+		<!-- if first journey = accommodation to term-time address - date of journey -->
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Date of journey
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				{% if data['accommodation-travel-day'] %}
+					{{ data['accommodation-travel-day'] }} <span class="cya-month">{{ data['accommodation-travel-month'] }}</span> {{ data['accommodation-travel-year'] }}
+				{% else %}
+					9 October 2023
+				{% endif %}
+			</dd>
+			{% if data['submit-claim'] != 'completed' %}
+			<dd class="nhsuk-summary-list__actions">
+
+				<a href="TDAE-accommodation-date-of-travel">
+					Change<span class="nhsuk-u-visually-hidden"> the date of your journey</span>
+				</a>
+
+			</dd>
+			{% endif %}
+		</div>
+
+		<!-- if first journey = accommodation to term-time address - accommodation address -->
+		<dl class="nhsuk-summary-list">
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Accommodation address
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{% if data['accommodation-address'] == 'new-address' %}
+						{{ data['accommodation-building-name'] }}
+						{{ data['address-line-1'] }}
+						{{ data['address-line-2'] }}
+						{{ data['address-line-3'] }}
+						{{ data['address-town'] }}
+						{{ data['address-county'] }}
+						{{ data['address-postcode'] }}
+					{% else %}
+						Premier Inn Alnwick Hotel, <br>
+						Willowburn Industrial Estate, <br>
+						South Road, <br>
+						Alnwick, <br>
+						NE66 2PF
+					{% endif %}
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+
+					<a href="TDAE-accommodation-travel-address">
+						Change<span class="nhsuk-u-visually-hidden">accommodation address</span>
+					</a>
+
+				</dd>
+				{% endif %}
+			</div>
+
+		<!-- if first journey = accommodation to term-time address, and travelled by car and public transport - transport method -->
+		<dl class="nhsuk-summary-list">
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Travelled by
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				{% if data['transport-method'] %}
+					{{ data['transport-method'] }}
+					{% else %}
+					Car and Public transport
+				{% endif %}
+			</dd>
+			{% if data['submit-claim'] != 'completed' %}
+			<dd class="nhsuk-summary-list__actions">
+
+				<a href="TDAE-accommodation-transport-method">
+					Change<span class="nhsuk-u-visually-hidden">transport method</span>
+				</a>
+
+			</dd>
+			{% endif %}
+		</div>
+
+		<!-- if first journey = accommodation to term-time address, and travelled by car and public transport - total car mileage -->
+		<dl class="nhsuk-summary-list">
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Total car mileage
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{% if data['accommodation-travel-mileage'] %}
+						{{ data['accommodation-travel-mileage'] }}
+						{% else %}
+						2.9
+					{% endif %}
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+
+					<a href="TDAE-accommodation-car-journey-mileage">
+						Change<span class="nhsuk-u-visually-hidden">total car mileage</span>
+					</a>
+
+				</dd>
+				{% endif %}
+			</div>
+
+		<!-- if first journey = accommodation to term-time address, and travelled by both car and public - total car mileage -->
+		<dl class="nhsuk-summary-list">
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Travelled by
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{% if data['transport-method'] %}
+						{{ data['transport-method'] }}
+						{% else %}
+						Car and public transport
+					{% endif %}
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+
+					<a href="TDAE-accommodation-transport-method">
+						Change<span class="nhsuk-u-visually-hidden">transport method</span>
+					</a>
+
+				</dd>
+				{% endif %}
+			</div>
+
+		<!-- if first journey = accommodation to term-time address, and travelled by both car and public - extra costs incurred -->
+		<div class="nhsuk-details__text">
+			<dl class="nhsuk-summary-list">
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Extra costs
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['car-extra-costs'] %}
+							£{{ data['car-extra-costs'] }}
+							{% else %}
+							none provided
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="TDAE-accommodation-travel-extra-costs">
+							Change<span class="nhsuk-u-visually-hidden">extra costs</span>
+						</a>
+
+					</dd>
+					{% endif %}
+				</div>
+
+		<!-- if first journey = accommodation to term-time address, and travelled by both car and public - public transport method -->
+		<dl class="nhsuk-summary-list">
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Method of public transport
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{% if data['public-transport-type'] %}
+						{{ data['public-transport-type'] }}
+						{% else %}
+						Train and Bus
+					{% endif %}
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+
+					<a href="TDAE-accommodation-transport-method">
+						Change<span class="nhsuk-u-visually-hidden">method of public transport</span>
+					</a>
+
+				</dd>
+				{% endif %}
+			</div>
+
+		<!-- if first journey = accommodation to term-time address, and travelled by both car and public - total cost of public transport -->
+		<div class="nhsuk-details__text">
+			<dl class="nhsuk-summary-list">
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Extra costs
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['accommodation-travel-public-transport-cost'] %}
+							£{{ data['accommodation-travel-public-transport-cost'] }}
+							{% else %}
+							£8.35
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="TDAE-accommodation-travel-extra-costs">
+							Change<span class="nhsuk-u-visually-hidden">total cost of public transport</span>
+						</a>
+
+					</dd>
+					{% endif %}
+				</div>
+
+		<!-- if first journey = accommodation to term-time address, and travelled by both car and public - evidence uploaded -->
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Evidence uploaded
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				<a href="/images/hire-car-booking-confirmation.jpg" download="Supporting evidence for journey between term-time address and accommodation">
+					snapshot-012-06-10-2023.jpg
+				</a>
+			</dd>
+			{% if data['submit-claim'] != 'completed' %}
+			<dd class="nhsuk-summary-list__actions">
+				<a href="TDAE-hire-car-evidence">
+					Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+				</a>
+			</dd>
+			{% endif %}
+		</div>
+
+		<!-- if first journey = accommodation to term-time address, and travelled by both car and public - additional comments -->
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Comments
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				{% if data['additionalCostsComment'] %}
+					{{ data['additionalCostsComment'] }}
+					{% else %}
+					None provided.
+				{% endif %}
+			</dd>
+			{% if data['submit-claim'] != 'completed' %}
+			<dd class="nhsuk-summary-list__actions">
+				{% if data['additional-comments']  === 'yes' %}
+				<a href="TDAE-accommodation-travel-add-comment">
+					Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
+				</a>
+				{% else %}
+				<a href="TDAE-accommodation-travel-add-comment">
+					Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+				</a>
+				{% endif %}
+				</dd>
+				{% endif %}
+		</div>
+
+		</dl>
+
+
+
+
+
+
+		
+	<!-- More than one journey on display -->
+	{% else %}
+		<!-- Hire Car Booking 1 -->
+			<details class="nhsuk-details nhsuk-expander">
+				<summary class="nhsuk-details__summary">
+				<span class="nhsuk-details__summary-text">
+					6 October 2023
+				</span>
+				</summary>
+
+				<!-- if first journey = term-time to accommodation - direction of travel -->
+				<div class="nhsuk-details__text">
+				<dl class="nhsuk-summary-list">
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Direction of travel
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['direction-of-travel'] %}
+								{{ data['direction-of-travel'] }}
+								{% else %}
+								Travelling to accommodation from term-time address
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+
+							<a href="TDAE-accommodation-direction-of-travel">
+								Change<span class="nhsuk-u-visually-hidden">the direction of travel</span>
+							</a>
+
+						</dd>
+						{% endif %}
+					</div>		
+
+					<!-- if first journey = term-time to accommodation - date of journey -->
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Date of journey
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['accommodation-travel-day'] %}
+								{{ data['accommodation-travel-day'] }} <span class="cya-month">{{ data['accommodation-travel-month'] }}</span> {{ data['accommodation-travel-year'] }}
+							{% else %}
+								6 October 2023
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+
+							<a href="TDAE-accommodation-date-of-travel">
+								Change<span class="nhsuk-u-visually-hidden"> the date of your journey</span>
+							</a>
+
+						</dd>
+						{% endif %}
+					</div>
+
+					<!-- if first journey = term-time to accommodation - accommodation address -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Accommodation address
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['accommodation-address'] == 'new-address' %}
+									{{ data['accommodation-building-name'] }}
+									{{ data['address-line-1'] }}
+									{{ data['address-line-2'] }}
+									{{ data['address-line-3'] }}
+									{{ data['address-town'] }}
+									{{ data['address-county'] }}
+									{{ data['address-postcode'] }}
+								{% else %}
+									Premier Inn Alnwick Hotel, <br>
+									Willowburn Industrial Estate, <br>
+									South Road, <br>
+									Alnwick, <br>
+									NE66 2PF
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+
+								<a href="TDAE-accommodation-travel-address">
+									Change<span class="nhsuk-u-visually-hidden">accommodation address</span>
+								</a>
+
+							</dd>
+							{% endif %}
+						</div>
+
+					<!-- if first journey = term-time to accommodation, and travelled by car and public transport - transport method -->
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Travelled by
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['transport-method'] %}
+								{{ data['transport-method'] }}
+								{% else %}
+								Car and Public transport
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+
+							<a href="TDAE-accommodation-transport-method">
+								Change<span class="nhsuk-u-visually-hidden">transport method</span>
+							</a>
+
+						</dd>
+						{% endif %}
+					</div>
+
+					<!-- if first journey = term-time to accommodation, and travelled by car and public transport - total car mileage -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Total car mileage
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['accommodation-travel-mileage'] %}
+									{{ data['accommodation-travel-mileage'] }}
+									{% else %}
+									2.9
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+
+								<a href="TDAE-accommodation-car-journey-mileage">
+									Change<span class="nhsuk-u-visually-hidden">total car mileage</span>
+								</a>
+
+							</dd>
+							{% endif %}
+						</div>
+
+					<!-- if first journey = term-time to accommodation and travelled by both car and public - total car mileage -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Travelled by
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['transport-method'] %}
+									{{ data['transport-method'] }}
+									{% else %}
+									Car and public transport
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+
+								<a href="TDAE-accommodation-transport-method">
+									Change<span class="nhsuk-u-visually-hidden">transport method</span>
+								</a>
+
+							</dd>
+							{% endif %}
+						</div>
+
+					<!-- if first journey = term-time to accommodation and travelled by both car and public - extra costs incurred -->
+							<div class="nhsuk-summary-list__row">
+								<dt class="nhsuk-summary-list__key">
+									Extra costs
+								</dt>
+								<dd class="nhsuk-summary-list__value">
+									{% if data['car-extra-costs'] %}
+										£{{ data['car-extra-costs'] }}
+										{% else %}
+										none provided
+									{% endif %}
+								</dd>
+								{% if data['submit-claim'] != 'completed' %}
+								<dd class="nhsuk-summary-list__actions">
+			
+									<a href="TDAE-accommodation-travel-extra-costs">
+										Change<span class="nhsuk-u-visually-hidden">extra costs</span>
+									</a>
+			
+								</dd>
+								{% endif %}
+							</div>
+
+					<!-- if first journey = term-time to accommodation and travelled by both car and public - public transport method -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Method of public transport
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['public-transport-type'] %}
+									{{ data['public-transport-type'] }}
+									{% else %}
+									Train and Bus
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+
+								<a href="TDAE-accommodation-transport-method">
+									Change<span class="nhsuk-u-visually-hidden">method of public transport</span>
+								</a>
+
+							</dd>
+							{% endif %}
+						</div>
+
+					<!-- if first journey = term-time to accommodation and travelled by both car and public - total cost of public transport -->
+							<div class="nhsuk-summary-list__row">
+								<dt class="nhsuk-summary-list__key">
+									Extra costs
+								</dt>
+								<dd class="nhsuk-summary-list__value">
+									{% if data['accommodation-travel-public-transport-cost'] %}
+										£{{ data['accommodation-travel-public-transport-cost'] }}
+										{% else %}
+										£8.35
+									{% endif %}
+								</dd>
+								{% if data['submit-claim'] != 'completed' %}
+								<dd class="nhsuk-summary-list__actions">
+			
+									<a href="TDAE-accommodation-travel-extra-costs">
+										Change<span class="nhsuk-u-visually-hidden">total cost of public transport</span>
+									</a>
+			
+								</dd>
+								{% endif %}
+							</div>
+
+					<!-- if first journey = term-time to accommodation and travelled by both car and public - evidence uploaded -->
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Evidence uploaded
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							<a href="/images/hire-car-booking-confirmation.jpg" download="Supporting evidence for journey between term-time address and accommodation">
+								snapshot-012-06-10-2023.jpg
+							</a>
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="TDAE-hire-car-evidence">
+								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+							</a>
+						</dd>
+						{% endif %}
+					</div>
+
+					<!-- if first journey = term-time to accommodation and travelled by both car and public - additional comments -->
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Comments
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['additionalCostsComment'] %}
+								{{ data['additionalCostsComment'] }}
+								{% else %}
+								None provided.
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							{% if data['additional-comments']  === 'yes' %}
+							<a href="TDAE-accommodation-travel-add-comment">
+								Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
+							</a>
+							{% else %}
+							<a href="TDAE-accommodation-travel-add-comment">
+								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+							</a>
+							{% endif %}
+							</dd>
+							{% endif %}
+					</div>
+
+				</dl>
+				<a class="nhsuk-button nhsuk-button--warning" href="TDAE-accommodation-travel-remove-journey-1">Remove journey</a>
+			</div>
+			</details>
+		</div>
+			
+		
+
+
+
+
+
+		<!-- Second journey -->
+			<div class="nhsuk-grid-column-two-thirds">
+				<details class="nhsuk-details nhsuk-expander">
+					<summary class="nhsuk-details__summary">
+					<span class="nhsuk-details__summary-text">
+						9 October 2023
+					</span>
+					</summary>
+
+				<!-- if second journey = accommodation to term-time address - direction of travel -->
+		<div class="nhsuk-details__text">
+			<dl class="nhsuk-summary-list">
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Direction of travel
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['direction-of-travel'] %}
+							{{ data['direction-of-travel'] }}
+							{% else %}
+							Travelling to term-time address from accommodation
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="TDAE-accommodation-direction-of-travel">
+							Change<span class="nhsuk-u-visually-hidden">the direction of travel</span>
+						</a>
+
+					</dd>
+					{% endif %}
+				</div>		
+
+				<!-- if second journey = accommodation to term-time address - date of journey -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Date of journey
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['accommodation-travel-day'] %}
+							{{ data['accommodation-travel-day'] }} <span class="cya-month">{{ data['accommodation-travel-month'] }}</span> {{ data['accommodation-travel-year'] }}
+						{% else %}
+							9 October 2023
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="TDAE-accommodation-date-of-travel">
+							Change<span class="nhsuk-u-visually-hidden"> the date of your journey</span>
+						</a>
+
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- if second journey = accommodation to term-time address - accommodation address -->
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Accommodation address
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['accommodation-address'] == 'new-address' %}
+								{{ data['accommodation-building-name'] }}
+								{{ data['address-line-1'] }}
+								{{ data['address-line-2'] }}
+								{{ data['address-line-3'] }}
+								{{ data['address-town'] }}
+								{{ data['address-county'] }}
+								{{ data['address-postcode'] }}
+							{% else %}
+								Premier Inn Alnwick Hotel, <br>
+								Willowburn Industrial Estate, <br>
+								South Road, <br>
+								Alnwick, <br>
+								NE66 2PF
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+
+							<a href="TDAE-accommodation-travel-address">
+								Change<span class="nhsuk-u-visually-hidden">accommodation address</span>
+							</a>
+
+						</dd>
+						{% endif %}
+					</div>
+
+				<!-- if second journey = accommodation to term-time address, and travelled by car and public transport - transport method -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Travelled by
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['transport-method'] %}
+							{{ data['transport-method'] }}
+							{% else %}
+							Car and Public transport
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="TDAE-accommodation-transport-method">
+							Change<span class="nhsuk-u-visually-hidden">transport method</span>
+						</a>
+
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- if second journey = accommodation to term-time address, and travelled by car and public transport - total car mileage -->
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Total car mileage
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['accommodation-travel-mileage'] %}
+								{{ data['accommodation-travel-mileage'] }}
+								{% else %}
+								2.9
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+
+							<a href="TDAE-accommodation-car-journey-mileage">
+								Change<span class="nhsuk-u-visually-hidden">total car mileage</span>
+							</a>
+
+						</dd>
+						{% endif %}
+					</div>
+
+				<!-- if second journey = accommodation to term-time address, and travelled by both car and public - total car mileage -->
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Travelled by
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['transport-method'] %}
+								{{ data['transport-method'] }}
+								{% else %}
+								Car and public transport
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+
+							<a href="TDAE-accommodation-transport-method">
+								Change<span class="nhsuk-u-visually-hidden">transport method</span>
+							</a>
+
+						</dd>
+						{% endif %}
+					</div>
+
+				<!-- if second journey = accommodation to term-time address, and travelled by both car and public - extra costs incurred -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Extra costs
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['car-extra-costs'] %}
+									£{{ data['car-extra-costs'] }}
+									{% else %}
+									none provided
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+
+								<a href="TDAE-accommodation-travel-extra-costs">
+									Change<span class="nhsuk-u-visually-hidden">extra costs</span>
+								</a>
+
+							</dd>
+							{% endif %}
+						</div>
+
+				<!-- if second journey = accommodation to term-time address, and travelled by both car and public - public transport method -->
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Method of public transport
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['public-transport-type'] %}
+								{{ data['public-transport-type'] }}
+								{% else %}
+								Train and Bus
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+
+							<a href="TDAE-accommodation-transport-method">
+								Change<span class="nhsuk-u-visually-hidden">method of public transport</span>
+							</a>
+
+						</dd>
+						{% endif %}
+					</div>
+
+				<!-- if second journey = accommodation to term-time address, and travelled by both car and public - total cost of public transport -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Extra costs
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['accommodation-travel-public-transport-cost'] %}
+									£{{ data['accommodation-travel-public-transport-cost'] }}
+									{% else %}
+									£8.35
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+
+								<a href="TDAE-accommodation-travel-extra-costs">
+									Change<span class="nhsuk-u-visually-hidden">total cost of public transport</span>
+								</a>
+
+							</dd>
+							{% endif %}
+						</div>
+
+				<!-- if second journey = accommodation to term-time address, and travelled by both car and public - evidence uploaded -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Evidence uploaded
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						<a href="/images/hire-car-booking-confirmation.jpg" download="Supporting evidence for journey between term-time address and accommodation">
+							snapshot-015-09-10-2023.jpg
+						</a>
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						<a href="TDAE-hire-car-evidence">
+							Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+						</a>
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- if second journey = accommodation to term-time address, and travelled by both car and public - additional comments -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Comments
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['additionalCostsComment'] %}
+							{{ data['additionalCostsComment'] }}
+							{% else %}
+							None provided.
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						{% if data['additional-comments']  === 'yes' %}
+						<a href="TDAE-accommodation-travel-add-comment">
+							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
+						</a>
+						{% else %}
+						<a href="TDAE-accommodation-travel-add-comment">
+							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+						</a>
+						{% endif %}
+						</dd>
+						{% endif %}
+				</div>
+	    
+
+				</dl>
+				<a class="nhsuk-button nhsuk-button--warning" href="TDAE-accommodation-travel-remove-journey-2">Remove journey</a>
+			</div>
+			</details>
+
+
+		{% endif %}
+
+		<h2 class="nhsuk-heading-m">Total journey costs to be reimbursed</h2>
+		<dl class="nhsuk-summary-list">
+
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Amount to be reimbursed
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				{% if data['number-of-journeys'] != '2' %}
+					£00.00
+				{% else %}
+					£00.00
+				{% endif %}
+			</dd>
+		</div>
+		</dl>
+
+
+		<div class="button-container">
+
+			{% if data['submit-claim'] != 'completed' %}
+				<form action="v7/TDAE-accommodation-travel-check" method="POST">
+					<button style="margin-right:20px;" class="nhsuk-button style=padding-right:10px;" type="submit">
+						Save and continue
+					</button>
+				</form>
+
+				<form action="/lsf-public/v7/accommodation-journey/TDAE-accommodation-direction-of-travel?vehicle-number=2" method="POST">
+					<button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+						Add another journey
+					</button>
+				</form>
+
+		</div>
+
+				<a href="TDAE-start-claim">Cancel</a>
+
+			{% endif %}
+
+		<!-- </form> -->
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			const months = {
+				"01": "January",
+				"02": "February",
+				"03": "March",
+				"04": "April",
+				"05": "May",
+				"06": "June",
+				"07": "July",
+				"08": "August",
+				"09": "September",
+				"1": "January",
+				"2": "February",
+				"3": "March",
+				"4": "April",
+				"5": "May",
+				"6": "June",
+				"7": "July",
+				"8": "August",
+				"9": "September",
+				"10": "October",
+				"11": "November",
+				"12": "December",
+			};
+
+			$(".cya-month").text(function () {
+				const month = $(this).text();
+				console.log("month:", month);
+				console.log("months[month]:", months[month]);
+				return months[month];
+			});
+		});
+		</script>
+
+</div>
+{% endblock %}
