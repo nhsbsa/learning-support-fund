@@ -16,7 +16,12 @@ What method of transport did you use to travel?
 
         <form action="../v7/TDAE-accommodation-transport-method" method="POST">
 
+          {% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
           <h1 class="nhsuk-heading-l">How did you travel to your accommodation?</h1>
+          {% else %}
+          <h1 class="nhsuk-heading-l">How did you travel to your term-time address?</h1>
+          {% endif %}
+
           
           {% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
           <div class="nhsuk-hint" id="example-hint">
