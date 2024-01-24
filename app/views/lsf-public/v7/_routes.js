@@ -655,7 +655,7 @@ router.post('/v7/TDAE-no-evidence-decision', (req, res) => {
   const noEvidenceDecision = req.session.data['no-evidence-decision']
 
   if (noEvidenceDecision === 'remove') {
-      res.redirect('/lsf-public/v7/TDAE-evidence-cya')
+      res.redirect('/lsf-public/v7/TDAE-placement-itinerary')
   } else if (noEvidenceDecision === 'reason') {
       res.redirect('/lsf-public/v7/TDAE-no-evidence-reason')
   }
