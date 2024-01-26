@@ -17,11 +17,7 @@ How many miles did your car journey cover?
         <form action="../v7/TDAE-accommodation-car-journey-mileage" method="POST">
           <div class="nhsuk-form-group">
 
-          {% if data['direction-of-travel'] == 'termtime to accommodation' %}
           <h1 class="nhsuk-heading-l">How many miles did you drive?</h1>
-          {% else %}
-          <h1 class="nhsuk-heading-l">How many miles did you drive to your term-time address?</h1>
-          {% endif %}
 
           <input class="nhsuk-input__suffix-input nhsuk-input nhsuk-input--width-5" id="accommodation-travel-mileage" name="accommodation-travel-mileage" type="text">
 				    <div class="nhsuk-input__suffix" aria-hidden="true">miles</div>
