@@ -450,6 +450,18 @@ router.post('/v7/TDAE-accommodation-date-of-travel', (req, res) => {
 
 router.post('/v7/TDAE-accommodation-travel-address', (req, res) => {
 
+  const accommodationAddress = req.session.data['accommodation-address']
+
+  if (accommodationAddress === 'new-address') {
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-add-new-address')
+  } else {
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-transport-method')
+  }
+
+})
+
+router.post('/v7/TDAE-accommodation-travel-add-new-address', (req, res) => {
+
   res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-transport-method')
 
 })

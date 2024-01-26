@@ -21,23 +21,19 @@ Upload your evidence for travelling between your accommodation and term-time add
           <h1 class="nhsuk-heading-l">Upload evidence for your journey</h1>
         </label>
 
-        {% if 'car' in data['transport-method'] %}
-        <p>You can upload evidence for multiple costs in one image. For example, you can take a picture of multiple receipts.</p>
+        {% if 'drove' in data['transport-method'] %}
+        <p>You need to show us evidence for your journey. This could be physical tickets, receipts from an online account, or a bank statement if necessary.</p>
         {% else %}
         <p>You can upload evidence for multiple costs in one image. For example, you can take a picture of multiple public transport tickets that were used on the same day.</p>
         {% endif %}
 
-        <p>Evidence can be physical tickets, receipts from an online account, or a bank statement if necessary.</p>
+        <p>You can upload evidence for multiple costs in one image. For example, you can take a picture of multiple receipts.</p>
 
         <p class="nhsuk-hint">Evidence must be:</p>
         <ul class="nhsuk-list nhsuk-list--bullet nhsuk-hint">
           <li>JPG, JPEG, PNG or PDF format</li>
           <li>no more than 8MB</li>
         </ul>
-
-        <div class="nhsuk-hint" id="contact-hint">
-          Evidence can be images, screenshots, or PDFs of receipts or invoices.
-        </div>
 
         <details class="nhsuk-details">
           <summary class="nhsuk-details__summary">
@@ -53,14 +49,25 @@ Upload your evidence for travelling between your accommodation and term-time add
           </div>
         </details>
 
-        <div class="nhsuk-hint" id="contact-hint">If you do not have evidence for your travel costs, you cannot continue your claim. Select Cancel to return to your task list.</div>
-
         <div class="nhsuk-form-group nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-7">
           <label class="nhsuk-label nhsuk-u-visually-hidden" for="file-upload-1">
             Upload your evidence file
           </label>
           <input class="nhsuk-input" id="file-upload-1" name="file-upload-1" type="file">
         </div>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              I do not have evidence
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>If you do not give us evidence for a cost, your university may ask you to remove it from your claim. Costs without evidence are only reimbursed in exceptional circumstances.</p>
+            <p>You can <a href="TDAE-no-evidence-cost">remove the cost from your claim or tell us why you cannot give us evidence</a>.</p>
+    
+          </div>
+        </details>
 
         <button class="nhsuk-button" type="submit">Upload evidence</button><br>
 

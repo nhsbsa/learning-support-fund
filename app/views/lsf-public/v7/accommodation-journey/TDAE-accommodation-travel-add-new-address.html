@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What accommodation address were you travelling to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="../v7/TDAE-accommodation-travel-add-new-address" method="POST">
+
+          <h1 class="nhsuk-heading-l">Add a new accommodation address</h1>
+          
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label" for="accommodation-building-name">
+                    Building name or number
+                  </label>
+                  <input class="nhsuk-input" id="accommodation-building-name" name="accommodation-building-name" type="text">
+                </div>
+
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label" for="address-line-1">
+                    Address line 1
+                  </label>
+                  <input class="nhsuk-input" id="address-line-1" name="address-line-1" type="text">
+                </div>
+
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label" for="address-line-2">
+                    Address line 2 (optional)
+                  </label>
+                  <input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text">
+                </div>
+
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label" for="address-line-3">
+                    Address line 3 (optional)
+                  </label>
+                  <input class="nhsuk-input" id="address-line-3" name="address-line-3" type="text">
+                </div>
+
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label" for="address-town">
+                    Town or city
+                  </label>
+                  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text">
+                </div>
+
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label" for="address-county">
+                    County (optional)
+                  </label>
+                  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-county" name="address-county" type="text">
+                </div>
+
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label" for="address-postcode">
+                    Postcode
+                  </label>
+                  <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+                </div>
+              </div>
+            
+             
+          </div>
+        
+
+
+          <button class="nhsuk-button" type="submit">Continue</button><br>
+          <a href="TDAE-task-list">Cancel</a>
+
+        </form>
+
+      </div>
+
+    </div>
+{% endblock %}

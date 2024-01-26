@@ -10,8 +10,11 @@ Check your answers
 	<div class="nhsuk-grid-column-two-thirds">
 
 		<!-- <form action="" method="POST"> -->
-
-		<h1 class="nhsuk-heading-xl">Check your journey details</h1>
+		{% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
+		<h1 class="nhsuk-heading-xl">Travel to your accommodation details</h1>
+		{% else %}
+		<h1 class="nhsuk-heading-xl">Travel to your term-time address details</h1>
+		{% endif %}
 
 
 		<!-- if only one journey and direction of travel is from term-time address to accommodation -->
@@ -21,20 +24,20 @@ Check your answers
 				<dl class="nhsuk-summary-list">
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Direction of travel
+						Journey
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['direction-of-travel'] %}
 							{{ data['direction-of-travel'] }}
 							{% else %}
-							Travelling to accommodation from term-time address
+							 Term-time address to accommodation
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
 
 						<a href="TDAE-accommodation-direction-of-travel">
-							Change<span class="nhsuk-u-visually-hidden">the direction of travel</span>
+							Change<span class="nhsuk-u-visually-hidden">the journey</span>
 						</a>
 
 					</dd>
@@ -44,7 +47,7 @@ Check your answers
 				<!-- if first journey = term-time to accommodation - date of journey -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Date of journey
+						Date travelled
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['accommodation-travel-day'] %}
@@ -57,7 +60,7 @@ Check your answers
 					<dd class="nhsuk-summary-list__actions">
 
 						<a href="TDAE-accommodation-date-of-travel">
-							Change<span class="nhsuk-u-visually-hidden"> the date of your journey</span>
+							Change<span class="nhsuk-u-visually-hidden"> the date you travelled</span>
 						</a>
 
 					</dd>
@@ -79,10 +82,10 @@ Check your answers
 								{{ data['address-county'] }}
 								{{ data['address-postcode'] }}
 							{% else %}
-								Premier Inn Alnwick Hotel, <br>
-								Willowburn Industrial Estate, <br>
-								South Road, <br>
-								Alnwick, <br>
+								Premier Inn Alnwick Hotel<br>
+								Willowburn Industrial Estate<br>
+								South Road<br>
+								Alnwick<br>
 								NE66 2PF
 							{% endif %}
 						</dd>
@@ -120,10 +123,10 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- if first journey = term-time to accommodation, and travelled by car and public transport - total car mileage -->
+				<!-- if first journey = term-time to accommodation, and travelled by car and public transport - total driving mileage -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Total car mileage
+							Total driving mileage
 						</dt>
 						<dd class="nhsuk-summary-list__value">
 							{% if data['accommodation-travel-mileage'] %}
@@ -136,17 +139,17 @@ Check your answers
 						<dd class="nhsuk-summary-list__actions">
 	
 							<a href="TDAE-accommodation-car-journey-mileage">
-								Change<span class="nhsuk-u-visually-hidden">total car mileage</span>
+								Change<span class="nhsuk-u-visually-hidden">total driving mileage</span>
 							</a>
 	
 						</dd>
 						{% endif %}
 					</div>
 
-				<!-- if first journey = term-time to accommodation and travelled by both car and public transport - extra costs incurred -->
+				<!-- if first journey = term-time to accommodation and travelled by both car and public transport - total extra costs incurred -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
-								Extra costs
+								Total extra costs amount
 							</dt>
 							<dd class="nhsuk-summary-list__value">
 								{% if data['car-extra-costs'] %}
@@ -159,7 +162,7 @@ Check your answers
 							<dd class="nhsuk-summary-list__actions">
 		
 								<a href="TDAE-accommodation-travel-extra-costs">
-									Change<span class="nhsuk-u-visually-hidden">extra costs</span>
+									Change<span class="nhsuk-u-visually-hidden">total extra costs amount</span>
 								</a>
 		
 							</dd>
@@ -169,7 +172,7 @@ Check your answers
 				<!-- if first journey = term-time to accommodation and travelled by both car and public transport - public transport method -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Method of public transport
+							Public transport type
 						</dt>
 						<dd class="nhsuk-summary-list__value">
 							{% if data['public-transport-type'] %}
@@ -182,17 +185,17 @@ Check your answers
 						<dd class="nhsuk-summary-list__actions">
 	
 							<a href="TDAE-accommodation-transport-method">
-								Change<span class="nhsuk-u-visually-hidden">method of public transport</span>
+								Change<span class="nhsuk-u-visually-hidden">public transport type</span>
 							</a>
 	
 						</dd>
 						{% endif %}
 					</div>
 
-				<!-- if first journey = term-time address to accommodation, and travelled by both car and public transport - total cost of public transport -->
+				<!-- if first journey = term-time address to accommodation, and travelled by both car and public transport - Total public transport amount -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Total cost of public transport
+							Total public transport amount
 						</dt>
 						<dd class="nhsuk-summary-list__value">
 							{% if data['accommodation-travel-public-transport-cost'] %}
@@ -205,7 +208,7 @@ Check your answers
 						<dd class="nhsuk-summary-list__actions">
 
 							<a href="TDAE-accommodation-travel-extra-costs">
-								Change<span class="nhsuk-u-visually-hidden">extra costs</span>
+								Change<span class="nhsuk-u-visually-hidden">total public transport amount</span>
 							</a>
 
 						</dd>
@@ -270,20 +273,20 @@ Check your answers
 				<dl class="nhsuk-summary-list">
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Direction of travel
+						Journey
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['direction-of-travel'] %}
 							{{ data['direction-of-travel'] }}
 							{% else %}
-							Travelling to term-time address from accommodation
+							 Accommodation to term-time address
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
 
 						<a href="TDAE-accommodation-direction-of-travel">
-							Change<span class="nhsuk-u-visually-hidden">the direction of travel</span>
+							Change<span class="nhsuk-u-visually-hidden">the journey</span>
 						</a>
 
 					</dd>
@@ -293,7 +296,7 @@ Check your answers
 				<!-- if first journey = accommodation to term-time address - date of journey -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Date of journey
+						Date travelled
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['accommodation-travel-day'] %}
@@ -306,7 +309,7 @@ Check your answers
 					<dd class="nhsuk-summary-list__actions">
 
 						<a href="TDAE-accommodation-date-of-travel">
-							Change<span class="nhsuk-u-visually-hidden"> the date of your journey</span>
+							Change<span class="nhsuk-u-visually-hidden"> the date you travelled</span>
 						</a>
 
 					</dd>
@@ -328,10 +331,10 @@ Check your answers
 								{{ data['address-county'] }}
 								{{ data['address-postcode'] }}
 							{% else %}
-								Premier Inn Alnwick Hotel, <br>
-								Willowburn Industrial Estate, <br>
-								South Road, <br>
-								Alnwick, <br>
+								Premier Inn Alnwick Hotel<br>
+								Willowburn Industrial Estate<br>
+								South Road<br>
+								Alnwick<br>
 								NE66 2PF
 							{% endif %}
 						</dd>
@@ -369,10 +372,10 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- if first journey = accommodation to term-time address, and travelled by car and public transport - total car mileage -->
+				<!-- if first journey = accommodation to term-time address, and travelled by car and public transport - total driving mileage -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Total car mileage
+							Total driving mileage
 						</dt>
 						<dd class="nhsuk-summary-list__value">
 							{% if data['accommodation-travel-mileage'] %}
@@ -385,17 +388,17 @@ Check your answers
 						<dd class="nhsuk-summary-list__actions">
 
 							<a href="TDAE-accommodation-car-journey-mileage">
-								Change<span class="nhsuk-u-visually-hidden">total car mileage</span>
+								Change<span class="nhsuk-u-visually-hidden">total driving mileage</span>
 							</a>
 
 						</dd>
 						{% endif %}
 					</div>
 
-				<!-- if first journey = accommodation to term-time address, and travelled by both car and public transport - extra costs incurred -->
+				<!-- if first journey = accommodation to term-time address, and travelled by both car and public transport - total extra costs incurred -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
-								Extra costs
+								Total extra costs amount
 							</dt>
 							<dd class="nhsuk-summary-list__value">
 								{% if data['car-extra-costs'] %}
@@ -408,7 +411,7 @@ Check your answers
 							<dd class="nhsuk-summary-list__actions">
 
 								<a href="TDAE-accommodation-travel-extra-costs">
-									Change<span class="nhsuk-u-visually-hidden">extra costs</span>
+									Change<span class="nhsuk-u-visually-hidden">total extra costs amount</span>
 								</a>
 
 							</dd>
@@ -418,7 +421,7 @@ Check your answers
 				<!-- if first journey = accommodation to term-time address, and travelled by both car and public transport - public transport method -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Method of public transport
+							Public transport type
 						</dt>
 						<dd class="nhsuk-summary-list__value">
 							{% if data['public-transport-type'] %}
@@ -431,17 +434,17 @@ Check your answers
 						<dd class="nhsuk-summary-list__actions">
 
 							<a href="TDAE-accommodation-transport-method">
-								Change<span class="nhsuk-u-visually-hidden">method of public transport</span>
+								Change<span class="nhsuk-u-visually-hidden">public transport type</span>
 							</a>
 
 						</dd>
 						{% endif %}
 					</div>
 
-					<!-- if first journey = accommodation to term-time address, and travelled by both car and public transport - total cost of public transport -->
+					<!-- if first journey = accommodation to term-time address, and travelled by both car and public transport - Total public transport amount -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
-								Total cost of public transport
+								Total public transport amount
 							</dt>
 							<dd class="nhsuk-summary-list__value">
 								{% if data['accommodation-travel-public-transport-cost'] %}
@@ -454,7 +457,7 @@ Check your answers
 							<dd class="nhsuk-summary-list__actions">
 
 								<a href="TDAE-accommodation-travel-extra-costs">
-									Change<span class="nhsuk-u-visually-hidden">extra costs</span>
+									Change<span class="nhsuk-u-visually-hidden">total public transport amount</span>
 								</a>
 
 							</dd>
@@ -530,20 +533,20 @@ Check your answers
 				<dl class="nhsuk-summary-list">
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Direction of travel
+							Journey
 						</dt>
 						<dd class="nhsuk-summary-list__value">
 							{% if data['direction-of-travel'] %}
 								{{ data['direction-of-travel'] }}
 								{% else %}
-								Travelling to accommodation from term-time address
+								Term-time address to accommodation
 							{% endif %}
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
 
 							<a href="TDAE-accommodation-direction-of-travel">
-								Change<span class="nhsuk-u-visually-hidden">the direction of travel</span>
+								Change<span class="nhsuk-u-visually-hidden">the journey</span>
 							</a>
 
 						</dd>
@@ -553,7 +556,7 @@ Check your answers
 					<!-- if first journey = term-time to accommodation - date of journey -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Date of journey
+							Date travelled
 						</dt>
 						<dd class="nhsuk-summary-list__value">
 							{% if data['accommodation-travel-day'] %}
@@ -566,7 +569,7 @@ Check your answers
 						<dd class="nhsuk-summary-list__actions">
 
 							<a href="TDAE-accommodation-date-of-travel">
-								Change<span class="nhsuk-u-visually-hidden"> the date of your journey</span>
+								Change<span class="nhsuk-u-visually-hidden"> the date you travelled</span>
 							</a>
 
 						</dd>
@@ -588,10 +591,10 @@ Check your answers
 									{{ data['address-county'] }}
 									{{ data['address-postcode'] }}
 								{% else %}
-									Premier Inn Alnwick Hotel, <br>
-									Willowburn Industrial Estate, <br>
-									South Road, <br>
-									Alnwick, <br>
+									Premier Inn Alnwick Hotel<br>
+									Willowburn Industrial Estate<br>
+									South Road<br>
+									Alnwick<br>
 									NE66 2PF
 								{% endif %}
 							</dd>
@@ -629,10 +632,10 @@ Check your answers
 						{% endif %}
 					</div>
 
-					<!-- if first journey = term-time to accommodation, and travelled by car and public transport - total car mileage -->
+					<!-- if first journey = term-time to accommodation, and travelled by car and public transport - total driving mileage -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
-								Total car mileage
+								Total driving mileage
 							</dt>
 							<dd class="nhsuk-summary-list__value">
 								{% if data['accommodation-travel-mileage'] %}
@@ -645,17 +648,17 @@ Check your answers
 							<dd class="nhsuk-summary-list__actions">
 
 								<a href="TDAE-accommodation-car-journey-mileage">
-									Change<span class="nhsuk-u-visually-hidden">total car mileage</span>
+									Change<span class="nhsuk-u-visually-hidden">total driving mileage</span>
 								</a>
 
 							</dd>
 							{% endif %}
 						</div>
 
-					<!-- if first journey = term-time to accommodation and travelled by both car and public - extra costs incurred -->
+					<!-- if first journey = term-time to accommodation and travelled by both car and public - total extra costs incurred -->
 							<div class="nhsuk-summary-list__row">
 								<dt class="nhsuk-summary-list__key">
-									Extra costs
+									Total extra costs amount
 								</dt>
 								<dd class="nhsuk-summary-list__value">
 									{% if data['car-extra-costs'] %}
@@ -668,7 +671,7 @@ Check your answers
 								<dd class="nhsuk-summary-list__actions">
 			
 									<a href="TDAE-accommodation-travel-extra-costs">
-										Change<span class="nhsuk-u-visually-hidden">extra costs</span>
+										Change<span class="nhsuk-u-visually-hidden">total extra costs amount</span>
 									</a>
 			
 								</dd>
@@ -678,7 +681,7 @@ Check your answers
 					<!-- if first journey = term-time to accommodation and travelled by both car and public - public transport method -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
-								Method of public transport
+								Public transport type
 							</dt>
 							<dd class="nhsuk-summary-list__value">
 								{% if data['public-transport-type'] %}
@@ -691,17 +694,17 @@ Check your answers
 							<dd class="nhsuk-summary-list__actions">
 
 								<a href="TDAE-accommodation-transport-method">
-									Change<span class="nhsuk-u-visually-hidden">method of public transport</span>
+									Change<span class="nhsuk-u-visually-hidden">public transport type</span>
 								</a>
 
 							</dd>
 							{% endif %}
 						</div>
 
-						<!-- if first journey = term-time address to accommodation, and travelled by both car and public transport - total cost of public transport -->
+						<!-- if first journey = term-time address to accommodation, and travelled by both car and public transport - Total public transport amount -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
-								Total cost of public transport
+								Total public transport amount
 							</dt>
 							<dd class="nhsuk-summary-list__value">
 								{% if data['accommodation-travel-public-transport-cost'] %}
@@ -714,7 +717,7 @@ Check your answers
 							<dd class="nhsuk-summary-list__actions">
 
 								<a href="TDAE-accommodation-travel-extra-costs">
-									Change<span class="nhsuk-u-visually-hidden">extra costs</span>
+									Change<span class="nhsuk-u-visually-hidden">total public transport amount</span>
 								</a>
 
 							</dd>
@@ -793,20 +796,20 @@ Check your answers
 			<dl class="nhsuk-summary-list">
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Direction of travel
+						Journey
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['direction-of-travel'] %}
 							{{ data['direction-of-travel'] }}
 							{% else %}
-							Travelling to term-time address from accommodation
+							Accommodation to term-time address
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
 
 						<a href="TDAE-accommodation-direction-of-travel">
-							Change<span class="nhsuk-u-visually-hidden">the direction of travel</span>
+							Change<span class="nhsuk-u-visually-hidden">the journey</span>
 						</a>
 
 					</dd>
@@ -816,7 +819,7 @@ Check your answers
 				<!-- if second journey = accommodation to term-time address - date of journey -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Date of journey
+						Date travelled
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['accommodation-travel-day'] %}
@@ -829,7 +832,7 @@ Check your answers
 					<dd class="nhsuk-summary-list__actions">
 
 						<a href="TDAE-accommodation-date-of-travel">
-							Change<span class="nhsuk-u-visually-hidden"> the date of your journey</span>
+							Change<span class="nhsuk-u-visually-hidden"> the date you travelled</span>
 						</a>
 
 					</dd>
@@ -851,10 +854,10 @@ Check your answers
 								{{ data['address-county'] }}
 								{{ data['address-postcode'] }}
 							{% else %}
-								Premier Inn Alnwick Hotel, <br>
-								Willowburn Industrial Estate, <br>
-								South Road, <br>
-								Alnwick, <br>
+								Premier Inn Alnwick Hotel<br>
+								Willowburn Industrial Estate<br>
+								South Road<br>
+								Alnwick<br>
 								NE66 2PF
 							{% endif %}
 						</dd>
@@ -892,10 +895,10 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- if second journey = accommodation to term-time address, and travelled by car and public transport - total car mileage -->
+				<!-- if second journey = accommodation to term-time address, and travelled by car and public transport - total driving mileage -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Total car mileage
+							Total driving mileage
 						</dt>
 						<dd class="nhsuk-summary-list__value">
 							{% if data['accommodation-travel-mileage'] %}
@@ -908,17 +911,17 @@ Check your answers
 						<dd class="nhsuk-summary-list__actions">
 
 							<a href="TDAE-accommodation-car-journey-mileage">
-								Change<span class="nhsuk-u-visually-hidden">total car mileage</span>
+								Change<span class="nhsuk-u-visually-hidden">total driving mileage</span>
 							</a>
 
 						</dd>
 						{% endif %}
 					</div>
 
-				<!-- if second journey = accommodation to term-time address, and travelled by both car and public - extra costs incurred -->
+				<!-- if second journey = accommodation to term-time address, and travelled by both car and public - total extra costs incurred -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
-								Extra costs
+								Total extra costs amount
 							</dt>
 							<dd class="nhsuk-summary-list__value">
 								{% if data['car-extra-costs'] %}
@@ -931,7 +934,7 @@ Check your answers
 							<dd class="nhsuk-summary-list__actions">
 
 								<a href="TDAE-accommodation-travel-extra-costs">
-									Change<span class="nhsuk-u-visually-hidden">extra costs</span>
+									Change<span class="nhsuk-u-visually-hidden">total extra costs amount</span>
 								</a>
 
 							</dd>
@@ -941,7 +944,7 @@ Check your answers
 				<!-- if second journey = accommodation to term-time address, and travelled by both car and public - public transport method -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Method of public transport
+							Public transport type
 						</dt>
 						<dd class="nhsuk-summary-list__value">
 							{% if data['public-transport-type'] %}
@@ -954,17 +957,17 @@ Check your answers
 						<dd class="nhsuk-summary-list__actions">
 
 							<a href="TDAE-accommodation-transport-method">
-								Change<span class="nhsuk-u-visually-hidden">method of public transport</span>
+								Change<span class="nhsuk-u-visually-hidden">public transport type</span>
 							</a>
 
 						</dd>
 						{% endif %}
 					</div>
 
-				<!-- if second journey = accommodation to term-time address, and travelled by both car and public transport - total cost of public transport -->
+				<!-- if second journey = accommodation to term-time address, and travelled by both car and public transport - Total public transport amount -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Total cost of public transport
+							Total public transport amount
 						</dt>
 						<dd class="nhsuk-summary-list__value">
 							{% if data['accommodation-travel-public-transport-cost'] %}
@@ -977,7 +980,7 @@ Check your answers
 						<dd class="nhsuk-summary-list__actions">
 
 							<a href="TDAE-accommodation-travel-extra-costs">
-								Change<span class="nhsuk-u-visually-hidden">extra costs</span>
+								Change<span class="nhsuk-u-visually-hidden">total public transport amount</span>
 							</a>
 
 						</dd>
