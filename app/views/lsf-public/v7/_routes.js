@@ -239,7 +239,7 @@ router.post('/v7/TDAE-public-transport-daily-cost', (req, res) => {
 
 router.post('/v7/TDAE-public-transport-dates', (req, res) => {
 
-  res.redirect('/lsf-public/v7/TDAE-public-transport-days');
+  res.redirect('/lsf-public/v7/TDAE-ticket-already-claimed');
 
 })
 
@@ -1403,7 +1403,7 @@ router.post('/v7/TDAE-travel-accommodation', (req, res) => {
     } else if (change == ('yes')) {
         res.redirect('/lsf-public/v7/TDAE-eligibility-cya')
     } else {
-        res.redirect('/lsf-public/v7/TDAE-reuse-answers')
+        res.redirect('/lsf-public/v7/TDAE-costs-already-claimed')
     }
 
 })
