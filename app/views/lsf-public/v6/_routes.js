@@ -90,9 +90,8 @@ router.post('/v6/TDAE-placement-additional-cost-single-day', (req, res) => {
 })
 
 router.post('/v6/TDAE-no-evidence-reason', (req, res) => {
-
+    req.session.data['no-evidence']= "true";
     res.redirect('/lsf-public/v6/TDAE-evidence-cya')
-
 })
 
 router.post('/v6/TDAE-no-evidence-decision', (req, res) => {

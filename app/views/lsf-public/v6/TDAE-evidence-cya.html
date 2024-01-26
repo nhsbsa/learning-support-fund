@@ -144,8 +144,30 @@ Evidence you have uploaded
                 </tr>
               </tbody>
             </table>
-          {% endif %}
 
+            {% if data['no-evidence'] == 'true' %}
+              <table class="nhsuk-table">
+                <caption class="nhsuk-table__caption">Costs you have no evidence for</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">Reason</th>
+                    <th role="columnheader" class="" scope="col">Cost type</th>
+                    <th role="columnheader" class="" scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Lost my receipt</td>
+                    <td class="nhsuk-table__cell">Parking charges on Thursday 04 January 2024</td>
+                    <td class="nhsuk-table__cell">
+                      <a id="removeReason0" href="#">Remove<span class="nhsuk-u-visually-hidden"> reason 1</span></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            {% endif %}
+          {% endif %}
+          
           {% if data['evidenceNumber'] === '2' or data['evidenceNumber'] === '3' %}
             <a class="nhsuk-button" href="TDAE-evidence-comment?week-1=completed">Save and continue</a>
           {% endif %}
@@ -195,6 +217,28 @@ Evidence you have uploaded
             </tr>
           </tbody>
         </table>
+
+        {% if data['no-evidence'] == 'true' %}
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption">Costs you have no evidence for</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">Reason</th>
+                <th role="columnheader" class="" scope="col">Cost type</th>
+                <th role="columnheader" class="" scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Lost my receipt</td>
+                <td class="nhsuk-table__cell">Parking charges on Thursday 04 January 2024</td>
+                <td class="nhsuk-table__cell">
+                  <a id="removeReason0" href="#">Remove<span class="nhsuk-u-visually-hidden"> reason 1</span></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        {% endif %}
 
         <a class="nhsuk-button" href="TDAE-evidence-pause-multiple?week-2=completed">Save and continue</a>
 

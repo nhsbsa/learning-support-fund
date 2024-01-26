@@ -657,9 +657,8 @@ router.post('/v7/TDAE-placement-additional-cost-dates', (req, res) => {
 })
 
 router.post('/v7/TDAE-no-evidence-reason', (req, res) => {
-
-    res.redirect('/lsf-public/v7/TDAE-evidence-cya')
-
+  req.session.data['no-evidence']= "true";
+  res.redirect('/lsf-public/v7/TDAE-evidence-cya')
 })
 
 router.post('/v7/TDAE-no-evidence-decision', (req, res) => {
