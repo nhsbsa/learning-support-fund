@@ -16,10 +16,10 @@ What accommodation address were you travelling to?
 
         <form action="../v7/TDAE-accommodation-travel-address" method="POST">
 
-          {% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
-          <h1 class="nhsuk-heading-l">Which accommodation address were you travelling to?</h1>
+          {% if 'accommodation-address' in data and data['direction-of-travel'] == 'termtime-to-accommodation' %}
+              <h1 class="nhsuk-heading-l">Which accommodation address were you travelling to?</h1>
           {% else %}
-          <h1 class="nhsuk-heading-l">Which accommodation address were you travelling from?</h1>
+              <h1 class="nhsuk-heading-l">What was the address of your accommodation?</h1>
           {% endif %}
 
 
