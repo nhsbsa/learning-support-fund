@@ -41,14 +41,38 @@ Claim details
           </details>
         </dd>
       </div>
-      <!--<div class="nhsuk-summary-list__row">
+      {% if data['accommodation'] == 'yes' %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Placement accommodation address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Village Toby Carvery, NE2 2UY
+          <details class="nhsuk-details" style="margin-bottom: 0;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              Village Toby Carvery<br>
+              Beverley Rd<br>
+              Willerby<br>
+              Newcastle upon Tyne<br>
+              NE2 2UY
+            </div>
+          </details>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key" style="width: 40%;">
           Student comments
         </dt>
         <dd class="nhsuk-summary-list__value">
           Had to use NPC car park one day as the hospital car park was closed.
         </dd>
-      </div>-->
+      </div>
+      {% endif %}
     </dl>
 
     <details class="nhsuk-details">
@@ -81,9 +105,11 @@ Claim details
           <th role="columnheader" class="" scope="col">
             Mileage from
           </th>
+          {% if data['accommodation'] != 'yes' %}
           <th role="columnheader" class="" scope="col">
             Google Maps directions
           </th>
+          {% endif %}
         </tr>
       </thead>
       <tbody class="nhsuk-table__body">
@@ -101,9 +127,11 @@ Claim details
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Mileage from placement </span>10
           </td>
+          {% if data['accommodation'] != 'yes' %}
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Google Maps directions </span><a class="nhsuk-link--no-visited-state" href="https://www.google.com/maps/dir/NE2+1AW/NE6+4EA" target=”_blank”>View (opens in new tab)</a>
           </td>
+          {% endif %}
         </tr>
         <tr role="row" class="nhsuk-table__row">
           <td role="cell" class="nhsuk-table__cell" style="white-space: nowrap;">
@@ -119,9 +147,11 @@ Claim details
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Mileage from placement </span>10
           </td>
+          {% if data['accommodation'] != 'yes' %}
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Google Maps directions </span><a class="nhsuk-link--no-visited-state" href="https://www.google.com/maps/dir/NE2+1AW/NE6+4EA" target=”_blank”><a class="nhsuk-link--no-visited-state" href="https://www.google.com/maps/dir/NE2+1AW/NE6+4EA" target=”_blank”>View (opens in new tab)</a></a>
           </td>
+          {% endif %}
         </tr>
         <tr role="row" class="nhsuk-table__row">
           <td role="cell" class="nhsuk-table__cell" style="white-space: nowrap;">
@@ -136,9 +166,11 @@ Claim details
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Mileage from placement </span>10
           </td>
+          {% if data['accommodation'] != 'yes' %}
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Google Maps directions </span><a class="nhsuk-link--no-visited-state" href="https://www.google.com/maps/dir/NE2+1AW/NE6+4EA" target=”_blank”>View (opens in new tab)</a>
           </td>
+          {% endif %}
         </tr>
         <tr role="row" class="nhsuk-table__row">
           <td role="cell" class="nhsuk-table__cell" style="white-space: nowrap;">
@@ -154,9 +186,11 @@ Claim details
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Mileage from placement </span>10
           </td>
+          {% if data['accommodation'] != 'yes' %}
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Google Maps directions </span><a class="nhsuk-link--no-visited-state" href="https://www.google.com/maps/dir/NE2+1AW/NE6+4EA" target=”_blank”>View (opens in new tab)</a>
           </td>
+          {% endif %}
         </tr>
       </tbody>
     </table>
