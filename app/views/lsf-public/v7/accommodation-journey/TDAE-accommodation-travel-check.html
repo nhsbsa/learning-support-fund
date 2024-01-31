@@ -27,10 +27,10 @@ Check your answers
 						Journey
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						{% if data['direction-of-travel'] %}
-							{{ data['direction-of-travel'] }}
+						{% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
+							Term-time address to accommodation
 							{% else %}
-							 Term-time address to accommodation
+							 Accommodation to term-time address
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
@@ -115,7 +115,7 @@ Check your answers
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
 
-						<a href="TDAE-accommodation-transport-method">
+						<a href="TDAE-accommodation-travel-transport-method">
 							Change<span class="nhsuk-u-visually-hidden">transport method</span>
 						</a>
 
@@ -138,7 +138,7 @@ Check your answers
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
 	
-							<a href="TDAE-accommodation-car-journey-mileage">
+							<a href="TDAE-accommodation-travel-car-journey-mileage">
 								Change<span class="nhsuk-u-visually-hidden">total driving mileage</span>
 							</a>
 	
@@ -188,7 +188,7 @@ Check your answers
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
 	
-							<a href="TDAE-accommodation-transport-method">
+							<a href="TDAE-accommodation-travel-public-transport-method">
 								Change<span class="nhsuk-u-visually-hidden">public transport type</span>
 							</a>
 	
@@ -211,7 +211,7 @@ Check your answers
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
 
-							<a href="TDAE-accommodation-travel-extra-costs">
+							<a href="TDAE-accommodation-travel-public-transport-cost">
 								Change<span class="nhsuk-u-visually-hidden">total public transport amount</span>
 							</a>
 
@@ -231,8 +231,8 @@ Check your answers
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
-						<a href="TDAE-hire-car-evidence">
-							Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+						<a href="TDAE-accommodation-travel-evidence">
+							Review<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 						</a>
 					</dd>
 					{% endif %}
@@ -256,13 +256,13 @@ Check your answers
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					  <dd class="nhsuk-summary-list__actions">
-						{% if data['accommodation-travel-comments'] == 'yes' %}
-						  <a href="TDAE-accommodation-travel-add-comment">
-							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
+						{% if data['accommodation-travel-comments'] == 'no' %}
+						<a href="TDAE-accommodation-travel-comment">
+							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 						  </a>
 						{% else %}
 						  <a href="TDAE-accommodation-travel-add-comment">
-							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
 						  </a>
 						{% endif %}
 					  </dd>
@@ -284,10 +284,10 @@ Check your answers
 						Journey
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						{% if data['direction-of-travel'] %}
-							{{ data['direction-of-travel'] }}
+						{% if data['direction-of-travel'] == 'accommodation-to-termtime' %}
+							Accommodation to term-time address
 							{% else %}
-							 Accommodation to term-time address
+							Term-time address to accommodation
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
@@ -372,7 +372,7 @@ Check your answers
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
 
-						<a href="TDAE-accommodation-transport-method">
+						<a href="TDAE-accommodation-travel-transport-method">
 							Change<span class="nhsuk-u-visually-hidden">transport method</span>
 						</a>
 
@@ -395,7 +395,7 @@ Check your answers
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
 
-							<a href="TDAE-accommodation-car-journey-mileage">
+							<a href="TDAE-accommodation-travel-car-journey-mileage">
 								Change<span class="nhsuk-u-visually-hidden">total driving mileage</span>
 							</a>
 
@@ -445,7 +445,7 @@ Check your answers
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
 
-							<a href="TDAE-accommodation-transport-method">
+							<a href="TDAE-accommodation-travel-public-transport-method">
 								Change<span class="nhsuk-u-visually-hidden">public transport type</span>
 							</a>
 
@@ -468,7 +468,7 @@ Check your answers
 							{% if data['submit-claim'] != 'completed' %}
 							<dd class="nhsuk-summary-list__actions">
 
-								<a href="TDAE-accommodation-travel-extra-costs">
+								<a href="TDAE-accommodation-travel-public-transport-cost">
 									Change<span class="nhsuk-u-visually-hidden">total public transport amount</span>
 								</a>
 
@@ -488,8 +488,8 @@ Check your answers
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
-						<a href="TDAE-hire-car-evidence">
-							Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+						<a href="TDAE-accommodation-travel-evidence">
+							Review<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 						</a>
 					</dd>
 					{% endif %}
@@ -513,13 +513,13 @@ Check your answers
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					  <dd class="nhsuk-summary-list__actions">
-						{% if data['accommodation-travel-comments'] == 'yes' %}
-						  <a href="TDAE-accommodation-travel-add-comment">
-							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
+						{% if data['accommodation-travel-comments'] == 'no' %}
+						<a href="TDAE-accommodation-travel-comment">
+							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 						  </a>
 						{% else %}
 						  <a href="TDAE-accommodation-travel-add-comment">
-							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
 						  </a>
 						{% endif %}
 					  </dd>
@@ -553,10 +553,10 @@ Check your answers
 							Journey
 						</dt>
 						<dd class="nhsuk-summary-list__value">
-							{% if data['direction-of-travel'] %}
-								{{ data['direction-of-travel'] }}
-								{% else %}
+							{% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
 								Term-time address to accommodation
+							{% else %}
+							 	Accommodation to term-time address
 							{% endif %}
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
@@ -641,7 +641,7 @@ Check your answers
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
 
-							<a href="TDAE-accommodation-transport-method">
+							<a href="TDAE-accommodation-travel-transport-method">
 								Change<span class="nhsuk-u-visually-hidden">transport method</span>
 							</a>
 
@@ -664,7 +664,7 @@ Check your answers
 							{% if data['submit-claim'] != 'completed' %}
 							<dd class="nhsuk-summary-list__actions">
 
-								<a href="TDAE-accommodation-car-journey-mileage">
+								<a href="TDAE-accommodation-travel-car-journey-mileage">
 									Change<span class="nhsuk-u-visually-hidden">total driving mileage</span>
 								</a>
 
@@ -714,7 +714,7 @@ Check your answers
 							{% if data['submit-claim'] != 'completed' %}
 							<dd class="nhsuk-summary-list__actions">
 
-								<a href="TDAE-accommodation-transport-method">
+								<a href="TDAE-accommodation-travel-public-transport-method">
 									Change<span class="nhsuk-u-visually-hidden">public transport type</span>
 								</a>
 
@@ -737,7 +737,7 @@ Check your answers
 							{% if data['submit-claim'] != 'completed' %}
 							<dd class="nhsuk-summary-list__actions">
 
-								<a href="TDAE-accommodation-travel-extra-costs">
+								<a href="TDAE-accommodation-travel-public-transport-cost">
 									Change<span class="nhsuk-u-visually-hidden">total public transport amount</span>
 								</a>
 
@@ -757,8 +757,8 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-							<a href="TDAE-hire-car-evidence">
-								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+							<a href="TDAE-accommodation-travel-evidence">
+								Review<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 							</a>
 						</dd>
 						{% endif %}
@@ -782,14 +782,14 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						  <dd class="nhsuk-summary-list__actions">
-							{% if data['accommodation-travel-comments'] == 'yes' %}
-							  <a href="TDAE-accommodation-travel-add-comment">
-								Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							  </a>
-							{% else %}
-							  <a href="TDAE-accommodation-travel-add-comment">
+							{% if data['accommodation-travel-comments'] == 'no' %}
+							<a href="TDAE-accommodation-travel-comment">
 								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							  </a>
+							</a>
+							{% else %}
+							<a href="TDAE-accommodation-travel-add-comment">
+								Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
+							</a>
 							{% endif %}
 						  </dd>
 						{% endif %}
@@ -824,10 +824,10 @@ Check your answers
 						Journey
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						{% if data['direction-of-travel'] %}
-							{{ data['direction-of-travel'] }}
-							{% else %}
+						{% if data['direction-of-travel'] == 'accommodation-to-termtime' %}
 							Accommodation to term-time address
+							{% else %}
+							Term-time address to accommodation
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
@@ -912,7 +912,7 @@ Check your answers
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
 
-						<a href="TDAE-accommodation-transport-method">
+						<a href="TDAE-accommodation-travel-transport-method">
 							Change<span class="nhsuk-u-visually-hidden">transport method</span>
 						</a>
 
@@ -935,7 +935,7 @@ Check your answers
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
 
-							<a href="TDAE-accommodation-car-journey-mileage">
+							<a href="TDAE-accommodation-travel-car-journey-mileage">
 								Change<span class="nhsuk-u-visually-hidden">total driving mileage</span>
 							</a>
 
@@ -985,7 +985,7 @@ Check your answers
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
 
-							<a href="TDAE-accommodation-transport-method">
+							<a href="TDAE-accommodation-travel-public-transport-method">
 								Change<span class="nhsuk-u-visually-hidden">public transport type</span>
 							</a>
 
@@ -1008,7 +1008,7 @@ Check your answers
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
 
-							<a href="TDAE-accommodation-travel-extra-costs">
+							<a href="TDAE-accommodation-travel-public-transport-cost">
 								Change<span class="nhsuk-u-visually-hidden">total public transport amount</span>
 							</a>
 
@@ -1028,8 +1028,8 @@ Check your answers
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
-						<a href="TDAE-hire-car-evidence">
-							Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+						<a href="TDAE-accommodation-travel-evidence">
+							Review<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 						</a>
 					</dd>
 					{% endif %}
@@ -1053,13 +1053,13 @@ Check your answers
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					  <dd class="nhsuk-summary-list__actions">
-						{% if data['accommodation-travel-comments'] == 'yes' %}
-						  <a href="TDAE-accommodation-travel-add-comment">
-							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
+						{% if data['accommodation-travel-comments'] == 'no' %}
+						<a href="TDAE-accommodation-travel-comment">
+							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 						  </a>
 						{% else %}
 						  <a href="TDAE-accommodation-travel-add-comment">
-							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
 						  </a>
 						{% endif %}
 					  </dd>
