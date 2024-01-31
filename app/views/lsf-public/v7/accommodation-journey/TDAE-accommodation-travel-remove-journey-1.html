@@ -38,15 +38,6 @@
                     Travelling to accommodation from term-time address
                   {% endif %}
                 </dd>
-                {% if data['submit-claim'] != 'completed' %}
-                <dd class="nhsuk-summary-list__actions">
-      
-                  <a href="TDAE-accommodation-direction-of-travel">
-                    Change<span class="nhsuk-u-visually-hidden">journey</span>
-                  </a>
-      
-                </dd>
-                {% endif %}
               </div>		
       
               <div class="nhsuk-summary-list__row">
@@ -60,15 +51,6 @@
                     6 October 2023
                   {% endif %}
                 </dd>
-                {% if data['submit-claim'] != 'completed' %}
-                <dd class="nhsuk-summary-list__actions">
-      
-                  <a href="TDAE-accommodation-date-of-travel">
-                    Change<span class="nhsuk-u-visually-hidden"> the date you travelled</span>
-                  </a>
-      
-                </dd>
-                {% endif %}
               </div>
 
               <div class="nhsuk-summary-list__row">
@@ -92,15 +74,6 @@
                     NE66 2PF
                   {% endif %}
                 </dd>
-                {% if data['submit-claim'] != 'completed' %}
-                <dd class="nhsuk-summary-list__actions">
-      
-                  <a href="TDAE-accommodation-travel-address">
-                    Change<span class="nhsuk-u-visually-hidden">accommodation address</span>
-                  </a>
-      
-                </dd>
-                {% endif %}
               </div>
   
               <div class="nhsuk-summary-list__row">
@@ -114,15 +87,6 @@
                     Car and Public transport
                   {% endif %}
                 </dd>
-                {% if data['submit-claim'] != 'completed' %}
-                <dd class="nhsuk-summary-list__actions">
-      
-                  <a href="TDAE-accommodation-transport-method">
-                    Change<span class="nhsuk-u-visually-hidden">transport method</span>
-                  </a>
-      
-                </dd>
-                {% endif %}
               </div>
     
               <div class="nhsuk-summary-list__row">
@@ -136,15 +100,6 @@
                     2.9
                   {% endif %}
                 </dd>
-                {% if data['submit-claim'] != 'completed' %}
-                <dd class="nhsuk-summary-list__actions">
-      
-                  <a href="TDAE-accommodation-car-journey-mileage">
-                    Change<span class="nhsuk-u-visually-hidden">total driving mileage</span>
-                  </a>
-      
-                </dd>
-                {% endif %}
               </div>
     
               <div class="nhsuk-summary-list__row">
@@ -152,21 +107,16 @@
                   Total extra costs amount
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {% if data['car-extra-costs'] %}
-                    £{{ data['car-extra-costs'] }}
+                  {% if data['extra-costs'] == 'yes' %}
+                    {% if data['car-extra-costs'] %}
+                      £{{ data['car-extra-costs'] }}
                     {% else %}
-                    £16.80
+                      £16.80
+                    {% endif %}
+                  {% else %}
+                    None provided
                   {% endif %}
                 </dd>
-                {% if data['submit-claim'] != 'completed' %}
-                <dd class="nhsuk-summary-list__actions">
-      
-                  <a href="TDAE-accommodation-travel-extra-costs">
-                    Change<span class="nhsuk-u-visually-hidden">total extra costs amount</span>
-                  </a>
-      
-                </dd>
-                {% endif %}
               </div>
 
               <div class="nhsuk-summary-list__row">
@@ -180,15 +130,6 @@
                     Train and Bus
                   {% endif %}
                 </dd>
-                {% if data['submit-claim'] != 'completed' %}
-                <dd class="nhsuk-summary-list__actions">
-      
-                  <a href="TDAE-accommodation-transport-method">
-                    Change<span class="nhsuk-u-visually-hidden">public transport type</span>
-                  </a>
-      
-                </dd>
-                {% endif %}
               </div>
     
               <div class="nhsuk-summary-list__row">
@@ -202,15 +143,6 @@
                     £8.35
                   {% endif %}
                 </dd>
-                {% if data['submit-claim'] != 'completed' %}
-                <dd class="nhsuk-summary-list__actions">
-    
-                  <a href="TDAE-accommodation-travel-extra-costs">
-                    Change<span class="nhsuk-u-visually-hidden">total public transport amount</span>
-                  </a>
-    
-                </dd>
-                {% endif %}
               </div>
 
               <div class="nhsuk-summary-list__row">
@@ -222,13 +154,6 @@
                     snapshot-012-06-10-2023.jpg
                   </a>
                 </dd>
-                {% if data['submit-claim'] != 'completed' %}
-                <dd class="nhsuk-summary-list__actions">
-                  <a href="TDAE-hire-car-evidence">
-                    Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
-                  </a>
-                </dd>
-                {% endif %}
               </div>
     
               <div class="nhsuk-summary-list__row">
@@ -236,25 +161,16 @@
                   Comments
                 </dt>
                 <dd class="nhsuk-summary-list__value">
+                  {% if data['accommodation-travel-comments'] == 'yes' %}
                   {% if data['additionalCostsComment'] %}
                     {{ data['additionalCostsComment'] }}
-                    {% else %}
+                  {% else %}
                     It cost me £4.20 per day to park my car at Newcastle Central Station.
                   {% endif %}
-                </dd>
-                {% if data['submit-claim'] != 'completed' %}
-                <dd class="nhsuk-summary-list__actions">
-                  {% if data['additional-comments']  === 'yes' %}
-                  <a href="TDAE-accommodation-travel-add-comment">
-                    Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-                  </a>
                   {% else %}
-                  <a href="TDAE-accommodation-travel-add-comment">
-                    Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
-                  </a>
+                  None provided
                   {% endif %}
-                  </dd>
-                  {% endif %}
+                </dd>
               </div>
   
             </dl>

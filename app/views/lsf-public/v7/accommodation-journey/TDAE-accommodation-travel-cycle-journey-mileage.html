@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+How many miles did your car journey cover?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="../v7/TDAE-accommodation-travel-cycle-journey-mileage" method="POST">
+          <div class="nhsuk-form-group">
+
+          <h1 class="nhsuk-heading-l">How many miles did you cycle?</h1>
+
+		  <div class="nhsuk-hint" id="contact-hint">
+			Only enter your cycling mileage. If you used more than one method of transport, you will tell us about these individually.
+			</div>
+
+          <input class="nhsuk-input__suffix-input nhsuk-input nhsuk-input--width-5" id="accommodation-travel-mileage" name="accommodation-travel-mileage" type="text">
+				    <div class="nhsuk-input__suffix" aria-hidden="true">miles</div>
+            
+          </div>
+
+			<details class="nhsuk-details">
+				<summary class="nhsuk-details__summary">
+				  <span class="nhsuk-details__summary-text">
+					How to work out your mileage
+				  </span>
+				</summary>
+				<div class="nhsuk-details__text">
+					<p>You can check the mileage of your journey by:</p>
+					<ul class="nhsuk--list">
+						<li>getting directions for your journey on Google Maps</li>
+						<li>checking the distance travelled on your exercise tracking app, such as Strava</li>
+					</ul>
+				</div>
+		  </details>
+    
+          <button class="nhsuk-button" type="submit">Continue</button><br>
+      		<a href="TDAE-task-list">Cancel</a>
+
+      </form>
+
+    </div>
+
+</div>
+{% endblock %}

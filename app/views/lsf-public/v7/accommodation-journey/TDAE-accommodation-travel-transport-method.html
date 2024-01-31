@@ -14,7 +14,7 @@ What method of transport did you use to travel?
         "text": "Go back"
         }) }}
 
-        <form action="../v7/TDAE-accommodation-transport-method" method="POST">
+        <form action="../v7/TDAE-accommodation-travel-transport-method" method="POST">
 
           {% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
           <h1 class="nhsuk-heading-l">How did you travel to your accommodation?</h1>
@@ -40,6 +40,13 @@ What method of transport did you use to travel?
                 <input class="nhsuk-checkboxes__input" id="transport-method" name="transport-method" type="checkbox" value="public-transport">
                 <label class="nhsuk-label nhsuk-checkboxes__label" for="mode-of-transport">
                   Public transport
+                </label>
+              </div>
+
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="transport-method" name="transport-method" type="checkbox" value="cycle">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="mode-of-transport">
+                  Cycled
                 </label>
               </div>
     

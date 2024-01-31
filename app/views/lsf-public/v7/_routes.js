@@ -455,41 +455,56 @@ router.post('/v7/TDAE-accommodation-travel-address', (req, res) => {
   if (accommodationAddress === 'new-address') {
     res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-add-new-address')
   } else {
-    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-transport-method')
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-transport-method')
   }
 
 })
 
 router.post('/v7/TDAE-accommodation-travel-add-new-address', (req, res) => {
 
-  res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-transport-method')
+  res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-transport-method')
 
 })
 
-router.post('/v7/TDAE-accommodation-transport-method', (req, res) => {
+router.post('/v7/TDAE-accommodation-travel-transport-method', (req, res) => {
 
   const transportMethods = req.session.data['transport-method'];
 
-  // Check if 'car' is selected
+  // Check if the user previously selected 'car', 'public transport' and/or 'cycle' as transport methods
   const isCarSelected = transportMethods.includes('car');
-
-  // Check if 'public transport' is selected
   const isPublicTransportSelected = transportMethods.includes('public-transport');
+  const isCycleSelected = transportMethods.includes('cycle');
 
-  if (isCarSelected && isPublicTransportSelected) {
+  if (isCarSelected && isPublicTransportSelected && isCycleSelected) {
+    // If 'car', 'public transport' and 'cycle' are all selected
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-car-journey-mileage');
+
+  } else if (isCarSelected && isPublicTransportSelected) {
     // Both 'car' and 'public transport' are selected
-    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-car-journey-mileage');
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-car-journey-mileage');
+  
+  } else if (isCarSelected && isCycleSelected) {
+      // Both 'car' and 'cycle' are selected
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-car-journey-mileage');
+  
+  } else if (isPublicTransportSelected && isCycleSelected) {
+    // Both 'public transport' and 'cycle' are selected
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-public-transport-method');
+    
   } else if (isCarSelected) {
     // Only 'car' is selected
-    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-car-journey-mileage');
-  } else {
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-car-journey-mileage');
+  } else if (isPublicTransportSelected) {
     // Only 'public transport' is selected
-    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-public-transport-method');
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-public-transport-method');
+  } else if (isCycleSelected) {
+    // Only 'cycle' is selected
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-cycle-journey-mileage');
   }
 
 });
 
-router.post('/v7/TDAE-accommodation-car-journey-mileage', (req, res) => {
+router.post('/v7/TDAE-accommodation-travel-car-journey-mileage', (req, res) => {
 
   res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-extra-costs')
 
@@ -498,59 +513,112 @@ router.post('/v7/TDAE-accommodation-car-journey-mileage', (req, res) => {
 router.post('/v7/TDAE-accommodation-travel-extra-costs', (req, res) => {
 
   const didPayExtraCosts = req.session.data['extra-costs'];
-
   const transportMethods = req.session.data['transport-method'];
 
-  // Check if the user previously selected both 'car' and 'public transport'
+  // Check if the user previously selected 'car', 'public transport' and/or 'cycle' as transport methods
   const isCarSelected = transportMethods.includes('car');
   const isPublicTransportSelected = transportMethods.includes('public-transport');
+  const isCycleSelected = transportMethods.includes('cycle');
 
   if (didPayExtraCosts === 'no') {
-    if (isCarSelected && isPublicTransportSelected) {
-      // Redirect to public transport method page if both car and public transport were selected and no extra costs were paid
-      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-public-transport-method');
+    if (isCarSelected && isPublicTransportSelected && isCycleSelected) {
+      // Redirect to public transport method page if 'car', 'public transport', and 'cycle' were all selected and no extra costs were paid
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-public-transport-method');
+    } else if (isCarSelected && isPublicTransportSelected) {
+      // Redirect to public transport method page if 'car' and 'public transport' were selected and no extra costs were paid
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-public-transport-method');
+    } else if (isCarSelected && isCycleSelected) {
+      // Redirect to cycle journey mileage if 'car' and 'cycle' were selected and no extra costs were paid
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-cycle-journey-mileage');
     } else if (isCarSelected) {
-      // Redirect to travel evidence page if only car was selected and no extra costs were paid
+      // Redirect to travel evidence page if only 'car' was selected and no extra costs were paid
       res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence');
     }
-  } else {
-    // User has selected car, or car and public transport and has paid extra costs
-    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-how-much-extra-costs');
-  }
 
+  } else if (didPayExtraCosts === 'yes') {
+      if (isCarSelected && isPublicTransportSelected && isCycleSelected) {
+        // Redirect to extra costs input page if 'car', 'public transport', and 'cycle' were all selected and user paid extra costs
+        res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-extra-costs-input');
+      } else if (isCarSelected && isPublicTransportSelected) {
+        // Redirect to extra costs input page if 'car' and 'public transport' were selected and user paid extra costs
+        res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-extra-costs-input');
+      } else if (isCarSelected && isCycleSelected) {
+        // Redirect to extra costs input page if 'car' and 'cycle' were selected and user paid extra costs
+        res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-extra-costs-input');
+      } else if (isCarSelected) {
+        // Redirect to extra costs input if only 'car' was selected and user paid extra costs
+        res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-extra-costs-input');
+      }
+  }
 });
 
-router.post('/v7/TDAE-accommodation-how-much-extra-costs', (req, res) => {
+
+router.post('/v7/TDAE-accommodation-travel-extra-costs-input', (req, res) => {
 
   const transportMethods = req.session.data['transport-method'];
 
-  // Check if the user previously selected 'car' and 'public transport' as transport methods
+  // Check if the user previously selected 'car', 'public transport' or 'cycle' as transport methods
   const isCarSelected = transportMethods.includes('car');
   const isPublicTransportSelected = transportMethods.includes('public-transport');
+  const isCycleSelected = transportMethods.includes('cycle');
 
   if (isCarSelected) {
-    if (isCarSelected && isPublicTransportSelected) {
-      // Redirect to public transport method page if both car and public transport were selected
-      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-public-transport-method');
+    if (isPublicTransportSelected && isCycleSelected) {
+      // Redirect to public transport method page if 'car', 'public transport' and 'cycle' were selected
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-public-transport-method');
+    } else if (isPublicTransportSelected) {
+      // Redirect to public transport method page if 'car' and 'public transport' were selected
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-public-transport-method');
+    } else if (isCycleSelected) {
+      // Redirect to cycle journey mileage if 'car' and 'cycle' were selected
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-cycle-journey-mileage');
     } else {
       // Redirect to travel evidence page if only car was selected
       res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence');
     }
   }
+});
+
+router.post('/v7/TDAE-accommodation-travel-public-transport-method', (req, res) => {
+
+  res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-public-transport-cost')
 
 });
 
-router.post('/v7/TDAE-accommodation-public-transport-method', (req, res) => {
+router.post('/v7/TDAE-accommodation-travel-public-transport-cost', (req, res) => {
 
-  res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-public-transport-cost')
+  const transportMethods = req.session.data['transport-method'];
 
-})
+  // Check if the user previously selected 'car', 'public transport' and 'cycle' as transport methods
+  const isCarSelected = transportMethods.includes('car');
+  const isPublicTransportSelected = transportMethods.includes('public-transport');
+  const isCycleSelected = transportMethods.includes('cycle');
 
-router.post('/v7/TDAE-accommodation-public-transport-cost', (req, res) => {
+  if (isCarSelected && isPublicTransportSelected && isCycleSelected) {
+      // Redirect to public transport method page if 'car', 'public transport' and 'cycle' were selected
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-cycle-journey-mileage');
+
+  } else if (isCarSelected && isPublicTransportSelected) {
+    // Redirect to travel evidence page if 'car' and 'public transport' were selected
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence');
+
+  } else if (isPublicTransportSelected && isCycleSelected) {
+    // Redirect to cycle journey mileage page if 'public transport' and 'cycle' were selected
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-cycle-journey-mileage');
+    
+  } else if (isPublicTransportSelected) {
+    // Redirect to travel evidence page if only 'public transport' was selected
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence');
+  }
+  
+});
+
+router.post('/v7/TDAE-accommodation-travel-cycle-journey-mileage', (req, res) => {
 
   res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence')
 
-})
+});
+  
 
 router.post('/v7/TDAE-accommodation-travel-evidence', (req, res) => {
 

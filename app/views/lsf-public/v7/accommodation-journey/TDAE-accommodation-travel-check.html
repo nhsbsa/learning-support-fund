@@ -18,7 +18,7 @@ Check your answers
 
 
 		<!-- if only one journey and direction of travel is from term-time address to accommodation -->
-		{% if data['number-of-journeys'] != '2' and data['direction-of-journey'] == 'termtime-to-accommodation' %}
+		{% if data['number-of-journeys'] != '2' and data['direction-of-travel'] == 'termtime-to-accommodation' %}
 				
 		<!-- if first journey = term-time to accommodation - direction of travel -->
 				<dl class="nhsuk-summary-list">
@@ -132,7 +132,7 @@ Check your answers
 							{% if data['accommodation-travel-mileage'] %}
 								{{ data['accommodation-travel-mileage'] }}
 								{% else %}
-								2.9
+								1.3
 							{% endif %}
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
@@ -152,10 +152,14 @@ Check your answers
 								Total extra costs amount
 							</dt>
 							<dd class="nhsuk-summary-list__value">
-								{% if data['car-extra-costs'] %}
+								{% if data['extra-costs'] == 'yes' %}
+									{% if data['car-extra-costs'] %}
 									£{{ data['car-extra-costs'] }}
 									{% else %}
 									£16.80
+									{% endif %}
+								{% else %}
+									None provided
 								{% endif %}
 							</dd>
 							{% if data['submit-claim'] != 'completed' %}
@@ -237,36 +241,40 @@ Check your answers
 				<!-- if first journey = term-time to accommodation and travelled by both car and public - additional comments -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Comments
+					  Comments
 					</dt>
 					<dd class="nhsuk-summary-list__value">
+					  {% if data['accommodation-travel-comments'] == 'yes' %}
 						{% if data['additionalCostsComment'] %}
-							{{ data['additionalCostsComment'] }}
-							{% else %}
-							It cost me £4.20 per day to park my car at Newcastle Central Station.
+						  {{ data['additionalCostsComment'] }}
+						{% else %}
+						  It cost me £4.20 per day to park my car at Newcastle Central Station.
 						{% endif %}
+					  {% else %}
+						None provided
+					  {% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
-					<dd class="nhsuk-summary-list__actions">
-						{% if data['additional-comments']  === 'yes' %}
-						<a href="TDAE-accommodation-travel-add-comment">
+					  <dd class="nhsuk-summary-list__actions">
+						{% if data['accommodation-travel-comments'] == 'yes' %}
+						  <a href="TDAE-accommodation-travel-add-comment">
 							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-						</a>
+						  </a>
 						{% else %}
-						<a href="TDAE-accommodation-travel-add-comment">
+						  <a href="TDAE-accommodation-travel-add-comment">
 							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
-						</a>
+						  </a>
 						{% endif %}
-						</dd>
-						{% endif %}
-				</div>
+					  </dd>
+					{% endif %}
+				  </div>
 
 				</dl>
 
 
 
 
-				{% elif data['number-of-journeys'] != '2' and data['direction-of-journey'] == 'accommodation-to-termtime' %}
+				{% elif data['number-of-journeys'] != '2' and data['direction-of-travel'] == 'accommodation-to-termtime' %}
 				<!-- if only one journey and direction of travel is from accommodation to term-time address -->
 								
 				<!-- if first journey = accommodation to term-time address - direction of travel -->
@@ -381,7 +389,7 @@ Check your answers
 							{% if data['accommodation-travel-mileage'] %}
 								{{ data['accommodation-travel-mileage'] }}
 								{% else %}
-								2.9
+								1.3
 							{% endif %}
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
@@ -401,10 +409,14 @@ Check your answers
 								Total extra costs amount
 							</dt>
 							<dd class="nhsuk-summary-list__value">
-								{% if data['car-extra-costs'] %}
+								{% if data['extra-costs'] == 'yes' %}
+									{% if data['car-extra-costs'] %}
 									£{{ data['car-extra-costs'] }}
 									{% else %}
-									£16.80
+									None provided
+									{% endif %}
+								{% else %}
+									None provided
 								{% endif %}
 							</dd>
 							{% if data['submit-claim'] != 'completed' %}
@@ -486,29 +498,34 @@ Check your answers
 				<!-- if first journey = accommodation to term-time address, and travelled by both car and public transport - additional comments -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Comments
+					  Comments
 					</dt>
 					<dd class="nhsuk-summary-list__value">
+					  {% if data['accommodation-travel-comments'] == 'yes' %}
 						{% if data['additionalCostsComment'] %}
-							{{ data['additionalCostsComment'] }}
-							{% else %}
-							It cost me £4.20 per day to park my car at Newcastle Central Station.
+						  {{ data['additionalCostsComment'] }}
+						{% else %}
+						  None provided
 						{% endif %}
+					  {% else %}
+						None provided
+					  {% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
-					<dd class="nhsuk-summary-list__actions">
-						{% if data['additional-comments']  === 'yes' %}
-						<a href="TDAE-accommodation-travel-add-comment">
+					  <dd class="nhsuk-summary-list__actions">
+						{% if data['accommodation-travel-comments'] == 'yes' %}
+						  <a href="TDAE-accommodation-travel-add-comment">
 							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-						</a>
+						  </a>
 						{% else %}
-						<a href="TDAE-accommodation-travel-add-comment">
+						  <a href="TDAE-accommodation-travel-add-comment">
 							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
-						</a>
+						  </a>
 						{% endif %}
-						</dd>
-						{% endif %}
-				</div>
+					  </dd>
+					{% endif %}
+				  </div>
+				
 
 				</dl>
 
@@ -641,7 +658,7 @@ Check your answers
 								{% if data['accommodation-travel-mileage'] %}
 									{{ data['accommodation-travel-mileage'] }}
 									{% else %}
-									2.9
+									1.3
 								{% endif %}
 							</dd>
 							{% if data['submit-claim'] != 'completed' %}
@@ -661,10 +678,14 @@ Check your answers
 									Total extra costs amount
 								</dt>
 								<dd class="nhsuk-summary-list__value">
-									{% if data['car-extra-costs'] %}
+									{% if data['extra-costs'] == 'yes' %}
+										{% if data['car-extra-costs'] %}
 										£{{ data['car-extra-costs'] }}
 										{% else %}
 										£16.80
+										{% endif %}
+									{% else %}
+										None provided
 									{% endif %}
 								</dd>
 								{% if data['submit-claim'] != 'completed' %}
@@ -746,29 +767,33 @@ Check your answers
 					<!-- if first journey = term-time to accommodation and travelled by both car and public - additional comments -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Comments
+						  Comments
 						</dt>
 						<dd class="nhsuk-summary-list__value">
+						  {% if data['accommodation-travel-comments'] == 'yes' %}
 							{% if data['additionalCostsComment'] %}
-								{{ data['additionalCostsComment'] }}
-								{% else %}
-								It cost me £4.20 per day to park my car at Newcastle Central Station.
+							  {{ data['additionalCostsComment'] }}
+							{% else %}
+							  It cost me £4.20 per day to park my car at Newcastle Central Station.
 							{% endif %}
+						  {% else %}
+							None provided
+						  {% endif %}
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
-						<dd class="nhsuk-summary-list__actions">
-							{% if data['additional-comments']  === 'yes' %}
-							<a href="TDAE-accommodation-travel-add-comment">
+						  <dd class="nhsuk-summary-list__actions">
+							{% if data['accommodation-travel-comments'] == 'yes' %}
+							  <a href="TDAE-accommodation-travel-add-comment">
 								Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							</a>
+							  </a>
 							{% else %}
-							<a href="TDAE-accommodation-travel-add-comment">
+							  <a href="TDAE-accommodation-travel-add-comment">
 								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							</a>
+							  </a>
 							{% endif %}
-							</dd>
-							{% endif %}
-					</div>
+						  </dd>
+						{% endif %}
+					  </div>
 
 				</dl>
 				<a class="nhsuk-button nhsuk-button--warning" href="TDAE-accommodation-travel-remove-journey-1">Remove journey</a>
@@ -904,7 +929,7 @@ Check your answers
 							{% if data['accommodation-travel-mileage'] %}
 								{{ data['accommodation-travel-mileage'] }}
 								{% else %}
-								2.9
+								1.3
 							{% endif %}
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
@@ -924,9 +949,13 @@ Check your answers
 								Total extra costs amount
 							</dt>
 							<dd class="nhsuk-summary-list__value">
-								{% if data['car-extra-costs'] %}
-									£{{ data['car-extra-costs'] }}
+								{% if data['extra-costs'] == 'yes' %}
+									{% if data['car-extra-costs'] %}
+										£{{ data['car-extra-costs'] }}
 									{% else %}
+										None provided
+									{% endif %}
+								{% else %}
 									None provided
 								{% endif %}
 							</dd>
@@ -1009,29 +1038,33 @@ Check your answers
 				<!-- if second journey = accommodation to term-time address, and travelled by both car and public - additional comments -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Comments
+					  Comments
 					</dt>
 					<dd class="nhsuk-summary-list__value">
+					  {% if data['accommodation-travel-comments'] == 'yes' %}
 						{% if data['additionalCostsComment'] %}
-							{{ data['additionalCostsComment'] }}
-							{% else %}
-							None provided
+						  {{ data['additionalCostsComment'] }}
+						{% else %}
+						  None provided
 						{% endif %}
+					  {% else %}
+						None provided
+					  {% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
-					<dd class="nhsuk-summary-list__actions">
-						{% if data['additional-comments']  === 'yes' %}
-						<a href="TDAE-accommodation-travel-add-comment">
+					  <dd class="nhsuk-summary-list__actions">
+						{% if data['accommodation-travel-comments'] == 'yes' %}
+						  <a href="TDAE-accommodation-travel-add-comment">
 							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-						</a>
+						  </a>
 						{% else %}
-						<a href="TDAE-accommodation-travel-add-comment">
+						  <a href="TDAE-accommodation-travel-add-comment">
 							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
-						</a>
+						  </a>
 						{% endif %}
-						</dd>
-						{% endif %}
-				</div>
+					  </dd>
+					{% endif %}
+				  </div>
 	    
 
 				</dl>
@@ -1051,25 +1084,141 @@ Check your answers
 			</dt>
 			<dd class="nhsuk-summary-list__value">
 				{% if data['number-of-journeys'] != '2' %}
-					£00.00
+					£25.70
 				{% else %}
-					£00.00
+					£34.60
 				{% endif %}
 			</dd>
 		</div>
 		</dl>
 
+		<details class="nhsuk-details">
+			<summary class="nhsuk-details__summary">
+			  <span class="nhsuk-details__summary-text">
+				Breakdown of your travel costs
+			  </span>
+			</summary>
+			<div class="nhsuk-details__text">
+				{% if data['number-of-journeys'] != '2' %}
+						<table class="nhsuk-table">
+						<thead role="rowgroup" class="nhsuk-table__head">
+							<tr role="row">
+								<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+	
+								</th>
+								<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+										Placement journey
+								</th>
+								<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+										University journey
+								</th>
+							</tr>
+						</thead>
+						<tbody class="nhsuk-table__body">
+							<tr role="row" class="nhsuk-table__row">
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+										<b>Type of travel</b>
+								</td>
+								<td class="nhsuk-table__cell " style="font-size: 1rem;">
+										Car and Public Transport
+								</td>
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+										Walk
+								</td>
+							</tr>
+							<tr role="row" class="nhsuk-table__row">
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+									<b>Journey mileage cost</b>
+								</td>
+								<td class="nhsuk-table__cell " style="font-size: 1rem;">
+									£25.70
+								</td>
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+	
+								</td>
+							<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+										<b>Total cost</b>
+								</td>
+								<td class="nhsuk-table__cell " style="font-size: 1rem;">
+									£25.70
+								</td>
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<p><b>Amount to be reimbursed: £25.70</b></p>
+						{% else %}
+
+						<table class="nhsuk-table">
+							<thead role="rowgroup" class="nhsuk-table__head">
+								<tr role="row">
+									<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+		
+									</th>
+									<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+											Placement journey
+									</th>
+									<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+											University journey
+									</th>
+								</tr>
+							</thead>
+							<tbody class="nhsuk-table__body">
+								<tr role="row" class="nhsuk-table__row">
+									<td class="nhsuk-table__cell" style="font-size: 1rem;">
+											<b>Type of travel</b>
+									</td>
+									<td class="nhsuk-table__cell " style="font-size: 1rem;">
+											Car and Public Transport
+									</td>
+									<td class="nhsuk-table__cell" style="font-size: 1rem;">
+											Walk
+									</td>
+								</tr>
+								<tr role="row" class="nhsuk-table__row">
+									<td class="nhsuk-table__cell" style="font-size: 1rem;">
+										<b>Journey mileage cost</b>
+									</td>
+									<td class="nhsuk-table__cell " style="font-size: 1rem;">
+										£34.60
+									</td>
+									<td class="nhsuk-table__cell" style="font-size: 1rem;">
+		
+									</td>
+								<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+									<td class="nhsuk-table__cell" style="font-size: 1rem;">
+											<b>Total cost</b>
+									</td>
+									<td class="nhsuk-table__cell " style="font-size: 1rem;">
+										£34.60
+									</td>
+									<td class="nhsuk-table__cell" style="font-size: 1rem;">
+	
+									</td>
+								</tr>
+							</tbody>
+							</table>
+	
+						<p><b>Amount to be reimbursed: £34.60</b></p>
+						{% endif %}
+					</div>
+				</details>
+
 
 		<div class="button-container">
 
 			{% if data['submit-claim'] != 'completed' %}
-				<form action="v7/TDAE-accommodation-travel-check" method="POST">
+				<form action="../v7/TDAE-accommodation-travel-check" method="POST">
 					<button style="margin-right:20px;" class="nhsuk-button style=padding-right:10px;" type="submit">
 						Save and continue
 					</button>
 				</form>
 
-				<form action="/lsf-public/v7/accommodation-journey/TDAE-accommodation-direction-of-travel?vehicle-number=2" method="POST">
+				<form action="/lsf-public/v7/accommodation-journey/TDAE-accommodation-direction-of-travel?number-of-journeys=2" method="POST">
 					<button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
 						Add another journey
 					</button>

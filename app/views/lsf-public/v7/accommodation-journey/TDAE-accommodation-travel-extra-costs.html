@@ -16,7 +16,11 @@ Did you pay any extra costs during your car journey?
 
         <form action="../v7/TDAE-accommodation-travel-extra-costs" method="POST">
 
-          <h1 class="nhsuk-heading-l">Did you pay any extra costs for driving?</h1>
+          {% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
+          <h1 class="nhsuk-heading-l">Did you pay any extra costs for driving to your accommodation?</h1>
+          {% else %}
+          <h1 class="nhsuk-heading-l">Did you pay any extra costs for driving to your term-time address?</h1>
+          {% endif %}	
 
           <p>You can claim back extra costs for:</p>
           <ul>
@@ -24,6 +28,10 @@ Did you pay any extra costs during your car journey?
           <li>tunnell or toll charges</li>
           <li>congestion or clean air charges</li>
           </ul>
+
+          <div class="nhsuk-hint" id="contact-hint">
+            You cannot claim for any extra costs that you have already claimed for, unless they cover more than one day.
+          </div>
           
           <div class="nhsuk-form-group">
             <div class="nhsuk-radios">

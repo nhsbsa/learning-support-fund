@@ -16,17 +16,17 @@ What accommodation address were you travelling to?
 
         <form action="../v7/TDAE-accommodation-travel-address" method="POST">
 
-          {% if 'accommodation-address' in data and data['direction-of-travel'] == 'termtime-to-accommodation' %}
+          {% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
               <h1 class="nhsuk-heading-l">Which accommodation address were you travelling to?</h1>
           {% else %}
-              <h1 class="nhsuk-heading-l">What was the address of your accommodation?</h1>
+              <h1 class="nhsuk-heading-l">Which accommodation address were you travelling from?</h1>
           {% endif %}
-
-
-          {% if data['accommodation-address'] is defined and data['accommodation-address'] %}
+              
           <div class="nhsuk-hint nhsuk-u-margin-bottom-2">
             You can choose a previous answer or add a new accommodation address.
           </div>
+
+          <br>
 
           <div class="nhsuk-form-group">
             <div class="nhsuk-radios">
@@ -43,90 +43,20 @@ What accommodation address were you travelling to?
               </div>
 
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="accommodation-address-2" name="accommodation-address" type="radio" value="2">
-                <label class="nhsuk-label nhsuk-radios__label" for="accommodation-address-2">
-                  Premier Inn Newcastle Gosforth<br>
-                  Moor Farm Roundabout<br>
-                  Off Front Street<br>
-                  Annistsford<br>
-                  Cramlington<br>
-                  NE23 7QA
-                </label>
-              </div>
-
-              <div class="nhsuk-radios__divider">or</div> <br>
-
-              <div class="nhsuk-radios nhsuk-radios--conditional">
-
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="accommodation-address-new" name="accommodation-address" type="radio" value="new-address" aria-controls="conditional-accommodation-address-3" aria-expanded="false">
+                <input class="nhsuk-radios__input" id="accommodation-address-new" name="accommodation-address" type="radio" value="new-address">
                 <label class="nhsuk-label nhsuk-radios__label" for="accommodation-address-new">
                   Add a new address
                 </label>
               </div>
 
-                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-accommodation-address-3">
-
-                  <div class="nhsuk-form-group">
-                    <label class="nhsuk-label" for="accommodation-building-name">
-                      Building name or number
-                    </label>
-                    <input class="nhsuk-input" id="accommodation-building-name" name="accommodation-building-name" type="text">
-                  </div>
-
-                  <div class="nhsuk-form-group">
-                    <label class="nhsuk-label" for="address-line-1">
-                      Address line 1
-                    </label>
-                    <input class="nhsuk-input" id="address-line-1" name="address-line-1" type="text">
-                  </div>
-
-                  <div class="nhsuk-form-group">
-                    <label class="nhsuk-label" for="address-line-2">
-                      Address line 2 (optional)
-                    </label>
-                    <input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text">
-                  </div>
-
-                  <div class="nhsuk-form-group">
-                    <label class="nhsuk-label" for="address-line-3">
-                      Address line 3 (optional)
-                    </label>
-                    <input class="nhsuk-input" id="address-line-3" name="address-line-3" type="text">
-                  </div>
-
-                  <div class="nhsuk-form-group">
-                    <label class="nhsuk-label" for="address-town">
-                      Town or city
-                    </label>
-                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text">
-                  </div>
-
-                  <div class="nhsuk-form-group">
-                    <label class="nhsuk-label" for="address-county">
-                      County (optional)
-                    </label>
-                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-county" name="address-county" type="text">
-                  </div>
-
-                  <div class="nhsuk-form-group">
-                    <label class="nhsuk-label" for="address-postcode">
-                      Postcode
-                    </label>
-                    <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
-                  </div>
-                </div>
-            
-              </div>
-
-              <br>
-
+            </div>
           </div>
-        </div>
 
 
-        <!-- If no accommodation address found, user has to enter a new address here -->
-        {% else %}
+        <!-- If no previous accommodation address found, user has to enter a new address - page heading will change to -->
+        <!--
+        <h1 class="nhsuk-heading-l">What was the address of your accommodation?</h1>
+
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="accommodation-building-name">
             Building name or number
@@ -175,8 +105,9 @@ What accommodation address were you travelling to?
           </label>
           <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
         </div>
+        -->
 
-        {% endif %}
+
 
           <button class="nhsuk-button" type="submit">Continue</button><br>
           <a href="TDAE-task-list">Cancel</a>
