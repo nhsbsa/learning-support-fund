@@ -34,21 +34,28 @@
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="claiming-for-car" name="claiming-for" type="checkbox" value="car" {{ checked('car') }}>
               <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-car">
-                Driving to placement
+                Car journey to placement or accommodation
               </label>
             </div>
 
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="claiming-for-public" name="claiming-for" type="checkbox" value="Public transport" {{ checked('Public transport') }}>
               <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-public">
-                Public transport journey to placement
+                Public transport journey to placement or accommodation
               </label>
             </div>
 
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="claiming-for-cycle" name="claiming-for" type="checkbox" value="Cycle" {{ checked('Cycle') }}>
               <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-cycle">
-                Cycling to placement
+                Cycle journey to placement or accommodation
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="claiming-for-taxi" name="claiming-for" type="checkbox" value="taxi">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-taxi">
+                Taxi journey to placement
               </label>
             </div>
 
@@ -73,41 +80,6 @@
               </label>
             </div>
 
-          </div>
-
-      </div>
-
-      <div class="nhsuk-form-group">
-
-          <h2 class="nhsuk-heading-m">Costs requiring prior authorisation</h2>
-
-          <details class="nhsuk-details">
-            <summary class="nhsuk-details__summary">
-              <span class="nhsuk-details__summary-text">
-                When can I claim these costs?
-              </span>
-            </summary>
-            <div class="nhsuk-details__text">
-              <p>You need permission from your university to hire a car. Contact your university before hiring a car for approval. To claim the costs of this, you will need to tell us:</p>
-              <ul>
-                <li>which dates you hired a car on</li>
-                <li>why you had to hire a car</li>
-                <li>who at your university approved your request</li>
-                <li>when this request was approved</li>
-              </ul>
-
-            </div>
-          </details>
-
-          <div class="nhsuk-checkboxes">
-
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="claiming-for-taxi" name="claiming-for" type="checkbox" value="taxi">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-taxi">
-                Taxi journey to placement
-              </label>
-            </div>
-
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="claiming-for-overseas" name="claiming-for" type="checkbox" value="overseas">
               <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-overseas">
@@ -123,10 +95,27 @@
             </div>
 
           </div>
-
         </fieldset>
 
       </div>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            When can I hire a car?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>You need permission from your university to hire a car. Contact your university before hiring a car for approval. To claim the costs of this, you will need to tell us:</p>
+          <ul>
+            <li>which dates you hired a car on</li>
+            <li>why you had to hire a car</li>
+            <li>who at your university approved your request</li>
+            <li>when this request was approved</li>
+          </ul>
+
+        </div>
+      </details>
 
       <button class="nhsuk-button" type="submit">Continue</button><br>
       <a href="TDAE-start-claim">Cancel</a>

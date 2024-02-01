@@ -1530,7 +1530,13 @@ router.post('/v7/TDAE-normal-return-mileage', (req, res) => {
 
 router.post('/v7/TDAE-normal-cycle-return-mileage', (req, res) => {
 
-    res.redirect('/lsf-public/v7/TDAE-normal-cycle-additional-costs-often')
+    const modeOfTransport = req.session.data['mode-of-transport']
+
+    if (modeOfTransport.includes('public')) {
+        res.redirect('/lsf-public/v7/TDAE-normal-public-additional-costs-often')
+    } else {
+        res.redirect('/lsf-public/v7/TDAE-additional-costs-comments')
+    }
 
 })
 
