@@ -1,0 +1,109 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Which days does this evidence relate to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v6/TDAE-placement-address-days-missing" method="POST">
+
+
+            <div class="nhsuk-form-group">
+
+              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  <h1 class="nhsuk-fieldset__heading">
+                    Which placement address were you travelling to on Thursday 24 December?
+                  </h1>
+                </legend>
+
+                <div class="nhsuk-hint">
+                  You have not selected a placement address for this date yet.
+                </div>
+
+                <div class="nhsuk-radios">
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="day-address-1" name="day-address" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="day-address-1">
+                      Newcastle Hospital, NE1 1AA
+                      <details style="margin-bottom: 0px;" class="nhsuk-details">
+                        <summary class="nhsuk-details__summary">
+                          <span class="nhsuk-details__summary-text">
+                            View full address
+                          </span>
+                        </summary>
+                        <div class="nhsuk-details__text">
+                          Newcastle Hospital<br>
+                          Main Street<br>
+                          Newcastle<br>
+                          NE1 1AA
+                        </div>
+                      </details>
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="day-address-2" name="day-address" type="radio" value="no">
+                    <label class="nhsuk-label nhsuk-radios__label" for="day-address-2">
+                      Freemans Hospital, NE2 2BC
+                      <details style="margin-bottom: 0px;" class="nhsuk-details">
+                        <summary class="nhsuk-details__summary">
+                          <span class="nhsuk-details__summary-text">
+                            View full address
+                          </span>
+                        </summary>
+                        <div class="nhsuk-details__text">
+                          Freemans Hospital<br>
+                          Freemans Road<br>
+                          Newcastle<br>
+                          NE2 2BC
+                        </div>
+                      </details>
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="day-address-2" name="day-address" type="radio" value="no">
+                    <label class="nhsuk-label nhsuk-radios__label" for="day-address-2">
+                      Add a new placement address
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__divider">or</div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="day-address-3" name="day-address" type="radio" value="remove">
+                    <label class="nhsuk-label nhsuk-radios__label" for="day-address-3">
+                      Remove this travel day
+                    </label>
+                  </div>
+
+                </div>
+
+              </fieldset>
+
+            </div>
+
+
+            <button class="nhsuk-button">Save and continue</button><br>
+
+
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

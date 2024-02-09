@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Is your term time address the same?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v7-demo/TDAE-accommodation-same-cost" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Did each night of your stay cost the same for this booking?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-hint">You need to check if your accommodation cost different prices on different nights. You can usually find this information on your booking confirmation.</div>
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="accommodation-same-cost-yes" name="accommodation-same-cost" type="radio" value="Yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="accommodation-same-cost-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="accommodation-same-cost-no" name="accommodation-same-cost" type="radio" value="No">
+                  <label class="nhsuk-label nhsuk-radios__label" for="accommodation-same-cost-no">
+                    No
+                  </label>
+                </div>
+
+              </div>
+
+            </fieldset>
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

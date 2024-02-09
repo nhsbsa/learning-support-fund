@@ -1,0 +1,358 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+			"href": "javascript:history.go(-1)",
+			"text": "Go back"
+		}) }}
+
+		<!-- <form action="" method="POST"> -->
+
+		<h1 class="nhsuk-heading-xl">Check your placement travel details</h1>
+
+	    <dl class="nhsuk-summary-list">
+
+				{% if checked('claiming-for', 'car') %}
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Miles travelled to and from placement
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						80
+					</dd>
+				</div>
+				<!--<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Community miles travelled
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						38
+					</dd>
+				</div>
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Types of extra costs
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						Parking charges
+					</dd>
+				</div>
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Extra costs total amount
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						£16
+					</dd>
+				</div>-->
+				{% endif %}
+				{% if checked('claiming-for', 'Cycle') %}
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Cycle miles travelled to and from placement
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						52.8
+					</dd>
+				</div>
+				{% endif %}
+				{% if checked('claiming-for', 'Public transport') %}
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Total public transport tickets cost
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						£41.28
+					</dd>
+					<dd class="nhsuk-summary-list__actions">
+
+			    </dd>
+				</div>
+				{% endif %}
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Comments
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['placement-related-comments']  === 'yes' %}
+						 Comment added
+						{% else %}
+							Comment not added
+						{% endif %}
+					</dd>
+					<dd class="nhsuk-summary-list__actions">
+						{% if data['placement-related-comments']  === 'yes' %}
+						<a href="TDAE-normal-comments-view">
+							Review<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
+						</a>
+						{% else %}
+						<a href="TDAE-additional-costs-comments">
+							Change<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
+						</a>
+						{% endif %}
+					</dd>
+				</div>
+	    </dl>
+
+			<a href="TDAE-placement-itinerary" class="nhsuk-button nhsuk-button--secondary">Change your placement travel details</a>
+
+			<h2 class="nhsuk-heading-m">Total placement travel costs to be reimbursed</h2>
+	    <dl class="nhsuk-summary-list">
+
+				<div class="nhsuk-summary-list__row">
+	        <dt class="nhsuk-summary-list__key">
+	          Amount to be reimbursed
+	        </dt>
+	        <dd class="nhsuk-summary-list__value">
+	            {% if checked('claiming-for', 'car') %}
+							£33.60
+							{% elif data['claiming-for'] == 'Cycle' %}
+							£15.84
+							{% else %}
+							£21.12
+							{% endif %}
+	        </dd>
+	      </div>
+
+	    </dl>
+
+			<details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Breakdown of your travel costs
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+					{% if checked('claiming-for', 'car') %}
+					<table class="nhsuk-table">
+					<thead role="rowgroup" class="nhsuk-table__head">
+						<tr role="row">
+							<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+
+							</th>
+							<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+									Placement journey
+							</th>
+							<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+									University journey
+							</th>
+						</tr>
+					</thead>
+					<tbody class="nhsuk-table__body">
+						<tr role="row" class="nhsuk-table__row">
+							<td class="nhsuk-table__cell" style="font-size: 1rem;">
+									<b>Type of travel</b>
+							</td>
+							<td class="nhsuk-table__cell " style="font-size: 1rem;">
+									Car
+							</td>
+							<td class="nhsuk-table__cell" style="font-size: 1rem;">
+									Walk
+							</td>
+						</tr>
+						<tr role="row" class="nhsuk-table__row">
+							<td class="nhsuk-table__cell" style="font-size: 1rem;">
+								<b>Journey mileage cost</b>
+							</td>
+							<td class="nhsuk-table__cell " style="font-size: 1rem;">
+								£33.60
+							</td>
+							<td class="nhsuk-table__cell" style="font-size: 1rem;">
+
+							</td>
+						</tr>
+						<!--<tr role="row" class="nhsuk-table__row">
+							<td class="nhsuk-table__cell" style="font-size: 1rem;">
+								<b>Journey public transport cost</b>
+							</td>
+							<td class="nhsuk-table__cell " style="font-size: 1rem;">
+								£41.28
+							</td>
+							<td class="nhsuk-table__cell" style="font-size: 1rem;">
+
+							</td>
+						</tr>
+						<tr role="row" class="nhsuk-table__row">
+							<td class="nhsuk-table__cell" style="font-size: 1rem;">
+								<b>Community mileage cost</b>
+							</td>
+							<td class="nhsuk-table__cell" style="font-size: 1rem;">
+								<span class="nhsuk-u-visually-hidden">No cost</span>
+							</td>
+							<td class="nhsuk-table__cell " style="font-size: 1rem;">
+									£8.40
+							</td>
+						</tr>
+						<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+							<td class="nhsuk-table__cell" style="font-size: 1rem;">
+									<b>Additional costs</b>
+							</td>
+							<td class="nhsuk-table__cell" style="font-size: 1rem;">
+									£15
+							</td>
+							<td class="nhsuk-table__cell " style="font-size: 1rem;">
+									£18
+							</td>
+						</tr>-->
+						<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+							<td class="nhsuk-table__cell" style="font-size: 1rem;">
+									<b>Total cost</b>
+							</td>
+							<td class="nhsuk-table__cell " style="font-size: 1rem;">
+								£33.60
+							</td>
+							<td class="nhsuk-table__cell" style="font-size: 1rem;">
+
+							</td>
+						</tr>
+					</tbody>
+					</table>
+
+					<p><b>Amount to be reimbursed: £33.60</b></p>
+					{% else %}
+						<table class="nhsuk-table">
+	          <thead role="rowgroup" class="nhsuk-table__head">
+	            <tr role="row">
+	              <th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+
+	              </th>
+	              <th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+	                  Placement journey
+	              </th>
+	              <th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+	                  University journey
+	              </th>
+	            </tr>
+	          </thead>
+	          <tbody class="nhsuk-table__body">
+	            <tr role="row" class="nhsuk-table__row">
+	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+	                  <b>Type of travel</b>
+	              </td>
+	              <td class="nhsuk-table__cell " style="font-size: 1rem;">
+	                  Public transport
+	              </td>
+	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+	                  Car
+	              </td>
+	            </tr>
+	            <tr role="row" class="nhsuk-table__row">
+	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+	                <b>Journey mileage cost</b>
+	              </td>
+	              <td class="nhsuk-table__cell " style="font-size: 1rem;">
+
+	              </td>
+	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+	                £20.16
+	              </td>
+	            </tr>
+	            <tr role="row" class="nhsuk-table__row">
+	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+	                <b>Journey public transport cost</b>
+	              </td>
+	              <td class="nhsuk-table__cell " style="font-size: 1rem;">
+	                £41.28
+	              </td>
+	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+
+	              </td>
+	            </tr>
+	            <!--<tr role="row" class="nhsuk-table__row">
+	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+	                <b>Community mileage cost</b>
+	              </td>
+	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+	                <span class="nhsuk-u-visually-hidden">No cost</span>
+	              </td>
+	              <td class="nhsuk-table__cell " style="font-size: 1rem;">
+	                  £8.40
+	              </td>
+	            </tr>
+	            <tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+	                  <b>Additional costs</b>
+	              </td>
+	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+	                  £15
+	              </td>
+	              <td class="nhsuk-table__cell " style="font-size: 1rem;">
+	                  £18
+	              </td>
+	            </tr>-->
+	            <tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+	                  <b>Total cost</b>
+	              </td>
+	              <td class="nhsuk-table__cell " style="font-size: 1rem;">
+	                £41.28
+	              </td>
+	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
+	                £20.16
+	              </td>
+	            </tr>
+	          </tbody>
+	          </table>
+
+	          <p><b>Amount to be reimbursed: £21.12</b></p>
+					{% endif %}
+        </div>
+      </details>
+
+
+			{% if data['submit-claim'] != 'completed' %}
+				<form action="v7-demo/TDAE-placement-cya" method="POST">
+					<button class="nhsuk-button" type="submit">Save and continue</button><br>
+				</form>
+			{% endif %}
+
+		<!-- </form> -->
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			const months = {
+				"01": "January",
+				"02": "February",
+				"03": "March",
+				"04": "April",
+				"05": "May",
+				"06": "June",
+				"07": "July",
+				"08": "August",
+				"09": "September",
+				"1": "January",
+				"2": "February",
+				"3": "March",
+				"4": "April",
+				"5": "May",
+				"6": "June",
+				"7": "July",
+				"8": "August",
+				"9": "September",
+				"10": "October",
+				"11": "November",
+				"12": "December",
+			};
+
+			$(".cya-month").text(function () {
+				const month = $(this).text();
+				console.log("month:", month);
+				console.log("months[month]:", months[month]);
+				return months[month];
+			});
+		});
+		</script>
+
+</div>
+{% endblock %}

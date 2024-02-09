@@ -1,0 +1,141 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<!-- <form action="" method="POST"> -->
+
+		<h1 class="nhsuk-heading-xl">Check your answers</h1>
+
+		<dl class="nhsuk-summary-list">
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Hire vehicle total amount
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{% if data['hire-car-cost'] %}
+					 £{{ data['hire-car-cost'] }}
+					{% else %}
+						£120
+					{% endif %}
+				</dd>
+				<dd class="nhsuk-summary-list__actions">
+					<a href="/lsf-public/v7-demo/TDAE-hire-car-cost">
+						Change<span class="nhsuk-u-visually-hidden"> hire car ammount</span>
+					</a>
+				</dd>
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Date(s) vehicle hired
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					30 November 2023
+				</dd>
+				<dd class="nhsuk-summary-list__actions">
+					<a href="/lsf-public/v7-demo/TDAE-hire-car-dates">
+						Change<span class="nhsuk-u-visually-hidden">Date vehicle hired</span>
+					</a>
+				</dd>
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Reason for hiring vehicle
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					I had an emergency situation
+				</dd>
+				<dd class="nhsuk-summary-list__actions">
+					<a href="/lsf-public/v7-demo/TDAE-hire-car-reason">
+						Change<span class="nhsuk-u-visually-hidden">Reason for vehicle hire</span>
+					</a>
+				</dd>
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Approved by
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					John Doe
+				</dd>
+				<dd class="nhsuk-summary-list__actions">
+					<a href="/lsf-public/v7-demo/TDAE-hire-car-reason">
+						Change<span class="nhsuk-u-visually-hidden">Approver</span>
+					</a>
+				</dd>
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Evidence
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					1 evidence uploaded
+				</dd>
+				<dd class="nhsuk-summary-list__actions">
+					<a href="/lsf-public/v7-demo/TDAE-hire-car-mini-cya">
+						Review<span class="nhsuk-u-visually-hidden"> hire car evidence</span>
+					</a>
+				</dd>
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Comments
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{% if data['hire-car-comments']  === 'yes' %}
+					 {{ data['hire-car-comment'] }}
+					{% else %}
+						Not provided
+					{% endif %}
+				</dd>
+				<dd class="nhsuk-summary-list__actions">
+					<a href="/lsf-public/v7-demo/TDAE-hire-car-comment">
+						Change<span class="nhsuk-u-visually-hidden"> hire car comments</span>
+					</a>
+				</dd>
+
+			</div>
+
+			</dl>
+
+			<h2 class="nhsuk-heading-m">Hire vehicle costs to be reimbursed</h2>
+			<dl class="nhsuk-summary-list">
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key" style="width: 50%;">
+						Cost to be reimbursed
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['hire-car-cost'] %}
+						 £{{ data['hire-car-cost'] }}
+						{% else %}
+							£120
+						{% endif %}
+					</dd>
+				</div>
+
+			</dl>
+
+			{% if data['submit-claim'] != 'completed' %}
+				<form action="/lsf-public/v7-demo/TDAE-hire-car-cya" method="POST">
+					<button class="nhsuk-button" type="submit">Save and continue</button><br>
+				</form>
+			{% endif %}
+
+		<!-- </form> -->
+
+	</div>
+
+</div>
+{% endblock %}

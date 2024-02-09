@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Is this your final year?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <form action="v7-demo/final-year" method="POST">
+
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">SSRN0000059 - Joe Bloggs</span>Is this your final year?</h1>
+                </legend>
+            
+                <div class="nhsuk-radios nhsuk-radios--inline">
+            
+                    <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="final-year-yes" name="final-year" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="final-year-yes">
+                        Yes
+                    </label>
+                    </div>
+            
+                    <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="final-year-no" name="final-year" type="radio" value="no">
+                    <label class="nhsuk-label nhsuk-radios__label" for="final-year-no">
+                        No
+                    </label>
+                    </div>
+            
+                </div>
+                </fieldset>
+            
+            </div>
+
+            <button class="nhsuk-button" type="submit">Next</button><br>
+            <a href="dashboard">Cancel</a>
+
+        </form>
+
+
+    </div>
+
+  </div>
+{% endblock %}

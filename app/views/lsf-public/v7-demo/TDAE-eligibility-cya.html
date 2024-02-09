@@ -1,0 +1,206 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-heading-xl">Check your answers</h1>
+
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Claim dates
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['claim-start-day'] %}
+                  {{ data['claim-start-day'] }} <span class="cya-month">{{ data['claim-start-month'] }}</span> {{ data['claim-start-year'] }}
+                {% else %}
+                  6 October 2023
+                {% endif %}
+                 to
+                {% if data['claim-end-day'] %}
+                  {{ data['claim-end-day'] }} <span class="cya-month">{{ data['claim-end-month'] }}</span> {{ data['claim-end-year'] }}
+                {% else %}
+                  9 October 2023
+                {% endif %}
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="TDAE-incur-costs">
+                  Change<span class="nhsuk-u-visually-hidden"> claim start date</span>
+                </a>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Academic year
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <span class="capitalize">
+                  {% if data['academic-year'] == 'yes' %}
+                    2022/23
+                  {% else %}
+                    2023/24
+                  {% endif %}
+                </span>
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                {% if data['academic-year'] %}
+                <a href="TDAE-academic-year">
+                  Change<span class="nhsuk-u-visually-hidden"> academic year</span>
+                </a>
+                {% endif %}
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Paid costs for
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <span class="capitalize">{{ data['claiming-for'] }}</span>
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="TDAE-travel-accommodation?change=yes">
+                  Change<span class="nhsuk-u-visually-hidden"> paid costs for</span>
+                </a>
+              </dd>
+            </div>
+<!--
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Reused answers from previous claim
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{ data['reused-details'] }}
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="TDAE-reuse-details">
+                  Change<span class="nhsuk-u-visually-hidden"> are you claiming for a car journey?</span>
+                </a>
+
+              </dd>
+            </div>
+-->
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Placement address
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['address-number'] == '2' %}
+                  2 placement addresses added
+                {% elif data['address-number'] == '3' %}
+                  3 placement addresses added
+                {% elif data['address-number'] == '4' %}
+                  4 placement addresses added
+                {% elif data['placement-building-name'] %}
+                  {{ data['placement-building-name'] }}<br>
+                  {{ data['placement-address-line-1'] }}<br>
+                  {% if data['placement-address-line-2'] %}
+                    {{ data['placement-address-line-2'] }}<br>
+                  {% endif %}
+                  {% if data['placement-address-line-3'] %}
+                    {{ data['placement-address-line-3'] }}<br>
+                  {% endif %}
+                  {{ data['placement-address-town'] }}<br>
+                  {{ data['placement-address-postcode'] }}<br>
+
+                {% else %}
+                  123 Practice Placement<br>
+                  Newcastle Tyne and Wear<br>
+                  NE12 3AB
+                {% endif %}
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="TDAE-placement-address-cya">
+                  Change<span class="nhsuk-u-visually-hidden"> placement address</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+      				<dt class="nhsuk-summary-list__key">
+      					Term-time address
+      				</dt>
+      				<dd class="nhsuk-summary-list__value">
+      					{% if data['term-building-name'] %}
+      						{{ data['term-building-name'] }}<br>
+      						{{ data['term-address-line-1'] }}<br>
+      						{% if data['term-address-line-2'] %}
+      							{{ data['term-address-line-2'] }}<br>
+      						{% endif %}
+      						{% if data['term-address-line-3'] %}
+      							{{ data['term-address-line-3'] }}<br>
+      						{% endif %}
+      						{{ data['term-address-town'] }}<br>
+      						{{ data['term-address-postcode'] }}<br>
+      					{% else %}
+      						123<br>
+      						Building street 1<br>
+      						Building street 2<br>
+      						Town<br>
+      						County<br>
+      						NE33 3AB
+      					{% endif %}
+      				</dd>
+      				{% if data['submit-claim'] != 'completed' %}
+      				<dd class="nhsuk-summary-list__actions">
+      					<a href="TDAE-term-time-address">
+      						Change<span class="nhsuk-u-visually-hidden"> term time address</span>
+      					</a>
+      				</dd>
+      		{% endif %}
+      			</div>
+
+        </dl>
+
+        <form action="TDAE-task-list" method="POST">
+            <button class="nhsuk-button" type="submit">Save and continue</button><br>
+            <a href="#">Cancel</a>
+        </form>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        const months = {
+          "01": "January",
+  				"02": "February",
+  				"03": "March",
+  				"04": "April",
+  				"05": "May",
+  				"06": "June",
+  				"07": "July",
+  				"08": "August",
+  				"09": "September",
+  				"1": "January",
+  				"2": "February",
+  				"3": "March",
+  				"4": "April",
+  				"5": "May",
+  				"6": "June",
+  				"7": "July",
+  				"8": "August",
+  				"9": "September",
+  				"10": "October",
+  				"11": "November",
+  				"12": "December",
+        };
+
+        $(".cya-month").text(function () {
+          const month = $(this).text();
+          console.log("month:", month);
+          console.log("months[month]:", months[month]);
+          return months[month];
+        });
+      });
+      </script>
+
+
+</div>
+{% endblock %}

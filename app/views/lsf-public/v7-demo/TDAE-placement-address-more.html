@@ -1,0 +1,127 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What is your placement address?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="TDAE-placement-address-cya" method="POST">
+
+
+			<fieldset class="nhsuk-fieldset">
+				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+					<h1 class="nhsuk-fieldset__heading">
+						Add another placement address
+					</h1>
+				</legend>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="placement-building-name">
+						Building name or number
+					</label>
+					{% if data['address-number'] == '1' %}
+					<input class="nhsuk-input" id="placement-building-name" name="placement-building-name" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '2' %}
+					<input class="nhsuk-input" id="placement-building-name" name="placement-2-building-name" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '3' %}
+					<input class="nhsuk-input" id="placement-building-name" name="placement-3-building-name" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '4' %}
+					<input class="nhsuk-input" id="placement-building-name" name="placement-4-building-name" type="text" autocomplete="cc-csc">
+					{% endif %}
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="placement-address-line-1">
+						Address line 1
+					</label>
+					{% if data['address-number'] == '1' %}
+					<input class="nhsuk-input" id="placement-address-line-1" name="placement-address-line-1" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '2' %}
+					<input class="nhsuk-input" id="placement-address-line-1" name="placement-2-address-line-1" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '3' %}
+					<input class="nhsuk-input" id="placement-address-line-1" name="placement-3-address-line-1" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '4' %}
+					<input class="nhsuk-input" id="placement-address-line-1" name="placement-4-address-line-1" type="text" autocomplete="cc-csc">
+					{% endif %}
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="placement-address-line-2">
+						Address line 2 (optional)
+					</label>
+					{% if data['address-number'] == '1' %}
+					<input class="nhsuk-input" id="placement-address-line-2" name="placement-address-line-2" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '2' %}
+					<input class="nhsuk-input" id="placement-address-line-2" name="placement-2-address-line-2" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '3' %}
+					<input class="nhsuk-input" id="placement-address-line-2" name="placement-3-address-line-2" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '4' %}
+					<input class="nhsuk-input" id="placement-address-line-2" name="placement-4-address-line-2" type="text" autocomplete="cc-csc">
+					{% endif %}
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="placement-address-line-3">
+						Address line 3 (optional)
+					</label>
+					{% if data['address-number'] == '1' %}
+					<input class="nhsuk-input" id="placement-address-line-3" name="placement-address-line-3" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '2' %}
+					<input class="nhsuk-input" id="placement-address-line-3" name="placement-2-address-line-3" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '3' %}
+					<input class="nhsuk-input" id="placement-address-line-3" name="placement-3-address-line-3" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '4' %}
+					<input class="nhsuk-input" id="placement-address-line-3" name="placement-4-address-line-3" type="text" autocomplete="cc-csc">
+					{% endif %}
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="placement-address-town">
+						Town or city
+					</label>
+					{% if data['address-number'] == '1' %}
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="placement-address-town" name="placement-address-town" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '2' %}
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="placement-address-town" name="placement-2-address-town" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '3' %}
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="placement-address-town" name="placement-3-address-town" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '4' %}
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="placement-address-town" name="placement-4-address-town" type="text" autocomplete="cc-csc">
+					{% endif %}
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="placement-address-postcode">
+						Postcode
+					</label>
+					{% if data['address-number'] == '1' %}
+					<input class="nhsuk-input nhsuk-input--width-10" id="placement-address-postcode" name="placement-address-postcode" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '2' %}
+					<input class="nhsuk-input nhsuk-input--width-10" id="placement-address-postcode" name="placement-2-address-postcode" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '3' %}
+					<input class="nhsuk-input nhsuk-input--width-10" id="placement-address-postcode" name="placement-3-address-postcode" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '4' %}
+					<input class="nhsuk-input nhsuk-input--width-10" id="placement-address-postcode" name="placement-4-address-postcode" type="text" autocomplete="cc-csc">
+					{% endif %}
+				</div>
+
+			</fieldset>
+
+			<button class="nhsuk-button" type="submit">Save and continue</button>
+			<p><a href="TDAE-start-claim">Cancel</a></p>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

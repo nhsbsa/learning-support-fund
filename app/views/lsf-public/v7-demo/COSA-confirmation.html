@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Student declaration
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="v7-demo/COSA-confirmation" method="POST">
+
+            <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+                <div class="nhsuk-card__content">
+                    <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                        Attendance confirmation submitted
+                    </h1>
+                </div>
+            </div>
+
+            <h2 class="nhsuk-heading-m">What happens next?</h2>
+            <p>Your university will check that your confirmation is correct.</p>
+            <p>We will email you when this is done.</p>
+
+            <button class="nhsuk-button" type="submit">Return to dashboard</button>
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

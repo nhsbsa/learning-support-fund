@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  Page templates - NHS.UK prototype kit
+  NHS Learning Support Fund account
 {% endblock %}
 
 {% block content %}
@@ -9,7 +9,7 @@
 
         <div class="nhsuk-grid-column-full">
 
-            <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund reference number is SSRN0000059</span>NHS Learning Support Fund account</h1>
+            <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Your student reference number is SSRN0000059</span>NHS Learning Support Fund account</h1>
 
         </div>
 
@@ -165,15 +165,6 @@
 												</dd>
 											</div>
 											<div class="nhsuk-summary-list__row">
-												<dt class="nhsuk-summary-list__key">Phone number</dt>
-												<dd class="nhsuk-summary-list__value">2343</dd>
-												<dd class="nhsuk-summary-list__actions">
-													<a id="updatePhone" href="#">
-														Update<span class="nhsuk-u-visually-hidden"> phone number</span>
-													</a>
-												</dd>
-											</div>
-											<div class="nhsuk-summary-list__row">
 												<dt class="nhsuk-summary-list__key">Address</dt>
 												<dd class="nhsuk-summary-list__value">
 													<p>
@@ -228,7 +219,7 @@
 
 
 
-													<a id="bankDetailsEdit" href="#">Edit<span class="nhsuk-u-visually-hidden"> bank details</span></a>
+													<a id="bankDetailsEdit" href="bank-details">Edit<span class="nhsuk-u-visually-hidden"> bank details</span></a>
 
 											</div>
 										</div>
@@ -248,23 +239,32 @@
 										<dt class="nhsuk-summary-list__key">Username</dt>
 										<dd class="nhsuk-summary-list__value"><span id="username" class="wordbreak">dave02</span></dd>
 										<dd class="nhsuk-summary-list__actions">
-											<a id="editUsername" href="#">Edit<span class="nhsuk-u-visually-hidden"> username</span></a>
+											<a id="editUsername" href="change-username">Edit<span class="nhsuk-u-visually-hidden"> username</span></a>
 										</dd>
 									</div>
 									<div class="nhsuk-summary-list__row">
 										<dt class="nhsuk-summary-list__key">Email</dt>
 										<dd class="nhsuk-summary-list__value"><span id="studentEmail" class="wordbreak">marshall.dave2000+1@gmail.com</span></dd>
 										<dd class="nhsuk-summary-list__actions">
-											<a id="editEmail" href="#">Edit<span class="nhsuk-u-visually-hidden"> email address</span></a>
+											<a id="editEmail" href="change-email">Edit<span class="nhsuk-u-visually-hidden"> email address</span></a>
 										</dd>
 									</div>
 									<div class="nhsuk-summary-list__row">
 										<dt class="nhsuk-summary-list__key">Password</dt>
 										<dd class="nhsuk-summary-list__value"><span>********</span></dd>
 										<dd class="nhsuk-summary-list__actions">
-											<a id="editPassword" href="#">Edit<span class="nhsuk-u-visually-hidden"> password</span></a>
+											<a id="editPassword" href="change-password">Edit<span class="nhsuk-u-visually-hidden"> password</span></a>
 										</dd>
 									</div>
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Phone number</dt>
+                    <dd class="nhsuk-summary-list__value">*******6920</dd>
+                    <dd class="nhsuk-summary-list__actions">
+                      <a id="updatePhone" href="change-phone-number">
+                        Edit<span class="nhsuk-u-visually-hidden"> phone number</span>
+                      </a>
+                    </dd>
+                  </div>
 								</dl>
 							</div>
           </div>

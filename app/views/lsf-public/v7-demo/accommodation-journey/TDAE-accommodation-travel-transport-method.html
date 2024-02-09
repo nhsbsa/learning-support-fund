@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What method of transport did you use to travel?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="../v7-demo/TDAE-accommodation-travel-transport-method" method="POST">
+
+          {% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
+          <h1 class="nhsuk-heading-l">How did you travel to your accommodation?</h1>
+          {% else %}
+          <h1 class="nhsuk-heading-l">How did you travel to your term-time address?</h1>
+          {% endif %}
+          
+          <div class="nhsuk-hint" id="example-hint">
+            Select all that apply.
+          </div>
+    
+          <div class="nhsuk-form-group">
+            <div class="nhsuk-checkboxes">
+      
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="transport-method" name="transport-method" type="checkbox" value="car">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="mode-of-transport">
+                  Drove
+                </label>
+              </div>
+      
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="transport-method" name="transport-method" type="checkbox" value="public-transport">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="mode-of-transport">
+                  Public transport
+                </label>
+              </div>
+
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="transport-method" name="transport-method" type="checkbox" value="cycle">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="mode-of-transport">
+                  Cycled
+                </label>
+              </div>
+    
+            </div>
+          </div>
+              
+          <button class="nhsuk-button" type="submit">Continue</button><br>
+      		<a href="TDAE-task-list">Cancel</a>
+
+      </form>
+
+    </div>
+
+</div>
+{% endblock %}

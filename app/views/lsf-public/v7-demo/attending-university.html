@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Please select the university you are attending
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">SSRN0000059 - Joe Bloggs</span>Please select the university you are attending</h1>
+
+        <p>If this is your first time applying for funding please select the university you plan to attend. These details can be changed at a later date if needed.</p>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="attending-university">
+              University
+            </label>
+            <select class="nhsuk-select" id="attending-university" name="attending-university">
+              <option value="1" selected></option>
+              <option value="2">BIRMINGHAM CITY UNIVERSITY</option>
+              <option value="3">NORTHUMBRIA UNIVERSITY</option>
+            </select>
+        </div>
+
+        <a class="nhsuk-button" href="university-course">Next</a><br>
+        <a href="dashboard">Cancel</a>
+
+
+    </div>
+
+  </div>
+{% endblock %}

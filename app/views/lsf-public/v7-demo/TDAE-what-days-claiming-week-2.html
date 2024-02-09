@@ -1,0 +1,96 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What days are you claiming for week 2?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v7-demo/TDAE-what-days-claiming-week-2" method="POST">
+
+                <div class="nhsuk-form-group">
+
+                  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                      <h1 class="nhsuk-fieldset__heading">
+                        What days are you claiming for week 2?
+                      </h1>
+                    </legend>
+
+                    <div class="nhsuk-hint" id="example-hint">
+                      Select all days you are claiming between 24 April 2023 and 28 April 2023.
+                    </div>
+
+                    <div class="nhsuk-checkboxes">
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="claim-monday" name="claim-day" type="checkbox" value="monday">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="claim-monday">
+                          Monday
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="claim-tuesday" name="claim-day" type="checkbox" value="tuesday">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="claim-tuesday">
+                          Tuesday
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="claim-wednesday" name="claim-day" type="checkbox" value="wednesday">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="claim-wednesday">
+                          Wednesday
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="claim-thursday" name="claim-day" type="checkbox" value="thursday">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="claim-thursday">
+                          Thursday
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="claim-friday" name="claim-day" type="checkbox" value="friday">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="claim-friday">
+                          Friday
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="claim-saturday" name="claim-day" type="checkbox" value="saturday">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="claim-saturday">
+                          Saturday
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="claim-sunday" name="claim-day" type="checkbox" value="sunday">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="claim-sunday">
+                          Sunday
+                        </label>
+                      </div>
+
+                    </div>
+                  </fieldset>
+
+                </div>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

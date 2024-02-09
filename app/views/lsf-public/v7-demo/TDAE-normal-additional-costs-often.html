@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Do you incur daily additional costs to your normal place of study?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="v7-demo/TDAE-normal-additional-costs-often" method="POST">
+
+
+            <div class="nhsuk-form-group">
+
+
+                <fieldset class="nhsuk-fieldset">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                        <h1 class="nhsuk-fieldset__heading">
+                          Do you pay any extra daily costs when driving to and from university?
+                        </h1>
+                    </legend>
+
+                    <p>You can claim back extra costs for:</p>
+                    <ul class="nhsuk-list nhsuk-list--bullet">
+                      <li>parking charges</li>
+                      <li>tunnel or toll charges</li>
+                      <li>Congestion or clean air charges</li>
+                    </ul>
+
+                    <div class="nhsuk-radios">
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="normal-addition-costs-daily" name="normal-often-additional-costs"
+                                type="radio" value="yes">
+                            <label class="nhsuk-label nhsuk-radios__label" for="normal-addition-costs-daily">
+                                Yes
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="normal-addition-costs-weekly" name="normal-often-additional-costs"
+                                type="radio" value="no">
+                            <label class="nhsuk-label nhsuk-radios__label" for="normal-addition-costs-weekly">
+                                No
+                            </label>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+    </div>
+
+    <button class="nhsuk-button" type="submit">Continue</button><br>
+    <a href="TDAE-start-claim">Cancel</a>
+
+    </form>
+
+</div>
+
+</div>
+{% endblock %}

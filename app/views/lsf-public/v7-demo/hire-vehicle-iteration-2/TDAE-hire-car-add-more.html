@@ -1,0 +1,103 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Evidence you have uploaded
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+      <form action="v7-demo/TDAE-hire-car-add-more" method="POST">
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="placement-additional-costs">
+            <h1 class="nhsuk-heading-l">Your hire car bookings</h1>
+            </label>
+
+            <p>You can make changes to these details when you have added all of your hire cars.</p>
+
+            <table class="nhsuk-table">
+              <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    Dates hired
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Total amount
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell ">
+                    <p>30 November 2023</p>
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <p>£120</p>
+                  </td>
+                </tr>
+                {% if data['vehicle-number'] == '2' %}
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell ">
+                      <p>1 December 2023 to 3 December 2023</p>
+                    </td>
+                    <td class="nhsuk-table__cell ">
+                      <p>£175</p>
+                    </td>
+                  </tr>
+                {% endif %}
+              </tbody>
+            </table>
+
+
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                <h2 class="nhsuk-fieldset__heading">
+                  Do you want to add another hire car booking?
+                </h2>
+              </legend>
+
+              <div class="nhsuk-radios nhsuk-radios--inline">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="more-vehicles-yes" name="more-vehicles" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="more-vehicles-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="more-vehicles-no" name="more-vehicles" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="more-vehicles-no">
+                    No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+        </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+
+        <a href="TDAE-task-list">Cancel</a>
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

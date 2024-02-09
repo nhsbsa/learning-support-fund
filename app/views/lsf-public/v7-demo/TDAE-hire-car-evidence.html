@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Upload your evidence for week 2
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v7-demo/TDAE-hire-car-evidence" method="POST">
+
+      <div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+						<h1 class="nhsuk-heading-l">Upload evidence for this hire car booking</h1>
+				</label>
+
+      <p class="nhsuk-hint">Evidence must be:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet nhsuk-hint">
+          <li>JPG, JPEG, PNG or PDF format</li>
+          <li>no more than 8MB</li>
+        </ul>
+
+        <div class="nhsuk-hint" id="contact-hint">
+          Evidence can be images, screenshots, or PDFs of receipts or invoices.
+        </div>
+
+        <div class="nhsuk-hint" id="contact-hint">If you do not have evidence for hiring this car, you cannot claim the costs. Select Cancel to return to your task list.</div>
+
+
+      <div class="nhsuk-form-group nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-7">
+        <label class="nhsuk-label nhsuk-u-visually-hidden" for="file-upload-1">
+            Upload your evidence file
+        </label>
+        <input class="nhsuk-input" id="file-upload-1" name="file-upload-1" type="file">
+      </div>
+
+      <button class="nhsuk-button" type="submit">Upload evidence</button><br>
+
+      <a href="TDAE-task-list">Cancel</a>
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Do you want to provide any related comments to your placement additional costs?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v7-demo/TDAE-accommodation-journey" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Did you pay costs for travelling between your term-time address and accommodation?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-hint" id="contact-hint">
+                For example, if you travelled to your accommodation the day before your placement.
+              </div>
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="accommodation-journey-yes" name="accommodation-journey" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="accommodation-journey-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="accommodation-journey-no" name="accommodation-journey" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="accommodation-journey-no">
+                    No
+                  </label>
+                </div>
+
+              </div>
+
+            </fieldset>
+
+          </div>
+
+
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-returning-student/academic-year-details">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  What is the start and end date of your cost?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+    <form action="v7-demo/TDAE-placement-additional-cost-dates" method="POST">
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-l">
+              What is the start and end date of this extra cost?
+            </h1>
+          </legend>
+
+          <div class="nhsuk-form-group">
+            <legend class="nhsuk-fieldset__legend nhsuk-label--s">
+               <h2 class="nhsuk-fieldset__heading">
+                 Start date
+               </h2>
+             </legend>
+              <div class="nhsuk-hint" id="example-hint">
+                For example, 15 9 2023
+              </div>
+              <div class="nhsuk-date-input" id="example">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="additional-cost-start-day">
+                      Day
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="additional-cost-start-day" name="additional-cost-start-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="additional-cost-start-month">
+                      Month
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="additional-cost-start-month" name="additional-cost-start-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="additional-cost-start-year">
+                      Year
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="additional-cost-start-year" name="additional-cost-start-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="nhsuk-form-group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--s">
+                 <h2 class="nhsuk-fieldset__heading">
+                   End date
+                 </h2>
+               </legend>
+                <div class="nhsuk-hint" id="example-hint">
+                  For example, 22 9 2023
+                </div>
+                <div class="nhsuk-date-input" id="example">
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="additional-cost-day">
+                        Day
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="additional-cost-day" name="additional-cost-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="additional-cost-month">
+                        Month
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="additional-cost-month" name="additional-cost-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="additional-cost-year">
+                        Year
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="additional-cost-year" name="additional-cost-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+
+      <button class="nhsuk-button" type="submit">Continue</button><br>
+      <a href="TDAE-placement-itinerary">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

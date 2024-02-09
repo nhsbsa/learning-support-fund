@@ -1,0 +1,40 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Student details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <form action="student-details-change" method="POST">
+
+        <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+            <div class="nhsuk-card__content">
+                <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                    Joe Blogg's phone number changed
+                </h1>
+            </div>
+        </div>
+
+        <h2 class="nhsuk-heading-m">What happens next?</h2>
+        <p>The student will need to sign in to their account and enter the security code sent to validate the new phone number.</p>
+
+        <button class="nhsuk-button" type="submit">Continue</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+	<script>
+		const sendBtn = document.getElementById('emailButton');
+		const sendConfirm = document.getElementById('emailSentMsg');
+
+		sendBtn.addEventListener("click", function (event) {
+			sendConfirm.setAttribute("style", "display:block");
+		});
+
+
+	</script>
+{% endblock %}

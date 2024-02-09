@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Do you want to provide any related comments to your additional costs?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v7-demo/TDAE-additional-costs-comments" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Do you want to tell us anything more about travelling to university?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-hint">Include any comments about your extra costs. For example, any costs that are spread over multiple days.</div>
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="related-comments-yes" name="related-comments" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="related-comments-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="related-comments-no" name="related-comments" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="related-comments-no">
+                    No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

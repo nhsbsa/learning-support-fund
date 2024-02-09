@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Travel between accommodation and term-time journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="v7/TDAE-accommodation-pause" method="POST">
+
+          <h1 class="nhsuk-heading-l">Add your accommodation details</h1>
+
+          <p>You need to tell us about any accommodation bookings you paid for to attend placements. For each one, we need to know the:</p>
+
+          <ul>
+            <li>dates of your booking</li>
+            <li>accommodation address</li>
+            <li>type of accommodation</li>
+            <li>cost per night</li>
+          </ul>
+
+          <p>You also need to show us evidence for your booking. For example, invoices or receipts from the accommodation.</p>
+
+          <p>If you have multiple bookings, you can add these after you've told us about the first one.</p>
+
+          <button class="nhsuk-button" type="submit">Add first accommodation booking</button><br>
+      		<a href="TDAE-task-list">Cancel</a>
+
+      </form>
+
+    </div>
+
+</div>
+{% endblock %}

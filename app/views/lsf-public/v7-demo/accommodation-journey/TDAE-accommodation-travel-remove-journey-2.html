@@ -1,0 +1,224 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Are you sure you want to remove this journey?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                    Are you sure you want to remove this journey?
+                </h1>
+              </legend>
+
+              <br>
+  
+            <dl class="nhsuk-summary-list">
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Journey
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['direction-of-travel'] %}
+                    {{ data['direction-of-travel'] }}
+                    {% else %}
+                    Accommodation to term-time address
+                  {% endif %}
+                </dd>
+              </div>		
+      
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Date travelled
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['accommodation-travel-day'] %}
+                    {{ data['accommodation-travel-day'] }} <span class="cya-month">{{ data['accommodation-travel-month'] }}</span> {{ data['accommodation-travel-year'] }}
+                  {% else %}
+                    9 October 2023
+                  {% endif %}
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Accommodation address
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['accommodation-address'] == 'new-address' %}
+                    {{ data['accommodation-building-name'] }}
+                    {{ data['address-line-1'] }}
+                    {{ data['address-line-2'] }}
+                    {{ data['address-line-3'] }}
+                    {{ data['address-town'] }}
+                    {{ data['address-county'] }}
+                    {{ data['address-postcode'] }}
+                  {% else %}
+                    Premier Inn Alnwick Hotel<br>
+                    Willowburn Industrial Estate<br>
+                    South Road<br>
+                    Alnwick<br>
+                    NE66 2PF
+                  {% endif %}
+                </dd>
+              </div>
+  
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Transport method
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['transport-method'] %}
+                    {{ data['transport-method'] }}
+                    {% else %}
+                    Car and Public transport
+                  {% endif %}
+                </dd>
+              </div>
+    
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Total driving mileage
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['accommodation-travel-mileage'] %}
+                    {{ data['accommodation-travel-mileage'] }}
+                    {% else %}
+                    1.3
+                  {% endif %}
+                </dd>
+              </div>
+    
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Total extra costs amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['extra-costs'] == 'yes' %}
+									{% if data['car-extra-costs'] %}
+										£{{ data['car-extra-costs'] }}
+									{% else %}
+										None provided
+									{% endif %}
+								{% else %}
+									None provided
+								{% endif %}
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Public transport type
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['public-transport-type'] %}
+                    {{ data['public-transport-type'] }}
+                    {% else %}
+                    Train and Bus
+                  {% endif %}
+                </dd>
+              </div>
+    
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Total public transport amount
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['accommodation-travel-public-transport-cost'] %}
+                    £{{ data['accommodation-travel-public-transport-cost'] }}
+                    {% else %}
+                    £8.35
+                  {% endif %}
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Evidence uploaded
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <a href="/images/hire-car-booking-confirmation.jpg" download="Supporting evidence for journey between accommodation and term-time address">
+                    snapshot-015-09-10-2023.jpg
+                  </a>
+                </dd>
+              </div>
+    
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Comments
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {% if data['accommodation-travel-comments'] == 'yes' %}
+                  {% if data['additionalCostsComment'] %}
+                    {{ data['additionalCostsComment'] }}
+                  {% else %}
+                    None provided
+                  {% endif %}
+                  {% else %}
+                  None provided
+                  {% endif %}
+                </dd>
+                </div>
+  
+            </dl>
+
+
+              <div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+                <p>Removing this booking will also remove all the details and evidence you added with it.</p>
+              </div>
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="remove-journey-yes" name="remove-journey" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="remove-journey-yes">
+                        Yes
+                    </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="remove-journey-no" name="remove-journey" type="radio" value="no">
+                    <label class="nhsuk-label nhsuk-radios__label" for="remove-journey-no">
+                        No
+                    </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+          <form id="accommodation-travel" action="../v7-demo/TDAE-accommodation-travel-check" method="POST">
+          <button class="nhsuk-button" type="submit">Save and continue</button><br>
+      </form>
+
+      <script>
+          // Add an event listener to the form submission
+          document.getElementById('accommodation-travel').addEventListener('submit', function (event) {
+              // Prevent the default form submission behavior
+              event.preventDefault();
+
+              // Add your logic here to navigate back to the previous page
+              history.back();
+          });
+      </script>
+
+
+    </div>
+
+  </div>
+{% endblock %}

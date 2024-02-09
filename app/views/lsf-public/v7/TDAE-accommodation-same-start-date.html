@@ -20,7 +20,7 @@ Is your term time address the same?
             <fieldset class="nhsuk-fieldset">
               <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  Was 6 October 2023 the start date of your booking?
+                  Was {% if data['incur-cost-start-day'] %}{{ data['incur-cost-start-day']}}{% else %}4{% endif %} February 2024 the start date of your booking?
                 </h1>
               </legend>
 

@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  What are your contact details?
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  <span class="nhsuk-caption-l">
+                    Update your bank details
+                    <span class="nhsuk-u-visually-hidden"> - </span>
+                  </span>
+                  Check bank details
+                </h1>
+              </legend>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Account number
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    00000003
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Sort code
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    111545
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Account holder
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Joe Bloggs
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Building society number
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Not entered
+                  </dd>
+                </div>
+
+              </dl>
+
+              <div class="nhsuk-form-group">
+                <a class="nhsuk-button nhsuk-button--secondary" href="bank-details">Change bank details</a><br>
+                <a class="nhsuk-button" href="bank-details-2fa">Update</a>
+                <p><a href="#">Cancel</a></p>
+              </div>
+            </fieldset>
+
+    </div>
+
+  </div>
+{% endblock %}

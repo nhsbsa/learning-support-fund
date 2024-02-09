@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Did you pay any extra costs during your car journey?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="../v7-demo/TDAE-accommodation-travel-extra-costs" method="POST">
+
+          {% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
+          <h1 class="nhsuk-heading-l">Did you pay any extra costs for driving to your accommodation?</h1>
+          {% else %}
+          <h1 class="nhsuk-heading-l">Did you pay any extra costs for driving to your term-time address?</h1>
+          {% endif %}	
+
+          <p>You can claim back extra costs for:</p>
+          <ul>
+          <li>parking charges</li>
+          <li>tunnell or toll charges</li>
+          <li>congestion or clean air charges</li>
+          </ul>
+
+          <div class="nhsuk-hint" id="contact-hint">
+            You cannot claim for any extra costs that you have already claimed for, unless they cover more than one day.
+          </div>
+          
+          <div class="nhsuk-form-group">
+            <div class="nhsuk-radios">
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="extra-costs" name="extra-costs" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="extra-costs">
+                  Yes
+                </label>
+              </div>
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="extra-costs" name="extra-costs" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="extra-costs">
+                  No
+                </label>
+              </div>
+        
+            </div>
+          </div>
+        
+
+          <button class="nhsuk-button" type="submit">Continue</button><br>
+      		<a href="TDAE-task-list">Cancel</a>
+
+      </form>
+
+    </div>
+
+</div>
+{% endblock %}

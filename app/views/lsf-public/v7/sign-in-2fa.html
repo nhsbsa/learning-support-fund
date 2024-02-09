@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Enter the security code
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund account</span>
+          Enter the security code</h1>
+
+        {% if data['send-again'] == 'true' %}
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>You have been sent a new code.</p>
+          </div>
+        {% endif %}
+
+        <p>We sent a text to <b>*******6920</b>.
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Not received a text?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>When we are really busy it may take a bit longer for us to text you.</p>
+            <p><a href="sign-in-2fa?send-again=true">Send the security code again</a>.</p>
+          </div>
+        </details>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="sign-in-username">
+              Security code
+            </label>
+            <div class="nhsuk-hint" id="example-with-hint-text-hint">
+              This code is 6 digits
+            </div>
+            <input class="nhsuk-input nhsuk-input--width-10" id="security-code" name="security-code" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-checkboxes">
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="remember-device" name="remember-device" type="checkbox" value="true">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="remember-device">
+                Remember this device and stop sending security codes
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              What does remember this device mean?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>We can remember the device you are using now, so you will not need to enter a security code when you log in with this device in the future.</p>
+            <p>To keep your NHS Learning Support Fund account secure, you should only do this on your own personal or trusted devices.</p>
+            <p>We will only remember this device for 60 days. After you will need to enter a security code again.</p>
+          </div>
+        </details>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              I cannot log in using my phone
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>If you no longer have access to the phone number the code has been sent to, you will need to contact the NHSBSA.</p>
+            <p>You can contact us by:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>Calling us on 0300 330 0521</li>
+              <li>Using our text relay service on 18001 0300 330 0521</li>
+            </ul>
+          </div>
+        </details>
+
+        <a class="nhsuk-button" href="dashboard">Continue</a><br>
+        <p><a href="sign-in">Cancel</a></p>
+
+    </div>
+
+  </div>
+{% endblock %}

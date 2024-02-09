@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Additional costs for your normal daily journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v7-demo/TDAE-cycle-additional-costs" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="input-width-5">
+					<h1 class="nhsuk-heading-l">
+						<h1 class="nhsuk-heading-l">How much are these extra costs per day?</h1>
+					</h1>
+				</label>
+				<label class="nhsuk-label" for="example">
+					Cost in pounds
+				</label>
+				<div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+				<input class="nhsuk-input__prefix-input nhsuk-input nhsuk-input--width-5" id="study-additional-cost" name="cycle-additional-cost" type="text">
+			</div>
+
+			<details class="nhsuk-details">
+				<summary class="nhsuk-details__summary">
+					<span class="nhsuk-details__summary-text">
+						What if your extra cost covers more than one day?
+					</span>
+				</summary>
+				<div class="nhsuk-details__text">
+					<p>If you purchase a pass, such as a monthly bicycle storage, you will need to calculate the daily cost.</p>
+					<h2 class="nhsuk-heading-s">Calculating the extra daily cost</h2>
+					<p>You need to work out:</p>
+						<ul>
+							<li>how many days you cycled to university in the period your pass covers</li>
+							<li>how many of those days are in the period you're claiming for</li>
+						</ul>
+					<p>Then divide the total cost of your pass by the number of eligible days for the correct daily cost.</p>
+					<h3 class="nhsuk-heading-xs">For example</h3>
+					<p>You bought a monthly bicycle storage pass for £20, but only cycled to university on 10 days in the period you're claiming for. The extra daily cost is £2.</p>
+				</div>
+			</details>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

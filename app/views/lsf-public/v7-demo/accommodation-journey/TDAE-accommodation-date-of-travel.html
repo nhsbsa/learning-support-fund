@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Date travelled
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="../v7-demo/TDAE-accommodation-date-of-travel" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+					{% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
+						<h1 class="nhsuk-heading-l">What date did you travel to your accommodation on?</h1>
+					{% else %}
+						<h1 class="nhsuk-heading-l">What date did you travel to your term-time address on?</h1>
+					{% endif %}	
+				</label>
+
+				{% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
+				<p>Enter the date you travelled to your accommodation from your term-time address.</p>
+				{% else %}
+				<p>Enter the date you travelled to your term-time address from your accommodation.</p>
+				{% endif %}	
+
+
+				<div class="nhsuk-form-group">
+					{% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
+					  <div class="nhsuk-hint" id="contact-hint">For example, 15 9 2023</div>
+					{% else %}
+						<div class="nhsuk-hint" id="contact-hint">For example, 18 9 2023</div>
+					{% endif %}	
+					</label>
+		
+					<div class="nhsuk-date-input" id="example">
+					  <div class="nhsuk-date-input__item">
+						<div class="nhsuk-form-group">
+						  <label class="nhsuk-label nhsuk-date-input__label" for="accommodation-travel-day">
+							Day
+						  </label>
+						  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="accommodation-travel-day" name="accommodation-travel--day" type="text" pattern="[0-9]*" inputmode="numeric">
+						</div>
+					  </div>
+					  <div class="nhsuk-date-input__item">
+						<div class="nhsuk-form-group">
+						  <label class="nhsuk-label nhsuk-date-input__label" for="accommodation-travel-month">
+							Month
+						  </label>
+						  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="accommodation-travel-month" name="accommodation-travel-month" type="text" pattern="[0-9]*" inputmode="numeric">
+						</div>
+					  </div>
+					  <div class="nhsuk-date-input__item">
+						<div class="nhsuk-form-group">
+						  <label class="nhsuk-label nhsuk-date-input__label" for="accommodation-travel-year">
+							Year
+						  </label>
+						  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="accommodation-travel-year" name="accommodation-travel-year" type="text" pattern="[0-9]*" inputmode="numeric">
+						</div>
+					  </div>
+					</div>
+				  </fieldset>
+				</div>
+
+			</div>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<a href="TDAE-task-list">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

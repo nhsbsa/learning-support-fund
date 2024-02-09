@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Enter the security code
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Update your bank details</span>
+          Enter the security code</h1>
+
+        {% if data['send-again'] == 'true' %}
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>You have been sent a new code.</p>
+          </div>
+        {% endif %}
+
+        <p>We sent a text to <b>*******6920</b>.
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Not received a text?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>When we are really busy it may take a bit longer for us to text you.</p>
+            <p><a href="sign-in-2fa?send-again=true">Send the security code again</a>.</p>
+          </div>
+        </details>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="sign-in-username">
+              Security code
+            </label>
+            <div class="nhsuk-hint" id="example-with-hint-text-hint">
+              This code is 6 digits
+            </div>
+            <input class="nhsuk-input nhsuk-input--width-10" id="security-code" name="security-code" type="text">
+        </div>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              I cannot access my phone
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>To change your phone number we need to validate the new phone number. You will need to change your phone number at a time you can access the new number.</p>
+          </div>
+        </details>
+
+        <a class="nhsuk-button" href="change-phone-number-changed">Save and continue</a><br>
+        <p><a href="sign-in">Cancel</a></p>
+
+    </div>
+
+  </div>
+{% endblock %}

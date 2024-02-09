@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Which type of evidence does this relate to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v7-demo/TDAE-placement-evidence-type" method="POST">
+
+            <div class="nhsuk-form-group">
+
+              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  <h1 class="nhsuk-fieldset__heading">
+                    Which extra cost did you pay for?
+                  </h1>
+                </legend>
+
+                <div class="nhsuk-hint">You need to show us evidence for any extra costs.</div>
+
+                <div class="nhsuk-radios nhsuk-radios--conditional">
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="additional-cost-type-1" name="additional-cost-type" type="radio" value="Car parking">
+                    <label class="nhsuk-label nhsuk-radios__label" for="additional-cost-type-1">
+                      Parking charges
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="additional-cost-type-2" name="additional-cost-type" type="radio" value="Tunnel and toll charges">
+                    <label class="nhsuk-label nhsuk-radios__label" for="additional-cost-type-2">
+                      Tunnel or toll charges
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="additional-cost-type-2" name="additional-cost-type" type="radio" value="Congestion and clean air charges">
+                    <label class="nhsuk-label nhsuk-radios__label" for="additional-cost-type-2">
+                      Congestion or clean air charges
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+                    <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                      Other
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label" for="email">
+                        Name of extra cost
+                      </label>
+                      <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+                    </div>
+
+                  </div>
+
+                </div>
+              </fieldset>
+
+            </div>
+
+            <button class="nhsuk-button">Continue</button><br>
+            <a href="TDAE-placement-itinerary">Cancel</a>
+
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

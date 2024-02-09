@@ -15,7 +15,7 @@ Check your answers
 
 		<!-- if only one journey and direction of travel is from term-time address to accommodation -->
 		{% if data['number-of-journeys'] != '2' and data['direction-of-travel'] == 'termtime-to-accommodation' %}
-				
+
 		<!-- if first journey = term-time to accommodation - direction of travel -->
 				<dl class="nhsuk-summary-list">
 				<div class="nhsuk-summary-list__row">
@@ -38,7 +38,7 @@ Check your answers
 
 					</dd>
 					{% endif %}
-				</div>		
+				</div>
 
 				<!-- if first journey = term-time to accommodation - date of journey -->
 				<div class="nhsuk-summary-list__row">
@@ -87,11 +87,11 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-	
+
 							<a href="TDAE-accommodation-travel-address">
 								Change<span class="nhsuk-u-visually-hidden">accommodation address</span>
 							</a>
-	
+
 						</dd>
 						{% endif %}
 					</div>
@@ -133,11 +133,11 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-	
+
 							<a href="TDAE-accommodation-travel-car-journey-mileage">
 								Change<span class="nhsuk-u-visually-hidden">total driving mileage</span>
 							</a>
-	
+
 						</dd>
 						{% endif %}
 					</div>
@@ -152,11 +152,11 @@ Check your answers
 							</dd>
 							{% if data['submit-claim'] != 'completed' %}
 							<dd class="nhsuk-summary-list__actions">
-		
+
 								<a href="TDAE-accommodation-travel-extra-costs">
 									Change<span class="nhsuk-u-visually-hidden">total extra costs amount</span>
 								</a>
-		
+
 							</dd>
 							{% endif %}
 						</div>
@@ -175,11 +175,11 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-	
+
 							<a href="TDAE-accommodation-travel-public-transport-method">
 								Change<span class="nhsuk-u-visually-hidden">public transport type</span>
 							</a>
-	
+
 						</dd>
 						{% endif %}
 					</div>
@@ -264,7 +264,7 @@ Check your answers
 
 				{% elif data['number-of-journeys'] != '2' and data['direction-of-travel'] == 'accommodation-to-termtime' %}
 				<!-- if only one journey and direction of travel is from accommodation to term-time address -->
-								
+
 				<!-- if first journey = accommodation to term-time address - direction of travel -->
 				<dl class="nhsuk-summary-list">
 				<div class="nhsuk-summary-list__row">
@@ -287,7 +287,7 @@ Check your answers
 
 					</dd>
 					{% endif %}
-				</div>		
+				</div>
 
 				<!-- if first journey = accommodation to term-time address - date of journey -->
 				<div class="nhsuk-summary-list__row">
@@ -505,7 +505,7 @@ Check your answers
 					  </dd>
 					{% endif %}
 				  </div>
-				
+
 
 				</dl>
 
@@ -514,7 +514,7 @@ Check your answers
 
 
 
-		
+
 	<!-- More than one journey on display -->
 	{% else %}
 		<!-- Journey 1 -->
@@ -548,7 +548,7 @@ Check your answers
 
 						</dd>
 						{% endif %}
-					</div>		
+					</div>
 
 					<!-- if first journey = term-time to accommodation - date of journey -->
 					<div class="nhsuk-summary-list__row">
@@ -662,11 +662,11 @@ Check your answers
 								</dd>
 								{% if data['submit-claim'] != 'completed' %}
 								<dd class="nhsuk-summary-list__actions">
-			
+
 									<a href="TDAE-accommodation-travel-extra-costs">
 										Change<span class="nhsuk-u-visually-hidden">total extra costs amount</span>
 									</a>
-			
+
 								</dd>
 								{% endif %}
 							</div>
@@ -772,8 +772,8 @@ Check your answers
 			</div>
 			</details>
 		</div>
-			
-		
+
+
 
 
 
@@ -811,7 +811,7 @@ Check your answers
 
 					</dd>
 					{% endif %}
-				</div>		
+				</div>
 
 				<!-- if second journey = accommodation to term-time address - date of journey -->
 				<div class="nhsuk-summary-list__row">
@@ -1029,7 +1029,7 @@ Check your answers
 					  </dd>
 					{% endif %}
 				  </div>
-	    
+
 
 				</dl>
 				<a class="nhsuk-button nhsuk-button--warning" href="TDAE-accommodation-travel-remove-journey-2">Remove journey</a>
@@ -1068,7 +1068,7 @@ Check your answers
 						<thead role="rowgroup" class="nhsuk-table__head">
 							<tr role="row">
 								<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
-	
+
 								</th>
 								<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
 										Placement journey
@@ -1098,8 +1098,31 @@ Check your answers
 									£2.52
 								</td>
 								<td class="nhsuk-table__cell" style="font-size: 1rem;">
-	
+
 								</td>
+							</tr>
+							<tr role="row" class="nhsuk-table__row">
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+									<b>Journey public transport cost</b>
+								</td>
+								<td class="nhsuk-table__cell " style="font-size: 1rem;">
+									£12.50
+								</td>
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+
+								</td>
+							</tr>
+							<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+										<b>Additional costs</b>
+								</td>
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+										£20
+								</td>
+								<td class="nhsuk-table__cell " style="font-size: 1rem;">
+
+								</td>
+							</tr>
 							<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
 								<td class="nhsuk-table__cell" style="font-size: 1rem;">
 										<b>Total cost</b>
@@ -1121,7 +1144,7 @@ Check your answers
 							<thead role="rowgroup" class="nhsuk-table__head">
 								<tr role="row">
 									<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
-		
+
 									</th>
 									<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
 											Placement journey
@@ -1151,8 +1174,31 @@ Check your answers
 										£5.04
 									</td>
 									<td class="nhsuk-table__cell" style="font-size: 1rem;">
-		
+
 									</td>
+								</tr>
+								<tr role="row" class="nhsuk-table__row">
+									<td class="nhsuk-table__cell" style="font-size: 1rem;">
+										<b>Journey public transport cost</b>
+									</td>
+									<td class="nhsuk-table__cell " style="font-size: 1rem;">
+										£25.00
+									</td>
+									<td class="nhsuk-table__cell" style="font-size: 1rem;">
+
+									</td>
+								</tr>
+								<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+									<td class="nhsuk-table__cell" style="font-size: 1rem;">
+											<b>Additional costs</b>
+									</td>
+									<td class="nhsuk-table__cell" style="font-size: 1rem;">
+											£20
+									</td>
+									<td class="nhsuk-table__cell " style="font-size: 1rem;">
+
+									</td>
+								</tr>
 								<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
 									<td class="nhsuk-table__cell" style="font-size: 1rem;">
 											<b>Total cost</b>
@@ -1161,12 +1207,12 @@ Check your answers
 										£50.04
 									</td>
 									<td class="nhsuk-table__cell" style="font-size: 1rem;">
-	
+
 									</td>
 								</tr>
 							</tbody>
 							</table>
-	
+
 						<p><b>Amount to be reimbursed: £50.04</b></p>
 						{% endif %}
 					</div>

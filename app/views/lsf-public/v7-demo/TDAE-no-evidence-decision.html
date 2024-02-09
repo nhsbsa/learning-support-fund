@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Which mode of transport do you take to and from your normal place of study?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+    <form action="v7-demo/TDAE-no-evidence-decision" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                    What would you like to do with this cost?
+                </h1>
+              </legend>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Cost
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Parking charges on Monday 5 June 2023
+                  </dd>
+
+                </div>
+
+              </dl>
+
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="mode-of-transport-walk" name="no-evidence-decision" type="radio" value="remove">
+                    <label class="nhsuk-label nhsuk-radios__label" for="mode-of-transport-walk">
+                        Remove this cost from your claim
+                    </label>
+                    <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                      You'll not be reimbursed for this cost.
+                    </div>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="mode-of-transport-drive" name="no-evidence-decision" type="radio" value="reason">
+                    <label class="nhsuk-label nhsuk-radios__label" for="mode-of-transport-drive">
+                        Tell us why you cannot give us evidence
+                    </label>
+                    <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                      Your university will review your reason and decide whether we can reimburse your cost.
+                    </div>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+      <button class="nhsuk-button" type="submit">Save and continue</button><br>
+
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

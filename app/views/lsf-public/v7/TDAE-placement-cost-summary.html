@@ -78,7 +78,17 @@ Your costs
           Accommodation
         </dt>
         <dd class="nhsuk-summary-list__value">
-          £525
+          £412.50
+        </dd>
+      </div>
+      {% endif %}
+      {% if checked('claiming-for', 'travel to accommodation') %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Accommodation
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £50.04
         </dd>
       </div>
       {% endif %}
@@ -92,7 +102,9 @@ Your costs
           Total
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {% if checked('claiming-for', 'accommodation') %}
+          {% if checked('claiming-for', 'travel to accommodation') %}
+            £462.54
+          {% elif checked('claiming-for', 'accommodation') %}
             £525
           {% elif checked('claiming-for', 'hire-car') %}
             £328.60

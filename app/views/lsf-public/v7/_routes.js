@@ -11,6 +11,12 @@ const router = express.Router();
 
 // ********************************
 
+router.post('/v7/TDAE-accommodation-pause', (req, res) => {
+
+  res.redirect('/lsf-public/v7/TDAE-accommodation-same-start-date')
+
+})
+
 router.post('/v7/TDAE-accommodation-journey', (req, res) => {
 
   res.redirect('/lsf-public/v7/TDAE-reuse-answers')
@@ -154,6 +160,9 @@ router.post('/v7/TDAE-invalid-costs-all', (req, res) => {
 
   if (invalidCostsAll === 'change-details') {
       res.redirect('/lsf-public/v7/TDAE-placement-itinerary')
+  }
+  else if (invalidCostsAll === 'change-university-details') {
+      res.redirect('/lsf-public/v7/TDAE-normal-summary-cya')
   }
   else if (invalidCostsAll === 'remove-all') {
       res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-sure-remove-all')
@@ -482,15 +491,15 @@ router.post('/v7/TDAE-accommodation-travel-transport-method', (req, res) => {
   } else if (isCarSelected && isPublicTransportSelected) {
     // Both 'car' and 'public transport' are selected
     res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-car-journey-mileage');
-  
+
   } else if (isCarSelected && isCycleSelected) {
       // Both 'car' and 'cycle' are selected
       res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-car-journey-mileage');
-  
+
   } else if (isPublicTransportSelected && isCycleSelected) {
     // Both 'public transport' and 'cycle' are selected
     res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-public-transport-method');
-    
+
   } else if (isCarSelected) {
     // Only 'car' is selected
     res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-car-journey-mileage');
@@ -605,12 +614,12 @@ router.post('/v7/TDAE-accommodation-travel-public-transport-cost', (req, res) =>
   } else if (isPublicTransportSelected && isCycleSelected) {
     // Redirect to cycle journey mileage page if 'public transport' and 'cycle' were selected
     res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-cycle-journey-mileage');
-    
+
   } else if (isPublicTransportSelected) {
     // Redirect to travel evidence page if only 'public transport' was selected
     res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence');
   }
-  
+
 });
 
 router.post('/v7/TDAE-accommodation-travel-cycle-journey-mileage', (req, res) => {
@@ -618,7 +627,7 @@ router.post('/v7/TDAE-accommodation-travel-cycle-journey-mileage', (req, res) =>
   res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence')
 
 });
-  
+
 
 router.post('/v7/TDAE-accommodation-travel-evidence', (req, res) => {
 
@@ -786,6 +795,18 @@ router.post('/v7/TDAE-accommodation-stays', (req, res) => {
 
 })
 
+router.post('/v7/TDAE-accommodation-previous-address', (req, res) => {
+
+  const accommodationAddress = req.session.data['accommodation-address']
+
+  if (accommodationAddress === 'new-address') {
+      res.redirect('/lsf-public/v7/TDAE-accommodation-address')
+  } else {
+      res.redirect('/lsf-public/v7/TDAE-accommodation-type')
+  }
+
+})
+
 router.post('/v7/TDAE-accommodation-same-start-date', (req, res) => {
 
   const sameStartDate = req.session.data['same-accommodation-start-date']
@@ -803,7 +824,7 @@ router.post('/v7/TDAE-accommodation-same-end-date', (req, res) => {
   const sameEndDate = req.session.data['same-accommodation-end-date']
 
   if (sameEndDate === 'yes') {
-      res.redirect('/lsf-public/v7/TDAE-accommodation-address')
+      res.redirect('/lsf-public/v7/TDAE-accommodation-previous-address')
   } else {
       res.redirect('/lsf-public/v7/TDAE-accommodation-end-date')
   }

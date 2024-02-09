@@ -1,0 +1,469 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="v7-demo/TDAE-claim-date-evidence-cya" method="POST">
+
+          <h1 class="nhsuk-heading-l">Check your answers</h1>
+
+          <dl class="nhsuk-summary-list">
+              <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                      Claim start date
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {% if data['start-claim-day'] %}
+                      {{ data['start-claim-day'] }} <span class="cya-month">{{ data['start-claim-month'] }}</span> {{ data['start-claim-year'] }}
+                    {% else %}
+                      17 April 2023
+                    {% endif %}
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                      <a href="TDAE-start-claim">
+                          Change<span class="nhsuk-u-visually-hidden"> claim start date</span>
+                      </a>
+                  </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                      Claim end date
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {% if data['end-claim-day'] %}
+                      {{ data['end-claim-day'] }} <span class="cya-month">{{ data['end-claim-month'] }}</span> {{ data['end-claim-year'] }}
+                    {% else %}
+                      21 April 2023
+                    {% endif %}
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                      <a href="TDAE-end-claim">
+                          Change<span class="nhsuk-u-visually-hidden"> claim end date</span>
+                      </a>
+                  </dd>
+              </div>
+              {% if data['TDAE-multiple-weeks'] === 'yes' %}
+                {% if data['claiming-same-days'] === 'yes' %}
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Days
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                      <span class="capitalize">{{ data['claim-day'] }}</span>
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                      <a href="TDAE-days-claiming">
+                          Change<span class="nhsuk-u-visually-hidden"> days</span>
+                      </a>
+                  </dd>
+                </div>
+
+                {% else %}
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Week 1
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                      Monday, Thursday, Friday
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                      <a href="#">
+                          Change<span class="nhsuk-u-visually-hidden"> days</span>
+                      </a>
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Week 2
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Monday, Tuesday, Friday
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                      <a href="#">
+                          Change<span class="nhsuk-u-visually-hidden"> days</span>
+                      </a>
+                  </dd>
+                </div>
+
+                {% endif %}
+              {% else %}
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Days
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      <span class="capitalize">Monday, Thursday, Friday</span>
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions">
+                        <a href="#">
+                            Change<span class="nhsuk-u-visually-hidden"> days</span>
+                        </a>
+                    </dd>
+                </div>
+              {% endif %}
+          </dl>
+          {% if data['any-additional-costs'] === 'no' %}
+
+          {% else %}
+            <h2 class="nhsuk-heading-m">Evidence</h2>
+
+            {% if data['TDAE-multiple-weeks'] === 'yes' %}
+
+              {% if data['claiming-same-days'] === 'yes' %}
+
+                <details class="nhsuk-details nhsuk-expander">
+                  <summary class="nhsuk-details__summary">
+                    <span class="nhsuk-details__summary-text">
+                      Week 1
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text">
+
+                    <p>Evidence for the dates between 17 April 2023 and 21 April 2023.</p>
+                    <p>Days attended: Monday, Thursday, Friday</p>
+
+                    <table class="nhsuk-table">
+                      <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
+                      <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                          <th role="columnheader" class="" scope="col">
+                              Day
+                          </th>
+                          <th role="columnheader" class="" scope="col">
+                              Type of evidence
+                          </th>
+                          <th role="columnheader" class="" scope="col">
+                              File
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                          <td class="nhsuk-table__cell">
+                              Monday
+                          </td>
+                          <td class="nhsuk-table__cell ">
+                              Parking receipt
+                          </td>
+                          <td class="nhsuk-table__cell ">
+                              <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
+                                snapshot-032-07-03-2023.jpg
+                              </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link" href="TDAE-evidence-mini-cya">Add or remove evidence</a></p>
+                  </div>
+                </details>
+                <details class="nhsuk-details nhsuk-expander">
+                  <summary class="nhsuk-details__summary">
+                    <span class="nhsuk-details__summary-text">
+                      Week 2
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text">
+
+                    <p>Evidence for the dates between 24 April 2023 and 28 April 2023.</p>
+                    <p>Days attended: Monday, Thursday, Friday</p>
+
+                    <table class="nhsuk-table">
+                      <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
+                      <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                          <th role="columnheader" class="" scope="col">
+                              Day
+                          </th>
+                          <th role="columnheader" class="" scope="col">
+                              Type of evidence
+                          </th>
+                          <th role="columnheader" class="" scope="col">
+                              File
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                          <td class="nhsuk-table__cell">
+                              Monday
+                          </td>
+                          <td class="nhsuk-table__cell ">
+                              Parking receipt
+                          </td>
+                          <td class="nhsuk-table__cell ">
+                              <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
+                                snapshot-032-07-03-2023.jpg
+                              </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link" href="TDAE-evidence-mini-cya?=upload-week-2=no">Add or remove evidence</a></p>
+                  </div>
+                </details>
+
+              {% else %}
+
+                <details class="nhsuk-details nhsuk-expander">
+                  <summary class="nhsuk-details__summary">
+                    <span class="nhsuk-details__summary-text">
+                      Week 1
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text">
+
+                    <p>Evidence for the dates between 17 April 2023 and 21 April 2023.</p>
+                    <p>Days attended: Monday, Thursday, Friday</p>
+
+                    <table class="nhsuk-table">
+                      <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
+                      <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                          <th role="columnheader" class="" scope="col">
+                              Day
+                          </th>
+                          <th role="columnheader" class="" scope="col">
+                              Type of evidence
+                          </th>
+                          <th role="columnheader" class="" scope="col">
+                              File
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                          <td class="nhsuk-table__cell">
+                              Monday
+                          </td>
+                          <td class="nhsuk-table__cell ">
+                              Parking receipt
+                          </td>
+                          <td class="nhsuk-table__cell ">
+                              <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
+                                snapshot-032-07-03-2023.jpg
+                              </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link" href="TDAE-evidence-mini-cya">Add or remove evidence</a></p>
+                  </div>
+                </details>
+                <details class="nhsuk-details nhsuk-expander">
+                  <summary class="nhsuk-details__summary">
+                    <span class="nhsuk-details__summary-text">
+                      Week 2
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text">
+
+                    <p>Evidence for the dates between 24 April 2023 and 28 April 2023.</p>
+                    <p>Days attended: Monday, Tuesday, Friday</p>
+
+                    <table class="nhsuk-table">
+                      <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
+                      <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                          <th role="columnheader" class="" scope="col">
+                              Day
+                          </th>
+                          <th role="columnheader" class="" scope="col">
+                              Type of evidence
+                          </th>
+                          <th role="columnheader" class="" scope="col">
+                              File
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                          <td class="nhsuk-table__cell">
+                              Monday
+                          </td>
+                          <td class="nhsuk-table__cell ">
+                              Parking receipt
+                          </td>
+                          <td class="nhsuk-table__cell ">
+                              <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
+                                snapshot-032-07-03-2023.jpg
+                              </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link" href="TDAE-evidence-mini-cya?=upload-week-2=no">Add or remove evidence</a></p>
+                  </div>
+                </details>
+
+              {% endif %}
+
+            {% else %}
+
+              <details class="nhsuk-details nhsuk-expander">
+                <summary class="nhsuk-details__summary">
+                  <span class="nhsuk-details__summary-text">
+                    Week 1
+                  </span>
+                </summary>
+                <div class="nhsuk-details__text">
+
+                  <p>Evidence for the dates between 17 April 2023 and 21 April 2023.</p>
+                  <p>Days attended: <span class="capitalize">{{ data['claim-day'] }}</span></p>
+
+                  <table class="nhsuk-table">
+                    <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                      <tr role="row">
+                        <th role="columnheader" class="" scope="col">
+                            Day
+                        </th>
+                        <th role="columnheader" class="" scope="col">
+                            Type of evidence
+                        </th>
+                        <th role="columnheader" class="" scope="col">
+                            File
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr role="row" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">
+                          {% if data['evidence-day'] %}
+                            {{ data['evidence-day'] }}
+                          {% else %}
+                            Monday
+                          {% endif %}
+                        </td>
+                        <td class="nhsuk-table__cell ">
+                          {% if data['evidence-type'] %}
+                            {{ data['evidence-type'] }}
+                          {% else %}
+                            Parking receipt
+                          {% endif %}
+                        </td>
+                        <td class="nhsuk-table__cell ">
+                            <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
+                              snapshot-032-07-03-2023.jpg
+                            </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <p class="nhsuk-u-margin-bottom-2"><a class="nhsuk-link" href="TDAE-evidence-mini-cya?upload-week-2=yes">Add or remove evidence</a></p>
+                </div>
+              </details>
+
+            {% endif %}
+
+          {% endif %}
+
+
+
+          <!-- <details class="nhsuk-details nhsuk-expander">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Week 1
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <dl class="nhsuk-summary-list">
+                  <div class="nhsuk-summary-list__row">
+                    <dt style="width:50%" class="nhsuk-summary-list__key">
+                      Screenshot 2023-02-06 at 17.09.59.png
+                    </dt>
+                    <dd style="width:50%" class="nhsuk-summary-list__actions">
+                      <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
+                        Remove<span class="nhsuk-u-visually-hidden"> evidence</span>
+                      </a>
+                    </dd>
+                  </div>
+                  <div class="nhsuk-summary-list__row">
+                    <dt style="width:50%" class="nhsuk-summary-list__key">
+                      Screenshot 2023-02-06 at 17.11.16.png
+                    </dt>
+                    <dd style="width:50%" class="nhsuk-summary-list__actions">
+                      <a href="#">
+                        Remove<span class="nhsuk-u-visually-hidden"> evidence</span>
+                      </a>
+                    </dd>
+                  </div>
+                  <div class="nhsuk-summary-list__row">
+                    <dt style="width:50%" class="nhsuk-summary-list__key">
+                      Screenshot 2023-02-06 at 17.13.32.png
+                    </dt>
+                    <dd style="width:50%" class="nhsuk-summary-list__actions">
+                      <a href="#">
+                        Remove<span class="nhsuk-u-visually-hidden"> evidence</span>
+                      </a>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </details> -->
+
+          <button class="nhsuk-button" type="submit">Save and continue</button><br>
+          <a href="TDAE-start-claim">Cancel</a>
+
+        </form>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        const months = {
+          "01": "January",
+  				"02": "February",
+  				"03": "March",
+  				"04": "April",
+  				"05": "May",
+  				"06": "June",
+  				"07": "July",
+  				"08": "August",
+  				"09": "September",
+  				"1": "January",
+  				"2": "February",
+  				"3": "March",
+  				"4": "April",
+  				"5": "May",
+  				"6": "June",
+  				"7": "July",
+  				"8": "August",
+  				"9": "September",
+  				"10": "October",
+  				"11": "November",
+  				"12": "December",
+        };
+
+        $(".cya-month").text(function () {
+          const month = $(this).text();
+          console.log("month:", month);
+          console.log("months[month]:", months[month]);
+          return months[month];
+        });
+      });
+      </script>
+
+</div>
+
+</script>
+{% endblock %}

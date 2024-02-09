@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Are you sure you want to delete evidence?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="../v7-demo/TDAE-sure-delete" method="POST">
+
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <h1 class="nhsuk-fieldset__heading">
+                      No travel costs for these dates
+                    </h1>
+                  </legend>
+
+									<p>You have not told us about any travel costs for:</p>
+
+									<ul class="nhsuk-list nhsuk-list--bullet">
+										<li>Monday 18 August 2023</li>
+										<li>Tuesday 19 August 2023</li>
+									</ul>
+
+									<h2 class="nhsuk-heading-m">Do you want to continue?</h2>
+
+									<div class="nhsuk-hint">If you select Yes, these dates will be removed from your placement travel details.</div>
+
+                  <div class="nhsuk-radios">
+
+										<div class="nhsuk-radios__item">
+											<input class="nhsuk-radios__input" id="add-further-details-no" name="add-further-details" type="radio" value="no">
+											<label class="nhsuk-label nhsuk-radios__label" for="add-further-details-no">
+												Yes
+											</label>
+										</div>
+
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="add-further-details" name="add-further-details" type="radio" value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="delete-evidence-yes">
+                        No
+                      </label>
+                    </div>
+
+                  </div>
+                </fieldset>
+
+              </div>
+
+			<button class="nhsuk-button" type="submit">Save and continue</button><br>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

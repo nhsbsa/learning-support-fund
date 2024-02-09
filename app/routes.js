@@ -27,6 +27,7 @@ router.use('/lsf-portal/v1', require('./views/lsf-portal/v1/_routes'));
 // ================================
 // Routes for LSF Public
 // ================================
+router.use('/lsf-public/v7-demo', require('./views/lsf-public/v7-demo/_routes'));
 router.use('/lsf-public/v7', require('./views/lsf-public/v7/_routes'));
 router.use('/lsf-public/v6', require('./views/lsf-public/v6/_routes'));
 router.use('/lsf-public/v5', require('./views/lsf-public/v5/_routes'));
