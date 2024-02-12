@@ -1,0 +1,450 @@
+<!--
+  This is the main layout where you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Extends the layout from /docs/views/template.html -->
+{% extends "template.html" %}
+
+<!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link rel="stylesheet" href="/autocomplete/accessible-autocomplete.min.css" />
+{% endblock %}
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Learning Support Fund
+{% endblock %}
+
+{% block header %}
+<header role="banner" class="nhsuk-header">
+  <script>
+    function clearSessionData() {
+      // Perform actions to clear session data here
+      // For example:
+      sessionStorage.clear(); // Clears all data stored in sessionStorage
+
+      // Optionally, you can redirect to the desired page after clearing session data
+      window.location.href = "current-search-student";
+    }
+  </script>
+  <div class="nhsuk-width-container nhsuk-header__container">
+    <div class="nhsbsa-sign-in__container">
+      <div class="nhsuk-header__logo">
+        <a class="nhsuk-header__link nhsuk-header__link--service" id="logo" href="/"
+          aria-label="NHS Learning Support Fund">
+          <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 16" height="40" width="100">
+            <path class="nhsuk-logo__background" fill="#005eb8" d="M0 0h40v16H0z"></path>
+            <path class="nhsuk-logo__text" fill="#fff"
+              d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6">
+            </path>
+          </svg>
+          <span class="nhsuk-header__service-name">Learning Support Fund</span>
+        </a>
+      </div>
+
+      <div class="nhsuk-header__content nhsbsa-text__white" id="content-header">
+        <span class="nhsbsa-heading-space">
+          Signed in as <span class="nhsuk-u-margin-right-3">Test Name
+          </span>
+          |
+          <a class="nhsbsa-signout__link nhsuk-u-margin-left-3" id="signOut" href="/" data-toggle="dialog"
+            data-target="dialog-signOut" aria-haspopup="true">Sign out</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
+<style>
+  /* signed in header */
+  .nhsbsa-text__white {
+    color: #fff;
+  }
+
+  .nhsbsa-signout__link {
+    text-decoration: underline;
+    color: #fff;
+  }
+
+  .nhsbsa-signout__link:hover,
+  .nhsbsa-signout__link:active,
+  .nhsbsa-signout__link:visited {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .nhsbsa-sign-in__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nhsbsa-heading-space {
+    margin-top: 20px;
+    display: inline-block;
+  }
+
+  @media (min-width: 48.0625em) {
+    .nhsbsa-sign-in__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    .nhsbsa-heading-space {
+      margin-top: 0px;
+    }
+  }
+
+  /* sign out modal */
+  .dialog[aria-hidden="false"] {
+    opacity: 1;
+    visibility: visible;
+    z-index: 11;
+  }
+
+  .dialog[aria-hidden="true"] {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .dialog-cancel {
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1.25;
+    margin-right: .78947em;
+    padding: .52632em .78947em .26316em;
+  }
+
+  .dialog {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    padding: 15px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 0;
+  }
+
+  .dialog:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    margin-right: -.25em;
+    vertical-align: middle;
+  }
+
+  .dialog-holder {
+    background-color: #fff;
+    border: 10px solid #fff;
+    display: inline-block;
+    margin: auto;
+    max-width: 530px;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  .dialog-content {
+    outline: none;
+    padding: 1em;
+    text-align: left;
+  }
+
+  @media (max-width : 640px) {
+    .dialog-heading {
+      font-size: 24px;
+      line-height: 1.04167;
+    }
+
+    .dialog:before {
+      display: none;
+    }
+  }
+
+  .dialog-close {
+    text-indent: -119988px;
+    overflow: hidden;
+    text-align: left;
+    text-transform: capitalize;
+    background-color: transparent;
+    border: 0 none;
+    cursor: pointer;
+    height: 22px;
+    margin: auto;
+    padding: 0;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 22px;
+  }
+
+  .dialog-heading {
+    font-size: 36px;
+    line-height: 1.11111;
+    font-weight: 700;
+    text-transform: none;
+    margin-top: .625em;
+    margin-bottom: .41667em;
+  }
+
+  .dialog-close span {
+    cursor: pointer;
+  }
+
+  .icon {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    cursor: default;
+    display: block;
+    height: 22px;
+    text-align: center;
+    vertical-align: middle;
+    width: 22px;
+  }
+
+  .icon a:hover {
+    background: transparent;
+  }
+
+  .icon-close {
+    background-image: url(/images/icon-close-2x.png);
+    display: block;
+  }
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  not all,
+  not all,
+  not all,
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+    .icon-close {
+      background-image: url(/images/icon-close-2x.png);
+      background-size: 60%;
+    }
+  }
+</style>
+{% endblock %}
+
+<!-- Edit the footer -->
+<!-- Footer code examples can be found at https://service-manual.nhs.uk/design-system/components/footer -->
+{% block footer %}
+<div class="dialog" id="dialog-signOut" aria-hidden="true">
+  <div class="dialog-holder" aria-labelledby="dialog-title-1" aria-describedby="dialog-content-1" role="alertdialog">
+    <div class="dialog-content" id="dialog-content-1" role="document" tabindex="0">
+      <h1 class="dialog-heading" id="dialog-title-1">Sign out</h1>
+      <form class="form">
+        <p>This will end your session. Are you sure you want to sign out?</p>
+        <div class="dialog-actions">
+          <a id="logoutYes" class="nhsuk-button nhsuk-u-margin-right-4" role="button" href="/lsf-public/v7/sign-in">Yes</a>
+          <a id="logoutNo" class="nhsuk-button nhsuk-button--secondary" role="button" href="#" onclick="cancel()">No</a><p></p>
+        </div>
+
+        <a class="dialog-close" aria-label="close" type="button">
+          <span class="icon icon-close">x</span>
+        </a>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  function cancel() {
+    document.getElementById("dialog-content-1").tabIndex = 0;
+    document.getElementById("dialog-signOut").ariaHidden = true;
+  }
+</script>
+
+{{ footer({
+"links": [
+{
+"URL": "/",
+"label": "Home"
+},
+{
+"URL": "/clear-data",
+"label": "Clear data"
+},
+{
+"URL": "/page-example",
+"label": "Example page"
+}
+]
+})}}
+{% endblock %}
+
+{% block bodyEnd %}
+{% block scripts %}
+<!-- Custom JavaScript files can be added to this file -->
+{% include "includes/scripts.html" %}
+<script>
+
+  (function (a, b) {
+    function d(a) {
+      if (a.keyCode === 9) {
+        var b = !!a.shiftKey;
+        e(this, a.target, b) && (a.preventDefault(), a.stopPropagation())
+      }
+    }
+
+    function e(a, b, c) {
+      var d = i(a),
+        e = b,
+        f, g, h, j;
+      do {
+        f = d.index(e), g = f + 1, h = f - 1, j = d.length - 1;
+        switch (f) {
+          case -1:
+            return !1;
+          case 0:
+            h = j;
+            break;
+          case j:
+            g = 0
+        }
+        c && (g = h), e = d.get(g);
+        try {
+          e.focus()
+        } catch (k) { }
+      } while (b === b.ownerDocument.activeElement);
+      return !0
+    }
+    function f() {
+      return this.tabIndex > 0
+    }
+    function g() {
+      return !this.tabIndex
+    }
+    function h(a, b) {
+      return a.t - b.t || a.i - b.i
+    }
+    function i(b) {
+      var c = a(b),
+        d = [],
+        e = 0;
+      return m.enable && m.enable(), c.find("a[href], link[href], [draggable=true], [contenteditable=true], :input:enabled, [tabindex=0]").filter(":visible").filter(g).each(function (a, b) {
+        d.push({
+          v: b,
+          t: 0,
+          i: e++
+        })
+      }), c.find("[tabindex]").filter(":visible").filter(f).each(function (a, b) {
+        d.push({
+          v: b,
+          t: b.tabIndex,
+          i: e++
+        })
+      }), m.disable && m.disable(), d = a.map(d.sort(h), function (a) {
+        return a.v
+      }), a(d)
+    }
+
+    function j() {
+      return this.keydown(d), this.data(c, !0), this
+    }
+    function k() {
+      return this.unbind("keydown", d), this.removeData(c), this
+    }
+    function l() {
+      return !!this.data(c)
+    }
+    var c = "trap.isTrapping";
+    a.fn.extend({
+      trap: j,
+      untrap: k,
+      isTrapping: l
+    });
+    var m = {};
+    a.find.find && a.find.attr !== a.attr && function () {
+      function e(a) {
+        var d = a.getAttributeNode(c);
+        return d && d.specified ? parseInt(d.value, 10) : b
+      }
+      function f() {
+        d[c] = d.tabIndex = e
+      }
+      function g() {
+        delete d[c], delete d.tabIndex
+      }
+      var c = "tabindex",
+        d = a.expr.attrHandle;
+      m = {
+        enable: f,
+        disable: g
+      }
+    }()
+  })(jQuery);
+
+  //Show Dialog
+  function showDialog() {
+    if ($('.dialog').length > 0) {
+      var dialogData = {
+        lastFocus: null
+      };
+      $('a[data-toggle=dialog]').on('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var anchor = $(this);
+        var data = '#' + anchor.attr('data-target');
+        openDialog(data, anchor); // Pass data value into function
+      });
+      // Open dialog
+      function openDialog(data, anchor) {
+        dialogData.lastFocus = anchor;
+        var dialog = $(data);
+        dialog.attr('aria-hidden', 'false')
+          .find('.dialog-content').focus()
+          .attr('tabindex', '-1');
+        dialog.trap();
+      }
+      // Close dialog only if visible
+      function closeDialog() {
+        var dialog = $('.dialog[aria-hidden=false]');
+        dialog.attr('aria-hidden', 'true')
+          .find('.dialog-content').blur()
+          .attr('tabindex', '0');
+        dialog.untrap();
+      }
+      // Stop bubbling
+      $('.dialog-holder').on('click', function (e) {
+        e.stopPropagation();
+      });
+      $('.dialog-close').on('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeDialog();
+      });
+      $('.dialog-cancel').on('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeDialog();
+      });
+      // Document binding events
+      $(document).bind({
+        click: function (e) {
+          closeDialog();
+        },
+        keyup: function (e) {
+          if (e.keyCode == 27) {
+            closeDialog();
+          }
+        }
+      });
+    }
+  }
+
+  (function () {
+    showDialog();
+  })();
+</script>
+<!-- For adding page specific JavsScript -->
+{% block pageScripts %}{% endblock %}
+{% endblock %}
+{% endblock %}
