@@ -7264,3 +7264,48 @@ ul.selected-roles-container {
   text-decoration: none;
   border:1px solid #212b32;
 }
+
+/* role tiles */
+ul.selected-claim-container {
+  font-size: 16px;
+  padding-left: 0px;
+}
+.selected-claim-container li:first-child {
+  margin-left: 0px;
+}
+.delete {
+  cursor: pointer;
+}
+.selected-claim-container li {
+  display: inline-block;
+  background-color: #fff;
+  color: #212b32;
+  font-weight: bold;
+  margin: .25rem;
+  padding: 0px;
+}
+
+.selected-claim-container li button:after {
+  content: "X";
+  margin: .25rem .25rem .25rem .75rem;
+  padding-left: .4rem;
+  border-left: .15rem solid #fff;
+}
+
+.selected-claim-container button {
+  background-color: #0055a6;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: .25rem;
+  text-decoration: underline;
+  padding: 10px;
+  border: 1px solid #212b32;
+}
+
+.selected-claim-container button:hover,
+.selected-claim-container button:focus {
+  text-decoration: none;
+  border:1px solid #212b32;
+}
