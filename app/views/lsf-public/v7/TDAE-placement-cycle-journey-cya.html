@@ -77,7 +77,7 @@ Additional costs for your normal daily journey
 							{% if data['placement-cycle-to-mileage'] %}
 					  			{{ data['placement-cycle-to-mileage'] }}
 					  		{% else %}
-					  			mileage not provided
+							  	No details entered
 				  			{% endif %}
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
@@ -89,13 +89,13 @@ Additional costs for your normal daily journey
 
 						<div class="nhsuk-summary-list__row">
 					    <dt class="nhsuk-summary-list__key">
-					      Mileage returning from placement
+					      Mileage from placement
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
 							{% if data['placement-cycle-return-mileage'] %}
 					  			{{ data['placement-cycle-return-mileage'] }}
 					  		{% else %}
-					  			mileage not provided
+							  	No details entered
 				  			{% endif %}
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
@@ -112,20 +112,20 @@ Additional costs for your normal daily journey
 			{% if not data['placement-cycle-to-mileage'] and data['placement-cycle-return-mileage'] %}
 			<div class="nhsuk-inset-text">
 				<span class="nhsuk-u-visually-hidden">Information: </span>
-				<p>You can only claim mileage for the return part of your journey as you have not provided any mileage for your journey to your placement.</p>
+				<p>You can only claim mileage travelling from your placement because you did not tell us about any mileage to your placement.</p>
 			</div>
 			<button class="nhsuk-button" type="submit">Add cycle journey mileage</button><br>
 			{% elif data['placement-cycle-to-mileage'] and not data['placement-cycle-return-mileage'] %}
 			<div class="nhsuk-inset-text">
 				<span class="nhsuk-u-visually-hidden">Information: </span>
-				<p>You can only claim mileage to your placement as you have not provided mileage for the return part of your journey.</p>
+				<p>You can only claim mileage travelling to your placement because you did not tell us about any mileage from your placement.</p>
 			</div>
 			<button class="nhsuk-button" type="submit">Add cycle journey mileage</button><br>
 			{% else %}
 			{% if not data['placement-cycle-to-mileage'] or not data['placement-cycle-return-mileage'] %}
 				<div class="nhsuk-inset-text">
 				<span class="nhsuk-u-visually-hidden">Information: </span>
-				<p>You cannot add journey mileage as you have not entered mileage to or from your placement.</p>
+				<p>You cannot claim mileage for this journey because you did not enter any mileage details.</p>
 				</div>
 			{% else %}
 				<button class="nhsuk-button" type="submit">Add cycle journey mileage</button><br>
