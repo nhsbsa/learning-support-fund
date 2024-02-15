@@ -124,12 +124,88 @@
                 </div>
 
                 <div class="nhsuk-form-group">
-                  <p><a class="nhsuk-link govuk-link--no-visited-state" href="#">Clear all</a></p>
-                  <br>
-                  <ul id="selectedClaimContainer" class="selected-claim-container">
-                    <!-- Selected course, year and claim status will be displayed here -->
-                  </ul>
+
+                  <div class="select-wrapper">
+                    <div id="selectText" class="selectedContainer">
+                      <p class="nhsuk-u-margin-bottom-0 nhsuk-u-font-weight-bold">You have selected:</p>  
+                      <p class="nhsuk-u-margin-bottom-0"><a class="nhsuk-link govuk-link--no-visited-state" href="#">Clear all</a></p>
+                    </div>
+                
+                    <ul id="selectedClaimContainer" class="selected-claim-container">
+                      <!-- Selected course, year and claim status will be displayed here -->
+                    </ul>
+                  </div>
                 </div>
+
+                <style>
+                  .select-wrapper {
+                    width:100%
+                  }
+                  @media (min-width: 40.0625em) {
+                    .select-wrapper {
+                      width:66%;
+                    }
+                  }
+                  .selectedContainer{
+                    display: flex;
+                    justify-content: space-between;
+                  }
+                  .border-style {
+                    padding: 20px;
+                    border: 1px solid #d8dde0;
+                  }
+                  #selectedClaimContainer {
+                    list-style-type: none;
+                  }
+                  #selectedClaimContainer li {
+                    display:inline-block;
+                  }
+                  .delete {
+                    background-color:	#005eb8;
+                    color: #fff;
+                    font-size: 19px;
+                    border: 1px solid #212b32;
+                    border-radius: 0px;
+                    box-sizing: border-box;
+                    display: inline-block;
+                    margin-left: 0px;
+                    margin-right: 10px;
+                    margin-top: 5px;
+                    padding: 10px;
+                    padding-right: 0px;
+                    position: relative;
+                    max-width: 100%;
+                    overflow: visible;
+                    text-overflow: inherit;
+                    vertical-align: bottom;
+                    white-space: normal;
+                    height: auto;
+                    margin-bottom: 0px;
+                    cursor: pointer;
+                  }
+                  span.delete-cross {
+                    border-left: 1px solid #212b32;
+                    padding: 10px;
+                    margin-left: 5px;
+                  }
+                  .delete:hover {
+                    text-decoration: underline;
+                    background-color: #004582;
+                  }
+                  .delete:focus {
+                    text-decoration: underline;
+                    background-color: #004582;
+                    border: 4px solid #ffeb3b;
+                  }
+                  .delete:active, .delete:focus-visible {
+                    border: 2px solid #212b32;
+                    box-shadow: inset 0 0 0 2px #212b32;
+                    outline: 4px solid #ffeb3b;
+                    outline-offset: 0;
+                    background-color: #004582;
+                    border-radius: 0px !important;
+                  }
+                </style>
 
                 <form action="TDAE-claims-list?filter=yes" method="POST">
                   <button class="nhsuk-button nhsuk-u-margin-right-5" data-module="nhsuk-button">Apply filters</button>
@@ -433,6 +509,15 @@
       // Append the list item to the container
       selectedClaimContainer.appendChild(listItem);
     });
+
+    if (selectedClaimContainer.querySelector('li')) {
+      // If there are, add the class for non-empty UL
+      selectedClaimContainer.classList.add('border-style');
+      document.getElementById('selectText').style.display = 'flex';
+    } else {
+      document.getElementById('selectText').style.display = 'none';
+      selectedClaimContainer.classList.remove('border-style');
+    }
   }
 
   // Function to create a list item with a delete button
@@ -442,6 +527,12 @@
     deleteButton.className = "delete";
     deleteButton.setAttribute('aria-label', 'Remove ' + label + ' from the list');
     deleteButton.innerText = label;
+
+    var spanElement = document.createElement('span');
+    spanElement.className = 'delete-cross';
+    spanElement.setAttribute('aria-hidden', 'true');
+    spanElement.textContent = 'X';
+    deleteButton.appendChild(spanElement);
 
     // Add click event listener to the delete button
     deleteButton.addEventListener('click', function () {
@@ -463,20 +554,17 @@
   window.onload = updateSelectedClaim;
 </script>
 
-
-
-
-
 <script>
-  function change() // no ';' here
-{
-  var btn = document.getElementById("toggle-filter");
-  if(btn.innerText=="Show filter"){
-     btn.innerText="Hide filter";
+// show/hide filter
+function change() // no ';' here
+  {
+    var btn = document.getElementById("toggle-filter");
+    if(btn.innerText=="Show filter"){
+      btn.innerText="Hide filter";
     }
-  else{
+  else {
     btn.innerText="Show filter";
-    }
+  }
 }
 </script>
 
