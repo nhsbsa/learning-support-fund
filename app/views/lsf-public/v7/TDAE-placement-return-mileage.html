@@ -19,23 +19,15 @@ What is the return mileage to your placement?
 
 
       <div class="nhsuk-form-group">
-				{% if data['same-journey'] === "yes" %}
-					<label class="nhsuk-label" for="placement-mileage">
-	          <h1 class="nhsuk-heading-l">What is your daily driving mileage to and from your placement?</h1>
-	        </label>
-	        <div class="nhsuk-hint" id="contact-hint">
-	          You should calculate this as a return journey from your term-time address to your placement.
-	        </div>
-				{% else %}
-					<label class="nhsuk-label" for="placement-mileage">
-						<h1 class="nhsuk-heading-l">How many miles did it take to return from your placement?</h1>
-					</label>
-					<div class="nhsuk-hint" id="contact-hint">
-						You should calculate this from your placement or accommodation to your term-time address.
-					</div>
-				{% endif %}
-				<input class="nhsuk-input__suffix-input nhsuk-input nhsuk-input--width-5" id="placement-return-mileage" name="placement-return-mileage" type="text">
-				<div class="nhsuk-input__suffix" aria-hidden="true">miles</div>
+		<label class="nhsuk-label" for="placement-mileage">
+			<h1 class="nhsuk-heading-l">How many miles did it take to return from your placement? (optional)</h1>
+		</label>
+		<div class="nhsuk-hint" id="contact-hint">
+			You should calculate this from your placement to your term-time address.
+		</div>
+		
+		<input class="nhsuk-input__suffix-input nhsuk-input nhsuk-input--width-5" id="placement-return-mileage" name="placement-return-mileage" type="text">
+		<div class="nhsuk-input__suffix" aria-hidden="true">miles</div>
       </div>
 
 			<details class="nhsuk-details">
