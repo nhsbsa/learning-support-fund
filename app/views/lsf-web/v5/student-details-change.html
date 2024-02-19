@@ -56,7 +56,7 @@ Student details
         <div class="nhsuk-grid-column-two-thirds">
           <h2 class="nhsuk-heading-m">Account details</h2>
           {% if data['number'] == 'changed' %}
-            <p id="studentEmail" class="wordbreak">Phone number has been changed it will be validated when the student signs in and enters a security code.</p>
+            <p id="studentEmail" class="wordbreak">The student needs to sign into their account using a security code to confirm their phone number.</p>
           {% endif %}
           <dl class="nhsuk-summary-list">
             <div class="nhsuk-summary-list__row">
@@ -90,10 +90,10 @@ Student details
             </div>
 
             <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">Enabled</dt>
-              <dd class="nhsuk-summary-list__value">Yes</dd>
+              <dt class="nhsuk-summary-list__key">Account status</dt>
+              <dd class="nhsuk-summary-list__value">Active</dd>
               <dd class="nhsuk-summary-list__actions">
-                <a id="updateEnabled" href="#">
+                <a id="updateEnabled" href="change-account-status">
                   Change<span class="nhsuk-u-visually-hidden"> enabled</span>
                 </a>
               </dd>

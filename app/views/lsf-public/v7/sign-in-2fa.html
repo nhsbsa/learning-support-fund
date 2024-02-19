@@ -9,27 +9,30 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
-        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund account</span>
-          Enter the security code</h1>
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+        <h1 class="nhsuk-heading-l">Check your phone</h1>
 
         {% if data['send-again'] == 'true' %}
           <div class="nhsuk-inset-text">
             <span class="nhsuk-u-visually-hidden">Information: </span>
-            <p>You have been sent a new code.</p>
+            <p>New code sent.</p>
           </div>
         {% endif %}
 
-        <p>We sent a text to <b>*******6920</b>.
+        <p>We've sent a text message with a security code to <b>*******6920</b>.
 
         <details class="nhsuk-details">
           <summary class="nhsuk-details__summary">
             <span class="nhsuk-details__summary-text">
-              Not received a text?
+              Not received a text message?
             </span>
           </summary>
           <div class="nhsuk-details__text">
-            <p>When we are really busy it may take a bit longer for us to text you.</p>
-            <p><a href="sign-in-2fa?send-again=true">Send the security code again</a>.</p>
+            <p>If you want to change where the text message is sent, you can change the <a href="sign-in-2fa?send-again=true">mobile number</a>.</p>
           </div>
         </details>
 
@@ -38,7 +41,7 @@
               Security code
             </label>
             <div class="nhsuk-hint" id="example-with-hint-text-hint">
-              This code is 6 digits
+              This is a 5 digit code
             </div>
             <input class="nhsuk-input nhsuk-input--width-10" id="security-code" name="security-code" type="text">
         </div>
@@ -61,9 +64,8 @@
             </span>
           </summary>
           <div class="nhsuk-details__text">
-            <p>We can remember the device you are using now, so you will not need to enter a security code when you log in with this device in the future.</p>
-            <p>To keep your NHS Learning Support Fund account secure, you should only do this on your own personal or trusted devices.</p>
-            <p>We will only remember this device for 60 days. After you will need to enter a security code again.</p>
+            <p>If you select this, we'll remember this device for 60 days. You'll not need to enter a security code each time you sign in with this device. After this time, you'll need to enter a security code again.</p>
+            <p>To keep your NHS Learning Support Fund account secure, only select this on personal or trusted devices.</p>
           </div>
         </details>
 
@@ -74,16 +76,11 @@
             </span>
           </summary>
           <div class="nhsuk-details__text">
-            <p>If you no longer have access to the phone number the code has been sent to, you will need to contact the NHSBSA.</p>
-            <p>You can contact us by:</p>
-            <ul class="nhsuk-list nhsuk-list--bullet">
-              <li>Calling us on 0300 330 0521</li>
-              <li>Using our text relay service on 18001 0300 330 0521</li>
-            </ul>
+            <p>You cannot change your phone number without entering a security code. Try again later when you can access your phone or <a href="https://www.nhsbsa.nhs.uk/nhs-learning-support-fund-lsf/contact-us" target="_blank">contact us (opens in a new tab)</a>.</p>
           </div>
         </details>
 
-        <a class="nhsuk-button" href="dashboard">Continue</a><br>
+        <a class="nhsuk-button" href="sign-in-2fa-user-research">Continue</a><br>
         <p><a href="sign-in">Cancel</a></p>
 
     </div>

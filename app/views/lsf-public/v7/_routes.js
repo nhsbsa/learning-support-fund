@@ -11,6 +11,31 @@ const router = express.Router();
 
 // ********************************
 
+router.post('/v7/change-phone-number', (req, res) => {
+
+  const signIn = req.session.data['sign-in']
+
+  if (signIn === 'yes'){
+    res.redirect('/lsf-public/v7/sign-in-2fa')
+  } else {
+    res.redirect('/lsf-public/v7/change-phone-number-2fa')
+  }
+
+})
+
+router.post('/v7/phone-number-check', (req, res) => {
+
+  const numberCorrect = req.session.data['number-correct']
+
+  if (numberCorrect === 'yes'){
+    res.redirect('/lsf-public/v7/sign-in-2fa')
+  } else {
+    req.session.data['sign-in'] = 'yes';
+    res.redirect('/lsf-public/v7/change-phone-number')
+  }
+
+})
+
 router.post('/v7/TDAE-accommodation-pause', (req, res) => {
 
   res.redirect('/lsf-public/v7/TDAE-accommodation-same-start-date')

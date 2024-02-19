@@ -9,13 +9,16 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+      
+        <h1 class="nhsuk-heading-l">What is your email address?</h1>
 
-        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Create your account</span>What is your email address?</h1>
-
-
+        <p>We'll use this to contact you about your NHS Learning Support Fund.</p>
 
         <div class="nhsuk-form-group">
-          <div class="nhsuk-hint">We'll use this to contact you.</div>
           <input class="nhsuk-input nhsuk-input--width-20" id="email-address" name="email-address" type="text">
         </div>
         <a class="nhsuk-button" href="phone-number">Continue</a><br>

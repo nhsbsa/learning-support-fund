@@ -9,22 +9,31 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
 
-        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Update phone number</span>What is your UK mobile phone number?</h1>
+      <form action="v7/change-phone-number" method="POST">
 
-        <p>Enter the phone number you would like us to contact you on and that you will receive text messages to sign in.</p>
+
+        <h1 class="nhsuk-heading-l">What is your mobile phone number?</h1>
+
+        <p>We'll send you text messages when you sign in to your account. We may also use this to contact you about your NHS Learning Support Fund.</p>
 
         <div class="nhsuk-form-group">
+            <div class="nhsuk-hint">For international numbers include the country code</div>
             <input class="nhsuk-input nhsuk-input--width-20" id="email-address" name="email-address" type="text">
         </div>
 
         <div class="nhsuk-inset-text">
           <span class="nhsuk-u-visually-hidden">Information: </span>
-          <p>We will send a security code to your phone number.</p>
+          <p>We'll send a security code to this number.</p>
         </div>
 
-        <a class="nhsuk-button" href="change-phone-number-2fa">Continue</a><br>
+        <button class="nhsuk-button">Continue</button><br>
         <p><a href="dashboard">Cancel</a></p>
+      </form>
 
     </div>
 

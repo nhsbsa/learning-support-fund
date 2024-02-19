@@ -1,0 +1,49 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Student details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-heading-l">
+			Set the account status
+		</h1>
+    <div class="nhsuk-form-group">
+      <div class="nhsuk-radios">
+
+        <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+          <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+            Active
+          </label>
+        </div>
+
+        <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+          <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+            Inactive
+          </label>
+        </div>
+
+      </div>
+    </div>
+    <a class="nhsuk-button" href="change-account-status-changed">Save and continue</a><br>
+    <p><a href="student-details-change">Cancel</a></p>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+	<script>
+		const sendBtn = document.getElementById('emailButton');
+		const sendConfirm = document.getElementById('emailSentMsg');
+
+		sendBtn.addEventListener("click", function (event) {
+			sendConfirm.setAttribute("style", "display:block");
+		});
+
+
+	</script>
+{% endblock %}

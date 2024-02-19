@@ -8,28 +8,30 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
 
-        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Change your username</span>
-          Enter the security code</h1>
+        <h1 class="nhsuk-heading-l">Enter the security code</h1>
 
         {% if data['send-again'] == 'true' %}
           <div class="nhsuk-inset-text">
             <span class="nhsuk-u-visually-hidden">Information: </span>
-            <p>You have been sent a new code.</p>
+            <p>New code sent.</p>
           </div>
         {% endif %}
 
-        <p>We sent a text to <b>*******6920</b>.
+        <p>We've sent a text message with a security code to <b>*******6920</b>.
 
         <details class="nhsuk-details">
           <summary class="nhsuk-details__summary">
             <span class="nhsuk-details__summary-text">
-              Not received a text?
+              Not received a text message?
             </span>
           </summary>
           <div class="nhsuk-details__text">
-            <p>When we are really busy it may take a bit longer for us to text you.</p>
-            <p><a href="sign-in-2fa?send-again=true">Send the security code again</a>.</p>
+            <p>Text messages sometimes take a few minutes to arrive. If you do not receive the text message, you can <a href="sign-in-2fa?send-again=true">request a new one</a>.</p>
           </div>
         </details>
 
@@ -38,7 +40,7 @@
               Security code
             </label>
             <div class="nhsuk-hint" id="example-with-hint-text-hint">
-              This code is 6 digits
+              This is a 5 digit code
             </div>
             <input class="nhsuk-input nhsuk-input--width-10" id="security-code" name="security-code" type="text">
         </div>
