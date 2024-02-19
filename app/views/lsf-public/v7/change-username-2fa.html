@@ -13,7 +13,7 @@
         "text": "Go back"
       }) }}
 
-        <h1 class="nhsuk-heading-l">Enter the security code</h1>
+        <h1 class="nhsuk-heading-l">Check your phone</h1>
 
         {% if data['send-again'] == 'true' %}
           <div class="nhsuk-inset-text">
@@ -31,7 +31,7 @@
             </span>
           </summary>
           <div class="nhsuk-details__text">
-            <p>Text messages sometimes take a few minutes to arrive. If you do not receive the text message, you can <a href="sign-in-2fa?send-again=true">request a new one</a>.</p>
+            <p>Text messages sometimes take a few minutes to arrive. If you do not receive the text message, you can <a href="change-username-2fa?send-again=true">request a new one</a>.</p>
           </div>
         </details>
 
@@ -52,8 +52,8 @@
             </span>
           </summary>
           <div class="nhsuk-details__text">
-            <p>To change your username it is required that you validate the change with a security code. If you cannot access your text messages right now you will need to update your username another time.</p>
-            <p>If your phone number has changed you will need to change your phone number in your account details before changing your username.</p>
+            <p>You cannot change some details without entering a security code. Try again later when you can access your phone.</p>
+            <p>If you no longer use this phone number, you can change it in your personal details or <a href="https://www.nhsbsa.nhs.uk/nhs-learning-support-fund-lsf/contact-us" target="_blank">contact us (opens in a new tab)</a>.</p>
           </div>
         </details>
 

@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-full">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Period 2 placement extra costs</h1>
+
+    <p>There are no extra costs the student travelling to and from placements in period 2.</p>
+
+    <a class="nhsuk-button" href="TDAE-placement-overview-2">Continue</a>
+
+  </div>
+
+</div>
+{% endblock %}

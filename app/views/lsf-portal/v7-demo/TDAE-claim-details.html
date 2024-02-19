@@ -1,0 +1,109 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Claim details</h1>
+
+    <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Start date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            05 December 2022
+          </dd>
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            End date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            09 December 2022
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Number of days at placement
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              3
+            </dd>
+          </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Placement address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            246 Placement street<br>
+            Newcastle,<br>
+            NE33 3AB
+          </dd>
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Daily return mileage cost
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £8.40
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Daily additional costs
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              £2
+            </dd>
+          </div>
+      </dl>
+
+        <!-- <form action="/form-handler" method="post" novalidate> -->
+            <div class="nhsuk-form-group">
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                    Have you completed this section?
+                  </legend>
+                  <div class="nhsuk-radios" data-module="nhsuk-radios">
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="have-you-completed-this-section" name="have-you-completed-this-section" type="radio" value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="have-you-completed-this-section">
+                        Yes, I’ve completed this section
+                      </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="have-you-completed-this-section-2" name="have-you-completed-this-section" type="radio" value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="have-you-completed-this-section-2">
+                        No, I’ll come back to it later
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <a class="nhsuk-button" href="TDAE-student-claim">Continue</a>
+              <!-- <button class="nhsuk-button" data-module="nhsuk-button">
+                Continue
+              </button> -->
+            <!-- </form> -->
+
+  </div>
+
+</div>
+{% endblock %}

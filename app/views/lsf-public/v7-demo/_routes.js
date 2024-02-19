@@ -239,7 +239,7 @@ router.post('/v7-demo/TDAE-public-transport-daily-cost', (req, res) => {
 
 router.post('/v7-demo/TDAE-public-transport-dates', (req, res) => {
 
-  res.redirect('/lsf-public/v7-demo/TDAE-ticket-already-claimed');
+  res.redirect('/lsf-public/v7-demo/TDAE-public-transport-days');
 
 })
 
@@ -482,15 +482,15 @@ router.post('/v7-demo/TDAE-accommodation-travel-transport-method', (req, res) =>
   } else if (isCarSelected && isPublicTransportSelected) {
     // Both 'car' and 'public transport' are selected
     res.redirect('/lsf-public/v7-demo/accommodation-journey/TDAE-accommodation-travel-car-journey-mileage');
-  
+
   } else if (isCarSelected && isCycleSelected) {
       // Both 'car' and 'cycle' are selected
       res.redirect('/lsf-public/v7-demo/accommodation-journey/TDAE-accommodation-travel-car-journey-mileage');
-  
+
   } else if (isPublicTransportSelected && isCycleSelected) {
     // Both 'public transport' and 'cycle' are selected
     res.redirect('/lsf-public/v7-demo/accommodation-journey/TDAE-accommodation-travel-public-transport-method');
-    
+
   } else if (isCarSelected) {
     // Only 'car' is selected
     res.redirect('/lsf-public/v7-demo/accommodation-journey/TDAE-accommodation-travel-car-journey-mileage');
@@ -605,12 +605,12 @@ router.post('/v7-demo/TDAE-accommodation-travel-public-transport-cost', (req, re
   } else if (isPublicTransportSelected && isCycleSelected) {
     // Redirect to cycle journey mileage page if 'public transport' and 'cycle' were selected
     res.redirect('/lsf-public/v7-demo/accommodation-journey/TDAE-accommodation-travel-cycle-journey-mileage');
-    
+
   } else if (isPublicTransportSelected) {
     // Redirect to travel evidence page if only 'public transport' was selected
     res.redirect('/lsf-public/v7-demo/accommodation-journey/TDAE-accommodation-travel-evidence');
   }
-  
+
 });
 
 router.post('/v7-demo/TDAE-accommodation-travel-cycle-journey-mileage', (req, res) => {
@@ -618,7 +618,7 @@ router.post('/v7-demo/TDAE-accommodation-travel-cycle-journey-mileage', (req, re
   res.redirect('/lsf-public/v7-demo/accommodation-journey/TDAE-accommodation-travel-evidence')
 
 });
-  
+
 
 router.post('/v7-demo/TDAE-accommodation-travel-evidence', (req, res) => {
 
@@ -1470,7 +1470,7 @@ router.post('/v7-demo/TDAE-travel-accommodation', (req, res) => {
     } else if (change == ('yes')) {
         res.redirect('/lsf-public/v7-demo/TDAE-eligibility-cya')
     } else {
-        res.redirect('/lsf-public/v7-demo/TDAE-costs-already-claimed')
+        res.redirect('/lsf-public/v7-demo/TDAE-reuse-answers')
     }
 
 })

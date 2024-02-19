@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <!-- <form action="v7-demo/TDAE-" method="POST"> -->
+
+        <h1 class="nhsuk-heading-l">Check reasons for {% if data['return-student'] != 'Decline claim' %}returning to student{% else %}declining the claim{% endif %}</h1>
+
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Do you want to return or decline the claim?
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {{ data['return-student'] }}
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="TDAE-return-decline">
+                Change<span class="nhsuk-u-visually-hidden"> reason</span>
+              </a>
+            </dd>
+          </div>
+          {% if data['return-student'] != 'Decline claim' %}
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Why are you returning the claim?
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{ data['return-reason'] }}
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="TDAE-send-to-student">
+                  Change<span class="nhsuk-u-visually-hidden"> reason</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Comment for student
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{ data['return-more-detail'] }}
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+
+                <a href="TDAE-details-for-return">
+                  Change<span class="nhsuk-u-visually-hidden"> details</span>
+                </a>
+
+              </dd>
+
+            </div>
+
+          </dl>
+
+        <a class="nhsuk-button" href="TDAE-sent-to-student">Submit to student</a><br>
+
+    <!-- </form> -->
+
+    </div>
+
+  </div>
+{% endblock %}

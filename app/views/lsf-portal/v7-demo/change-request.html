@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+What changes do you want to make
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+      "href": "javascript:history.go(-1)",
+      "text": "Go back"
+  }) }}
+    <form action="v7-demo/change-request" method="POST">
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Joe Bloggs change request</span>What changes do you want to make for Joe Bloggs?</h1>
+          </legend>
+
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="interruption" name="change-request" type="radio" value="interruption">
+              <label class="nhsuk-label nhsuk-radios__label" for="interruption">
+                Interruption
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="additional-funding" name="change-request" type="radio" value="additional-funding">
+              <label class="nhsuk-label nhsuk-radios__label" for="additional-funding">
+                Additional funding
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="attendance-status" name="change-request" type="radio" value="attendance-status">
+              <label class="nhsuk-label nhsuk-radios__label" for="attendance-status">
+                Change attendance status
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="resume-student" name="change-request" type="radio" value="resume-student">
+              <label class="nhsuk-label nhsuk-radios__label" for="resume-student">
+                Resume student
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="course-details" name="change-request" type="radio" value="course-details">
+              <label class="nhsuk-label nhsuk-radios__label" for="course-details">
+                Change course details
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="student-query" name="change-request" type="radio" value="student-query">
+              <label class="nhsuk-label nhsuk-radios__label" for="student-query">
+                General student query
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>
+      <button class="nhsuk-button" type="submit">Next</button>
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}
