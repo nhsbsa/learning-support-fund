@@ -1,0 +1,69 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Course details
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/student-details">Student details</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/student-course-details">Course details</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/enrolment-actions/view-students-application">Student's application</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v5/enrolment-actions/view-students-application">Back to Student's application</a></p>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-heading-l">
+      <span class="nhsuk-caption-l" id="studentRef">
+        <span>{{ data['student number'] }} - {{ data['name'] }}</span>
+        <span class="nhsuk-u-visually-hidden"> - </span>
+      </span>
+      Course details
+    </h1>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">University</dt>
+        <dd class="nhsuk-summary-list__value" id="college">Anglia Ruskin University - Cambridge</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Course</dt>
+        <dd class="nhsuk-summary-list__value" id="course">Adult Nursing</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Academic year</dt>
+        <dd class="nhsuk-summary-list__value" id="enrolmentYear">September 2023</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Course length</dt>
+        <dd class="nhsuk-summary-list__value" id="courseLength">3 years</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Final year?</dt>
+        <dd class="nhsuk-summary-list__value" id="finalYear">No</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Course year</dt>
+        <dd class="nhsuk-summary-list__value" id="courseYear">Year 1</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Attendance type</dt>
+        <dd class="nhsuk-summary-list__value" id="partTime">Full time</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key w-50">
+          Repeating any part of your course</dt>
+        <dd class="nhsuk-summary-list__value" id="repeatYear">No</dd>
+      </div>
+    </dl>
+    <p><a href="/lsf-web/v5/enrolment-actions/view-students-application">Cancel</a></p>
+  </div>
+</div>
+{% endblock %}

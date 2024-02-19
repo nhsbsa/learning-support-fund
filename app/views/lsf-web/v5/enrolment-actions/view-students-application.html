@@ -1,0 +1,58 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Student's application
+{% endblock %}
+{% block beforeContent %}
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/current-search-student">Student search</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/student-details">Student details</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/student-course-details">Course details</a></li>
+      </ol>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v5/student-course-details">Back to Course details</a></p>
+    </div>
+  </nav>
+{% endblock %}
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-heading-l">
+      <span class="nhsuk-caption-l" id="studentRef">
+        <span>{{ data['student number'] }} - {{ data['name'] }}</span>
+        <span class="nhsuk-u-visually-hidden"> - </span>
+      </span>
+      Student's application
+    </h1>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key nhsuk-u-width-one-half">
+          <a href="/lsf-web/v5/enrolment-actions/view-student-declaration" id="declaration">Student declaration</a>
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Complete
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key nhsuk-u-width-one-half">
+          <a href="/lsf-web/v5/enrolment-actions/course-details" id="course">Course details</a>
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Complete
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key nhsuk-u-width-one-half"><a href="/lsf-web/v5/enrolment-actions/eligibility-details" id="eligibility">Eligibility details</a></dt>
+        <dd class="nhsuk-summary-list__value">Complete</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key nhsuk-u-width-one-half">Parental Support application</dt>
+        <dd class="nhsuk-summary-list__value">Not started</dd>
+      </div>
+    </dl>
+    <p><a href="/lsf-web/v5/enrolment-actions/view-students-application"></a></p>
+  </div>
+</div>
+{% endblock %}

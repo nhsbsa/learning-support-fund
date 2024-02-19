@@ -1,0 +1,50 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Student name
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/current-search-student">Student search</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/student-course-details">Student details</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/student-details-change">Update student details</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v5/student-details-change">Back to Update student details</a></p>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<form id="updatenameForm" name="updatenameForm" action="/lsf-web/v5/student-details-change" method="post" novalidate="">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        <span class="nhsuk-caption-l">
+          Update personal details
+          <span class="nhsuk-u-visually-hidden"> - </span>
+        </span>
+        Student name
+      </h1>
+      <div class="nhsuk-form-group">
+        <label id="firstname-label" for="firstname" class="nhsuk-label">First name</label>
+
+        <input class="nhsuk-input nhsuk-u-width-two-thirds" name="firstName" id="firstname" type="text" value="">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label id="lastName-label" for="lastName" class="nhsuk-label">Last name</label>
+
+        <input name="lastName" id="lastName" class="nhsuk-input nhsuk-u-width-two-thirds" type="text" value="">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <button class="nhsuk-button" type="submit" id="next" data-module="nhsuk-button" data-prevent-double-click="true">Save and submit</button>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}

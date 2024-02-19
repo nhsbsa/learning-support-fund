@@ -4,6 +4,18 @@
 Student details
 {% endblock %}
 
+{% block beforeContent %}
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/current-search-student">Student search</a></li>
+       
+      </ol>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v5/current-search-student">Back to Student search</a></p>
+    </div>
+  </nav>
+{% endblock %}
+
 {% block content %}
   <div class="nhsuk-grid-row">
 		<div class="nhsuk-grid-column-two-thirds">
@@ -185,7 +197,7 @@ Student details
 										<td role="cell" class="nhsuk-table__cell">
 											<span class="nhsuk-table-responsive__heading">Academic year reference </span>
 											<span class="nhsuk-u-visually-hidden">0000000034</span>
-											<a href="/lsf-web/v4/student-course-details">
+											<a href="/lsf-web/v5/student-course-details">
 												<span id="enrolmentNo0">SSRN0000074-3</span>
 											</a>
 										</td>
@@ -206,7 +218,7 @@ Student details
 										<td role="cell" class="nhsuk-table__cell">
 											<span class="nhsuk-table-responsive__heading">Academic year reference </span>
 											<span class="nhsuk-u-visually-hidden">0000000031</span>
-											<a href="/lsf-web/v4/student-course-details">
+											<a href="/lsf-web/v5/student-course-details">
 												<span id="enrolmentNo1">SSRN0000074-2</span>
 											</a>
 										</td>
@@ -227,7 +239,7 @@ Student details
 										<td role="cell" class="nhsuk-table__cell">
 											<span class="nhsuk-table-responsive__heading">Academic year reference </span>
 											<span class="nhsuk-u-visually-hidden">0000000017</span>
-											<a href="/lsf-web/v4/student-course-details">
+											<a href="/lsf-web/v5/student-course-details">
 												<span id="enrolmentNo2">SSRN0000074-1</span>
 											</a>
 										</td>

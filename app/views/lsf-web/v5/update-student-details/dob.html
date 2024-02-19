@@ -1,0 +1,65 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Update course details
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/current-search-student">Student search</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/student-course-details">Student details</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/student-details-change">Update student details</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v5/student-details-change">Back to Update student details</a></p>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<form id="updatenameForm" name="updatenameForm" action="/lsf-web/v5/student-details-change" method="post" novalidate="">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      
+      <h1 class="nhsuk-heading-xl">
+        <span class="nhsuk-caption-l">
+          Update personal details
+          <span class="nhsuk-u-visually-hidden"> - </span>
+        </span> 
+        Student date of birth
+      </h1>
+  
+      <div class="nhsuk-form-group">
+         <fieldset id="dob" role="group" class="nhsuk-fieldset" aria-describedby="formhint">
+          <legend class="nhsuk-u-visually-hidden">Date of birth</legend>
+          
+          <span class="nhsuk-hint" id="formhint"> For example, 15 3 1984</span>
+  
+          
+      
+          <div class="nhsuk-date-input">
+            <div class="nhsuk-date-input__item">
+              <label id="dob-day-label" class="nhsuk-label nhsuk-date-input__label" for="dob-day">Day</label> 
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-day" name="day" type="number" pattern="[0-9]*" inputmode="numeric" maxlength="2" oninput="this.value=this.value.slice(0,this.maxLength)" value="11">
+            </div>
+
+            <div class="nhsuk-date-input__item">
+              <label id="dob-month-label" class="nhsuk-label nhsuk-date-input__label" for="dob-month">Month</label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-month" name="month" type="number" pattern="[0-9]*" inputmode="numeric" maxlength="2" oninput="this.value=this.value.slice(0,this.maxLength)" value="1">
+            </div>
+
+            <div class="nhsuk-date-input__item">
+              <label id="dob-year-label" class="nhsuk-label nhsuk-date-input__label" for="dob-year">Year</label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dob-year" name="year" type="number" pattern="[0-9]*" inputmode="numeric" maxlength="4" oninput="this.value=this.value.slice(0,this.maxLength)" value="1987">
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="nhsuk-form-group">
+        <button class="nhsuk-button" type="submit" id="next" data-module="nhsuk-button" data-prevent-double-click="true">Save and submit</button>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}

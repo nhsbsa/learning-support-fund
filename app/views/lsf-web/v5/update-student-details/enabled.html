@@ -1,0 +1,50 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+  Withdraw student
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/current-search-student">Student search</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/student-course-details">Student details</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/student-details-change">Update student details</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v5/student-details-change">Back to Update student details</a></p>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<form id="updatenameForm" name="updatenameForm" action="/lsf-web/v5/student-details-change" method="post" novalidate="">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+          <h1 class="nhsuk-fieldset__heading">
+            <span class="nhsuk-caption-l">
+              Update account details
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+            Student enabled
+          </h1>
+        </legend>
+        <div class="nhsuk-form-group">				
+          <div class="nhsuk-checkboxes">
+            <div class="nhsuk-checkboxes__item">
+              <input type="checkbox" class="nhsuk-checkboxes__input" id="enabled" name="enabled" value="true" checked="checked">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="enabled">Enabled</label> 
+            </div>
+          </div>
+        </div>
+      </fieldset>		
+      <div class="nhsuk-form-group">
+        <button class="nhsuk-button" type="submit" id="next" data-module="nhsuk-button" data-prevent-double-click="true">Save and submit</button>
+      </div> 
+    </div>
+  </div>
+</form>
+{% endblock %}
