@@ -768,3 +768,84 @@ hr.solid {
   fill: #fff;
 }
 /* need to do the button focus styles */
+
+/* signed in header */
+.nhsbsa-text__white {
+  color: #fff;
+}
+.nhsbsa-signout__link{
+  text-decoration: none;
+  color:#fff;
+}
+.nhsbsa-signout__link:hover, .nhsbsa-signout__link:active, .nhsbsa-signout__link:visited {
+  text-decoration: underline;
+  color:#fff;
+}
+.nhsbsa-sign-in__container {
+  display: block;
+}
+.nhsbsa-heading-space {
+  margin-top: 10px;
+  display: inline-block;
+  word-break: break-all;
+}
+@media (min-width: 48.0625em) {
+  .nhsbsa-sign-in__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media only screen and (max-width:640px) {
+  .nhsbsa-sign-in__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+@media only screen and (max-width:320px) {
+  .nhsbsa-sign-in__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nhsuk-header__menu {
+    float: left;
+}
+}
+@media screen and (min-width: 536px) and (max-width: 768px){
+  .nhsbsa-sign-in__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap:10px;
+  }
+  .nhsuk-header__menu-toggle {
+    right: 0px;
+    margin-top:0px;
+  }
+}
+@media only screen and (max-width: 40.0525em){
+  .nhsuk-header__menu-toggle {
+    right: 0px;
+  }
+}
+@media (min-width: 40.0625em){ 
+  .nhsuk-header__menu {
+    float: right;
+  }
+}
+@media (min-width: 990px){ 
+  .nhsbsa-heading-space {
+    margin-top:0px;
+  }
+}
+/* /. */
