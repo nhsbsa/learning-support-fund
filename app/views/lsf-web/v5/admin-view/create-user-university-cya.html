@@ -5,16 +5,17 @@ Create user
 {% endblock %}
 
 {% block content %}
-	
-{{ backLink({
-	"href": "javascript:history.go(-1)",
-	"text": "Go back"
-  }) }}
+<div class="nhsuk-grid-row">
 
-	<form name="userDetailsForm" action="v5/admin-view/test-journey/create-user-university-cya" method="post" novalidate="">
-		<div class="nhsuk-grid-row">
-			<div class="nhsuk-grid-column-two-thirds">	
-				
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}	
+
+  <form name="userDetailsForm" action="/lsf-web/v5/admin-view/create-user-done" method="post" novalidate="">
+
 
 					<div class="content">
 					  <h1 class="nhsuk-heading-l" id="title">Check your answers</h1>
@@ -24,7 +25,7 @@ Create user
 						  <dt id="mother-int-date" class="nhsuk-summary-list__key">User's email address</dt>
 						  <dd class="nhsuk-summary-list__value" id="email">jane.doe@gmail.com</dd>
 						  <dd class="nhsuk-summary-list__actions">
-							<a href="/lsf-web/v5/admin-view/test-journey/create-user-2/#email" id="email-change" aria-label="Change user's email address">Change</a>
+							<a href="/lsf-web/v5/admin-view/create-user#email" id="email-change" aria-label="Change user's email address">Change</a>
 						  </dd>
 						</div>
 			
@@ -32,7 +33,7 @@ Create user
 						  <dt id="mother-name" class="nhsuk-summary-list__key">User's surname</dt>
 						  <dd class="nhsuk-summary-list__value" id="lastName">Doe</dd>
 						  <dd class="nhsuk-summary-list__actions">
-							<a href="/lsf-web/v5/admin-view/test-journey/create-user-2/#" id="lastName-change" aria-label="Change user's surname">Change</a>
+							<a href="/lsf-web/v5/admin-view/create-user#lastName" id="lastName-change" aria-label="Change user's surname">Change</a>
 						  </dd>
 						</div>
 			
@@ -40,7 +41,7 @@ Create user
 						  <dt id="mother-dob" class="nhsuk-summary-list__key">User's first name</dt>
 						  <dd class="nhsuk-summary-list__value" id="firstName">Jane</dd>
 						  <dd class="nhsuk-summary-list__actions">
-							<a href="/lsf-web/v5/admin-view/test-journey/create-user-2/#" id="firstName-change" aria-label="Change user's first name">Change</a>
+							<a href="/lsf-web/v5/admin-view/create-user#firstName" id="firstName-change" aria-label="Change user's first name">Change</a>
 						  </dd>
 						</div>
 			
@@ -48,7 +49,7 @@ Create user
 						  <dt id="mother-nhs" class="nhsuk-summary-list__key">User's role(s)</dt>
 						  <dd class="nhsuk-summary-list__value" id="roles">HEI User</dd>
 						  <dd class="nhsuk-summary-list__actions">
-							<a href="/lsf-web/v5/admin-view/test-journey/create-user-roles/#" id="roles-change" aria-label="Change user's role">Change</a>
+							<a href="/lsf-web/v5/admin-view/create-user-roles#" id="roles-change" aria-label="Change user's role">Change</a>
 						  </dd>
 						</div>
 						
@@ -56,7 +57,7 @@ Create user
 						  <dt id="mother-postcode" class="nhsuk-summary-list__key">University</dt>
 						  <dd class="nhsuk-summary-list__value" id="university">Northumbria University</dd>
 						  <dd class="nhsuk-summary-list__actions">
-							<a href="/lsf-web/v5/admin-view/test-journey/create-user-further-details/#" id="university-change" aria-label="Change university">Change</a>
+							<a href="/lsf-web/v5/admin-view/create-user-university-details#college" id="university-change" aria-label="Change university">Change</a>
 						  </dd>
 						</div>
 						
@@ -64,7 +65,7 @@ Create user
 						  <dt id="mother-due-date" class="nhsuk-summary-list__key">Job/Department</dt>
 						  <dd class="nhsuk-summary-list__value" id="job">Admin</dd>
 						  <dd class="nhsuk-summary-list__actions">
-							<a href="/lsf-web/v5/admin-view/test-journey/create-user-further-details/#" id="job-change" aria-label="Change job/department">Change</a>
+							<a href="/lsf-web/v5/admin-view/create-user-university-details#job" id="job-change" aria-label="Change job/department">Change</a>
 						  </dd>
 						</div>
 			
@@ -72,7 +73,7 @@ Create user
 						  <dt id="details-by-email" class="nhsuk-summary-list__key">Preferred contact number</dt>
 						  <dd class="nhsuk-summary-list__value" id="contactNumber">07123456789</dd>
 						  <dd class="nhsuk-summary-list__actions">
-							<a href="/lsf-web/v5/admin-view/test-journey/create-user-further-details/#" id="contactNumber-change" aria-label="Change preferred contact number">Change</a>
+							<a href="/lsf-web/v5/admin-view/create-user-university-details#contactNumber" id="contactNumber-change" aria-label="Change preferred contact number">Change</a>
 						  </dd>
 						</div>
 			
@@ -80,7 +81,7 @@ Create user
 						  <dt id="mother-email-address" class="nhsuk-summary-list__key">Active user</dt>
 						  <dd class="nhsuk-summary-list__value" id="active">Yes</dd>
 						  <dd class="nhsuk-summary-list__actions">
-							<a href="/lsf-web/v5/admin-view/test-journey/create-user-login-active/#" id="active-change" aria-label="Change active user">Change</a>
+							<a href="/lsf-web/v5/admin-view/create-user-university-details#" id="active-change" aria-label="Change active user">Change</a>
 						  </dd>
 						</div>
 					  </dl>

@@ -5,26 +5,26 @@ Create user
 {% endblock %}
 
 {% block content %}
-	
-{{ backLink({
-	"href": "javascript:history.go(-1)",
-	"text": "Go back"
-  }) }}
+<div class="nhsuk-grid-row">
 
-	<form name="userDetailsForm" action="v5/admin-view/test-journey/create-user-university" method="post" novalidate="">
-		<div class="nhsuk-grid-row">
-			<div class="nhsuk-grid-column-two-thirds">	
+    <div class="nhsuk-grid-column-two-thirds">
 
-				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-					<h2 class="nhsuk-fieldset__heading">Further details</h2>
-				</legend>
-			</div>
-				
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
 		
+	<form name="userDetailsForm" action="/lsf-web/v5/admin-view/create-user-university-cya" method="post" novalidate="">
+		<h1 class="nhsuk-heading-l">University details</h1>
+			</div>
+
+			
+
 			<div class="nhsuk-grid-column-two-thirds">
+				
 					<div class="nhsuk-form-group">
 						<label class="nhsuk-label" id="college-label" for="college" class="form-label">
-							College
+							University
 						</label>
 						<select class="nhsuk-select nhsuk-u-width-full" id="collegeDrop" name="college">
 							<option value="">Select...</option>
@@ -53,7 +53,7 @@ Create user
 							<option value="23">MANCHESTER METROPOLITAN UNIVERSITY</option>
 							<option value="24">MIDDLESEX UNIVERSITY</option>
 							<option value="25">NEW COLLEGE DURHAM</option>
-							<option value="26"selected>NORTHUMBRIA UNIVERSITY</option>
+							<option value="26">NORTHUMBRIA UNIVERSITY</option>
 							<option value="27">OXFORD BROOKES UNIVERSITY</option>
 							<option value="28">SHEFFIELD HALLAM UNIVERSITY</option>
 							<option value="29">SOLENT UNIVERSITY</option>
@@ -114,7 +114,7 @@ Create user
 						<label class="nhsuk-label" id="job-label" for="job" class="form-label-bold">
 							Job/Department
 						</label>
-						<input class="nhsuk-input" id="job" name="job" type="text" spellcheck="false" autocomplete="off" value="Admin">
+						<input class="nhsuk-input" id="job" name="job" type="text" spellcheck="false" autocomplete="off">
 					</div>
 
 					<div class="nhsuk-form-group">
@@ -122,10 +122,10 @@ Create user
 							Preferred contact number
 						</label>
 						<input class="nhsuk-input" id="contactNumber" name="contactNumber" type="text" spellcheck="false"
-							autocomplete="off" maxlength="20" value="07123456789">
+							autocomplete="off" maxlength="20">
 					</div>
-				</div>
-		</div>
+				
+			
 				<div class="nhsuk-form-group">
 					<label class="nhsuk-label" id="contactNumber-label" for="contactNumber" class="form-label-bold">
 						Is the user's login currently active?
@@ -136,7 +136,7 @@ Create user
 
 					<div class="nhsuk-radios nhsuk-radios--inline">
 						<div class="nhsuk-radios__item">
-							<input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="1" checked="checked">
+							<input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="1">
 							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveYes">
 								Yes
 							</label>
@@ -152,9 +152,10 @@ Create user
 				</div>
 
 				<div class="nhsuk-form-group">
-					<button class="nhsuk-button" type="submit" id="saveUser">Continue</button>
-					<p><a class="" href="/lsf-web/v5/admin-view/test-journey/user-results">Cancel</a></p>
+					<button class="nhsuk-button" type="submit" id="saveUser">Create</button>
+					<p><a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a></p>
 				</div>
+				
 			</div>
 		</div>
 	</form>

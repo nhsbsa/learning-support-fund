@@ -14,52 +14,23 @@ const router = express.Router();
 
 // Test journey //
 // Create new user
-router.post('/v5/admin-view/test-journey/create-user-new', (req, res) => {
-
-    res.redirect('/lsf-web/v5/admin-view/test-journey/create-user-roles-new')
-
-})
 
 // Select user role
-router.post('/v5/admin-view/test-journey/create-user-roles-new', (req, res) => {
+router.post('/v5/create-user-roles', (req, res) => {
 
     const userRole = req.session.data['user-role']
   
-    if (userRole === 'role-1') {
-      res.redirect('/lsf-web/v5/admin-view/test-journey/create-user-location')
+    if (userRole === 'role-1' || userRole === 'role-2' || userRole === 'role-3' || userRole === 'role-4' || userRole === 'role-5' || userRole === 'role-6' || userRole === 'role-7' || userRole === 'role-8') {
+        res.redirect('/lsf-web/v5/admin-view/create-user-location');
+    } else if (userRole === 'role-9' || userRole === 'role-10' || userRole === 'role-11') {
+        res.redirect('/lsf-web/v5/admin-view/create-user-university-details');
     } else {
-      res.redirect('/lsf-web/v5/admin-view/test-journey/university')
+        // Handle other roles or provide a default redirect
+        res.redirect('/some-default-path');
     }
-  
-  })
+});
 
-// Enter user location
-router.post('/v5/admin-view/test-journey/create-user-location', (req, res) => {
 
-    res.redirect('/lsf-web/v5/admin-view/test-journey/create-user-location-cya')
-
-})
-
-// Enter university, job/department and contact number
-router.post('/v5/admin-view/test-journey/create-user-university', (req, res) => {
-
-    res.redirect('/lsf-web/v5/admin-view/test-journey/create-user-university-cya')
-
-})
-
-// User created successfully
-router.post('/v5/admin-view/test-journey/create-user-location-cya', (req, res) => {
-
-    res.redirect('/lsf-web/v5/admin-view/test-journey/create-user-done')
-
-})
-
-// User created successfully
-router.post('/v5/admin-view/test-journey/create-user-university-cya', (req, res) => {
-
-    res.redirect('/lsf-web/v5/admin-view/test-journey/create-user-done')
-
-})
 
 // Return to student decline or return
 router.post('/v5/returnordecline', (req, res) => {

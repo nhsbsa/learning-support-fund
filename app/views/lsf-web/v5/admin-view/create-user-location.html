@@ -5,20 +5,23 @@ Create user
 {% endblock %}
 
 {% block content %}
+<div class="nhsuk-grid-row">
 
-{{ backLink({
-	"href": "javascript:history.go(-1)",
-	"text": "Go back"
-  }) }}
+    <div class="nhsuk-grid-column-two-thirds">
 
-	<form name="userDetailsForm" action="v5/admin-view/test-journey/create-user-location" method="post" novalidate="">
-		<div class="nhsuk-grid-row">
-			<div class="nhsuk-grid-column-two-thirds">	
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+  <form name="userDetailsForm" action="/lsf-web/v5/admin-view/create-user-cya" method="post" novalidate="">
+		
 				
 				<div class="nhsuk-form-group">
-				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-					<h2 class="nhsuk-fieldset__heading">Further details</h2>
-				</legend>
+					<label class="nhsuk-label" for="placement-additional-costs">
+						<h1 class="nhsuk-heading-l">Further details</h1>
+					</label>
+	
 			
 				<div id="locationContainer">
 					<div class="nhsuk-form-group">
@@ -36,7 +39,7 @@ Create user
 
 						<div class="nhsuk-radios nhsuk-radios--inline">
 							<div class="nhsuk-radios__item">
-								<input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="1" checked="checked">
+								<input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="1">
 								<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveYes">
 									Yes
 								</label>
@@ -53,7 +56,7 @@ Create user
 
 				<div class="nhsuk-form-group">
 					<button class="nhsuk-button" type="submit" id="saveUser">Continue</button>
-					<p><a class="" href="/lsf-web/v5/admin-view/test-journey/user-results">Cancel</a></p>
+					<p><a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a></p>
 				</div>
 			</div>
 			
