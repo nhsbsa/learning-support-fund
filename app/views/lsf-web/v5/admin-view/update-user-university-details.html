@@ -14,7 +14,7 @@ Create user
         "text": "Go back"
         }) }}
 		
-	<form name="userDetailsForm" action="/lsf-web/v5/admin-view/create-user-university-cya" method="post" novalidate="">
+	<form name="userDetailsForm" action="/lsf-web/v5/admin-view/update-user-university-cya" method="post" novalidate="">
 		<h1 class="nhsuk-heading-l">University details</h1>
 			</div>
 
@@ -53,7 +53,7 @@ Create user
 							<option value="23">MANCHESTER METROPOLITAN UNIVERSITY</option>
 							<option value="24">MIDDLESEX UNIVERSITY</option>
 							<option value="25">NEW COLLEGE DURHAM</option>
-							<option value="26">NORTHUMBRIA UNIVERSITY</option>
+							<option value="26" selected>NORTHUMBRIA UNIVERSITY</option>
 							<option value="27">OXFORD BROOKES UNIVERSITY</option>
 							<option value="28">SHEFFIELD HALLAM UNIVERSITY</option>
 							<option value="29">SOLENT UNIVERSITY</option>
@@ -114,7 +114,7 @@ Create user
 						<label class="nhsuk-label" id="job-label" for="job" class="form-label-bold">
 							Job/Department
 						</label>
-						<input class="nhsuk-input" id="job" name="job" type="text" spellcheck="false" autocomplete="off">
+						<input class="nhsuk-input" id="job" name="job" type="text" spellcheck="false" autocomplete="off" value="Administration">
 					</div>
 
 					<div class="nhsuk-form-group">
@@ -122,7 +122,7 @@ Create user
 							Preferred contact number
 						</label>
 						<input class="nhsuk-input" id="contactNumber" name="contactNumber" type="text" spellcheck="false"
-							autocomplete="off" maxlength="20">
+							autocomplete="off" maxlength="20" value="01911234567">
 					</div>
 				
 			
@@ -136,7 +136,7 @@ Create user
 
 					<div class="nhsuk-radios nhsuk-radios--inline">
 						<div class="nhsuk-radios__item">
-							<input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="1">
+							<input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="1" checked="checked">
 							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveYes">
 								Yes
 							</label>

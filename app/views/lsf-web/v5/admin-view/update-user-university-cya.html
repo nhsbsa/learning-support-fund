@@ -1,0 +1,99 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Create user
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}	
+
+  <form name="userDetailsForm" action="/lsf-web/v5/admin-view/update-user-done" method="post" novalidate="">
+
+					<div class="content">
+					  <h1 class="nhsuk-heading-l" id="title">Check your answers</h1>
+					  <dl class="nhsuk-summary-list">
+
+						<div class="nhsuk-summary-list__row">
+						  <dt id="mother-int-date" class="nhsuk-summary-list__key">User's email address</dt>
+						  <dd class="nhsuk-summary-list__value" id="email">sdsds@gmail.com</dd>
+						  <dd class="nhsuk-summary-list__actions">
+							<a href="/lsf-web/v5/admin-view/update-user#email" id="email-change" aria-label="Change user's email address">Change</a>
+						  </dd>
+						</div>
+			
+						<div class="nhsuk-summary-list__row">
+						  <dt id="mother-name" class="nhsuk-summary-list__key">User's surname</dt>
+						  <dd class="nhsuk-summary-list__value" id="lastName">Cooper</dd>
+						  <dd class="nhsuk-summary-list__actions">
+							<a href="/lsf-web/v5/admin-view/update-user#lastName" id="lastName-change" aria-label="Change user's surname">Change</a>
+						  </dd>
+						</div>
+			
+						<div class="nhsuk-summary-list__row">
+						  <dt id="mother-dob" class="nhsuk-summary-list__key">User's first name</dt>
+						  <dd class="nhsuk-summary-list__value" id="firstName">Tin</dd>
+						  <dd class="nhsuk-summary-list__actions">
+							<a href="/lsf-web/v5/admin-view/update-user#firstName" id="firstName-change" aria-label="Change user's first name">Change</a>
+						  </dd>
+						</div>
+			
+						<div class="nhsuk-summary-list__row">
+						  <dt id="mother-nhs" class="nhsuk-summary-list__key">User's role(s)</dt>
+						  <dd class="nhsuk-summary-list__value" id="roles">HEI User</dd>
+						  <dd class="nhsuk-summary-list__actions">
+							<a href="/lsf-web/v5/admin-view/update-user-roles#" id="roles-change" aria-label="Change user's role">Change</a>
+						  </dd>
+						</div>
+						
+						<div class="nhsuk-summary-list__row">
+						  <dt id="mother-postcode" class="nhsuk-summary-list__key">University</dt>
+						  <dd class="nhsuk-summary-list__value" id="university">Northumbria University</dd>
+						  <dd class="nhsuk-summary-list__actions">
+							<a href="/lsf-web/v5/admin-view/update-user-university-details#college" id="university-change" aria-label="Change university">Change</a>
+						  </dd>
+						</div>
+						
+						<div class="nhsuk-summary-list__row">
+						  <dt id="mother-due-date" class="nhsuk-summary-list__key">Job/Department</dt>
+						  <dd class="nhsuk-summary-list__value" id="job">Administration</dd>
+						  <dd class="nhsuk-summary-list__actions">
+							<a href="/lsf-web/v5/admin-view/update-user-university-details#job" id="job-change" aria-label="Change job/department">Change</a>
+						  </dd>
+						</div>
+			
+						<div class="nhsuk-summary-list__row">
+						  <dt id="details-by-email" class="nhsuk-summary-list__key">Preferred contact number</dt>
+						  <dd class="nhsuk-summary-list__value" id="contactNumber">01911234567</dd>
+						  <dd class="nhsuk-summary-list__actions">
+							<a href="/lsf-web/v5/admin-view/update-user-university-details#contactNumber" id="contactNumber-change" aria-label="Change preferred contact number">Change</a>
+						  </dd>
+						</div>
+			
+						<div class="nhsuk-summary-list__row">
+						  <dt id="mother-email-address" class="nhsuk-summary-list__key">Active user</dt>
+						  <dd class="nhsuk-summary-list__value" id="active">Yes</dd>
+						  <dd class="nhsuk-summary-list__actions">
+							<a href="/lsf-web/v5/admin-view/update-user-university-details#" id="active-change" aria-label="Change active user">Change</a>
+						  </dd>
+						</div>
+					  </dl>
+					</div>
+					
+				 
+			
+
+				<div class="nhsuk-form-group">
+					<button class="nhsuk-button" type="submit" id="saveUser">Save and continue</button>
+					<p><a class="" href="/lsf-web/v5/admin-view/test-journey/user-results">Cancel</a></p>
+				</div>
+			</div>
+		</div>
+	</form>
+{% endblock %}

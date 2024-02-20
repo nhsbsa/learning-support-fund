@@ -1,0 +1,144 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Create user
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+		
+  <form name="userDetailsForm" action="/lsf-web/v5/admin-view/update-user-location" method="post" novalidate="">
+				
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+					<h1 class="nhsuk-heading-l">What is the user's role?</h1>
+				</label>
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="hei-definition">(HEI) means Higher Education Institute.
+					<div class="nhsuk-hint" id="role-hint">Select all that apply.</div>
+				</label>
+
+				
+
+			<p class="nhsuk-body">
+				<a class="nhsuk-link govuk-link--no-visited-state" style="float: right" href="#">Clear all</a>
+			</p>
+			
+			<br>
+			
+			<fieldset class="nhsuk-fieldset">
+				<div class="nhsuk-form-group">
+					<div class="nhsuk-grid-row">
+						<div class="nhsuk-grid-column-one-half">
+							<div class="nhsuk-checkboxes">
+								<!-- First column -->
+								<div class="nhsuk-checkboxes__item">
+									<input class="nhsuk-checkboxes__input" id="role-1" name="user-role" type="checkbox" value="processor" onchange="updateSelectedRoles()">
+									<label class="nhsuk-label nhsuk-checkboxes__label" for="role-1">
+										Processor
+									</label>
+								</div>
+
+								<div class="nhsuk-checkboxes__item">
+									<input class="nhsuk-checkboxes__input" id="role-2" name="user-role" type="checkbox" value="technical support officer" onchange="updateSelectedRoles()">
+									<label class="nhsuk-label nhsuk-checkboxes__label" for="role-2">
+										Technical support officer
+									</label>
+								</div>
+
+								<div class="nhsuk-checkboxes__item">
+									<input class="nhsuk-checkboxes__input" id="role-3" name="user-role" type="checkbox" value="management support" onchange="updateSelectedRoles()">
+									<label class="nhsuk-label nhsuk-checkboxes__label" for="role-3">
+										Management support
+									</label>
+								</div>
+
+								<div class="nhsuk-checkboxes__item">
+									<input class="nhsuk-checkboxes__input" id="role-4" name="user-role" type="checkbox" value="team manager" onchange="updateSelectedRoles()">
+									<label class="nhsuk-label nhsuk-checkboxes__label" for="role-4">
+										Team manager
+									</label>
+								</div>
+
+								<div class="nhsuk-checkboxes__item">
+									<input class="nhsuk-checkboxes__input" id="role-5" name="user-role" type="checkbox" value="call centre" onchange="updateSelectedRoles()">
+									<label class="nhsuk-label nhsuk-checkboxes__label" for="role-5">
+										Call centre
+									</label>
+								</div>
+
+								<div class="nhsuk-checkboxes__item">
+									<input class="nhsuk-checkboxes__input" id="role-6" name="user-role" type="checkbox" value="call centre manager" onchange="updateSelectedRoles()">
+									<label class="nhsuk-label nhsuk-checkboxes__label" for="role-6">
+										Call centre manager
+									</label>
+								</div>
+							</div>
+						</div>
+					
+						<div class="nhsuk-grid-column-one-half">
+							<div class="nhsuk-form-group">
+								<div class="nhsuk-checkboxes">
+									<div class="nhsuk-checkboxes__item">
+										<input class="nhsuk-checkboxes__input" id="role-7" name="user-role" type="checkbox" value="finance" onchange="updateSelectedRoles()">
+										<label class="nhsuk-label nhsuk-checkboxes__label" for="role-7">
+											Finance
+										</label>
+									</div>
+
+									<div class="nhsuk-checkboxes__item">
+										<input class="nhsuk-checkboxes__input" id="role-8" name="user-role" type="checkbox" value="super user" onchange="updateSelectedRoles()">
+										<label class="nhsuk-label nhsuk-checkboxes__label" for="role-8">
+											Super user
+										</label>
+									</div>
+
+									<div class="nhsuk-checkboxes__item">
+										<input class="nhsuk-checkboxes__input" id="role-9" name="user-role" type="checkbox" value="HEI user" onchange="updateSelectedRoles()">
+										<label class="nhsuk-label nhsuk-checkboxes__label" for="role-9">
+											HEI user
+										</label>
+									</div>
+
+									<div class="nhsuk-checkboxes__item">
+										<input class="nhsuk-checkboxes__input" id="role-10" name="user-role" type="checkbox" value="HEI admin" onchange="updateSelectedRoles()">
+										<label class="nhsuk-label nhsuk-checkboxes__label" for="role-10">
+											HEI admin
+										</label>
+									</div>
+
+									<div class="nhsuk-checkboxes__item">
+										<input class="nhsuk-checkboxes__input" id="role-11" name="user-role" type="checkbox" value="HEI read" onchange="updateSelectedRoles()">
+										<label class="nhsuk-label nhsuk-checkboxes__label" for="role-11">
+											HEI read
+										</label>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
+				<br>
+			</div>
+
+		</div>
+
+				<div class="nhsuk-form-group">
+					<button class="nhsuk-button" type="submit" id="saveUser">Continue</button>
+					<p><a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a></p>
+				</div>
+			</div>
+		</div>
+	</form>
+{% endblock %}
