@@ -9,6 +9,26 @@ const router = express.Router();
 // ********************************
 
 // ********************************
+// Change student details
+// ********************************
+
+router.post('/v5/change-phone-number-validate', (req, res) => {
+
+    const correctCode = req.session.data['correct-code']
+
+    if (correctCode === 'no send') {
+      req.session.data['send-again'] = 'true'
+      res.redirect('/lsf-web/v5/change-phone-number-validate')
+    } else if (correctCode === 'no cancel') {
+      res.redirect('/lsf-web/v5/student-details-change')
+    } else {
+      res.redirect('/lsf-web/v5/change-phone-number-changed')
+    }
+
+})
+
+
+// ********************************
 // TDAE Claim
 // ********************************
 
@@ -19,7 +39,7 @@ const router = express.Router();
 router.post('/v5/create-user-roles', (req, res) => {
 
     const userRole = req.session.data['user-role']
-  
+
     if (userRole === 'role-1' || userRole === 'role-2' || userRole === 'role-3' || userRole === 'role-4' || userRole === 'role-5' || userRole === 'role-6' || userRole === 'role-7' || userRole === 'role-8') {
         res.redirect('/lsf-web/v5/admin-view/create-user-location');
     } else if (userRole === 'role-9' || userRole === 'role-10' || userRole === 'role-11') {
