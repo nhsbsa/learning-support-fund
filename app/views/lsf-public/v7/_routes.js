@@ -248,10 +248,16 @@ router.post('/v7/TDAE-public-transport-type', (req, res) => {
     req.session.data['public-transport-type'] = transportTypeReplaceCommas;
   }
 
-  res.redirect('/lsf-public/v7/TDAE-public-transport-daily-cost');
+  res.redirect('/lsf-public/v7/TDAE-public-transport-ticket');
 });
 
 router.post('/v7/TDAE-public-transport-ticket', (req, res) => {
+
+  res.redirect('/lsf-public/v7/TDAE-public-transport-daily-cost')
+
+})
+
+router.post('/v7/TDAE-public-transport-daily-cost', (req, res) => {
 
   const publicTransportTicket = req.session.data['public-transport-ticket']
 
@@ -262,12 +268,6 @@ router.post('/v7/TDAE-public-transport-ticket', (req, res) => {
     req.session.data['multiple'] = 'yes';
     res.redirect('/lsf-public/v7/TDAE-public-transport-dates');
   }
-
-})
-
-router.post('/v7/TDAE-public-transport-daily-cost', (req, res) => {
-
-  res.redirect('/lsf-public/v7/TDAE-public-transport-ticket');
 
 })
 
