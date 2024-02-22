@@ -13,7 +13,7 @@ University details
 		"text": "Go back"
 		}) }}
 
-		<form name="userDetailsForm" action="/lsf-web/v5/admin-view/create-user-university-cya" method="post" novalidate="">
+		<form name="userDetailsForm" action="/lsf-web/v5/admin-view/create-user-cya" method="post" novalidate="">
 			<h1 class="nhsuk-heading-l">University details</h1>
 	
 			<div class="nhsuk-form-group">
@@ -105,38 +105,18 @@ University details
 			</div>
 
 			<div class="nhsuk-form-group">
-				<label class="nhsuk-label" id="job-label" for="job" class="form-label-bold">
-					Job/Department
+				<label class="nhsuk-label" id="job-label" for="department" class="form-label-bold">
+					Department
 				</label>
-				<input class="nhsuk-input" id="job" name="job" type="text" spellcheck="false" autocomplete="off">
+				<input class="nhsuk-input" id="job" name="department" type="text" spellcheck="false" autocomplete="off">
 			</div>
 
 			<div class="nhsuk-form-group">
 				<label class="nhsuk-label" id="contactNumber-label" for="contactNumber" class="form-label-bold">
-					Preferred contact number
+					Phone number
 				</label>
 				<input class="nhsuk-input" id="contactNumber" name="contactNumber" type="text" spellcheck="false" autocomplete="off" maxlength="20">
 			</div>
-
-			<fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
-				<legend class="nhsuk-fieldset__legend">Is the user's login currently active?</legend>
-
-				<div class="nhsuk-hint" id="contact-hint">Hint text providing context around this question to be placed here.</div>
-			
-				<div class="nhsuk-form-group">
-					<div class="nhsuk-radios nhsuk-radios--inline">
-						<div class="nhsuk-radios__item">
-							<input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="1">
-							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveYes">Yes</label>
-						</div>
-
-						<div class="nhsuk-radios__item">
-							<input class="nhsuk-radios__input" id="optionsActiveNo" name="active" type="radio" value="0">
-							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveNo">No</label>
-						</div>
-					</div>
-				</div>
-			</fieldset>
 
 			<div class="nhsuk-form-group">
 				<button class="nhsuk-button" type="submit" id="saveUser">Continue</button>

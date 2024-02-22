@@ -5,16 +5,17 @@ Create user
 {% endblock %}
 
 {% block content %}
-<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-full">
 
-    <div class="nhsuk-grid-column-two-thirds">
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
 
-        {{ backLink({
-        "href": "javascript:history.go(-1)",
-        "text": "Go back"
-        }) }}
+<div class="nhsuk-grid-column-two-thirds">
 		
-	<form name="userDetailsForm" action="/lsf-web/v5/admin-view/update-user-university-cya" method="post" novalidate="">
+	<form name="userDetailsForm" action="/lsf-web/v5/admin-view/update-user-done" method="post" novalidate="">
 		<h1 class="nhsuk-heading-l">University details</h1>
 			</div>
 
@@ -111,45 +112,20 @@ Create user
 					</div>
 
 					<div class="nhsuk-form-group">
-						<label class="nhsuk-label" id="job-label" for="job" class="form-label-bold">
-							Job/Department
+						<label class="nhsuk-label" id="department-label" for="department" class="form-label-bold">
+							Department
 						</label>
-						<input class="nhsuk-input" id="job" name="job" type="text" spellcheck="false" autocomplete="off" value="Administration">
+						<input class="nhsuk-input" id="job" name="department" type="text" spellcheck="false" autocomplete="off" value="Administration">
 					</div>
 
 					<div class="nhsuk-form-group">
 						<label class="nhsuk-label" id="contactNumber-label" for="contactNumber" class="form-label-bold">
-							Preferred contact number
+							Phone number
 						</label>
 						<input class="nhsuk-input" id="contactNumber" name="contactNumber" type="text" spellcheck="false"
 							autocomplete="off" maxlength="20" value="01911234567">
 					</div>
 				
-			
-				<div class="nhsuk-form-group">
-					<label class="nhsuk-label" id="contactNumber-label" for="contactNumber" class="form-label-bold">
-						Is the user's login currently active?
-					</label>
-					<div class="nhsuk-hint" id="contact-hint">
-						Hint text providing context around this question to be placed here.
-					  </div>
-
-					<div class="nhsuk-radios nhsuk-radios--inline">
-						<div class="nhsuk-radios__item">
-							<input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="1" checked="checked">
-							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveYes">
-								Yes
-							</label>
-						</div>
-
-						<div class="nhsuk-radios__item">
-							<input class="nhsuk-radios__input" id="optionsActiveNo" name="active" type="radio" value="0">
-							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveNo">
-								No
-							</label>
-						</div>
-					</div>
-				</div>
 
 				<div class="nhsuk-form-group">
 					<button class="nhsuk-button" type="submit" id="saveUser">Continue</button>

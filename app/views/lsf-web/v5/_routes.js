@@ -19,7 +19,19 @@ router.post('/v5/create-role', (req, res) => {
     if (userRole.includes('HEI user') || userRole.includes('HEI admin') || userRole.includes('HEI read')) {
         res.redirect('/lsf-web/v5/admin-view/create-user-university-details');
     } else {
-        res.redirect('/lsf-web/v5/admin-view/create-user-location');
+        res.redirect('/lsf-web/v5/admin-view/create-user-cya');
+    }
+
+})
+
+router.post('/v5/update-role', (req, res) => {
+
+    const userRole = req.session.data['role']
+
+    if (userRole.includes('HEI user') || userRole.includes('HEI admin') || userRole.includes('HEI read')) {
+        res.redirect('/lsf-web/v5/admin-view/update-user-university-details');
+    } else {
+        res.redirect('/lsf-web/v5/admin-view/update-user-cya');
     }
 
 })
@@ -47,25 +59,6 @@ router.post('/v5/change-phone-number-validate', (req, res) => {
 // ********************************
 // TDAE Claim
 // ********************************
-
-// Test journey //
-// Create new user
-
-// Select user role
-router.post('/v5/create-user-roles', (req, res) => {
-
-    const userRole = req.session.data['user-role']
-
-    if (userRole === 'role-1' || userRole === 'role-2' || userRole === 'role-3' || userRole === 'role-4' || userRole === 'role-5' || userRole === 'role-6' || userRole === 'role-7' || userRole === 'role-8') {
-        res.redirect('/lsf-web/v5/admin-view/create-user-location');
-    } else if (userRole === 'role-9' || userRole === 'role-10' || userRole === 'role-11') {
-        res.redirect('/lsf-web/v5/admin-view/create-user-university-details');
-    } else {
-        // Handle other roles or provide a default redirect
-        res.redirect('/some-default-path');
-    }
-});
-
 
 
 // Return to student decline or return

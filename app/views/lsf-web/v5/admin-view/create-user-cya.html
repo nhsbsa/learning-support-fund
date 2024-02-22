@@ -5,82 +5,177 @@ Create user
 {% endblock %}
 
 {% block content %}
-<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-full">
 
-    <div class="nhsuk-grid-column-two-thirds">
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
 
-        {{ backLink({
-        "href": "javascript:history.go(-1)",
-        "text": "Go back"
-        }) }}
-		
-	  <form name="userDetailsForm" action="/lsf-web/v5/admin-view/create-user-done" method="post" novalidate="">
+<div class="nhsuk-grid-column-two-thirds">	
+	<form name="userDetailsForm" action="/lsf-web/v5/admin-view/create-user-done" method="post" novalidate="">
+		<div class="content">
+			<h1 class="nhsuk-heading-l" id="title">Check user details</h1>
+			<dl class="nhsuk-summary-list">
 
-		
+			  <div class="nhsuk-summary-list__row">
+				<dt id="email-address" class="nhsuk-summary-list__key">
+				  Email address
+			  </dt>
+				<dd class="nhsuk-summary-list__value" id="email">
+					{% if data ['email'] %} 
+						{{ data['email'] }}
+					{% else %} 
+						jane.doe@gmail.com
+					{% endif %} 
+				  </dd>
+				<dd class="nhsuk-summary-list__actions">
+				  <a href="/lsf-web/v5/admin-view/update-user#email" id="email-change" aria-label="Change user's email address">Change</a>
+				</dd>
+			  </div>
 
-					<div class="content">
-					  <h1 class="nhsuk-heading-l" id="title">Check your answers</h1>
-					  <dl class="nhsuk-summary-list">
-
-						<div class="nhsuk-summary-list__row">
-						  <dt id="mother-int-date" class="nhsuk-summary-list__key">User's email address</dt>
-						  <dd class="nhsuk-summary-list__value" id="email">john.doe@gmail.com</dd>
-						  <dd class="nhsuk-summary-list__actions">
-							<a href="/lsf-web/v5/admin-view/create-user/#email" id="email-change" aria-label="Change user's email address">Change</a>
-						  </dd>
-						</div>
-			
-						<div class="nhsuk-summary-list__row">
-						  <dt id="mother-name" class="nhsuk-summary-list__key">User's surname</dt>
-						  <dd class="nhsuk-summary-list__value" id="lastName">Doe</dd>
-						  <dd class="nhsuk-summary-list__actions">
-							<a href="/lsf-web/v5/admin-view/create-user/#" id="lastName-change" aria-label="Change user's surname">Change</a>
-						  </dd>
-						</div>
-			
-						<div class="nhsuk-summary-list__row">
-						  <dt id="mother-dob" class="nhsuk-summary-list__key">User's first name</dt>
-						  <dd class="nhsuk-summary-list__value" id="firstName">John</dd>
-						  <dd class="nhsuk-summary-list__actions">
-							<a href="/lsf-web/v5/admin-view/create-user/#" id="firstName-change" aria-label="Change user's first name">Change</a>
-						  </dd>
-						</div>
-			
-						<div class="nhsuk-summary-list__row">
-						  <dt id="mother-nhs" class="nhsuk-summary-list__key">User's role(s)</dt>
-						  <dd class="nhsuk-summary-list__value" id="roles">Call centre</dd>
-						  <dd class="nhsuk-summary-list__actions">
-							<a href="/lsf-web/v5/admin-view/create-user-roles/#" id="roles-change" aria-label="Change user's role">Change</a>
-						  </dd>
-						</div>
-						
-						<div class="nhsuk-summary-list__row">
-						  <dt id="mother-postcode" class="nhsuk-summary-list__key">Location</dt>
-						  <dd class="nhsuk-summary-list__value" id="university">Newcastle upon Tyne</dd>
-						  <dd class="nhsuk-summary-list__actions">
-							<a href="/lsf-web/v5/admin-view/create-user-location/#" id="university-change" aria-label="Change university">Change</a>
-						  </dd>
-						</div>
-						
-			
-						<div class="nhsuk-summary-list__row">
-						  <dt id="mother-email-address" class="nhsuk-summary-list__key">Active user</dt>
-						  <dd class="nhsuk-summary-list__value" id="active">Yes</dd>
-						  <dd class="nhsuk-summary-list__actions">
-							<a href="/lsf-web/v5/admin-view/create-user-location/#" id="active-change" aria-label="Change active user">Change</a>
-						  </dd>
-						</div>
-					  </dl>
-					</div>
-					
-				 
-			
-
-				<div class="nhsuk-form-group">
-					<button class="nhsuk-button" type="submit" id="saveUser">Save and continue</button>
-					<p><a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a></p>
+			  <div class="nhsuk-summary-list__row">
+				  <dt id="first-name" class="nhsuk-summary-list__key">
+					  First name
+				  </dt>
+				  <dd class="nhsuk-summary-list__value" id="firstName">
+					{% if data ['firstName'] %} 
+						{{ data['firstName'] }}
+					{% else %} 
+						Jane
+					{% endif %} 
+				  </dd>
+				  <dd class="nhsuk-summary-list__actions">
+					<a href="/lsf-web/v5/admin-view/create-user#firstName" id="firstName-change" aria-label="Change user's first name">Change</a>
+				  </dd>
 				</div>
-			</div>
-		</div>
-	</form>
+  
+			  <div class="nhsuk-summary-list__row">
+				<dt id="last-name" class="nhsuk-summary-list__key">
+				  Last name
+			  </dt>
+				<dd class="nhsuk-summary-list__value" id="lastName">
+					{% if data ['lastName'] %} 
+						{{ data['lastName'] }}
+					{% else %} 
+						Doe
+					{% endif %} 
+				  </dd>
+				<dd class="nhsuk-summary-list__actions">
+				  <a href="/lsf-web/v5/admin-view/create-user#lastName" id="lastName-change" aria-label="Change user's last name">Change</a>
+				</dd>
+			  </div>
+  
+			  <div class="nhsuk-summary-list__row">
+				  <dt id="role" class="nhsuk-summary-list__key">
+					Role
+				  </dt>
+				  <dd class="nhsuk-summary-list__value" id="roles">
+					{% if data['role'] %}
+						{{ data['role'] }}
+					{% elif data['role'] in ['role-9', 'role-10', 'role-11'] %}
+						HEI user
+					{% else %}
+						Administration
+					{% endif %} 
+				  </dd>
+				  <dd class="nhsuk-summary-list__actions">
+					<a href="/lsf-web/v5/admin-view/create-user-roles" id="roles-change" aria-label="Change user's role">Change</a>
+				  </dd>
+			  </div>						  
+			  
+			  <div class="nhsuk-summary-list__row">
+				<dt id="location" class="nhsuk-summary-list__key">
+				  Location
+			  </dt>
+				<dd class="nhsuk-summary-list__value" id="university">
+					{% if data ['location'] %} 
+						{{ data['location'] }}
+					{% else %} 
+						Newcastle upon Tyne
+					{% endif %} 
+			  </dd>
+				<dd class="nhsuk-summary-list__actions">
+				  <a href="/lsf-web/v5/admin-view/create-user#location" id="university-change" aria-label="Change university">Change</a>
+				</dd>
+			  </div>
+			  
+			  <!-- If user role is HEI User, Admin or Read provide data about university, department and phone number here -->
+			  {% if data['role'] in ['role-9', 'role-10', 'role-11'] %}
+			  <div class="nhsuk-summary-list__row">
+				  <dt id="university" class="nhsuk-summary-list__key">
+					  University
+				  </dt>
+				  <dd class="nhsuk-summary-list__value" id="university">
+					{% if data ['university'] %} 
+						{{ data['university'] }}
+					{% else %} 
+						Northumbria University
+					{% endif %} 
+				  </dd>
+				  <dd class="nhsuk-summary-list__actions">
+					<a href="/lsf-web/v5/admin-view/create-user-university-details#college" id="university-change" aria-label="Change university">Change</a>
+				  </dd>
+			  </div>
+				
+			  <div class="nhsuk-summary-list__row">
+				  <dt id="department" class="nhsuk-summary-list__key">
+					  Department
+				  </dt>
+				  <dd class="nhsuk-summary-list__value" id="job">
+					{% if data ['department'] %} 
+						{{ data['department'] }}
+					{% else %} 
+						Administration
+					{% endif %} 
+				  </dd>
+				  <dd class="nhsuk-summary-list__actions">
+					  <a href="/lsf-web/v5/admin-view/create-user-university-details#job" id="department-change" aria-label="Change department">Change</a>
+				  </dd>
+			  </div>
+	
+			  <div class="nhsuk-summary-list__row">
+				  <dt id="details-by-email" class="nhsuk-summary-list__key">
+					  Phone number
+				  </dt>
+				  <dd class="nhsuk-summary-list__value" id="contactNumber">
+					{% if data ['contactNumber'] %} 
+						{{ data['contactNumber'] }}
+					{% else %} 
+						07123456789
+					{% endif %} 
+				  </dd>
+				  <dd class="nhsuk-summary-list__actions">
+					  <a href="/lsf-web/v5/admin-view/create-user-university-details#contactNumber" id="contactNumber-change" aria-label="Change preferred contact number">Change</a>
+				  </dd>
+			  </div>
+			  {% endif %} 
+
+			  <div class="nhsuk-summary-list__row">
+				<dt id="mother-email-address" class="nhsuk-summary-list__key">
+				  Active user
+			  </dt>
+				<dd class="nhsuk-summary-list__value" id="active">
+					{% if data ['active'] %} 
+						{{ data['active'] }}
+					{% else %} 
+						Yes
+					{% endif %}
+			  </dd>
+				<dd class="nhsuk-summary-list__actions">
+				  <a href="/lsf-web/v5/admin-view/create-user#active" id="active-change" aria-label="Change active user">Change</a>
+				</dd>
+			  </div>
+			</dl>
+		  </div>
+		  
+
+	  <div class="nhsuk-form-group">
+		  <button class="nhsuk-button" type="submit" id="saveUser">Save and continue</button>
+		  <p><a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a></p>
+	  </div>
+  </div>
+</div>
+</form>
 {% endblock %}
