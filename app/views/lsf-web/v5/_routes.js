@@ -9,6 +9,22 @@ const router = express.Router();
 // ********************************
 
 // ********************************
+// Admin view
+// ********************************
+
+router.post('/v5/create-role', (req, res) => {
+
+    const userRole = req.session.data['role']
+
+    if (userRole.includes('HEI user') || userRole.includes('HEI admin') || userRole.includes('HEI read')) {
+        res.redirect('/lsf-web/v5/admin-view/create-user-university-details');
+    } else {
+        res.redirect('/lsf-web/v5/admin-view/create-user-location');
+    }
+
+})
+
+// ********************************
 // Change student details
 // ********************************
 
@@ -223,13 +239,5 @@ router.post('/v5/TDAE-details-for-return', (req, res) => {
     res.redirect('/lsf-web/v5/TDAE-return-cya')
 
 })
-
-
-
-
-
-
-
-
 
 module.exports = router;

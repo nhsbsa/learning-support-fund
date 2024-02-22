@@ -1,162 +1,146 @@
 {% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
-Create user
+University details
 {% endblock %}
 
 {% block content %}
-<div class="nhsuk-grid-row">
 
-    <div class="nhsuk-grid-column-two-thirds">
+	<div class="nhsuk-grid-column-two-thirds">
 
-        {{ backLink({
-        "href": "javascript:history.go(-1)",
-        "text": "Go back"
-        }) }}
-		
-	<form name="userDetailsForm" action="/lsf-web/v5/admin-view/create-user-university-cya" method="post" novalidate="">
-		<h1 class="nhsuk-heading-l">University details</h1>
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form name="userDetailsForm" action="/lsf-web/v5/admin-view/create-user-university-cya" method="post" novalidate="">
+			<h1 class="nhsuk-heading-l">University details</h1>
+	
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" id="college-label" for="college" class="form-label">
+					University
+				</label>
+				<select class="nhsuk-select nhsuk-u-width-full" id="collegeDrop" name="college">
+					<option value="">Select university...</option>
+					<option value="1">ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</option>
+					<option value="2">ANGLIA RUSKIN UNIVERSITY - CHELMSFORD</option>
+					<option value="3">ANGLIA RUSKIN UNIVERSITY - PETERBOROUGH</option>
+					<option value="4">BIRMINGHAM CITY UNIVERSITY</option>
+					<option value="5">BIRMINGHAM METROPOLITAN COLLEGE</option>
+					<option value="6">BOURNEMOUTH UNIVERSITY</option>
+					<option value="7">BPP UNIVERSITY LTD</option>
+					<option value="8">BRUNEL UNIVERSITY LONDON</option>
+					<option value="9">BUCKS NEW UNIVERSITY</option>
+					<option value="10">CANTERBURY CHRIST CHURCH UNIVERSITY</option>
+					<option value="11">CITY UNIVERSITY LONDON</option>
+					<option value="12">COLCHESTER INSTITUTE</option>
+					<option value="13">COVENTRY UNIVERSITY</option>
+					<option value="14">DE MONTFORT UNIVERSITY</option>
+					<option value="15">EDGE HILL UNIVERSITY</option>
+					<option value="16">KEELE UNIVERSITY</option>
+					<option value="17">KINGS COLLEGE LONDON</option>
+					<option value="18">KINGSTON UNIVERSITY</option>
+					<option value="19">LEEDS BECKETT UNIVERSITY</option>
+					<option value="20">LIVERPOOL JOHN MOORES UNIVERSITY</option>
+					<option value="21">LONDON METROPOLITAN UNIVERSITY</option>
+					<option value="22">LONDON SOUTH BANK UNIVERSITY</option>
+					<option value="23">MANCHESTER METROPOLITAN UNIVERSITY</option>
+					<option value="24">MIDDLESEX UNIVERSITY</option>
+					<option value="25">NEW COLLEGE DURHAM</option>
+					<option value="26">NORTHUMBRIA UNIVERSITY</option>
+					<option value="27">OXFORD BROOKES UNIVERSITY</option>
+					<option value="28">SHEFFIELD HALLAM UNIVERSITY</option>
+					<option value="29">SOLENT UNIVERSITY</option>
+					<option value="31">STAFFORDSHIRE UNIVERSITY</option>
+					<option value="30">ST GEORGE'S - UNIVERSITY OF LONDON</option>
+					<option value="32">UNIVERSITY COLLEGE LONDON</option>
+					<option value="33">UNIVERSITY OF BEDFORDSHIRE</option>
+					<option value="34">UNIVERSITY OF BIRMINGHAM</option>
+					<option value="35">UNIVERSITY OF BOLTON</option>
+					<option value="36">UNIVERSITY OF BRADFORD</option>
+					<option value="37">UNIVERSITY OF BRIGHTON</option>
+					<option value="38">UNIVERSITY OF BRISTOL</option>
+					<option value="39">UNIVERSITY OF CENTRAL LANCASHIRE</option>
+					<option value="40">UNIVERSITY OF CHESTER</option>
+					<option value="41">UNIVERSITY OF CUMBRIA</option>
+					<option value="42">UNIVERSITY OF DERBY</option>
+					<option value="43">UNIVERSITY OF EAST ANGLIA</option>
+					<option value="44">UNIVERSITY OF EAST LONDON</option>
+					<option value="45">UNIVERSITY OF ESSEX</option>
+					<option value="46">UNIVERSITY OF EXETER</option>
+					<option value="47">UNIVERSITY OF GLOUCESTERSHIRE</option>
+					<option value="48">UNIVERSITY OF GREENWICH</option>
+					<option value="49">UNIVERSITY OF HERTFORDSHIRE</option>
+					<option value="50">UNIVERSITY OF HUDDERSFIELD</option>
+					<option value="51">UNIVERSITY OF HULL</option>
+					<option value="52">UNIVERSITY OF LEEDS</option>
+					<option value="53">UNIVERSITY OF LEICESTER</option>
+					<option value="54">UNIVERSITY OF LINCOLN</option>
+					<option value="55">UNIVERSITY OF LIVERPOOL</option>
+					<option value="56">UNIVERSITY OF MANCHESTER</option>
+					<option value="57">UNIVERSITY OF NEWCASTLE</option>
+					<option value="58">UNIVERSITY OF NORTHAMPTON</option>
+					<option value="59">UNIVERSITY OF NOTTINGHAM</option>
+					<option value="60">UNIVERSITY OF PLYMOUTH</option>
+					<option value="61">UNIVERSITY OF PORTSMOUTH</option>
+					<option value="62">UNIVERSITY OF READING</option>
+					<option value="63">UNIVERSITY OF ROEHAMPTON</option>
+					<option value="64">UNIVERSITY OF SALFORD</option>
+					<option value="65">UNIVERSITY OF SHEFFIELD</option>
+					<option value="66">UNIVERSITY OF SOUTHAMPTON</option>
+					<option value="67">UNIVERSITY OF ST MARK AND ST JOHN</option>
+					<option value="68">UNIVERSITY OF SUFFOLK</option>
+					<option value="69">UNIVERSITY OF SUNDERLAND</option>
+					<option value="70">UNIVERSITY OF SURREY</option>
+					<option value="71">UNIVERSITY OF TEESSIDE</option>
+					<option value="72">UNIVERSITY OF THE WEST OF ENGLAND</option>
+					<option value="73">UNIVERSITY OF WEST LONDON</option>
+					<option value="74">UNIVERSITY OF WINCHESTER</option>
+					<option value="75">UNIVERSITY OF WOLVERHAMPTON</option>
+					<option value="76">UNIVERSITY OF WORCESTER</option>
+					<option value="77">UNIVERSITY OF YORK</option>
+					<option value="78">UNIVERSIYT OF PLYMOUTH</option>
+					<option value="79">YORK ST JOHN UNIVERSITY</option>
+				</select>
 			</div>
 
-			
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" id="job-label" for="job" class="form-label-bold">
+					Job/Department
+				</label>
+				<input class="nhsuk-input" id="job" name="job" type="text" spellcheck="false" autocomplete="off">
+			</div>
 
-			<div class="nhsuk-grid-column-two-thirds">
-				
-					<div class="nhsuk-form-group">
-						<label class="nhsuk-label" id="college-label" for="college" class="form-label">
-							University
-						</label>
-						<select class="nhsuk-select nhsuk-u-width-full" id="collegeDrop" name="college">
-							<option value="">Select university...</option>
-							<option value="1">ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</option>
-							<option value="2">ANGLIA RUSKIN UNIVERSITY - CHELMSFORD</option>
-							<option value="3">ANGLIA RUSKIN UNIVERSITY - PETERBOROUGH</option>
-							<option value="4">BIRMINGHAM CITY UNIVERSITY</option>
-							<option value="5">BIRMINGHAM METROPOLITAN COLLEGE</option>
-							<option value="6">BOURNEMOUTH UNIVERSITY</option>
-							<option value="7">BPP UNIVERSITY LTD</option>
-							<option value="8">BRUNEL UNIVERSITY LONDON</option>
-							<option value="9">BUCKS NEW UNIVERSITY</option>
-							<option value="10">CANTERBURY CHRIST CHURCH UNIVERSITY</option>
-							<option value="11">CITY UNIVERSITY LONDON</option>
-							<option value="12">COLCHESTER INSTITUTE</option>
-							<option value="13">COVENTRY UNIVERSITY</option>
-							<option value="14">DE MONTFORT UNIVERSITY</option>
-							<option value="15">EDGE HILL UNIVERSITY</option>
-							<option value="16">KEELE UNIVERSITY</option>
-							<option value="17">KINGS COLLEGE LONDON</option>
-							<option value="18">KINGSTON UNIVERSITY</option>
-							<option value="19">LEEDS BECKETT UNIVERSITY</option>
-							<option value="20">LIVERPOOL JOHN MOORES UNIVERSITY</option>
-							<option value="21">LONDON METROPOLITAN UNIVERSITY</option>
-							<option value="22">LONDON SOUTH BANK UNIVERSITY</option>
-							<option value="23">MANCHESTER METROPOLITAN UNIVERSITY</option>
-							<option value="24">MIDDLESEX UNIVERSITY</option>
-							<option value="25">NEW COLLEGE DURHAM</option>
-							<option value="26">NORTHUMBRIA UNIVERSITY</option>
-							<option value="27">OXFORD BROOKES UNIVERSITY</option>
-							<option value="28">SHEFFIELD HALLAM UNIVERSITY</option>
-							<option value="29">SOLENT UNIVERSITY</option>
-							<option value="31">STAFFORDSHIRE UNIVERSITY</option>
-							<option value="30">ST GEORGE'S - UNIVERSITY OF LONDON</option>
-							<option value="32">UNIVERSITY COLLEGE LONDON</option>
-							<option value="33">UNIVERSITY OF BEDFORDSHIRE</option>
-							<option value="34">UNIVERSITY OF BIRMINGHAM</option>
-							<option value="35">UNIVERSITY OF BOLTON</option>
-							<option value="36">UNIVERSITY OF BRADFORD</option>
-							<option value="37">UNIVERSITY OF BRIGHTON</option>
-							<option value="38">UNIVERSITY OF BRISTOL</option>
-							<option value="39">UNIVERSITY OF CENTRAL LANCASHIRE</option>
-							<option value="40">UNIVERSITY OF CHESTER</option>
-							<option value="41">UNIVERSITY OF CUMBRIA</option>
-							<option value="42">UNIVERSITY OF DERBY</option>
-							<option value="43">UNIVERSITY OF EAST ANGLIA</option>
-							<option value="44">UNIVERSITY OF EAST LONDON</option>
-							<option value="45">UNIVERSITY OF ESSEX</option>
-							<option value="46">UNIVERSITY OF EXETER</option>
-							<option value="47">UNIVERSITY OF GLOUCESTERSHIRE</option>
-							<option value="48">UNIVERSITY OF GREENWICH</option>
-							<option value="49">UNIVERSITY OF HERTFORDSHIRE</option>
-							<option value="50">UNIVERSITY OF HUDDERSFIELD</option>
-							<option value="51">UNIVERSITY OF HULL</option>
-							<option value="52">UNIVERSITY OF LEEDS</option>
-							<option value="53">UNIVERSITY OF LEICESTER</option>
-							<option value="54">UNIVERSITY OF LINCOLN</option>
-							<option value="55">UNIVERSITY OF LIVERPOOL</option>
-							<option value="56">UNIVERSITY OF MANCHESTER</option>
-							<option value="57">UNIVERSITY OF NEWCASTLE</option>
-							<option value="58">UNIVERSITY OF NORTHAMPTON</option>
-							<option value="59">UNIVERSITY OF NOTTINGHAM</option>
-							<option value="60">UNIVERSITY OF PLYMOUTH</option>
-							<option value="61">UNIVERSITY OF PORTSMOUTH</option>
-							<option value="62">UNIVERSITY OF READING</option>
-							<option value="63">UNIVERSITY OF ROEHAMPTON</option>
-							<option value="64">UNIVERSITY OF SALFORD</option>
-							<option value="65">UNIVERSITY OF SHEFFIELD</option>
-							<option value="66">UNIVERSITY OF SOUTHAMPTON</option>
-							<option value="67">UNIVERSITY OF ST MARK AND ST JOHN</option>
-							<option value="68">UNIVERSITY OF SUFFOLK</option>
-							<option value="69">UNIVERSITY OF SUNDERLAND</option>
-							<option value="70">UNIVERSITY OF SURREY</option>
-							<option value="71">UNIVERSITY OF TEESSIDE</option>
-							<option value="72">UNIVERSITY OF THE WEST OF ENGLAND</option>
-							<option value="73">UNIVERSITY OF WEST LONDON</option>
-							<option value="74">UNIVERSITY OF WINCHESTER</option>
-							<option value="75">UNIVERSITY OF WOLVERHAMPTON</option>
-							<option value="76">UNIVERSITY OF WORCESTER</option>
-							<option value="77">UNIVERSITY OF YORK</option>
-							<option value="78">UNIVERSIYT OF PLYMOUTH</option>
-							<option value="79">YORK ST JOHN UNIVERSITY</option>
-						</select>
-					</div>
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" id="contactNumber-label" for="contactNumber" class="form-label-bold">
+					Preferred contact number
+				</label>
+				<input class="nhsuk-input" id="contactNumber" name="contactNumber" type="text" spellcheck="false" autocomplete="off" maxlength="20">
+			</div>
 
-					<div class="nhsuk-form-group">
-						<label class="nhsuk-label" id="job-label" for="job" class="form-label-bold">
-							Job/Department
-						</label>
-						<input class="nhsuk-input" id="job" name="job" type="text" spellcheck="false" autocomplete="off">
-					</div>
+			<fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+				<legend class="nhsuk-fieldset__legend">Is the user's login currently active?</legend>
 
-					<div class="nhsuk-form-group">
-						<label class="nhsuk-label" id="contactNumber-label" for="contactNumber" class="form-label-bold">
-							Preferred contact number
-						</label>
-						<input class="nhsuk-input" id="contactNumber" name="contactNumber" type="text" spellcheck="false"
-							autocomplete="off" maxlength="20">
-					</div>
-				
+				<div class="nhsuk-hint" id="contact-hint">Hint text providing context around this question to be placed here.</div>
 			
 				<div class="nhsuk-form-group">
-					<label class="nhsuk-label" id="contactNumber-label" for="contactNumber" class="form-label-bold">
-						Is the user's login currently active?
-					</label>
-					<div class="nhsuk-hint" id="contact-hint">
-						Hint text providing context around this question to be placed here.
-					  </div>
-
 					<div class="nhsuk-radios nhsuk-radios--inline">
 						<div class="nhsuk-radios__item">
 							<input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="1">
-							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveYes">
-								Yes
-							</label>
+							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveYes">Yes</label>
 						</div>
 
 						<div class="nhsuk-radios__item">
 							<input class="nhsuk-radios__input" id="optionsActiveNo" name="active" type="radio" value="0">
-							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveNo">
-								No
-							</label>
+							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveNo">No</label>
 						</div>
 					</div>
 				</div>
+			</fieldset>
 
-				<div class="nhsuk-form-group">
-					<button class="nhsuk-button" type="submit" id="saveUser">Continue</button>
-					<p><a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a></p>
-				</div>
-				
+			<div class="nhsuk-form-group">
+				<button class="nhsuk-button" type="submit" id="saveUser">Continue</button>
+				<p><a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a></p>
 			</div>
-		</div>
 	</form>
 {% endblock %}

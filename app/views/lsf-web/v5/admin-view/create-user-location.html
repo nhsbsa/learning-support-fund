@@ -1,65 +1,47 @@
 {% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
-Create user
+Further details
 {% endblock %}
 
 {% block content %}
-<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
 
-    <div class="nhsuk-grid-column-two-thirds">
-
-        {{ backLink({
-        "href": "javascript:history.go(-1)",
-        "text": "Go back"
-        }) }}
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
 
   <form name="userDetailsForm" action="/lsf-web/v5/admin-view/create-user-cya" method="post" novalidate="">
+		<h1 class="nhsuk-heading-l">Further details</h1>
 		
+		<div class="nhsuk-form-group">
+			<label class="nhsuk-label" id="location-label" for="location" class="form-label-bold">Location</label>
+			<input class="nhsuk-input" id="location" name="location" type="text" spellcheck="false" autocomplete="off">
+		</div>
 				
-				<div class="nhsuk-form-group">
-					<label class="nhsuk-label" for="placement-additional-costs">
-						<h1 class="nhsuk-heading-l">Further details</h1>
-					</label>
-	
-			
-				<div id="locationContainer">
-					<div class="nhsuk-form-group">
-						<label class="nhsuk-label" id="location-label" for="location" class="form-label-bold">Location</label>
-						<input class="nhsuk-input" id="location" name="location" type="text" spellcheck="false" autocomplete="off">
-					</div>
-				
-					<div class="nhsuk-form-group">
-						<label class="nhsuk-label" id="contactNumber-label" for="contactNumber" class="form-label-bold">
-							Is the user's login currently active?
-						</label>
-						<div class="nhsuk-hint" id="contact-hint">
-							Hint text providing context around this question to be placed here.
-						  </div>
-
-						<div class="nhsuk-radios nhsuk-radios--inline">
-							<div class="nhsuk-radios__item">
-								<input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="1">
-								<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveYes">
-									Yes
-								</label>
-							</div>
-	
-							<div class="nhsuk-radios__item">
-								<input class="nhsuk-radios__input" id="optionsActiveNo" name="active" type="radio" value="0">
-								<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveNo">
-									No
-								</label>
-							</div>
-						</div>
+		<fieldset class="nhsuk-fieldset">
+			<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Is the user's login currently active?</legend>
+			<div class="nhsuk-hint" id="contact-hint">Hint text providing context around this question to be placed here.</div>
+			<div class="nhsuk-form-group">
+				<div class="nhsuk-radios nhsuk-radios--inline">
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="1">
+						<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveYes">Yes</label>
 					</div>
 
-				<div class="nhsuk-form-group">
-					<button class="nhsuk-button" type="submit" id="saveUser">Continue</button>
-					<p><a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a></p>
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="optionsActiveNo" name="active" type="radio" value="0">
+						<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveNo">No</label>
+					</div>
 				</div>
 			</div>
-			
+		</fieldset>
+		
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button" type="submit" id="saveUser">Continue</button>
+			<p><a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a></p>
 		</div>
 	</form>
+</div>
 {% endblock %}
