@@ -124,3 +124,14 @@ University details
 			</div>
 	</form>
 {% endblock %}
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue : '',
+    autoselect : true,  
+    selectElement : document.querySelector('#collegeDrop')
+  })
+</script>
+{% endblock %}
