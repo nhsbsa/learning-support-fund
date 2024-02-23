@@ -31,7 +31,7 @@ Create user
 					{% endif %} 
 				  </dd>
 				<dd class="nhsuk-summary-list__actions">
-				  <a href="/lsf-web/v5/admin-view/update-user#email" id="email-change" aria-label="Change user's email address">Change</a>
+				  <a href="/lsf-web/v5/admin-view/create-user#email" id="email-change" aria-label="Change user's email address">Change</a>
 				</dd>
 			  </div>
 
@@ -102,7 +102,8 @@ Create user
 			  </div>
 			  
 			  <!-- If user role is HEI User, Admin or Read provide data about university, department and phone number here -->
-			  {% if data['role'] in ['role-9', 'role-10', 'role-11'] %}
+			 
+			  {% if data['role'] in ['HEI user', 'HEI admin', 'HEI read'] %}
 			  <div class="nhsuk-summary-list__row">
 				  <dt id="university" class="nhsuk-summary-list__key">
 					  University
