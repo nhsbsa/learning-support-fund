@@ -767,6 +767,10 @@ hr.solid {
 .autocomplete__input--focused ~ svg g polygon {
   fill: #fff;
 }
+
+.autocomplete__wrapper {
+  background: #fff;
+}
 /* need to do the button focus styles */
 
 /* signed in header */
@@ -849,3 +853,4 @@ hr.solid {
   }
 }
 /* /. */
+
