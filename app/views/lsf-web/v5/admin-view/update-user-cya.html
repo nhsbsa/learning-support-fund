@@ -20,7 +20,7 @@ Create user
 		
 
 					<div class="content">
-					  <h1 class="nhsuk-heading-l" id="title">Check user details</h1>
+					  <h1 class="nhsuk-heading-l" id="title">Check your answers</h1>
 					  <dl class="nhsuk-summary-list">
 
 						<div class="nhsuk-summary-list__row">
@@ -69,25 +69,7 @@ Create user
 						  <dd class="nhsuk-summary-list__actions">
 							<a href="/lsf-web/v5/admin-view/update-user#lastName" id="lastName-change" aria-label="Change user's last name">Change</a>
 						  </dd>
-						</div>
-			
-						<div class="nhsuk-summary-list__row">
-							<dt id="role" class="nhsuk-summary-list__key">
-							  Role
-							</dt>
-							<dd class="nhsuk-summary-list__value" id="roles">
-							  {% if data['role'] %}
-								{{ data['role'] }}
-							  {% elif data['role'] in ['role-9', 'role-10', 'role-11'] %}
-								HEI user
-							  {% else %}
-								Processor
-							  {% endif %} 
-							</dd>
-							<dd class="nhsuk-summary-list__actions">
-							  <a href="/lsf-web/v5/admin-view/update-user-roles" id="roles-change" aria-label="Change user's role">Change</a>
-							</dd>
-						</div>						  
+						</div>					  
 						
 						<div class="nhsuk-summary-list__row">
 						  <dt id="location" class="nhsuk-summary-list__key">
@@ -104,9 +86,48 @@ Create user
 							<a href="/lsf-web/v5/admin-view/update-user#location" id="university-change" aria-label="Change university">Change</a>
 						  </dd>
 						</div>
+
+						<div class="nhsuk-summary-list__row">
+							<dt id="mother-email-address" class="nhsuk-summary-list__key">
+							  Active user
+						  </dt>
+							<dd class="nhsuk-summary-list__value" id="active">
+							  {% if data ['active'] %} 
+								  {{ data['active'] }}
+							  {% else %} 
+								  Yes
+							  {% endif %}
+						  </dd>
+							<dd class="nhsuk-summary-list__actions">
+							  <a href="/lsf-web/v5/admin-view/update-user#active" id="active-change" aria-label="Change active user">Change</a>
+							</dd>
+						  </div>
+
+						  <div class="nhsuk-summary-list__row">
+							<dt id="role" class="nhsuk-summary-list__key">
+							  Role
+							</dt>
+							<dd class="nhsuk-summary-list__value" id="roles">
+							  {% if data['role'] %}
+								{{ data['role'] }}
+							  {% elif data['role'] in ['role-9', 'role-10', 'role-11'] %}
+								HEI user
+							  {% else %}
+								Processor
+							  {% endif %} 
+							</dd>
+							<dd class="nhsuk-summary-list__actions">
+							  <a href="/lsf-web/v5/admin-view/update-user-roles" id="roles-change" aria-label="Change user's role">Change</a>
+							</dd>
+						</div>	
+						</dl>
+					
 						
 						<!-- If user role is HEI User, Admin or Read provide data about university, department and phone number here -->
 						{% if data['role'] in ['HEI user', 'HEI admin', 'HEI read'] %}
+						<h1 class="nhsuk-heading-m" id="title">University details</h1>
+						<dl class="nhsuk-summary-list">
+
 						<div class="nhsuk-summary-list__row">
 							<dt id="university" class="nhsuk-summary-list__key">
 								University
@@ -156,21 +177,7 @@ Create user
 						</div>
 						{% endif %} 
 
-						<div class="nhsuk-summary-list__row">
-						  <dt id="mother-email-address" class="nhsuk-summary-list__key">
-							Active user
-						</dt>
-						  <dd class="nhsuk-summary-list__value" id="active">
-							{% if data ['active'] %} 
-								{{ data['active'] }}
-							{% else %} 
-								Yes
-							{% endif %}
-						</dd>
-						  <dd class="nhsuk-summary-list__actions">
-							<a href="/lsf-web/v5/admin-view/update-user#active" id="active-change" aria-label="Change active user">Change</a>
-						  </dd>
-						</div>
+						
 					  </dl>
 					</div>
 					
