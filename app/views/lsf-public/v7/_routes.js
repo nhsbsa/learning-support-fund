@@ -11,6 +11,20 @@ const router = express.Router();
 
 // ********************************
 
+router.post('/v7/sign-in', (req, res) => {
+
+  req.session.data['send-again'] = 'false';
+
+  const testScenario = req.session.data['test-scenario']
+
+  if (testScenario === 'true'){
+    res.redirect('/lsf-public/v7/phone-number-check')
+  } else {
+    res.redirect('/lsf-public/v7/sign-in-2fa')
+  }
+
+})
+
 router.post('/v7/change-phone-number', (req, res) => {
 
   const signIn = req.session.data['sign-in']

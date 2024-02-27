@@ -29,26 +29,32 @@
             Select all that apply.
           </div>
 
+        </div>
+
+        <div class="nhsuk-form-group">
+
+          <h2 class="nhsuk-heading-m">Travel to or from placement</h2>
+
           <div class="nhsuk-checkboxes">
 
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="claiming-for-car" name="claiming-for" type="checkbox" value="car" {{ checked('car') }}>
               <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-car">
-                Driving to placement
+                Driving
               </label>
             </div>
 
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="claiming-for-public" name="claiming-for" type="checkbox" value="Public transport" {{ checked('Public transport') }}>
               <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-public">
-                Public transport journey to placement
+                Public transport
               </label>
             </div>
 
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="claiming-for-cycle" name="claiming-for" type="checkbox" value="Cycle" {{ checked('Cycle') }}>
               <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-cycle">
-                Cycling to placement
+                Cycling
               </label>
             </div>
 
@@ -59,23 +65,33 @@
               </label>
             </div>
 
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="claiming-for-travel-to-accommodation" name="claiming-for" type="checkbox" value="travel to accommodation" {{ checked('travel to accommodation') }}>
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-travel-to-accommodation">
-                Travel to accommodation
-              </label>
-            </div>
-
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="claiming-for-accommodation" name="claiming-for" type="checkbox" value="accommodation" {{ checked('accommodation') }}>
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-accommodation">
-                Accommodation
-              </label>
-            </div>
-
           </div>
 
       </div>
+
+      <div class="nhsuk-form-group">
+
+        <h2 class="nhsuk-heading-m">Accommodation costs</h2>
+
+        <div class="nhsuk-checkboxes">
+
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="claiming-for-travel-to-accommodation" name="claiming-for" type="checkbox" value="travel to accommodation" {{ checked('travel to accommodation') }}>
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-travel-to-accommodation">
+              Travel to accommodation
+            </label>
+          </div>
+
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="claiming-for-accommodation" name="claiming-for" type="checkbox" value="accommodation" {{ checked('accommodation') }}>
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-accommodation">
+              Accommodation
+            </label>
+          </div>
+
+        </div>
+
+    </div>
 
       <div class="nhsuk-form-group">
 

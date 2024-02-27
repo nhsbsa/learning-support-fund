@@ -24,7 +24,10 @@
             <input class="nhsuk-input nhsuk-input--width-20" id="sign-in-password" name="sign-in-password" type="password">
         </div>
 
-        <a class="nhsuk-button" href="sign-in-2fa?send-again=false">Sign in</a><br>
+        <form action="v7/sign-in" method="POST">
+          <button class="nhsuk-button" type="submit">Sign in</button><br>
+        </form>
+
         <p><a href="forgotten-username">Forgotten your username?</a></p>
         <p><a href="forgotten-password">Forgotten your password?</a></p>
 
