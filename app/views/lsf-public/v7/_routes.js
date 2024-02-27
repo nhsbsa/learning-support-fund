@@ -261,7 +261,7 @@ router.post('/v7/TDAE-public-transport-daily-cost', (req, res) => {
 
   const publicTransportTicket = req.session.data['public-transport-ticket']
 
-  if (publicTransportTicket === 'Daily ticket') {
+  if (publicTransportTicket === 'Daily') {
     req.session.data['daily'] = 'yes';
     res.redirect('/lsf-public/v7/TDAE-public-transport-repeated');
   } else {

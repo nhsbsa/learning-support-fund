@@ -20,12 +20,8 @@
 
             <fieldset class="nhsuk-fieldset">
               <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-                {% if data['public-transport-type'] == 'Train' and data['public-transport-ticket'] == 'Daily ticket' %}
                 <h1 class="nhsuk-heading-l">
-                  How much did this daily train ticket cost?
-                  {% else %}
-                  How much did this {{ data['public-transport-type'] | default('') | lower }} ticket cost?
-                  {% endif %}
+                  How much did this {{ data['public-transport-ticket'] | default('') | lower }} {{ data['public-transport-type'] | default('') | lower }} ticket cost?
                 </h1>
               </legend>
 
