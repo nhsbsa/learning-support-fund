@@ -13,10 +13,10 @@ Check your answers
 		<h1 class="nhsuk-heading-xl">Your accommodation travel details</h1>
 
 
-		<!-- if only one journey and direction of travel is from term-time address to accommodation -->
+		<!-- if only one journey and direction of travel is from term time address to accommodation -->
 		{% if data['number-of-journeys'] != '2' and data['direction-of-travel'] == 'termtime-to-accommodation' %}
 
-		<!-- if first journey = term-time to accommodation - direction of travel -->
+		<!-- if first journey = term time to accommodation - direction of travel -->
 				<dl class="nhsuk-summary-list">
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
@@ -24,9 +24,9 @@ Check your answers
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
-							Term-time address to accommodation
+							Term time address to accommodation
 							{% else %}
-							 Accommodation to term-time address
+							 Accommodation to term time address
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
@@ -40,7 +40,7 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- if first journey = term-time to accommodation - date of journey -->
+				<!-- if first journey = term time to accommodation - date of journey -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Date travelled
@@ -63,7 +63,7 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- if first journey = term-time to accommodation - accommodation address -->
+				<!-- if first journey = term time to accommodation - accommodation address -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
 							Accommodation address
@@ -96,7 +96,7 @@ Check your answers
 						{% endif %}
 					</div>
 
-				<!-- if first journey = term-time to accommodation, and travelled by car and public transport - transport method -->
+				<!-- if first journey = term time to accommodation, and travelled by car and public transport - transport method -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Transport method
@@ -119,7 +119,7 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- if first journey = term-time to accommodation, and travelled by car and public transport - total driving mileage -->
+				<!-- if first journey = term time to accommodation, and travelled by car and public transport - total driving mileage -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
 							Total driving mileage
@@ -142,7 +142,7 @@ Check your answers
 						{% endif %}
 					</div>
 
-				<!-- if first journey = term-time to accommodation and travelled by both car and public transport - total extra costs incurred -->
+				<!-- if first journey = term time to accommodation and travelled by both car and public transport - total extra costs incurred -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
 								Total extra costs amount
@@ -161,7 +161,7 @@ Check your answers
 							{% endif %}
 						</div>
 
-				<!-- if first journey = term-time to accommodation and travelled by both car and public transport - public transport method -->
+				<!-- if first journey = term time to accommodation and travelled by both car and public transport - public transport method -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
 							Public transport type
@@ -184,7 +184,7 @@ Check your answers
 						{% endif %}
 					</div>
 
-				<!-- if first journey = term-time address to accommodation, and travelled by both car and public transport - Total public transport amount -->
+				<!-- if first journey = term time address to accommodation, and travelled by both car and public transport - Total public transport amount -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
 							Total public transport amount
@@ -207,13 +207,13 @@ Check your answers
 						{% endif %}
 					</div>
 
-				<!-- if first journey = term-time to accommodation and travelled by both car and public - evidence uploaded -->
+				<!-- if first journey = term time to accommodation and travelled by both car and public - evidence uploaded -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Evidence
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						<a href="/images/parking-receipt-and-train-ticket.jpg" download="Supporting evidence for journey between term-time address and accommodation">
+						<a href="/images/parking-receipt-and-train-ticket.jpg" download="Supporting evidence for journey between term time address and accommodation">
 							parking-receipt-and-train-ticket.jpg
 						</a>
 					</dd>
@@ -226,7 +226,7 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- if first journey = term-time to accommodation and travelled by both car and public - additional comments -->
+				<!-- if first journey = term time to accommodation and travelled by both car and public - additional comments -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 					  Comments
@@ -263,9 +263,9 @@ Check your answers
 
 
 				{% elif data['number-of-journeys'] != '2' and data['direction-of-travel'] == 'accommodation-to-termtime' %}
-				<!-- if only one journey and direction of travel is from accommodation to term-time address -->
+				<!-- if only one journey and direction of travel is from accommodation to term time address -->
 
-				<!-- if first journey = accommodation to term-time address - direction of travel -->
+				<!-- if first journey = accommodation to term time address - direction of travel -->
 				<dl class="nhsuk-summary-list">
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
@@ -273,9 +273,9 @@ Check your answers
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['direction-of-travel'] == 'accommodation-to-termtime' %}
-							Accommodation to term-time address
+							Accommodation to term time address
 							{% else %}
-							Term-time address to accommodation
+							Term time address to accommodation
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
@@ -289,7 +289,7 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- if first journey = accommodation to term-time address - date of journey -->
+				<!-- if first journey = accommodation to term time address - date of journey -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Date travelled
@@ -312,7 +312,7 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- if first journey = accommodation to term-time address - accommodation address -->
+				<!-- if first journey = accommodation to term time address - accommodation address -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
 							Accommodation address
@@ -345,7 +345,7 @@ Check your answers
 						{% endif %}
 					</div>
 
-				<!-- if first journey = accommodation to term-time address, and travelled by car and public transport - transport method -->
+				<!-- if first journey = accommodation to term time address, and travelled by car and public transport - transport method -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Transport method
@@ -368,7 +368,7 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- if first journey = accommodation to term-time address, and travelled by car and public transport - total driving mileage -->
+				<!-- if first journey = accommodation to term time address, and travelled by car and public transport - total driving mileage -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
 							Total driving mileage
@@ -391,7 +391,7 @@ Check your answers
 						{% endif %}
 					</div>
 
-				<!-- if first journey = accommodation to term-time address, and travelled by both car and public transport - total extra costs incurred -->
+				<!-- if first journey = accommodation to term time address, and travelled by both car and public transport - total extra costs incurred -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
 								Total extra costs amount
@@ -410,7 +410,7 @@ Check your answers
 							{% endif %}
 						</div>
 
-				<!-- if first journey = accommodation to term-time address, and travelled by both car and public transport - public transport method -->
+				<!-- if first journey = accommodation to term time address, and travelled by both car and public transport - public transport method -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
 							Public transport type
@@ -433,7 +433,7 @@ Check your answers
 						{% endif %}
 					</div>
 
-					<!-- if first journey = accommodation to term-time address, and travelled by both car and public transport - Total public transport amount -->
+					<!-- if first journey = accommodation to term time address, and travelled by both car and public transport - Total public transport amount -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
 								Total public transport amount
@@ -456,13 +456,13 @@ Check your answers
 							{% endif %}
 						</div>
 
-				<!-- if first journey = accommodation to term-time address, and travelled by both car and public transport - evidence uploaded -->
+				<!-- if first journey = accommodation to term time address, and travelled by both car and public transport - evidence uploaded -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Evidence
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						<a href="/images/train-ticket-2.jpg" download="Supporting evidence for journey between accommodation and term-time address">
+						<a href="/images/train-ticket-2.jpg" download="Supporting evidence for journey between accommodation and term time address">
 							snapshot-015-09-02-2024.jpg
 						</a>
 					</dd>
@@ -475,7 +475,7 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- if first journey = accommodation to term-time address, and travelled by both car and public transport - additional comments -->
+				<!-- if first journey = accommodation to term time address, and travelled by both car and public transport - additional comments -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 					  Comments
@@ -525,7 +525,7 @@ Check your answers
 				</span>
 				</summary>
 
-				<!-- if first journey = term-time to accommodation - direction of travel -->
+				<!-- if first journey = term time to accommodation - direction of travel -->
 				<div class="nhsuk-details__text">
 				<dl class="nhsuk-summary-list">
 					<div class="nhsuk-summary-list__row">
@@ -534,9 +534,9 @@ Check your answers
 						</dt>
 						<dd class="nhsuk-summary-list__value">
 							{% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
-								Term-time address to accommodation
+								Term time address to accommodation
 							{% else %}
-							 	Accommodation to term-time address
+							 	Accommodation to term time address
 							{% endif %}
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
@@ -550,7 +550,7 @@ Check your answers
 						{% endif %}
 					</div>
 
-					<!-- if first journey = term-time to accommodation - date of journey -->
+					<!-- if first journey = term time to accommodation - date of journey -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
 							Date travelled
@@ -573,7 +573,7 @@ Check your answers
 						{% endif %}
 					</div>
 
-					<!-- if first journey = term-time to accommodation - accommodation address -->
+					<!-- if first journey = term time to accommodation - accommodation address -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
 								Accommodation address
@@ -606,7 +606,7 @@ Check your answers
 							{% endif %}
 						</div>
 
-					<!-- if first journey = term-time to accommodation, and travelled by car and public transport - transport method -->
+					<!-- if first journey = term time to accommodation, and travelled by car and public transport - transport method -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
 							Transport method
@@ -629,7 +629,7 @@ Check your answers
 						{% endif %}
 					</div>
 
-					<!-- if first journey = term-time to accommodation, and travelled by car and public transport - total driving mileage -->
+					<!-- if first journey = term time to accommodation, and travelled by car and public transport - total driving mileage -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
 								Total driving mileage
@@ -652,7 +652,7 @@ Check your answers
 							{% endif %}
 						</div>
 
-					<!-- if first journey = term-time to accommodation and travelled by both car and public - total extra costs incurred -->
+					<!-- if first journey = term time to accommodation and travelled by both car and public - total extra costs incurred -->
 							<div class="nhsuk-summary-list__row">
 								<dt class="nhsuk-summary-list__key">
 									Total extra costs amount
@@ -671,7 +671,7 @@ Check your answers
 								{% endif %}
 							</div>
 
-					<!-- if first journey = term-time to accommodation and travelled by both car and public - public transport method -->
+					<!-- if first journey = term time to accommodation and travelled by both car and public - public transport method -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
 								Public transport type
@@ -694,7 +694,7 @@ Check your answers
 							{% endif %}
 						</div>
 
-						<!-- if first journey = term-time address to accommodation, and travelled by both car and public transport - Total public transport amount -->
+						<!-- if first journey = term time address to accommodation, and travelled by both car and public transport - Total public transport amount -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
 								Total public transport amount
@@ -717,13 +717,13 @@ Check your answers
 							{% endif %}
 						</div>
 
-					<!-- if first journey = term-time to accommodation and travelled by both car and public - evidence uploaded -->
+					<!-- if first journey = term time to accommodation and travelled by both car and public - evidence uploaded -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
 							Evidence
 						</dt>
 						<dd class="nhsuk-summary-list__value">
-							<a href="/images/parking-receipt-and-train-ticket.jpg" download="Supporting evidence for journey between term-time address and accommodation">
+							<a href="/images/parking-receipt-and-train-ticket.jpg" download="Supporting evidence for journey between term time address and accommodation">
 								parking-receipt-and-train-ticket.jpg
 							</a>
 						</dd>
@@ -736,7 +736,7 @@ Check your answers
 						{% endif %}
 					</div>
 
-					<!-- if first journey = term-time to accommodation and travelled by both car and public - additional comments -->
+					<!-- if first journey = term time to accommodation and travelled by both car and public - additional comments -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
 						  Comments
@@ -788,7 +788,7 @@ Check your answers
 					</span>
 					</summary>
 
-				<!-- if second journey = accommodation to term-time address - direction of travel -->
+				<!-- if second journey = accommodation to term time address - direction of travel -->
 		<div class="nhsuk-details__text">
 			<dl class="nhsuk-summary-list">
 				<div class="nhsuk-summary-list__row">
@@ -797,9 +797,9 @@ Check your answers
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['direction-of-travel'] == 'accommodation-to-termtime' %}
-							Accommodation to term-time address
+							Accommodation to term time address
 							{% else %}
-							Term-time address to accommodation
+							Term time address to accommodation
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
@@ -813,7 +813,7 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- if second journey = accommodation to term-time address - date of journey -->
+				<!-- if second journey = accommodation to term time address - date of journey -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Date travelled
@@ -836,7 +836,7 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- if second journey = accommodation to term-time address - accommodation address -->
+				<!-- if second journey = accommodation to term time address - accommodation address -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
 							Accommodation address
@@ -869,7 +869,7 @@ Check your answers
 						{% endif %}
 					</div>
 
-				<!-- if second journey = accommodation to term-time address, and travelled by car and public transport - transport method -->
+				<!-- if second journey = accommodation to term time address, and travelled by car and public transport - transport method -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Transport method
@@ -892,7 +892,7 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- if second journey = accommodation to term-time address, and travelled by car and public transport - total driving mileage -->
+				<!-- if second journey = accommodation to term time address, and travelled by car and public transport - total driving mileage -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
 							Total driving mileage
@@ -915,7 +915,7 @@ Check your answers
 						{% endif %}
 					</div>
 
-				<!-- if second journey = accommodation to term-time address, and travelled by both car and public - total extra costs incurred -->
+				<!-- if second journey = accommodation to term time address, and travelled by both car and public - total extra costs incurred -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
 								Total extra costs amount
@@ -934,7 +934,7 @@ Check your answers
 							{% endif %}
 						</div>
 
-				<!-- if second journey = accommodation to term-time address, and travelled by both car and public - public transport method -->
+				<!-- if second journey = accommodation to term time address, and travelled by both car and public - public transport method -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
 							Public transport type
@@ -957,7 +957,7 @@ Check your answers
 						{% endif %}
 					</div>
 
-				<!-- if second journey = accommodation to term-time address, and travelled by both car and public transport - Total public transport amount -->
+				<!-- if second journey = accommodation to term time address, and travelled by both car and public transport - Total public transport amount -->
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
 							Total public transport amount
@@ -980,7 +980,7 @@ Check your answers
 						{% endif %}
 					</div>
 
-				<!-- if second journey = accommodation to term-time address, and travelled by both car and public - evidence uploaded -->
+				<!-- if second journey = accommodation to term time address, and travelled by both car and public - evidence uploaded -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Evidence
@@ -999,7 +999,7 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- if second journey = accommodation to term-time address, and travelled by both car and public - additional comments -->
+				<!-- if second journey = accommodation to term time address, and travelled by both car and public - additional comments -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 					  Comments

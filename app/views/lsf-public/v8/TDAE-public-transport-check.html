@@ -1,0 +1,134 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Additional costs for your normal daily journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v8/TDAE-public-transport-check" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+					<h1 class="nhsuk-heading-l">
+						<h1 class="nhsuk-heading-l">Check your public transport ticket</h1>
+					</h1>
+
+					<dl class="nhsuk-summary-list">
+
+					  <div class="nhsuk-summary-list__row">
+					    <dt class="nhsuk-summary-list__key">
+					      Public transport type
+					    </dt>
+					    <dd class="nhsuk-summary-list__value">
+					     	{{ data['public-transport-type'] }}
+					    </dd>
+					    <dd class="nhsuk-summary-list__actions">
+					      <a href="TDAE-public-transport-type">
+					        Change<span class="nhsuk-u-visually-hidden"> public transport type</span>
+					      </a>
+					    </dd>
+					  </div>
+
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Ticket cost
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								£{{ data['public-transport-daily-cost']}}
+							</dd>
+							<dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-public-transport-daily-cost">
+									Change<span class="nhsuk-u-visually-hidden"> daily cost</span>
+								</a>
+							</dd>
+						</div>
+
+						<div class="nhsuk-summary-list__row">
+					    <dt class="nhsuk-summary-list__key">
+					      Ticket type
+					    </dt>
+					    <dd class="nhsuk-summary-list__value">
+					      {{ data['public-transport-ticket'] }}
+					    </dd>
+					    <dd class="nhsuk-summary-list__actions">
+					      <a href="TDAE-public-transport-ticket">
+					        Change<span class="nhsuk-u-visually-hidden"> ticket type</span>
+					      </a>
+					    </dd>
+					  </div>
+
+						{% if data['public-transport-ticket'] == 'Daily ticket' %}
+							<div class="nhsuk-summary-list__row">
+						    <dt class="nhsuk-summary-list__key">
+						      Used on multiple days
+						    </dt>
+						    <dd class="nhsuk-summary-list__value">
+									{{ data['public-transport-repeated'] }}
+						    </dd>
+						    <dd class="nhsuk-summary-list__actions">
+						      <a href="TDAE-public-transport-repeated">
+						        Change<span class="nhsuk-u-visually-hidden"> repeated cost</span>
+						      </a>
+						    </dd>
+						  </div>
+						{% endif %}
+
+						{% if data['public-transport-ticket'] == 'Multiple day ticket' %}
+							<div class="nhsuk-summary-list__row">
+						    <dt class="nhsuk-summary-list__key">
+						      Ticket start and end date
+						    </dt>
+						    <dd class="nhsuk-summary-list__value">
+									Friday 6 October 2023 to Thursday 12 October 2023
+						    </dd>
+						    <dd class="nhsuk-summary-list__actions">
+						      <a href="TDAE-public-transport-dates">
+						        Change<span class="nhsuk-u-visually-hidden"> ticket dates</span>
+						      </a>
+						    </dd>
+						  </div>
+						{% endif %}
+
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								{% if data['public-transport-repeated'] == 'No' %}
+									Day ticket used
+								{% else %}
+									Days ticket used
+								{% endif %}
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								Friday 6 October 2023<br>
+								Saturday 7 October 2023<br>
+								Sunday 8 October 2023<br>
+								Monday 9 October 2023
+							</dd>
+							<dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-placement-additional-costs">
+									Change<span class="nhsuk-u-visually-hidden"> Additional cost amount</span>
+								</a>
+							</dd>
+						</div>
+
+					</dl>
+
+			</div>
+			<button class="nhsuk-button" type="submit">Add ticket</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

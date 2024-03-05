@@ -1,0 +1,65 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  What are your contact details?
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+      <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Bank or building society account details
+                </h1>
+              </legend>
+
+              <div class="nhsuk-inset-text">
+                  <span class="nhsuk-u-visually-hidden">Information: </span>
+                <p>To guarantee we pay your next payment into your correct account, update your details at least 7 days before it's due.</p>
+                <p>Enter these carefully. If they're incorrect, we will not accept responsibility for delayed, missing, or incorrect payments.</p>
+              </div>
+
+              <div class="nhsuk-form-group" id="group-accountholder">
+                <label for="accountholder" class="nhsuk-label">Name on the account</label>
+
+                <input class="nhsuk-input" id="accountholder" name="accountholder" value="Dave" />
+              </div>
+
+              <div class="nhsuk-form-group" id="group-bankSortCode">
+                <label for="sortcode" class="nhsuk-label">Sort code</label>
+                <div class="nhsuk-hint" id="sort-code-hint">Must be 6 digits long</div>
+
+                <input type="text" class="nhsuk-input nhsuk-input--width-10" id="sortcode" aria-describedby="sort-code-hint" name="sortcode" value="000045" />
+              </div>
+
+              <div class="nhsuk-form-group" id="group-bankaccountNumber">
+                <label for="accountNumber" class="nhsuk-label">Account number</label>
+                <div class="nhsuk-hint" id="acc-number-hint">Must be between 6 and 8 digits long</div>
+
+                <input type="text" class="nhsuk-input nhsuk-input--width-20" id="accountNumber" autocomplete="on" inputmode="numeric" aria-describedby="acc-number-hint" name="accountNumber" value="00000003" />
+              </div>
+
+              <div class="nhsuk-form-group" id="group-buildingSocietyNo">
+                <label for="buildingSocietyNo" class="nhsuk-label">Building society roll number (if you have one)</label>
+                <div class="nhsuk-hint" id="building-soc-hint">You can find it on your card, statement or passbook</div>
+
+                <input type="text" pattern="\d*" class="nhsuk-input nhsuk-input--width-20" id="buildingSocietyNo" aria-describedby="building-soc-hint" name="buildingSocietyNo" value="000000000000" />
+              </div>
+              <div class="nhsuk-form-group">
+                <a class="nhsuk-button" href="bank-details-check">Continue</a>
+                <p><a href="#">Cancel</a></p>
+              </div>
+            </fieldset>
+
+    </div>
+
+  </div>
+{% endblock %}

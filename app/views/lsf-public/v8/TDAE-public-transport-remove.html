@@ -1,0 +1,103 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Which mode of transport do you take to and from your normal place of study?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+    <form action="v8/TDAE-public-transport-remove" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-heading-l">
+                  Are you sure you want to remove this public transport ticket?
+                </h1>
+              </legend>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Public transport type
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Bus
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Ticket cost
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    £12
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Ticket type
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Multiple day ticket
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Ticket start and end date
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Friday 6 October 2023 to Thursday 12 October 2023
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Days ticket used
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Friday 6 October 2023<br>
+                    Saturday 7 October 2023<br>
+                    Sunday 8 October 2023<br>
+                    Monday 9 October 2023
+                  </dd>
+                </div>
+              </dl>
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="public-transport-ticket-remove" name="public-transport-remove" type="radio" value="Yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="public-transport-ticket-remove">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="public-transport-ticket-remove" name="public-transport-remove" type="radio" value="No">
+                  <label class="nhsuk-label nhsuk-radios__label" for="public-transport-ticket-remove">
+                    No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+      <button class="nhsuk-button" type="submit">Save and continue</button><br>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

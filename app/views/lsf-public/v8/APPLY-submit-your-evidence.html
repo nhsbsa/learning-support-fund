@@ -1,0 +1,92 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+    <!-- <form action="v8/APPLY-submit-your-evidence" method="POST"> -->
+
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Eligibility</span>Submit your evidence</h1>
+
+        <div class="nhsuk-form-group">
+            <h2 class="nhsuk-heading-m">Evidence required</h2>
+            <p>Please provide your documentation as detailed below.</p>
+
+            <h3 class="nhsuk-heading-s nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-7">{% if data['evidence-submitted'] === 'Submitted' %}<svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+                <path stroke-width="4" stroke-linecap="round" stroke="#007f3b" d="M18.4 7.8l-8.5 8.4L5.6 12"></path>
+              </svg>{% else %}<svg class="nhsuk-icon nhsuk-icon__cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="34" width="34">
+                <path d="M17 18.5c-.4 0-.8-.1-1.1-.4l-10-10c-.6-.6-.6-1.6 0-2.1.6-.6 1.5-.6 2.1 0l10 10c.6.6.6 1.5 0 2.1-.3.3-.6.4-1 .4z"></path>
+                <path d="M7 18.5c-.4 0-.8-.1-1.1-.4-.6-.6-.6-1.5 0-2.1l10-10c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1l-10 10c-.3.3-.6.4-1 .4z"></path>
+            </svg>{% endif %} {% if data['student-loan'] === 'yes' %}Student loan award letter{% else %}Passport - photo page OR UK birth certificate{% endif %}<br><a href="APPLY-upload-sl-award-letter"><p class="nhsuk-u-margin-bottom-0">Upload{% if data['evidence-submitted'] === 'Submitted' %} more{% endif %} evidence</p></a></h3>
+
+            {% if data['evidence-submitted'] === 'Submitted' %}
+                <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Evidence provided</h2>
+                <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+                    <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                      <tr role="row">
+                        <th role="columnheader" class="" scope="col">
+                          Document
+                        </th>
+                        <th role="columnheader" class="" scope="col">
+                          Status
+                        </th>
+                        <th role="columnheader" class="" scope="col">
+                          Action
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Document </span>{% if data['student-loan'] === 'yes' %}Student loan award letter{% else %}Passport - photo page OR UK birth certificate{% endif %}
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Status </span>Pending Approval
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="#">View</a>&nbsp;<a href="#">Delete</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            {% endif %}
+
+            {% if data['student-loan'] === 'yes' %}
+              <h2 class="nhsuk-heading-m">I have not applied for a student loan</h2>
+              <p>If you have not applied we will require more information.</p>
+              <p><a href="#">I have not applied for a student loan</a></p>
+            {% else %}
+              <h2 class="nhsuk-heading-m">I have applied for a student loan</h2>
+              <p>If you have applied for a student loan we only require a copy of your student loan award letter.</p>
+              <p><a href="#">I have applied for a student loan</a></p>
+            {% endif %}
+
+            {% if data['evidence-submitted'] === 'Submitted' %}
+                  <form action="v8/APPLY-submit-your-evidence" method="POST">
+                    <button class="nhsuk-button" type="submit">Submit application</button>
+                  </form>
+            {% else %}
+                <a class="nhsuk-button" href="academic-year-details">Do this later</a><br>
+                <a href="academic-year-details">Cancel</a>
+            {% endif %}
+
+        </div>
+        
+
+    <!-- </form> -->
+
+    </div>
+
+  </div>
+{% endblock %}

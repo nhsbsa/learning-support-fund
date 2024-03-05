@@ -1,0 +1,79 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+What is the address of your normal place of study?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v8/TDAE-normal-place-study" method="POST">
+
+
+			<fieldset class="nhsuk-fieldset">
+				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+					<h1 class="nhsuk-fieldset__heading">
+						What is your university's address?
+					</h1>
+				</legend>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="study-building-name">
+						Building name or number
+					</label>
+					<input class="nhsuk-input" id="study-building-name" name="study-building-name" type="text" autocomplete="cc-csc">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="study-address-line-1">
+						Address line 1
+					</label>
+					<input class="nhsuk-input" id="study-address-line-1" name="study-address-line-1" type="text" autocomplete="cc-csc">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="study-address-line-2">
+						Address line 2 (optional)
+					</label>
+					<input class="nhsuk-input" id="study-address-line-2" name="study-address-line-2" type="text" autocomplete="cc-csc">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="study-address-line-3">
+						Address line 3 (optional)
+					</label>
+					<input class="nhsuk-input" id="study-address-line-3" name="study-address-line-3" type="text" autocomplete="cc-csc">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="study-address-town">
+						Town or city
+					</label>
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="study-address-town" name="study-address-town" type="text" autocomplete="cc-csc">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="study-address-postcode">
+						Postcode
+					</label>
+					<input class="nhsuk-input nhsuk-input--width-10" id="study-address-postcode" name="study-address-postcode" type="text" autocomplete="cc-csc">
+				</div>
+
+			</fieldset>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

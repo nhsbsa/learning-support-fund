@@ -1,0 +1,107 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Which mode of transport do you take to and from your normal place of study?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+    <form action="v8/TDAE-hire-car-reason" method="POST">
+
+      <div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+						<h1 class="nhsuk-heading-l">Why did you need to hire this car?</h1>
+				</label>
+
+              <div class="nhsuk-form-group">
+              <p>You can tell us more about this after you've uploaded your evidence.</p>
+
+                <div class="nhsuk-hint" id="reason-for-vehicle-hire">
+                  Select all that apply.
+                </div>
+               
+              </div>
+
+              <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-for-hire" name="reason-for-hire" type="radio" value="I couldn't get public transport to the location I needed and I do not own my own vehicle">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-1">
+                    I do not own a car and public transport was not available
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-for-hire" name="reason-for-hire" type="radio" value="My own car had an issue">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-2">
+                    My own car had an issue
+                </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-for-hire" name="reason-for-hire" type="radio" value="I was relocated or transferred and needed a temporary vehicle">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-3">
+                    I was relocated or transferred and needed a temporary car
+                  </label>
+              </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-for-hire" name="reason-for-hire" type="radio" value="I needed to transport goods and/or equipment and required more space">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-4">
+                    I needed a larger vehicle to transport goods or equipment
+                  </label>
+                </div>                
+
+                <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="reason-for-hire" name="reason-for-hire" type="radio" value="It was cheaper than using public transport">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-5">
+                      It was cheaper than using public transport
+                    </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-for-hire" name="reason-for-hire" type="radio" value="A group of us hired the vehicle">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-6">
+                    A group of us hired a car together
+                  </label>
+              </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-for-hire" name="reason-for-hire" type="radio" value="other" aria-controls="conditional-contact-1" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-7">
+                    Other
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-contact-1">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="other-input">
+                      Enter the reason for hiring this car
+                    </label>
+                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="reason-for-hire" name="reason-for-hire" type="text">
+                  </div>
+                </div>
+                
+
+              </div>
+            </fieldset>
+
+          </div>
+
+      <button class="nhsuk-button" type="submit">Continue</button><br>
+      <a href="TDAE-start-claim">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

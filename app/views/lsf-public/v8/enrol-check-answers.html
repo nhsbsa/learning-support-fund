@@ -1,0 +1,138 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+      <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">SSRN0000059 - Joe Bloggs</span>Check your answers</h1>
+
+
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                University
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Birmingham City University
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="attending-university">
+                  Change<span class="nhsuk-u-visually-hidden"> university</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+          
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Course
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Child Nursing
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="university-course">
+                  Change<span class="nhsuk-u-visually-hidden"> course</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+          
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Which academic year are your applying for funding for?
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                September 2022
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="academic-year-funding">
+                  Change<span class="nhsuk-u-visually-hidden"> academic year</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+          
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                What is the total length of your course?
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                3 years
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="course-duration">
+                  Change<span class="nhsuk-u-visually-hidden"> length of course</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Is this your final year?
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Yes
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+            
+                  <a href="final-year">
+                    Change<span class="nhsuk-u-visually-hidden"> final year</span>
+                  </a>
+            
+                </dd>
+            
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  What is your attendance type?
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Full time
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+            
+                  <a href="full-part-time">
+                    Change<span class="nhsuk-u-visually-hidden"> attendance type</span>
+                  </a>
+            
+                </dd>
+            
+              </div>
+          
+          </dl>
+
+          <a class="nhsuk-button" href="student-declaration">Next</a>
+
+
+    </div>
+
+  </div>
+{% endblock %}

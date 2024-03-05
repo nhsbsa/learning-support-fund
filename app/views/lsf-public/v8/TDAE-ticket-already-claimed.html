@@ -1,0 +1,110 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Are you claiming for the previous academic year?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v8/TDAE-tickets-already-claimed" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  You may have already claimed this ticket
+                </h1>
+              </legend>
+
+              <div class="nhsuk-warning-callout">
+                <h3 class="nhsuk-warning-callout__label">
+                  <span role="text">
+                    <span class="nhsuk-u-visually-hidden">Important: </span>
+                    Previously submitted ticket
+                  </span>
+                </h3>
+                <dl class="nhsuk-summary-list">
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Public transport type
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      Bus
+                    </dd>
+                  </div>
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Ticket cost
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      £12
+                    </dd>
+                  </div>
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Ticket start and end date
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      Friday 6 October 2023 to Thursday 12 October 2023
+                    </dd>
+                  </div>
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Evidence
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      <a href="#">View</a>
+                    </dd>
+                  </div>
+                </dl>
+                <p>You  have a <a href="#">previously submitted claim (opens in a new tab)</a> with a ticket matching these details.</p>
+              </div>
+
+              <h2 class="nhsuk-heading-m">
+                Would you still like to add this ticket?
+              </h2>
+
+              <div class="nhsuk-hint">Your claim will be declined if you try to claim for costs you have already claimed for.</div>
+
+              <div class="nhsuk-radios">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="ticket-already-claimed-no" name="ticket-already-claimed" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="ticket-already-claimed-no">
+                    Yes
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="ticket-already-claimed-yes" name="ticket-already-claimed" type="radio" value="yes continue">
+                  <label class="nhsuk-label nhsuk-radios__label" for="ticket-already-claimed-yes">
+                    No, remove this ticket from this claim and continue
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="ticket-already-claimed-delete" name="ticket-already-claimed" type="radio" value="yes cancel">
+                  <label class="nhsuk-label nhsuk-radios__label" for="ticket-already-claimed-delete">
+                    No, delete this claim
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Save and continue</button><br>
+        <a href="TDAE-start-claim">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

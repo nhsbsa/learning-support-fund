@@ -1,0 +1,135 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Upload evidence
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds"> 
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+        <!-- <form action="v2/TDAE-" method="POST"> -->
+        <h1 class="nhsuk-heading-l">Upload your evidence for this week</h1>
+        <P>You need to provide evidence for each day you attended placement between 28 November 2022 and 04 December 2022</P>
+        <p>You can upload JPG, PNG, PDF or Word file types.</p>
+        <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                What evidence do I need?
+                </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                <p>This should include where relevant:</p>
+                <ul class="nhsuk-list nhsuk-list--bullet">
+                    <li>car parking - receipts, permits or invoices</li>
+                    <li>tunnel and toll charges - receipts</li>
+                    <li>Congestion and clean air charges - receipts, permits or invoices</li>
+                </ul>
+            </div>
+            </details>
+
+        <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                    Day
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Type of evidence
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    File
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Action
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                    Monday
+                </td>
+                <td class="nhsuk-table__cell ">
+                    Parking receipt
+                </td>
+                <td class="nhsuk-table__cell ">
+                    snapshot-032-07-03-2023.jpg
+                </td>
+                <td class="nhsuk-table__cell ">
+                    <a href="#">Remove</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="nhsuk-grid-column-full"> 
+
+        <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Upload your evidence</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                    Day
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Type of evidence
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    File
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                    <label class="nhsuk-label nhsuk-u-visually-hidden" for="select-1">
+                        Select a day the evidence relates to
+                      </label>
+                      <select class="nhsuk-select" id="select-1" name="select-1">
+                          <option value="1" selected disabled>Day</option>
+                          <option value="1">Monday</option>
+                          <option value="2">Wednesday</option>
+                          <option value="3">Thursday</option>
+                          <option value="4">Multiple days</option>
+                      </select>
+                </td>
+                <td class="nhsuk-table__cell ">
+                    <label class="nhsuk-label nhsuk-u-visually-hidden" for="select-1">
+                    Select the evidence type
+                  </label>
+                  <select class="nhsuk-select" id="select-1" name="select-1">
+                      <option value="1" selected disabled>Evidence type</option>
+                      <option value="1" >Parking receipt</option>
+                      <option value="2">Tunnel or toll charge</option>
+                      <option value="3">Congestion or clean air charge</option>
+                      <option value="4">Multiple evidence types</option>
+                  </select>
+                </td>
+                <td class="nhsuk-table__cell ">
+                    <label class="nhsuk-label nhsuk-u-visually-hidden" for="file-upload-1">
+                        Upload your evidence file
+                    </label>
+                    <input class="nhsuk-input" id="file-upload-1" name="file-upload-1" type="file">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <button class="nhsuk-button nhsuk-button--secondary" type="submit">Upload</button><br>
+      
+        <button class="nhsuk-button nhsuk-u-margin-right-4" type="submit">Continue</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+        <!-- </form> -->
+
+    </div>
+
+  </div>
+{% endblock %}

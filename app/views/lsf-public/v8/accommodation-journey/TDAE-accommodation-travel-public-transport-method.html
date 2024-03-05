@@ -1,0 +1,104 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+What method of public transport did you use?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="../v8/TDAE-accommodation-travel-public-transport-method" method="POST">
+          <div class="nhsuk-form-group">
+
+          
+          <h1 class="nhsuk-heading-l">What type of public transport did you use?</h1>
+          
+              <div class="nhsuk-hint" id="example-hint">
+                Select all that apply.
+              </div>
+        
+              <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
+        
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="public-transport-bus" name="public-transport-type" type="checkbox" value="Bus">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="public-transport-bus">
+                    Bus
+                  </label>
+                </div>
+        
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="public-transport-train" name="public-transport-type" type="checkbox" value="Train">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="public-transport-train">
+                    Train
+                  </label>
+                </div>
+        
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="public-transport-tube" name="public-transport-type" type="checkbox" value="Tube or metro system">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="public-transport-tube">
+                    Tube or metro system
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="public-transport-tram" name="public-transport-type" type="checkbox" value="Tram">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="public-transport-tram">
+                    Tram
+                  </label>
+                </div>
+        
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="public-transport-ferry" name="public-transport-type" type="checkbox" value="Ferry">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="public-transport-ferry">
+                    Ferry
+                  </label>
+                </div>
+        
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="public-transport-cable" name="public-transport-type" type="checkbox" value="Cable car">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="public-transport-cable">
+                    Cable car
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="public-transport-other" name="public-transport-type-other" type="checkbox" value="Other" aria-controls="conditional-public-transport-other" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="public-transport-other">
+                    Other
+                  </label>
+                </div>
+        
+                <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-public-transport-other">
+        
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="other-input">
+                      Enter public transport type
+                    </label>
+                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="other-input" name="other-input" type="text">
+                  </div>
+        
+                </div>
+
+              </div>
+              
+          
+            </div>
+          
+          
+    
+          <button class="nhsuk-button" type="submit">Continue</button><br>
+      		<a href="TDAE-task-list">Cancel</a>
+
+      </form>
+
+    </div>
+
+</div>
+{% endblock %}

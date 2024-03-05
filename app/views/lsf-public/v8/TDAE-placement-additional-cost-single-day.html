@@ -1,0 +1,66 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Which type of evidence does this relate to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v8/TDAE-placement-additional-cost-single-day" method="POST">
+
+            <div class="nhsuk-form-group">
+
+              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  <h1 class="nhsuk-fieldset__heading">
+                    What type of cost is this?
+                  </h1>
+                </legend>
+
+                <div class="nhsuk-radios">
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="additional-cost-single-day-1" name="additional-cost-single-day" type="radio" value="Yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="additional-cost-single-day-1">
+                      Daily cost
+                    </label>
+                    <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                      This cost only covered one day.
+                    </div>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="additional-cost-single-day-2" name="additional-cost-single-day" type="radio" value="No">
+                    <label class="nhsuk-label nhsuk-radios__label" for="additional-cost-single-day-2">
+                      Multiple day cost
+                    </label>
+                    <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                      This cost covered more than one day.
+                    </div>
+                  </div>
+
+                </div>
+              </fieldset>
+
+            </div>
+
+            <button class="nhsuk-button">Continue</button><br>
+            <a href="TDAE-placement-itinerary">Cancel</a>
+
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

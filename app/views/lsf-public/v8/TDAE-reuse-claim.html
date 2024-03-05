@@ -1,0 +1,80 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Do you want to provide any related comments to your placement additional costs?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v8/TDAE-reuse-claim" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Which claim would you like to reuse answers from?
+                </h1>
+              </legend>
+
+              <details class="nhsuk-details">
+                <summary class="nhsuk-details__summary">
+                  <span class="nhsuk-details__summary-text">
+                    What answers can I reuse?
+                  </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                  <p>You will be able to reuse:</p>
+                  <ul class="nhsuk-list nhsuk-list--bullet">
+                    <li>Term time address</li>
+                    <li>Placement addresses</li>
+                    <li>University travel details</li>
+                  </ul>
+                </div>
+              </details>
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="claim-reused-1" name="claim-reused" type="radio" value="Alnwick" aria-describedby="claim-reused-1-item-hint">
+                  <label class="nhsuk-label nhsuk-radios__label" for="claim-reused-1">
+                    20 September 2023 to 23 September 2023
+                  </label>
+                  <div class="nhsuk-hint nhsuk-radios__hint" id="claim-reused-1-item-hint">
+                    Alnwick Hospital, NE6 4EA
+                  </div>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="claim-reused-2" name="claim-reused" type="radio" value="Newcastle" aria-describedby="claim-reused-2-item-hint">
+                  <label class="nhsuk-label nhsuk-radios__label" for="claim-reused-3">
+                    3 September 2023 to 10 September 2023
+                  </label>
+                  <div class="nhsuk-hint nhsuk-radios__hint" id="claim-reused-2-item-hint">
+                    Newcastle Hospital, NE1 1AA,<br>
+                    Freemans Hospital, NE2 2BC
+                  </div>
+                </div>
+
+              </div>
+
+            </fieldset>
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Claim Travel and Dual Accommodation Expenses
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="v8/TDAE-hire-vehicle-pause" method="POST">
+
+          <h1 class="nhsuk-heading-l">Add your hire vehicle(s)</h1>
+
+          <p>You need to tell us about all of the vehicles you hired for this claim. For each hire vehicle, we need to know:</p>
+
+          <ul>
+            <li>the cost you paid</li>
+            <li>the date(s) you hired the vehicle</li>
+            <li>who from your university authorised the vehicle hire</li>
+            <li>the reason why you needed to hire a vehicle</li>
+          </ul>
+
+          <p>If you hired more than one vehicle, you can add another towards the end of this section.</p>
+
+          <p>Multiple bookings for the same vehicle should be separated.</p>
+
+          <button class="nhsuk-button" type="submit">Add first hire vehicle</button><br>
+      		<a href="TDAE-task-list">Cancel</a>
+
+      </form>
+
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Additional costs for your normal daily journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v8/TDAE-hire-car-return" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+						<h1 class="nhsuk-heading-l">Did this hire car booking end on {% if data['vehicle-number'] == '2' %}1 December 2023{% else %}30 November 2023{% endif %}?</h1>
+				</label>
+
+
+				<div class="nhsuk-radios nhsuk-radios--conditional">
+
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="contact-2" name="hire-car-return" type="radio" value="yes">
+						<label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+							Yes
+						</label>
+					</div>
+
+
+				  <div class="nhsuk-radios__item">
+					<input class="nhsuk-radios__input" id="contact-1" name="hire-car-return" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
+					<label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+						No
+					</label>
+				  </div>
+
+
+					<div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
+
+						<div class="nhsuk-form-group">
+							<label class="nhsuk-label" for="hire-vehicle-end-date">
+							Date booking ended
+							</label>
+							<div class="nhsuk-hint" id="hire-vehicle-end-date">
+							For example, 18 9 2023
+							</div>
+
+							<div class="nhsuk-date-input" id="hire-vehicle-end-date">
+							<div class="nhsuk-date-input__item">
+								<div class="nhsuk-form-group">
+								<label class="nhsuk-label nhsuk-date-input__label" for="hire-vehicle-end-day">
+									Day
+								</label>
+								<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="hire-vehicle-end-day" name="hire-vehicle-end-day" type="text" pattern="[0-9]*" inputmode="numeric">
+								</div>
+							</div>
+							<div class="nhsuk-date-input__item">
+								<div class="nhsuk-form-group">
+								<label class="nhsuk-label nhsuk-date-input__label" for="hire-vehicle-end-month">
+									Month
+								</label>
+								<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="hire-vehicle-end-month" name="hire-vehicle-end-month" type="text" pattern="[0-9]*" inputmode="numeric">
+								</div>
+							</div>
+							<div class="nhsuk-date-input__item">
+								<div class="nhsuk-form-group">
+								<label class="nhsuk-label nhsuk-date-input__label" for="hire-vehicle-end-year">
+									Year
+								</label>
+								<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="hire-vehicle-end-year" name="hire-vehicle-end-year" type="text" pattern="[0-9]*" inputmode="numeric">
+								</div>
+							</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+
+			</div>
+	</div>
+</div>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<a href="TDAE-task-list">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

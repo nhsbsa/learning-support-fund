@@ -336,19 +336,19 @@ router.post('/v3/TDAE-travel-accommodation', (req, res) => {
 
 })
 
-router.post('/v3/TDAE-same-term-time-address', (req, res) => {
+router.post('/v3/TDAE-same-term time-address', (req, res) => {
 
     const sameTermTimeAddress = req.session.data['same-term-address']
 
     if (sameTermTimeAddress === 'yes') {
         res.redirect('/lsf-public/v3/TDAE-normal-place-study')
     } else {
-        res.redirect('/lsf-public/v3/TDAE-term-time-address')
+        res.redirect('/lsf-public/v3/TDAE-term time-address')
     }
 
 })
 
-router.post('/v3/TDAE-term-time-address', (req, res) => {
+router.post('/v3/TDAE-term time-address', (req, res) => {
 
     res.redirect('/lsf-public/v3/TDAE-normal-place-study')
 

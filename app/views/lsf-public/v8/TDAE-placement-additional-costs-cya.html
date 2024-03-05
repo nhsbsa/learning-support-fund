@@ -1,0 +1,142 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Additional costs for your normal daily journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v8/TDAE-placement-additional-costs-cya" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+					<h1 class="nhsuk-heading-l">
+						<h1 class="nhsuk-heading-l">Check your extra cost</h1>
+					</h1>
+
+					<dl class="nhsuk-summary-list">
+
+					  <div class="nhsuk-summary-list__row">
+					    <dt class="nhsuk-summary-list__key">
+					      Extra cost
+					    </dt>
+					    <dd class="nhsuk-summary-list__value">
+					      Parking charges
+					    </dd>
+					    <dd class="nhsuk-summary-list__actions">
+					      <a href="TDAE-placement-evidence-type">
+					        Change<span class="nhsuk-u-visually-hidden"> Additional cost type</span>
+					      </a>
+					    </dd>
+					  </div>
+
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Amount
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								£4
+							</dd>
+							<dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-placement-additional-costs">
+									Change<span class="nhsuk-u-visually-hidden"> Additional cost amount</span>
+								</a>
+							</dd>
+						</div>
+
+						<div class="nhsuk-summary-list__row">
+					    <dt class="nhsuk-summary-list__key">
+					      Extra cost type
+					    </dt>
+					    <dd class="nhsuk-summary-list__value">
+								{% if data['additional-cost-single-day'] == 'No' %}Multiple day cost{% else %}Daily cost{% endif %}
+					    </dd>
+					    <dd class="nhsuk-summary-list__actions">
+					      <a href="TDAE-placement-additional-cost-single-day">
+					        Change<span class="nhsuk-u-visually-hidden"> Additional cost frequency</span>
+					      </a>
+					    </dd>
+					  </div>
+
+						{% if data['additional-cost-single-day'] == 'Yes' %}
+							<div class="nhsuk-summary-list__row">
+						    <dt class="nhsuk-summary-list__key">
+						      Used on multiple days
+						    </dt>
+						    <dd class="nhsuk-summary-list__value">
+						      {% if data['repeated-cost'] == 'No' %}Yes{% else %}No{% endif %}
+						    </dd>
+						    <dd class="nhsuk-summary-list__actions">
+						      <a href="TDAE-placement-additional-daily-total">
+						        Change<span class="nhsuk-u-visually-hidden"> Additional cost frequency</span>
+						      </a>
+						    </dd>
+						  </div>
+						{% endif %}
+
+						{% if data['additional-cost-single-day'] == 'No' %}
+							<div class="nhsuk-summary-list__row">
+						    <dt class="nhsuk-summary-list__key">
+						      Start and end date
+						    </dt>
+						    <dd class="nhsuk-summary-list__value">
+						      Friday 18 August 2023 to Thursday 24 August 2023
+						    </dd>
+						    <dd class="nhsuk-summary-list__actions">
+						      <a href="TDAE-placement-additional-daily-total">
+						        Change<span class="nhsuk-u-visually-hidden"> Additional cost frequency</span>
+						      </a>
+						    </dd>
+						  </div>
+						{% endif %}
+
+						<div class="nhsuk-summary-list__row">
+					    <dt class="nhsuk-summary-list__key">
+								{% if data['additional-cost-single-day'] == 'No' %}
+									Dates covered
+								{% else %}
+									{% if data['repeated-cost'] == 'Yes' %}
+										Day with extra cost
+									{% else %}
+										Days with extra cost
+									{% endif %}
+								{% endif %}
+					    </dt>
+					    <dd class="nhsuk-summary-list__value">
+								{% if data['repeated-cost'] == 'Yes' %}
+									Monday 14 August 2023
+								{% else %}
+									Monday 14 August 2023<br>
+									Tuesday 15 August 2023<br>
+									Wednesday 16 August 2023<br>
+									Thursday 17 August 2023
+								{% endif %}
+					    </dd>
+					    <dd class="nhsuk-summary-list__actions">
+					      <a href="TDAE-placement-evidence-days">
+					        Change<span class="nhsuk-u-visually-hidden"> Additional cost amount</span>
+					      </a>
+					    </dd>
+					  </div>
+
+					</dl>
+
+			</div>
+			<button class="nhsuk-button" type="submit">Add extra cost</button><br>
+			<a href="TDAE-placement-itinerary">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

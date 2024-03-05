@@ -1,0 +1,49 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Your costs
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <!-- <form action="" method="POST"> -->
+
+    <h1 class="nhsuk-heading-l">Total costs</h1>
+    <p>This is the total costs you paid for your travel.</p>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Taxi
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £10
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="nhsuk-heading-m">Amount to be reimbursed</h2>
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Total
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £10
+        </dd>
+      </div>
+    </dl>
+
+    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-task-list">Change claim</a><br>
+    <a class="nhsuk-button" href="TDAE-student-declaration">Save and continue</a><br>
+    <a href="TDAE-start-claim">Cancel</a>
+
+    <!-- </form> -->
+
+  </div>
+
+</div>
+{% endblock %}

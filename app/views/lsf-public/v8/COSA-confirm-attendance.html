@@ -1,0 +1,72 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Is your term time address the same?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v8/COSA-confirm-attendance" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Are you still attending your Adult Nursing course at Northumbria University?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-hint" id="contact-hint">
+                If you are on maternity leave, select Yes.
+              </div>
+
+              <!--<details class="nhsuk-details">
+                <summary class="nhsuk-details__summary">
+                  <span class="nhsuk-details__summary-text">
+                    I am on maternity leave, how should I answer?
+                  </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                  <p>Select Yes if you are on maternity leave. Your maternity leave is included as being in attendance.</p>
+
+                </div>
+              </details>-->
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="COSA-attendance-yes" name="COSA-attendance" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="COSA-attendance-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="COSA-attendance-no" name="COSA-attendance" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="COSA-attendance-no">
+                    No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Save and continue</button><br>
+        <a href="dashboard?questionnaire-completed=Completed#tab-one">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

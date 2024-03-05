@@ -290,9 +290,9 @@ router.post('/v7-demo/TDAE-reuse-details', (req, res) => {
 
   if (reusedDetails.indexOf('placement-address-1') === -1 && reusedDetails.indexOf('placement-address-2') === -1) {
     res.redirect('/lsf-public/v7-demo/TDAE-placement-address')
-  } else if (reusedDetails.indexOf('term-time-address') === -1) {
+  } else if (reusedDetails.indexOf('term time-address') === -1) {
     req.session.data['address-number'] = "1"
-    res.redirect('/lsf-public/v7-demo/TDAE-same-term-time-address')
+    res.redirect('/lsf-public/v7-demo/TDAE-same-term time-address')
   } else {
     req.session.data['address-number'] = "1"
     req.session.data['term-building-name'] = "Stephenson House"
@@ -429,7 +429,7 @@ router.post('/v7-demo/TDAE-hire-car-remove-booking-1', (req, res) => {
 // TDAE Hire car ENDS
 
 
-// TDAE Travel between Accommodation and Term-time Address
+// TDAE Travel between Accommodation and Term time Address
 router.post('/v7-demo/TDAE-accommodation-journey-pause', (req, res) => {
 
   res.redirect('/lsf-public/v7-demo/accommodation-journey/TDAE-accommodation-direction-of-travel')
@@ -676,7 +676,7 @@ router.post('/v7-demo/TDAE-accommodation-travel-remove-journey-2', (req, res) =>
 
 })
 
-// TDAE Travel between Accommodation and Term-time Address ends
+// TDAE Travel between Accommodation and Term time Address ends
 
 
 
@@ -1432,7 +1432,7 @@ router.post('/v7-demo/TDAE-placement-address-cya', (req, res) => {
         req.session.data['address-number'] = '4'
         res.redirect('/lsf-public/v7-demo/TDAE-placement-address-more')
     } else {
-      if (reusedDetails && reusedDetails.indexOf('term-time-address') !== -1) {
+      if (reusedDetails && reusedDetails.indexOf('term time-address') !== -1) {
         req.session.data['term-building-name'] = "Stephenson House"
         req.session.data['term-address-line-1'] = "Stoddart St"
         req.session.data['term-address-line-2'] = "Shieldfield"
@@ -1440,7 +1440,7 @@ router.post('/v7-demo/TDAE-placement-address-cya', (req, res) => {
         req.session.data['term-address-postcode'] = "NE2 1AW"
         res.redirect('/lsf-public/v7-demo/TDAE-eligibility-cya')
       } else {
-        res.redirect('/lsf-public/v7-demo/TDAE-same-term-time-address')
+        res.redirect('/lsf-public/v7-demo/TDAE-same-term time-address')
       }
     }
 
@@ -1491,19 +1491,19 @@ router.post('/v7-demo/TDAE-normal-transport', (req, res) => {
 
 })
 
-router.post('/v7-demo/TDAE-same-term-time-address', (req, res) => {
+router.post('/v7-demo/TDAE-same-term time-address', (req, res) => {
 
     const sameTermTimeAddress = req.session.data['same-term-address']
 
     if (sameTermTimeAddress === 'yes') {
         res.redirect('/lsf-public/v7-demo/TDAE-eligibility-cya')
     } else {
-        res.redirect('/lsf-public/v7-demo/TDAE-term-time-address')
+        res.redirect('/lsf-public/v7-demo/TDAE-term time-address')
     }
 
 })
 
-router.post('/v7-demo/TDAE-term-time-address', (req, res) => {
+router.post('/v7-demo/TDAE-term time-address', (req, res) => {
 
     res.redirect('/lsf-public/v7-demo/TDAE-eligibility-cya')
 
@@ -1722,7 +1722,7 @@ router.post('/v7-demo/TDAE-placement-comments', (req, res) => {
 router.post('/v7-demo/TDAE-placement-address', (req, res) => {
   const reusedDetails = req.session.data['reused-details'];
 
-  if (reusedDetails && reusedDetails.indexOf('term-time-address') !== -1) {
+  if (reusedDetails && reusedDetails.indexOf('term time-address') !== -1) {
     req.session.data['term-building-name'] = "Stephenson House";
     req.session.data['term-address-line-1'] = "Stoddart St";
     req.session.data['term-address-line-2'] = "Shieldfield";

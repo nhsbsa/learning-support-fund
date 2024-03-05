@@ -1,0 +1,47 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Additional costs comments for your normal journey
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <!-- <form action="v8/TDAE-" method="POST"> -->
+
+        <h1 class="nhsuk-heading-xl">Review comments</h1>
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Comments
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{ data['study-additional-comment'] }}
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+
+                <a href="TDAE-additional-costs-comments">
+                  Change<span class="nhsuk-u-visually-hidden"> comments</span>
+                </a>
+
+              </dd>
+
+            </div>
+
+        </dl>
+
+        <a class="nhsuk-button" href="TDAE-normal-summary-cya">Return to Check your answers</a><br>
+
+    <!-- </form> -->
+
+    </div>
+
+  </div>
+{% endblock %}

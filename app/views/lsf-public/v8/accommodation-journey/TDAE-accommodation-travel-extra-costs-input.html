@@ -1,0 +1,45 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+How much did you pay in total for these extra costs?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="../v8/TDAE-accommodation-travel-extra-costs-input" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+					<h1 class="nhsuk-heading-l">How much did you pay for extra costs on this day?</h1>
+				</label>
+
+				<div class="nhsuk-hint" id="example-with-hint-text-hint">
+					Enter the total amount of extra costs on this day.
+				</div>
+
+				<label class="nhsuk-label" for="example">
+					Cost in pounds
+				</label>
+				<div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+				<input class="nhsuk-input__prefix-input nhsuk-input nhsuk-input--width-5" id="car-extra-costs" name="car-extra-costs" type="text">
+			</div>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<a href="TDAE-task-list">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

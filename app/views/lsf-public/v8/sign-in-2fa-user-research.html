@@ -1,0 +1,53 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Enter the security code
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-heading-l">Opportunity to give us your opinion about 2 factor authentication</h1>
+
+        <p>We’ve added a new 2 factor authentication (2FA) process to your Learning Support Fund (LSF) account. We’d like to hear about how you found accessing your account using 2FA.</p>
+
+        <p>If you’re interested in taking part, we’ll give you full details of the research and what we’ll ask you to do. You can then decide if you’d like to continue.</p>
+
+        <p>If you’d like to take part, our researcher will contact you. They’ll arrange a suitable time to have an online discussion with you to gain your feedback. This will take place on Microsoft Teams and will take around 30 to 45 minutes. We’ll give you a £20 shopping voucher as a thank you for taking part.</p>
+
+        <p>Your answers will be kept anonymous.</p>
+
+        <p>Depending on the volume of responses, we may not be able to contact everyone who agrees to take part.</p>
+
+        <h2 class="nhsuk-heading-m">Would you like to take part in research about 2 factor authentication on your LSF account?</h2>
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                Yes, I’d like to take part. I agree for you to share my email address with our researcher so that they can contact me
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                No, I do not want to take part
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+        <p>Select Submit to give us your answer and to complete signing into your account.</p>
+
+        <a class="nhsuk-button" href="dashboard?questionnaire-completed=Completed">Submit</a><br>
+
+    </div>
+
+  </div>
+{% endblock %}

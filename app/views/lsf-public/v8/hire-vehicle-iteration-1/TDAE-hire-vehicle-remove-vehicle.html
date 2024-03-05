@@ -1,0 +1,101 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Are you sure you want to remove this hire vehicle?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                    Are you sure you want to remove this hire vehicle?
+                </h1>
+              </legend>
+
+              <dl class="nhsuk-summary-list">
+  							<div class="nhsuk-summary-list__row">
+  								<dt class="nhsuk-summary-list__key">
+  									Start date
+  								</dt>
+  								<dd class="nhsuk-summary-list__value">
+  									{% if data['vehicle-hire-start-day'] %}
+  										{{ data['vehicle-hire-start-day'] }} <span class="cya-month">{{ data['vehicle-hire-start-month'] }}</span> {{ data['vehicle-hire-start-year'] }}
+  									{% else %}
+  										30 November 2023
+  									{% endif %}
+  								</dd>
+  							</div>
+
+                <div class="nhsuk-summary-list__row">
+  								<dt class="nhsuk-summary-list__key">
+  									Cost
+  								</dt>
+  								<dd class="nhsuk-summary-list__value">
+  									{% if data['vehicle-hire-cost'] %}
+  										{{ data['vehicle-hire-cost'] }} <span class="cya-cost">{{ data['vehicle-hire-cost'] }}</span> {{ data['vehicle-hire-start-year'] }}
+  									{% else %}
+  										£120.00
+  									{% endif %}
+  								</dd>
+  							</div>
+              </dl>
+
+  							
+
+              <div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+                <p>Removing this hire vehicle will also remove all the details and evidence you added with it.</p>
+              </div>
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="dates-warning-yes" name="dates-warning" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="dates-warning-yes">
+                        Yes
+                    </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="dates-warning-no" name="dates-warning" type="radio" value="no">
+                    <label class="nhsuk-label nhsuk-radios__label" for="dates-warning-no">
+                        No
+                    </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+          <form id="vehicle-hire" action="v8/TDAE-hire-car-multiple-cya" method="POST">
+          <button class="nhsuk-button" type="submit">Save and continue</button><br>
+      </form>
+
+      <script>
+          // Add an event listener to the form submission
+          document.getElementById('vehicle-hire').addEventListener('submit', function (event) {
+              // Prevent the default form submission behavior
+              event.preventDefault();
+
+              // Add your logic here to navigate back to the previous page
+              history.back();
+          });
+      </script>
+
+
+    </div>
+
+  </div>
+{% endblock %}

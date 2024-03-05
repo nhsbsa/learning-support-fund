@@ -1,0 +1,104 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Which days does this evidence relate to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v8/TDAE-placement-evidence-days" method="POST">
+
+
+            <div class="nhsuk-form-group">
+
+              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  <h1 class="nhsuk-fieldset__heading">
+                    On which day did you pay this extra cost?
+                  </h1>
+                </legend>
+
+                <dl class="nhsuk-summary-list">
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Extra cost
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      {{ data['additional-cost-type']}}
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Amount
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      £{{ data['placement-additional-costs']}}
+                    </dd>
+                  </div>
+
+                </dl>
+
+                <div class="nhsuk-radios">
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-1" name="example" type="checkbox" value="email">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                      Monday 5 June 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-2" name="example" type="checkbox" value="phone">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                      Tuesday 6 June 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-3">
+                      Wednesday 7 June 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-3">
+                      Thursday 8 June 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-3">
+                      Friday 9 June 2023
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+
+            </div>
+
+            <button class="nhsuk-button">Continue</button><br>
+            <a href="TDAE-placement-itinerary">Cancel</a>
+
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

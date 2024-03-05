@@ -1,0 +1,89 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Are you claiming for the previous academic year?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v8/TDAE-costs-already-claimed" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  You have already submitted a claim for costs on these dates
+                </h1>
+              </legend>
+
+              <div class="nhsuk-warning-callout">
+                <h3 class="nhsuk-warning-callout__label">
+                  <span role="text">
+                    <span class="nhsuk-u-visually-hidden">Important: </span>
+                    Previously submitted claim
+                  </span>
+                </h3>
+                <dl class="nhsuk-summary-list">
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Claim dates
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      6 October 2023 to 9 October 2023
+                    </dd>
+                  </div>
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Costs claimed
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      Public transport journey to placement
+                    </dd>
+                  </div>
+                </dl>
+                <p>You  have a <a href="#">previously submitted claim (opens in a new tab)</a> with costs on these days.</p>
+              </div>
+
+
+              <h2 class="nhsuk-heading-m">
+                Are you claiming for new costs on these dates?
+              </h2>
+
+              <div class="nhsuk-hint">Select Yes if you have costs on these days that you have not already told us about. Your claim will be declined if you try to claim for costs you have already claimed for.</div>
+
+              <div class="nhsuk-radios">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="already-claimed-yes" name="already-claimed" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="already-claimed-yes">
+                    Yes
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="already-claimed-no" name="already-claimed" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="already-claimed-no">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Save and continue</button><br>
+        <a href="TDAE-start-claim">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

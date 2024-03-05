@@ -1,0 +1,65 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Enter the security code
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+        <h1 class="nhsuk-heading-l">Check your phone</h1>
+
+        {% if data['send-again'] == 'true' %}
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>New code sent.</p>
+          </div>
+        {% endif %}
+
+        <p>We've sent a text message with a security code to <b>*******6920</b>.
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Not received a text message?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>Text messages sometimes take a few minutes to arrive. If you do not receive the text message, you can <a href="sign-in-2fa?send-again=true">request a new one</a>.</p>
+          </div>
+        </details>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="sign-in-username">
+              Security code
+            </label>
+            <div class="nhsuk-hint" id="example-with-hint-text-hint">
+              This is a 5 digit code
+            </div>
+            <input class="nhsuk-input nhsuk-input--width-10" id="security-code" name="security-code" type="text">
+        </div>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              I cannot access my phone
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>You cannot change your phone number without entering a security code. Try again later when you can access your phone or <a href="https://www.nhsbsa.nhs.uk/nhs-learning-support-fund-lsf/contact-us" target="_blank">contact us (opens in a new tab)</a>.</p>
+          </div>
+        </details>
+
+        <a class="nhsuk-button" href="change-phone-number-changed">Save and continue</a><br>
+        <p><a href="sign-in">Cancel</a></p>
+
+    </div>
+
+  </div>
+{% endblock %}

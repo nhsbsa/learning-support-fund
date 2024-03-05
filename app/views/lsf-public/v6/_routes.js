@@ -708,7 +708,7 @@ router.post('/v6/TDAE-placement-address-cya', (req, res) => {
         req.session.data['address-number'] = '4'
         res.redirect('/lsf-public/v6/TDAE-placement-address-more')
     } else {
-        res.redirect('/lsf-public/v6/TDAE-same-term-time-address')
+        res.redirect('/lsf-public/v6/TDAE-same-term time-address')
     }
 
 })
@@ -771,19 +771,19 @@ router.post('/v6/TDAE-normal-transport', (req, res) => {
 
 })
 
-router.post('/v6/TDAE-same-term-time-address', (req, res) => {
+router.post('/v6/TDAE-same-term time-address', (req, res) => {
 
     const sameTermTimeAddress = req.session.data['same-term-address']
 
     if (sameTermTimeAddress === 'yes') {
         res.redirect('/lsf-public/v6/TDAE-eligibility-cya')
     } else {
-        res.redirect('/lsf-public/v6/TDAE-term-time-address')
+        res.redirect('/lsf-public/v6/TDAE-term time-address')
     }
 
 })
 
-router.post('/v6/TDAE-term-time-address', (req, res) => {
+router.post('/v6/TDAE-term time-address', (req, res) => {
 
     res.redirect('/lsf-public/v6/TDAE-eligibility-cya')
 
@@ -990,7 +990,7 @@ router.post('/v6/TDAE-placement-comments', (req, res) => {
 
 router.post('/v6/TDAE-placement-address', (req, res) => {
 
-    res.redirect('/lsf-public/v6/TDAE-same-term-time-address')
+    res.redirect('/lsf-public/v6/TDAE-same-term time-address')
 
 })
 

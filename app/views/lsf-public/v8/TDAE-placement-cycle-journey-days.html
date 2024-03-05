@@ -1,0 +1,80 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Which mode of transport do you take to and from your normal place of study?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+    <form action="v8/TDAE-placement-cycle-journey-days" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Which days did you cycle to {{ data['placement-cycle-mileage-address']}}?
+                </h1>
+              </legend>
+
+              <p>Select days where you did the same journey to and from your placement or accomodation.</p>
+
+              <div class="nhsuk-hint" id="example-hint">
+                Select all that apply.
+              </div>
+
+              <div class="nhsuk-checkboxes">
+                {% if data['placement-cycle-mileage-address'] == 'Newcastle Hospital' %}
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                    Friday 6 October 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                    Saturday 7 October 2023
+                  </label>
+                </div>
+
+                {% else %}
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    Sunday 8 October 2023
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    Monday 9 October 2023
+                  </label>
+                </div>
+
+                {% endif %}
+              </div>
+
+            </div>
+
+      <button class="nhsuk-button" type="submit">Continue</button><br>
+      <a href="TDAE-placement-itinerary">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

@@ -381,23 +381,23 @@ router.post('/v5/TDAE-normal-transport', (req, res) => {
 
     const modeOfTransport = req.session.data['mode-of-transport']
 
-    res.redirect('/lsf-public/v5/TDAE-same-term-time-address')
+    res.redirect('/lsf-public/v5/TDAE-same-term time-address')
 
 })
 
-router.post('/v5/TDAE-same-term-time-address', (req, res) => {
+router.post('/v5/TDAE-same-term time-address', (req, res) => {
 
     const sameTermTimeAddress = req.session.data['same-term-address']
 
     if (sameTermTimeAddress === 'yes') {
         res.redirect('/lsf-public/v5/TDAE-normal-place-study')
     } else {
-        res.redirect('/lsf-public/v5/TDAE-term-time-address')
+        res.redirect('/lsf-public/v5/TDAE-term time-address')
     }
 
 })
 
-router.post('/v5/TDAE-term-time-address', (req, res) => {
+router.post('/v5/TDAE-term time-address', (req, res) => {
 
     res.redirect('/lsf-public/v5/TDAE-normal-place-study')
 
