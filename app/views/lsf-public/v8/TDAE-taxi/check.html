@@ -63,7 +63,7 @@ Check your answers
 						Authorisation uploaded
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						<a href="/images/snapshot-032-07-03-2023.jpg" download="Joe Bloggs hire vehicle evidence 30 November 2023">
+						<a href="#">
 							university-email.pdf
 						</a>
 					</dd>
@@ -103,7 +103,7 @@ Check your answers
 						Travelling from
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						123, NE33 3AB
+						Stephenson House, NE2 1AW
 						<details class="nhsuk-details">
 							<summary class="nhsuk-details__summary">
 								<span class="nhsuk-details__summary-text">
@@ -111,11 +111,11 @@ Check your answers
 								</span>
 							</summary>
 							<div class="nhsuk-details__text">
-								123<br>
-								Building Street 1<br>
-								Building Street 2<br>
-								Town<br>
-								NE33 3AB
+								Stephenson House<br>
+								Stoddart St<br>
+								Shieldfield<br>
+								Newcastle upon Tyne<br>
+								NE2 1AW
 							</div>
 						</details>
 					</dd>
@@ -185,8 +185,8 @@ Check your answers
 						Evidence uploaded
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						<a href="/images/snapshot-032-07-03-2023.jpg" download="Joe Bloggs hire vehicle evidence 30 November 2023">
-							hire-car-receipt.pdf
+						<a href="#">
+							taxi-receipt.pdf
 						</a>
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
@@ -206,23 +206,15 @@ Check your answers
 					<dd class="nhsuk-summary-list__value">
 						{% if data['additionalCostsComment'] %}
 							{{ data['additionalCostsComment'] }}
-							{% else %}
-							My car broke down and is currently at the garage being repaired.
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
-						{% if data['additional-comments']  === 'yes' %}
-						<a href="add-comment">
-							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-						</a>
-						{% else %}
-						<a href="TDAE-hire-car-add-comment">
+						<a href="comment">
 							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 						</a>
-						{% endif %}
-						</dd>
-						{% endif %}
+					</dd>
+					{% endif %}
 				</div>
 
 			</dl>
