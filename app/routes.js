@@ -12,6 +12,51 @@ router.post('/clear-session-data/', (req, res) => {
     res.render('index')
 })
 
+
+// ================================
+// Version number variables
+// ================================
+
+// V8 Public
+router.get('/lsf-public/v8/:page', (req, res) => {
+    const number = 'v8';
+    const templatePath = `lsf-public/v8/${req.params.page}`;
+    res.locals.number = number;
+    res.render(templatePath, { number });
+});
+
+// V7 Public
+router.get('/lsf-public/v7/:page', (req, res) => {
+    const number = 'v7';
+    const templatePath = `lsf-public/v7/${req.params.page}`;
+    res.locals.number = number;
+    res.render(templatePath, { number });
+});
+
+// V6 Public
+router.get('/lsf-public/v6/:page', (req, res) => {
+    const number = 'v6';
+    const templatePath = `lsf-public/v6/${req.params.page}`;
+    res.locals.number = number;
+    res.render(templatePath, { number });
+});
+
+// V5 Public
+router.get('/lsf-public/v5/:page', (req, res) => {
+    const number = 'v5';
+    const templatePath = `lsf-public/v5/${req.params.page}`;
+    res.locals.number = number;
+    res.render(templatePath, { number });
+});
+
+// V4 Public
+router.get('/lsf-public/v4/:page', (req, res) => {
+    const number = 'v4';
+    const templatePath = `lsf-public/v4/${req.params.page}`;
+    res.locals.number = number;
+    res.render(templatePath, { number });
+});
+
 // ================================
 // Routes for LSF Portal
 // ================================
