@@ -12,6 +12,24 @@ router.post('/clear-session-data/', (req, res) => {
     res.render('index')
 })
 
+// Add a version number variable for v8
+router.get('/lsf-public/v8/:page', (req, res) => {
+    const number = 'v8';
+    const templatePath = `lsf-public/v8/${req.params.page}`;
+    console.log('Rendering template:', templatePath);
+    res.locals.number = number;
+    res.render(templatePath, { number });
+});
+
+// Add a version number variable for v7
+router.get('/lsf-public/v7/:page', (req, res) => {
+    const number = 'v7';
+    const templatePath = `lsf-public/v7/${req.params.page}`;
+    console.log('Rendering template:', templatePath);
+    res.locals.number = number;
+    res.render(templatePath, { number });
+});
+
 // ================================
 // Routes for LSF Portal
 // ================================
