@@ -112,7 +112,35 @@ router.post('/v5/TDAE-accommodation-check-2', (req, res) => {
 
 })
 
-router.post('/v4/TDAE-evidence-match', (req, res) => {
+router.post('/v5/TDAE-accommodation-travel-check', (req, res) => {
+
+    const accommodationTravelCheck = req.session.data['accommodation-travel-check']
+
+    if (accommodationTravelCheck === 'yes') {
+        req.session.data['accommodation-travel-completed'] = 'completed'
+    } else {
+        req.session.data['accommodation-travel-completed'] = 'in-progress'
+    }
+
+    res.redirect('/lsf-web/v5/TDAE-student-claim')
+
+})
+
+router.post('/v5/TDAE-accommodation-travel-check-2', (req, res) => {
+
+    const accommodationTravelCheck2 = req.session.data['accommodation-travel-check-2']
+
+    if (accommodationTravelCheck2 === 'yes') {
+        req.session.data['accommodation-travel-completed-2'] = 'completed'
+    } else {
+        req.session.data['accommodation-travel-completed-2'] = 'in-progress'
+    }
+
+    res.redirect('/lsf-web/v5/TDAE-student-claim')
+
+})
+
+router.post('/v5/TDAE-evidence-match', (req, res) => {
 
     const evidenceMatch = req.session.data['evidence-match']
 

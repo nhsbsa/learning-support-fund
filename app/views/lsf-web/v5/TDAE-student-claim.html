@@ -36,6 +36,38 @@ Claim checks
     <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-7">Claim currently being processed by Samuel Jackson</h2>
     {% endif %}
 
+    {% if data['read-only'] != 'true' %}
+      <details class="nhsuk-details nhsuk-expander-warning" open>
+        <summary style="" class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Another claim was submitted for these dates
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>{% if data['name'] %}{{ data['name'] }}{% else %}Joe Bloggs{% endif %} has previously submitted a claim with costs on these dates.</p>
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Claim dates
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                6 October 2023 to 9 October 2023
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Costs claimed
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Public transport journey to placement
+              </dd>
+            </div>
+          </dl>
+          <p>You need to <a target="_blank" href="TDAE-student-claim-previous">check the previous claim (opens in new tab)</a> to make sure they have not claimed for the same costs again.</p>
+        </div>
+      </details>
+    {% endif %}
+
     <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
       <summary class="nhsuk-details__summary">
         <span class="nhsuk-details__summary-text">
@@ -111,7 +143,7 @@ Claim checks
           </li>
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
-              <a href="TDAE-placement-mileage-details-table-2" aria-describedby="eligibility-status">
+              <a href="TDAE-placement-details-public-transport" aria-describedby="eligibility-status">
                 Check period 2 placement travel details
               </a>
             </span>
@@ -126,7 +158,7 @@ Claim checks
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
               <a href="TDAE-hire-vehicle" aria-describedby="eligibility-status">
-                Check hire vehicle details
+                Check hire car details
               </a>
             </span>
             {% if data['vehicle-hire-check'] === 'yes' %}
@@ -168,6 +200,20 @@ Claim checks
             {% if data['accommodation-completed-2'] === 'completed' %}
               <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
             {% elif data['accommodation-completed-2'] === 'in-progress' %}
+              <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to university</strong>
+            {% else %}
+              <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              <a href="TDAE-accommodation-travel" aria-describedby="eligibility-status">
+                Check accommodation travel details
+              </a>
+            </span>
+            {% if data['accommodation-travel-completed'] === 'completed' %}
+              <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
+            {% elif data['accommodation-travel-completed'] === 'in-progress' %}
               <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to university</strong>
             {% else %}
               <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
