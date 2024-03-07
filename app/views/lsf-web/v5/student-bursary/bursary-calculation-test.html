@@ -12,171 +12,167 @@ Student and University details
     "href": "javascript:history.go(-1)",
     "text": "Go back"
     }) }}
-
-
+ 
     <h1 class="nhsuk-heading-l">Bursary calculation test</h1>
 
-    <div class="nhsuk-form-group" id="applicationType-group">
-      <label id="applicationType-label" for="applicationType" class="nhsuk-label">Application type</label>
+    <form>
+      <div class="nhsuk-form-group" id="applicationType-group">
+        <label id="applicationType-label" for="applicationType" class="nhsuk-label">Application type</label>
 
-      <select class="nhsuk-select" id="applicationType" name="applicationType">
-        <option value="">Select an option</option>
-        <option value="1">Application</option>
-        <option value="7">BUR Form</option>
-        <option value="4">CCR</option>
-        <option value="5">Change of Circs</option>
-        <option value="2">Disabled Students Allowance</option>
-        <option value="6">Med</option>
-        <option value="3">Travel and Dual Accommodation Expenses - SB</option>
-      </select>
-    </div>
-
-    <!--<div class="nhsuk-form-group">
-
-      <fieldset class="nhsuk-fieldset">
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
-          <h1 class="nhsuk-fieldset__heading">
-            Application type
-          </h1>
-        </legend>
-
-        <div class="nhsuk-radios nhsuk-radios--small">
-
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-              Application
-            </label>
-          </div>
-
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-              BUR Form
-            </label>
-          </div>
-
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-              CCR
-            </label>
-          </div>
-
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-              Change of Circs
-            </label>
-          </div>
-
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-              Disabled Students Allowance
-            </label>
-          </div>
-
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-              Med
-            </label>
-          </div>
-
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-              Travel and Dual Accommodation Expenses - SB
-            </label>
-          </div>
-
-        </div>
-      </fieldset>
-
-    </div>-->
-
-    <div class="nhsuk-form-group">
-      <label id="applicationType-label" for="applicationType" class="nhsuk-label">Additional Application considerations</label>
-      <div class="nhsuk-hint" id="example-hint">
-        Select all options that are relevant to the students application.
+        <select class="nhsuk-select" id="applicationType" name="applicationType">
+          <option value="">Select an option</option>
+          <option value="1">Application</option>
+          <option value="7">BUR Form</option>
+          <option value="4">CCR</option>
+          <option value="5">Change of Circs</option>
+          <option value="2">Disabled Students Allowance</option>
+          <option value="6">Med</option>
+          <option value="3">Travel and Dual Accommodation Expenses - SB</option>
+        </select>
       </div>
-      <div class="nhsuk-checkboxes">
-        <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
-          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-            Means tested application
-          </label>
-        </div>
-        <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
-          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-            London University
-          </label>
-        </div>
-        <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-            Independent student
-          </label>
-        </div>
-        <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-            Living in parental home
-          </label>
-        </div>
-      </div>
-    </div>
 
-    <div class="nhsuk-form-group" id="relationshipStatus-group">
-      <label id="relationshipStatus-label" for="relationshipStatus" class="nhsuk-label">Relationship status (optional)</label>
-      <select class="nhsuk-select" id="relationshipStatus" name="enrolment.statusAssessment.relationshipStatus">
-        <option value="">Select an option</option>
-        <option value="1">Married or in a civil partnership</option>
-        <option value="2">Separated</option>
-        <option value="3">Divorced</option>
-        <option value="4">Widowed</option>
-        <option value="5">None of the above</option>
-      </select>
-    </div>
-
-    <div class="nhsuk-form-group" id="relationshipStatus-group">
-      <div class="nhsuk-radios nhsuk-radios--inline nhsuk-radios--conditional">
-        <label id="relationshipStatus-label" for="relationshipStatus" class="nhsuk-label">Does the student have dependants?</label>
-        <div class="nhsuk-hint" id="example-hint">
-          Dependents are people financially dependent on the student during their studies
-        </div>
-
-        <div class="nhsuk-radios__item" style="float: left; margin-right: 24px;">
-          <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
-          <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
-            Yes
-          </label>
-        </div>
-
-        <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="email">
-              Number of dependents the student has
-            </label>
-            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+      <!--<div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+            <h1 class="nhsuk-fieldset__heading">
+              Application type
+            </h1>
+          </legend>
+          <div class="nhsuk-radios nhsuk-radios--small">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                Application
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                BUR Form
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                CCR
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Change of Circs
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Disabled Students Allowance
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Med
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Travel and Dual Accommodation Expenses - SB
+              </label>
+            </div>
           </div>
-        </div>
+        </fieldset>
+      </div>-->
 
-        <div class="nhsuk-radios__item" style="float: left;">
-          <input class="nhsuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" aria-controls="conditional-contact-2" aria-expanded="false">
-          <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
-            No
-          </label>
-        </div>
+      <div class="nhsuk-form-group">
+    
+        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+          <legend class="nhsuk-fieldset__legend">Additional Application considerations</legend>
+    
+          <div class="nhsuk-hint" id="example-hint">
+            Select all options that are relevant to the students application.
+          </div>
+    
+          <div class="nhsuk-checkboxes">
+    
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                Means tested application
+              </label>
+            </div>
+    
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                London University
+              </label>
+            </div>
+    
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                Independent student
+              </label>
+            </div>
 
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="example-4" name="example" type="checkbox" value="text message">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="example-4">
+                Living in parental home
+              </label>
+            </div>
+    
+          </div>
+        </fieldset>
+    
       </div>
-    </div>
 
-    <a class="nhsuk-button" href="#">Calculate</a>
+      <div class="nhsuk-form-group" id="relationshipStatus-group">
+        <label id="relationshipStatus-label" for="relationshipStatus" class="nhsuk-label">Relationship status (optional)</label>
+        <select class="nhsuk-select" id="relationshipStatus" name="enrolment.statusAssessment.relationshipStatus">
+          <option value="">Select an option</option>
+          <option value="1">Married or in a civil partnership</option>
+          <option value="2">Separated</option>
+          <option value="3">Divorced</option>
+          <option value="4">Widowed</option>
+          <option value="5">None of the above</option>
+        </select>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          <legend class="nhsuk-fieldset__legend">Does the student have dependants?</legend>
+      
+          <div class="nhsuk-radios nhsuk-radios--inline nhsuk-radios--conditional">
+            <div style="display:flex">
+            <div class="nhsuk-radios__item nhsuk-u-margin-right-4">
+              <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                Yes
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-2">No</label>
+            </div>
+          </div>
+
+            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="email">Number of dependents the student has</label>
+                <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </form>
+
+    <a class="nhsuk-button" role="button" href="/lsf-web/v5/student-bursary/bursary-calculation-result">Calculate</a>
 
   </div>
-
 </div>
 {% endblock %}
