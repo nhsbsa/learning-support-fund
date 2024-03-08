@@ -60,6 +60,15 @@ router.post('/v5/change-phone-number-validate', (req, res) => {
 // TDAE Claim
 // ********************************
 
+// TDAE Add feedback note
+router.post('/v5/TDAE-add-feedback-note', (req, res) => {
+
+    req.session.data['feedback-note'] = 'yes'
+
+    res.redirect('/lsf-web/v5/TDAE-student-claim')
+
+})
+
 
 // Return to student decline or return
 router.post('/v5/returnordecline', (req, res) => {
@@ -81,6 +90,34 @@ router.post('/v5/current-search-student', (req, res) => {
 
     res.redirect('/lsf-web/v5/current-search-student-results')
 
+
+})
+
+router.post('/v5/TDAE-student-university-details', (req, res) => {
+
+    const universityTravel = req.session.data['university-travel']
+
+    if (universityTravel === 'yes') {
+        req.session.data['university-travel'] = 'completed'
+    } else {
+        req.session.data['university-travel'] = 'in-progress'
+    }
+
+    res.redirect('/lsf-web/v5/TDAE-student-claim')
+
+})
+
+router.post('/v5/TDAE-checked-university-details', (req, res) => {
+
+    const universityMatch = req.session.data['university-match']
+
+    if (universityMatch === 'yes') {
+        req.session.data['university-travel'] = 'completed'
+    } else {
+        req.session.data['university-travel'] = 'in-progress'
+    }
+
+    res.redirect('/lsf-web/v5/TDAE-student-claim')
 
 })
 
@@ -169,20 +206,6 @@ router.post('/v5/TDAE-evidence-match-2', (req, res) => {
 })
 
 router.post('/v5/TDAE-checked-hire-vehicle', (req, res) => {
-
-    res.redirect('/lsf-web/v5/TDAE-student-claim')
-
-})
-
-router.post('/v5/TDAE-university-match', (req, res) => {
-
-    const universityMatch = req.session.data['university-match']
-
-    if (universityMatch === 'yes') {
-        req.session.data['university-completed'] = 'completed'
-    } else {
-        req.session.data['university-completed'] = 'in-progress'
-    }
 
     res.redirect('/lsf-web/v5/TDAE-student-claim')
 

@@ -101,9 +101,16 @@ Claim checks
               <td class="nhsuk-table__cell">18 October 2023</td>
               <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
             </tr>
+            {% if data['feedback-note'] == 'yes' %}
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Jane Doe (NHSBSA)</td>
+                  <td class="nhsuk-table__cell">8 March 2024</td>
+                  <td class="nhsuk-table__cell "><strong>Comment added</strong><br>{{ data['feedbacknote'] }}</td>
+                </tr>
+                {% endif %}
           </tbody>
         </table>
-
+        <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></p>
       </div>
     </details>
 
@@ -123,10 +130,18 @@ Claim checks
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
               <a href="TDAE-student-university-details" aria-describedby="eligibility-status">
-                View university travel details
+                Check university travel details
               </a>
             </span>
+            {% if data['university-travel'] === 'completed' %}
+              <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
+            {% elif data['university-travel'] === 'in-progress' %}
+              <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to university</strong>
+            {% else %}
+              <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
+            {% endif %}
           </li>
+
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
               <a href="TDAE-placement-mileage-details-table" aria-describedby="eligibility-status">
