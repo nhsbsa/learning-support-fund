@@ -152,9 +152,9 @@
                 <li class="app-task-list__item nhsuk-u-clear">
                   <span class="app-task-list__task-name">
                     {% if data['submit-claim'] == 'completed' or data['hire-car'] == 'completed' %}
-                      <a class="app-task-list__task-name" href="TDAE-hire-car-check">Hiring a car</a>
+                      <a class="app-task-list__task-name" href="TDAE-hire-car-check">Hire car details and evidence</a>
                     {% else %}
-                      <a class="app-task-list__task-name" href="TDAE-hire-car-pause">Hiring a car</a>
+                      <a class="app-task-list__task-name" href="TDAE-hire-car-pause">Hire car details and evidence</a>
                     {% endif %}
                   </span>
                   {% if data['submit-claim'] == 'completed' or data['hire-car'] == 'completed' %}
@@ -185,9 +185,9 @@
               <li class="app-task-list__item nhsuk-u-clear">
                 <span class="app-task-list__task-name">
                   {% if data['accommodation-details'] === 'completed' %}
-                    <a href="TDAE-accommodation-check">Placement accommodation details and evidence</a>
+                    <a href="TDAE-accommodation-check">Accommodation details and evidence</a>
                   {% else %}
-                    <a href="TDAE-accommodation-pause">Placement accommodation details and evidence</a>
+                    <a href="TDAE-accommodation-pause">Accommodation details and evidence</a>
                   {% endif %}
                 </span>
                 {% if data['accommodation-details'] === 'completed' %}

@@ -25,6 +25,10 @@
 
         <p>We've sent a text message with a security code to <b>*******6920</b>.
 
+        {% if data['number-correct'] == 'no' %}
+          <p>If you want to change where the text message is sent, you can <a href="change-phone-number">change the mobile number</a>.</p>
+        {% endif %}
+
         <details class="nhsuk-details">
           <summary class="nhsuk-details__summary">
             <span class="nhsuk-details__summary-text">

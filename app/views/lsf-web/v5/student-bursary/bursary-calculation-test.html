@@ -12,7 +12,7 @@ Student and University details
     "href": "javascript:history.go(-1)",
     "text": "Go back"
     }) }}
- 
+
     <h1 class="nhsuk-heading-l">Bursary calculation test</h1>
 
     <form>
@@ -86,30 +86,30 @@ Student and University details
       </div>-->
 
       <div class="nhsuk-form-group">
-    
+
         <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
           <legend class="nhsuk-fieldset__legend">Additional Application considerations</legend>
-    
+
           <div class="nhsuk-hint" id="example-hint">
             Select all options that are relevant to the students application.
           </div>
-    
+
           <div class="nhsuk-checkboxes">
-    
+
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
               <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
                 Means tested application
               </label>
             </div>
-    
+
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
               <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
                 London University
               </label>
             </div>
-    
+
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
               <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
@@ -123,10 +123,10 @@ Student and University details
                 Living in parental home
               </label>
             </div>
-    
+
           </div>
         </fieldset>
-    
+
       </div>
 
       <div class="nhsuk-form-group" id="relationshipStatus-group">
@@ -144,7 +144,11 @@ Student and University details
       <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
           <legend class="nhsuk-fieldset__legend">Does the student have dependants?</legend>
-      
+
+          <div class="nhsuk-hint" id="example-hint">
+            Dependents are people financially dependent on the student during their studies
+          </div>
+
           <div class="nhsuk-radios nhsuk-radios--inline nhsuk-radios--conditional">
             <div style="display:flex">
             <div class="nhsuk-radios__item nhsuk-u-margin-right-4">
@@ -153,7 +157,7 @@ Student and University details
                 Yes
               </label>
             </div>
-      
+
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
               <label class="nhsuk-label nhsuk-radios__label" for="contact-2">No</label>
@@ -163,12 +167,140 @@ Student and University details
             <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
               <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="email">Number of dependents the student has</label>
-                <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+                <input class="nhsuk-input nhsuk-input--width-2" id="email" name="email" type="text" inputmode="numeric">
               </div>
             </div>
           </div>
         </fieldset>
       </div>
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          <legend class="nhsuk-fieldset__legend">Do the student's parents have any other dependents?</legend>
+
+          <div class="nhsuk-hint" id="example-hint">
+            Dependents are people financially dependent on the parents
+          </div>
+
+          <div class="nhsuk-radios nhsuk-radios--inline nhsuk-radios--conditional">
+            <div style="display:flex">
+            <div class="nhsuk-radios__item nhsuk-u-margin-right-4">
+              <input class="nhsuk-radios__input" id="parents-1" name="parents" type="radio" value="Yes" aria-controls="conditional-parents-1" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="parents-1">
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="parents-2" name="parents" type="radio" value="phone">
+              <label class="nhsuk-label nhsuk-radios__label" for="parents-2">No</label>
+            </div>
+          </div>
+
+            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-parents-1">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="Yes">Number of other dependents the parents' have</label>
+                <input class="nhsuk-input nhsuk-input--width-2" id="parents" name="parents" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          <legend class="nhsuk-fieldset__legend">Does the course have extra weeks?</legend>
+
+          <div class="nhsuk-hint" id="example-hint">
+            If a course runs for more than 30 weeks and 3 days, they will be entitled to Extra Weeks Allowance subject to means testing.
+          </div>
+
+          <div class="nhsuk-radios nhsuk-radios--inline nhsuk-radios--conditional">
+            <div style="display:flex">
+            <div class="nhsuk-radios__item nhsuk-u-margin-right-4">
+              <input class="nhsuk-radios__input" id="extra-weeks-1" name="extra-weeks" type="radio" value="Yes" aria-controls="conditional-extra-weeks-1" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="extra-weeks-1">
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="extra-weeks-2" name="extra-weeks" type="radio" value="phone">
+              <label class="nhsuk-label nhsuk-radios__label" for="extra-weeks-2">No</label>
+            </div>
+          </div>
+
+            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-extra-weeks-1">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="Yes">Number of extra weeks</label>
+                <input class="nhsuk-input nhsuk-input--width-2" id="extra-weeks" name="extra-weeks" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Student's unearned income
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+
+        </div>
+      </details>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Student's expenses
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+
+        </div>
+      </details>
+
+      <h2 class="nhsuk-heading-s">Parents' income and expenses</h2>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="email">Parents' income</label>
+        <div class="nhsuk-hint" id="example-hint">
+          Include any income from jobs, benefits, or other means.
+        </div>
+        <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+        <input class="nhsuk-input__prefix-input nhsuk-input nhsuk-input--width-5" id="accommodation-cost" name="accommodation-cost" type="text" inputemode="numeric">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="email">Parents' expenses</label>
+        <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+        <input class="nhsuk-input__prefix-input nhsuk-input nhsuk-input--width-5" id="accommodation-cost" name="accommodation-cost" type="text" inputemode="numeric">
+      </div>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Partner's income
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+
+        </div>
+      </details>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Partner's expenses
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+
+        </div>
+      </details>
+
     </form>
 
     <a class="nhsuk-button" role="button" href="/lsf-web/v5/student-bursary/bursary-calculation-result">Calculate</a>

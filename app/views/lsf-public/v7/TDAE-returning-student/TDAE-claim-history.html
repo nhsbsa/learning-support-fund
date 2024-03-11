@@ -11,15 +11,15 @@ Your claims history
 
       {{ backLink({
   		"href": "academic-year-details#tab-two",
-  		"text": "Go back to academic year details"
+  		"text": "Go back"
   		}) }}
 
-        <h1 class="nhsuk-heading-l">Your claims history</h1>
+        <h1 class="nhsuk-heading-l">Previous claims</h1>
 
         {% if data['claims'] == 'none' %}
           <p>Claims that have been completed either with a payment sent or declined will appear here.</p>
         {% else %}
-        <p>These are claims we've processed.</p>
+        <p>These are claims you've submitted that we've processed.</p>
 
         <!-- <details class="nhsuk-details">
             <summary class="nhsuk-details__summary">
