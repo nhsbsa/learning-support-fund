@@ -1,7 +1,7 @@
 {% extends 'layout-public.html' %}
 
 {% block pageTitle %}
-What is the return mileage to your placement?
+Your placement travel details (Showing 1-5 of 15 dates)
 {% endblock %}
 
 {% block content %}
@@ -20,7 +20,7 @@ What is the return mileage to your placement?
 			<caption>
 				<span class="nhsuk-heading-m">Placement travel details and costs</span>
 				<span class="nhsuk-u-visually-hidden"> - </span>
-				<span class="nhsuk-hint">Showing 1-10 of 21 dates</span>
+				<span class="nhsuk-hint">Showing 1-5 of 5 dates</span>
 			</caption>
 			<thead role="rowgroup" class="nhsuk-table__head">
 				<tr role="row">
@@ -67,6 +67,7 @@ What is the return mileage to your placement?
 						</div>
 					</td>
 				</tr>
+
 				<tr role="row" class="nhsuk-table__row">
 					<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Date </span>
@@ -103,6 +104,7 @@ What is the return mileage to your placement?
 						</div>
 					</td>
 				</tr>
+
 				<tr role="row" class="nhsuk-table__row">
 					<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Date </span>
@@ -139,6 +141,7 @@ What is the return mileage to your placement?
 						</div>
 					</td>
 				</tr>
+
 				<tr role="row" class="nhsuk-table__row">
 					<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Date </span>
@@ -175,6 +178,7 @@ What is the return mileage to your placement?
 						</div>
 					</td>
 				</tr>
+
 				<tr role="row" class="nhsuk-table__row">
 					<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Date </span>
@@ -211,7 +215,8 @@ What is the return mileage to your placement?
 						</div>
 					</td>
 				</tr>
-				<tr role="row" class="nhsuk-table__row">
+
+				<!-- <tr role="row" class="nhsuk-table__row">
 					<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Date </span>
 						Wednesday 11 October 2023
@@ -247,6 +252,7 @@ What is the return mileage to your placement?
 						</div>
 					</td>
 				</tr>
+
 				<tr role="row" class="nhsuk-table__row">
 					<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Date </span>
@@ -283,6 +289,7 @@ What is the return mileage to your placement?
 						</div>
 					</td>
 				</tr>
+
 				<tr role="row" class="nhsuk-table__row">
 					<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Date </span>
@@ -319,6 +326,7 @@ What is the return mileage to your placement?
 						</div>
 					</td>
 				</tr>
+
 				<tr role="row" class="nhsuk-table__row">
 					<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Date </span>
@@ -355,6 +363,7 @@ What is the return mileage to your placement?
 						</div>
 					</td>
 				</tr>
+
 				<tr role="row" class="nhsuk-table__row">
 					<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Date </span>
@@ -390,16 +399,17 @@ What is the return mileage to your placement?
 							<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
 						</div>
 					</td>
-				</tr>
+				</tr> -->
 			</tbody>
 		</table>
-		<nav class="nav nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-5" role="navigation" aria-label="Pagination">
+		<nav class="nav nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-5" role="navigation" aria-label="Pagination">
 			<ul class="pagination">
 				<li class="pagination__item pagination-li"><a class="pagination__link current" href="#" aria-current="true" aria-label="Page 1, current page">1</a></li>
 				<li class="pagination__item pagination-li"><a class="pagination__link" href="/lsf-public/v8/TDAE-placement-itinerary-dev2" aria-label="Page 2">2</a></li>
+				<li class="pagination__item pagination-li"><a class="pagination__link" href="/lsf-public/v8/TDAE-placement-itinerary-dev3" aria-label="Page 3">3</a></li>
 			</ul>
 			<a class="pagination__link"href="/lsf-public/v8/TDAE-placement-itinerary-dev2" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;&raquo;</span></a>
-			<div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 10 of 21 dates</div>
+			<div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 5 of 15 dates</div>
 		</nav>
 	</div>
 	<div class="nhsuk-grid-column-full">
@@ -478,4 +488,40 @@ What is the return mileage to your placement?
 		}
 	}
 </style>
+
+<!-- Table header with background colour 
+<style>
+	.nhsbsa-row__header{
+		font-weight: normal;
+	}
+	@media only screen and (min-width:769px) {
+		.nhsbsa-row__header{
+			vertical-align: middle;
+		}
+	}
+	@media only screen and (max-width:768px) {
+		.nhsbsa-row__header{
+			text-align: right;
+			padding-right:0;
+			padding-left: 0;
+			display:flex;
+			justify-content: space-between;
+			border: 1px solid	#4c6272;
+			outline: 5px solid	#4c6272;
+			margin-bottom: 5px;
+			background: #4c6272;
+			/* padding: 10px; */
+			font-weight: 800;
+			color: #fff;
+		}
+		.nav {
+    	flex-direction: row;
+    	align-items: center;
+		}
+		.pagination__summary {
+			font-size: 16px;
+			text-align:right;
+		}
+	}
+</style>-->
 {% endblock %}

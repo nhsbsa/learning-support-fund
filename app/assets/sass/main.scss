@@ -803,7 +803,7 @@ hr.solid {
 @media only screen and (max-width:640px) {
   .nhsbsa-sign-in__container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     flex-wrap: nowrap;
     flex-direction: row;
