@@ -13,7 +13,7 @@ Your placement travel details (Showing 11-15 of 15 dates)
 
 <div class="nhsuk-grid-row">
 	<div class="nhsuk-grid-column-two-thirds">
-		<p>You can add information about journey mileage, extra costs you paid or community travel details for each day of your placement.</p>
+		<p>You can add more information about your journeys and costs for each day of your placement.</p>
 	</div>
 	<div class="nhsuk-grid-column-full">
 		<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-0">
@@ -214,15 +214,15 @@ Your placement travel details (Showing 11-15 of 15 dates)
 							<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
 						</div>
 					</td>
-				</tr>	
+				</tr>
 			</tbody>
 		</table>
 		<nav class="nav nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-5" role="navigation" aria-label="Pagination">
 			<a class="pagination__link" href="/lsf-public/v8/TDAE-placement-itinerary-dev-alt2"  aria-label="Next page"><span aria-hidden="true" role="presentation">&laquo;&nbsp;</span>Previous</a>
 			<ul class="pagination">
-				<li class="pagination__item pagination-li"><a class="pagination__link" href="/lsf-public/v8/TDAE-placement-itinerary-dev1" aria-label="Page 1">1</a></li>
+				<li class="pagination__item pagination-li"><a class="pagination__link" href="/lsf-public/v8/TDAE-placement-itinerary-dev-alt1" aria-label="Page 1">1</a></li>
 				<li class="pagination__item pagination-li"><a class="pagination__link" href="/lsf-public/v8/TDAE-placement-itinerary-dev-alt2" aria-label="Page 2">2</a></li>
-				<li class="pagination__item pagination-li"><a class="pagination__link current" href="#" aria-current="true" aria-label="Page 3, current page">3</a></li>	
+				<li class="pagination__item pagination-li"><a class="pagination__link current" href="#" aria-current="true" aria-label="Page 3, current page">3</a></li>
 			</ul>
 			<div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 11 - 15 of 15 dates</div>
 		</nav>
@@ -231,34 +231,21 @@ Your placement travel details (Showing 11-15 of 15 dates)
 		<div  class="action-block">
 			<h2 class="nhsuk-heading-s">What you can do</h2>
 			<div class="nhsuk-grid-row">
-				{% if checked('claiming-for', 'car') %}
 				<div class="nhsuk-grid-column-one-quarter">
-					<a class="nhsuk-button nhsuk-button--secondary" href="v8/add-journey-mileage">Add car journey mileage</a>
+					<a class="nhsuk-button nhsuk-button--secondary" href="v8/add-journey-mileage">Add driving mileage</a>
 				</div>
-				{% endif %}
-				{% if checked('claiming-for', 'Cycle') %}
 				<div class="nhsuk-grid-column-one-quarter">
-					<a class="nhsuk-button nhsuk-button--secondary" href="v8/add-cycle-journey-mileage">Add cycling journey mileage</a>
+					<a class="nhsuk-button nhsuk-button--secondary" href="v8/add-cycle-journey-mileage">Add cycling mileage</a>
 				</div>
-				{% endif %}
-				{% if checked('claiming-for', 'Public transport') %}
 				<div class="nhsuk-grid-column-one-quarter">
 					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-public-transport-overview">Add public transport tickets</a>
 				</div>
-				{% endif %}
-				{% if checked('claiming-for', 'car') or checked('claiming-for', 'Cycle') %}
-				<div class="nhsuk-grid-column-one-quarter" style="width: 20%;">
+				<div class="extra-cost-button nhsuk-grid-column-one-quarter">
 					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-evidence-type">Add extra costs</a>
 				</div>
-				{% endif %}
-				{% if checked('claiming-for', 'community') %}
 				<div class="nhsuk-grid-column-one-quarter">
-				<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-community-mileage-day">Add Community travel</a>
+				<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-community-mileage-day">Add community travel</a>
 				</div>
-				{% endif %}
-				<!--<div class="nhsuk-grid-column-one-quarter" style="width: 30%;">
-				<a href="TDAE-placement-additional-comments" class="nhsuk-button">Complete placement travel details</a>
-				</div>-->
 			</div>
 			<!--<p><a href="#">Save and come back later</a></p>-->
 			<h3 class="nhsuk-heading-xs">Change previous answers</h3>

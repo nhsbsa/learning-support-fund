@@ -13,7 +13,7 @@ Your placement travel details (Showing 6-10 of 15 dates)
 
 <div class="nhsuk-grid-row">
 	<div class="nhsuk-grid-column-two-thirds">
-		<p>You can add information about journey mileage, extra costs you paid or community travel details for each day of your placement.</p>
+		<p>You can add more information about your journeys and costs for each day of your placement.</p>
 	</div>
 	<div class="nhsuk-grid-column-full">
 		<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-0">
@@ -232,34 +232,21 @@ Your placement travel details (Showing 6-10 of 15 dates)
 		<div  class="action-block">
 			<h2 class="nhsuk-heading-s">What you can do</h2>
 			<div class="nhsuk-grid-row">
-				{% if checked('claiming-for', 'car') %}
 				<div class="nhsuk-grid-column-one-quarter">
-					<a class="nhsuk-button nhsuk-button--secondary" href="v8/add-journey-mileage">Add car journey mileage</a>
+					<a class="nhsuk-button nhsuk-button--secondary" href="v8/add-journey-mileage">Add driving mileage</a>
 				</div>
-				{% endif %}
-				{% if checked('claiming-for', 'Cycle') %}
 				<div class="nhsuk-grid-column-one-quarter">
-					<a class="nhsuk-button nhsuk-button--secondary" href="v8/add-cycle-journey-mileage">Add cycling journey mileage</a>
+					<a class="nhsuk-button nhsuk-button--secondary" href="v8/add-cycle-journey-mileage">Add cycling mileage</a>
 				</div>
-				{% endif %}
-				{% if checked('claiming-for', 'Public transport') %}
 				<div class="nhsuk-grid-column-one-quarter">
 					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-public-transport-overview">Add public transport tickets</a>
 				</div>
-				{% endif %}
-				{% if checked('claiming-for', 'car') or checked('claiming-for', 'Cycle') %}
-				<div class="nhsuk-grid-column-one-quarter" style="width: 20%;">
+				<div class="extra-cost-button nhsuk-grid-column-one-quarter">
 					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-evidence-type">Add extra costs</a>
 				</div>
-				{% endif %}
-				{% if checked('claiming-for', 'community') %}
 				<div class="nhsuk-grid-column-one-quarter">
-				<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-community-mileage-day">Add Community travel</a>
+				<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-community-mileage-day">Add community travel</a>
 				</div>
-				{% endif %}
-				<!--<div class="nhsuk-grid-column-one-quarter" style="width: 30%;">
-				<a href="TDAE-placement-additional-comments" class="nhsuk-button">Complete placement travel details</a>
-				</div>-->
 			</div>
 			<!--<p><a href="#">Save and come back later</a></p>-->
 			<h3 class="nhsuk-heading-xs">Change previous answers</h3>

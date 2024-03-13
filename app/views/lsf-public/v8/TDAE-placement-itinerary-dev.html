@@ -13,7 +13,7 @@ Your placement travel details (Showing 1-5 of 15 dates)
 
 <div class="nhsuk-grid-row">
 	<div class="nhsuk-grid-column-two-thirds">
-		<p>You can add information about journey mileage, extra costs you paid or community travel details for each day of your placement.</p>
+		<p>You can add more information about your journeys and costs for each day of your placement.</p>
 	</div>
 	<div class="nhsuk-grid-column-full">
 		<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-0">
@@ -112,11 +112,11 @@ Your placement travel details (Showing 1-5 of 15 dates)
 					</th>
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Daily train ticket
+						Cycle mileage returning to placement
 					</td>
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Travel cost </span>
-						£8.60
+						5.2 miles
 					</td>
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Actions </span>
@@ -128,11 +128,11 @@ Your placement travel details (Showing 1-5 of 15 dates)
 				<tr role="row" class="nhsuk-table__row">
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Multiple day bus ticket
+						Cycle mileage returning from placement
 					</td>
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Travel cost </span>
-						£1.72
+						5.2 miles
 					</td>
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Actions </span>
@@ -143,17 +143,17 @@ Your placement travel details (Showing 1-5 of 15 dates)
 				</tr>
 
 				<tr role="row" class="nhsuk-table__row">
-					<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+					<th rowspan="3" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Date </span>
 						Monday 9 October 2023
 					</th>
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Daily train ticket
+						Mileage to placement
 					</td>
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Travel cost </span>
-						£8.60
+						10 miles
 					</td>
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Actions </span>
@@ -165,11 +165,27 @@ Your placement travel details (Showing 1-5 of 15 dates)
 				<tr role="row" class="nhsuk-table__row">
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Multiple day bus ticket
+						Mileage returning from placement
 					</td>
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Travel cost </span>
-						£1.72
+						10 miles
+					</td>
+					<td role="cell" class="nhsuk-table__cell">
+						<span class="nhsuk-table-responsive__heading">Actions </span>
+						<div class="link-container">
+							<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
+						</div>
+					</td>
+				</tr>
+				<tr role="row" class="nhsuk-table__row">
+					<td role="cell" class="nhsuk-table__cell">
+						<span class="nhsuk-table-responsive__heading">Travel type </span>
+						Community mileage
+					</td>
+					<td role="cell" class="nhsuk-table__cell">
+						<span class="nhsuk-table-responsive__heading">Travel cost </span>
+						26 miles
 					</td>
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Actions </span>
@@ -180,7 +196,7 @@ Your placement travel details (Showing 1-5 of 15 dates)
 				</tr>
 
 				<tr role="row" class="nhsuk-table__row">
-					<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+					<th rowspan="3" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Date </span>
 						Tuesday 10 October 2023
 					</th>
@@ -207,6 +223,22 @@ Your placement travel details (Showing 1-5 of 15 dates)
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Travel cost </span>
 						£1.72
+					</td>
+					<td role="cell" class="nhsuk-table__cell">
+						<span class="nhsuk-table-responsive__heading">Actions </span>
+						<div class="link-container">
+							<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
+						</div>
+					</td>
+				</tr>
+				<tr role="row" class="nhsuk-table__row">
+					<td role="cell" class="nhsuk-table__cell">
+						<span class="nhsuk-table-responsive__heading">Travel type </span>
+						Parking charges
+					</td>
+					<td role="cell" class="nhsuk-table__cell">
+						<span class="nhsuk-table-responsive__heading">Travel cost </span>
+						£4
 					</td>
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Actions </span>
@@ -416,34 +448,21 @@ Your placement travel details (Showing 1-5 of 15 dates)
 		<div  class="action-block">
 			<h2 class="nhsuk-heading-s">What you can do</h2>
 			<div class="nhsuk-grid-row">
-				{% if checked('claiming-for', 'car') %}
 				<div class="nhsuk-grid-column-one-quarter">
-					<a class="nhsuk-button nhsuk-button--secondary" href="v8/add-journey-mileage">Add car journey mileage</a>
+					<a class="nhsuk-button nhsuk-button--secondary" href="v8/add-journey-mileage">Add driving mileage</a>
 				</div>
-				{% endif %}
-				{% if checked('claiming-for', 'Cycle') %}
 				<div class="nhsuk-grid-column-one-quarter">
-					<a class="nhsuk-button nhsuk-button--secondary" href="v8/add-cycle-journey-mileage">Add cycling journey mileage</a>
+					<a class="nhsuk-button nhsuk-button--secondary" href="v8/add-cycle-journey-mileage">Add cycling mileage</a>
 				</div>
-				{% endif %}
-				{% if checked('claiming-for', 'Public transport') %}
 				<div class="nhsuk-grid-column-one-quarter">
 					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-public-transport-overview">Add public transport tickets</a>
 				</div>
-				{% endif %}
-				{% if checked('claiming-for', 'car') or checked('claiming-for', 'Cycle') %}
-				<div class="nhsuk-grid-column-one-quarter" style="width: 20%;">
+				<div class="extra-cost-button nhsuk-grid-column-one-quarter">
 					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-evidence-type">Add extra costs</a>
 				</div>
-				{% endif %}
-				{% if checked('claiming-for', 'community') %}
 				<div class="nhsuk-grid-column-one-quarter">
-				<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-community-mileage-day">Add Community travel</a>
+				<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-community-mileage-day">Add community travel</a>
 				</div>
-				{% endif %}
-				<!--<div class="nhsuk-grid-column-one-quarter" style="width: 30%;">
-				<a href="TDAE-placement-additional-comments" class="nhsuk-button">Complete placement travel details</a>
-				</div>-->
 			</div>
 			<!--<p><a href="#">Save and come back later</a></p>-->
 			<h3 class="nhsuk-heading-xs">Change previous answers</h3>
@@ -489,7 +508,7 @@ Your placement travel details (Showing 1-5 of 15 dates)
 	}
 </style>
 
-<!-- Table header with background colour 
+<!-- Table header with background colour
 <style>
 	.nhsbsa-row__header{
 		font-weight: normal;
