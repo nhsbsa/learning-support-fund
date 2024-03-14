@@ -11,31 +11,16 @@ Your costs
 
     <!-- <form action="" method="POST"> -->
 
-    <h1 class="nhsuk-heading-l">Total costs</h1>
-    <p>This is the total costs you paid for your travel and accommodation.</p>
+    <h1 class="nhsuk-heading-l">Total amount to be reimbursed</h1>
+    <p>This is a breakdown of what you will be reimbursed for your travel and accommodation.</p>
 
     <dl class="nhsuk-summary-list">
-
-      <!-- <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          University journey
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          {% if data['TDAE-multiple-weeks'] == 'yes' %}
-            £22.80
-          {% else %}
-            {% if data['mode-of-transport'] !== 'drive' %}
-              £28.20
-            {% else %}
-              £15.18
-            {% endif %}
-          {% endif %}
-        </dd>
-      </div> -->
       {% if checked('claiming-for', 'car') %}
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Travel
+          Placement <template id="">
+
+          </template>ravel
         </dt>
         <dd class="nhsuk-summary-list__value">
           £33.60
@@ -45,7 +30,7 @@ Your costs
       {% if checked('claiming-for', 'Public transport') %}
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Travel
+          Placement travel
         </dt>
         <dd class="nhsuk-summary-list__value">
           £41.28
@@ -65,7 +50,7 @@ Your costs
       {% if checked('claiming-for', 'Cycle') %}
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Travel
+          Placement travel
         </dt>
         <dd class="nhsuk-summary-list__value">
           £15.84
@@ -92,14 +77,9 @@ Your costs
         </dd>
       </div>
       {% endif %}
-    </dl>
-
-    <h2 class="nhsuk-heading-m">Amount to be reimbursed</h2>
-    <dl class="nhsuk-summary-list">
-
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Total
+          Total amount to be reimbursed
         </dt>
         <dd class="nhsuk-summary-list__value">
           {% if checked('claiming-for', 'travel to accommodation') %}
@@ -115,33 +95,25 @@ Your costs
           {% endif %}
         </dd>
       </div>
-
     </dl>
-
-    <!-- <div class="nhsuk-card">
-      <div class="nhsuk-card__content">
-        <h2 class="nhsuk-card__heading">
-          Amount to be paid to you
-        </h2>
-        {% if data['TDAE-multiple-weeks'] == 'yes' %}
-          £22.80
-        {% else %}
-          {% if data['mode-of-transport'] !== 'drive' %}
-            £28.20
-          {% else %}
-            £15.18
-          {% endif %}
-        {% endif %}
-      </div>
-    </div> -->
 
     <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-task-list">Change claim</a><br>
     <a class="nhsuk-button" href="TDAE-student-declaration">Save and continue</a><br>
-    <a href="TDAE-start-claim">Cancel</a>
+    <p><a href="TDAE-start-claim">Cancel</a></p>
 
     <!-- </form> -->
 
   </div>
 
 </div>
+
+<style>
+
+  @media (min-width: 40.0625em) {
+    .nhsuk-summary-list__key {
+        width: 50%;
+    }
+  }
+
+</style>
 {% endblock %}
