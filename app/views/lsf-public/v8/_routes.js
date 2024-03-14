@@ -766,7 +766,23 @@ router.post('/v8/TDAE-accommodation-travel-remove-journey-2', (req, res) => {
 
 
 
+router.post('/v8/TDAE-placement-additional-cost-single-day', (req, res) => {
 
+  res.redirect('/lsf-public/v8/TDAE-placement-additional-costs')
+
+})
+
+router.post('/v8/TDAE-placement-additional-costs', (req, res) => {
+
+  const additionalCostSingleDay = req.session.data['additional-cost-single-day']
+
+  if (additionalCostSingleDay === 'Yes') {
+      res.redirect('/lsf-public/v8/TDAE-placement-additional-daily-total')
+  } else if (additionalCostSingleDay === 'No') {
+      res.redirect('/lsf-public/v8/TDAE-placement-additional-cost-dates')
+  }
+
+})
 
 router.post('/v8/TDAE-placement-additional-daily-total', (req, res) => {
 
@@ -780,15 +796,19 @@ router.post('/v8/TDAE-placement-additional-daily-total', (req, res) => {
 
 })
 
-router.post('/v8/TDAE-placement-additional-cost-single-day', (req, res) => {
+// Placement evidence type
+router.post('/v8/TDAE-placement-evidence-days', (req, res) => {
 
-  const additionalCostSingleDay = req.session.data['additional-cost-single-day']
+  res.redirect('/lsf-public/v8/TDAE-placement-additional-costs-cya')
 
-  if (additionalCostSingleDay === 'Yes') {
-      res.redirect('/lsf-public/v8/TDAE-placement-additional-daily-total')
-  } else if (additionalCostSingleDay === 'No') {
-      res.redirect('/lsf-public/v8/TDAE-placement-additional-cost-dates')
-  }
+})
+
+// Placement evidence type
+router.post('/v8/TDAE-placement-additional-costs-cya', (req, res) => {
+
+    req.session.data['additional-cost'] = "1"
+
+  res.redirect('/lsf-public/v8/TDAE-placement-itinerary')
 
 })
 
@@ -1081,7 +1101,7 @@ router.post('/v8/TDAE-placement-additional-costs-cya', (req, res) => {
 // Placement evidence type
 router.post('/v8/TDAE-placement-evidence-type', (req, res) => {
 
-  res.redirect('/lsf-public/v8/TDAE-placement-additional-costs')
+  res.redirect('/lsf-public/v8/TDAE-placement-additional-cost-single-day')
 
 })
 
