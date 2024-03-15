@@ -118,7 +118,7 @@ Check your answers
 					{% if data['hire-car-comments']  === 'yes' %}
 					 {{ data['hire-car-comment'] }}
 					{% else %}
-						Not provided
+						None
 					{% endif %}
 				</dd>
 				<dd class="nhsuk-summary-list__actions">
@@ -255,7 +255,7 @@ Check your answers
 
 			</dl>
 
-			
+
 
 			{% if data['submit-claim'] != 'completed' %}
 				<form action="/lsf-public/v8/TDAE-hire-car-cya" method="POST">
