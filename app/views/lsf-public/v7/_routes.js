@@ -50,6 +50,71 @@ router.post('/v7/phone-number-check', (req, res) => {
 
 })
 
+router.post('/v7/TDAE-accommodation-costs', (req, res) => {
+
+  const accommodationCosts = req.session.data['accommodation-costs']
+
+  if (accommodationCosts === 'yes'){
+    res.redirect('/lsf-public/v7/TDAE-accommodation-pause')
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-accommodation-live-with-parents')
+  }
+
+})
+
+router.post('/v7/TDAE-accommodation-live-with-parents', (req, res) => {
+
+  const liveWithParents = req.session.data['live-with-parents']
+
+  if (liveWithParents === 'yes'){
+    res.redirect('/lsf-public/v7/TDAE-accommodation-pause')
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-accommodation-not-eligible')
+  }
+
+})
+
+router.post('/v7/TDAE-accommodation-not-eligible', (req, res) => {
+
+  const accommodationNotEligible = req.session.data['accommodation-not-eligible']
+
+  if (accommodationNotEligible === 'change-answers') {
+      res.redirect('/lsf-public/v7/TDAE-accommodation-costs')
+  }  else if (accommodationNotEligible === 'remove') {
+      res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-accommodation-remove-all')
+  } else if (accommodationNotEligible === 'delete') {
+    res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-accommodation-delete')
+  } else {
+      res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-accommodation-not-eligible')
+  }
+
+
+})
+
+router.post('/v7/TDAE-accommodation-remove-all', (req, res) => {
+
+  const removeAll = req.session.data['remove']
+
+  if (removeAll === 'yes'){
+    res.redirect('/lsf-public/v7/TDAE-task-list')
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-accommodation-not-eligible')
+  }
+
+})
+
+router.post('/v7/TDAE-accommodation-delete', (req, res) => {
+
+  const deleteClaim = req.session.data['delete']
+
+  if (deleteClaim === 'yes'){
+    res.redirect('/lsf-public/v7/TDAE-returning-student/academic-year-details')
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-accommodation-not-eligible')
+  }
+
+})
+
 router.post('/v7/TDAE-accommodation-pause', (req, res) => {
 
   res.redirect('/lsf-public/v7/TDAE-accommodation-same-start-date')
@@ -1042,7 +1107,6 @@ router.get('/v7/TDAE-placement-evidence', (req, res) => {
 
 
 })
-
 
 // Placement evidence type
 router.post('/v7/TDAE-placement-evidence-type', (req, res) => {
