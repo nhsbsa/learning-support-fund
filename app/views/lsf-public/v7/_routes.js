@@ -50,7 +50,7 @@ router.post('/v7/phone-number-check', (req, res) => {
 
 })
 
-router.post('/v7/TDAE-accommodation-costs', (req, res) => {
+router.post('/v7/TDAE-accommodation-term-time-costs', (req, res) => {
 
   const accommodationCosts = req.session.data['accommodation-costs']
 
@@ -79,7 +79,7 @@ router.post('/v7/TDAE-accommodation-not-eligible', (req, res) => {
   const accommodationNotEligible = req.session.data['accommodation-not-eligible']
 
   if (accommodationNotEligible === 'change-answers') {
-      res.redirect('/lsf-public/v7/TDAE-accommodation-costs')
+      res.redirect('/lsf-public/v7/TDAE-accommodation-term-time-costs')
   }  else if (accommodationNotEligible === 'remove') {
       res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-accommodation-remove-all')
   } else if (accommodationNotEligible === 'delete') {
