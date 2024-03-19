@@ -48,7 +48,7 @@
                     <option value="">Select a course</option>
                     <option value="Adult nursing">Adult nursing</option>
                     <option value="Adult nursing and social work">Adult nursing and social work</option>
-                    <option value="Child nursing">Child nursing</option> 
+                    <option value="Child nursing">Child nursing</option>
                     <option value="Child nursing and social work">Child nursing and social work</option>
                     <option value="Dental hygiene">Dental hygiene</option>
                     <option value="Dental hygiene and dental therapy">Dental hygiene and dental therapy</option>
@@ -149,7 +149,7 @@
                             </label>
                           </div>
                         </div>
-                        
+
                         <form action="TDAE-claims-list?filter=yes" method="POST">
                           <button style="float: left; clear: left;" class="nhsuk-button" data-module="nhsuk-button">
                             Apply filters
@@ -326,13 +326,13 @@
                           {% if data['Cooper'] == 'returned' %}
                           <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
                           {% else %}
-                          <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
+                          <strong class="nhsuk-tag nhsuk-tag--white">Returned from NHSBSA</strong>
                           {% endif %}
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Action </span>
                           <a class="nhsuk-link--no-visited-state"
-                              href="v8/process-claim?name=Jill Cooper">Process claim
+                              href="#">Process claim
                           </a>
                       </td>
                   </tr>
