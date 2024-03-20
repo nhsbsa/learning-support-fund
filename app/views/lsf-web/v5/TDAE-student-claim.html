@@ -91,6 +91,13 @@ Claim checks
             </tr>
           </thead>
           <tbody class="nhsuk-table__body">
+            {% if data['feedback-note'] == 'yes' %}
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Jane Doe <br> (NHSBSA)</td>
+              <td class="nhsuk-table__cell">8 March 2024</td>
+              <td class="nhsuk-table__cell ">{{ data['feedbacknote'] }}</td>
+            </tr>
+            {% endif %}
             <tr role="row" class="nhsuk-table__row">
               <td class="nhsuk-table__cell">Mark Hirst (University)</td>
               <td class="nhsuk-table__cell">23 October 2023</td>
@@ -101,12 +108,7 @@ Claim checks
               <td class="nhsuk-table__cell">18 October 2023</td>
               <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
             </tr>
-            {% if data['feedback-note'] == 'yes' %}
-                <tr role="row" class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell">Jane Doe (NHSBSA)</td>
-                  <td class="nhsuk-table__cell">8 March 2024</td>
-                </tr>
-                {% endif %}
+            
           </tbody>
         </table>
         <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></p>

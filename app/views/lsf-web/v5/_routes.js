@@ -284,4 +284,19 @@ router.post('/v5/TDAE-details-for-return', (req, res) => {
 
 })
 
+// ********************************
+// TDAE Claim - Read only View
+// ********************************
+
+
+
+// TDAE Add feedback note
+router.post('/v5/read-only/TDAE-add-feedback-note', (req, res) => {
+
+    req.session.data['feedback-note'] = 'yes'
+
+    res.redirect('/lsf-web/v5/read-only/TDAE-student-claim')
+
+})
+
 module.exports = router;

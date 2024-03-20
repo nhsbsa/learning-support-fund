@@ -1,4 +1,4 @@
-Return to university{% extends 'layout-custom-header.html' %}
+{% extends 'layout-custom-header.html' %}
 
 {% block pageTitle %}
 Claim checks
@@ -45,7 +45,7 @@ Claim checks
                 Claim dates
               </dt>
               <dd class="nhsuk-summary-list__value">
-                6 October 2023 to 9 October 2023
+                9 February 2024 to 12 February 2024
               </dd>
             </div>
             <div class="nhsuk-summary-list__row">
@@ -53,7 +53,7 @@ Claim checks
                 Costs claimed
               </dt>
               <dd class="nhsuk-summary-list__value">
-                Public transport journey to placement
+                Hire car
               </dd>
             </div>
           </dl>
@@ -85,23 +85,18 @@ Claim checks
             </tr>
           </thead>
           <tbody class="nhsuk-table__body">
+            {% if data['feedback-note'] == 'yes' %}
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Mark Hirst (University)</td>
-              <td class="nhsuk-table__cell">23 October 2023</td>
-              <td class="nhsuk-table__cell "><strong>Claim checks submitted</strong><br>Student has only been able to upload 3 receipts as they have lost one but we are happy to accept they will have had this additional cost.</td>
+              <td class="nhsuk-table__cell">Jane Doe <br> (NHSBSA)</td>
+              <td class="nhsuk-table__cell"> <p id="currentDate"</p> </td>
+              <td class="nhsuk-table__cell ">{{ data['feedbacknote'] }}</td>
             </tr>
+            {% endif %}
             <tr role="row" class="nhsuk-table__row">
               <td class="nhsuk-table__cell">{{ data['name'] }} (Student)</td>
               <td class="nhsuk-table__cell">18 October 2023</td>
               <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
             </tr>
-            {% if data['feedback-note'] == 'yes' %}
-                <tr role="row" class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell">Jane Doe (NHSBSA)</td>
-                  <td class="nhsuk-table__cell">8 March 2024</td>
-                  <td class="nhsuk-table__cell "><strong>Comment added</strong><br>{{ data['feedbacknote'] }}</td>
-                </tr>
-                {% endif %}
           </tbody>
         </table>
         <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></p>
@@ -118,44 +113,7 @@ Claim checks
     <ol class="app-task-list">
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">1. </span> Travel details
-        </h2>
-        <ul class="app-task-list__items">
-          <li class="app-task-list__item nhsuk-u-clear">
-            <span class="app-task-list__task-name">
-              <a href="TDAE-student-university-details" aria-describedby="eligibility-status">
-                View university travel details
-              </a>
-            </span>
-          </li>
-
-          <li class="app-task-list__item nhsuk-u-clear">
-            <span class="app-task-list__task-name">
-              <a href="TDAE-placement-mileage-details-table" aria-describedby="eligibility-status">
-                View period 1 placement travel details
-              </a>
-            </span>
-          </li>
-          <li class="app-task-list__item nhsuk-u-clear">
-            <span class="app-task-list__task-name">
-              <a href="TDAE-placement-details-public-transport" aria-describedby="eligibility-status">
-                View period 2 placement travel details
-              </a>
-            </span>
-          </li>
-          <li class="app-task-list__item nhsuk-u-clear">
-            <span class="app-task-list__task-name">
-              <a href="TDAE-hire-vehicle" aria-describedby="eligibility-status">
-                View hire car details
-              </a>
-            </span>
-          </li>
-        </ul>
-      </li>
-
-      <li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">2. </span> Accommodation details
+          <span class="app-task-list__section-number">1. </span> Accommodation details
         </h2>
         <ul class="app-task-list__items">
           <li class="app-task-list__item nhsuk-u-clear">
@@ -169,13 +127,6 @@ Claim checks
             <span class="app-task-list__task-name">
               <a href="TDAE-accommodation-2" aria-describedby="eligibility-status">
                 View accommodation booking 2 details
-              </a>
-            </span>
-          </li>
-          <li class="app-task-list__item nhsuk-u-clear">
-            <span class="app-task-list__task-name">
-              <a href="TDAE-accommodation-travel" aria-describedby="eligibility-status">
-                View accommodation travel details
               </a>
             </span>
           </li>
@@ -209,4 +160,21 @@ Claim checks
   </div>
 
 </div>
+
+
+<script>
+  // JavaScript code
+  var currentDateElement = document.getElementById("currentDate");
+
+  // Get the current date
+  var currentDate = new Date();
+
+  // Format the date as desired
+  var options = { day: 'numeric', month: 'long', year: 'numeric' };
+  var formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+  // Set the formatted date as the content of the element
+  currentDateElement.textContent = formattedDate;
+</script>
+
 {% endblock %}
