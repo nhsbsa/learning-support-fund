@@ -1,0 +1,143 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+      "href": "javascript:history.go(-1)",
+      "text": "Go back"
+      }) }}
+
+      <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Travel and Dual Accommodation Expenses</span>
+        {% if data['name'] %}
+        {{ data['name'] }}
+        {% else %}
+        Emmit Mar
+        {% endif %}
+      </h1>
+
+        <strong class="nhsuk-tag nhsuk-tag--green nhsuk-u-margin-bottom-3 task-status">Submitted to NHSBSA</strong>
+
+    </div>
+  </div>
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">Claim feedback and history</span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <table class="nhsuk-table-responsive">
+            <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                From
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Date
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Feedback
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Mark Hirst (University)</td>
+              <td class="nhsuk-table__cell">16 February 2024</td>
+              <td class="nhsuk-table__cell "><strong>Claim checks submitted</strong><br>Hire car was approved by unviersity.</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">{% if data['name'] %}
+                {{ data['name'] }}
+                {% else %}
+                Emmit Mar
+                {% endif %}</td>
+                <td class="nhsuk-table__cell">12 February 2024</td>
+                <td class="nhsuk-table__cell "><strong>Claim submitted</strong><br></td>
+              </tr>
+          </tbody>
+          </table>
+          <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a feedback note</a></p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <ol class="app-task-list">
+        <li class="section-item">
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Travel details
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="TDAE-hire-vehicle?scenario=previous" aria-describedby="eligibility-status">
+                  Check hire car details
+                </a>
+              </span>
+                <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
+            </li>
+          </ul>
+
+    </div>
+  </div>
+{% endblock %}
+{% block pageScripts %}
+  <script>
+    // To get the counter to work, you need two things:
+    // 1. This class on your section <li class="section-item">
+    // 2. This class on your status tag <strong class="task-status">
+
+    // Get all elements with the class 'container'
+    const containers = document.querySelectorAll('.section-item');
+
+    // Create an object to store container IDs and their values
+    const containerValues = {};
+
+    // Initialize all container IDs with a value of 1
+    containers.forEach((container, index) => {
+      containerValues[index] = 1;
+    });
+
+    // Function to search within each 'container' element
+    function searchWithinContainer(container, index) {
+      // Find elements with class 'searchable' within the 'container'
+      const searchables = container.querySelectorAll('.task-status');
+
+      // Log the content of each 'searchable' element within the 'container'
+      searchables.forEach((searchable) => {
+        console.log(searchable.textContent);
+        if (searchable.textContent !== 'Completed') {
+          console.log('Not all tasks in this container are completed');
+          // Set the value of the container ID to 0 if a task is not completed
+          containerValues[index] = 0;
+        }
+      });
+    }
+
+    // Search each container
+    containers.forEach((container, index) => {
+      searchWithinContainer(container, index);
+    });
+
+    var completedSectionCount = document.getElementById('completedCount');
+    var totalSectionCount = document.getElementById('sectionLength');
+
+    // Calculate the completed section count
+    var completedSections = Object.values(containerValues).reduce(
+      (total, value) => total + value,
+      0
+    );
+    console.log('completed sections: ' + completedSections)
+
+    completedSectionCount.innerHTML = completedSections;
+    totalSectionCount.innerHTML = containers.length;
+  </script>
+{% endblock %}

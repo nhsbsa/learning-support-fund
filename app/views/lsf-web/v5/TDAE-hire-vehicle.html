@@ -34,7 +34,8 @@ Student and University details
           Booking start and end date
         </dt>
         <dd class="nhsuk-summary-list__value">
-          30 November 2023
+          9 February 2024 to <br>
+          12 February 2024
         </dd>
       </div>
 
@@ -52,7 +53,7 @@ Student and University details
           Reason for booking
         </dt>
         <dd class="nhsuk-summary-list__value">
-          I had an emergency situation
+          My own car had an issue
         </dd>
       </div>
 
@@ -76,9 +77,9 @@ Student and University details
 
     </dl>
 
-      {% if (data['read-only'] != 'true') %}
-      <a class="nhsuk-button" href="TDAE-checked-hire-vehicle">Continue</a>
-      {% endif %}
+    {% if data['read-only'] != 'true' %}
+      <a class="nhsuk-button" href="TDAE-hire-vehicle-check">Continue</a>
+    {% endif %}
 
   </div>
 

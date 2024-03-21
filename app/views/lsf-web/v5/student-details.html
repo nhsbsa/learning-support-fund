@@ -60,9 +60,11 @@ Student details
 				<div class="nhsuk-grid-column-one-third">
 					<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Address</h2>
 					<p>
-						123 Term Time Street<br>
-						Newcastle<br>
-						NE11 1AB
+						Stephenson House <br>
+						Stoddart St <br>
+						Shieldfield <br>
+						Newcastle upon Tyne
+						NE2 1AW
 					</p>
 				</div>
 				<div class="nhsuk-grid-column-full">
@@ -155,7 +157,20 @@ Student details
 						<div class="nhsuk-grid-column-full">
 							<h2 class="nhsuk-heading-xs">Notes</h2>
               <hr>
-              <h3 class="nhsuk-heading-m">Information mismatch - Attendance not confirmed on 14/10/2023 16:13:51</h3>
+              <h3 class="nhsuk-heading-m">
+				{% if data['feedback-note'] == 'yes' %}
+				{{ data['feedbacknote'] }}
+			  </h3>
+
+				<p>[NHSBSA comment]</p>
+
+            	<p>Last updated by <b>Jane Doe</b></p>
+              	<p id="currentDate" </p>
+				<hr>
+            	{% endif %}
+				
+				
+				Information mismatch - Attendance not confirmed on 14/10/2023 16:13:51</h3>
 							<p>An email "NHS Learning Support Fund - information mismatch" has been sent. The university says the information that needs changing is:</p>
 
 							<p>[University comment]</p>

@@ -205,7 +205,7 @@ router.post('/v5/TDAE-evidence-match-2', (req, res) => {
 
 })
 
-router.post('/v5/TDAE-checked-hire-vehicle', (req, res) => {
+router.post('/v5/TDAE-hire-vehicle-check', (req, res) => {
 
     res.redirect('/lsf-web/v5/TDAE-student-claim')
 
@@ -287,7 +287,6 @@ router.post('/v5/TDAE-details-for-return', (req, res) => {
 // ********************************
 // TDAE Claim - Read only View
 // ********************************
-
 
 
 // TDAE Add feedback note
