@@ -14,7 +14,7 @@ Are you claiming for the previous academic year?
         "text": "Go back"
       }) }}
 
-    <form action="v7/TDAE-tickets-already-claimed" method="POST">
+    <form action="v7/TDAE-ticket-already-claimed" method="POST">
 
         <div class="nhsuk-form-group">
 
@@ -77,19 +77,19 @@ Are you claiming for the previous academic year?
 
               <div class="nhsuk-radios">
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="ticket-already-claimed-no" name="ticket-already-claimed" type="radio" value="no">
+                  <input class="nhsuk-radios__input" id="ticket-already-claimed-no" name="ticket-already-claimed" type="radio" value="yes">
                   <label class="nhsuk-label nhsuk-radios__label" for="ticket-already-claimed-no">
                     Yes
                   </label>
                 </div>
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="ticket-already-claimed-yes" name="ticket-already-claimed" type="radio" value="yes continue">
+                  <input class="nhsuk-radios__input" id="ticket-already-claimed-yes" name="ticket-already-claimed" type="radio" value="remove and continue">
                   <label class="nhsuk-label nhsuk-radios__label" for="ticket-already-claimed-yes">
                     No, remove this ticket from the current claim and continue
                   </label>
                 </div>
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="ticket-already-claimed-delete" name="ticket-already-claimed" type="radio" value="yes cancel">
+                  <input class="nhsuk-radios__input" id="ticket-already-claimed-delete" name="ticket-already-claimed" type="radio" value="no cancel">
                   <label class="nhsuk-label nhsuk-radios__label" for="ticket-already-claimed-delete">
                     No, delete the current claim
                   </label>
