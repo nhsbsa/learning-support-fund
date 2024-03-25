@@ -67,6 +67,8 @@ router.post('/v8/change-phone-number', (req, res) => {
 
   const signIn = req.session.data['sign-in']
 
+  req.session.data['changed'] = 'true';
+
   if (signIn === 'yes'){
     res.redirect('/lsf-public/v8/sign-in-2fa')
   } else {
@@ -1649,12 +1651,18 @@ router.post('/v8/TDAE-travel-accommodation', (req, res) => {
     const change = req.session.data['change']
 
     if (claimingFor.includes('overseas')) {
-        res.redirect('/lsf-public/v8/TDAE-signpost/TDAE-alternative-journey-signpost')
+        res.redirect('/lsf-public/v8/TDAE-overseas-eligibility-pause')
     } else if (change == ('yes')) {
         res.redirect('/lsf-public/v8/TDAE-eligibility-cya')
     } else {
         res.redirect('/lsf-public/v8/TDAE-reuse-answers')
     }
+
+})
+
+router.post('/v8/TDAE-overseas-eligibility-pause', (req, res) => {
+
+  res.redirect('/lsf-public/v8/TDAE-reuse-answers')
 
 })
 

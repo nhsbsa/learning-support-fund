@@ -23,7 +23,11 @@
           </div>
         {% endif %}
 
-        <p>We've sent a text message with a security code to <b>*******6920</b>.
+        <p>We've sent a text message with a security code to <b>*******6920</b>.</p>
+
+        {% if data['changed'] == 'true' %}
+          <p>If you want to change where the text message is sent, you can <a href="phone-number">change the mobile number</a>.</p>
+        {% endif %}
 
         <details class="nhsuk-details">
           <summary class="nhsuk-details__summary">
