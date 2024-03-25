@@ -69,6 +69,15 @@ router.post('/v5/TDAE-add-feedback-note', (req, res) => {
 
 })
 
+// TDAE Add additional TDAE feedback note
+router.post('/v5/read-only/TDAE-add-feedback-note-2', (req, res) => {
+
+    req.session.data['additional-feedback-note'] = 'yes'
+
+    res.redirect('/lsf-web/v5/student-details#tab-Notes')
+
+})
+
 
 // Return to student decline or return
 router.post('/v5/returnordecline', (req, res) => {

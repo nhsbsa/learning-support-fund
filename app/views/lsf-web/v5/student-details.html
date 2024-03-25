@@ -63,7 +63,7 @@ Student details
 						Stephenson House <br>
 						Stoddart St <br>
 						Shieldfield <br>
-						Newcastle upon Tyne
+						Newcastle upon Tyne <br>
 						NE2 1AW
 					</p>
 				</div>
@@ -154,21 +154,51 @@ Student details
 				</div>
 				<div class="nhsuk-tabs__panel" id="tab-Notes">
 					<div class="nhsuk-grid-row">
-						<div class="nhsuk-grid-column-full">
-							<h2 class="nhsuk-heading-xs">Notes</h2>
-              <hr>
-              
-				{% if data['feedback-note'] == 'yes' and data['add-note-student-details'] == 'yes-add-note' %}
-				<h3>Test heading here <span id="currentDate"></span> </h3>
-				<p>{{ data['feedbacknote'] }}</p>
-			  
+						<div class="nhsuk-grid-column-two-thirds">
 
-				<p>[NHSBSA comment]</p>
+							<div class="nhsuk-form-group">
+								<label class="nhsuk-label visually-hidden" for="filter-notes">
+								  
+								</label>
+								<input class="nhsuk-input" id="example" name="filter-notes" type="text" placeholder="Filter notes" value="">
+							  </div>
 
-            	<p>Added by <b>Jane Doe</b></p>
-              	<p id="currentDate" </p>
+
+							<a href="read-only/TDAE-add-feedback-note-2">
+							<button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+								Add note
+							</button>
+							</a>
+						</div>
+
+
+
+			<div class="nhsuk-grid-column-full">
+				<br><br>
+				<h3 class="nhsuk-heading-m">Notes</h3>
+              	
 				<hr>
-            	{% endif %}
+
+				{% if data['additional-feedback-note'] == 'yes' %}
+				<h3>XXXX <span id="currentDate1"></span> </h3>
+				<p>{{ data['additional-feedbacknote'] }}</p>
+			
+				<p>[NHSBSA comment]</p>
+				<p>Added by <b>Joe Bloggs</b></p>
+				<p id="currentDate1"></p>
+				<hr>
+				{% endif %}
+
+				{% if data['feedback-note'] == 'yes' and data['add-note-student-details'] == 'yes-add-note' %}
+					<h3>XXXX <span id="currentDate2"></span> </h3>
+					<p>{{ data['feedbacknote'] }}</p>
+				
+					<p>[NHSBSA comment]</p>
+					<p>Added by <b>Jane Doe</b></p>
+					<p id="currentDate2"></p>
+					<hr>
+				{% endif %}
+
 				
 				
 				<h3>Information mismatch - Attendance not confirmed on 14/10/2023 16:13:51</h3>
@@ -379,21 +409,32 @@ Student details
 
 <script>
     // JavaScript code
-    var currentDateTimeElement = document.getElementById("currentDate");
+    document.addEventListener("DOMContentLoaded", function() {
+        // currentDate1
+        var currentDate1Element = document.getElementById("currentDate1");
+        if (currentDate1Element) {
+            updateDateTime(currentDate1Element);
+        }
 
-    // Get the current date and time
-    var currentDateTime = new Date();
+        // currentDate2
+        var currentDate2Element = document.getElementById("currentDate2");
+        if (currentDate2Element) {
+            updateDateTime(currentDate2Element);
+        }
+    });
 
-    // Format the date and time as desired
-    var options = { day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
-    var formattedDateTime = currentDateTime.toLocaleDateString('en-UK', options);
 
-    // Remove the comma between month and year
-    formattedDateTime = formattedDateTime.replace(',', '');
+    function updateDateTime(element) {
+        var currentDateTime = new Date();
 
-    // Set the formatted date and time as the content of the element
-    currentDateTimeElement.textContent = formattedDateTime;
+        var options = { day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+        var formattedDateTime = currentDateTime.toLocaleDateString('en-UK', options);
 
+        formattedDateTime = formattedDateTime.replace(',', '');
+
+        element.textContent = formattedDateTime;
+    }
 </script>
+
 
 {% endblock %}

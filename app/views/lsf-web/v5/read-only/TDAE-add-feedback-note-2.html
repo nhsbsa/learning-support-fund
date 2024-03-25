@@ -1,0 +1,167 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+      "href": "javascript:history.go(-1)",
+      "text": "Go back"
+    }) }}
+
+  <form action="../v5/read-only/TDAE-add-feedback-note-2" method="POST">
+
+  <p class="nhsuk-u-font-size-22" style="color: grey;">SSRN0010001 - Emmit Mar</p>
+
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="nhsbsa-comments">
+        <h1 class="nhsuk-heading-l">Add a note</h1>
+      </label>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="note-type">
+        Note type
+      </label>
+    <select class="nhsuk-select" id="noteTypes-list" name="noteType.name">
+      <option value="">Please Select...</option>
+      <option id="39" value="Attendance discontinued">Attendance discontinued
+      <option id="41" value="Bank details updated">Bank details updated
+      <option id="53" value="COSA Conflict">COSA Conflict
+      <option id="2" value="Call referrals">Call referrals
+      <option id="8" value="Change of Circumstances">Change of Circumstances
+      <option id="35" value="Change of email address">Change of email address
+      <option id="37" value="Change to course details">Change to course details
+      <option id="17" value="ESF">ESF
+      <option id="10" value="Eligibility">Eligibility
+      <option id="36" value="Email Sent">Email Sent
+      <option id="47" value="Email notification of Parental support non-funded year sent">Email notification of Parental support non-funded year sent
+      <option id="46" value="Email notification of Training grant non-funded year sent">Email notification of Training grant non-funded year sent
+      <option id="11" value="Finance">Finance
+      <option id="15" value="General">General
+      <option id="43" value="HEI overruled student COSA">HEI overruled student COSA
+      <option id="19" value="Maintenance Award">Maintenance Award
+      <option id="1" value="Management Information">Management Information
+      <option id="5" value="Matched student - Attendance confirmed">Matched student - Attendance confirmed
+      <option id="44" value="Matched student - Maternity confirmed">Matched student - Maternity confirmed
+      <option id="9" value="Maternity">Maternity
+      <option id="14" value="New payments Scheduled">New payments Scheduled
+      <option id="38" value="Not enrolled">Not enrolled
+      <option id="6" value="Over payment">Over payment
+      <option id="18" value="Parental support">Parental support
+      <option id="7" value="Payments Held">Payments Held
+      <option id="34" value="Pending - Attendance reset">Pending - Attendance reset
+      <option id="40" value="Personal details updated">Personal details updated
+      <option id="12" value="Quality Assurance">Quality Assurance
+      <option id="4" value="Repeat">Repeat
+      <option id="3" value="Return debtors">Return debtors
+      <option id="16" value="TDAE">TDAE
+      <option id="45" value="Termly COSA status reset">Termly COSA status reset
+      <option id="32" value="Unmatched - Attendance not confirmed">Unmatched - Attendance not confirmed
+      <option id="13" value="Withdrawal">Withdrawal
+      <option id="33" value="Withdrawn - Attendance withdrawn">Withdrawn - Attendance withdrawn
+      <option id="49" value="attandence ">attandence 
+      <option id="48" value="attendance">attendance
+      <option id="50" value="attendance1">attendance1
+      <option id="51" value="attendance2">attendance2
+      <option id="52" value="attendance3">attendance3
+      <option id="42" value="mardan">mardan</select>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="link-activity">
+          Link to activity (optional)
+        </label>
+      <select class="nhsuk-select" id="activityDrop" name="activity">
+        <option id="activityDropdownNull" value=""></option>
+        <option value="1059" id="activityDropdown0">1059 - HEI Late starter rejoiner (Active)</option>
+        <option value="1043" id="activityDropdown1">1043 - Training Grant Simple (Complete)</option>
+      </select>
+      </div>
+
+
+      <label class="nhsuk-label" for="comments">
+        Comments
+      </label>
+    <textarea class="nhsuk-textarea" id="additionalClaimComment" name="additional-feedbacknote" rows="8"></textarea>
+    <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">500 characters remaining</p>
+    <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 500 characters</p>
+
+    <br>
+    <div class="nhsuk-checkboxes__item nhsuk-u-margin-bottom-7">
+      <input class="nhsuk-checkboxes__input" id="add-note" name="refer-student-service" type="checkbox" value="yes-refer">
+      <label class="nhsuk-label nhsuk-checkboxes__label" for="add-note">
+        Refer to Student Services
+      </label>
+    </div>
+
+
+    <button class="nhsuk-button" type="submit">Save and continue</button><br>
+
+  </form>
+
+  </div>
+
+</div>
+
+<script>
+    const textarea = document.querySelector('#additionalClaimComment');
+    const countRemaining = document.getElementById('charactersRemaining');
+    const staticMsg = document.querySelector('#char-count-screen-reader');
+    const maxCharacters = 500;
+    let timeoutId;
+
+    function updateCharacterCount() {
+      const textEntered = textarea.value;
+      const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+      const addition = newLines?.length || 0;
+      const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+
+      if (remainingCharacters >= 0) {
+        countRemaining.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+        countRemaining.classList.remove('nhsbsa-count-error-message');
+        countRemaining.classList.add('nhsuk-hint');
+        textarea.classList.remove('nhsuk-textarea--error');
+      } else {
+        countRemaining.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+        countRemaining.classList.add('nhsbsa-count-error-message');
+        countRemaining.classList.remove('nhsuk-hint');
+        textarea.classList.add('nhsuk-textarea--error');
+      }
+    }
+
+    function updateScreenReaderMessage() {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        const textEntered = textarea.value;
+        const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+        const addition = newLines?.length || 0;
+        const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+        // TO DO ADD FIX FOR 1 CHARACTER
+        if (remainingCharacters < 0) {
+          staticMsg.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+        } else {
+          staticMsg.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+        }
+      }, 500);
+    }
+
+    textarea.addEventListener('input', () => {
+      updateCharacterCount();
+      updateScreenReaderMessage();
+    });
+
+    // Update character count if textarea has a value on page load
+    window.addEventListener('load', () => {
+      updateCharacterCount();
+      updateScreenReaderMessage();
+    });
+  </script>
+
+
+{% endblock %}
