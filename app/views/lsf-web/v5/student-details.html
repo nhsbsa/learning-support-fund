@@ -157,20 +157,21 @@ Student details
 						<div class="nhsuk-grid-column-full">
 							<h2 class="nhsuk-heading-xs">Notes</h2>
               <hr>
-              <h3 class="nhsuk-heading-m">
-				{% if data['feedback-note'] == 'yes' %}
-				{{ data['feedbacknote'] }}
-			  </h3>
+              
+				{% if data['feedback-note'] == 'yes' and data['add-note-student-details'] == 'yes-add-note' %}
+				<h3>Test heading here <span id="currentDate"></span> </h3>
+				<p>{{ data['feedbacknote'] }}</p>
+			  
 
 				<p>[NHSBSA comment]</p>
 
-            	<p>Last updated by <b>Jane Doe</b></p>
+            	<p>Added by <b>Jane Doe</b></p>
               	<p id="currentDate" </p>
 				<hr>
             	{% endif %}
 				
 				
-				Information mismatch - Attendance not confirmed on 14/10/2023 16:13:51</h3>
+				<h3>Information mismatch - Attendance not confirmed on 14/10/2023 16:13:51</h3>
 							<p>An email "NHS Learning Support Fund - information mismatch" has been sent. The university says the information that needs changing is:</p>
 
 							<p>[University comment]</p>
@@ -375,4 +376,24 @@ Student details
 
 
 	</script>
+
+<script>
+    // JavaScript code
+    var currentDateTimeElement = document.getElementById("currentDate");
+
+    // Get the current date and time
+    var currentDateTime = new Date();
+
+    // Format the date and time as desired
+    var options = { day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+    var formattedDateTime = currentDateTime.toLocaleDateString('en-UK', options);
+
+    // Remove the comma between month and year
+    formattedDateTime = formattedDateTime.replace(',', '');
+
+    // Set the formatted date and time as the content of the element
+    currentDateTimeElement.textContent = formattedDateTime;
+
+</script>
+
 {% endblock %}
