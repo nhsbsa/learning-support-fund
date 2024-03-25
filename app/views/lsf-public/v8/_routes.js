@@ -58,6 +58,7 @@ router.post('/v8/sign-in', (req, res) => {
   if (testScenario === 'true'){
     res.redirect('/lsf-public/v8/phone-number-check')
   } else {
+    req.session.data['changed'] = 'false';
     res.redirect('/lsf-public/v8/sign-in-2fa')
   }
 
@@ -82,6 +83,7 @@ router.post('/v8/phone-number-check', (req, res) => {
   const numberCorrect = req.session.data['number-correct']
 
   if (numberCorrect === 'yes'){
+    req.session.data['changed'] = 'false';
     res.redirect('/lsf-public/v8/sign-in-2fa')
   } else {
     req.session.data['sign-in'] = 'yes';
