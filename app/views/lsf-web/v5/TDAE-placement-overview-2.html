@@ -13,8 +13,11 @@ Claim details
     "text": "Go back"
     }) }}
 
-
+    {% if data['name'] === 'Emmit Mar' %}
     <h1 class="nhsuk-heading-l">Period 2 placement journey overview</h1>
+    {% else %}    
+    <h1 class="nhsuk-heading-l">Period 1 placement journey overview</h1>
+    {% endif %}
 
     <p>These are all of the details for the student's journey to and from their placement.</p>
 
@@ -41,7 +44,7 @@ Claim details
             Placement address
           </dt>
           <dd class="nhsuk-summary-list__value">
-            Alnwick Infirmary, NE66 2NS
+            Alnwick Hospital, NE66 2NS
             <details class="nhsuk-details">
               <summary class="nhsuk-details__summary">
                 <span class="nhsuk-details__summary-text">
@@ -49,7 +52,7 @@ Claim details
                 </span>
               </summary>
               <div class="nhsuk-details__text">
-                <b>Alnwick Infirmary</b><br>
+                <b>Alnwick Hospital</b><br>
                 Infirmary Drive<br>
                 Alnwick<br>
                 NE66 2NS

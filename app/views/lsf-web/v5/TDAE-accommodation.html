@@ -40,6 +40,8 @@ Claim details
           </details>
         </dd>
       </div>
+
+      {% if data['name'] === 'Emmit Mar' %}
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key" style="width: 40%;">
           Term-time address
@@ -62,6 +64,31 @@ Claim details
           </details>
         </dd>
       </div>
+      {% else %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Term-time address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          82 Meldon Terrace, NE6 5XQ
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <b>82 Meldon Terrace</b><br>
+              Heaton<br>
+              Newcastle upon Tyne<br>
+              NE6 5XQ
+            </div>
+          </details>
+        </dd>
+      </div>
+      {% endif %}
+
+
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key" style="width: 40%;">
           Placement address
@@ -142,17 +169,32 @@ Claim details
             £221
           </dd>
         </div>
+
+        {% if data['name'] === 'Emmit Mar' %}
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Evidence
           </dt>
           <dd class="nhsuk-summary-list__value">
-            <a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 17 Apr 2023 to 22 Apr 2023">
+            <a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 9 Feb 2024 to 11 Feb 2024">
               Download (PDF)<span class="nhsuk-u-visually-hidden"> evidence</span>
             </a>
           </dd>
         </div>
       </dl>
+      {% else %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Evidence
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/images/Hotel-booking-confirmation.pdf" download="John Doe accommodation evidence 9 Feb 2024 to 11 Feb 2024">
+            Download (PDF)<span class="nhsuk-u-visually-hidden"> evidence</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+      {% endif %}
 
       <h3 class="nhsuk-heading-xs">Student comments</h3>
       <p>Accommodation was slightly more expensive than usual as it was booked last minute.</p>

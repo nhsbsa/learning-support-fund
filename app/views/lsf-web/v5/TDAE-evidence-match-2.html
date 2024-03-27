@@ -16,7 +16,14 @@ Has the student given the correct details and evidence for their placement?
       <form action="v5/TDAE-evidence-match-2" method="POST">
         <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset">
+
+            {% if data['name'] === 'Emmit Mar' %}
             <h1 class="nhsuk-heading-l">Can you process placement travel details for period 2?</h1>
+            {% else %}
+            <h1 class="nhsuk-heading-l">Can you process placement travel details for period 1?</h1>
+            {% endif %}
+
+
             <div class="nhsuk-hint">Use the evidence and notes you have seen to choose whether you can accept these details.</div>
             <div class="nhsuk-radios" data-module="nhsuk-radios">
               <div class="nhsuk-radios__item">

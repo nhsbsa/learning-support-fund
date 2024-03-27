@@ -183,6 +183,44 @@ Student search
             <span class="nhsuk-table-responsive__heading">Email </span>emmit.mar@myemail.com
           </td>
         </tr>
+        {% elif data['student-ref'] === 'SSRN0010003' %}
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Student reference </span><a
+              href="student-details?student number=SSRN0010003&activity number=1873&name=Jane Doe&email=jane.doe@myemail.com&username=jane.doe">SSRN0010003</a>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Name </span>Jane Doe
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date of birth </span>4 January 2006
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Postcode </span>NE2 1DT
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Email </span>jane.doe@myemail.com
+          </td>
+        </tr>
+        {% elif data['student-ref'] === 'SSRN0010004' %}
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Student reference </span><a
+              href="student-details?student number=SSRN0010004&activity number=1544&name=John Doe&email=john.doe@myemail.com&username=john.doe">SSRN0010004</a>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Name </span>John Doe
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date of birth </span>14 September 2004
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Postcode </span>NE6 5XQ
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Email </span>john.doe@myemail.com
+          </td>
+        </tr>
         {% else %}
         <tr role="row" class="nhsuk-table__row">
           <td role="cell" class="nhsuk-table__cell">
@@ -214,10 +252,46 @@ Student search
             <span class="nhsuk-table-responsive__heading">Date of birth </span>15 November 2000
           </td>
           <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Postcode </span>NE11 1AB
+            <span class="nhsuk-table-responsive__heading">Postcode </span>NE2 1AW
           </td>
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Email </span>emmit.mar@myemail.com
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Student reference </span><a
+              href="student-details?student number=SSRN0010003&activity number=1873&name=Jane Doe&email=jane.doe@myemail.com&username=jane.doe">SSRN0010003</a>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Name </span>Jane Doe
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date of birth </span>4 January 2006
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Postcode </span>NE2 1DT
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Email </span>jane.doe@myemail.com
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Student reference </span><a
+              href="student-details?student number=SSRN0010004&activity number=1544&name=John Doe&email=john.doe@myemail.com&username=john.doe">SSRN0010004</a>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Name </span>John Doe
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date of birth </span>14 September 2004
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Postcode </span>NE6 5XQ
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Email </span>john.doe@myemail.com
           </td>
         </tr>
         {% endif %}

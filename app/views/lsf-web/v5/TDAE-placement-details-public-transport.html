@@ -14,10 +14,15 @@ Claim details
     }) }}
 
 
+    {% if data['name'] === 'Emmit Mar' %}
     <h1 class="nhsuk-heading-l">Period 2 public transport tickets</h1>
-
+    {% else %}
+    <h1 class="nhsuk-heading-l">Period 1 public transport tickets</h1>
+    {% endif %}
+    
     <p>These are the details for public transport tickets the student paid travelling to and from their placement.</p>
 
+    {% if data['name'] === 'Emmit Mar' %}
     <dl class="nhsuk-summary-list">
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key" style="width: 40%;">
@@ -51,6 +56,76 @@ Claim details
       </div>
     </dl>
 
+
+    {% elif data['name'] === 'Jane Doe' %}
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Term-time address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Flat 12 / Room 6, NE2 1DT
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <b>Flat 12 / Room 6</b><br>
+              Portland Road<br>
+              Shieldfield<br>
+              Newcastle upon Tyne<br>
+              NE2 1DT
+            </div>
+          </details>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Student travel evidence comments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          I have sent a screenshot of my bus app for the weekly ticket and an image of the train tickets but I lost one of them on the way home so I could only upload evidence for 3 of them.
+        </dd>
+      </div>
+    </dl>
+
+
+    {% else %}
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Term-time address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          82 Meldon Terrace, NE6 5XQ
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <b>82 Meldon Terrace</b><br>
+              Heaton<br>
+              Newcastle upon Tyne<br>
+              NE6 5XQ
+            </div>
+          </details>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Student travel evidence comments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          I have sent a screenshot of my bus app for the weekly ticket and an image of the train tickets but I lost one of them on the way home so I could only upload evidence for 3 of them.
+        </dd>
+      </div>
+    </dl>
+    {% endif %}
+
     <details class="nhsuk-details">
       <summary class="nhsuk-details__summary">
         <span class="nhsuk-details__summary-text">
@@ -58,7 +133,7 @@ Claim details
         </span>
       </summary>
       <div class="nhsuk-details__text">
-        <b>Alnwick Infirmary</b><br>
+        <b>Alnwick Hospital</b><br>
           Infirmary Drive<br>
           Alnwick<br>
           NE66 2NS
@@ -139,7 +214,7 @@ Claim details
             <span class="nhsuk-table-responsive__heading">Date </span> Friday 2 February 2024 to Thursday 8 February 2024
           </td>
           <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Placement address </span>Alnwick Infirmary
+            <span class="nhsuk-table-responsive__heading">Placement address </span>Alnwick Hospital
           </td>
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Cost </span>£12
@@ -157,7 +232,7 @@ Claim details
             <span class="nhsuk-table-responsive__heading">Date </span>Friday 2 February 2024
           </td>
           <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Placement address </span>Alnwick Infirmary
+            <span class="nhsuk-table-responsive__heading">Placement address </span>Alnwick Hospital
           </td>
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Cost </span>£8.60
@@ -175,7 +250,7 @@ Claim details
             <span class="nhsuk-table-responsive__heading">Date </span>Saturday 3 February 2024
           </td>
           <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Placement address </span>Alnwick Infirmary
+            <span class="nhsuk-table-responsive__heading">Placement address </span>Alnwick Hospital
           </td>
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Cost </span>£8.60
@@ -193,7 +268,7 @@ Claim details
             <span class="nhsuk-table-responsive__heading">Date </span>Sunday 4 February 2024
           </td>
           <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Placement address </span>Alnwick Infirmary
+            <span class="nhsuk-table-responsive__heading">Placement address </span>Alnwick Hospital
           </td>
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Cost </span>£8.60
@@ -211,7 +286,7 @@ Claim details
             <span class="nhsuk-table-responsive__heading">Date </span>Monday 5 February 2024
           </td>
           <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Placement address </span>Alnwick Infirmary
+            <span class="nhsuk-table-responsive__heading">Placement address </span>Alnwick Hospital
           </td>
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Cost </span>£8.60
