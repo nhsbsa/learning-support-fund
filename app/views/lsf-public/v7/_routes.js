@@ -132,7 +132,7 @@ router.post('/v7/TDAE-ticket-already-claimed', (req, res) => {
   const ticketClaimed = req.session.data['ticket-already-claimed']
 
   if (ticketClaimed === 'yes'){
-    res.redirect('/lsf-public/v7/TDAE-public-transport-day')
+    res.redirect('/lsf-public/v7/TDAE-public-transport-days')
   } else if (ticketClaimed === 'remove and continue'){
     res.redirect('/lsf-public/v7/TDAE-signpost/TDAE-sure-remove-all')
   } else {
