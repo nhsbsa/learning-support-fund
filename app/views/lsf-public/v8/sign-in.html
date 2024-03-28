@@ -26,10 +26,11 @@
 
         <style>
           .nhsbsa-button__password {
-            padding: 2px;
+            padding: 4px;
             width:100%;
             margin-top:10px;
             background:#005eb8;
+            box-shadow: 0 4px 0 #003d78;
             color: #fff;
           }
           .nhsbsa-button__password:hover {
@@ -40,9 +41,13 @@
             background: #003d78;
             color: #fff;
           }
-          @media only screen and (min-width:641px) {
+          @media (min-width: 40.0625em) {
             .nhsbsa-button__password {
               padding: 2px;
+            }
+          }
+          @media only screen and (min-width:441px) {
+            .nhsbsa-button__password {
               width: auto;
               min-width: 80px;
               margin-top: 0px;
@@ -51,7 +56,6 @@
           }
           @media screen and (max-width: 825px) and (min-width: 769px) {
             .nhsbsa-button__password {
-              padding: 2px;
               width: 100%;
               min-width: 70px;
               margin-top: 20px;
