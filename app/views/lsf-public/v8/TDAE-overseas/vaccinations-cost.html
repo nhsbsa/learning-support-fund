@@ -1,0 +1,60 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Is your term time address the same?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="vaccinations-evidence" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  How much did your vaccinations cost?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-hint">If you had multiple vaccinations enter the total amount</div>
+
+              <label class="nhsuk-label" for="example">
+      					Cost in pounds
+      				</label>
+              <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+              <input class="nhsuk-input__prefix-input nhsuk-input nhsuk-input--width-5" id="accommodation-cost" name="accommodation-cost" type="text">
+
+
+
+            </fieldset>
+
+          </div>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                How to convert foreign currency
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>Guidance here...</p>
+            </div>
+          </details>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <p><a href="../TDAE-task-list">Cancel</a></p>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

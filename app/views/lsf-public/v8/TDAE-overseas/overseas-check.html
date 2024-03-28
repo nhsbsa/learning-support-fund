@@ -1,0 +1,148 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<!-- <form action="" method="POST"> -->
+
+		<h1 class="nhsuk-heading-xl">Check your overseas costs answers</h1>
+
+			<dl class="nhsuk-summary-list">
+
+				<!-- taxi authorised by -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Overseas costs paid for
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['overseas-cost'] %}
+							{{ data['overseas-cost'] }}
+							{% else %}
+							Visa fees
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						<a href="which-costs">
+							Change<span class="nhsuk-u-visually-hidden">overseas costs paid for</span>
+						</a>
+					</dd>
+					{% endif %}
+				</div>
+
+			</dl>
+
+			<details class="nhsuk-details nhsuk-expander">
+			  <summary class="nhsuk-details__summary">
+			    <span class="nhsuk-details__summary-text">
+			      Insurance
+			    </span>
+			  </summary>
+			  <div class="nhsuk-details__text">
+
+			  </div>
+			</details>
+
+			<details class="nhsuk-details nhsuk-expander">
+			  <summary class="nhsuk-details__summary">
+			    <span class="nhsuk-details__summary-text">
+			      Medical tests
+			    </span>
+			  </summary>
+			  <div class="nhsuk-details__text">
+
+			  </div>
+			</details>
+
+			<details class="nhsuk-details nhsuk-expander">
+			  <summary class="nhsuk-details__summary">
+			    <span class="nhsuk-details__summary-text">
+			      Vaccinations
+			    </span>
+			  </summary>
+			  <div class="nhsuk-details__text">
+
+			  </div>
+			</details>
+
+			<details class="nhsuk-details nhsuk-expander">
+			  <summary class="nhsuk-details__summary">
+			    <span class="nhsuk-details__summary-text">
+			      Visa fees
+			    </span>
+			  </summary>
+			  <div class="nhsuk-details__text">
+
+			  </div>
+			</details>
+
+
+			<h2 class="nhsuk-heading-m">Total overseas costs to be reimbursed</h2>
+	    <dl class="nhsuk-summary-list">
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Total overseas costs
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+							£10
+					</dd>
+				</div>
+	    </dl>
+
+
+			{% if data['submit-claim'] != 'completed' %}
+				<form action="/lsf-public/v8/TDAE-task-list?taxi-details=completed" method="POST">
+					<button class="nhsuk-button" type="submit">Save and continue</button>
+				</form>
+				<p><a href="../TDAE-task-list">Cancel</a></p>
+			{% endif %}
+
+		<!-- </form> -->
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			const months = {
+				"01": "January",
+				"02": "February",
+				"03": "March",
+				"04": "April",
+				"05": "May",
+				"06": "June",
+				"07": "July",
+				"08": "August",
+				"09": "September",
+				"1": "January",
+				"2": "February",
+				"3": "March",
+				"4": "April",
+				"5": "May",
+				"6": "June",
+				"7": "July",
+				"8": "August",
+				"9": "September",
+				"10": "October",
+				"11": "November",
+				"12": "December",
+			};
+
+			$(".cya-month").text(function () {
+				const month = $(this).text();
+				console.log("month:", month);
+				console.log("months[month]:", months[month]);
+				return months[month];
+			});
+		});
+		</script>
+
+</div>
+{% endblock %}

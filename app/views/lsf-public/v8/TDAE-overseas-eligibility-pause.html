@@ -1,0 +1,64 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  What will you be claiming for?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+    <form action="v8/TDAE-overseas-eligibility-pause" method="POST">
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Overseas costs
+            </h1>
+          </legend>
+
+          <p>You can claim back for overseas placements the cost of:</p>
+
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>insurance</li>
+            <li>medical tests</li>
+            <li>vaccinations</li>
+            <li>visa fees</li>
+          </ul>
+
+          <p>You can also claim back travel and accommodation within the UK or the host country. You can do this in the same way you would claim these costs within the UK.</p>
+
+          <p>You can not claim:</p>
+
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>travel from the UK to the host country such as air fares</li>
+            <li>placement arrangement fees and any associated administrative fees</li>
+            <li>additional tuition fees charged by the placement provider</li>
+            <li>food</li>
+            <li>tips</li>
+            <li>phone calls</li>
+          </ul>
+
+        </fieldset>
+
+      </div>
+
+      <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-start-claim">Change what costs you paid for</a>
+      <br>
+      <button class="nhsuk-button" type="submit">Continue</button><br>
+      <a href="TDAE-start-claim">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

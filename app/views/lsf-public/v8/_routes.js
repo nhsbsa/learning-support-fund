@@ -9,6 +9,186 @@ const session = require('express-session');
 // const moment = require('moment');
 const router = express.Router();
 
+// TDAE Overseas
+
+router.post('/v8/TDAE-overseas/which-costs', (req, res) => {
+
+  const overseasCost = req.session.data['overseas-cost']
+
+  if (overseasCost.includes('insurance')){
+    res.redirect('/lsf-public/v8/TDAE-overseas/insurance-cost')
+  } else if (overseasCost.includes('medical-tests')){
+    res.redirect('/lsf-public/v8/TDAE-overseas/medical-tests-cost')
+  } else if (overseasCost.includes('vaccinations')){
+    res.redirect('/lsf-public/v8/TDAE-overseas/vaccinations-cost')
+  } else if (overseasCost.includes('visa-fees')){
+    res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
+  } else {
+    res.redirect('/lsf-public/v8/TDAE-taxi/travelling-to')
+  }
+
+})
+
+router.post('/v8/TDAE-overseas/insurance-evidence-mini-cya', (req, res) => {
+
+  const moreInsuranceEvidence = req.session.data['more-insurance-evidence']
+
+  if (moreInsuranceEvidence === 'yes'){
+    res.redirect('/lsf-public/v8/TDAE-overseas/insurance-evidence')
+  } else {
+    res.redirect('/lsf-public/v8/TDAE-overseas/insurance-comment')
+  }
+
+})
+
+router.post('/v8/TDAE-overseas/insurance-comment', (req, res) => {
+
+  const insuranceCosts = req.session.data['insurance-comments']
+  const overseasCost = req.session.data['overseas-cost']
+
+  if (insuranceCosts === 'yes'){
+    res.redirect('/lsf-public/v8/TDAE-overseas/insurance-add-comment')
+  } else if (overseasCost.includes('medical-tests')) {
+    res.redirect('/lsf-public/v8/TDAE-overseas/medical-tests-cost')
+  } else if (overseasCost.includes('vaccinations')) {
+    res.redirect('/lsf-public/v8/TDAE-overseas/vaccinations-cost')
+  } else if (overseasCost.includes('visa-fees')) {
+    res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
+  } else {
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-check')
+  }
+
+})
+
+router.post('/v8/TDAE-overseas/insurance-add-comment', (req, res) => {
+
+  const overseasCost = req.session.data['overseas-cost']
+
+  if (overseasCost.includes('medical-tests')) {
+    res.redirect('/lsf-public/v8/TDAE-overseas/medical-tests-cost')
+  } else if (overseasCost.includes('vaccinations')) {
+    res.redirect('/lsf-public/v8/TDAE-overseas/vaccinations-cost')
+  } else if (overseasCost.includes('visa-fees')) {
+    res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
+  } else {
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-check')
+  }
+
+})
+
+router.post('/v8/TDAE-overseas/medical-tests-evidence-mini-cya', (req, res) => {
+
+  const moreMedicalTestsEvidence = req.session.data['more-medical-tests-evidence']
+
+  if (moreMedicalTestsEvidence === 'yes'){
+    res.redirect('/lsf-public/v8/TDAE-overseas/medical-tests-evidence')
+  } else {
+    res.redirect('/lsf-public/v8/TDAE-overseas/medical-tests-comment')
+  }
+
+})
+
+router.post('/v8/TDAE-overseas/medical-tests-comment', (req, res) => {
+
+  const medicalTestsComments = req.session.data['medical-tests-comments']
+  const overseasCost = req.session.data['overseas-cost']
+
+  if (medicalTestsComments === 'yes'){
+    res.redirect('/lsf-public/v8/TDAE-overseas/medical-tests-add-comment')
+  } else if (overseasCost.includes('vaccinations')) {
+    res.redirect('/lsf-public/v8/TDAE-overseas/vaccinations-cost')
+  } else if (overseasCost.includes('visa-fees')) {
+    res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
+  } else {
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-check')
+  }
+
+})
+
+router.post('/v8/TDAE-overseas/medical-tests-add-comment', (req, res) => {
+
+  const overseasCost = req.session.data['overseas-cost']
+
+  if (overseasCost.includes('vaccinations')) {
+    res.redirect('/lsf-public/v8/TDAE-overseas/vaccinations-cost')
+  } else if (overseasCost.includes('visa-fees')) {
+    res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
+  } else {
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-check')
+  }
+
+})
+
+router.post('/v8/TDAE-overseas/vaccinations-evidence-mini-cya', (req, res) => {
+
+  const moreVaccinationsEvidence = req.session.data['more-vaccinations-evidence']
+
+  if (moreVaccinationsEvidence === 'yes'){
+    res.redirect('/lsf-public/v8/TDAE-overseas/vaccinations-evidence')
+  } else {
+    res.redirect('/lsf-public/v8/TDAE-overseas/vaccinations-comment')
+  }
+
+})
+
+router.post('/v8/TDAE-overseas/vaccinations-comment', (req, res) => {
+
+  const vaccinationsComments = req.session.data['vaccinations-comments']
+  const overseasCost = req.session.data['overseas-cost']
+
+  if (vaccinationsComments === 'yes'){
+    res.redirect('/lsf-public/v8/TDAE-overseas/vaccinations-add-comment')
+  } else if (overseasCost.includes('visa-fees')) {
+    res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
+  } else {
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-check')
+  }
+
+})
+
+router.post('/v8/TDAE-overseas/vaccinations-add-comment', (req, res) => {
+
+  const overseasCost = req.session.data['overseas-cost']
+
+  if (overseasCost.includes('visa-fees')) {
+    res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
+  } else {
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-check')
+  }
+
+})
+
+router.post('/v8/TDAE-overseas/visa-fees-evidence-mini-cya', (req, res) => {
+
+  const moreVisaFeesEvidence = req.session.data['more-visa-fees-evidence']
+
+  if (moreVisaFeesEvidence === 'yes'){
+    res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-evidence')
+  } else {
+    res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-comment')
+  }
+
+})
+
+router.post('/v8/TDAE-overseas/visa-fees-comment', (req, res) => {
+
+  const visaFeesComments = req.session.data['visa-fees-comments']
+  const overseasCost = req.session.data['overseas-cost']
+
+  if (visaFeesComments === 'yes'){
+    res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-add-comment')
+  } else {
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-check')
+  }
+
+})
+
+router.post('/v8/TDAE-overseas/visa-fees-add-comment', (req, res) => {
+
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-check')
+
+})
+
 // TDAE Taxis
 
 router.post('/v8/travelling-from', (req, res) => {

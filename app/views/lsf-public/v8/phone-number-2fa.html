@@ -34,9 +34,15 @@
               Not received a text message?
             </span>
           </summary>
+          {% if data['request-new'] == 'max' %}
           <div class="nhsuk-details__text">
-            <p>Text messages sometimes take a few minutes to arrive. If you do not receive the text message, you can <a href="phone-number-2fa?send-again=true">request a new one</a>.</p>
+            <p>Text messages sometimes take a few minutes to arrive. You cannot request a new code as you've reached the maximum number of codes you can receive.</p>
           </div>
+          {% else %}
+          <div class="nhsuk-details__text">
+            <p>Text messages sometimes take a few minutes to arrive. If you do not receive the text message, you can <a href="phone-number-2fa?send-again=true&request-new=max">request a new one</a>.</p>
+          </div>
+          {% endif %}
         </details>
 
         <div class="nhsuk-form-group">

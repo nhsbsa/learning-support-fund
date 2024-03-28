@@ -1,0 +1,80 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Travel between accommodation and term time journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="../v8/TDAE-overseas/which-costs" method="POST">
+
+          <h1 class="nhsuk-heading-l">Which overseas costs did you pay for?</h1>
+
+          <div class="nhsuk-hint" id="symptoms-hint">
+            Select all that apply
+          </div>
+
+          <div class="nhsuk-checkboxes">
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="overseas-cost-1" name="overseas-cost" type="checkbox" value="insurance">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="overseas-cost-1">
+                insurance
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="overseas-cost-2" name="overseas-cost" type="checkbox" value="medical-tests">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="overseas-cost-2">
+                medical tests
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="overseas-cost-3" name="overseas-cost" type="checkbox" value="vaccinations">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="overseas-cost-3">
+                vaccinations
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="overseas-cost-4" name="overseas-cost" type="checkbox" value="visa-fees">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="overseas-cost-4">
+                visa fees
+              </label>
+            </div>
+
+          </div>
+
+          <p></p>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                I paid for a different overseas cost
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>If you paid for travel and/or accommodation within the UK or the placement host country. You should add the type of travel and/or accommodation to the <a href="../TDAE-tracel-accommodation">costs you paid for</a>.</p>
+              <p>Any other costs incurred while travelling overseas cannot be claimed back.</p>
+            </div>
+          </details>
+
+
+          <button class="nhsuk-button" type="submit">Save and continue</button>
+      		<p><a href="../TDAE-task-list">Cancel</a></p>
+
+      </form>
+
+    </div>
+
+</div>
+{% endblock %}

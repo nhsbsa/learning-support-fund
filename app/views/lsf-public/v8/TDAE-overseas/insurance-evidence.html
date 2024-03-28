@@ -1,0 +1,51 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Upload your evidence for week 2
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="insurance-evidence-mini-cya" method="POST">
+
+      <div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+					<h1 class="nhsuk-heading-l">Upload evidence of the insurance cost</h1>
+				</label>
+
+      <p>You need to show us evidence of your insurance. For example, a receipt or invoice.</p>
+
+      <p class="nhsuk-hint">Evidence must be:</p>
+      <ul class="nhsuk-list nhsuk-list--bullet nhsuk-hint">
+        <li>JPG, JPEG, PNG or PDF format</li>
+        <li>no more than 8MB</li>
+      </ul>
+      <p class="nhsuk-hint">Before you upload your evidence, check that it's not upside down or sideways. If it is, rotate it until it's readable.</p>
+
+      <div class="nhsuk-form-group nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-7">
+        <label class="nhsuk-label nhsuk-u-visually-hidden" for="file-upload-1">
+            Upload your evidence file
+        </label>
+        <input class="nhsuk-input" id="file-upload-1" name="file-upload-1" type="file">
+      </div>
+
+      <button class="nhsuk-button" type="submit">Upload evidence</button><br>
+
+      <p><a href="../TDAE-task-list">Cancel</a></p>
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}
