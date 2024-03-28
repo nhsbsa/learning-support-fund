@@ -12,17 +12,83 @@
         <h1 class="nhsuk-heading-l">Sign in to NHS Learning Support Fund</h1>
 
         <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="sign-in-username">
-              Username or email address
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="sign-in-username" name="sign-in-username" type="text">
+          <label class="nhsuk-label" for="sign-in-username">
+            Username or email address
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="sign-in-username" name="sign-in-username" type="text">
         </div>
+
         <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="sign-in-password">
-              Password
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="sign-in-password" name="sign-in-password" type="password">
+          <label class="nhsuk-label" for="sign-in-password">Password</label>
+          <input class="nhsbsa-input__password nhsuk-input nhsuk-input--width-20" id="sign-in-password" name="sign-in-password" type="password" spellcheck="false" autocomplete="current-password" autocapitalize="none">
+          <button type="button" class="js-disabled nhsbsa-button__password nhsuk-button" data-module="nhsuk-button" aria-controls="sign-in-password" aria-label="Show password">Show</button>
         </div>
+
+        <style>
+          .nhsbsa-button__password {
+            padding: 2px;
+            width:100%;
+            margin-top:10px;
+            background:#005eb8;
+            color: #fff;
+          }
+          .nhsbsa-button__password:hover {
+            background: #004d98;
+            color: #fff;
+          }
+          .nhsbsa-button__password:active {
+            background: #003d78;
+            color: #fff;
+          }
+          @media only screen and (min-width:641px) {
+            .nhsbsa-button__password {
+              padding: 2px;
+              width: auto;
+              min-width: 80px;
+              margin-top: 0px;
+              margin-left: 15px;
+            }
+          }
+          @media screen and (max-width: 825px) and (min-width: 769px) {
+            .nhsbsa-button__password {
+              padding: 2px;
+              width: 100%;
+              min-width: 70px;
+              margin-top: 20px;
+              margin-left: 0px;
+            }
+          }
+        </style>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var buttons = document.querySelectorAll('.nhsbsa-button__password');
+          
+            buttons.forEach(function(button) {
+              button.addEventListener('click', function() {
+                console.log('this has run')
+                var input = this.previousElementSibling;
+          
+                // Toggle input type between 'password' and 'text'
+                input.type = input.type === 'password' ? 'text' : 'password';
+          
+                if (input.type === 'text') {
+                  this.textContent = 'Hide';
+                  this.setAttribute('aria-label', 'Hide password');
+                  } else {
+                  this.textContent = 'Show';
+                  this.setAttribute('aria-label', 'Show password');
+                }
+              });
+            });
+          });
+        </script>
+        <noscript>
+          <style>
+            .js-disabled {
+              display:none;
+            }
+          </style>
+        </noscript>
 
         <form action="v8/sign-in" method="POST">
           <button class="nhsuk-button" type="submit">Sign in</button><br>
