@@ -351,8 +351,37 @@
                   <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
                 {% endif %}
               </li>
+            
+            <li class="app-task-list__item nhsuk-u-clear">
+                <span class="app-task-list__task-name">
+                  <a href="TDAE-accommodation-travel" aria-describedby="eligibility-status">
+                    Check accommodation travel journey 1 details
+                  </a>
+                </span>
+                {% if data['accommodation-travel-completed'] === 'completed' %}
+                  <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
+                {% elif data['accommodation-travel-completed'] === 'in-progress' %}
+                  <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to student</strong>
+                {% else %}
+                  <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
+                {% endif %}
+              </li>
+
+              <li class="app-task-list__item nhsuk-u-clear">
+                <span class="app-task-list__task-name">
+                  <a href="TDAE-accommodation-travel-2" aria-describedby="eligibility-status">
+                    Check accommodation travel journey 2 details
+                  </a>
+                </span>
+                {% if data['accommodation-travel-completed-2'] === 'completed' %}
+                  <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
+                {% elif data['accommodation-travel-completed-2'] === 'in-progress' %}
+                  <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to student</strong>
+                {% else %}
+                  <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
+                {% endif %}
+              </li>
             </ul>
-          </li>
         {% endif %}
 
         {% if data['read-only'] != 'true' %}
