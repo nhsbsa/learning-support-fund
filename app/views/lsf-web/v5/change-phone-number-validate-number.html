@@ -7,12 +7,12 @@ Student details
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <form action="v5/change-phone-number-validate" method="POST">
+    <form action="change-phone-number-note" method="POST">
       <h1 class="nhsuk-heading-l">
         {% if data['send-again'] == 'true' %}
           New security code emailed to student
         {% else %}
-  			  Security code emailed to student
+  			  Security code text message sent to student
         {% endif %}
   		</h1>
 
@@ -37,16 +37,16 @@ Student details
       <details class="nhsuk-details">
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-details__summary-text">
-            Not received an email?
+            Not received an text message?
           </span>
         </summary>
         {% if data['request-new'] == 'max' %}
         <div class="nhsuk-details__text">
-          <p>Emails sometimes take a few minutes to arrive. You cannot request a new code as you've reached the maximum number of codes you can request.</p>
+          <p>Text messages sometimes take a few minutes to arrive. You cannot request a new code as you've reached the maximum number of codes you can request.</p>
         </div>
         {% else %}
         <div class="nhsuk-details__text">
-          <p>Emails sometimes take a few minutes to arrive. If the student does not receive the email, you can <a href="change-phone-number-validate?send-again=true">send a new one</a>.</p>
+          <p>Text messages sometimes take a few minutes to arrive. If the student does not receive the text message, you can <a href="change-phone-number-validate?send-again=true">request a new one</a>.</p>
         </div>
         {% endif %}
       </details>

@@ -8,14 +8,21 @@ Student details
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
     <h1 class="nhsuk-heading-l">
-			Why are you changing the student's mobile number?
+			Why are you changing the student's phone number?
 		</h1>
 		<div class="nhsuk-form-group">
+      <div class="nhsuk-hint">This will appear in the Notes section of Student details.</div>
       <textarea class="nhsuk-textarea" id="additionalCostsComment" name="accomodation-comments-added" rows="8"></textarea>
       <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">500 characters remaining</p>
       <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 500 characters</p>
     </div>
-    <a class="nhsuk-button" href="change-phone-number-validate?number=changed">Save and continue</a><br>
+    <div class="nhsuk-form-group">
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>We'll email the student a link to change their phone number.</p>
+      </div>
+    </div>
+    <a class="nhsuk-button" href="change-phone-number-changed">Save and continue</a><br>
     <p><a href="student-details-change">Cancel</a></p>
   </div>
 </div>

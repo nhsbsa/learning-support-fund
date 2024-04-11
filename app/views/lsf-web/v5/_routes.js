@@ -42,16 +42,7 @@ router.post('/v5/update-role', (req, res) => {
 
 router.post('/v5/change-phone-number-validate', (req, res) => {
 
-    const correctCode = req.session.data['correct-code']
-
-    if (correctCode === 'no send') {
-      req.session.data['send-again'] = 'true'
-      res.redirect('/lsf-web/v5/change-phone-number-validate')
-    } else if (correctCode === 'no cancel') {
-      res.redirect('/lsf-web/v5/student-details-change')
-    } else {
-      res.redirect('/lsf-web/v5/change-phone-number-changed')
-    }
+      res.redirect('/lsf-web/v5/change-phone-number')
 
 })
 
