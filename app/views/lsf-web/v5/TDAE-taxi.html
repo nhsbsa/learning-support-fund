@@ -1,0 +1,160 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Taxi journey details</h1>
+
+    <p>These are the details for the student's taxi journey.</p>
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Authorised by
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          John Doe
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Authoriser's role
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Placement co-ordinator
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Reason for taxi
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          I had a sudden bout of illness during my night shift,
+          I didn't feel comfortable walking in early hours through the city centre so got a taxi back home instead
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Authorisation uploaded
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/images/hire-car-feb-2024.jpg" target="_blank" rel="noopener">university-email.pdf<span class="nhsuk-u-visually-hidden">opens in new tab</span></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          23 February 2024
+        </dd>
+      </div>
+     
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Travelling from
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          RVI Newcastle, NE1 4LP
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <b>RVI Newcastle</b><br>
+              Queen Victoria Rd<br>
+              Newcastle upon Tyne<br>
+              NE1 4LP
+            </div>
+          </details>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Travelling to
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Stephenson House, NE2 1AW
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <b>Stephenson House</b><br>
+              Stoddart St<br>
+              Shieldfield<br>
+              Newcastle upon Tyne <br>
+              NE2 1AW
+            </div>
+          </details>
+        </dd>
+      </div>
+
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £10
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Evidence uploaded
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/images/hire-car-feb-2024.jpg" target="_blank" rel="noopener">taxi-receipt.pdf<span class="nhsuk-u-visually-hidden">opens in new tab</span></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student comments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          None.
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Costs to be reimbursed
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+         £10
+        </dd>
+      </div>
+
+    </dl>
+
+    {% if data['read-only'] != 'true' %}
+      <a class="nhsuk-button" href="TDAE-taxi-check">Continue</a>
+    {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

@@ -185,6 +185,20 @@ Claim checks
               <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
             {% endif %}
           </li>
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              <a href="TDAE-taxi" aria-describedby="eligibility-status">
+                Check taxi journey details
+              </a>
+            </span>
+            {% if data['taxi-check'] === 'yes' %}
+              <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
+            {% elif data['taxi-check'] === 'no' %}
+              <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to university</strong>
+            {% else %}
+              <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
+            {% endif %}
+          </li>
         </ul>
       </li>
 
@@ -251,27 +265,7 @@ Claim checks
           </li>
         </ul>
       </li>
-      <!--<li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">3. </span> Authorisation details
-        </h2>
-        <ul class="app-task-list__items">
-          <li class="app-task-list__item nhsuk-u-clear">
-            <span class="app-task-list__task-name">
-              <a href="TDAE-authoriser-details" aria-describedby="eligibility-status">
-                Check Authoriser details
-              </a>
-            </span>
-            {% if data['hei-completed'] === 'completed' %}
-              <strong class="nhsuk-tag" style="float: right;" id="eligibility-status">Completed</strong>
-            {% elif data['hei-completed'] === 'in-progress' %}
-              <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to University</strong>
-            {% else %}
-              <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
-            {% endif %}
-          </li>
-        </ul>
-      </li>-->
+
 
       {% elif data['name'] === 'Jane Doe' %}
       {% if data['read-only'] != 'true' %}

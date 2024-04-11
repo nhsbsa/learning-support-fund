@@ -220,6 +220,12 @@ router.post('/v5/TDAE-hire-vehicle-check', (req, res) => {
 
 })
 
+router.post('/v5/TDAE-taxi-check', (req, res) => {
+
+    res.redirect('/lsf-web/v5/TDAE-student-claim')
+
+})
+
 router.post('/v5/TDAE-authoriser-approved', (req, res) => {
 
     const heiApproved = req.session.data['hei-details']
