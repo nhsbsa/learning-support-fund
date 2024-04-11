@@ -17,7 +17,16 @@ Claim details
 
     <p>These are the details for the student's first accommodation booking.</p>
 
+    {% if data['name'] === 'Emmit Mar' %}
     <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Paying for term time accommodation
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Yes
+        </dd>
+      </div>
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
           Placement accommodation address
@@ -40,11 +49,9 @@ Claim details
           </details>
         </dd>
       </div>
-
-      {% if data['name'] === 'Emmit Mar' %}
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key" style="width: 40%;">
-          Term-time address
+          Term time address
         </dt>
         <dd class="nhsuk-summary-list__value">
           Stephenson House, NE2 1AW
@@ -65,9 +72,48 @@ Claim details
         </dd>
       </div>
       {% else %}
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Paying for term time accommodation
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            No
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Living with parents
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Yes
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Placement accommodation address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            The Village Inn, NE65 8AD
+            <details class="nhsuk-details" style="margin-bottom: 0;">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <b>The Village Inn</b><br>
+                Front St<br>
+                Longframlington<br>
+                Morpeth<br>
+                NE65 8AD
+              </div>
+            </details>
+          </dd>
+        </div>
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key" style="width: 40%;">
-          Term-time address
+          Term time address
         </dt>
         <dd class="nhsuk-summary-list__value">
           82 Meldon Terrace, NE6 5XQ
@@ -94,7 +140,7 @@ Claim details
           Placement address
         </dt>
         <dd class="nhsuk-summary-list__value">
-          Alnwick Infirmary,  NE66 2NS
+          Alnwick Hospital,  NE66 2NS
           <details class="nhsuk-details" style="margin-bottom: 0;">
             <summary class="nhsuk-details__summary">
               <span class="nhsuk-details__summary-text">
@@ -102,7 +148,7 @@ Claim details
               </span>
             </summary>
             <div class="nhsuk-details__text">
-            <b>Alnwick Infirmary</b><br>
+            <b>Alnwick Hospital</b><br>
                 Infirmary Drive<br>
                 Alnwick<br>
                 NE66 2NS
