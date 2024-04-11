@@ -27,10 +27,11 @@ Claim checks
       </ul>
     </div> -->
     {% if data['name'] === 'Emmit Mar' %}
+
     {% if data['read-only'] != 'true' %}
-    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim.</h2>
-    <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed {% if data['status'] === 'Returned from NHSBSA' %}1{% else %}0{% endif %} of 3 sections.</p>
-    {% endif %}
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim.</h2>
+        <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed <span id="completedCount">0</span> of <span id="sectionLength">3</span> sections.</p>
+      {% endif %}
 
     {% if data['status'] == 'University processing' %}
     <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-7">Claim currently being processed by Samuel Jackson</h2>
