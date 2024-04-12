@@ -149,6 +149,34 @@ router.post('/v5/TDAE-accommodation-check-2', (req, res) => {
 
 })
 
+router.post('/v5/TDAE-accommodation-check-3', (req, res) => {
+
+    const accommodationCheck3 = req.session.data['accommodation-check-3']
+
+    if (accommodationCheck3 === 'yes') {
+        req.session.data['accommodation-completed-3'] = 'completed'
+    } else {
+        req.session.data['accommodation-completed-3'] = 'in-progress'
+    }
+
+    res.redirect('/lsf-web/v5/TDAE-student-claim')
+
+})
+
+router.post('/v5/TDAE-accommodation-check-4', (req, res) => {
+
+    const accommodationCheck4 = req.session.data['accommodation-check-4']
+
+    if (accommodationCheck4 === 'yes') {
+        req.session.data['accommodation-completed-4'] = 'completed'
+    } else {
+        req.session.data['accommodation-completed-4'] = 'in-progress'
+    }
+
+    res.redirect('/lsf-web/v5/TDAE-student-claim')
+
+})
+
 router.post('/v5/TDAE-accommodation-travel-check', (req, res) => {
 
     const accommodationTravelCheck = req.session.data['accommodation-travel-check']
@@ -171,6 +199,34 @@ router.post('/v5/TDAE-accommodation-travel-check-2', (req, res) => {
         req.session.data['accommodation-travel-completed-2'] = 'completed'
     } else {
         req.session.data['accommodation-travel-completed-2'] = 'in-progress'
+    }
+
+    res.redirect('/lsf-web/v5/TDAE-student-claim')
+
+})
+
+router.post('/v5/TDAE-accommodation-travel-check-3', (req, res) => {
+
+    const accommodationTravelCheck3 = req.session.data['accommodation-travel-check-3']
+
+    if (accommodationTravelCheck3 === 'yes') {
+        req.session.data['accommodation-travel-completed-3'] = 'completed'
+    } else {
+        req.session.data['accommodation-travel-completed-3'] = 'in-progress'
+    }
+
+    res.redirect('/lsf-web/v5/TDAE-student-claim')
+
+})
+
+router.post('/v5/TDAE-accommodation-travel-check-4', (req, res) => {
+
+    const accommodationTravelCheck4 = req.session.data['accommodation-travel-check-4']
+
+    if (accommodationTravelCheck4 === 'yes') {
+        req.session.data['accommodation-travel-completed-4'] = 'completed'
+    } else {
+        req.session.data['accommodation-travel-completed-4'] = 'in-progress'
     }
 
     res.redirect('/lsf-web/v5/TDAE-student-claim')
@@ -207,15 +263,32 @@ router.post('/v5/TDAE-evidence-match-2', (req, res) => {
 
 router.post('/v5/TDAE-hire-vehicle-check', (req, res) => {
 
+    const hireVehicleCheck = req.session.data['hire-vehicle-check']
+
+    if (hireVehicleCheck === 'yes') {
+        req.session.data['hire-vehicle-completed'] = 'completed'
+    } else {
+        req.session.data['hire-vehicle-completed'] = 'in-progress'
+    }
+
     res.redirect('/lsf-web/v5/TDAE-student-claim')
 
 })
 
 router.post('/v5/TDAE-taxi-check', (req, res) => {
 
+    const taxiCheck = req.session.data['taxi-check']
+
+    if (taxiCheck === 'yes') {
+        req.session.data['taxi-completed'] = 'completed'
+    } else {
+        req.session.data['taxi-completed'] = 'in-progress'
+    }
+
     res.redirect('/lsf-web/v5/TDAE-student-claim')
 
 })
+
 
 router.post('/v5/TDAE-authoriser-approved', (req, res) => {
 
