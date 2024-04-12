@@ -101,12 +101,12 @@ Claim checks
             {% endif %}
             <tr role="row" class="nhsuk-table__row">
               <td class="nhsuk-table__cell">Mark Hirst (University)</td>
-              <td class="nhsuk-table__cell">23 February 2024</td>
-              <td class="nhsuk-table__cell "><strong>University checks submitted</strong><br>Student has only been able to upload 2 receipts as they explained the ticket machine was out of paper but we are happy to accept they will have had this additional cost.</td>
+              <td class="nhsuk-table__cell">12 March 2024</td>
+              <td class="nhsuk-table__cell "><strong>University checks submitted</strong><br>Student has only been able to upload 2 car parking receipts as they explained the ticket machine was out of paper but we are happy to accept they will have had this additional cost.</td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td class="nhsuk-table__cell">{{ data['name'] }} (Student)</td>
-              <td class="nhsuk-table__cell">18 February 2024</td>
+              <td class="nhsuk-table__cell">28 February 2024</td>
               <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
             </tr>
             
@@ -178,9 +178,9 @@ Claim checks
                 Check hire car details
               </a>
             </span>
-            {% if data['vehicle-hire-check'] === 'yes' %}
+            {% if data['hire-vehicle-completed'] === 'completed' %}
               <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
-            {% elif data['vehicle-hire-check'] === 'no' %}
+            {% elif data['hire-vehicle-completed'] === 'in-progress' %}
               <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to university</strong>
             {% else %}
               <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
@@ -192,9 +192,9 @@ Claim checks
                 Check taxi journey details
               </a>
             </span>
-            {% if data['taxi-check'] === 'yes' %}
+            {% if data['taxi-completed'] === 'completed' %}
               <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
-            {% elif data['taxi-check'] === 'no' %}
+            {% elif data['taxi-completed'] === 'in-progress' %}
               <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to university</strong>
             {% else %}
               <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
@@ -341,13 +341,8 @@ Claim checks
               </tr>
               {% endif %}
               <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Mark Hirst (University)</td>
-                <td class="nhsuk-table__cell">23 February 2024</td>
-                <td class="nhsuk-table__cell "><strong>University checks submitted</strong><br>Student has only been able to upload evidence for 3 train tickets as they explained they lost one but we are happy to accept they will have had this cost.</td>
-              </tr>
-              <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">{{ data['name'] }} (Student)</td>
-                <td class="nhsuk-table__cell">18 February 2024</td>
+                <td class="nhsuk-table__cell">28 February 2024</td>
                 <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
               </tr>
               
@@ -391,9 +386,24 @@ Claim checks
                   Check period 1 placement travel details
                 </a>
               </span>
-              {% if data['evidence-completed'] === 'completed' %}
+              {% if data['evidence-completed-2'] === 'completed' %}
                 <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
-              {% elif data['evidence-completed'] === 'in-progress' %}
+              {% elif data['evidence-completed-2'] === 'in-progress' %}
+                <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to university</strong>
+              {% else %}
+                <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
+              {% endif %}
+            </li>
+
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="TDAE-taxi" aria-describedby="eligibility-status">
+                  Check taxi journey details
+                </a>
+              </span>
+              {% if data['taxi-completed'] === 'completed' %}
+                <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
+              {% elif data['taxi-completed'] === 'in-progress' %}
                 <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to university</strong>
               {% else %}
                 <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
@@ -404,32 +414,18 @@ Claim checks
   
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Pre-authorised costs 
+            <span class="app-task-list__section-number">2. </span> Overseas costs 
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item nhsuk-u-clear">
               <span class="app-task-list__task-name">
-                <a href="TDAE-taxi" aria-describedby="eligibility-status">
-                  Check taxi journey to placement details
-                </a>
-              </span>
-              {% if data['accommodation-completed'] === 'completed' %}
-                <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
-              {% elif data['accommodation-completed'] === 'in-progress' %}
-                <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to university</strong>
-              {% else %}
-                <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
-              {% endif %}
-            </li>
-            <li class="app-task-list__item nhsuk-u-clear">
-              <span class="app-task-list__task-name">
                 <a href="TDAE-overseas-costs" aria-describedby="eligibility-status">
-                  Check overseas costs 
+                  Check overseas costs details
                 </a>
               </span>
-              {% if data['accommodation-completed-2'] === 'completed' %}
+              {% if data['overseas-completed'] === 'completed' %}
                 <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
-              {% elif data['accommodation-completed-2'] === 'in-progress' %}
+              {% elif data['overseas-completed'] === 'in-progress' %}
                 <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to university</strong>
               {% else %}
                 <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
@@ -465,7 +461,7 @@ Claim checks
                   Claim dates
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  9 February 2024 to 12 February 2024
+                  16 February 2024 to 17 February 2024
                 </dd>
               </div>
               <div class="nhsuk-summary-list__row">
@@ -513,13 +509,8 @@ Claim checks
               </tr>
               {% endif %}
               <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Mark Hirst (University)</td>
-                <td class="nhsuk-table__cell">23 February 2024</td>
-                <td class="nhsuk-table__cell "><strong>University checks submitted</strong><br>Student has only been able to upload evidence for 3 train tickets as they explained they lost one but we are happy to accept they will have had this cost.</td>
-              </tr>
-              <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">{{ data['name'] }} (Student)</td>
-                <td class="nhsuk-table__cell">18 February 2024</td>
+                <td class="nhsuk-table__cell">28 February 2024</td>
                 <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
               </tr>
               
@@ -556,21 +547,6 @@ Claim checks
                 <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
               {% endif %}
             </li>
-  
-            <li class="app-task-list__item nhsuk-u-clear">
-              <span class="app-task-list__task-name">
-                <a href="TDAE-placement-details-public-transport" aria-describedby="eligibility-status">
-                  Check period 1 placement travel details
-                </a>
-              </span>
-              {% if data['evidence-completed'] === 'completed' %}
-                <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
-              {% elif data['evidence-completed'] === 'in-progress' %}
-                <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to university</strong>
-              {% else %}
-                <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
-              {% endif %}
-            </li>
           </ul>
         </li>
   
@@ -581,13 +557,13 @@ Claim checks
           <ul class="app-task-list__items">
             <li class="app-task-list__item nhsuk-u-clear">
               <span class="app-task-list__task-name">
-                <a href="TDAE-accommodation" aria-describedby="eligibility-status">
+                <a href="TDAE-accommodation-2" aria-describedby="eligibility-status">
                   Check accommodation booking 1 details
                 </a>
               </span>
-              {% if data['accommodation-completed'] === 'completed' %}
+              {% if data['accommodation-completed-3'] === 'completed' %}
                 <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
-              {% elif data['accommodation-completed'] === 'in-progress' %}
+              {% elif data['accommodation-completed-3'] === 'in-progress' %}
                 <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to university</strong>
               {% else %}
                 <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
@@ -595,27 +571,13 @@ Claim checks
             </li>
             <li class="app-task-list__item nhsuk-u-clear">
               <span class="app-task-list__task-name">
-                <a href="TDAE-accommodation-2" aria-describedby="eligibility-status">
-                  Check accommodation booking 2 details
-                </a>
-              </span>
-              {% if data['accommodation-completed-2'] === 'completed' %}
-                <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
-              {% elif data['accommodation-completed-2'] === 'in-progress' %}
-                <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to university</strong>
-              {% else %}
-                <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
-              {% endif %}
-            </li>
-            <li class="app-task-list__item nhsuk-u-clear">
-              <span class="app-task-list__task-name">
-                <a href="TDAE-accommodation-travel" aria-describedby="eligibility-status">
+                <a href="TDAE-accommodation-travel-3" aria-describedby="eligibility-status">
                   Check accommodation travel journey 1 details
                 </a>
               </span>
-              {% if data['accommodation-travel-completed'] === 'completed' %}
+              {% if data['accommodation-travel-completed-3'] === 'completed' %}
                 <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
-              {% elif data['accommodation-travel-completed'] === 'in-progress' %}
+              {% elif data['accommodation-travel-completed-3'] === 'in-progress' %}
                 <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to university</strong>
               {% else %}
                 <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
@@ -623,13 +585,13 @@ Claim checks
             </li>
             <li class="app-task-list__item nhsuk-u-clear">
               <span class="app-task-list__task-name">
-                <a href="TDAE-accommodation-travel-2" aria-describedby="eligibility-status">
+                <a href="TDAE-accommodation-travel-4" aria-describedby="eligibility-status">
                   Check accommodation travel journey 2 details
                 </a>
               </span>
-              {% if data['accommodation-travel-completed-2'] === 'completed' %}
+              {% if data['accommodation-travel-completed-4'] === 'completed' %}
                 <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
-              {% elif data['accommodation-travel-completed-2'] === 'in-progress' %}
+              {% elif data['accommodation-travel-completed-4'] === 'in-progress' %}
                 <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to university</strong>
               {% else %}
                 <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
@@ -641,7 +603,7 @@ Claim checks
 
 
 
-
+      {% if data['name'] === 'Emmit Mar' %}
       {% if data['read-only'] != 'true' %}
       <li>
         <h2 class="app-task-list__section">
@@ -650,7 +612,7 @@ Claim checks
         <ul class="app-task-list__items">
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
-              {% if data['evidence-completed'] === 'completed' and data['accommodation-completed-2'] === 'completed' %}
+              {% if data['university-travel'] === 'completed' and data['evidence-completed'] === 'completed' and data['evidence-completed-2'] === 'completed' and data['hire-vehicle-completed'] === 'completed' and data['taxi-completed'] === 'completed' and data['accommodation-completed'] === 'completed' and data['accommodation-completed-2'] === 'completed' and data['accommodation-travel-completed'] === 'completed' and data['accommodation-travel-completed-2'] === 'completed'%}
               <a class="app-task-list__task-name" href="TDAE-claim-summary">
                 Authorise payment
               </a>
@@ -660,7 +622,7 @@ Claim checks
               </span>
               {% endif %}
             </span>
-            {% if data['evidence-completed'] === 'completed' and data['accommodation-completed-2'] === 'completed' %}
+            {% if data['university-travel'] === 'completed' or data['evidence-completed'] === 'completed' or data['evidence-completed-2'] === 'completed' or data['hire-vehicle-completed'] === 'completed' or data['taxi-completed'] === 'completed' or data['accommodation-completed'] === 'completed' or data['accommodation-completed-2'] === 'completed' or data['accommodation-travel-completed'] === 'completed' or data['accommodation-travel-completed-2'] === 'completed'%}
               {% if data['approve-in-progress'] === 'in-progress' %}
                 <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to University</strong>
               {% elif data['approve-in-progress'] === 'completed' %}
@@ -684,7 +646,7 @@ Claim checks
       <li>why you have returned the claim</li>
       <li>what the student needs to change to re-submit the claim</li>
     </ul>
-    {% if data['university-completed'] === 'in-progress' or data['evidence-completed'] === 'in-progress' or data['accommodation-completed'] === 'in-progress' %}
+    {% if data['university-travel'] === 'in-progress' or data['evidence-completed'] === 'in-progress' or data['evidence-completed-2'] === 'in-progress' or data['hire-vehicle-completed'] === 'in-progress' or data['taxi-completed'] === 'in-progress' or data['accommodation-completed'] === 'in-progress' or data['accommodation-completed-2'] === 'in-progress' or data['accommodation-travel-completed'] === 'in-progress' or data['accommodation-travel-completed-2'] === 'in-progress'%}
     <a class="nhsuk-button" href="TDAE-return-decline">Return to university</a>
     {% else %}
     <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Return to university</a>
@@ -692,6 +654,114 @@ Claim checks
     {% endif %}
 
   </div>
+
+
+  {% elif data['name'] === 'Jane Doe' %}
+  {% if data['read-only'] != 'true' %}
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">3. </span> Finish checking claim
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              {% if data['university-travel'] === 'completed' and data['evidence-completed-2'] === 'completed' and data['taxi-completed'] === 'completed' and data['overseas-completed'] === 'completed' %}
+              <a class="app-task-list__task-name" href="TDAE-claim-summary">
+                Authorise payment
+              </a>
+              {% else %}
+              <span class="app-task-list__task-name">
+                Authorise payment
+              </span>
+              {% endif %}
+            </span>
+            {% if data['university-travel'] === 'completed' or data['evidence-completed-2'] === 'completed' or data['taxi-completed'] === 'completed' or data['overseas-completed'] === 'completed' %}
+              {% if data['approve-in-progress'] === 'in-progress' %}
+                <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to University</strong>
+              {% elif data['approve-in-progress'] === 'completed' %}
+                <strong class="nhsuk-tag" style="float: right;" id="eligibility-status">Completed</strong>
+              {% else %}
+                <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
+              {% endif %}
+            {% else %}
+              <strong class="nhsuk-tag nhsuk-tag--grey" style="float: right;" id="eligibility-status">Cannot start yet</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+      {% endif %}
+    </ol>
+
+    {% if data['read-only'] != 'true' %}
+    <h2 class="nhsuk-heading-m">Return to university</h2>
+    <p>You can return this claim to the university if there are any issues with it. You will need to explain:</p>
+    <ul>
+      <li>why you have returned the claim</li>
+      <li>what the student needs to change to re-submit the claim</li>
+    </ul>
+    {% if data['university-completed'] === 'in-progress' or data['evidence-completed-2'] === 'in-progress' or data['taxi-completed'] === 'in-progress' or data['overseas-completed'] === 'in-progress' %}
+    <a class="nhsuk-button" href="TDAE-return-decline">Return to university</a>
+    {% else %}
+    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Return to university</a>
+    {% endif %}
+    {% endif %}
+
+  </div>
+
+  {% else %}
+  {% if data['read-only'] != 'true' %}
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">3. </span> Finish checking claim
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              {% if data['university-travel'] === 'completed' and data['accommodation-completed-3'] === 'completed' and data['accommodation-travel-completed-3'] === 'completed' and data['accommodation-travel-completed-4'] === 'completed' %}
+              <a class="app-task-list__task-name" href="TDAE-claim-summary">
+                Authorise payment
+              </a>
+              {% else %}
+              <span class="app-task-list__task-name">
+                Authorise payment
+              </span>
+              {% endif %}
+            </span>
+            {% if data['university-travel'] === 'completed' or data['accommodation-completed-3'] === 'completed' or data['accommodation-travel-completed-3'] === 'completed' or data['accommodation-travel-completed-4'] === 'completed' %}
+              {% if data['approve-in-progress'] === 'in-progress' %}
+                <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to University</strong>
+              {% elif data['approve-in-progress'] === 'completed' %}
+                <strong class="nhsuk-tag" style="float: right;" id="eligibility-status">Completed</strong>
+              {% else %}
+                <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
+              {% endif %}
+            {% else %}
+              <strong class="nhsuk-tag nhsuk-tag--grey" style="float: right;" id="eligibility-status">Cannot start yet</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+      {% endif %}
+    </ol>
+
+    {% if data['read-only'] != 'true' %}
+    <h2 class="nhsuk-heading-m">Return to university</h2>
+    <p>You can return this claim to the university if there are any issues with it. You will need to explain:</p>
+    <ul>
+      <li>why you have returned the claim</li>
+      <li>what the student needs to change to re-submit the claim</li>
+    </ul>
+    {% if data['university-travel'] === 'in-progress' or data['accommodation-completed-3'] === 'in-progress' or data['accommodation-travel-completed-3'] === 'in-progress' or data['accommodation-travel-completed-4'] === 'in-progress' %}
+    <a class="nhsuk-button" href="TDAE-return-decline">Return to university</a>
+    {% else %}
+    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Return to university</a>
+    {% endif %}
+    {% endif %}
+
+  </div>
+  {% endif %}
+
+
 
 </div>
 

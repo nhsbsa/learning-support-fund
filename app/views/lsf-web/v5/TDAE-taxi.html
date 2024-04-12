@@ -16,8 +16,6 @@ Student and University details
 
     <h1 class="nhsuk-heading-l">Taxi journey details</h1>
 
-    <p>These are the details for the student's taxi journey.</p>
-
     <dl class="nhsuk-summary-list">
 
       <div class="nhsuk-summary-list__row">
@@ -88,6 +86,7 @@ Student and University details
         </dd>
       </div>
 
+      {% if data['name'] === 'Emmit Mar' %}
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key" style="width: 40%;">
           Travelling to
@@ -110,6 +109,30 @@ Student and University details
           </details>
         </dd>
       </div>
+      {% else %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" style="width: 40%;">
+            Travelling to
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Flat 12 / Room 6, NE2 1DT
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <b>Flat 12 / Room 6</b><br>
+                Portland Road <br>
+                Shieldfield <br>
+                Newcastle upon Tyne <br>
+                NE2 1DT
+              </div>
+            </details>
+          </dd>
+        </div>
+        {% endif %}
 
 
       <div class="nhsuk-summary-list__row">

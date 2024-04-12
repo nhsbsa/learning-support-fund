@@ -19,8 +19,6 @@ Claim details
     <h1 class="nhsuk-heading-l">Period 1 placement journey overview</h1>
     {% endif %}
 
-    <p>These are all of the details for the student's journey to and from their placement.</p>
-
     <dl class="nhsuk-summary-list">
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
@@ -39,6 +37,77 @@ Claim details
             5 February 2024
           </dd>
         </div>
+
+        {% if data['name'] === 'Emmit Mar' %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" style="width: 40%;">
+            Term time address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Stephenson House, NE2 1AW
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <b>Stephenson House</b><br>
+                Stoddart St<br>
+                Shieldfield<br>
+                Newcastle upon Tyne<br>
+                NE2 1AW
+              </div>
+            </details>
+          </dd>
+        </div>
+        {% elif data['name'] === 'Jane Doe' %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" style="width: 40%;">
+            Term time address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Flat 12 / Room 6, NE2 1DT
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <b>Flat 12 / Room 6</b><br>
+                Portland Road <br>
+                Shieldfield <br>
+                Newcastle upon Tyne <br>
+                NE2 1DT
+              </div>
+            </details>
+          </dd>
+        </div>
+        {% else %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" style="width: 40%;">
+            Term time address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            82 Meldon Terrace, NE6 5XQ
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <b>82 Meldon Terrace</b><br>
+                Heaton<br>
+                Newcastle upon Tyne<br>
+                NE6 5XQ
+              </div>
+            </details>
+          </dd>
+        </div>
+        {% endif %}
+
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Placement address
