@@ -27,6 +27,7 @@ Claim summary
         </dd>
       </div>
 
+      {% if data['name'] === 'Emmit Mar' %}
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
           Student number
@@ -45,7 +46,6 @@ Claim summary
         </dd>
       </div>
 
-      {% if data['name'] === 'Emmit Mar' %}
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
           Course
@@ -100,18 +100,6 @@ Claim summary
         </dd>
       </div>
 
-
-
-      {% else %}
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Course
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Adult Nursing
-        </dd>
-      </div>
-
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
           Placement travel payment
@@ -154,6 +142,118 @@ Claim summary
         </dt>
         <dd class="nhsuk-summary-list__value">
           £507.37
+        </dd>
+      </div>
+
+
+      {% elif data['name'] === 'Alyssa Geary' %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['student number'] }}
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['name'] }}
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Course
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Adult Nursing
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Placement travel payment
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £46.40
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Taxi journey payment
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £10
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Total payment to student
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £56.40
+        </dd>
+      </div>
+
+
+      {% else %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['student number'] }}
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['name'] }}
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Course
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Adult Nursing
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Accommodation payment
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £37.50
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Accommodation travel payment
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £27.98
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Total payment to student
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £65.48
         </dd>
       </div>
       {% endif %}
