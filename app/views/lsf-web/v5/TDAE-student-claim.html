@@ -94,7 +94,7 @@ Claim checks
           <tbody class="nhsuk-table__body">
             {% if data['feedback-note'] == 'yes' %}
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Jane Doe <br> (NHSBSA)</td>
+              <td class="nhsuk-table__cell">Jane Doe<br> (NHSBSA)</td>
               <td class="nhsuk-table__cell"> <p id="currentDate"</p> </td>
               <td class="nhsuk-table__cell ">{{ data['feedbacknote'] }}</td>
             </tr>
@@ -268,7 +268,7 @@ Claim checks
       </li>
 
 
-      {% elif data['name'] === 'Jane Doe' %}
+      {% elif data['name'] === 'Alyssa Geary' %}
       {% if data['read-only'] != 'true' %}
       <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim.</h2>
       <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed {% if data['status'] === 'Returned from NHSBSA' %}1{% else %}0{% endif %} of 3 sections.</p>
@@ -286,7 +286,7 @@ Claim checks
             </span>
           </summary>
           <div class="nhsuk-details__text">
-            <p>Jane Doe has previously submitted a claim with costs on these dates.</p>
+            <p>Alyssa Geary has previously submitted a claim with costs on these dates.</p>
             <dl class="nhsuk-summary-list">
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
@@ -454,7 +454,7 @@ Claim checks
             </span>
           </summary>
           <div class="nhsuk-details__text">
-            <p>John Doe has previously submitted a claim with costs on these dates.</p>
+            <p>Daniel Jackson has previously submitted a claim with costs on these dates.</p>
             <dl class="nhsuk-summary-list">
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
@@ -656,7 +656,7 @@ Claim checks
   </div>
 
 
-  {% elif data['name'] === 'Jane Doe' %}
+  {% elif data['name'] === 'Alyssa Geary' %}
   {% if data['read-only'] != 'true' %}
       <li>
         <h2 class="app-task-list__section">
