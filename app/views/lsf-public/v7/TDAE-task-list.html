@@ -127,7 +127,7 @@
                 {% endif %}
               </li>
               {% endif %}
-              {% if checked('claiming-for', 'Public transport') %}
+              {% if checked('claiming-for', 'Public transport') or checked('claiming-for', 'car') %} 
               {% if data['add-placement-travel'] === 'completed' %}
                 <li class="app-task-list__item nhsuk-u-clear">
                   <span class="app-task-list__task-name">

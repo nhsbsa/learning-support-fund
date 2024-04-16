@@ -43,6 +43,21 @@ What is the start date of your claim?
 
 					<p>You need to show us evidence for:</p>
 
+					{% if data['claiming-for'] == 'car' %}
+					<ul class="nhsuk-list nhsuk-list--bullet">
+						<li>Parking charges</li>
+						<li class="nhsuk-list-style-none">
+					    <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
+					       <li>Friday 6 October 2023</li>
+						   <li>Saturday 7 October 2023</li>
+						   <li>Sunday 8 October 2023</li>
+						   <li>Monday 9 October 2023</li>
+					    </ul>
+					  </li>
+					  </li>
+					</ul>
+					
+					{% else %}
 					<ul class="nhsuk-list nhsuk-list--bullet">
 						<li>Bus ticket</li>
 						<li class="nhsuk-list-style-none">
@@ -59,6 +74,10 @@ What is the start date of your claim?
 								 <li>Monday 9 October 2023</li>
 					    </ul>
 					  </li>
+					</ul>
+					{% endif %}
+
+
 					  <!--<li>Tunnel or toll charges</li>
 						<li class="nhsuk-list-style-none">
 					    <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
@@ -71,7 +90,7 @@ What is the start date of your claim?
 					       <li>Monday 5 June 2023</li>
 					    </ul>
 					  </li>-->
-					</ul>
+					
 
 					<p>You can upload evidence for multiple costs in one image. For example, you can take a picture of multiple receipts that cover different days.</p>
 					<p>You can also upload one piece of evidence that covers multiple days. For example, a weekly parking pass. You only need to upload this once per period.</p>

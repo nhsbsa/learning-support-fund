@@ -48,42 +48,89 @@ Which days does this evidence relate to?
 
                 </dl>
 
+                
                 <div class="nhsuk-radios">
 
+                  {% if data['additional-cost-single-day'] == 'Yes' %}
                   <div class="nhsuk-radios__item">
                     <input class="nhsuk-radios__input" id="example-1" name="example" type="checkbox" value="email">
                     <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                      Monday 5 June 2023
+                      Friday 6 October 2023
                     </label>
                   </div>
 
                   <div class="nhsuk-radios__item">
                     <input class="nhsuk-radios__input" id="example-2" name="example" type="checkbox" value="phone">
                     <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                      Tuesday 6 June 2023
+                      Saturday 7 October 2023
                     </label>
                   </div>
 
                   <div class="nhsuk-radios__item">
                     <input class="nhsuk-radios__input" id="example-3" name="example" type="checkbox" value="text message">
                     <label class="nhsuk-label nhsuk-radios__label" for="example-3">
-                      Wednesday 7 June 2023
+                      Sunday 8 October 2023
                     </label>
                   </div>
 
                   <div class="nhsuk-radios__item">
                     <input class="nhsuk-radios__input" id="example-3" name="example" type="checkbox" value="text message">
                     <label class="nhsuk-label nhsuk-radios__label" for="example-3">
-                      Thursday 8 June 2023
+                      Monday 9 October 2023
+                    </label>
+                  </div>
+
+                  {% else %}
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-1" name="example" type="checkbox" value="email">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                      Friday 6 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-2" name="example" type="checkbox" value="phone">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                      Saturday 7 October 2023
                     </label>
                   </div>
 
                   <div class="nhsuk-radios__item">
                     <input class="nhsuk-radios__input" id="example-3" name="example" type="checkbox" value="text message">
                     <label class="nhsuk-label nhsuk-radios__label" for="example-3">
-                      Friday 9 June 2023
+                      Sunday 8 October 2023
                     </label>
                   </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-3">
+                      Monday 9 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-3">
+                      Tuesday 10 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-3">
+                      Wednesday 11 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-3">
+                      Thursday 12 October 2023
+                    </label>
+                  </div>
+                  {% endif %}
+                 
 
                 </div>
               </fieldset>

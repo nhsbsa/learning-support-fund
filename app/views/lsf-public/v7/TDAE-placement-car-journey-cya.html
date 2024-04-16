@@ -14,13 +14,13 @@ Additional costs for your normal daily journey
 		"text": "Go back"
 		}) }}
 
-		<form action="v7/TDAE-placement-cycle-journey-cya" method="POST">
+		<form action="v7/TDAE-placement-car-journey-cya" method="POST">
 
 
 
 			<div class="nhsuk-form-group">
 					<h1 class="nhsuk-heading-l">
-						<h1 class="nhsuk-heading-l">Check placement cycle journey</h1>
+						<h1 class="nhsuk-heading-l">Check placement car journey</h1>
 					</h1>
 
 					<dl class="nhsuk-summary-list">
@@ -76,14 +76,14 @@ Additional costs for your normal daily journey
 					      Mileage to placement
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
-							{% if data['placement-cycle-to-mileage'] %}
-					  			{{ data['placement-cycle-to-mileage'] }}
+							{% if data['placement-car-to-mileage'] %}
+					  			{{ data['placement-car-to-mileage'] }}
 					  		{% else %}
 							  	No details entered
 				  			{% endif %}
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
-					      <a href="TDAE-placement-cycle-to-mileage">
+					      <a href="TDAE-placement-car-to-mileage">
 					        Change<span class="nhsuk-u-visually-hidden"> Mileage to placement</span>
 					      </a>
 					    </dd>
@@ -94,14 +94,14 @@ Additional costs for your normal daily journey
 					      Mileage from placement
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
-							{% if data['placement-cycle-return-mileage'] %}
-					  			{{ data['placement-cycle-return-mileage'] }}
+							{% if data['placement-car-return-mileage'] %}
+					  			{{ data['placement-car-return-mileage'] }}
 					  		{% else %}
 							  	No details entered
 				  			{% endif %}
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
-					      <a href="TDAE-placement-cycle-return-mileage">
+					      <a href="TDAE-placement-car-return-mileage">
 					        Change<span class="nhsuk-u-visually-hidden"> Mileage returning from placement</span>
 					      </a>
 					    </dd>
@@ -111,29 +111,29 @@ Additional costs for your normal daily journey
 
 			</div>
 
-			{% if not data['placement-cycle-to-mileage'] and data['placement-cycle-return-mileage'] %}
+			{% if not data['placement-car-to-mileage'] and data['placement-car-return-mileage'] %}
 			<div class="nhsuk-inset-text">
 				<span class="nhsuk-u-visually-hidden">Information: </span>
 				<p>You can only claim mileage travelling from your placement because you did not tell us about any mileage to your placement.</p>
 			</div>
-			<button class="nhsuk-button" type="submit">Add cycle journey mileage</button><br>
+			<button class="nhsuk-button" type="submit">Add car journey mileage</button><br>
 
-			{% elif data['placement-cycle-to-mileage'] and not data['placement-cycle-return-mileage'] %}
+			{% elif data['placement-car-to-mileage'] and not data['placement-car-return-mileage'] %}
 			<div class="nhsuk-inset-text">
 				<span class="nhsuk-u-visually-hidden">Information: </span>
 				<p>You can only claim mileage travelling to your placement because you did not tell us about any mileage from your placement.</p>
 			</div>
-			<button class="nhsuk-button" type="submit">Add cycle journey mileage</button><br>
+			<button class="nhsuk-button" type="submit">Add car journey mileage</button><br>
 
 			{% else %}
-			{% if not data['placement-cycle-to-mileage'] or not data['placement-cycle-return-mileage'] %}
+			{% if not data['placement-car-to-mileage'] or not data['placement-car-return-mileage'] %}
 				<div class="nhsuk-inset-text">
 				<span class="nhsuk-u-visually-hidden">Information: </span>
 				<p>You cannot claim mileage for this journey because you did not enter any mileage details.</p>
 				</div>
 			{% else %}
 			
-				<button class="nhsuk-button" type="submit">Add cycle journey mileage</button><br>
+				<button class="nhsuk-button" type="submit">Add car journey mileage</button><br>
 			{% endif %}
 			{% endif %}
 
