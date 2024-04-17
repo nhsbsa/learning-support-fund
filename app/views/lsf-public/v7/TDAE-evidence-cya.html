@@ -51,8 +51,12 @@ Evidence you have uploaded
         </ul>
       {% endif %}
 
-      {% if data['evidenceNumber'] !== '2' %}
+      {% if data['evidenceNumber'] !== '2' and data['claiming-for'] != 'car' %}
         <a class="nhsuk-button" href="TDAE-placement-evidence?evidenceNumber=2">Upload evidence</a>
+      {% endif %}
+
+      {% if data['claiming-for'] == 'car' and data['evidenceNumber'] !== '2' %}
+        <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-evidence?evidenceNumber=2">Upload more evidence</a>
       {% endif %}
 
       </div>
