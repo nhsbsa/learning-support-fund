@@ -1,0 +1,55 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+What is the return mileage to your placement?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v8/TDAE-placement-car-to-mileage" method="POST">
+
+	    <div class="nhsuk-form-group">
+	      <label class="nhsuk-label" for="placement-mileage">
+	          <h1 class="nhsuk-heading-l">How many miles did it take to drive to your placement? (optional)</h1>
+	      </label>
+
+		  <div class="nhsuk-hint" id="contact-hint">
+		  You should calculate this from your term time address to your placement.
+		</div>
+		
+				<input class="nhsuk-input__suffix-input nhsuk-input nhsuk-input--width-5" id="placement-car-to-mileage" name="placement-car-to-mileage" type="text">
+				<div class="nhsuk-input__suffix" aria-hidden="true">miles</div>
+      </div>
+
+			<details class="nhsuk-details">
+				<summary class="nhsuk-details__summary">
+				  <span class="nhsuk-details__summary-text">
+					How to work out your mileage
+				  </span>
+				</summary>
+				<div class="nhsuk-details__text">
+					<p>You can check the mileage of your journey by:</p>
+					<ul>
+						<li>getting directions for your journey on Google Maps</li>
+						<li>resetting the mileage trip calculator in your car</li>
+					</ul>
+				</div>
+		  </details>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<a href="TDAE-placement-itinerary">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

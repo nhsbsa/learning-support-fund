@@ -430,7 +430,11 @@ What is the return mileage to your placement?
 						<td role="cell" class="nhsuk-table__cell">
 							<span class="nhsuk-table-responsive__heading">Actions </span>
 							<div class="link-container">
-								<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
+								{% if data['same-journey'] == "yes" %}
+								<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
+								{% else %}
+								<a href="TDAE-placement-car-to-mileage">Change</a> or <a href="#">remove</a>
+								{% endif %}
 							</div>
 						</td>
 					</tr>
@@ -446,7 +450,11 @@ What is the return mileage to your placement?
 						<td role="cell" class="nhsuk-table__cell">
 							<span class="nhsuk-table-responsive__heading">Actions </span>
 							<div class="link-container">
-								<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
+								{% if data['same-journey'] == "yes" %}
+								<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
+								{% else %}
+								<a href="TDAE-placement-car-return-mileage">Change</a> or <a href="#">remove</a>
+								{% endif %}
 							</div>
 						</td>
 					</tr>
@@ -491,7 +499,11 @@ What is the return mileage to your placement?
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Actions </span>
 						<div class="link-container">
-							<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
+							{% if data['same-journey'] == "yes" %}
+							<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
+							{% else %}
+							<a href="TDAE-placement-car-to-mileage">Change</a> or <a href="#">remove</a>
+							{% endif %}
 						</div>
 					</td>
 				</tr>
@@ -507,7 +519,11 @@ What is the return mileage to your placement?
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Actions </span>
 						<div class="link-container">
-							<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
+							{% if data['same-journey'] == "yes" %}
+							<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
+							{% else %}
+							<a href="TDAE-placement-car-return-mileage">Change</a> or <a href="#">remove</a>
+							{% endif %}
 						</div>
 					</td>
 				</tr>
@@ -551,7 +567,11 @@ What is the return mileage to your placement?
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Actions </span>
 						<div class="link-container">
-							<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
+							{% if data['same-journey'] == "yes" %}
+							<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
+							{% else %}
+							<a href="TDAE-placement-car-to-mileage">Change</a> or <a href="#">remove</a>
+							{% endif %}
 						</div>
 					</td>
 				</tr>
@@ -567,7 +587,11 @@ What is the return mileage to your placement?
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Actions </span>
 						<div class="link-container">
-							<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
+							{% if data['same-journey'] == "yes" %}
+							<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
+							{% else %}
+							<a href="TDAE-placement-car-return-mileage">Change</a> or <a href="#">remove</a>
+							{% endif %}
 						</div>
 					</td>
 				</tr>
@@ -611,7 +635,11 @@ What is the return mileage to your placement?
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Actions </span>
 						<div class="link-container">
-							<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
+							{% if data['same-journey'] == "yes" %}
+							<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
+							{% else %}
+							<a href="TDAE-placement-car-to-mileage">Change</a> or <a href="#">remove</a>
+							{% endif %}
 						</div>
 					</td>
 				</tr>
@@ -627,7 +655,11 @@ What is the return mileage to your placement?
 					<td role="cell" class="nhsuk-table__cell">
 						<span class="nhsuk-table-responsive__heading">Actions </span>
 						<div class="link-container">
-							<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
+							{% if data['same-journey'] == "yes" %}
+							<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
+							{% else %}
+							<a href="TDAE-placement-car-return-mileage">Change</a> or <a href="#">remove</a>
+							{% endif %}
 						</div>
 					</td>
 				</tr>

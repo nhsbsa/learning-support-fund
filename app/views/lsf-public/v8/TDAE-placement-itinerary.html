@@ -417,151 +417,301 @@ What is the return mileage to your placement?
 					{% endif %}
 				</tbody>
 			</table>
-		{% elif checked('claiming-for', 'car') %}
-			<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
-				<caption>
-					<span class="nhsuk-heading-m">Placement travel details and costs</span>
-					<span class="nhsuk-u-visually-hidden"> - </span>
-					<span class="nhsuk-hint">Showing 1-4 of 4 dates</span>
-				</caption>
-				<thead role="rowgroup" class="nhsuk-table__head">
-					<tr role="row">
-						<th role="columnheader" class="" scope="col">Date</th>
-						<th role="columnheader" class="" scope="col">Travel details</th>
-						<th role="columnheader" class="" scope="col">Value</th>
-						<th role="columnheader" class="" scope="col">Action</th>
-					</tr>
-				</thead>
-				<tbody class="nhsuk-table__body">
-					<tr role="row" class="nhsuk-table__row">
-						<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Date </span>Friday 6 October 2023
-						</th>
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
-						</td>
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Travel cost </span>10 miles
-						</td>
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Action </span>
-							<div class="link-container">
-								<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
-							</div>
-						</td>
-					</tr>
-					<tr role="row" class="nhsuk-table__row">
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
-						</td>
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Travel cost </span>10 miles
-						</td>
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Action </span>
-							<div class="link-container">
-								<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
-							</div>
-						</td>
-					</tr>
 
+			{% elif checked('claiming-for', 'car') %}
+			<tbody class="nhsuk-table__body">
+					<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-0">
+						<caption>
+							<span class="nhsuk-heading-m">Placement travel details and costs</span>
+							<span class="nhsuk-u-visually-hidden"> - </span>
+							<span class="nhsuk-hint">Showing 1-4 of 4 dates</span>
+						</caption>
+						<thead role="rowgroup" class="nhsuk-table__head">
+							<tr role="row">
+								<th role="columnheader" class="" scope="col">Date</th>
+								<th role="columnheader" class="" scope="col">Travel details</th>
+								<th role="columnheader" class="" scope="col">Value</th>
+								<th role="columnheader" class="" scope="col">Actions</th>
+							</tr>
+						</thead>
+	
+					<tbody class="nhsuk-table__body">
+						<tr role="row" class="nhsuk-table__row">
+							{% if data['additional-cost'] == "1" %}
+							<th rowspan="3" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+							{% else %}
+							<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+							{% endif %}
+								<span class="nhsuk-table-responsive__heading">Date </span>
+								Friday 6 October 2023
+							</th>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>
+								Mileage to placement
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>
+								10 miles
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Actions </span>
+								<div class="link-container">
+									{% if data['same-journey'] == "yes" %}
+									<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
+									{% else %}
+									<a href="TDAE-placement-car-to-mileage">Change</a> or <a href="#">remove</a>
+									{% endif %}
+								</div>
+							</td>
+						</tr>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>
+								Mileage returning from placement
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>
+								10 miles
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Actions </span>
+								<div class="link-container">
+									{% if data['same-journey'] == "yes" %}
+									<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
+									{% else %}
+									<a href="TDAE-placement-car-return-mileage">Change</a> or <a href="#">remove</a>
+									{% endif %}
+								</div>
+							</td>
+						</tr>
+		
+						{% if data['additional-cost'] == "1" %}
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Additional cost type </span>
+								Parking charges
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Additional cost </span>
+								£4
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Actions </span>
+								<div class="link-container">
+									<a href="TDAE-placement-additional-costs-cya">Change</a> or <a href="#">remove</a>
+								</div>
+							</td>
+						</tr>
+						{% endif %}
+	
+	
 					<tr role="row" class="nhsuk-table__row">
+						{% if data['additional-cost'] == "1" %}
+						<th rowspan="3" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+						{% else %}
 						<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Date </span>Saturday 7 October 2023
+						{% endif %}
+							<span class="nhsuk-table-responsive__heading">Date </span>
+							Saturday 7 October 2023
 						</th>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+							<span class="nhsuk-table-responsive__heading">Travel type </span>
+							Mileage to placement
 						</td>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Travel cost </span>10 miles
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							10 miles
 						</td>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Action </span>
+							<span class="nhsuk-table-responsive__heading">Actions </span>
 							<div class="link-container">
+								{% if data['same-journey'] == "yes" %}
 								<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
+								{% else %}
+								<a href="TDAE-placement-car-to-mileage">Change</a> or <a href="#">remove</a>
+								{% endif %}
 							</div>
 						</td>
 					</tr>
 					<tr role="row" class="nhsuk-table__row">
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+							<span class="nhsuk-table-responsive__heading">Travel type </span>
+							Mileage returning from placement
 						</td>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Travel cost </span>10 miles
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							10 miles
 						</td>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Action </span>
+							<span class="nhsuk-table-responsive__heading">Actions </span>
 							<div class="link-container">
+								{% if data['same-journey'] == "yes" %}
 								<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
+								{% else %}
+								<a href="TDAE-placement-car-return-mileage">Change</a> or <a href="#">remove</a>
+								{% endif %}
 							</div>
 						</td>
 					</tr>
-
+	
+					{% if data['additional-cost'] == "1" %}
 					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Additional cost type </span>
+							Parking charges
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Additional cost </span>
+							£4
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions </span>
+							<div class="link-container">
+								<a href="TDAE-placement-additional-costs-cya">Change</a> or <a href="#">remove</a>
+							</div>
+						</td>
+					</tr>
+					{% endif %}
+	
+					<tr role="row" class="nhsuk-table__row">
+						{% if data['additional-cost'] == "1" %}
+						<th rowspan="3" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+						{% else %}
 						<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Date </span>Sunday 8 October 2023
+						{% endif %}
+							<span class="nhsuk-table-responsive__heading">Date </span>
+							Sunday 8 October 2023
 						</th>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+							<span class="nhsuk-table-responsive__heading">Travel type </span>
+							Mileage to placement
 						</td>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Travel cost </span>10 miles
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							10 miles
 						</td>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Action </span>
+							<span class="nhsuk-table-responsive__heading">Actions </span>
 							<div class="link-container">
+								{% if data['same-journey'] == "yes" %}
 								<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
+								{% else %}
+								<a href="TDAE-placement-car-to-mileage">Change</a> or <a href="#">remove</a>
+								{% endif %}
 							</div>
 						</td>
 					</tr>
 					<tr role="row" class="nhsuk-table__row">
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+							<span class="nhsuk-table-responsive__heading">Travel type </span>
+							Mileage returning from placement
 						</td>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Travel cost </span>10 miles
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							10 miles
 						</td>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Action </span>
+							<span class="nhsuk-table-responsive__heading">Actions </span>
 							<div class="link-container">
+								{% if data['same-journey'] == "yes" %}
 								<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
+								{% else %}
+								<a href="TDAE-placement-car-return-mileage">Change</a> or <a href="#">remove</a>
+								{% endif %}
 							</div>
 						</td>
 					</tr>
-
+	
+					{% if data['additional-cost'] == "1" %}
 					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Additional cost type </span>
+							Parking charges
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Additional cost </span>
+							£4
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions </span>
+							<div class="link-container">
+								<a href="TDAE-placement-additional-costs-cya">Change</a> or <a href="#">remove</a>
+							</div>
+						</td>
+					</tr>
+					{% endif %}
+	
+					<tr role="row" class="nhsuk-table__row">
+						{% if data['additional-cost'] == "1" %}
+						<th rowspan="3" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+						{% else %}
 						<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Date </span>Monday 9 October 2023
+						{% endif %}
+							<span class="nhsuk-table-responsive__heading">Date </span>
+							Monday 9 October 2023
 						</th>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage to placement
+							<span class="nhsuk-table-responsive__heading">Travel type </span>
+							Mileage to placement
 						</td>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Travel cost </span>10 miles
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							10 miles
 						</td>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Action </span>
+							<span class="nhsuk-table-responsive__heading">Actions </span>
 							<div class="link-container">
+								{% if data['same-journey'] == "yes" %}
 								<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
+								{% else %}
+								<a href="TDAE-placement-car-to-mileage">Change</a> or <a href="#">remove</a>
+								{% endif %}
 							</div>
 						</td>
 					</tr>
 					<tr role="row" class="nhsuk-table__row">
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Travel type </span>Mileage returning from placement
+							<span class="nhsuk-table-responsive__heading">Travel type </span>
+							Mileage returning from placement
 						</td>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Travel cost </span>10 miles
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							10 miles
 						</td>
 						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Action </span>
+							<span class="nhsuk-table-responsive__heading">Actions </span>
 							<div class="link-container">
+								{% if data['same-journey'] == "yes" %}
 								<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
+								{% else %}
+								<a href="TDAE-placement-car-return-mileage">Change</a> or <a href="#">remove</a>
+								{% endif %}
 							</div>
 						</td>
 					</tr>
+	
+					{% if data['additional-cost'] == "1" %}
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Additional cost type </span>
+							Parking charges
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Additional cost </span>
+							£4
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions </span>
+							<div class="link-container">
+								<a href="TDAE-placement-additional-costs-cya">Change</a> or <a href="#">remove</a>
+							</div>
+						</td>
+					</tr>
+					{% endif %}
 				</tbody>
 			</table>
+			<br>
+
 		{% else %}
 			<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
 			  <caption>

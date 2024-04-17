@@ -2174,19 +2174,45 @@ router.post('/v8/TDAE-check-dates', (req, res) => {
 })
 
 router.post('/v8/TDAE-same-journey', (req, res) => {
+  const claimingFor = req.session.data['claiming-for'];
+  const sameJourney = req.session.data['same-journey'];
 
-  const sameJourney = req.session.data['same-journey']
-  const claimingFor = req.session.data['claiming-for']
-
-  if (sameJourney === 'yes'){
-    if (claimingFor.includes('car')){
-      res.redirect('/lsf-public/v8/TDAE-placement-return-mileage')
+  if (claimingFor.includes('car')) {
+    if (sameJourney === 'yes') {
+      res.redirect('/lsf-public/v8/TDAE-placement-car-same-mileage');
     } else {
-      res.redirect('/lsf-public/v8/TDAE-placement-cycle-same-mileage')
+      res.redirect('/lsf-public/v8/TDAE-placement-itinerary');
     }
-  } else {
-      res.redirect('/lsf-public/v8/TDAE-placement-itinerary')
+  } else if (claimingFor.includes('Cycle')) {
+    if (sameJourney === 'yes') {
+      res.redirect('/lsf-public/v8/TDAE-placement-cycle-same-mileage');
+    } else {
+      res.redirect('/lsf-public/v8/TDAE-placement-itinerary');
+    }
   }
+});
+
+router.post('/v8/TDAE-placement-car-same-mileage', (req, res) => {
+
+  res.redirect('/lsf-public/v8/TDAE-placement-itinerary')
+
+})
+
+router.post('/v8/TDAE-placement-car-to-mileage', (req, res) => {
+
+  res.redirect('/lsf-public/v8/TDAE-placement-car-return-mileage')
+
+})
+
+router.post('/v8/TDAE-placement-car-return-mileage', (req, res) => {
+
+  res.redirect('/lsf-public/v8/TDAE-placement-car-journey-cya')
+
+})
+
+router.post('/v8/TDAE-placement-car-journey-cya', (req, res) => {
+
+  res.redirect('/lsf-public/v8/TDAE-placement-itinerary')
 
 })
 
