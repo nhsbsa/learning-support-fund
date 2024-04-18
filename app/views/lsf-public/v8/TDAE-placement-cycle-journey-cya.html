@@ -114,13 +114,13 @@ Additional costs for your normal daily journey
 				<span class="nhsuk-u-visually-hidden">Information: </span>
 				<p>You can only claim mileage travelling from your placement because you did not tell us about any mileage to your placement.</p>
 			</div>
-			<button class="nhsuk-button" type="submit">Add cycle journey mileage</button><br>
+			<button class="nhsuk-button" type="submit">Save and continue</button><br>
 			{% elif data['placement-cycle-to-mileage'] and not data['placement-cycle-return-mileage'] %}
 			<div class="nhsuk-inset-text">
 				<span class="nhsuk-u-visually-hidden">Information: </span>
 				<p>You can only claim mileage travelling to your placement because you did not tell us about any mileage from your placement.</p>
 			</div>
-			<button class="nhsuk-button" type="submit">Add cycle journey mileage</button><br>
+			<button class="nhsuk-button" type="submit">Save and continue</button><br>
 			{% else %}
 			{% if not data['placement-cycle-to-mileage'] or not data['placement-cycle-return-mileage'] %}
 				<div class="nhsuk-inset-text">
@@ -128,7 +128,7 @@ Additional costs for your normal daily journey
 				<p>You cannot claim mileage for this journey because you did not enter any mileage details.</p>
 				</div>
 			{% else %}
-				<button class="nhsuk-button" type="submit">Add cycle journey mileage</button><br>
+				<button class="nhsuk-button" type="submit">Save and continue</button><br>
 			{% endif %}
 			{% endif %}
 
