@@ -1,0 +1,32 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Student declaration
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="dashboard-2" method="POST">
+
+            <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+                <div class="nhsuk-card__content">
+                    <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                        Bank details change request submitted
+                    </h1>
+                </div>
+            </div>
+
+            <h2 class="nhsuk-heading-m">What happens next</h2>
+            <p>We'll not send any payments until we've processed your change request. We'll do this within 3 working days.</p>
+            <p>If you did not enter your existing bank details or we need more information, we'll contact you soon.</p>
+
+            <button class="nhsuk-button" type="submit">Go to your NHS Learning Support Fund account</button>
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

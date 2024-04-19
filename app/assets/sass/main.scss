@@ -12,6 +12,7 @@
 @import 'components/pagination';
 @import 'components/full-width';
 @import 'components/nhsbsa-manage';
+@import 'components/file-attachment';
 
 
 // Reminder: import tabs from node_modules
@@ -842,15 +843,14 @@ hr.solid {
     right: 0px;
   }
 }
-@media (min-width: 40.0625em){ 
+@media (min-width: 40.0625em){
   .nhsuk-header__menu {
     float: right;
   }
 }
-@media (min-width: 990px){ 
+@media (min-width: 990px){
   .nhsbsa-heading-space {
     margin-top:0px;
   }
 }
 /* /. */
-

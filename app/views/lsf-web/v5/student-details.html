@@ -9,7 +9,7 @@ Student details
     <div class="nhsuk-width-container">
       <ol class="nhsuk-breadcrumb__list">
         <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/current-search-student">Student search</a></li>
-       
+
       </ol>
       <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v5/current-search-student">Back to Student search</a></p>
     </div>
@@ -151,6 +151,22 @@ Student details
 									<a target="_blank" href="TDAE-student-claim?name=Emmit%20Mar&status=To%20be%20completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=">Review</a>
 								</div>
 							</details>
+              <details class="nhsuk-details">
+								<summary class="nhsuk-details__summary">
+									<span class="nhsuk-details__summary-text">1673 - Bank details change request (Active)</span>
+								</summary>
+								<div class="nhsuk-details__text">
+									<div class="nhsuk-hint" id="example-hint">
+										<!-- Start Date: 01/11/2022<br>
+										End date: 15/08/2024<br> -->
+										Created: 20/04/2024 11:10:58<br>
+										Last updated: 20/04/2024 11:10:58<br>
+										Last updated by: Deacon Robert<br>
+										Cipher: drobe
+									</div>
+									<a target="_blank" href="bank-details-check">Review</a>
+								</div>
+							</details>
 						</div>
 					</div>
 				</div>
@@ -160,7 +176,7 @@ Student details
 
 							<div class="nhsuk-form-group">
 								<label class="nhsuk-label visually-hidden" for="filter-notes">
-								  
+
 								</label>
 								<input class="nhsuk-input" id="example" name="filter-notes" type="text" placeholder="Filter notes" value="">
 							  </div>
@@ -178,13 +194,13 @@ Student details
 			<div class="nhsuk-grid-column-full">
 				<br><br>
 				<h3 class="nhsuk-heading-m">Notes</h3>
-              	
+
 				<hr>
 
 				{% if data['additional-feedback-note'] == 'yes' %}
 				<h3>XXXX <span id="currentDate1"></span> </h3>
 				<p>{{ data['additional-feedbacknote'] }}</p>
-			
+
 				<p>[NHSBSA comment]</p>
 				<p>Added by <b>Joe Bloggs</b></p>
 				<p id="currentDate1"></p>
@@ -194,15 +210,15 @@ Student details
 				{% if data['feedback-note'] == 'yes' and data['add-note-student-details'] == 'yes-add-note' %}
 					<h3>XXXX <span id="currentDate2"></span> </h3>
 					<p>{{ data['feedbacknote'] }}</p>
-				
+
 					<p>[NHSBSA comment]</p>
 					<p>Added by <b>Alyssa Geary</b></p>
 					<p id="currentDate2"></p>
 					<hr>
 				{% endif %}
 
-				
-				
+
+
 				<h3>Information mismatch - Attendance not confirmed on 14/10/2023 16:13:51</h3>
 							<p>An email "NHS Learning Support Fund - information mismatch" has been sent. The university says the information that needs changing is:</p>
 
@@ -401,24 +417,24 @@ Student details
 						  <div class="nhsuk-grid-column-one-third">
 							<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Name</h2>
 							<p id="studentName">Alyssa Geary</p>
-		  
+
 							  <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Date of birth</h2>
 							  <p id="studentDOB">4 January 2006</p>
-		  
+
 							  <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Username</h2>
 							  <p id="studentUsername">alyssa.geary</p>
 						  </div>
 						  <div class="nhsuk-grid-column-one-third">
 							  <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Phone</h2>
 							  <p id="studentPhone">07777777777</p>
-		  
+
 							  <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Email</h2>
 							  <p id="studentEmail">alyssa.geary@myemail.com</p>
-		  
+
 					<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">2 factor authentication (2FA)</h2>
 							  <p id="studentEmail">Enabled</p>
 						  </div>
-		  
+
 						  <div class="nhsuk-grid-column-one-third">
 							  <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Address</h2>
 							  <p>
@@ -434,17 +450,17 @@ Student details
 								  <summary class="nhsuk-details__summary">
 									  <span class="nhsuk-details__summary-text">Bank or building society account details</span>
 								  </summary>
-		  
+
 								  <div class="nhsuk-details__text">
 									  <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account number</h3>
 									  <p id="accountNumber">123456</p>
-		  
+
 									  <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Sort code</h3>
 									  <p id="sortcode">11-22-33</p>
-		  
+
 									  <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account holder</h3>
 									  <p id="accountholder">Alyssa Geary</p>
-		  
+
 									  <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Building society number</h3>
 									  <p>24680</p>
 								  </div>
@@ -517,71 +533,71 @@ Student details
 						  <div class="nhsuk-tabs__panel" id="tab-Notes">
 							  <div class="nhsuk-grid-row">
 								  <div class="nhsuk-grid-column-two-thirds">
-		  
+
 									  <div class="nhsuk-form-group">
 										  <label class="nhsuk-label visually-hidden" for="filter-notes">
-											
+
 										  </label>
 										  <input class="nhsuk-input" id="example" name="filter-notes" type="text" placeholder="Filter notes" value="">
 										</div>
-		  
-		  
+
+
 									  <a href="read-only/TDAE-add-feedback-note-2">
 									  <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
 										  Add note
 									  </button>
 									  </a>
 								  </div>
-		  
-		  
-		  
+
+
+
 					  <div class="nhsuk-grid-column-full">
 						  <br><br>
 						  <h3 class="nhsuk-heading-m">Notes</h3>
-							
+
 						  <hr>
-		  
+
 						  {% if data['additional-feedback-note'] == 'yes' %}
 						  <h3>XXXX <span id="currentDate1"></span> </h3>
 						  <p>{{ data['additional-feedbacknote'] }}</p>
-					  
+
 						  <p>[NHSBSA comment]</p>
 						  <p>Added by <b>Joe Bloggs</b></p>
 						  <p id="currentDate1"></p>
 						  <hr>
 						  {% endif %}
-		  
+
 						  {% if data['feedback-note'] == 'yes' and data['add-note-student-details'] == 'yes-add-note' %}
 							  <h3>XXXX <span id="currentDate2"></span> </h3>
 							  <p>{{ data['feedbacknote'] }}</p>
-						  
+
 							  <p>[NHSBSA comment]</p>
 							  <p>Added by <b>Jane Doe</b></p>
 							  <p id="currentDate2"></p>
 							  <hr>
 						  {% endif %}
-		  
-						  
-						  
+
+
+
 						  <h3>Information mismatch - Attendance not confirmed on 14/10/2023 16:13:51</h3>
 									  <p>An email "NHS Learning Support Fund - information mismatch" has been sent. The university says the information that needs changing is:</p>
-		  
+
 									  <p>[University comment]</p>
-		  
+
 									  <p>Last modified by <b>Katie Jennings</b></p>
 									  <hr>
 									  <h3 class="nhsuk-heading-m">HEI overruled student's COSA on 13 July 2023 at 4:13pm</h3>
 									  <p>{{ data['name'] }} told us they were not attending their course. The HEI has overruled this with the following reason:</p>
-		  
+
 									  <p>[reason]</p>
-		  
+
 									  <p>We have sent an email to {{ data['name'] }} asking them to re-confirm their attendance.</p>
-		  
+
 									  <p>Last modified by <b>Katie Jennings</b></p>
 								  </div>
 							  </div>
 						  </div>
-		  
+
 						  <div class="nhsuk-tabs__panel" id="tab-Enrolments">
 							  <div class="nhsuk-grid-row">
 								  <div class="nhsuk-grid-column-one-third">
@@ -669,7 +685,7 @@ Student details
 								  </div>
 							  </div>
 						  </div>
-		  
+
 						  <div class="nhsuk-tabs__panel" id="tab-Payments">
 							  <div class="nhsuk-column-one-third">
 								  <h2 class="nhsuk-heading-l">Next payment</h2>
@@ -697,7 +713,7 @@ Student details
 											  </td>
 											  <td role="cell" class="nhsuk-table__cell">
 												  <span class="nhsuk-table-responsive__heading">Next payment </span>
-		  
+
 												  10/04/2024
 											  </td>
 											  <td role="cell" class="nhsuk-table__cell">
@@ -717,7 +733,7 @@ Student details
 								  </table>
 							  </div>
 						  </div>
-		  
+
 						  <div id="tab-accountActions" class="nhsuk-tabs__panel">
 							  <div class="nhsuk-grid-row">
 								  <div class="nhsuk-grid-column-one-third">
@@ -744,7 +760,7 @@ Student details
 											  </div>
 											  <div class="nhsuk-form-group">
 												  <button class="nhsuk-button" type="submit" id="emailButton">Send</button>
-		  
+
 												  <p><a id="sendGeneralEmail" href="/lsf-web/v5/general-correspondence">Send general email</a></p>
 											  </div>
 										  </fieldset>
@@ -761,24 +777,24 @@ Student details
 								  <div class="nhsuk-grid-column-one-third">
 									<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Name</h2>
 									<p id="studentName">Daniel Jackson</p>
-				  
+
 									  <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Date of birth</h2>
 									  <p id="studentDOB">14 September 2004</p>
-				  
+
 									  <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Username</h2>
 									  <p id="studentUsername">daniel.jackson</p>
 								  </div>
 								  <div class="nhsuk-grid-column-one-third">
 									  <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Phone</h2>
 									  <p id="studentPhone">07777777777</p>
-				  
+
 									  <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Email</h2>
 									  <p id="studentEmail">daniel.jackson@myemail.com</p>
-				  
+
 							<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">2 factor authentication (2FA)</h2>
 									  <p id="studentEmail">Enabled</p>
 								  </div>
-				  
+
 								  <div class="nhsuk-grid-column-one-third">
 									  <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Address</h2>
 									  <p>
@@ -793,17 +809,17 @@ Student details
 										  <summary class="nhsuk-details__summary">
 											  <span class="nhsuk-details__summary-text">Bank or building society account details</span>
 										  </summary>
-				  
+
 										  <div class="nhsuk-details__text">
 											  <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account number</h3>
 											  <p id="accountNumber">123456</p>
-				  
+
 											  <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Sort code</h3>
 											  <p id="sortcode">11-22-33</p>
-				  
+
 											  <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account holder</h3>
 											  <p id="accountholder">Daniel Jackson</p>
-				  
+
 											  <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Building society number</h3>
 											  <p>24680</p>
 										  </div>
@@ -876,71 +892,71 @@ Student details
 								  <div class="nhsuk-tabs__panel" id="tab-Notes">
 									  <div class="nhsuk-grid-row">
 										  <div class="nhsuk-grid-column-two-thirds">
-				  
+
 											  <div class="nhsuk-form-group">
 												  <label class="nhsuk-label visually-hidden" for="filter-notes">
-													
+
 												  </label>
 												  <input class="nhsuk-input" id="example" name="filter-notes" type="text" placeholder="Filter notes" value="">
 												</div>
-				  
-				  
+
+
 											  <a href="read-only/TDAE-add-feedback-note-2">
 											  <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
 												  Add note
 											  </button>
 											  </a>
 										  </div>
-				  
-				  
-				  
+
+
+
 							  <div class="nhsuk-grid-column-full">
 								  <br><br>
 								  <h3 class="nhsuk-heading-m">Notes</h3>
-									
+
 								  <hr>
-				  
+
 								  {% if data['additional-feedback-note'] == 'yes' %}
 								  <h3>XXXX <span id="currentDate1"></span> </h3>
 								  <p>{{ data['additional-feedbacknote'] }}</p>
-							  
+
 								  <p>[NHSBSA comment]</p>
 								  <p>Added by <b>Joe Bloggs</b></p>
 								  <p id="currentDate1"></p>
 								  <hr>
 								  {% endif %}
-				  
+
 								  {% if data['feedback-note'] == 'yes' and data['add-note-student-details'] == 'yes-add-note' %}
 									  <h3>XXXX <span id="currentDate2"></span> </h3>
 									  <p>{{ data['feedbacknote'] }}</p>
-								  
+
 									  <p>[NHSBSA comment]</p>
 									  <p>Added by <b>Jane Doe</b></p>
 									  <p id="currentDate2"></p>
 									  <hr>
 								  {% endif %}
-				  
-								  
-								  
+
+
+
 								  <h3>Information mismatch - Attendance not confirmed on 14/10/2023 16:13:51</h3>
 											  <p>An email "NHS Learning Support Fund - information mismatch" has been sent. The university says the information that needs changing is:</p>
-				  
+
 											  <p>[University comment]</p>
-				  
+
 											  <p>Last modified by <b>Katie Jennings</b></p>
 											  <hr>
 											  <h3 class="nhsuk-heading-m">HEI overruled student's COSA on 13 July 2023 at 4:13pm</h3>
 											  <p>{{ data['name'] }} told us they were not attending their course. The HEI has overruled this with the following reason:</p>
-				  
+
 											  <p>[reason]</p>
-				  
+
 											  <p>We have sent an email to {{ data['name'] }} asking them to re-confirm their attendance.</p>
-				  
+
 											  <p>Last modified by <b>Katie Jennings</b></p>
 										  </div>
 									  </div>
 								  </div>
-				  
+
 								  <div class="nhsuk-tabs__panel" id="tab-Enrolments">
 									  <div class="nhsuk-grid-row">
 										  <div class="nhsuk-grid-column-one-third">
@@ -1028,7 +1044,7 @@ Student details
 										  </div>
 									  </div>
 								  </div>
-				  
+
 								  <div class="nhsuk-tabs__panel" id="tab-Payments">
 									  <div class="nhsuk-column-one-third">
 										  <h2 class="nhsuk-heading-l">Next payment</h2>
@@ -1056,7 +1072,7 @@ Student details
 													  </td>
 													  <td role="cell" class="nhsuk-table__cell">
 														  <span class="nhsuk-table-responsive__heading">Next payment </span>
-				  
+
 														  10/04/2024
 													  </td>
 													  <td role="cell" class="nhsuk-table__cell">
@@ -1076,7 +1092,7 @@ Student details
 										  </table>
 									  </div>
 								  </div>
-				  
+
 								  <div id="tab-accountActions" class="nhsuk-tabs__panel">
 									  <div class="nhsuk-grid-row">
 										  <div class="nhsuk-grid-column-one-third">
@@ -1103,7 +1119,7 @@ Student details
 													  </div>
 													  <div class="nhsuk-form-group">
 														  <button class="nhsuk-button" type="submit" id="emailButton">Send</button>
-				  
+
 														  <p><a id="sendGeneralEmail" href="/lsf-web/v5/general-correspondence">Send general email</a></p>
 													  </div>
 												  </fieldset>

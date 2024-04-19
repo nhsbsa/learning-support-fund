@@ -1,0 +1,39 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  What are your contact details?
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Bank details change request
+          </h1>
+        </legend>
+
+        <p>To make sure we pay your next payment into your correct account, update your details at least 7 days before it's due.</p>
+
+        <p>Enter these carefully. If they're incorrect we'll not accept responsibility for delayed, missing or incorrect payments.</p>
+
+        <p>We'll not send any payments until we've processed your change request.</p>
+
+        <div class="nhsuk-form-group">
+          <a class="nhsuk-button" href="current-bank-details">Continue</a>
+          <p><a href="dashboard-2">Cancel</a></p>
+        </div>
+      </fieldset>
+
+    </div>
+
+  </div>
+{% endblock %}

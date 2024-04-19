@@ -12,6 +12,42 @@ const router = express.Router();
 // Admin view
 // ********************************
 
+router.post('/v5/bank-details-new-details', (req, res) => {
+
+    const newDetails = req.session.data['new-details']
+
+    if (newDetails === 'no') {
+        res.redirect('/lsf-web/v5/bank-details-change-rejected')
+    } else {
+        res.redirect('/lsf-web/v5/bank-details-changed')
+    }
+
+})
+
+router.post('/v5/bank-details-photo-id', (req, res) => {
+
+    const photoID = req.session.data['photo-id']
+
+    if (photoID === 'no') {
+        res.redirect('/lsf-web/v5/bank-details-change-rejected')
+    } else {
+        res.redirect('/lsf-web/v5/bank-details-new-details')
+    }
+
+})
+
+router.post('/v5/bank-details-check', (req, res) => {
+
+    const currentDetails = req.session.data['current-details']
+
+    if (currentDetails === 'no') {
+        res.redirect('/lsf-web/v5/bank-details-change-rejected')
+    } else {
+        res.redirect('/lsf-web/v5/bank-details-photo-id')
+    }
+
+})
+
 router.post('/v5/create-role', (req, res) => {
 
     const userRole = req.session.data['role']
