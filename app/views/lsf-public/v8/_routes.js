@@ -10,6 +10,17 @@ const session = require('express-session');
 const router = express.Router();
 
 // TDAE Overseas
+router.post('/v8/TDAE-overseas/authorisation', (req, res) => {
+
+  res.redirect('/lsf-public/v8/TDAE-overseas/authorisation-evidence')
+
+})
+
+router.post('/v8/TDAE-overseas/authorisation-evidence', (req, res) => {
+
+  res.redirect('/lsf-public/v8/TDAE-overseas/which-costs')
+
+})
 
 router.post('/v8/TDAE-overseas/which-costs', (req, res) => {
 
