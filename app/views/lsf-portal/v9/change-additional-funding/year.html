@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Change attendance status
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Joe Bloggs change request</span>Which study year does the additional funding relate to?</h1>
+
+        <div class="nhsuk-radios">
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="year-1" name="year" type="radio" value="year-1">
+            <label class="nhsuk-label nhsuk-radios__label" for="year-1">
+              Year 1
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="year-2" name="year" type="radio" value="year-2">
+            <label class="nhsuk-label nhsuk-radios__label" for="year-2">
+              Year 2
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="year-3" name="year" type="radio" value="year-3">
+            <label class="nhsuk-label nhsuk-radios__label" for="year-3">
+              Year 3
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="year-4" name="year" type="radio" value="year-4">
+            <label class="nhsuk-label nhsuk-radios__label" for="year-4">
+              Year 4
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="year-5" name="year" type="radio" value="year-5">
+            <label class="nhsuk-label nhsuk-radios__label" for="year-5">
+              Year 5
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="year-6" name="year" type="radio" value="year-6">
+            <label class="nhsuk-label nhsuk-radios__label" for="year-6">
+              Year 6
+            </label>
+          </div>
+
+        </div>
+        <br>
+
+        <a class="nhsuk-button" href="expectation">Continue</a>
+        <a href="../course-intake"><p class="nhsuk-body">Cancel change</p></a>
+    </div>
+</div>
+
+</div>
+{% endblock %}

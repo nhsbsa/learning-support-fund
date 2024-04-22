@@ -217,7 +217,7 @@
                 {% if data['feedback-note'] == 'yes' %}
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">Mark Hirst (University)</td>
-                  <td class="nhsuk-table__cell">3 September 2023</td>
+                  <td class="nhsuk-table__cell"><p id="currentDate"</p></td>
                   <td class="nhsuk-table__cell ">{{ data['feedbacknote'] }}</td>
                 </tr>
                 {% endif %}
@@ -434,5 +434,21 @@
 
     completedSectionCount.innerHTML = completedSections;
     totalSectionCount.innerHTML = containers.length;
+
+    
+    // Current Date
+
+    // JavaScript code
+    var currentDateElement = document.getElementById("currentDate");
+
+    // Get the current date
+    var currentDate = new Date();
+
+    // Format the date as desired
+    var options = { day: 'numeric', month: 'long', year: 'numeric' };
+    var formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+    // Set the formatted date as the content of the element
+    currentDateElement.textContent = formattedDate;
   </script>
 {% endblock %}

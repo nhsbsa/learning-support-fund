@@ -1,0 +1,91 @@
+test{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    What comments would you like to provide to the NHSBSA regarding this claim?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+          "href": "javascript:history.go(-1)",
+          "text": "Go back"
+      }) }}
+
+    <form action="v9/COSA-maternity-comments" method="POST">
+
+        <div class="nhsuk-form-group">
+          <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>
+            Tell us about the maternity leave status (optional)
+          </h1>
+          </div>
+
+          <textarea class="nhsuk-textarea" id="maternityLeaveComment" name="return-more-detail" rows="8"></textarea>
+          <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">500 characters remaining</p>
+          <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 500 characters</p>
+
+        <button class="nhsuk-button" type="submit">Save and continue</button><br>
+
+    </form>
+
+    </div>
+
+  </div>
+
+  <script>
+      const textarea = document.querySelector('#additionalCostsComment');
+      const countRemaining = document.getElementById('charactersRemaining');
+      const staticMsg = document.querySelector('#char-count-screen-reader');
+      const maxCharacters = 500;
+      let timeoutId;
+
+      function updateCharacterCount() {
+        const textEntered = textarea.value;
+        const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+        const addition = newLines?.length || 0;
+        const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+
+        if (remainingCharacters >= 0) {
+          countRemaining.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+          countRemaining.classList.remove('nhsbsa-count-error-message');
+          countRemaining.classList.add('nhsuk-hint');
+          textarea.classList.remove('nhsuk-textarea--error');
+        } else {
+          countRemaining.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+          countRemaining.classList.add('nhsbsa-count-error-message');
+          countRemaining.classList.remove('nhsuk-hint');
+          textarea.classList.add('nhsuk-textarea--error');
+        }
+      }
+
+      function updateScreenReaderMessage() {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+          const textEntered = textarea.value;
+          const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+          const addition = newLines?.length || 0;
+          const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+          // TO DO ADD FIX FOR 1 CHARACTER
+          if (remainingCharacters < 0) {
+            staticMsg.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+          } else {
+            staticMsg.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+          }
+        }, 500);
+      }
+
+      textarea.addEventListener('input', () => {
+        updateCharacterCount();
+        updateScreenReaderMessage();
+      });
+
+      // Update character count if textarea has a value on page load
+      window.addEventListener('load', () => {
+        updateCharacterCount();
+        updateScreenReaderMessage();
+      });
+    </script>
+
+
+{% endblock %}

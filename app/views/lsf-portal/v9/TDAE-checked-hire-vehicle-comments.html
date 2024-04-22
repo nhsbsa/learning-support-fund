@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v9/TDAE-checked-hire-vehicle-comments" method="POST">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-l">Tell us more about the student's hire car details (optional)</h1>
+          </legend>
+          <p>You can include any more information about the student hiring a car. For example, any discussions you had with them that we cannot access, such as emails or meetings.</p>
+
+
+            <div class="nhsuk-form-group ">
+              <textarea class="nhsuk-textarea" id="additionalCostsComment" name="additionalCostsComment" rows="8"></textarea>
+              <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">500 characters remaining</p>
+              <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 500 characters</p>
+            </div>
+
+        </fieldset>
+      </div>
+      <button class="nhsuk-button" type="submit">
+          Save and continue
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

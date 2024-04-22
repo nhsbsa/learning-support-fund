@@ -1,0 +1,118 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Course intake
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/js/main.js"></script>
+<script>
+  function change() // no ';' here
+{
+  var btn = document.getElementById("toggle-filter");
+  if(btn.innerText=="Show filter"){
+     btn.innerText="Hide filter";
+    }
+  else{
+    btn.innerText="Show filter";
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+        {{ backLink({
+          "href": "javascript:history.go(-1)",
+          "text": "Go back"
+        }) }}
+        <form action="v9/COSA-student-status-change" method="POST">
+        <h1 class="nhsuk-heading-l">
+          <span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>
+          What is the status of Emmit Mar?
+        </h1>
+
+        <p class="nhsuk-body-s">
+          <b>Course name:</b> Diagnostic Radiography<br>
+          <b>Academic year:</b> September 2023<br>
+          <b>Study year:</b> Year 1
+        </p>
+
+        <div class="nhsuk-form-group">
+          {% if data['term'] == '2' or data['term'] == '3' %}
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="student-status-1" name="student-status" type="radio" value="In attendance">
+              <label class="nhsuk-label nhsuk-radios__label" for="student-status-1">
+                In attendance
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="student-status-2" name="student-status" type="radio" value="Interruption">
+              <label class="nhsuk-label nhsuk-radios__label" for="student-status-2">
+                Interruption
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="student-status-3" name="student-status" type="radio" value="Maternity leave">
+              <label class="nhsuk-label nhsuk-radios__label" for="student-status-3">
+                Maternity leave
+              </label>
+            </div>
+
+          </div>
+        </div>
+        {% else %}
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="student-status-1" name="student-status" type="radio" value="In attendance">
+              <label class="nhsuk-label nhsuk-radios__label" for="student-status-1">
+                In attendance
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="student-status-2" name="student-status" type="radio" value="Discontinued">
+              <label class="nhsuk-label nhsuk-radios__label" for="student-status-2">
+                Discontinued
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="student-status-3" name="student-status" type="radio" value="Information mismatch">
+              <label class="nhsuk-label nhsuk-radios__label" for="student-status-3">
+                Information mismatch
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="student-status-4" name="student-status" type="radio" value="Not enrolled">
+              <label class="nhsuk-label nhsuk-radios__label" for="student-status-4">
+                Not enrolled
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="student-status-5" name="student-status" type="radio" value="Maternity leave">
+              <label class="nhsuk-label nhsuk-radios__label" for="student-status-5">
+                Maternity leave
+              </label>
+            </div>
+
+          </div>
+        </div>
+        {% endif %}
+        <button class="nhsuk-button" type="submit">Save and continue</button>
+
+        </form>
+    </div>
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Overseas costs summary</h1>
+
+    <dl class="nhsuk-summary-list">
+
+      <dl class="nhsuk-summary-list">
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Insurance costs
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				£120
+			</dd>
+		</div>
+
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Medical test costs
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				£60
+			</dd>
+		</div>
+
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Vaccinations costs
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				£40
+			</dd>
+		</div>
+
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Visa fees costs
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				£120
+			</dd>
+		</div>		
+
+    </dl>
+
+	<h2 class="nhsuk-heading-m">Total overseas costs to be reimbursed</h2>
+	    <dl class="nhsuk-summary-list">
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Total overseas costs
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+							£340
+					</dd>
+				</div>
+	    </dl>
+
+      {% if (data['read-only'] != 'true') and (data['scenario'] != 'previous') %}
+      <a class="nhsuk-button" href="TDAE-checked-overseas">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

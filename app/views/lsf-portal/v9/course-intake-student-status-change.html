@@ -1,0 +1,89 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Course intake
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning SupportFund</span>Results for students studying Diagnostic Radiography at SHEFFIELD HALLAM UNIVERSITY</h1>
+
+    </div>
+
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-inset-text nhsuk-inset--custom-width">
+            <div class="nhsuk-custom-three-column">
+                <h2 class="nhsuk-heading-xs">Course name</h2>
+                <p>Diagnostic Radiography</p>
+            </div>
+            <div class="nhsuk-custom-three-column">
+                <h2 class="nhsuk-heading-xs">Academic year</h2>
+                <p>September 2022</p>
+            </div>
+            <div class="nhsuk-custom-three-column">
+                <h2 class="nhsuk-heading-xs">Study year</h2>
+                <p>Year 1</p>
+            </div>
+        </div>
+
+        <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-3">
+            <caption class="nhsuk-table__caption">Intake contains 1 students</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                        Name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Date of birth
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Attendance type
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Start date
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Status
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Name</span> <a href="student-details">Joe Bloggs</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date of birth </span>10/11/1989
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Attendance type </span>Full time
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Start date </span> 
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span>Pending
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Late starter/rejoiner</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Showing 1 - 1 of 1 students results</p>
+        <a class="nhsuk-button nhsuk-button-custom" href="#" disabled>Save changes</a>
+
+
+    </div>
+
+  </div>
+{% endblock %}

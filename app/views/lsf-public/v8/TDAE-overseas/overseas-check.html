@@ -14,8 +14,46 @@ Check your answers
 		<h1 class="nhsuk-heading-xl">Check your overseas costs answers</h1>
 
 			<dl class="nhsuk-summary-list">
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Authorised by
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['authorised-by'] %}
+							{{ data['authorised-by'] }}
+							{% else %}
+							John Doe
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						<a href="authorisation">
+							Change<span class="nhsuk-u-visually-hidden">authorisation</span>
+						</a>
+					</dd>
+					{% endif %}
+				</div>
 
-				<!-- taxi authorised by -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Authoriser's role
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['authoriser-role'] %}
+							{{ data['authoriser-role'] }}
+							{% else %}
+							Placement co-ordinator
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						<a href="authorisation">
+							Change<span class="nhsuk-u-visually-hidden">authoriser's role</span>
+						</a>
+					</dd>
+					{% endif %}
+				</div>
+
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Overseas costs paid for
@@ -31,6 +69,24 @@ Check your answers
 					<dd class="nhsuk-summary-list__actions">
 						<a href="which-costs">
 							Change<span class="nhsuk-u-visually-hidden">overseas costs paid for</span>
+						</a>
+					</dd>
+					{% endif %}
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Evidence uploaded
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						<a href="/images/hire-car-booking-confirmation.jpg" download="Authorisation of Overseas Costs April 2024">
+							overseas-authorisation.jpg
+						</a>
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						<a href="authorisation-evidence">
+							Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 						</a>
 					</dd>
 					{% endif %}
@@ -73,7 +129,7 @@ Check your answers
 							Evidence uploaded
 						</dt>
 						<dd class="nhsuk-summary-list__value">
-							<a href="/images/hire-car-booking-confirmation.jpg" download="Insurance cost evidence 18 April 2024">
+							<a href="/images/hire-car-booking-confirmation.jpg" download="Insurance evidence 18 April 2024">
 								snapshot-045-18-04-2024.jpg
 							</a>
 						</dd>
@@ -152,7 +208,7 @@ Check your answers
 								Evidence uploaded
 							</dt>
 							<dd class="nhsuk-summary-list__value">
-								<a href="/images/hire-car-booking-confirmation.jpg" download="Medical tests cost evidence 18 April 2024">
+								<a href="/images/hire-car-booking-confirmation.jpg" download="Medical tests evidence 18 April 2024">
 									snapshot-045-18-04-2024.jpg
 								</a>
 							</dd>
@@ -231,7 +287,7 @@ Check your answers
 							Evidence uploaded
 						</dt>
 						<dd class="nhsuk-summary-list__value">
-							<a href="/images/hire-car-booking-confirmation.jpg" download="Vaccinations cost evidence 18 April 2024">
+							<a href="/images/hire-car-booking-confirmation.jpg" download="Vaccinations evidence 18 April 2024">
 								snapshot-045-18-04-2024.jpg
 							</a>
 						</dd>
@@ -310,7 +366,7 @@ Check your answers
 							Evidence uploaded
 						</dt>
 						<dd class="nhsuk-summary-list__value">
-							<a href="/images/hire-car-booking-confirmation.jpg" download="Visa fees cost evidence 18 April 2024">
+							<a href="/images/hire-car-booking-confirmation.jpg" download="Visa fees evidence 18 April 2024">
 								snapshot-045-18-04-2024.jpg
 							</a>
 						</dd>
@@ -362,7 +418,7 @@ Check your answers
 						Total overseas costs
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-							£10
+							£340
 					</dd>
 				</div>
 	    </dl>

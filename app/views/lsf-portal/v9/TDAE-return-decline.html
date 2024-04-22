@@ -1,0 +1,62 @@
+send back to student{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  What is the reason to send the claim back to the student?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v9/returnordecline" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Do you want to return or decline the claim?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="return-student-university" name="return-student" type="radio" value="Return to student">
+                  <label class="nhsuk-label nhsuk-radios__label" for="return-student-university">
+                    Return to student
+                  </label>
+                  <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                    Use this if you need the student to change some information and re-submit the claim.
+                  </div>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="return-student-placement" name="return-student" type="radio" value="Decline claim">
+                  <label class="nhsuk-label nhsuk-radios__label" for="return-student-placement">
+                    Decline claim
+                  </label>
+                  <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                    Use this if you do not want the student to re-submit the claim. For example, this is a duplicate claim.
+                  </div>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}
