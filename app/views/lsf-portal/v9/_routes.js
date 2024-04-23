@@ -328,18 +328,17 @@ router.post('/v9/TDAE-overseas-costs-summary', (req, res) => {
 })
 
 router.post('/v9/TDAE-checked-overseas', (req, res) => {
-
-    const overseasCheck = req.session.data['overseas-check']
+    const overseasCheck = req.session.data['overseas-check'];
 
     if (overseasCheck === 'yes') {
-        req.session.data['overseas-completed'] = 'completed'
+        req.session.data['overseas-completed'] = 'completed';
+        res.redirect('/lsf-portal/v9/TDAE-checked-overseas-comments');
     } else {
-        req.session.data['overseas-completed'] = 'in-progress'
+        req.session.data['overseas-completed'] = 'in-progress';
+        res.redirect('/lsf-portal/v9/TDAE-student-claim');
     }
+});
 
-    res.redirect('/lsf-portal/v9/TDAE-checked-overseas-comments')
-
-})
 
 router.post('/v9/TDAE-checked-overseas-comments', (req, res) => {
 

@@ -40,12 +40,12 @@ Send to student
       </div>
       {% endif %}
 
-      {% if data['return-student'] != 'Decline claim' %}
-        <p>You have returned the claim to the student and told them why. We will email the student to let them know.</p>
-      {% else %}
-        <p>You have declined this claim. We will email the student to tell them why.</p>
-      {% endif %}
-      
+        {% if data['return-student'] != 'Decline claim' %}
+        <p>You've returned the claim to the student and told them why. We'll email the student to let them know.</p>
+        {% else %}
+        <p>You've declined this claim. We'll email the student to tell them why.</p>
+        {% endif %}
+        
             <button class="nhsuk-button" type="submit">Return to Active TDAE claims</button>
         </form>
 
