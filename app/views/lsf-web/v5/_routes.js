@@ -12,11 +12,11 @@ const router = express.Router();
 // Admin view
 // ********************************
 
-router.post('/v5/bank-details-new-details', (req, res) => {
+router.post('/v5/bank-details-approve', (req, res) => {
 
-    const newDetails = req.session.data['new-details']
+    const approve = req.session.data['approve']
 
-    if (newDetails === 'no') {
+    if (approve === 'no') {
         res.redirect('/lsf-web/v5/bank-details-change-rejected')
     } else {
         res.redirect('/lsf-web/v5/bank-details-changed')
@@ -24,27 +24,21 @@ router.post('/v5/bank-details-new-details', (req, res) => {
 
 })
 
+router.post('/v5/bank-details-new-details', (req, res) => {
+
+    res.redirect('/lsf-web/v5/bank-details-approve')
+
+})
+
 router.post('/v5/bank-details-photo-id', (req, res) => {
 
-    const photoID = req.session.data['photo-id']
-
-    if (photoID === 'no') {
-        res.redirect('/lsf-web/v5/bank-details-change-rejected')
-    } else {
-        res.redirect('/lsf-web/v5/bank-details-new-details')
-    }
+    res.redirect('/lsf-web/v5/bank-details-new-details')
 
 })
 
 router.post('/v5/bank-details-check', (req, res) => {
 
-    const currentDetails = req.session.data['current-details']
-
-    if (currentDetails === 'no') {
-        res.redirect('/lsf-web/v5/bank-details-change-rejected')
-    } else {
-        res.redirect('/lsf-web/v5/bank-details-photo-id')
-    }
+    res.redirect('/lsf-web/v5/bank-details-photo-id')
 
 })
 

@@ -35,7 +35,7 @@
                 Name on account
               </dt>
               <dd class="nhsuk-summary-list__value">
-                Joe Bloggs
+                Emmit Marr
               </dd>
             </div>
             <div class="nhsuk-summary-list__row">
@@ -70,6 +70,14 @@
 
       </div>
 
+      {% if data['details-entered'] == 'no' %}
+        <div class="nhsuk-grid-column-two-thirds">
+          <div style="margin-top:0px;" class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>The student has not been able to confirm the bank details currently on their account.</p>
+          </div>
+        </div>
+      {% else %}
       <div class="nhsuk-grid-column-one-half">
 
         <div style="padding-top:32px!important; background-color: #fff; border: 1px solid #768692;" class="nhsuk-warning-callout">
@@ -89,7 +97,7 @@
                 Name on account
               </dt>
               <dd class="nhsuk-summary-list__value">
-                Joe Bloggs
+                Emmit Marr
               </dd>
             </div>
             <div class="nhsuk-summary-list__row">
@@ -121,6 +129,7 @@
         </div>
 
       </div>
+      {% endif %}
 
       <div class="nhsuk-grid-column-two-thirds">
         <form action="v5/bank-details-check" method="POST">

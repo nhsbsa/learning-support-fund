@@ -207,7 +207,30 @@
 												<h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Building society roll number</h3>
 												<p id="buildingSocietyNo">************</p>
 
-                        <p><a href="bank-details-pause">Submit a bank details change request</a></p>
+                        {% if data['bank-request'] == 'submitted' %}
+                            <p>You've submitted a bank details change request. We'll contact you when this is done or if we need more information.</p>
+                            <p>If you need to contact us about your bank details before then, you can do this by:</p>
+                            <ul class="nhsuk-list">
+                              <li>Telephone: 0300 330 0521</li>
+                              <li>Text relay service: 18001 0300 330 0521</li>
+                            </ul>
+                            <!--<details class="nhsuk-details">
+                              <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                  Contact us about your bank details change request
+                                </span>
+                              </summary>
+                              <div class="nhsuk-details__text">
+                                <p>If you need to contact us regarding your bank details change request you can do so by:</p>
+                                <ul class="nhsuk-list">
+                                  <li>telephone: 0300 330 0521</li>
+                                  <li>text relay service: 18001 0300 330 0521</li>
+                                </ul>
+                              </div>
+                            </details>-->
+                        {% else %}
+                          <p><a href="bank-details-pause">Submit a bank details change request</a></p>
+                        {% endif %}
 
 											</div>
 										</div>

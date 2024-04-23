@@ -76,6 +76,14 @@ Student details
 						</summary>
 
 						<div class="nhsuk-details__text">
+
+              {% if data['request'] == 'rejected' %}
+                <strong class="nhsuk-tag nhsuk-tag--red">Bank details change request rejected</strong><br><br>
+              {% elif data['request'] == 'approved' %}
+              {% else %}
+                <strong class="nhsuk-tag nhsuk-tag--yellow">Bank details change request submitted</strong><br><br>
+              {% endif %}
+
 							<h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account number</h3>
 							<p id="accountNumber">123456</p>
 
@@ -216,8 +224,23 @@ Student details
 					<p id="currentDate2"></p>
 					<hr>
 				{% endif %}
+        {% if data['request'] == 'approved' %}
+        <h3>Bank details change request accepted on 20/04/2023 16:13:51</h3>
+				<p>'Bank details changed for NHS Learning Support Fund' email sent to student.</p>
 
+				<p>Note added to request:<br>[comment entered by processor]</p>
 
+				<p>Last modified by <b>Katie Jennings</b></p>
+				<hr>
+        {% endif %}
+        {% if data['request'] == 'rejected' %}
+        <h3>Bank details change request rejected on 18/04/2023 12:28:20</h3>
+
+				<p>Note added to request:<br>[comment entered by processor]</p>
+
+				<p>Last modified by <b>Katie Jennings</b></p>
+				<hr>
+        {% endif %}
 
 				<h3>Information mismatch - Attendance not confirmed on 14/10/2023 16:13:51</h3>
 							<p>An email "NHS Learning Support Fund - information mismatch" has been sent. The university says the information that needs changing is:</p>
