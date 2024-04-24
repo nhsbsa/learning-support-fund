@@ -180,7 +180,7 @@ Check your answers
 			      Medical tests
 			    </span>
 			  </summary>
-			  
+
 				<div class="nhsuk-details__text">
 					<dl class="nhsuk-summary-list">
 						<div class="nhsuk-summary-list__row">
@@ -202,7 +202,7 @@ Check your answers
 							</dd>
 							{% endif %}
 						</div>
-	
+
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
 								Evidence uploaded
@@ -220,7 +220,7 @@ Check your answers
 							</dd>
 							{% endif %}
 						</div>
-	
+
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
 								Comments
@@ -245,7 +245,7 @@ Check your answers
 								{% endif %}
 								</dd>
 							{% endif %}
-						</div>	
+						</div>
 
 			  </div>
 			</details>
@@ -259,7 +259,7 @@ Check your answers
 			      Vaccinations
 			    </span>
 			  </summary>
-			  
+
 			  <div class="nhsuk-details__text">
 				<dl class="nhsuk-summary-list">
 					<div class="nhsuk-summary-list__row">
@@ -469,6 +469,22 @@ Check your answers
 				return months[month];
 			});
 		});
+		</script>
+
+		<script>
+		    $(document).ready(function() {
+		        // Get the values of visa fees, vaccinations, medical tests, and insurance costs
+		        const visaFeesCost = parseInt($("dd.nhsuk-summary-list__value:contains('£')").eq(0).text().replace('£', ''), 10);
+		        const vaccinationsCost = parseInt($("dd.nhsuk-summary-list__value:contains('£')").eq(1).text().replace('£', ''), 10);
+		        const medicalTestsCost = parseInt($("dd.nhsuk-summary-list__value:contains('£')").eq(2).text().replace('£', ''), 10);
+		        const insuranceCost = parseInt($("dd.nhsuk-summary-list__value:contains('£')").eq(3).text().replace('£', ''), 10);
+
+		        // Calculate the total
+		        const totalCost = visaFeesCost + vaccinationsCost + medicalTestsCost + insuranceCost;
+
+		        // Replace the static £340 with the calculated total
+		        $("dd.nhsuk-summary-list__value:contains('£340')").text('£' + totalCost);
+		    });
 		</script>
 
 </div>
