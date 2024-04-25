@@ -20,6 +20,66 @@
         {% endif %}
       </h1>
 
+      
+      <!--dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Claim start<br>
+            and end date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            2 February 2024 to
+            25 February 2024
+          </dd>
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total claim value
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £340
+          </dd>
+        </div>
+      
+      </dl!-->
+
+      <!--table role="table" class="nhsuk-table-responsive">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+                Claim start and end date
+            </th>
+            <th role="columnheader" class="" scope="col">
+                Total claim value
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Claim start and end date </span>2 February 2024 to 25 February 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Total claim value </span>£340
+                </td>
+            </tr>
+        </tbody>
+      </table>
+
+      <br!-->
+
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <p><b>Claim start and end date</b><br>2 February 2024 to 25 February 2024</p>
+        <p><b>Total claim value</b><br>£125</p>
+      </div>
+
+      <hr class="" style="border-color: #005eb8; border-width: 4px">
+      
+
+  
+
       {% if data['status'] == 'University processing' %}
         <strong class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-bottom-3 task-status">Started by SJ</strong>
       {% elif data['status'] == 'Returned to student' %}
@@ -422,7 +482,7 @@
     completedSectionCount.innerHTML = completedSections;
     totalSectionCount.innerHTML = containers.length;
 
-    
+
     // Current Date
 
     // JavaScript code

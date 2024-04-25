@@ -44,6 +44,23 @@ Is your term time address the same?
                 </div>
               </details>
 
+              {% if 'overseas' in data['claiming-for'] %}
+              <details class="nhsuk-details">
+                <summary class="nhsuk-details__summary">
+                  <span class="nhsuk-details__summary-text">
+                  My costs are in a foreign currency
+                  </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                  <p>You need to enter all costs in pounds sterling.</p>
+          
+                  <p>If you used a card to pay costs, your bank statement should show you the correct value.</p>
+                  
+                  <p>If you used cash, you need to convert your costs using the exchange rate on the day that you paid them.</p>
+                </div>
+            	</details>
+            {% endif %}
+
               <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="example">
                   Which nights cost this amount?
