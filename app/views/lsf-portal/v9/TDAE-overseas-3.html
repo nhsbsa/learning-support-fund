@@ -1,0 +1,219 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Overseas details</h1>
+
+      		<dl class="nhsuk-summary-list">
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Authorised by
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						John Doe
+					</dd>
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Authoriser's role
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						Placement co-ordinator
+					</dd>
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Evidence uploaded
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						<a href="/images/hire-car-booking-confirmation.jpg" download="Authorisation of Overseas Costs April 2024">
+						overseas-authorisation.jpg
+						</a>
+					</dd>
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Overseas costs paid for
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						Insurance<br>
+						Medical tests<br>
+						Vaccinations<br>
+						Visa fees
+					</dd>
+				</div>
+    		</dl>
+
+
+
+		<h3>Insurance costs details</h3>
+			<dl class="nhsuk-summary-list">
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Insurance costs
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+							£120
+					</dd>
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Evidence uploaded
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						<a href="/images/hire-car-booking-confirmation.jpg" download="Insurance evidence 18 April 2024">
+							snapshot-045-18-04-2024.jpg
+						</a>
+					</dd>
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Comments
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						None provided
+					</dd>
+				</div>
+			</dl>
+
+
+
+		<h3>Medical tests costs details</h3>
+			<dl class="nhsuk-summary-list">
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Medical tests costs
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+							£60
+					</dd>
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Evidence uploaded
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						<a href="/images/hire-car-booking-confirmation.jpg" download="Medical tests evidence 18 April 2024">
+							snapshot-045-18-04-2024.jpg
+						</a>
+					</dd>
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Comments
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+							None provided
+					</dd>
+				</div>
+			</dl>
+	
+
+
+		<h3>Vaccination costs details</h3>
+			<dl class="nhsuk-summary-list">
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Vaccination costs
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						£40
+					</dd>
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Evidence uploaded
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						<a href="/images/hire-car-booking-confirmation.jpg" download="Vaccinations evidence 18 April 2024">
+							snapshot-045-18-04-2024.jpg
+						</a>
+					</dd>
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Comments
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						None provided
+					</dd>
+				</div>
+			</dl>
+	
+
+
+		<h3>Visa fees details</h3>
+			<dl class="nhsuk-summary-list">
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Visa fees
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						£120
+					</dd>
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Evidence uploaded
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						<a href="/images/hire-car-booking-confirmation.jpg" download="Visa fees evidence 18 April 2024">
+							snapshot-045-18-04-2024.jpg
+						</a>
+					</dd>
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Comments
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						None provided
+					</dd>
+				</div>
+			</dl>
+
+			<hr class="" style="border-color: #005eb8; border-width: 4px">
+
+			<h2 class="nhsuk-heading-m">Total overseas costs to be reimbursed</h2>
+	    		<dl class="nhsuk-summary-list">
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Total overseas costs
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							£340
+						</dd>
+					</div>
+	    		</dl>
+
+      {% if (data['read-only'] != 'true') and (data['scenario'] != 'previous') %}
+      <a class="nhsuk-button" href="TDAE-overseas-insurance-details">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

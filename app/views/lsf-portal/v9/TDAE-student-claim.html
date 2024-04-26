@@ -75,10 +75,8 @@
         <p><b>Total claim value</b><br>£125</p>
       </div>
 
-      <hr class="" style="border-color: #005eb8; border-width: 4px">
       
-
-  
+      
 
       {% if data['status'] == 'University processing' %}
         <strong class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-bottom-3 task-status">Started by SJ</strong>
@@ -96,17 +94,23 @@
         <!-- <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed {% if data['status'] === 'Returned from NHSBSA' %}1{% else %}0{% endif %} of {% if data['scenario'] === 'accommodation-travel' %}3{% else %}2{% endif %} sections.</p> -->
       {% endif %}
 
+      <hr class="" style="border-color: #005eb8; border-width: 4px">
+
       {% if data['status'] == 'University processing' %}
         <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-7">Claim currently being processed by Samuel Jackson</h2>
       {% endif %}
     </div>
   </div>
+
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
       {% if data['status'] === 'Submitted to NHSBSA' %}
       <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
         <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">Claim notes and history</span>
+          <span class="nhsuk-details__summary-text">
+            Claim notes and history
+          </span>
         </summary>
         <div class="nhsuk-details__text">
           <table class="nhsuk-table-responsive">

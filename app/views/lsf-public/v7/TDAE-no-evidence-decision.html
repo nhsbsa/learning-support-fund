@@ -32,7 +32,11 @@
                     Cost
                   </dt>
                   <dd class="nhsuk-summary-list__value">
+                    {% if data['no-evidence-for'] %}
+							        {{ data['no-evidence-for'] }}
+							      {% else %}
                     Parking charges on Monday 5 June 2023
+                    {% endif %}
                   </dd>
 
                 </div>

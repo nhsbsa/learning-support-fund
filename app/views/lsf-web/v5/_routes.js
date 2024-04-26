@@ -319,6 +319,55 @@ router.post('/v5/TDAE-taxi-check', (req, res) => {
 
 })
 
+router.post('/v5/TDAE-overseas', (req, res) => {
+
+    res.redirect('/lsf-web/v5/TDAE-overseas-insurance-details')
+
+})
+
+router.post('/v5/TDAE-overseas-insurance-details', (req, res) => {
+
+    res.redirect('/lsf-web/v5/TDAE-overseas-medical-tests-details')
+
+})
+
+router.post('/v5/TDAE-overseas-medical-tests-details', (req, res) => {
+
+    res.redirect('/lsf-web/v5/TDAE-overseas-vaccinations-details')
+
+})
+
+router.post('/v5/TDAE-overseas-vaccinations-details', (req, res) => {
+
+    res.redirect('/lsf-web/v5/TDAE-overseas-visa-fees-details')
+
+})
+
+router.post('/v5/TDAE-overseas-visa-fees-details', (req, res) => {
+
+    res.redirect('/lsf-web/v5/TDAE-overseas-costs-summary')
+
+})
+
+router.post('/v5/TDAE-overseas-costs-summary', (req, res) => {
+
+    res.redirect('/lsf-web/v5/TDAE-checked-overseas')
+
+})
+
+router.post('/v5/TDAE-overseas-check', (req, res) => {
+    const overseasCheck = req.session.data['overseas-check'];
+
+    if (overseasCheck === 'yes') {
+        req.session.data['overseas-completed'] = 'completed';
+    } else {
+        req.session.data['overseas-completed'] = 'in-progress';
+    }
+
+    res.redirect('/lsf-web/v5/TDAE-student-claim');
+
+});
+
 
 router.post('/v5/TDAE-authoriser-approved', (req, res) => {
 
