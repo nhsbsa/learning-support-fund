@@ -6,7 +6,6 @@ Evidence you have uploaded
 
 {% block content %}
 <div class="nhsuk-grid-row">
-
   <div class="nhsuk-grid-column-two-thirds">
 
     {{ backLink({
@@ -14,97 +13,83 @@ Evidence you have uploaded
     "text": "Go back"
     }) }}
 
-    <form action="../v8/TDAE-accommodation-travel-mini-cya" method="POST">
-
-       
+    <form action="../8/TDAE-accommodation-travel-mini-cya" method="POST">
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="placement-additional-costs">
               <h1 class="nhsuk-heading-l">Uploaded evidence for your journey</h1>
           </label>
 
-        {% if data['evidence'] === 'removed' %}
-        <div class="nhsuk-inset-text">
-          <span class="nhsuk-u-visually-hidden">Information: </span>
-          <p>You have removed all evidence and will need to add new evidence.</p>
-          </div>
-        {% else %}
-        <table class="nhsuk-table">
-            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                    File
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    Action
-                </th>
-              </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell ">
-                    {% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
-                    <a href="/images/parking-receipt-and-train-ticket.jpg" target="_blank" rel="noopener">
-                      parking-receipt-and-train-ticket.jpg
-                    </a>
-                    {% else %}
-                    <a href="/images/train-ticket-2.jpg" target="_blank" rel="noopener">
-                      snapshot-015-09-02-2024.jpg
-                    </a>
-                    {% endif %}
-                </td>
-                <td class="nhsuk-table__cell ">
-                    <a href="TDAE-evidence-mini-cya?evidence=removed">Remove</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          {% endif %}
-
           {% if data['evidence'] === 'removed' %}
-            <p style="margin-bottom:0px;"><a href="TDAE-provide-journey-evidence-2?evidence=added" class="nhsuk-button">Add evidence</a></p>
-          {% else %}
-          <div class="nhsuk-form-group">
+            <div class="nhsuk-inset-text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+              <p>You have removed all evidence and will need to add new evidence.</p>
+            </div>
 
-            <fieldset class="nhsuk-fieldset">
-              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-                <h2 class="nhsuk-fieldset__heading">
-                  Do you want to upload more evidence for this journey?
-                </h2>
-              </legend>
-              
-
-              <div class="nhsuk-radios nhsuk-radios--inline">
-
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="more-evidence-yes" name="more-evidence" type="radio" value="yes">
-                  <label class="nhsuk-label nhsuk-radios__label" for="more-evidence-yes">
-                    Yes
-                  </label>
-                </div>
-
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="more-evidence-no" name="more-evidence" type="radio" value="no">
-                  <label class="nhsuk-label nhsuk-radios__label" for="more-evidence-no">
-                    No
-                  </label>
-                </div>
-
+            <p style="margin-bottom:0px;"><a href="TDAE-accommodation-travel-evidence?evidence=added" class="nhsuk-button">Add evidence</a></p>
+            
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  I do not have evidence
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p>If you do not give us evidence for a cost, your university may ask you to remove it from your claim. Costs without evidence are only reimbursed in exceptional circumstances.</p>
+                <p>You can <a href="../TDAE-no-evidence-decision">remove the journey from your claim or tell us why you cannot give us evidence</a>.</p>
               </div>
-            </fieldset>
-
-          </div>
+            </details>  
+            
+            
+          {% else %}
+            <table class="nhsuk-table">
+              <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">File</th>
+                  <th role="columnheader" class="" scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">
+                    {% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
+                      <a href="/images/parking-receipt-and-train-ticket.jpg" target="_blank" rel="noopener">parking-receipt-and-train-ticket.jpg</a>
+                    {% else %}
+                      <a href="/images/train-ticket-2.jpg" target="_blank" rel="noopener">snapshot-015-09-02-2024.jpg</a>
+                    {% endif %}
+                  </td>
+                  <td class="nhsuk-table__cell">
+                    <a href="TDAE-accommodation-travel-mini-cya?evidence=removed">Remove</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
         </div>
 
-        <button class="nhsuk-button" type="submit">Continue</button><br>
-        {% endif %}
-        <a href="TDAE-task-list">Cancel</a>
-
+            <div class="nhsuk-form-group">
+              <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                  <h2 class="nhsuk-fieldset__heading">
+                    Do you want to upload more evidence for this journey?
+                  </h2>
+                </legend>
+                <div class="nhsuk-radios nhsuk-radios--inline">
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="more-evidence-yes" name="more-evidence" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="more-evidence-yes">Yes</label>
+                  </div>
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="more-evidence-no" name="more-evidence" type="radio" value="no">
+                    <label class="nhsuk-label nhsuk-radios__label" for="more-evidence-no">No</label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <button class="nhsuk-button" type="submit">Continue</button><br>
+          {% endif %}
+          <a href="TDAE-task-list">Cancel</a>
+        </div>
     </form>
-
   </div>
-
 </div>
-
-</script>
 {% endblock %}

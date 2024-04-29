@@ -39,6 +39,20 @@ Additional costs for your normal daily journey
 					    </dd>
 					  </div>
 
+					  <div class="nhsuk-summary-list__row">
+					    <dt class="nhsuk-summary-list__key">
+					      Extra cost type
+					    </dt>
+					    <dd class="nhsuk-summary-list__value">
+								{% if data['additional-cost-single-day'] == 'No' %}Multiple day cost{% else %}Daily cost{% endif %}
+					    </dd>
+					    <dd class="nhsuk-summary-list__actions">
+					      <a href="TDAE-placement-additional-cost-single-day">
+					        Change<span class="nhsuk-u-visually-hidden"> Additional cost frequency</span>
+					      </a>
+					    </dd>
+					  </div>
+
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
 								Amount
@@ -52,20 +66,6 @@ Additional costs for your normal daily journey
 								</a>
 							</dd>
 						</div>
-
-						<div class="nhsuk-summary-list__row">
-					    <dt class="nhsuk-summary-list__key">
-					      Extra cost type
-					    </dt>
-					    <dd class="nhsuk-summary-list__value">
-								{% if data['additional-cost-single-day'] == 'No' %}Multiple day cost{% else %}Daily cost{% endif %}
-					    </dd>
-					    <dd class="nhsuk-summary-list__actions">
-					      <a href="TDAE-placement-additional-cost-single-day">
-					        Change<span class="nhsuk-u-visually-hidden"> Additional cost frequency</span>
-					      </a>
-					    </dd>
-					  </div>
 
 						{% if data['additional-cost-single-day'] == 'Yes' %}
 							<div class="nhsuk-summary-list__row">

@@ -56,7 +56,7 @@ Which days does this evidence relate to?
                     </label>
                   </div>
 
-                  {% elif data ['claiming-for'] == 'travel to accommodation' %}
+                  {% elif data ['claiming-for'] == 'travel to accommodation' and data ['direction-of-travel'] == 'termtime-to-accommodation' %}
                   <div class="nhsuk-radios__item">
                     <input class="nhsuk-radios__input" id="no-evidence-1" name="no-evidence-for" type="radio" value="Parking charges on Sunday 4 February 2024">
                     <label class="nhsuk-label nhsuk-radios__label" for="no-evidence-1">
@@ -71,9 +71,10 @@ Which days does this evidence relate to?
                     </label>
                   </div>
 
+                  {% elif data ['claiming-for'] == 'travel to accommodation' and data ['direction-of-travel'] == 'accommodation-to-termtime' %}
                   <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="no-evidence-3" name="no-evidence-for" type="radio" value="Train ticket on Friday 9 February 2024">
-                    <label class="nhsuk-label nhsuk-radios__label" for="no-evidence-3">
+                    <input class="nhsuk-radios__input" id="no-evidence-1" name="no-evidence-for" type="radio" value="Train ticket on Friday 9 February 2024">
+                    <label class="nhsuk-label nhsuk-radios__label" for="no-evidence-1">
                       Train ticket on Friday 9 February 2024
                     </label>
                   </div>
@@ -128,7 +129,7 @@ Which days does this evidence relate to?
                     </label>
                   </div>
                   {% endif %}
-                  
+
                 </div>
               </fieldset>
 

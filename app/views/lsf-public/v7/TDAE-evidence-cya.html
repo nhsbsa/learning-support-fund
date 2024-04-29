@@ -251,7 +251,12 @@ Evidence you have uploaded
                 <tbody class="nhsuk-table__body">
                   <tr role="row" class="nhsuk-table__row">
                     <td class="nhsuk-table__cell">Lost my receipt</td>
-                    <td class="nhsuk-table__cell">Parking charges on Thursday 04 January 2024</td>
+                    <td class="nhsuk-table__cell">
+                      {% if data['no-evidence-for'] %}
+							        {{ data['no-evidence-for'] }}
+                      {% else %}
+                      Parking charges on Thursday 04 January 2024
+                      {% endif %}</td>
                     <td class="nhsuk-table__cell">
                       <a id="removeReason0" href="#">Remove<span class="nhsuk-u-visually-hidden"> reason 1</span></a>
                     </td>

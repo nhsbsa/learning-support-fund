@@ -15,22 +15,34 @@
 
     <form action="v7/TDAE-no-evidence-reason" method="POST">
 
+      {% if data ['claiming-for'] == 'travel to accommodation' %}
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="example">
+          <h1 class="nhsuk-heading-l">Tell us why you do not have evidence for this journey</h1>
+        </label>
 
-        <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="example">
-              <h1 class="nhsuk-heading-l">Tell us why you do not have evidence for this cost</h1>
-            </label>
-            <dl class="nhsuk-summary-list">
 
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Cost
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  Parking charges on Monday 5 June 2023
-                </dd>
+      {% else %}
+      <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="example">
+            <h1 class="nhsuk-heading-l">Tell us why you do not have evidence for this cost</h1>
+          </label>
+          <dl class="nhsuk-summary-list">
 
-              </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Cost
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if data['no-evidence-for'] %}
+                    {{ data['no-evidence-for'] }}
+                {% else %}
+                Parking charges on Monday 5 June 2023
+                {% endif %}
+              </dd>
+
+            </div>
+        {% endif %}
 
             </dl>
               <div class="nhsuk-form-group ">

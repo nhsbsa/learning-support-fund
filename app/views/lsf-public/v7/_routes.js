@@ -644,8 +644,8 @@ router.post('/v7/TDAE-accommodation-travel-extra-costs', (req, res) => {
       // Redirect to cycle journey mileage if 'car' and 'cycle' were selected and no extra costs were paid
       res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-cycle-journey-mileage');
     } else if (isCarSelected) {
-      // Redirect to travel evidence page if only 'car' was selected and no extra costs were paid
-      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence');
+      // Redirect to additional comments page if only 'car' was selected and no extra costs were paid
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-comment');
     }
 
   } else if (didPayExtraCosts === 'yes') {
@@ -727,8 +727,38 @@ router.post('/v7/TDAE-accommodation-travel-public-transport-cost', (req, res) =>
 });
 
 router.post('/v7/TDAE-accommodation-travel-cycle-journey-mileage', (req, res) => {
+  
+  const transportMethods = req.session.data['transport-method'];
 
-  res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence')
+  // Check if the user previously selected 'car', 'public transport' and 'cycle' as transport methods
+  const isCarSelected = transportMethods.includes('car');
+  const isPublicTransportSelected = transportMethods.includes('public-transport');
+  const isCycleSelected = transportMethods.includes('cycle');
+
+  // Check if the user had extra costs for driving
+  const didPayExtraCosts = req.session.data['extra-costs'] === 'yes';
+
+  if (isCarSelected && isPublicTransportSelected && isCycleSelected) {
+    // Redirect to upload evidence page if 'car', 'public transport' and 'cycle' were selected
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence');
+
+  } else if (isCarSelected && isCycleSelected) {
+    if (didPayExtraCosts) {
+      // Redirect to upload evidence page if 'car' and 'cycle' were selected AND if extra costs were paid
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence');
+    } else {
+      // Redirect to additional comments page if 'car' and 'cycle' were selected AND no extra costs were paid
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-comment');
+    }
+
+  } else if (isCycleSelected && isPublicTransportSelected) {
+    // Redirect to upload evidence page if 'cycle' and 'public transport' were selected
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence');
+
+  } else if (isCycleSelected) {
+    // Redirect to upload evidence page if only 'cycle' was previously selected
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-comment');
+  }
 
 });
 
@@ -858,23 +888,37 @@ router.post('/v7/TDAE-placement-additional-cost-dates', (req, res) => {
 })
 
 router.post('/v7/TDAE-no-evidence-reason', (req, res) => {
-  req.session.data['no-evidence']= "true";
-  res.redirect('/lsf-public/v7/TDAE-evidence-cya')
-})
+  const claimingFor = req.session.data['claiming-for'];
+  
+  req.session.data['no-evidence'] = "true";
+
+  if (claimingFor.includes('travel to accommodation')) {
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-comment');
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-evidence-cya');
+  }
+});
 
 router.post('/v7/TDAE-no-evidence-decision', (req, res) => {
-
-  const noEvidenceDecision = req.session.data['no-evidence-decision']
+  
+  const noEvidenceDecision = req.session.data['no-evidence-decision'];
+  const claimingFor = req.session.data['claiming-for'];
 
   if (noEvidenceDecision === 'remove') {
-      res.redirect('/lsf-public/v7/TDAE-placement-itinerary')
+    if (claimingFor.includes('travel to accommodation')) {
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-journey-pause');
+      return;
+    } else {
+      res.redirect('/lsf-public/v7/TDAE-placement-itinerary');
+      return;
+    }
   } else if (noEvidenceDecision === 'reason') {
-      res.redirect('/lsf-public/v7/TDAE-no-evidence-reason')
-  }
+      res.redirect('/lsf-public/v7/TDAE-no-evidence-reason');
+      return;
+  };
 
-  res.redirect('/lsf-public/v7/TDAE-no-evidence-decision')
+});
 
-})
 
 router.post('/v7/TDAE-no-evidence-cost', (req, res) => {
 
