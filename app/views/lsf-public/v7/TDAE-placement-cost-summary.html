@@ -81,7 +81,9 @@ Your costs
           Total amount to be reimbursed
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {% if checked('claiming-for', 'travel to accommodation') %}
+          {% if checked('claiming-for', 'Public transport') %}
+            £46.40
+          {% elif checked('claiming-for', 'travel to accommodation') %}
             £462.54
           {% elif checked('claiming-for', 'accommodation') %}
             £525
