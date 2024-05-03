@@ -15,70 +15,32 @@
       }) }}
 
     <fieldset class="nhsuk-fieldset">
-      <form action="v5/bank-details-new-details" method="POST">
+      <form action="v5/bank-details-contact" method="POST">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
           <h1 class="nhsuk-fieldset__heading">
-            Emmit Marr's new bank or building society details
+            Have you been able to contact Emmit Marr?
           </h1>
         </legend>
 
-        <dl class="nhsuk-summary-list">
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key nhsuk-u-width-one-half">Name on the account</dt>
-            <dd class="nhsuk-summary-list__value nhsuk-u-width-one-third">Emmit Marr</dd>
-            <dd class="nhsuk-summary-list__actions">
-              <a class="app-link--copy" href="javascript:void(0);" aria-live="assertive" onclick="copyValue(this)">Copy<span class="nhsuk-u-visually-hidden"> name on the account</span></a>
-            </dd>
-          </div>
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key nhsuk-u-width-one-half">Sort code</dt>
-            <dd class="nhsuk-summary-list__value nhsuk-u-width-one-third">123456</dd>
-            <dd class="nhsuk-summary-list__actions">
-              <a class="app-link--copy" href="javascript:void(0);" aria-live="assertive" onclick="copyValue(this)">Copy<span class="nhsuk-u-visually-hidden"> sort code</span></a>
-            </dd>
-          </div>
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key nhsuk-u-width-one-half">Account number</dt>
-            <dd class="nhsuk-summary-list__value nhsuk-u-width-one-third">12345678</dd>
-            <dd class="nhsuk-summary-list__actions">
-              <a class="app-link--copy" href="javascript:void(0);" aria-live="assertive" onclick="copyValue(this)">Copy<span class="nhsuk-u-visually-hidden"> account number</span></a>
-            </dd>
-          </div>
-        </dl>
+        <ul class="nhsuk-list">
+          <li><b>Phone number:</b> 07777777777</li>
+          <li><b>Email:</b> Emmit.Mar@myemail.com</li>
+        </ul>
 
-        <details class="nhsuk-details">
-          <summary class="nhsuk-details__summary">
-            <span class="nhsuk-details__summary-text">
-              Emmit Marr's contact details
-            </span>
-          </summary>
-          <div class="nhsuk-details__text">
-            <ul class="nhsuk-list">
-              <li><b>Phone number:</b> 07777777777</li>
-              <li><b>Email:</b> Emmit.Mar@myemail.com</li>
-            </ul>
-          </div>
-        </details>
-
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-          <h2 class="nhsuk-fieldset__heading">
-            Can you accept the new bank details?
-          </h2>
-        </legend>
 
         <div class="nhsuk-form-group">
           <div class="nhsuk-radios">
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="new-details-yes" name="new-details" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="new-details-yes">
+              <input class="nhsuk-radios__input" id="contact-yes" name="contact" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-yes">
                 Yes
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="new-details-no" name="new-details" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="new-details-no">
+              <input class="nhsuk-radios__input" id="contact-no" name="contact" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-no">
                 No
               </label>
             </div>

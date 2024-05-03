@@ -21,6 +21,23 @@
                 </h1>
               </legend>
 
+              {% if data['photo-id'] == 'requested' %}
+                <div class="nhsuk-warning-callout">
+                  <h3 class="nhsuk-warning-callout__label">
+                    <span role="text">
+                      <span class="nhsuk-u-visually-hidden">Important: </span>
+                      Different photo ID needed
+                    </span>
+                  </h3>
+                  <p>You need to upload different photo ID so we can complete your bank details change request. Select <b>Change</b> in the Photo ID section.</p>
+                  <p>If you have any questions, contact us by:</p>
+                  <ul class="nhsuk-list">
+                    <li>Telephone: 0300 330 0521</li>
+                    <li>Text relay service: 18001 0300 330 0521</li>
+                  </ul>
+                </div>
+              {% endif %}
+
               <h2 class="nhsuk-heading-m">Existing bank or building society account details</h2>
 
               <dl style="margin-bottom: 24px;" class="nhsuk-summary-list">
@@ -114,7 +131,7 @@
                     <a href="#">Passport.jpeg</a>
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
-                    <a href="#">Change</a>
+                    <a href="bank-details-evidence">Change</a>
                   </dd>
                 </div>
               </dl>

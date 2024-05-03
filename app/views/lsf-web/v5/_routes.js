@@ -12,21 +12,43 @@ const router = express.Router();
 // Admin view
 // ********************************
 
+router.post('/v5/bank-details-pended', (req, res) => {
+
+    const pend = req.session.data['pend']
+
+    if (pend === 'contact') {
+        res.redirect('/lsf-web/v5/bank-details-not-contacted')
+    } else if (pend === 'fraud') {
+        res.redirect('/lsf-web/v5/bank-details-fraud')
+    } else {
+        res.redirect('/lsf-web/v5/bank-details-id-required')
+    }
+
+})
+
 router.post('/v5/bank-details-approve', (req, res) => {
 
     const approve = req.session.data['approve']
 
     if (approve === 'no') {
         res.redirect('/lsf-web/v5/bank-details-change-rejected')
+    } else if (approve === 'pend') {
+        res.redirect('/lsf-web/v5/bank-details-pended')
     } else {
         res.redirect('/lsf-web/v5/bank-details-changed')
     }
 
 })
 
-router.post('/v5/bank-details-new-details', (req, res) => {
+router.post('/v5/bank-details-contact', (req, res) => {
 
     res.redirect('/lsf-web/v5/bank-details-approve')
+
+})
+
+router.post('/v5/bank-details-new-details', (req, res) => {
+
+    res.redirect('/lsf-web/v5/bank-details-contact')
 
 })
 

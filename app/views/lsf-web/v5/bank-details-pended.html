@@ -1,0 +1,122 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+  What are your contact details?
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <fieldset class="nhsuk-fieldset">
+      <form action="v5/bank-details-pended" method="POST">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Why are you pending this request?
+          </h1>
+        </legend>
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="pend-yes" name="pend" type="radio" value="photo-id">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-yes">
+                Student needs to upload new photo ID
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="pend-no" name="pend" type="radio" value="fraud">
+              <label class="nhsuk-label nhsuk-radios__label" for="pend-no">
+                Referring to Fraud and Loss Prevention Team
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="pend-contact" name="pend" type="radio" value="contact">
+              <label class="nhsuk-label nhsuk-radios__label" for="pend-contact">
+                Cannot contact student
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <button class="nhsuk-button" type="submit">
+            Save and continue
+          </button><br>
+          <p><a href="#">Cancel</a></p>
+        </div>
+      </form>
+    </fieldset>
+
+  </div>
+
+</div>
+
+  <style>
+
+    .app-link--copy, .app-link--copy:link, .app-link--copy:active, .app-link--copy:visited, .app-link--copy:hover {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      border-bottom-color: #007f3b;
+      box-shadow: 0 2px 0 #007f3b;
+      margin-bottom: 16px;
+      text-transform: none;
+      background-color: #fff;
+      border: 1px solid #007f3b;
+      color: #007f3b;
+      font-size: 16px;
+      font-weight: 400;
+      padding: 4px 10px;
+      text-align: center;
+      text-decoration: none;
+    }
+    .app-link--copy:hover {
+      background-color: #f0f4f5;
+    }
+    .app-link--copy:focus {
+      background-color: #ffeb3b;
+      box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
+      color: #212b32;
+      outline: 4px solid rgba(0, 0, 0, 0);
+      text-decoration: none;
+      border-color: #ffeb3b;
+    }
+  </style>
+
+  <script>
+    var lastClickedButton = null;
+
+    function copyValue(element) {
+        var valueElement = element.closest('.nhsuk-summary-list__row').querySelector('.nhsuk-summary-list__value');
+        var valueToCopy = valueElement.textContent.trim();
+
+        // Create a temporary textarea to copy the value to the clipboard
+        var tempTextarea = document.createElement('textarea');
+        tempTextarea.value = valueToCopy;
+        document.body.appendChild(tempTextarea);
+        tempTextarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextarea);
+
+        // Reset the text of the previously clicked button
+        if (lastClickedButton) {
+          lastClickedButton.textContent = 'Copy';
+        }
+
+        element.textContent = 'Copied';
+        element.focus();
+        lastClickedButton = element;
+    }
+  </script>
+
+{% endblock %}
