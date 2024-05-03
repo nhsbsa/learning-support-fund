@@ -35,7 +35,8 @@ Check your answers
 					</dd>
 					{% endif %}
 				</div>
-
+				
+				<!-- Authoriser's role -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Authoriser's role
@@ -56,16 +57,17 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- reason for taxi -->
+				<!-- Reason for taxi -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Reason for taxi
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						{% if data['reason-for-hire'] %}
-							{{ data['reason-for-hire'] }}
+						{% if data['reasonComment'] %}
+							{{ data['reasonComment'] }}
 							{% else %}
-							I had an emergency situation.
+							I had a sudden bout of illness during my nightshift and didn't feel comfortable 
+							walking in early hours through the city centre so got a taxi back home instead
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
@@ -89,29 +91,29 @@ Check your answers
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
-						<a href="authoisation-evidence">
+						<a href="authorisation-evidence">
 							Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 						</a>
 					</dd>
 					{% endif %}
 				</div>
 
-				<!-- date of taxi -->
+				<!-- Date of taxi journey -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Date
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						{% if data['hire-vehicle-start-day'] %}
-							{{ data['hire-vehicle-start-day'] }} <span class="cya-month">{{ data['hire-vehicle-start-month'] }}</span> {{ data['hire-vehicle-start-year'] }}
+						{% if data['taxi-journey-day'] %}
+							{{ data['taxi-journey-day'] }} <span class="cya-month">{{ data['taxi-journey-month'] }}</span> {{ data['taxi-journey-year'] }}
 						{% else %}
-							30 November 2023
+							23 February 2024
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
 						<a href="date">
-							Change<span class="nhsuk-u-visually-hidden"> start date</span>
+							Change<span class="nhsuk-u-visually-hidden">date of journey</span>
 						</a>
 					</dd>
 					{% endif %}
@@ -120,24 +122,23 @@ Check your answers
 				<!-- Travelling from -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Travelling from
+					  Travelling from
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						Stephenson House, NE2 1AW
-						<details class="nhsuk-details">
-							<summary class="nhsuk-details__summary">
-								<span class="nhsuk-details__summary-text">
-									View full address details
-								</span>
-							</summary>
-							<div class="nhsuk-details__text">
-								Stephenson House<br>
-								Stoddart St<br>
-								Shieldfield<br>
-								Newcastle upon Tyne<br>
-								NE2 1AW
-							</div>
-						</details>
+					  Alnwick Hospital, NE66 2NS
+					  <details class="nhsuk-details">
+						<summary class="nhsuk-details__summary">
+						  <span class="nhsuk-details__summary-text">
+							View full address
+						  </span>
+						</summary>
+						<div class="nhsuk-details__text">
+						  <b>Alnwick Hospital</b><br>
+						  Infirmary Drive<br>
+						  Alnwick<br>
+						  NE66 2NS
+						</div>
+					  </details>
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
@@ -151,23 +152,23 @@ Check your answers
 				<!-- Travelling to -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Travelling to
+					  Travelling to
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						Alnwick Hospital, NE6 4EA
-						<details class="nhsuk-details">
-							<summary class="nhsuk-details__summary">
-								<span class="nhsuk-details__summary-text">
-									View full address details
-								</span>
-							</summary>
-							<div class="nhsuk-details__text">
-								Alnwick Hospital<br>
-								Main Street<br>
-								Alniwck<br>
-								NE6 4EA
-							</div>
-						</details>
+					  The Hog's Head Inn, NE66 2BF
+					  <details class="nhsuk-details">
+						<summary class="nhsuk-details__summary">
+						  <span class="nhsuk-details__summary-text">
+							View full address
+						  </span>
+						</summary>
+						<div class="nhsuk-details__text">
+						  <b>The Hog's Head Inn</b><br>
+						  Hawfinch Drive<br>
+						  Alnwick<br>
+						  NE66 2BF
+						</div>
+					  </details>
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
@@ -178,7 +179,7 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- cost of taxi -->
+				<!-- Cost of taxi -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Cost
@@ -218,26 +219,32 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- Additional comments for first hire vehicle -->
+				<!-- Additional comments -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Comments
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						{% if data['additionalCostsComment'] %}
-							{{ data['additionalCostsComment'] }}
+						{% if data['additionalComments'] %}
+							{{ data['additionalComments'] }}
 						{% else %}
-							None
+							None provided
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
-					<dd class="nhsuk-summary-list__actions">
+					  <dd class="nhsuk-summary-list__actions">
+						{% if data['taxi-comments'] == 'no' %}
 						<a href="comment">
 							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
-						</a>
-					</dd>
+						  </a>
+						{% else %}
+						  <a href="add-comment">
+							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
+						  </a>
+						{% endif %}
+					  </dd>
 					{% endif %}
-				</div>
+				  </div>
 
 			</dl>
 

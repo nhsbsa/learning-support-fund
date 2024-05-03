@@ -21,7 +21,7 @@
       </h1>
 
       
-      <!--dl class="nhsuk-summary-list">
+      <dl class="nhsuk-summary-list">
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
@@ -29,8 +29,13 @@
             and end date
           </dt>
           <dd class="nhsuk-summary-list__value">
+            {% if data['name'] == 'Alyssa Geary' %}
             2 February 2024 to
-            25 February 2024
+            24 March 2024
+            {% else %}
+            2 February 2024 to
+            28 February 2024
+            {% endif %}
           </dd>
         </div>
       
@@ -39,44 +44,17 @@
             Total claim value
           </dt>
           <dd class="nhsuk-summary-list__value">
+            {% if data['name'] == 'Alyssa Geary' %}
+            £75
+            {% else %}
             £340
+            {% endif %}
           </dd>
         </div>
       
-      </dl!-->
+      </dl>
 
-      <!--table role="table" class="nhsuk-table-responsive">
-        <thead role="rowgroup" class="nhsuk-table__head">
-          <tr role="row">
-            <th role="columnheader" class="" scope="col">
-                Claim start and end date
-            </th>
-            <th role="columnheader" class="" scope="col">
-                Total claim value
-            </th>
-          </tr>
-        </thead>
-        <tbody class="nhsuk-table__body">
-            <tr role="row" class="nhsuk-table__row">
-                <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Claim start and end date </span>2 February 2024 to 25 February 2024
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Total claim value </span>£340
-                </td>
-            </tr>
-        </tbody>
-      </table>
 
-      <br!-->
-
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <p><b>Claim start and end date</b><br>2 February 2024 to 25 February 2024</p>
-        <p><b>Total claim value</b><br>£125</p>
-      </div>
-
-      
-      
 
       {% if data['status'] == 'University processing' %}
         <strong class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-bottom-3 task-status">Started by SJ</strong>
@@ -94,7 +72,6 @@
         <!-- <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed {% if data['status'] === 'Returned from NHSBSA' %}1{% else %}0{% endif %} of {% if data['scenario'] === 'accommodation-travel' %}3{% else %}2{% endif %} sections.</p> -->
       {% endif %}
 
-      <hr class="" style="border-color: #005eb8; border-width: 4px">
 
       {% if data['status'] == 'University processing' %}
         <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-7">Claim currently being processed by Samuel Jackson</h2>
@@ -134,7 +111,13 @@
                 {% else %}
                 Joe Bloggs
                 {% endif %}</td>
-                <td class="nhsuk-table__cell">28 February 2024</td>
+                <td class="nhsuk-table__cell">
+                {% if data['name'] == 'Alyssa Geary' %}
+                31 March 2024
+                {% else %}
+                28 February 2024
+                {% endif %}
+                </td>
                 <td class="nhsuk-table__cell "><strong>Claim submitted</strong><br></td>
               </tr>
             <tr role="row" class="nhsuk-table__row">
@@ -275,7 +258,13 @@
                   {% else %}
                   Joe Bloggs
                   {% endif %}</td>
-                  <td class="nhsuk-table__cell">28 February 2024</td>
+                  <td class="nhsuk-table__cell">
+                  {% if data['name'] == 'Alyssa Geary' %}
+                  31 March 2024
+                  {% else %}
+                  28 February 2024
+                  {% endif %}
+                  </td>
                   <td class="nhsuk-table__cell "><strong>Claim submitted</strong><br></td>
                 </tr>
                 {% if data['feedback-note'] == 'yes' %}

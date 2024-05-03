@@ -299,18 +299,6 @@ router.post('/v9/TDAE-overseas', (req, res) => {
 
 router.post('/v9/TDAE-overseas-insurance-details', (req, res) => {
 
-    res.redirect('/lsf-portal/v9/TDAE-overseas-medical-tests-details')
-
-})
-
-router.post('/v9/TDAE-overseas-medical-tests-details', (req, res) => {
-
-    res.redirect('/lsf-portal/v9/TDAE-overseas-vaccinations-details')
-
-})
-
-router.post('/v9/TDAE-overseas-vaccinations-details', (req, res) => {
-
     res.redirect('/lsf-portal/v9/TDAE-overseas-visa-fees-details')
 
 })
