@@ -226,6 +226,24 @@ router.post('/v8/travelling-to', (req, res) => {
 
 })
 
+router.post('/v8/evidence', (req, res) => {
+
+  res.redirect('/lsf-public/v8/TDAE-taxi/evidence-mini-cya')
+
+})
+
+router.post('/v8/evidence-mini-cya', (req, res) => {
+
+  const moreEvidence = req.session.data['more-evidence']
+
+  if (moreEvidence === 'yes'){
+    res.redirect('/lsf-public/v8/TDAE-taxi/evidence')
+  } else {
+    res.redirect('/lsf-public/v8/TDAE-taxi/comment')
+  }
+
+})
+
 router.post('/v8/comment', (req, res) => {
 
   const taxiComments = req.session.data['taxi-comments']
