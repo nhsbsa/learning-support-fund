@@ -28,6 +28,30 @@ Claim checks
     </div> -->
     {% if data['name'] === 'Emmit Mar' %}
 
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Claim start<br>
+          and end date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          2 February 2024 to
+          24 March 2024
+        </dd>
+      </div>
+    
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Total claim value
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £0
+        </dd>
+      </div>
+    
+    </dl>
+
     {% if data['read-only'] != 'true' %}
         <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim.</h2>
         <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed <span id="completedCount">0</span> of <span id="sectionLength">3</span> sections.</p>
@@ -269,6 +293,30 @@ Claim checks
 
 
       {% elif data['name'] === 'Alyssa Geary' %}
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Claim start<br>
+            and end date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            2 February 2024 to
+            24 March 2024
+          </dd>
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total claim value
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £85
+          </dd>
+        </div>
+      
+      </dl>
+
       {% if data['read-only'] != 'true' %}
       <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim.</h2>
       <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed {% if data['status'] === 'Returned from NHSBSA' %}1{% else %}0{% endif %} of 3 sections.</p>
@@ -437,6 +485,30 @@ Claim checks
 
 
       {% else %}
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Claim start<br>
+            and end date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            16 February 2024 to
+            17 February 2024
+          </dd>
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total claim value
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £65.48
+          </dd>
+        </div>
+      
+      </dl>
+      
       {% if data['read-only'] != 'true' %}
       <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim.</h2>
       <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed {% if data['status'] === 'Returned from NHSBSA' %}1{% else %}0{% endif %} of 3 sections.</p>
