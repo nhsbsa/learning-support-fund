@@ -210,7 +210,7 @@ Check your answers
 				<!-- if first journey = term time to accommodation and travelled by both car and public - evidence uploaded -->
 				<div class="nhsuk-summary-list__row">
 					<!-- if no evidence uploaded -->
-					{% if 'reason' in data['no-evidence-decision'] %}
+					{% if data['no-evidence-decision'] == 'reason' %}
 					  <dt class="nhsuk-summary-list__key">
 						Reason for no evidence
 					  </dt>
@@ -479,7 +479,7 @@ Check your answers
 				<!-- if first journey = accommodation to term time address, and travelled by both car and public transport - evidence uploaded -->
 				<div class="nhsuk-summary-list__row">
 					<!-- if no evidence uploaded -->
-					{% if 'reason' in data['no-evidence-decision'] %}
+					{% if data['no-evidence-decision'] == 'reason' %}
 					  <dt class="nhsuk-summary-list__key">
 						Reason for no evidence
 					  </dt>
@@ -760,7 +760,7 @@ Check your answers
 					<!-- if first journey = term time to accommodation and travelled by both car and public - evidence uploaded -->
 					<div class="nhsuk-summary-list__row">
 						<!-- if no evidence uploaded -->
-						{% if 'reason' in data['no-evidence-decision'] %}
+						{% if data['no-evidence-decision'] == 'reason' %}
 						  <dt class="nhsuk-summary-list__key">
 							Reason for no evidence
 						  </dt>
@@ -1043,7 +1043,7 @@ Check your answers
 				<!-- if second journey = accommodation to term time address, and travelled by both car and public - evidence uploaded -->
 				<div class="nhsuk-summary-list__row">
 					<!-- if no evidence uploaded -->
-					{% if 'reason' in data['no-evidence-decision'] %}
+					{% if data['no-evidence-decision'] == 'reason' %}
 					  <dt class="nhsuk-summary-list__key">
 						Reason for no evidence
 					  </dt>
