@@ -195,7 +195,8 @@ Claim details
       </tbody>
     </table>
 
-    <!--<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-4">
+    {% if data['community-mileage'] == 'yes' %}
+    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-4">
       <caption class="nhsuk-table__caption">Community mileage</caption>
       <thead role="rowgroup" class="nhsuk-table__head">
         <tr role="row">
@@ -223,7 +224,8 @@ Claim details
           </td>
         </tr>
       </tbody>
-    </table>-->
+    </table>
+    {% endif %}
 
     <a class="nhsuk-button" href="TDAE-placement-additional-cost-evidence-table">Continue</a>
 
