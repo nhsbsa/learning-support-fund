@@ -113,38 +113,42 @@ Check your answers
               </dd>
             </div>
 
+            <!-- If user only selects Overseas from 'Which costs did you pay for screen' do not display term-time address details -->
+            {% if 'car' in data['claiming-for'] or 'Public transport' in data['claiming-for'] or 'Cycle' in data['claiming-for'] or 'community' in data['claiming-for'] or 'accommodation' in data['claiming-for'] or 'travel to accommodation' in data['claiming-for'] or 'taxi' in data['claiming-for'] or 'hire-car' in data['claiming-for'] %}
             <div class="nhsuk-summary-list__row">
-      				<dt class="nhsuk-summary-list__key">
-      					Term time address
-      				</dt>
-      				<dd class="nhsuk-summary-list__value">
-      					{% if data['term-building-name'] %}
-      						{{ data['term-building-name'] }}<br>
-      						{{ data['term-address-line-1'] }}<br>
-      						{% if data['term-address-line-2'] %}
-      							{{ data['term-address-line-2'] }}<br>
-      						{% endif %}
-      						{% if data['term-address-line-3'] %}
-      							{{ data['term-address-line-3'] }}<br>
-      						{% endif %}
-      						{{ data['term-address-town'] }}<br>
-      						{{ data['term-address-postcode'] }}<br>
-      					{% else %}
-                <p>Stephenson House<br>
-                  Stoddart St<br>
-                  Shieldfield<br>
-                  Newcastle upon Tyne<br>
-                  NE2 1AW</p>
-      					{% endif %}
-      				</dd>
-      				{% if data['submit-claim'] != 'completed' %}
-      				<dd class="nhsuk-summary-list__actions">
-      					<a href="TDAE-term time-address">
-      						Change<span class="nhsuk-u-visually-hidden"> term time address</span>
-      					</a>
-      				</dd>
-      		{% endif %}
-      			</div>
+                <dt class="nhsuk-summary-list__key">
+                    Term time address
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    {% if data['term-building-name'] %}
+                        {{ data['term-building-name'] }}<br>
+                        {{ data['term-address-line-1'] }}<br>
+                        {% if data['term-address-line-2'] %}
+                            {{ data['term-address-line-2'] }}<br>
+                        {% endif %}
+                        {% if data['term-address-line-3'] %}
+                            {{ data['term-address-line-3'] }}<br>
+                        {% endif %}
+                        {{ data['term-address-town'] }}<br>
+                        {{ data['term-address-postcode'] }}<br>
+                    {% else %}
+                        <p>Stephenson House<br>
+                            Stoddart St<br>
+                            Shieldfield<br>
+                            Newcastle upon Tyne<br>
+                            NE2 1AW</p>
+                    {% endif %}
+                </dd>
+                {% if data['submit-claim'] != 'completed' %}
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="TDAE-term-time-address">
+                        Change<span class="nhsuk-u-visually-hidden"> term time address</span>
+                    </a>
+                </dd>
+                {% endif %}
+            </div>
+            {% endif %}
+            
 
         </dl>
 
