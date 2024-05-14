@@ -24,6 +24,8 @@ What is your placement address?
 					</h1>
 				</legend>
 
+				<p><a href="TDAE-international-placement-address-more">Add an international address</a></p>
+
 				<div class="nhsuk-form-group">
 					<label class="nhsuk-label" for="placement-building-name">
 						Building name or number
@@ -36,6 +38,8 @@ What is your placement address?
 					<input class="nhsuk-input" id="placement-building-name" name="placement-3-building-name" type="text" autocomplete="cc-csc">
 					{% elif data['address-number'] == '4' %}
 					<input class="nhsuk-input" id="placement-building-name" name="placement-4-building-name" type="text" autocomplete="cc-csc">
+					{% else %}
+					<input class="nhsuk-input" id="placement-building-name" name="new-placement-building-name" type="text" autocomplete="cc-csc">
 					{% endif %}
 				</div>
 
@@ -51,6 +55,8 @@ What is your placement address?
 					<input class="nhsuk-input" id="placement-address-line-1" name="placement-3-address-line-1" type="text" autocomplete="cc-csc">
 					{% elif data['address-number'] == '4' %}
 					<input class="nhsuk-input" id="placement-address-line-1" name="placement-4-address-line-1" type="text" autocomplete="cc-csc">
+					{% else %}
+					<input class="nhsuk-input" id="placement-address-line-1" name="new-placement-address-line-1" type="text" autocomplete="cc-csc">
 					{% endif %}
 				</div>
 
@@ -66,6 +72,8 @@ What is your placement address?
 					<input class="nhsuk-input" id="placement-address-line-2" name="placement-3-address-line-2" type="text" autocomplete="cc-csc">
 					{% elif data['address-number'] == '4' %}
 					<input class="nhsuk-input" id="placement-address-line-2" name="placement-4-address-line-2" type="text" autocomplete="cc-csc">
+					{% else %}
+					<input class="nhsuk-input" id="placement-address-line-2" name="new-placement-address-line-2" type="text" autocomplete="cc-csc">
 					{% endif %}
 				</div>
 
@@ -81,6 +89,8 @@ What is your placement address?
 					<input class="nhsuk-input" id="placement-address-line-3" name="placement-3-address-line-3" type="text" autocomplete="cc-csc">
 					{% elif data['address-number'] == '4' %}
 					<input class="nhsuk-input" id="placement-address-line-3" name="placement-4-address-line-3" type="text" autocomplete="cc-csc">
+					{% else %}
+					<input class="nhsuk-input" id="placement-address-line-3" name="new-placement-address-line-3" type="text" autocomplete="cc-csc">
 					{% endif %}
 				</div>
 
@@ -96,6 +106,8 @@ What is your placement address?
 					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="placement-address-town" name="placement-3-address-town" type="text" autocomplete="cc-csc">
 					{% elif data['address-number'] == '4' %}
 					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="placement-address-town" name="placement-4-address-town" type="text" autocomplete="cc-csc">
+					{% else %}
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="placement-address-town" name="new-placement-address-town" type="text" autocomplete="cc-csc">
 					{% endif %}
 				</div>
 
@@ -111,6 +123,8 @@ What is your placement address?
 					<input class="nhsuk-input nhsuk-input--width-10" id="placement-address-postcode" name="placement-3-address-postcode" type="text" autocomplete="cc-csc">
 					{% elif data['address-number'] == '4' %}
 					<input class="nhsuk-input nhsuk-input--width-10" id="placement-address-postcode" name="placement-4-address-postcode" type="text" autocomplete="cc-csc">
+					{% else %}
+					<input class="nhsuk-input nhsuk-input--width-10" id="placement-address-postcode" name="new-placement-address-postcode" type="text" autocomplete="cc-csc">
 					{% endif %}
 				</div>
 

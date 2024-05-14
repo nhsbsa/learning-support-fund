@@ -101,20 +101,6 @@
                   <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
                 {% endif %}
               </li>
-              <li class="app-task-list__item nhsuk-u-clear">
-                <span class="app-task-list__task-name">
-                  {% if data['taxi-details'] === 'completed' %}
-                    <a href="TDAE-taxi/check">Taxi details and evidence</a>
-                  {% else %}
-                    <a href="TDAE-taxi/pause">Taxi details and evidence</a>
-                  {% endif %}
-                </span>
-                {% if data['taxi-details'] === 'completed' %}
-                  <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
-                {% else %}
-                  <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
-                {% endif %}
-              </li>
             </ul>
           </li>
 

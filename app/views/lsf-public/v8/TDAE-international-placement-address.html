@@ -1,0 +1,98 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+What is your placement address?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v8/TDAE-international-placement-address" method="POST" novalidate>
+
+			<!-- to stop chrome's autofill I've added autocomplete="cc-csc" to the inputs. This tricks chrome into thinking it's asking for a credit card number and disables the autofill. If it starts acting wierd, we can remove it. -->
+
+			<fieldset class="nhsuk-fieldset">
+				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+					<h1 class="nhsuk-fieldset__heading">
+						Add your placement address
+					</h1>
+				</legend>
+
+				<div class="nhsuk-hint">If you have more than one placement address, enter the first address. You can add more on the next page.</div>
+
+				<p><a href="TDAE-placement-address">Add a UK address</a></p>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="international-placement-building-name">
+						Building name or number
+					</label>
+					<input class="nhsuk-input" id="international-placement-building-name" name="international-placement-building-name" type="text"  autocomplete="cc-csc">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="international-placement-address-line-1">
+						Address line 1
+					</label>
+					<input class="nhsuk-input" id="international-placement-address-line-1" name="international-placement-address-line-1" type="text"  autocomplete="cc-csc">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="international-placement-address-line-2">
+						Address line 2 (optional)
+					</label>
+					<input class="nhsuk-input" id="international-placement-address-line-2" name="international-placement-address-line-2" type="text"  autocomplete="cc-csc">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="international-placement-address-line-3">
+						Address line 3 (optional)
+					</label>
+					<input class="nhsuk-input" id="international-placement-address-line-3" name="international-placement-address-line-3" type="text"  autocomplete="cc-csc">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="international-placement-address-town">
+						Town or city
+					</label>
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="international-placement-address-town" name="international-placement-address-town" type="text" autocomplete="cc-csc">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="international-placement-address-region">
+						County, province or region (optional)
+					</label>
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="international-placement-address-region" name="international-placement-address-region" type="text" autocomplete="cc-csc">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="international-placement-address-postcode">
+						Postcode (optional)
+					</label>
+					<input class="nhsuk-input nhsuk-input--width-10" id="international-placement-address-postcode" name="international-placement-address-postcode" type="text"  autocomplete="cc-csc">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="international-placement-address-country">
+						Country
+					</label>
+					<input class="nhsuk-input nhsuk-input--width-10" id="international-placement-address-country" name="international-placement-address-country" type="text" autocomplete="cc-csc">
+				</div>
+
+			</fieldset>
+
+			<button class="nhsuk-button" type="submit">Save and continue</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

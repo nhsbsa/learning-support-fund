@@ -666,9 +666,9 @@ router.post('/v8/TDAE-reuse-details', (req, res) => {
     req.session.data['term-address-postcode'] = "NE2 1AW"
     if (claimReused === 'Alnwick') {
       req.session.data['placement-building-name'] = "Alnwick Hospital"
-      req.session.data['placement-address-line-1'] = "Main Street"
+      req.session.data['placement-address-line-1'] = "Infirmary Drive"
       req.session.data['placement-address-town'] = "Alnwick"
-      req.session.data['placement-address-postcode'] = "NE6 4EA"
+      req.session.data['placement-address-postcode'] = "NE66 2NS"
     } else {
       req.session.data['placement-building-name'] = "Newcastle Hospital"
       req.session.data['placement-address-line-1'] = "Main Street"
@@ -1860,16 +1860,36 @@ router.post('/v8/TDAE-placement-address-cya', (req, res) => {
     const addAnother = req.session.data['add-another']
     const addressNumber = req.session.data['address-number']
     const reusedDetails = req.session.data['reused-details']
+    const isInternational = req.session.data['international']
+    const claimingFor = req.session.data['claiming-for']
+
+    const onlyOverseasSelected = (claimingFor) => {
+      return claimingFor.length === 1 && claimingFor.includes('overseas');
+  };
 
     if (addAnother === 'yes' && addressNumber === '1') {
         req.session.data['address-number'] = '2'
-        res.redirect('/lsf-public/v8/TDAE-placement-address-more')
+        if (isInternational === 'true') {
+          res.redirect('/lsf-public/v8/TDAE-international-placement-address-more');
+        } else {
+        res.redirect('/lsf-public/v8/TDAE-placement-address-more');
+        }
     } else if (addAnother === 'yes' && addressNumber === '2') {
         req.session.data['address-number'] = '3'
-        res.redirect('/lsf-public/v8/TDAE-placement-address-more')
+        if (isInternational === 'true') {
+          res.redirect('/lsf-public/v8/TDAE-international-placement-address-more');
+        } else {
+        res.redirect('/lsf-public/v8/TDAE-placement-address-more');
+        }
     } else if (addAnother === 'yes' && addressNumber === '3') {
         req.session.data['address-number'] = '4'
-        res.redirect('/lsf-public/v8/TDAE-placement-address-more')
+        if (isInternational === 'true') {
+          res.redirect('/lsf-public/v8/TDAE-international-placement-address-more');
+        } else {
+        res.redirect('/lsf-public/v8/TDAE-placement-address-more');
+        }
+    } else if (onlyOverseasSelected(claimingFor) && addAnother === 'no') {
+      res.redirect('/lsf-public/v8/TDAE-eligibility-cya');
     } else {
       if (reusedDetails && reusedDetails.indexOf('term-time-address') !== -1) {
         req.session.data['term-building-name'] = "Stephenson House"
@@ -2180,6 +2200,12 @@ router.post('/v8/TDAE-placement-address', (req, res) => {
   }
 });
 
+router.post('/v8/TDAE-international-placement-address', (req, res) => {
+
+  req.session.data['address-number'] = '1'
+  res.redirect('/lsf-public/v8/TDAE-placement-address-cya')
+
+})
 
 router.post('/v8/TDAE-start-claim', (req, res) => {
 
