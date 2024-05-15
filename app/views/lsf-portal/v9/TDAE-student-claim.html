@@ -423,11 +423,7 @@
           <li class="section-item">
             <h2 class="app-task-list__section">
               <span class="app-task-list__section-number">
-                {% if data['scenario'] === 'taxi-and-overseas-only' %}
-                  1.
-                {% else %}
                   2.
-                {% endif %}
               </span> Overseas costs
             </h2>
             <ul class="app-task-list__items">
@@ -454,7 +450,7 @@
           <li class="section-item">
             <h2 class="app-task-list__section">
               <span class="app-task-list__section-number">
-                {% if data['scenario'] === 'taxi-and-overseas-only' or data['scenario'] === 'travel-only' %}
+                {% if data['scenario'] === 'travel-only' %}
                   2.
                 {% else %}
                   3.
