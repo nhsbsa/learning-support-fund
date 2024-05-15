@@ -19,7 +19,7 @@ Check your answers
               </dt>
               <dd class="nhsuk-summary-list__value">
                   2 February 2024 to<br>
-                  24 March 2024
+                  31 March 2024
               </dd>
               <dd class="nhsuk-summary-list__actions">
                 <a href="TDAE-incur-costs">
@@ -77,39 +77,63 @@ Check your answers
               </dd>
             </div>
 -->
+
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Placement address
+                  Placement address
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {% if data['address-number'] == '2' %}
-                  2 placement addresses added
-                {% elif data['address-number'] == '3' %}
-                  3 placement addresses added
-                {% elif data['address-number'] == '4' %}
-                  4 placement addresses added
-                {% elif data['placement-building-name'] %}
-                  {{ data['placement-building-name'] }}<br>
-                  {{ data['placement-address-line-1'] }}<br>
-                  {% if data['placement-address-line-2'] %}
-                    {{ data['placement-address-line-2'] }}<br>
+                  {% if data['international'] == 'true' %}
+                      {% if data['international-placement-building-name'] %}
+                          {{ data['international-placement-building-name'] }}<br>
+                          {{ data['international-placement-address-line-1'] }}<br>
+                          {% if data['international-placement-address-line-2'] %}
+                              {{ data['international-placement-address-line-2'] }}<br>
+                          {% endif %}
+                          {% if data['international-placement-address-line-3'] %}
+                              {{ data['international-placement-address-line-3'] }}<br>
+                          {% endif %}
+                          {{ data['international-placement-address-town'] }}<br>
+                          {% if data['international-placement-address-region'] %}
+                              {{ data['international-placement-address-region'] }}<br>
+                          {% endif %}
+                          {% if data['international-placement-address-postcode'] %}
+                              {{ data['international-placement-address-postcode'] }}<br>
+                          {% endif %}
+                          {{ data['international-placement-address-country'] }}
+                      {% else %}
+                          <!-- Default international address -->
+                          Mnazi Mmoja Hospital<br>
+                          Kaunda Road<br>
+                          Zanzibar<br>
+                          R5JR R2G<br>
+                          Tanzania
+                      {% endif %}
+                  {% else %}
+                      {% if data['placement-building-name'] %}
+                          {{ data['placement-building-name'] }}<br>
+                          {{ data['placement-address-line-1'] }}<br>
+                          {% if data['placement-address-line-2'] %}
+                              {{ data['placement-address-line-2'] }}<br>
+                          {% endif %}
+                          {% if data['placement-address-line-3'] %}
+                              {{ data['placement-address-line-3'] }}<br>
+                          {% endif %}
+                          {{ data['placement-address-town'] }}<br>
+                          {{ data['placement-address-postcode'] }}<br>
+                      {% else %}
+                          <!-- Default UK address -->
+                          Alnwick Hospital<br>
+                          Infirmary Drive<br>
+                          Alnwick<br>
+                          NE66 2NS
+                      {% endif %}
                   {% endif %}
-                  {% if data['placement-address-line-3'] %}
-                    {{ data['placement-address-line-3'] }}<br>
-                  {% endif %}
-                  {{ data['placement-address-town'] }}<br>
-                  {{ data['placement-address-postcode'] }}<br>
-
-                {% else %}
-                  123 Practice Placement<br>
-                  Newcastle Tyne and Wear<br>
-                  NE12 3AB
-                {% endif %}
               </dd>
               <dd class="nhsuk-summary-list__actions">
-                <a href="TDAE-placement-address-cya">
-                  Change<span class="nhsuk-u-visually-hidden"> placement address</span>
-                </a>
+                  <a href="TDAE-placement-address-cya">
+                      Change<span class="nhsuk-u-visually-hidden"> placement address</span>
+                  </a>
               </dd>
             </div>
 

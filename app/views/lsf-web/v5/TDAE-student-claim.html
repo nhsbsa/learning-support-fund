@@ -37,7 +37,7 @@ Claim checks
         </dt>
         <dd class="nhsuk-summary-list__value">
           2 February 2024 to
-          24 March 2024
+          31 March 2024
         </dd>
       </div>
     
@@ -54,7 +54,11 @@ Claim checks
 
     {% if data['read-only'] != 'true' %}
         <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim.</h2>
+        {% if data['name'] === 'Emmit Mar' %}
+        <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed <span id="completedCount">0</span> of <span id="sectionLength">4</span> sections.</p>
+        {% else %}
         <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed <span id="completedCount">0</span> of <span id="sectionLength">3</span> sections.</p>
+        {% endif %}
       {% endif %}
 
     {% if data['status'] == 'University processing' %}
@@ -130,7 +134,7 @@ Claim checks
             </tr>
             <tr role="row" class="nhsuk-table__row">
               <td class="nhsuk-table__cell">{{ data['name'] }} (Student)</td>
-              <td class="nhsuk-table__cell">28 February 2024</td>
+              <td class="nhsuk-table__cell">7 April 2024</td>
               <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
             </tr>
             
@@ -291,6 +295,28 @@ Claim checks
         </ul>
       </li>
 
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">3. </span> Overseas costs details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              <a href="TDAE-overseas" aria-describedby="eligibility-status">
+                Check overseas details
+              </a>
+            </span>
+            {% if data['overseas-completed'] === 'completed' %}
+              <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
+            {% elif data['overseas-completed'] === 'in-progress' %}
+              <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to university</strong>
+            {% else %}
+              <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+
 
       {% elif data['name'] === 'Alyssa Geary' %}
       <dl class="nhsuk-summary-list">
@@ -302,7 +328,7 @@ Claim checks
           </dt>
           <dd class="nhsuk-summary-list__value">
             2 February 2024 to
-            24 March 2024
+            31 March 2024
           </dd>
         </div>
       
@@ -311,7 +337,7 @@ Claim checks
             Total claim value
           </dt>
           <dd class="nhsuk-summary-list__value">
-            £85
+            £151.40
           </dd>
         </div>
       
@@ -390,7 +416,7 @@ Claim checks
               {% endif %}
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">{{ data['name'] }} (Student)</td>
-                <td class="nhsuk-table__cell">28 February 2024</td>
+                <td class="nhsuk-table__cell">7 April 2024</td>
                 <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
               </tr>
               
@@ -679,7 +705,7 @@ Claim checks
       {% if data['read-only'] != 'true' %}
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">3. </span> Finish checking claim
+          <span class="app-task-list__section-number">4. </span> Finish checking claim
         </h2>
         <ul class="app-task-list__items">
           <li class="app-task-list__item nhsuk-u-clear">

@@ -77,18 +77,23 @@ Check your answers
 						Overseas costs paid for
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						{% if data['overseas-cost'] %}
-							{{ data['overseas-cost'] }}
+						{% if 'insurance' in data['overseas-cost'] and 'visa-fees' in data['overseas-cost'] %}
+							Insurance<br>
+							Visa fees
+						{% else %}
+							{% if data['overseas-cost'] %}
+								<span class="capitalize">{{ data['overseas-cost'] }}</span>
+							{% endif %}
 						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
-					<dd class="nhsuk-summary-list__actions">
-						<a href="which-costs">
-							Change<span class="nhsuk-u-visually-hidden">overseas costs paid for</span>
-						</a>
-					</dd>
+						<dd class="nhsuk-summary-list__actions">
+							<a href="which-costs">
+								Change<span class="nhsuk-u-visually-hidden">overseas costs paid for</span>
+							</a>
+						</dd>
 					{% endif %}
-				</div>
+				</div>				
 
 			</dl>
 
@@ -96,7 +101,7 @@ Check your answers
         <!-- Conditionally display expanders or a summary based on the number of selected cost types -->
 
 		<!-- If all Overseas costs have been selected, display each in an expander -->
-		{% if 'insurance' in data['overseas-cost'] and 'medical-tests' in data['overseas-cost'] and 'vaccinations' in data['overseas-cost'] and 'visa-fees' in data['overseas-cost']%}
+		{% if 'insurance' in data['overseas-cost'] and 'medical-tests' in data['overseas-cost'] and 'vaccinations' in data['overseas-cost'] and 'visa-fees' in data['overseas-cost'] %}
 
 			<!--- Insurance expander begins --->
 			<details class="nhsuk-details nhsuk-expander">
@@ -136,10 +141,12 @@ Check your answers
 							<a href="/images/travel-insurance-screenshot-1.png" download="Insurance evidence 31 March 2024">
 								insurance-screenshot-1.png
 							</a>
+						{% if data['more-insurance-evidence']  === 'yes' %}
 						<br>
 							<a href="/images/travel-insurance-screenshot-2.png" download="Insurance evidence 2 31 March 2024">
 								insurance-screenshot-2.png
 							</a>
+						{% endif %}
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
@@ -369,7 +376,7 @@ Check your answers
 							{% if data['visa-fees-cost'] %}
 								£{{ data['visa-fees-cost'] }}
 							{% else %}
-								£15
+								£35
 							{% endif %}
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
@@ -386,12 +393,12 @@ Check your answers
 							Evidence uploaded
 						</dt>
 						<dd class="nhsuk-summary-list__value">
-							<a href="/images/ESTA-evidence.png" download="Visa fees evidence 31 March 2024">
-								visa-screenshot.png
+							<a href="/images/bank-statement-visa-fee.png" download="Visa fees evidence 31 March 2024">
+								bank-statement-visa-fee.png
 							</a>
 							{% if data['more-visa-fees-evidence'] === 'yes' %}
 							<br>
-							<a href="/images/ESTA-evidence.png" target="_blank" rel="noopener">
+							<a href="" target="_blank" rel="noopener">
 							screenshot-02.jpg
 						  	</a>
 							{% endif %}
@@ -475,13 +482,15 @@ Check your answers
 							  Evidence uploaded
 						  </dt>
 						  <dd class="nhsuk-summary-list__value">
-							  <a href="/images/travel-insurance-screenshot-1.png" download="Insurance evidence 31 March 2024">
+							<a href="/images/travel-insurance-screenshot-1.png" download="Insurance evidence 31 March 2024">
 								insurance-screenshot-1.png
-							  </a>
-							<br>
-							<a href="/images/travel-insurance-screenshot-2.png" download="Insurance evidence 2 31 March 2024">
-								insurance-screenshot-2.png
 							</a>
+							{% if data['more-insurance-evidence']  === 'yes' %}
+							<br>
+								<a href="/images/travel-insurance-screenshot-2.png" download="Insurance evidence 2 31 March 2024">
+									insurance-screenshot-2.png
+								</a>
+							{% endif %}
 							</dd>
 						  {% if data['submit-claim'] != 'completed' %}
 						  <dd class="nhsuk-summary-list__actions">
@@ -539,7 +548,7 @@ Check your answers
 							  {% if data['visa-fees-cost'] %}
 								  £{{ data['visa-fees-cost'] }}
 							  {% else %}
-								  £15
+								  £35
 							  {% endif %}
 						  </dd>
 						  {% if data['submit-claim'] != 'completed' %}
@@ -556,12 +565,12 @@ Check your answers
 							  Evidence uploaded
 						  </dt>
 						  <dd class="nhsuk-summary-list__value">
-							<a href="/images/ESTA-evidence.png" download="Visa fees evidence 31 March 2024">
-								visa-screenshot.png
+							<a href="/images/bank-statement-visa-fee.png" download="Visa fees evidence 31 March 2024">
+								bank-statement-visa-fee.png
 							</a>
 							{% if data['more-visa-fees-evidence'] === 'yes' %}
 							<br>
-							<a href="/images/ESTA-evidence.png" target="_blank" rel="noopener">
+							<a href="" target="_blank" rel="noopener">
 							screenshot-02.jpg
 						  	</a>
 							{% endif %}
@@ -640,10 +649,12 @@ Check your answers
 							<a href="/images/travel-insurance-screenshot-1.png" download="Insurance evidence 31 March 2024">
 								insurance-screenshot-1.png
 							</a>
+						{% if data['more-insurance-evidence']  === 'yes' %}
 						<br>
 							<a href="/images/travel-insurance-screenshot-2.png" download="Insurance evidence 2 31 March 2024">
 								insurance-screenshot-2.png
 							</a>
+						{% endif %}
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
@@ -846,7 +857,7 @@ Check your answers
 							{% if data['visa-fees-cost'] %}
 								£{{ data['visa-fees-cost'] }}
 							{% else %}
-								£15
+								£35
 							{% endif %}
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
@@ -863,12 +874,12 @@ Check your answers
 							Evidence uploaded
 						</dt>
 						<dd class="nhsuk-summary-list__value">
-							<a href="/images/ESTA-evidence.png" download="Visa fees evidence 31 March 2024">
-								visa-screenshot.png
+							<a href="/images/bank-statement-visa-fee.png" download="Visa fees evidence 31 March 2024">
+								bank-statement-visa-fee.png
 							</a>
 							{% if data['more-visa-fees-evidence'] === 'yes' %}
 							<br>
-							<a href="/images/bank-statement-visa-fee.png" target="_blank" rel="noopener">
+							<a href="" target="_blank" rel="noopener">
 							screenshot-02.jpg
 						  	</a>
 							{% endif %}
@@ -921,7 +932,7 @@ Check your answers
 						Total overseas costs
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-							£75
+							£95
 					</dd>
 				</div>
 	    </dl>
