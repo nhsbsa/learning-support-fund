@@ -19,6 +19,54 @@ Claim checks
       {{ data['name'] }} ({{ data['activity number'] }})
     </h1>
 
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Students personal and course details
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              NHS Learning Support Fund reference number
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              SSRN0010003
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              University Student ID
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              AB123456
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Academic year
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              2023/24
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Course
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Adult nursing
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </details>
+
     <!-- <div class="nhsuk-inset-text">
       <span class="nhsuk-u-visually-hidden">Information: </span>
       <ul class="nhsuk-list nhsuk-list--bullet">
@@ -40,7 +88,7 @@ Claim checks
           31 March 2024
         </dd>
       </div>
-    
+
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
           Total claim value
@@ -49,7 +97,7 @@ Claim checks
           £0
         </dd>
       </div>
-    
+
     </dl>
 
     {% if data['read-only'] != 'true' %}
@@ -137,7 +185,7 @@ Claim checks
               <td class="nhsuk-table__cell">7 April 2024</td>
               <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
             </tr>
-            
+
           </tbody>
         </table>
         <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></p>
@@ -331,7 +379,7 @@ Claim checks
             31 March 2024
           </dd>
         </div>
-      
+
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Total claim value
@@ -340,18 +388,18 @@ Claim checks
             £151.40
           </dd>
         </div>
-      
+
       </dl>
 
       {% if data['read-only'] != 'true' %}
       <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim.</h2>
       <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed {% if data['status'] === 'Returned from NHSBSA' %}1{% else %}0{% endif %} of 3 sections.</p>
       {% endif %}
-  
+
       {% if data['status'] == 'University processing' %}
       <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-7">Claim currently being processed by Samuel Jackson</h2>
       {% endif %}
-  
+
       {% if data['read-only'] != 'true' %}
         <details class="nhsuk-details nhsuk-expander-warning" open>
           <summary style="" class="nhsuk-details__summary">
@@ -383,7 +431,7 @@ Claim checks
           </div>
         </details>
       {% endif %}
-  
+
       <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-details__summary-text">
@@ -391,7 +439,7 @@ Claim checks
           </span>
         </summary>
         <div class="nhsuk-details__text">
-  
+
           <table class="nhsuk-table-responsive">
             <thead role="rowgroup" class="nhsuk-table__head">
               <tr role="row">
@@ -419,20 +467,20 @@ Claim checks
                 <td class="nhsuk-table__cell">7 April 2024</td>
                 <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
               </tr>
-              
+
             </tbody>
           </table>
           <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></p>
         </div>
       </details>
-  
+
     </div>
   </div>
-  
+
   <div class="nhsuk-grid-row">
-  
+
     <div class="nhsuk-grid-column-two-thirds">
-  
+
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
@@ -453,7 +501,7 @@ Claim checks
                 <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
               {% endif %}
             </li>
-  
+
             <li class="app-task-list__item nhsuk-u-clear">
               <span class="app-task-list__task-name">
                 <a href="TDAE-placement-details-public-transport" aria-describedby="eligibility-status">
@@ -485,10 +533,10 @@ Claim checks
             </li>
           </ul>
         </li>
-  
+
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Overseas costs 
+            <span class="app-task-list__section-number">2. </span> Overseas costs
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item nhsuk-u-clear">
@@ -523,7 +571,7 @@ Claim checks
             17 February 2024
           </dd>
         </div>
-      
+
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Total claim value
@@ -532,18 +580,18 @@ Claim checks
             £65.48
           </dd>
         </div>
-      
+
       </dl>
-      
+
       {% if data['read-only'] != 'true' %}
       <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim.</h2>
       <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed {% if data['status'] === 'Returned from NHSBSA' %}1{% else %}0{% endif %} of 3 sections.</p>
       {% endif %}
-  
+
       {% if data['status'] == 'University processing' %}
       <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-7">Claim currently being processed by Samuel Jackson</h2>
       {% endif %}
-  
+
       {% if data['read-only'] != 'true' %}
         <details class="nhsuk-details nhsuk-expander-warning" open>
           <summary style="" class="nhsuk-details__summary">
@@ -575,7 +623,7 @@ Claim checks
           </div>
         </details>
       {% endif %}
-  
+
       <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-details__summary-text">
@@ -583,7 +631,7 @@ Claim checks
           </span>
         </summary>
         <div class="nhsuk-details__text">
-  
+
           <table class="nhsuk-table-responsive">
             <thead role="rowgroup" class="nhsuk-table__head">
               <tr role="row">
@@ -611,20 +659,20 @@ Claim checks
                 <td class="nhsuk-table__cell">28 February 2024</td>
                 <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
               </tr>
-              
+
             </tbody>
           </table>
           <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></p>
         </div>
       </details>
-  
+
     </div>
   </div>
-  
+
   <div class="nhsuk-grid-row">
-  
+
     <div class="nhsuk-grid-column-two-thirds">
-  
+
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
@@ -647,7 +695,7 @@ Claim checks
             </li>
           </ul>
         </li>
-  
+
         <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">2. </span> Accommodation details
