@@ -20,7 +20,7 @@
     <div class="nhsuk-grid-column-full">
       <p><a class="nhsuk-link--no-visited-state" href="TDAE-previous-claims-list">View previously processed claims</a></p>
 
-      <p><a href="/images/TDAE-claims-list.csv" download="TDAE claims list 18 September 2023 11:41">Download details of claims that need processing (CSV, 4KB)</a></p>
+      <p><a href="/images/TDAE-claims-list.csv" download="TDAE claims list 16 May 2024 11:41">Download details of claims that need processing (CSV, 4KB)</a></p>
 
       <button class="nhsuk-button nhsuk-button--secondary" id="toggle-filter" style="margin-bottom: 24px;" value="Show filter" onclick="change()">Show filter</button>
 
@@ -205,7 +205,7 @@
                           <span class="nhsuk-table-responsive__heading">Course </span>Adult nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>3 September 2023
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>7 April 2024
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Status </span>
@@ -223,38 +223,12 @@
                       </td>
                   </tr>
                   {% endif %}
-                  {% if data['Bloggs'] != 'submitted' %}
-                  <tr role="row" class="nhsuk-table__row">
-                      <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Student name </span>Ben Bloggs
-                      </td>
-                      <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Course </span>Child nursing
-                      </td>
-                      <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>4 September 2023
-                      </td>
-                      <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Status </span>
-                          {% if data['Bloggs'] == 'returned' %}
-                          <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
-                          {% else %}
-                          <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
-                          {% endif %}
-                      </td>
-                      <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Action </span>
-                          <a class="nhsuk-link--no-visited-state" href="v9/process-claim?name=Ben Bloggs">Process
-                              claim</a>
-                      </td>
-                  </tr>
-                  {% endif %}
                   <tr role="row" class="nhsuk-table__row">
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Student name </span>Alyssa Geary
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Course </span>Paramedic
+                          <span class="nhsuk-table-responsive__heading">Course </span>Adult Nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Claim submitted date </span>7 April 2024
@@ -280,37 +254,32 @@
                           {% endif %}
                       </td>
                   </tr>
+                  {% if data['Bloggs'] != 'submitted' %}
                   <tr role="row" class="nhsuk-table__row">
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Student name </span>Daniel Jackson
+                          <span class="nhsuk-table-responsive__heading">Student name </span>Ben Bloggs
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Course </span>Adult Nursing
+                          <span class="nhsuk-table-responsive__heading">Course </span>Child nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>28 February 2023
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>4 April 2024
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Status </span>
-                          {% if data['Jackson'] == 'Returned' %}
-                          <strong class="nhsuk-tag nhsuk-tag--green">Submitted to NHSBSA</strong>
+                          {% if data['Bloggs'] == 'returned' %}
+                          <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
                           {% else %}
-                          <strong class="nhsuk-tag nhsuk-tag--blue">Started by you</strong>
+                          <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
                           {% endif %}
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Action </span>
-                          {% if data['Thompson'] == 'Returned' %}
-                          <a class="nhsuk-link--no-visited-state"
-                              href="TDAE-student-claim?name=Daniel Jackson&status=Returned to student&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=true&breakdown=walk">View
+                          <a class="nhsuk-link--no-visited-state" href="v9/process-claim?name=Ben Bloggs">Process
                               claim</a>
-                          {% else %}
-                          <a class="nhsuk-link--no-visited-state"
-                              href="TDAE-student-claim?name=Daniel Jackson&status=To be completed&evidence-completed=&university-completed=completed&approve-in-progress=&read-only=&wrong-evidence=true&breakdown=walk">Process
-                              claim</a>
-                          {% endif %}
                       </td>
                   </tr>
+                  {% endif %}
                   <tr role="row" class="nhsuk-table__row">
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Student name </span>Jill Cooper
@@ -319,7 +288,7 @@
                           <span class="nhsuk-table-responsive__heading">Course </span>Mental health nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>12 September 2023
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>28 March 2024
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Status </span>
@@ -344,7 +313,7 @@
                           <span class="nhsuk-table-responsive__heading">Course </span>Radiography
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>14 September 2023
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>14 March 2024
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Status </span><strong
@@ -366,7 +335,7 @@
                           <span class="nhsuk-table-responsive__heading">Course </span>Physiotherapy
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>14 September 2023
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>11 March 2024
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Status </span>
@@ -388,7 +357,7 @@
                           <span class="nhsuk-table-responsive__heading">Course </span>Midwifery
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>14 September 2023
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>9 March 2024
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Status </span>
@@ -410,7 +379,7 @@
                           <span class="nhsuk-table-responsive__heading">Course </span>Midwifery
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>15 September 2023
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>5 March 2024
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Status </span>
@@ -424,7 +393,6 @@
                           </a>
                       </td>
                   </tr>
-                  <tr role="row" class="nhsuk-table__row">
                   <tr role="row" class="nhsuk-table__row">
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Student name </span>Michelle Moutton
@@ -433,7 +401,7 @@
                           <span class="nhsuk-table-responsive__heading">Course </span>Adult nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>16 September 2023
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>3 March 2024
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Status </span>
@@ -447,6 +415,37 @@
                           </a>
                       </td>
                   </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>Daniel Jackson
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Adult Nursing
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim submitted date </span>28 February 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span>
+                        {% if data['Jackson'] == 'Returned' %}
+                        <strong class="nhsuk-tag nhsuk-tag--green">Submitted to NHSBSA</strong>
+                        {% else %}
+                        <strong class="nhsuk-tag nhsuk-tag--blue">Started by you</strong>
+                        {% endif %}
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span>
+                        {% if data['Thompson'] == 'Returned' %}
+                        <a class="nhsuk-link--no-visited-state"
+                            href="TDAE-student-claim?name=Daniel Jackson&status=Returned to student&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=true&breakdown=walk">View
+                            claim</a>
+                        {% else %}
+                        <a class="nhsuk-link--no-visited-state"
+                            href="TDAE-student-claim?name=Daniel Jackson&status=To be completed&evidence-completed=&university-completed=completed&approve-in-progress=&read-only=&wrong-evidence=true&breakdown=walk">Process
+                            claim</a>
+                        {% endif %}
+                    </td>
+                </tr>
                 {% endif %}
               </tbody>
           </table>

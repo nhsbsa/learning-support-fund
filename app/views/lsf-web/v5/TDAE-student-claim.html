@@ -33,7 +33,15 @@ Claim checks
               NHS Learning Support Fund reference number
             </dt>
             <dd class="nhsuk-summary-list__value">
+              {% if data['name'] === 'Emmit Mar' %}
+              SSRN0010001
+              {% elif data['name'] === 'Alyssa Geary' %}
               SSRN0010003
+              {% elif data['name'] === 'Daniel Jackson' %}
+              SSRN0010004
+              {% else %}
+              SSRN0010002
+              {% endif %}
             </dd>
           </div>
 
