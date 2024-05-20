@@ -148,8 +148,7 @@
             <ul class="app-task-list__items">
               <li class="app-task-list__item nhsuk-u-clear">
                 <span class="app-task-list__task-name">
-                  {% if data['university-details'] === 'completed'
-                    and data['overseas-details'] === 'completed'
+                  {% if data['overseas-details'] === 'completed'
                   %}
                     <a class="app-task-list__task-name" href="TDAE-placement-cost-summary">Submit your claim</a>
                   {% else %}
@@ -158,7 +157,7 @@
                 </span>
                   {% if data['submit-claim'] === 'completed' %}
                     <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
-                  {% elif data['university-details'] === 'completed' and data['overseas-details'] === 'completed' %}
+                  {% elif data['overseas-details'] === 'completed' %}
                     <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not Started</strong>
                   {% else %}
                     <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__tag task-status">Cannot start yet</strong>
