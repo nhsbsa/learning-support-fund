@@ -30,6 +30,13 @@ Which days does this evidence relate to?
                   Select all that apply.
                 </div>
 
+                 <!-- Select all link -->
+                  <!-- div class="select-all-container">
+                    <a href="#" id="select-all-link">Select all</a>
+                  </div>
+
+                  <br -->
+
               {% if data['claiming-for'] == 'car' %}
               <div class="nhsuk-checkboxes">
 
@@ -67,36 +74,36 @@ Which days does this evidence relate to?
               <div class="nhsuk-checkboxes">
 
                 <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="bus-ticket-1">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
                     Bus ticket charges of £12 from Friday 6 October 2023 to Thursday 12 October 2023
                   </label>
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
-                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                  <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="train-ticket-1">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
                     Train ticket charges of £8.60 on Friday 6 October 2023
                   </label>
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
-                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="train-ticket-2">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
                     Train ticket charges of £8.60 on Saturday 7 October 2023
                   </label>
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                  <input class="nhsuk-checkboxes__input" id="example-4" name="example" type="checkbox" value="train-ticket-3">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-4">
                     Train ticket charges of £8.60 on Sunday 8 October 2023
                   </label>
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                  <input class="nhsuk-checkboxes__input" id="example-5" name="example" type="checkbox" value="train-ticket-4">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-5">
                     Train ticket charges of £8.60 on Monday 9 October 2023
                   </label>
                 </div>
@@ -141,30 +148,30 @@ Which days does this evidence relate to?
               <div class="nhsuk-checkboxes">
 
                 <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="ticket-1">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                    Train ticket on Friday 6 October 2023
+                    Train ticket charges of £8.60 on Friday 6 October 2023
                   </label>
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                  <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="ticket-2">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                    Train ticket on Saturday 7 October 2023
+                    Train ticket charges of £8.60 on Saturday 7 October 2023
                   </label>
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="ticket-3">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                    Train ticket on Sunday 8 October 2023
+                    Train ticket charges of £8.60 on Sunday 8 October 2023
                   </label>
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                    Train ticket on Monday 9 October 2023
+                  <input class="nhsuk-checkboxes__input" id="example-4" name="example" type="checkbox" value="ticket-4">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-4">
+                    Train ticket charges of £8.60 on Monday 9 October 2023
                   </label>
                 </div>
 
@@ -185,5 +192,48 @@ Which days does this evidence relate to?
 
 </div>
 
-</script>
+<!-- style>
+  .select-all-container {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  #select-all-link {
+    text-decoration: none;
+    color: #005eb8;
+    font-size: 1.1875rem;
+    text-decoration: underline;
+  }
+</style -->
+
+
+<!-- Script for 'Select all' link -->
+<!-- script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const selectAllLink = document.getElementById('select-all-link');
+    const checkboxes = document.querySelectorAll('.example-checkbox');
+    let allSelected = false;
+
+    selectAllLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      allSelected = !allSelected;
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = allSelected;
+      });
+      selectAllLink.textContent = allSelected ? 'Unselect all' : 'Select all';
+    });
+
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        if (!checkbox.checked) {
+          allSelected = false;
+          selectAllLink.textContent = 'Select all';
+        } else if (Array.from(checkboxes).every(checkbox => checkbox.checked)) {
+          allSelected = true;
+          selectAllLink.textContent = 'Unselect all';
+        }
+      });
+    });
+  });
+</script -->
 {% endblock %}
