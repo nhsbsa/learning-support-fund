@@ -18,8 +18,16 @@ Check your answers
                 Claim dates
               </dt>
               <dd class="nhsuk-summary-list__value">
+                {% if data['incur-cost-start-day'] %}
+                  {{ data['incur-cost-start-day'] }} <span class="cya-month">{{ data['incur-cost-start-month'] }}</span> {{ data['incur-cost-start-year'] }}
+                  to<br>
+                  {% if data['incur-cost-day'] %}
+                    {{ data['incur-cost-day'] }} <span class="cya-month">{{ data['incur-cost-month'] }}</span> {{ data['incur-cost-year'] }}
+                  {% endif %}
+                {% else %}
                   2 February 2024 to<br>
-                  31 March 2024
+                  8 February 2024
+                {% endif %}
               </dd>
               <dd class="nhsuk-summary-list__actions">
                 <a href="TDAE-incur-costs">
