@@ -118,10 +118,10 @@
           <dd class="nhsuk-summary-list__value">
             {% if data['name'] == 'Alyssa Geary' %}
             2 February 2024 to
-            31 March 2024
+            23 February 2024
             {% else %}
             2 February 2024 to
-            31 March 2024
+            23 February 2024
             {% endif %}
           </dd>
         </div>
@@ -391,7 +391,7 @@
                 <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
               {% endif %}
             </li>
-            <li class="app-task-list__item nhsuk-u-clear">
+            <!-- li class="app-task-list__item nhsuk-u-clear">
               <span class="app-task-list__task-name">
                 <a href="TDAE-placement-public-transport" aria-describedby="eligibility-status">
                   Check placement travel details
@@ -404,7 +404,7 @@
               {% else %}
                 <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
               {% endif %}
-            </li>
+            </li -->
             <li class="app-task-list__item nhsuk-u-clear">
               <span class="app-task-list__task-name">
                 <a href="TDAE-taxi" aria-describedby="eligibility-status">
@@ -464,7 +464,7 @@
             <ul class="app-task-list__items">
               <li class="app-task-list__item nhsuk-u-clear">
                 <span class="app-task-list__task-name">
-                  {% if data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' and data['taxi-completed'] === 'completed' and data['overseas-completed'] === 'completed' %}
+                  {% if data['university-completed'] === 'completed' and data['taxi-completed'] === 'completed' and data['overseas-completed'] === 'completed' %}
                       <a class="app-task-list__task-name" href="TDAE-provide-nhsbsa-comments">
                         Submit checked claim
                       </a>
@@ -474,7 +474,7 @@
                   </span>
                   {% endif %}
                 </span>
-                {% if data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' and data['taxi-completed'] === 'completed' and data['overseas-completed'] === 'completed' %}
+                {% if data['university-completed'] === 'completed' and data['taxi-completed'] === 'completed' and data['overseas-completed'] === 'completed' %}
                   {% if data['approve-in-progress'] === 'in-progress' %}
                     <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to student</strong>
                   {% elif data['approve-in-progress'] === 'completed' %}
