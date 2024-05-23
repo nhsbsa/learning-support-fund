@@ -1,4 +1,4 @@
-{% extends 'layout-HEI-top-nav.html' %}
+{% extends 'layout.html' %}
 
 {% block pageTitle %}
   Dashboard
@@ -15,12 +15,12 @@
 
     <div class="nhsuk-grid-row">
 
-        <!--<div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-grid-column-one-third">
             <div class="nhsuk-inset-text nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0">
                 <h2 class="nhsuk-heading-s">Navigation</h2>
                 <nav>
                     <ul class="nhsuk-list nhsuk-u-margin-bottom-0">
-                        {% if data['user-role'] == 'COSA' or data['user-role'] == 'Admin' %}
+                        {% if data['user-role'] != 'TDAE' %}
                         <li><a href="courses">Courses</a></li>
                         {% endif %}
                         <li><a href="search-for-student">Student search</a></li>
@@ -29,25 +29,29 @@
                         {% endif %}
                         <li><a href="change-password">Change password</a></li>
                         <li><a href="general-query">General queries</a></li>
-                        {% if data['user-role'] == 'TDAE' or data['user-role'] == 'Admin' %}
+                        {% if data['user-role'] != 'COSA' %}
                         <li><a href="TDAE-claims-list">TDAE claims</a></li>
                         {% endif %}
                     </ul>
                 </nav>
             </div>
-        </div>-->
+        </div>
 
-        <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-grid-column-two-thirds">
 
             <h2 class="nhsuk-heading-m">SHEFFIELD HALLAM UNIVERSITY</h2>
 
           {% if data['user-role'] == 'TDAE' %}
             <div class="nhsuk-grid-row">
-                <div style="padding: 0 16px;" class="nhsuk-form-group" >
+                <div style="float:left; padding: 0 16px;" class="nhsuk-form-group" >
                     <p class="nhsuk-heading-xl nhsuk-u-margin-bottom-1">34</p>
                     <p><strong>Active TDAE claims</strong></p>
                 </div>
-                <div style="padding: 0 16px;" class="nhsuk-form-group" >
+                <!--<div style="width:20%" class="nhsuk-grid-column-one-third" >
+                    <p class="nhsuk-heading-xl nhsuk-u-margin-bottom-1">12</p>
+                    <p><strong>Courses</strong></p>
+                </div>-->
+                <div style="float:left; padding: 0 16px;" class="nhsuk-form-group" >
                     <a class="nhsuk-button" href="TDAE-claims-list">View active TDAE claims</a>
                 </div>
             </div>
@@ -67,29 +71,36 @@
             </div>
           {% else %}
             <div class="nhsuk-grid-row">
-                <div style="width:40%; text-align: center;" class="nhsuk-grid-column-one-third" >
+                <!--<div class="nhsuk-grid-column-full">
+                  <h2 class="nhsuk-heading-m">Confirmation of students attendance</h2>
+                </div>-->
+                <div style="width:40%" class="nhsuk-grid-column-one-third" >
                     <p class="nhsuk-heading-xl nhsuk-u-margin-bottom-1">295</p>
                     <p><strong>Students needing action</strong></p>
                 </div>
-                <div style="width:20%; text-align: center;" class="nhsuk-grid-column-one-third" >
+                <div style="width:20%" class="nhsuk-grid-column-one-third" >
                     <p class="nhsuk-heading-xl nhsuk-u-margin-bottom-1">12</p>
                     <p><strong>Courses</strong></p>
                 </div>
-                <div style="width:40%; text-align: center;'" class="nhsuk-grid-column-one-third" >
+                <div style="width:40%" class="nhsuk-grid-column-one-third" >
                   <p class="nhsuk-heading-xl nhsuk-u-margin-bottom-1">34</p>
                   <p><strong>Active TDAE claims</strong></p>
                 </div>
             </div>
             <!--<div class="nhsuk-grid-row">
-                <div class="nhsuk-grid-column-one-half">
-                  <a class="nhsuk-button" href="courses">View course details</a>
+                <div class="nhsuk-grid-column-full">
+                  <h2 class="nhsuk-heading-m">Travel and Dual Accommodation Expenses</h2>
                 </div>
-                <div class="nhsuk-grid-column-one-half">
-                  <a class="nhsuk-button" href="TDAE-claims-list">View active TDAE claims</a>
+                <div style="float:left; padding: 0 16px;" class="nhsuk-form-group" >
+                    <p class="nhsuk-heading-xl nhsuk-u-margin-bottom-1">34</p>
+                    <p><strong>Active TDAE claims</strong></p>
+                </div>
+                <div style="float:left; padding: 0 16px;" class="nhsuk-form-group" >
+                    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-claims-list">View active TDAE claims</a>
                 </div>
             </div>-->
           {% endif %}
-          <hr>
+
             <h3 class="nhsuk-heading-m">Notice board</h3>
             <p>Here you'll find answers to frequently asked questions and any messages from NHSBSA Student Services.</p>
             <p>If your query is not answered by the items on the notice board, you can raise a general query.</p>
