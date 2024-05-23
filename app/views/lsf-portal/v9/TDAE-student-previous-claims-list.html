@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'layout-HEI.html' %}
 
 {% block pageTitle %}
 Travel and Dual Accommodation Expense claims
@@ -45,9 +45,11 @@ Travel and Dual Accommodation Expense claims
                     <th role="columnheader" class="" scope="col">
                         Status
                     </th>
+                    {% if data['user-role'] != 'COSA' %}
                     <th role="columnheader" class="" scope="col">
                         Action
                     </th>
+                    {% endif %}
                 </tr>
                 </thead>
                 <tbody class="nhsuk-table__body">
@@ -59,9 +61,11 @@ Travel and Dual Accommodation Expense claims
                         <span class="nhsuk-table-responsive__heading">Status </span>
                         <strong class="nhsuk-tag">Claim paid</strong>
                     </td>
+                    {% if data['user-role'] != 'COSA' %}
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Action </span><a class="nhsuk-link--no-visited-state" href="TDAE-student-claim?name=Emmit Mar&scenario=travel-only&status=Payment approved&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View claim</a>
                     </td>
+                    {% endif %}
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                     <td role="cell" class="nhsuk-table__cell">
@@ -71,9 +75,11 @@ Travel and Dual Accommodation Expense claims
                         <span class="nhsuk-table-responsive__heading">Status </span>
                         <strong class="nhsuk-tag nhsuk-tag--red">Declined</strong>
                     </td>
+                    {% if data['user-role'] != 'COSA' %}
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Action </span><a class="nhsuk-link--no-visited-state" href="#">View claim</a>
                     </td>
+                    {% endif %}
                 </tr>
                 </tbody>
             </table>

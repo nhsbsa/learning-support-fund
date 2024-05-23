@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'layout-HEI.html' %}
 
 {% block pageTitle %}
   Student details
@@ -73,15 +73,21 @@
                     <th role="columnheader" class="" scope="col">
                         Status
                     </th>
+                    {% if data['user-role'] != 'TDAE' %}
                     <th role="columnheader" class="nhsuk-u-width-one-fifth" scope="col">
                         Actions
                     </th>
+                    {% endif %}
                 </tr>
             </thead>
             <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
                     <td role="cell" class="nhsuk-table__cell">
+                      {% if data['user-role'] != 'TDAE' %}
                         <span class="nhsuk-table-responsive__heading">Course name</span> <a href="#">Nursing</a>
+                      {% else %}
+                        Nursing
+                      {% endif %}
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Academic year </span> 2023/2024
@@ -95,13 +101,19 @@
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--grey">Student not responded for term 1</strong>
                     </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Action </span><a href="course-intake">Review course details</a><br><a href="#">Change request</a>
-                    </td>
+                    {% if data['user-role'] != 'TDAE' %}
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="course-intake">Review course details</a><br><a href="#">Change request</a>
+                      </td>
+                    {% endif %}
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
                     <td role="cell" class="nhsuk-table__cell">
+                      {% if data['user-role'] != 'TDAE' %}
                         <span class="nhsuk-table-responsive__heading">Course name</span> <a href="#">Nursing</a>
+                      {% else %}
+                        Nursing
+                      {% endif %}
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Academic year </span> 2022/2023
@@ -115,9 +127,11 @@
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 3</strong>
                     </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Action </span><a href="course-intake">Review course details</a>
-                    </td>
+                    {% if data['user-role'] != 'TDAE' %}
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="course-intake">Review course details</a>
+                      </td>
+                    {% endif %}
                 </tr>
             </tbody>
         </table>
@@ -134,9 +148,11 @@
                     <th role="columnheader" class="" scope="col">
                         Status
                     </th>
+                    {% if data['user-role'] != 'COSA' %}
                     <th role="columnheader" class="" scope="col">
                         Action
                     </th>
+                    {% endif %}
                 </tr>
             </thead>
             <tbody class="nhsuk-table__body">
@@ -148,10 +164,12 @@
                         <span class="nhsuk-table-responsive__heading">Status </span>
                         <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
                     </td>
+                    {% if data['user-role'] != 'COSA' %}
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Action </span>
                         <a class="nhsuk-link--no-visited-state" href="TDAE-student-claim?name=George Hill&status=Returned to student&evidence-completed=in-progress&evidence-completed-2=completed&accommodation-completed=completed&vehicle-hire-check=yes&accommodation-completed-2=completed&university-completed=completed&approve-in-progress=&read-only=true">View claim</a>
                     </td>
+                    {% endif %}
                 </tr>
             </tbody>
         </table>
