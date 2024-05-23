@@ -37,8 +37,25 @@
         <p class="nhsuk-body-s">
           <b>Course name:</b> Diagnostic Radiography<br>
           <b>Academic year:</b> September 2023<br>
-          <b>Study year:</b> Year 1
+          <b>Study year:</b> Year 1<!--<br>
+          <b>Students comment for not attending:</b> I have dropped off this course and now doing Geography-->
         </p>
+
+        <!--<h2 class="nhsuk-heading-s">
+          Students comment
+        </h2>
+        <p>I have dropped off this course and now doing Geography</p>-->
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Students comment on not attending
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>I have dropped off this course and now doing Geography</p>
+          </div>
+        </details>
 
         <div class="nhsuk-form-group">
           {% if data['term'] == '2' or data['term'] == '3' %}

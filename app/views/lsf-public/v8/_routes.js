@@ -978,7 +978,7 @@ router.post('/v8/TDAE-accommodation-travel-public-transport-cost', (req, res) =>
 });
 
 router.post('/v8/TDAE-accommodation-travel-cycle-journey-mileage', (req, res) => {
-  
+
   const transportMethods = req.session.data['transport-method'];
 
   // Check if the user previously selected 'car', 'public transport' and 'cycle' as transport methods
@@ -1010,7 +1010,7 @@ router.post('/v8/TDAE-accommodation-travel-cycle-journey-mileage', (req, res) =>
     // Redirect to upload evidence page if only 'cycle' was previously selected
     res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-comment');
   }
-  
+
 });
 
 
@@ -1140,7 +1140,7 @@ router.post('/v8/TDAE-placement-additional-cost-dates', (req, res) => {
 
 router.post('/v8/TDAE-no-evidence-reason', (req, res) => {
   const claimingFor = req.session.data['claiming-for'];
-  
+
   req.session.data['no-evidence'] = "true";
 
   if (claimingFor.includes('travel to accommodation')) {
@@ -1151,7 +1151,7 @@ router.post('/v8/TDAE-no-evidence-reason', (req, res) => {
 });
 
 router.post('/v8/TDAE-no-evidence-decision', (req, res) => {
-  
+
   const noEvidenceDecision = req.session.data['no-evidence-decision'];
   const claimingFor = req.session.data['claiming-for'];
 
@@ -1380,10 +1380,23 @@ router.post('/v8/COSA-declaration', (req, res) => {
 
   })
 
+  // COSA reason
+  router.post('/v8/COSA-reason', (req, res) => {
+
+    res.redirect('/lsf-public/v8/COSA-declaration')
+
+  })
+
 // COSA confirm attendance
 router.post('/v8/COSA-confirm-attendance', (req, res) => {
 
-  res.redirect('/lsf-public/v8/COSA-declaration')
+  const cosaAttendance = req.session.data['COSA-attendance']
+
+  if (cosaAttendance === 'no') {
+    res.redirect('/lsf-public/v8/COSA-reason')
+  } else {
+    res.redirect('/lsf-public/v8/COSA-declaration')
+  }
 
 })
 

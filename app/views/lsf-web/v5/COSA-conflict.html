@@ -1,0 +1,57 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+      "href": "javascript:history.go(-1)",
+      "text": "Go back"
+    }) }}
+
+  <form action="student-details" method="POST">
+
+  <p class="nhsuk-u-font-size-22" style="color: grey;">SSRN0010001 - Emmit Mar</p>
+
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="nhsbsa-comments">
+        <h1 class="nhsuk-heading-l">Activites</h1>
+      </label>
+    </div>
+
+    <p>Academic year reference: SSRN0010001-2</p>
+
+    <p>Activity type: HEI COSA Conflict</p>
+
+    <h2 class="nhsuk-heading-s">Students comment:</h2> 
+    <p>I have dropped off this course and now doing Geography</p>
+
+    <h2 class="nhsuk-heading-s">University comment:</h2>
+    <p>This student is still currently enrolled on the course the switch of course has yet to be approved.</p>
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="select-1">
+        Activity status
+      </label>
+      <select class="nhsuk-select" id="select-1" name="select-1">
+        <option value="1">Active</option>
+        <option value="2" >?????</option>
+      </select>
+    </div>
+
+
+    <button class="nhsuk-button" type="submit">Update</button><br>
+
+  </form>
+
+  </div>
+
+</div>
+
+
+{% endblock %}
