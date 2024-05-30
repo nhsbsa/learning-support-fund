@@ -273,17 +273,17 @@ router.post('/v9/TDAE-checked-hire-vehicle-comments', (req, res) => {
 
 router.post('/v9/TDAE-checked-taxi', (req, res) => {
 
-    const taxiCheck = req.session.data['taxi-check']
+    const taxiCheck = req.session.data['taxi-check'];
 
     if (taxiCheck === 'yes') {
-        req.session.data['taxi-completed'] = 'completed'
+        req.session.data['taxi-completed'] = 'completed';
+        res.redirect('/lsf-portal/v9/TDAE-checked-taxi-comments');
     } else {
-        req.session.data['taxi-completed'] = 'in-progress'
+        req.session.data['taxi-completed'] = 'in-progress';
+        res.redirect('/lsf-portal/v9/TDAE-student-claim');
     }
 
-    res.redirect('/lsf-portal/v9/TDAE-checked-taxi-comments')
-
-})
+});
 
 router.post('/v9/TDAE-checked-taxi-comments', (req, res) => {
 
