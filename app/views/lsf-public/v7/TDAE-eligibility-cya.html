@@ -111,7 +111,8 @@ Check your answers
 
                 {% else %}
                   123 Practice Placement<br>
-                  Newcastle Tyne and Wear<br>
+                  Newcastle upon Tyen<br>
+                  Tyne and Wear<br>
                   NE12 3AB
                 {% endif %}
               </dd>
@@ -139,12 +140,11 @@ Check your answers
       						{{ data['term-address-town'] }}<br>
       						{{ data['term-address-postcode'] }}<br>
       					{% else %}
-      						123<br>
-      						Building street 1<br>
-      						Building street 2<br>
-      						Town<br>
-      						County<br>
-      						NE33 3AB
+                <p>Building name<br>
+                  Street<br>
+                  Town<br>
+                  County<br>
+                  NE33 3AB</p>
       					{% endif %}
       				</dd>
       				{% if data['submit-claim'] != 'completed' %}

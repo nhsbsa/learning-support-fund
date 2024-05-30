@@ -405,7 +405,7 @@ router.post('/v7/TDAE-reuse-details', (req, res) => {
     res.redirect('/lsf-public/v7/TDAE-placement-address')
   } else if (reusedDetails.indexOf('term time-address') === -1) {
     req.session.data['address-number'] = "1"
-    res.redirect('/lsf-public/v7/TDAE-same-term time-address')
+    res.redirect('/lsf-public/v7/TDAE-same-term-time-address')
   } else {
     req.session.data['address-number'] = "1"
     req.session.data['term-building-name'] = "Stephenson House"
@@ -1604,7 +1604,7 @@ router.post('/v7/TDAE-placement-address-cya', (req, res) => {
         req.session.data['address-number'] = '4'
         res.redirect('/lsf-public/v7/TDAE-placement-address-more')
     } else {
-      if (reusedDetails && reusedDetails.indexOf('term time-address') !== -1) {
+      if (reusedDetails && reusedDetails.indexOf('term-time-address') !== -1) {
         req.session.data['term-building-name'] = "Stephenson House"
         req.session.data['term-address-line-1'] = "Stoddart St"
         req.session.data['term-address-line-2'] = "Shieldfield"
@@ -1612,7 +1612,7 @@ router.post('/v7/TDAE-placement-address-cya', (req, res) => {
         req.session.data['term-address-postcode'] = "NE2 1AW"
         res.redirect('/lsf-public/v7/TDAE-eligibility-cya')
       } else {
-        res.redirect('/lsf-public/v7/TDAE-same-term time-address')
+        res.redirect('/lsf-public/v7/TDAE-same-term-time-address')
       }
     }
 
@@ -1663,19 +1663,19 @@ router.post('/v7/TDAE-normal-transport', (req, res) => {
 
 })
 
-router.post('/v7/TDAE-same-term time-address', (req, res) => {
+router.post('/v7/TDAE-same-term-time-address', (req, res) => {
 
     const sameTermTimeAddress = req.session.data['same-term-address']
 
     if (sameTermTimeAddress === 'yes') {
         res.redirect('/lsf-public/v7/TDAE-eligibility-cya')
     } else {
-        res.redirect('/lsf-public/v7/TDAE-term time-address')
+        res.redirect('/lsf-public/v7/TDAE-term-time-address')
     }
 
 })
 
-router.post('/v7/TDAE-term time-address', (req, res) => {
+router.post('/v7/TDAE-term-time-address', (req, res) => {
 
     res.redirect('/lsf-public/v7/TDAE-eligibility-cya')
 
