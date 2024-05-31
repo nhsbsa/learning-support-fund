@@ -158,10 +158,14 @@ router.post('/v7/TDAE-placement-travel-evidence', (req, res) => {
 // TDAE cycle mileage
 
 router.post('/v7/TDAE-placement-cycle-same-mileage', (req, res) => {
+  const claimingFor = req.session.data['claiming-for'];
 
-    res.redirect('/lsf-public/v7/TDAE-placement-itinerary')
-
-})
+  if (claimingFor.includes('Cycle') && claimingFor.includes('Public transport')) {
+    res.redirect('/lsf-public/v7/TDAE-public-transport-pause');
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-placement-itinerary');
+  }
+});
 
 router.post('/v7/TDAE-placement-cycle-journey-cya', (req, res) => {
 
@@ -1976,26 +1980,42 @@ router.post('/v7/TDAE-same-journey', (req, res) => {
   const claimingFor = req.session.data['claiming-for'];
   const sameJourney = req.session.data['same-journey'];
 
-  if (claimingFor.includes('car')) {
+  if (claimingFor.includes('car') && claimingFor.includes('Public transport')) {
+    if (sameJourney === 'yes') {
+      res.redirect('/lsf-public/v7/TDAE-placement-car-same-mileage');
+    } else {
+      res.redirect('/lsf-public/v7/TDAE-public-transport-pause');
+    }
+  } else if (claimingFor.includes('Cycle') && claimingFor.includes('Public transport')) {
+    if (sameJourney === 'yes') {
+      res.redirect('/lsf-public/v7/TDAE-placement-cycle-same-mileage');
+    } else {
+      res.redirect('/lsf-public/v7/TDAE-public-transport-pause');
+    }
+  } else if (claimingFor.includes('car')) {
     if (sameJourney === 'yes') {
       res.redirect('/lsf-public/v7/TDAE-placement-car-same-mileage');
     } else {
       res.redirect('/lsf-public/v7/TDAE-placement-itinerary');
     }
   } else if (claimingFor.includes('Cycle')) {
-    if (sameJourney === 'yes') {
-      res.redirect('/lsf-public/v7/TDAE-placement-cycle-same-mileage');
-    } else {
-      res.redirect('/lsf-public/v7/TDAE-placement-itinerary');
-    }
+      if (sameJourney === 'yes') {
+        res.redirect('/lsf-public/v7/TDAE-placement-cycle-same-mileage');
+      } else {
+        res.redirect('/lsf-public/v7/TDAE-placement-itinerary');
+      }
   }
 });
 
 router.post('/v7/TDAE-placement-car-same-mileage', (req, res) => {
+  const claimingFor = req.session.data['claiming-for'];
 
-  res.redirect('/lsf-public/v7/TDAE-placement-itinerary')
-
-})
+  if (claimingFor.includes('car') && claimingFor.includes('Public transport')) {
+    res.redirect('/lsf-public/v7/TDAE-public-transport-pause');
+  } else {
+    res.redirect('/lsf-public/v7/TDAE-placement-itinerary');
+  }
+});
 
 router.post('/v7/TDAE-placement-car-to-mileage', (req, res) => {
 
