@@ -731,7 +731,7 @@ router.post('/v7/TDAE-accommodation-travel-public-transport-cost', (req, res) =>
 });
 
 router.post('/v7/TDAE-accommodation-travel-cycle-journey-mileage', (req, res) => {
-  
+
   const transportMethods = req.session.data['transport-method'];
 
   // Check if the user previously selected 'car', 'public transport' and 'cycle' as transport methods
@@ -893,7 +893,7 @@ router.post('/v7/TDAE-placement-additional-cost-dates', (req, res) => {
 
 router.post('/v7/TDAE-no-evidence-reason', (req, res) => {
   const claimingFor = req.session.data['claiming-for'];
-  
+
   req.session.data['no-evidence'] = "true";
 
   if (claimingFor.includes('travel to accommodation')) {
@@ -904,7 +904,7 @@ router.post('/v7/TDAE-no-evidence-reason', (req, res) => {
 });
 
 router.post('/v7/TDAE-no-evidence-decision', (req, res) => {
-  
+
   const noEvidenceDecision = req.session.data['no-evidence-decision'];
   const claimingFor = req.session.data['claiming-for'];
 
@@ -1190,8 +1190,17 @@ router.post('/v7/TDAE-placement-journey-cya', (req, res) => {
 // Add journey mileage
 router.get('/v7/add-journey-mileage', (req, res) => {
 
+  const addressNumber = req.session.data['address-number']
+
+  req.session.data['same-journey'] = 'not anymore'
   req.session.data['new-journey'] = 'yes'
-  res.redirect('/lsf-public/v7/TDAE-placement-mileage-address')
+
+  if (addressNumber === '2' || addressNumber === '3' || addressNumber === '4') {
+    res.redirect('/lsf-public/v7/TDAE-placement-mileage-address')
+  } else {
+    req.session.data['placement-mileage-address'] = 'Alnwick Hospital'
+    res.redirect('/lsf-public/v7/TDAE-placement-journey-days')
+  }
 
 })
 

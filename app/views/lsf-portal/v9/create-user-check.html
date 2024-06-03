@@ -1,0 +1,97 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+  Search for a student
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ backLink({
+          "href": "javascript:history.go(-1)",
+          "text": "Go back"
+      }) }}
+
+      <h1 class="nhsuk-heading-l">Check new user</h1>
+
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Email
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            joe.bloggs@gmail.com
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Joe Bloggs
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Job/Department
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Placement co-ordinator
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Contact number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            07771234567
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            User tasks
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Travel and Dual Accommodation Expenses claims
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            User permission
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Edit access
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Courses responsible for
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Adult nursing
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Active login
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Yes
+          </dd>
+        </div>
+
+      </dl>
+
+      <a class="nhsuk-button nhsuk-button--secondary" href="create-user">Change user details</a><br>
+      <a class="nhsuk-button" href="create-user-created">Create user</a><br>
+      <!--<a class="nhsuk-button" href="create-user-role">Continue</a><br>-->
+      <p><a href="user-search">Cancel</a></p>
+
+
+    </div>
+
+  </div>
+{% endblock %}

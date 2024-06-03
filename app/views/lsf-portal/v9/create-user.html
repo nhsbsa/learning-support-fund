@@ -1,0 +1,191 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+  Search for a student
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <h1 class="nhsuk-heading-l">Create user</h1>
+
+        <!--<h2 class="nhsuk-heading-s">Section 1 - person details</h2>-->
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="example">
+              Email
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="example">
+              Surname
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="example">
+              First name
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="example">
+              Job/Department
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="example">
+              Contact number
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="example">
+              User tasks
+          </label>
+
+          <div class="nhsuk-hint" id="example-hint">
+            Select at least one user task
+          </div>
+
+          <div class="nhsuk-checkboxes">
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="example-1" name="user-role" type="checkbox" value="COSA">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                Confirm students attendance
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="example-2" name="user-role" type="checkbox" value="TDAE">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                Travel and Dual Accommodation Expenses claims
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="example">
+              User permission
+          </label>
+          <div class="nhsuk-radios nhsuk-radios--inline">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                Edit access
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Read only
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="nhsuk-form-group">
+					<fieldset class="nhsuk-fieldset" id="courses">
+						<legend class="nhsuk-fieldset__legend">Which courses is the user responsible for? (optional)</legend>
+
+						<div class="nhsuk-checkboxes">
+							<div class="nhsuk-grid-row">
+								<div class="nhsuk-grid-column-one-half nhsuk-u-margin-bottom-2">
+
+										<div class="nhsuk-checkboxes__item">
+											<input class="nhsuk-checkboxes__input" id="course0" type="checkbox"
+												value="1" name="courses">
+											<label class="nhsuk-label nhsuk-checkboxes__label" for="course0">Adult Nursing</label>
+										</div>
+
+										<div class="nhsuk-checkboxes__item">
+											<input class="nhsuk-checkboxes__input" id="course1" type="checkbox"
+												value="2" name="courses">
+											<label class="nhsuk-label nhsuk-checkboxes__label" for="course1">Child Nursing</label>
+										</div>
+
+										<div class="nhsuk-checkboxes__item">
+											<input class="nhsuk-checkboxes__input" id="course2" type="checkbox"
+												value="3" name="courses">
+											<label class="nhsuk-label nhsuk-checkboxes__label" for="course2">Mental Health Nursing</label>
+										</div>
+
+										<div class="nhsuk-checkboxes__item">
+											<input class="nhsuk-checkboxes__input" id="course3" type="checkbox"
+												value="4" name="courses">
+											<label class="nhsuk-label nhsuk-checkboxes__label" for="course3">Midwifery</label>
+										</div>
+								</div>
+								<div class="nhsuk-grid-column-one-half">
+										<div class="nhsuk-checkboxes__item">
+											<input class="nhsuk-checkboxes__input" id="course4" type="checkbox"
+												value="5" name="courses">
+											<label class="nhsuk-label nhsuk-checkboxes__label" for="course4">Operating Department Practitioner</label>
+										</div>
+
+										<div class="nhsuk-checkboxes__item">
+											<input class="nhsuk-checkboxes__input" id="course5" type="checkbox"
+												value="496" name="courses">
+											<label class="nhsuk-label nhsuk-checkboxes__label" for="course5">test course</label>
+										</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="example">
+              Login active?
+          </label>
+          <div class="nhsuk-hint">Select No to stop a user accessing the system. For example, if they leave the university.</div>
+          <div class="nhsuk-radios nhsuk-radios--inline">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                No
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <a class="nhsuk-button" href="create-user-check">Continue</a><br>
+        <!--<a class="nhsuk-button" href="create-user-role">Continue</a><br>-->
+        <p><a href="user-search">Cancel</a></p>
+
+
+    </div>
+
+  </div>
+{% endblock %}
