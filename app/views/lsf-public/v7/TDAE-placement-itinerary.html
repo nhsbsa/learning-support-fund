@@ -55,553 +55,24 @@ What is the return mileage to your placement?
 		</details>
 		{% endif %}
 
-		{% if checked('claiming-for', 'Public transport') and checked('claiming-for', 'car') %}
-		
-				<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-0">
-					<caption>
-						<span class="nhsuk-heading-m">Placement travel details and costs</span>
-						<span class="nhsuk-u-visually-hidden"> - </span>
-						<span class="nhsuk-hint">Showing 1-4 of 4 dates</span>
-					</caption>
-			  		<thead role="rowgroup" class="nhsuk-table__head">
-			    		<tr role="row">
-							<tr role="row">
-							<th role="columnheader" class="" scope="col">Date</th>
-							{% if data['address-number'] == '2' or data['address-number'] == '3' or data['address-number'] == '4' %}
-							<th role="columnheader" class="" scope="col">
-			        		Placement address
-			      			</th>
-							{% endif %}
-							<th role="columnheader" class="" scope="col">Travel details</th>
-							<th role="columnheader" class="" scope="col">Value</th>
-							<th role="columnheader" class="" scope="col">Actions</th>
-						</tr>
-					</thead>
-
-			  	<tbody class="nhsuk-table__body">
-
-					<!-- Friday 6 October 2023 starts -->
-					<!-- Friday Daily train ticket starts -->
-					<tr role="row" class="nhsuk-table__row">
-						{% if data['additional-cost'] == "1" %}
-						<th rowspan="5" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
-						{% else %}
-						<th rowspan="4" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
-						{% endif %}
-							<span class="nhsuk-table-responsive__heading">Date </span>
-							Friday 6 October 2023
-					    </th>
-							
-				      <td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Daily train ticket
-				      </td>
-
-				      <td role="cell" class="nhsuk-table__cell">
-				        <span class="nhsuk-table-responsive__heading">Travel cost </span>
-						£8.60
-				      </td>
-
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Actions </span>
-						<div class="link-container">
-						<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
-						</div>
-					</td>
-					<!-- Friday Daily train ticket ends -->
-
-					<!-- Friday Multiple day bus ticket starts -->
-					<tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Multiple day bus ticket
-				      </td>
-				     
-					  <td role="cell" class="nhsuk-table__cell">
-				        <span class="nhsuk-table-responsive__heading">Travel cost </span>
-						£3
-				      </td>
-							
-					  <td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Action </span>
-							<div class="link-container">
-								<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
-							</div>
-						</td>
-				    </tr>
-					<!-- Friday Multiple day bus ticket ends -->
-
-					<!-- Friday Mileage to placement begins -->
-					<tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Mileage to placement
-					</td>
-
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel cost </span>
-						10 miles
-					</td>
-					
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Actions </span>
-						<div class="link-container">
-							{% if data['same-journey'] == "yes" %}
-							<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
-							{% else %}
-							<a href="TDAE-placement-car-to-mileage">Change</a> or <a href="#">remove</a>
-							{% endif %}
-						</div>
-					</td>
-					</tr>
-					<!-- Friday Mileage to placement ends -->
-
-					<!-- Friday Mileage returning from placement begins -->
-					<tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Mileage returning from placement
-					</td>
-
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel cost </span>
-						10 miles
-					</td>
-
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Actions </span>
-						<div class="link-container">
-							{% if data['same-journey'] == "yes" %}
-							<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
-							{% else %}
-							<a href="TDAE-placement-car-return-mileage">Change</a> or <a href="#">remove</a>
-							{% endif %}
-						</div>
-					</td>
-					</tr>
-					<!-- Mileage returning from placement ends -->
-	
-					<!-- If extra cost added for Friday begins -->
-					{% if data['additional-cost'] == "1" %}
-					<tr role="row" class="nhsuk-table__row">
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Additional cost type </span>
-							Parking charges
-						</td>
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Additional cost </span>
-							£4
-						</td>
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Actions </span>
-							<div class="link-container">
-								<a href="TDAE-placement-additional-costs-cya">Change</a> or <a href="#">remove</a>
-							</div>
-						</td>
-					</tr>
-					{% endif %}
-					<!-- If extra cost added for Friday ends -->
-					<!-- Friday 6 October Ends -->
-
-					<!-- Saturday 7 October 2023 starts -->
-					<!-- Saturday Daily train ticket starts -->
-					<tr role="row" class="nhsuk-table__row">
-						{% if data['additional-cost'] == "1" %}
-						<th rowspan="5" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
-						{% else %}
-						<th rowspan="4" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
-						{% endif %}
-							<span class="nhsuk-table-responsive__heading">Date </span>
-							Saturday 7 October 2023
-					    </th>
-							
-				      <td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Daily train ticket
-				      </td>
-
-				      <td role="cell" class="nhsuk-table__cell">
-				        <span class="nhsuk-table-responsive__heading">Travel cost </span>
-						£8.60
-				      </td>
-
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Actions </span>
-						<div class="link-container">
-						<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
-						</div>
-					</td>
-					<!-- Saturday Daily train ticket ends -->
-
-					<!-- Saturday Multiple day bus ticket starts -->
-					<tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Multiple day bus ticket
-				      </td>
-				     
-					  <td role="cell" class="nhsuk-table__cell">
-				        <span class="nhsuk-table-responsive__heading">Travel cost </span>
-						£3
-				      </td>
-							
-					  <td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Action </span>
-							<div class="link-container">
-								<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
-							</div>
-						</td>
-				    </tr>
-					<!-- Saturday Multiple day bus ticket ends -->
-
-					<!-- Saturday Mileage to placement begins -->
-					<tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Mileage to placement
-					</td>
-
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel cost </span>
-						10 miles
-					</td>
-					
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Actions </span>
-						<div class="link-container">
-							{% if data['same-journey'] == "yes" %}
-							<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
-							{% else %}
-							<a href="TDAE-placement-car-to-mileage">Change</a> or <a href="#">remove</a>
-							{% endif %}
-						</div>
-					</td>
-					</tr>
-					<!-- Saturday Mileage to placement ends -->
-
-					<!-- Saturday Mileage returning from placement begins -->
-					<tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Mileage returning from placement
-					</td>
-
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel cost </span>
-						10 miles
-					</td>
-
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Actions </span>
-						<div class="link-container">
-							{% if data['same-journey'] == "yes" %}
-							<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
-							{% else %}
-							<a href="TDAE-placement-car-return-mileage">Change</a> or <a href="#">remove</a>
-							{% endif %}
-						</div>
-					</td>
-					</tr>
-					<!-- Saturday Mileage returning from placement ends -->
-	
-					<!-- If extra cost added for Saturday begins -->
-					{% if data['additional-cost'] == "1" %}
-					<tr role="row" class="nhsuk-table__row">
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Additional cost type </span>
-							Parking charges
-						</td>
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Additional cost </span>
-							£4
-						</td>
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Actions </span>
-							<div class="link-container">
-								<a href="TDAE-placement-additional-costs-cya">Change</a> or <a href="#">remove</a>
-							</div>
-						</td>
-					</tr>
-					{% endif %}
-					<!-- If extra cost added for Saturday ends -->
-					<!-- Saturday 7 October Ends -->
-
-					<!-- Sunday 8 October 2023 starts -->
-					<!-- Sunday Daily train ticket starts -->
-					<tr role="row" class="nhsuk-table__row">
-						{% if data['additional-cost'] == "1" %}
-						<th rowspan="5" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
-						{% else %}
-						<th rowspan="4" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
-						{% endif %}
-							<span class="nhsuk-table-responsive__heading">Date </span>
-							Sunday 8 October 2023
-					    </th>
-							
-				      <td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Daily train ticket
-				      </td>
-
-				      <td role="cell" class="nhsuk-table__cell">
-				        <span class="nhsuk-table-responsive__heading">Travel cost </span>
-						£8.60
-				      </td>
-
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Actions </span>
-						<div class="link-container">
-						<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
-						</div>
-					</td>
-					<!-- Sunday Daily train ticket ends -->
-
-					<!-- Sunday Multiple day bus ticket starts -->
-					<tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Multiple day bus ticket
-				      </td>
-				     
-					  <td role="cell" class="nhsuk-table__cell">
-				        <span class="nhsuk-table-responsive__heading">Travel cost </span>
-						£3
-				      </td>
-							
-					  <td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Action </span>
-							<div class="link-container">
-								<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
-							</div>
-						</td>
-				    </tr>
-					<!-- Sunday Multiple day bus ticket ends -->
-
-					<!-- Sunday Mileage to placement begins -->
-					<tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Mileage to placement
-					</td>
-
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel cost </span>
-						10 miles
-					</td>
-					
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Actions </span>
-						<div class="link-container">
-							{% if data['same-journey'] == "yes" %}
-							<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
-							{% else %}
-							<a href="TDAE-placement-car-to-mileage">Change</a> or <a href="#">remove</a>
-							{% endif %}
-						</div>
-					</td>
-					</tr>
-					<!-- Sunday Mileage to placement ends -->
-
-					<!-- Sunday Mileage returning from placement begins -->
-					<tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Mileage returning from placement
-					</td>
-
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel cost </span>
-						10 miles
-					</td>
-
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Actions </span>
-						<div class="link-container">
-							{% if data['same-journey'] == "yes" %}
-							<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
-							{% else %}
-							<a href="TDAE-placement-car-return-mileage">Change</a> or <a href="#">remove</a>
-							{% endif %}
-						</div>
-					</td>
-					</tr>
-					<!-- Sunday Mileage returning from placement ends -->
-	
-					<!-- If extra cost added for Sunday begins -->
-					{% if data['additional-cost'] == "1" %}
-					<tr role="row" class="nhsuk-table__row">
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Additional cost type </span>
-							Parking charges
-						</td>
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Additional cost </span>
-							£4
-						</td>
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Actions </span>
-							<div class="link-container">
-								<a href="TDAE-placement-additional-costs-cya">Change</a> or <a href="#">remove</a>
-							</div>
-						</td>
-					</tr>
-					{% endif %}
-					<!-- If extra cost added for Sunday ends -->
-					<!-- Sunday 8 October Ends -->
-
-					<!-- Monday 9 October 2023 starts -->
-					<!-- Monday Daily train ticket starts -->
-					<tr role="row" class="nhsuk-table__row">
-						{% if data['additional-cost'] == "1" %}
-						<th rowspan="5" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
-						{% else %}
-						<th rowspan="4" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
-						{% endif %}
-							<span class="nhsuk-table-responsive__heading">Date </span>
-							Monday 9 October 2023
-					    </th>
-							
-				      <td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Daily train ticket
-				      </td>
-
-				      <td role="cell" class="nhsuk-table__cell">
-				        <span class="nhsuk-table-responsive__heading">Travel cost </span>
-						£8.60
-				      </td>
-
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Actions </span>
-						<div class="link-container">
-						<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
-						</div>
-					</td>
-					<!-- Monday Daily train ticket ends -->
-
-					<!-- Monday Multiple day bus ticket starts -->
-					<tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Multiple day bus ticket
-				      </td>
-				     
-					  <td role="cell" class="nhsuk-table__cell">
-				        <span class="nhsuk-table-responsive__heading">Travel cost </span>
-						£3
-				      </td>
-							
-					  <td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Action </span>
-							<div class="link-container">
-								<a href="TDAE-public-transport-check">Change</a> or <a href="#">remove</a>
-							</div>
-						</td>
-				    </tr>
-					<!-- Monday Multiple day bus ticket ends -->
-
-					<!-- Monday Mileage to placement begins -->
-					<tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Mileage to placement
-					</td>
-
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel cost </span>
-						10 miles
-					</td>
-					
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Actions </span>
-						<div class="link-container">
-							{% if data['same-journey'] == "yes" %}
-							<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
-							{% else %}
-							<a href="TDAE-placement-car-to-mileage">Change</a> or <a href="#">remove</a>
-							{% endif %}
-						</div>
-					</td>
-					</tr>
-					<!-- Monday Mileage to placement ends -->
-
-					<!-- Monday Mileage returning from placement begins -->
-					<tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel type </span>
-						Mileage returning from placement
-					</td>
-
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Travel cost </span>
-						10 miles
-					</td>
-
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Actions </span>
-						<div class="link-container">
-							{% if data['same-journey'] == "yes" %}
-							<a href="TDAE-same-journey">Change</a> or <a href="#">remove</a>
-							{% else %}
-							<a href="TDAE-placement-car-return-mileage">Change</a> or <a href="#">remove</a>
-							{% endif %}
-						</div>
-					</td>
-					</tr>
-					<!-- Monday Mileage returning from placement ends -->
-	
-					<!-- If extra cost added for Monday begins -->
-					{% if data['additional-cost'] == "1" %}
-					<tr role="row" class="nhsuk-table__row">
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Additional cost type </span>
-							Parking charges
-						</td>
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Additional cost </span>
-							£4
-						</td>
-						<td role="cell" class="nhsuk-table__cell">
-							<span class="nhsuk-table-responsive__heading">Actions </span>
-							<div class="link-container">
-								<a href="TDAE-placement-additional-costs-cya">Change</a> or <a href="#">remove</a>
-							</div>
-						</td>
-					</tr>
-					{% endif %}
-					<!-- If extra cost added for Monday ends -->
-					<!-- Monday 9 October Ends -->
-
-
-			  </tbody>
-			</table>
-<br>
-		{% elif checked('claiming-for', 'Cycle') %}
+		{% if checked('claiming-for', 'Cycle') %}
 			<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
 				<caption>
 					<span class="nhsuk-heading-m">Placement travel details and costs</span>
+					<span class="nhsuk-u-visually-hidden"> - </span>
+					<span class="nhsuk-hint">Showing 1-5 of 5 dates</span>
 				</caption>
 				<thead role="rowgroup" class="nhsuk-table__head">
 					<tr role="row">
-						<th role="columnheader" class="" scope="col">
-							Date
-						</th>
-						<th role="columnheader" class="" scope="col">
-							Placement address
-						</th>
-						<th role="columnheader" class="" scope="col">
-							Travel details
-						</th>
-						<th role="columnheader" class="" scope="col">
-							Value
-						</th>
-						<th role="columnheader" class="" scope="col">
-							Action
-						</th>
+						<th role="columnheader" class="" scope="col">Date</th>
+						<th role="columnheader" class="" scope="col">Placement address</th>
+						<th role="columnheader" class="" scope="col">Travel details</th>
+						<th role="columnheader" class="" scope="col">Value</th>
+						<th role="columnheader" class="" scope="col">Action</th>
 					</tr>
 				</thead>
 				<tbody class="nhsuk-table__body">
-					{% if data['cycle-journey'] == '1' %}
+			{% if data['cycle-journey'] == '1' %}
 						<tr role="row" class="nhsuk-table__row">
 							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
 								<span class="nhsuk-table-responsive__heading">Date </span>Friday 6 October 2023
@@ -675,7 +146,7 @@ What is the return mileage to your placement?
 								<span class="nhsuk-table-responsive__heading">Date </span>Sunday 8 October 2023
 							</td>
 							<td role="cell" class="nhsuk-table__cell">
-								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE66 2NS
 							</td>
 							<td role="cell" class="nhsuk-table__cell">
 								<span class="nhsuk-table-responsive__heading">Travel type </span>
@@ -692,7 +163,7 @@ What is the return mileage to your placement?
 								<span class="nhsuk-table-responsive__heading">Date </span>Monday 9 October 2023
 							</td>
 							<td role="cell" class="nhsuk-table__cell">
-								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE66 2NS
 							</td>
 							<td role="cell" class="nhsuk-table__cell">
 								<span class="nhsuk-table-responsive__heading">Travel type </span>
@@ -778,7 +249,7 @@ What is the return mileage to your placement?
 								<span class="nhsuk-table-responsive__heading">Date </span>Sunday 8 October 2023
 							</td>
 							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
-								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE66 2NS
 							</td>
 							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
 								<span class="nhsuk-table-responsive__heading">Travel type </span>Cycle mileage to placement
@@ -795,7 +266,7 @@ What is the return mileage to your placement?
 								<span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Sunday 8 October 2023</span>
 							</td>
 							<td role="cell" class="nhsuk-table__cell">
-								<span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 2, NE6 4EA</span>
+								<span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 2, NE66 2NS</span>
 							</td>
 							<td role="cell" class="nhsuk-table__cell">
 								<span class="nhsuk-table-responsive__heading">Travel type </span>Cycle mileage returning from placement
@@ -812,7 +283,7 @@ What is the return mileage to your placement?
 								<span class="nhsuk-table-responsive__heading">Date </span>Monday 9 October 2023
 							</td>
 							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
-								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE66 2NS
 							</td>
 							<td role="cell" class="nhsuk-table__cell" style="border: 0; padding-bottom: 0px;">
 								<span class="nhsuk-table-responsive__heading">Travel type </span>Cycle mileage to placement
@@ -829,7 +300,7 @@ What is the return mileage to your placement?
 								<span class="nhsuk-table-responsive__heading">Date </span><span class="nhsuk-u-visually-hidden">Monday 9 October 2023</span>
 							</td>
 							<td role="cell" class="nhsuk-table__cell">
-								<span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 2, NE6 4EA</span>
+								<span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 2, NE66 2NS</span>
 							</td>
 							<td role="cell" class="nhsuk-table__cell">
 								<span class="nhsuk-table-responsive__heading">Travel type </span>Cycle mileage returning from placement
@@ -881,7 +352,7 @@ What is the return mileage to your placement?
 								<span class="nhsuk-table-responsive__heading">Date </span>Sunday 8 October 2023
 							</td>
 							<td role="cell" class="nhsuk-table__cell">
-								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE66 2NS
 							</td>
 							<td role="cell" class="nhsuk-table__cell">
 								<span class="nhsuk-table-responsive__heading">Travel type </span>
@@ -898,7 +369,7 @@ What is the return mileage to your placement?
 								<span class="nhsuk-table-responsive__heading">Date </span>Monday 9 October 2023
 							</td>
 							<td role="cell" class="nhsuk-table__cell">
-								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE6 4EA
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE66 2NS
 							</td>
 							<td role="cell" class="nhsuk-table__cell">
 								<span class="nhsuk-table-responsive__heading">Travel type </span>
