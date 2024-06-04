@@ -14,20 +14,13 @@
             "text": "Go back"
         }) }}
 
-        <h1 class="nhsuk-heading-l">Create user</h1>
+        <h1 class="nhsuk-heading-l">Create a new user</h1>
 
         <!--<h2 class="nhsuk-heading-s">Section 1 - person details</h2>-->
 
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="example">
-              Email
-          </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
-        </div>
-
-        <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="example">
-              Surname
+              Email address
           </label>
           <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
         </div>
@@ -41,14 +34,21 @@
 
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="example">
-              Job/Department
+              Surname
           </label>
           <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
         </div>
 
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="example">
-              Contact number
+              Job or department
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="example">
+              Phone number
           </label>
           <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
         </div>
@@ -67,14 +67,14 @@
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="example-1" name="user-role" type="checkbox" value="COSA">
               <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                Confirm students attendance
+                Confirm student attendance
               </label>
             </div>
 
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="example-2" name="user-role" type="checkbox" value="TDAE">
               <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                Travel and Dual Accommodation Expenses claims
+                Process Travel and Dual Accommodation Expenses claims
               </label>
             </div>
 
@@ -107,6 +107,7 @@
         <div class="nhsuk-form-group">
 					<fieldset class="nhsuk-fieldset" id="courses">
 						<legend class="nhsuk-fieldset__legend">Which courses is the user responsible for? (optional)</legend>
+            <div class="nhsuk-hint">Select all that apply</div>
 
 						<div class="nhsuk-checkboxes">
 							<div class="nhsuk-grid-row">
@@ -156,7 +157,7 @@
 
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="example">
-              Login active?
+              Is this user active?
           </label>
           <div class="nhsuk-hint">Select No to stop a user accessing the system. For example, if they leave the university.</div>
           <div class="nhsuk-radios nhsuk-radios--inline">
@@ -180,7 +181,7 @@
 
 
 
-        <a class="nhsuk-button" href="create-user-check">Continue</a><br>
+        <a class="nhsuk-button" href="create-user-check">Save and continue</a><br>
         <!--<a class="nhsuk-button" href="create-user-role">Continue</a><br>-->
         <p><a href="user-search">Cancel</a></p>
 
