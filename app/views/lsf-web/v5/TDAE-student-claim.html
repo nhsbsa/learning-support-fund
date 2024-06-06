@@ -50,7 +50,16 @@ Claim checks
               University student ID
             </dt>
             <dd class="nhsuk-summary-list__value">
+              {% if data['name'] === 'Emmit Mar' %}
               AB123456
+              {% elif data['name'] === 'Alyssa Geary' %}
+              AC123456
+              {% elif data['name'] === 'Daniel Jackson' %}
+              AD123456
+              {% else %}
+              SSRN0010002
+              {% endif %}
+              
             </dd>
           </div>
 
@@ -471,6 +480,11 @@ Claim checks
               </tr>
               {% endif %}
               <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Mark Hirst (University)</td>
+                <td class="nhsuk-table__cell">11 April 2024</td>
+                <td class="nhsuk-table__cell "><strong>University checks submitted</strong><br>Student has taken one image of all of their train tickets but has explained one is missing because they lost it. However, we are happy to accept they will have had this additional cost.</td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">{{ data['name'] }} (Student)</td>
                 <td class="nhsuk-table__cell">7 April 2024</td>
                 <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
@@ -662,6 +676,11 @@ Claim checks
                 <td class="nhsuk-table__cell ">{{ data['feedbacknote'] }}</td>
               </tr>
               {% endif %}
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Mark Hirst (University)</td>
+                <td class="nhsuk-table__cell">4 March 2024</td>
+                <td class="nhsuk-table__cell "><strong>University checks submitted</strong></td>
+              </tr>
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">{{ data['name'] }} (Student)</td>
                 <td class="nhsuk-table__cell">28 February 2024</td>

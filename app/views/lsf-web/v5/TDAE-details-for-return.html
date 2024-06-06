@@ -17,13 +17,12 @@ Give feedback to the University for returning the claim
 
         <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="return-more-detail">
-              <h1 class="nhsuk-heading-l">Tell the university why you're
+              <h1 class="nhsuk-heading-l">
               {% if data['return-student'] == 'Decline claim' %}
-              declining
+              Tell the student why you're declining the claim
               {% else %}
-              returning
+              Tell the university why you're returning the claim
               {% endif %}
-              the claim
               </h1>
             </label>
             {% if data['return-student'] != 'Decline claim' %}
