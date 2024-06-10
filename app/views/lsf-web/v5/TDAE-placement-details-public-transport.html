@@ -17,7 +17,7 @@ Claim details
     {% if data['name'] === 'Emmit Mar' %}
     <h1 class="nhsuk-heading-l">Period 2 public transport tickets</h1>
     {% else %}
-    <h1 class="nhsuk-heading-l">Period 1 public transport tickets</h1>
+    <h1 class="nhsuk-heading-l">Public transport tickets</h1>
     {% endif %}
 
     {% if data['name'] === 'Emmit Mar' %}
@@ -55,7 +55,7 @@ Claim details
     </dl>
 
 
-    {% elif data['name'] === 'Alyssa Geary' %}
+    {% else %}
     <dl class="nhsuk-summary-list">
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key" style="width: 40%;">
@@ -79,50 +79,9 @@ Claim details
           </details>
         </dd>
       </div>
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key" style="width: 40%;">
-          Student comments
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          I have sent a screenshot of my bus app for the weekly ticket and an image of the train tickets but I lost one of them on the way home so I could only upload evidence for 3 of them.
-        </dd>
-      </div>
-    </dl>
-
-
-    {% else %}
-    <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key" style="width: 40%;">
-          Term time address
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          82 Meldon Terrace, NE6 5XQ
-          <details class="nhsuk-details">
-            <summary class="nhsuk-details__summary">
-              <span class="nhsuk-details__summary-text">
-                View full address
-              </span>
-            </summary>
-            <div class="nhsuk-details__text">
-              <b>82 Meldon Terrace</b><br>
-              Heaton<br>
-              Newcastle upon Tyne<br>
-              NE6 5XQ
-            </div>
-          </details>
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key" style="width: 40%;">
-          Student comments
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          I have sent a screenshot of my bus app for the weekly ticket and an image of the train tickets but I lost one of them on the way home so I could only upload evidence for 3 of them.
-        </dd>
-      </div>
     </dl>
     {% endif %}
+
 
     <details class="nhsuk-details">
       <summary class="nhsuk-details__summary">
@@ -303,10 +262,6 @@ Claim details
 
 </div>
 
-<style>
-  .nhsuk-table__row:hover {
-    background-color: #fff9c4;
-}
-</style>
+
 
 {% endblock %}
