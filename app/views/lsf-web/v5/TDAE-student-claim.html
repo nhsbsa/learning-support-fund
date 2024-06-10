@@ -785,7 +785,7 @@ Claim checks
         <ul class="app-task-list__items">
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
-              {% if data['university-travel'] === 'completed' and data['evidence-completed'] === 'completed' and data['evidence-completed-2'] === 'completed' and data['hire-vehicle-completed'] === 'completed' and data['taxi-completed'] === 'completed' and data['accommodation-completed'] === 'completed' and data['accommodation-completed-2'] === 'completed' and data['accommodation-travel-completed'] === 'completed' and data['accommodation-travel-completed-2'] === 'completed'%}
+              {% if data['university-travel'] === 'completed' and data['evidence-completed'] === 'completed' and data['evidence-completed-2'] === 'completed' and data['hire-vehicle-completed'] === 'completed' and data['taxi-completed'] === 'completed' and data['accommodation-completed'] === 'completed' and data['accommodation-completed-2'] === 'completed' and data['accommodation-travel-completed'] === 'completed' and data['accommodation-travel-completed-2'] === 'completed' and data['overseas-completed'] === 'completed' %}
               <a class="app-task-list__task-name" href="TDAE-claim-summary">
                 Authorise payment
               </a>
@@ -795,7 +795,7 @@ Claim checks
               </span>
               {% endif %}
             </span>
-            {% if data['university-travel'] === 'completed' or data['evidence-completed'] === 'completed' or data['evidence-completed-2'] === 'completed' or data['hire-vehicle-completed'] === 'completed' or data['taxi-completed'] === 'completed' or data['accommodation-completed'] === 'completed' or data['accommodation-completed-2'] === 'completed' or data['accommodation-travel-completed'] === 'completed' or data['accommodation-travel-completed-2'] === 'completed'%}
+            {% if data['university-travel'] === 'completed' or data['evidence-completed'] === 'completed' or data['evidence-completed-2'] === 'completed' or data['hire-vehicle-completed'] === 'completed' or data['taxi-completed'] === 'completed' or data['accommodation-completed'] === 'completed' or data['accommodation-completed-2'] === 'completed' or data['accommodation-travel-completed'] === 'completed' or data['accommodation-travel-completed-2'] === 'completed' or data['overseas-completed'] === 'completed' %}
               {% if data['approve-in-progress'] === 'in-progress' %}
                 <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to University</strong>
               {% elif data['approve-in-progress'] === 'completed' %}
@@ -819,7 +819,7 @@ Claim checks
       <li>why you have returned the claim</li>
       <li>what the student needs to change to re-submit the claim</li>
     </ul>
-    {% if data['university-travel'] === 'in-progress' or data['evidence-completed'] === 'in-progress' or data['evidence-completed-2'] === 'in-progress' or data['hire-vehicle-completed'] === 'in-progress' or data['taxi-completed'] === 'in-progress' or data['accommodation-completed'] === 'in-progress' or data['accommodation-completed-2'] === 'in-progress' or data['accommodation-travel-completed'] === 'in-progress' or data['accommodation-travel-completed-2'] === 'in-progress'%}
+    {% if data['university-travel'] === 'in-progress' or data['evidence-completed'] === 'in-progress' or data['evidence-completed-2'] === 'in-progress' or data['hire-vehicle-completed'] === 'in-progress' or data['taxi-completed'] === 'in-progress' or data['accommodation-completed'] === 'in-progress' or data['accommodation-completed-2'] === 'in-progress' or data['accommodation-travel-completed'] === 'in-progress' or data['accommodation-travel-completed-2'] === 'in-progress' or data['overseas-completed'] === 'in-progress' %}
     <a class="nhsuk-button" href="TDAE-return-decline">Return to university</a>
     {% else %}
     <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Return to university</a>
