@@ -29,12 +29,12 @@ University details
                 </div>
             </div>
 
-            <p>The claim has returned to the university. They will see your {% if data['return-student'] == 'Decline claim' %}
-            reasons for declining the claim.
+            {% if data['return-student'] == 'Decline claim' %}
+            <p>The claim has returned to the student. They will see your reasons for declining the claim.</p>
             {% else %}
-            comments about what the student needs to change.
+            <p>The claim has returned to the university. They will see your comments about what the student needs to change.</p>
             {% endif %}
-            </p>
+            
 
             <button class="nhsuk-button" type="submit">Return to Course details</button>
         </form>
