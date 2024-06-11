@@ -28,7 +28,7 @@ Additional costs for your normal daily journey
 					      Public transport type
 					    </dt>
 					    <dd class="nhsuk-summary-list__value">
-					     	{{ data['public-transport-type'] }}
+					     	Train
 					    </dd>
 					    <dd class="nhsuk-summary-list__actions">
 					      <a href="TDAE-public-transport-type">
@@ -42,7 +42,7 @@ Additional costs for your normal daily journey
 								Ticket type
 							</dt>
 							<dd class="nhsuk-summary-list__value">
-								{{ data['public-transport-ticket'] }}
+								Daily
 							</dd>
 							<dd class="nhsuk-summary-list__actions">
 								<a href="TDAE-public-transport-ticket">
@@ -56,7 +56,7 @@ Additional costs for your normal daily journey
 								Ticket cost
 							</dt>
 							<dd class="nhsuk-summary-list__value">
-								£{{ data['public-transport-daily-cost']}}
+								£3.20
 							</dd>
 							<dd class="nhsuk-summary-list__actions">
 								<a href="TDAE-public-transport-daily-cost">
@@ -65,55 +65,16 @@ Additional costs for your normal daily journey
 							</dd>
 						</div>
 
-						{% if data['public-transport-ticket'] == 'Daily ticket' %}
-							<div class="nhsuk-summary-list__row">
-						    <dt class="nhsuk-summary-list__key">
-						      Used on multiple days
-						    </dt>
-						    <dd class="nhsuk-summary-list__value">
-									{{ data['public-transport-repeated'] }}
-						    </dd>
-						    <dd class="nhsuk-summary-list__actions">
-						      <a href="TDAE-public-transport-repeated">
-						        Change<span class="nhsuk-u-visually-hidden"> repeated cost</span>
-						      </a>
-						    </dd>
-						  </div>
-						{% endif %}
-
-						{% if data['public-transport-ticket'] == 'Multiple day ticket' %}
-							<div class="nhsuk-summary-list__row">
-						    <dt class="nhsuk-summary-list__key">
-						      Ticket start and end date
-						    </dt>
-						    <dd class="nhsuk-summary-list__value">
-									Friday 6 October 2023 to Thursday 12 October 2023
-						    </dd>
-						    <dd class="nhsuk-summary-list__actions">
-						      <a href="TDAE-public-transport-dates">
-						        Change<span class="nhsuk-u-visually-hidden"> ticket dates</span>
-						      </a>
-						    </dd>
-						  </div>
-						{% endif %}
-
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
-								{% if data['public-transport-repeated'] == 'No' %}
-									Day ticket used
-								{% else %}
-									Days ticket used
-								{% endif %}
+								Day ticket used
 							</dt>
 							<dd class="nhsuk-summary-list__value">
-								Friday 6 October 2023<br>
-								Saturday 7 October 2023<br>
-								Sunday 8 October 2023<br>
-								Monday 9 October 2023
+								{{ data['train-date'] }}
 							</dd>
 							<dd class="nhsuk-summary-list__actions">
 								<a href="TDAE-placement-additional-costs">
-									Change<span class="nhsuk-u-visually-hidden"> Additional cost amount</span>
+									Change<span class="nhsuk-u-visually-hidden"> Day ticket used</span>
 								</a>
 							</dd>
 						</div>

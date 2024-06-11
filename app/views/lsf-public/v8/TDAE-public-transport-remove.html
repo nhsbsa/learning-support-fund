@@ -37,37 +37,47 @@
                 </div>
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
+                    Ticket type
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {% if data['daily'] == 'true' %}
+                      Daily
+                    {% else %}
+                      Multiple day ticket
+                    {% endif %}
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
                     Ticket cost
                   </dt>
                   <dd class="nhsuk-summary-list__value">
                     £12
                   </dd>
                 </div>
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Ticket type
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Multiple day ticket
-                  </dd>
-                </div>
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Ticket start and end date
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Friday 6 October 2023 to Thursday 12 October 2023
-                  </dd>
-                </div>
+                {% if data['daily'] != 'true' %}
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Ticket start and end date
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      Friday 6 October 2023 to Thursday 12 October 2023
+                    </dd>
+                  </div>
+                {% endif %}
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Days ticket used
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    Friday 6 October 2023<br>
-                    Saturday 7 October 2023<br>
-                    Sunday 8 October 2023<br>
-                    Monday 9 October 2023
+                    {% if data['daily'] == 'true' %}
+                      Friday 6 October 2023
+                    {% else %}
+                      Friday 6 October 2023<br>
+                      Saturday 7 October 2023<br>
+                      Sunday 8 October 2023<br>
+                      Monday 9 October 2023
+                    {% endif %}
                   </dd>
                 </div>
               </dl>
