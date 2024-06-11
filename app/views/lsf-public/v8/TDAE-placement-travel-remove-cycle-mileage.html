@@ -1,0 +1,120 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Are you sure you want to remove this cycle mileage?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                    Are you sure you want to remove this mileage?
+                </h1>
+              </legend>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+  								<dt class="nhsuk-summary-list__key">
+  									Date
+  								</dt>
+  								<dd class="nhsuk-summary-list__value">
+                    {% if data['mileage-date'] == 'Friday 6 October 2023' %}
+                        Friday 6 October 2023
+                    {% elif data['mileage-date'] == 'Saturday 7 October 2023' %}
+                        Saturday 7 October 2023
+                    {% elif data['mileage-date'] == 'Sunday 8 October 2023' %}
+                        Sunday 8 October 2023
+                    {% else %}
+                        Monday 9 October 2023
+                    {% endif %}
+  								</dd>
+  							</div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Placement address
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                  {% if data['placement-cycle-mileage-address'] == 'Newcastle Hospital' %}
+                    Newcastle Hospital<br>
+                    Main Street<br>
+                    Newcastle<br>
+                    NE1 1AA
+                  {% else %}
+                    Alnwick Hospital<br>
+                    Infirmary Drive<br>
+                    Alnwick<br>
+                    NE66 2NS
+                  {% endif %}
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    {% if data['journey'] == 'to' %}
+  									  Mileage to placement
+                    {% else %}
+                      Mileage returning from placement
+                    {% endif %}
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    5.2
+                  </dd>
+                </div>
+
+              </dl>
+
+              <div class="nhsuk-radios nhsuk-radios--inline">
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="remove-cycle-mileage-yes" name="remove-cycle-mileage" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="remove-cycle-mileage-yes">
+                        Yes
+                    </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="remove-cycle-mileage-no" name="remove-cycle-mileage" type="radio" value="no">
+                    <label class="nhsuk-label nhsuk-radios__label" for="remove-cycle-mileage-no">
+                        No
+                    </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+          <form id="remove-cycle-mileage" action="TDAE-placement-itinerary" method="POST">
+              <button class="nhsuk-button" type="submit">Save and continue</button><br>
+          </form>
+          <!--<p><a href="TDAE-placement-itinerary">Cancel</a></p>-->
+
+      <script>
+          // Add an event listener to the form submission
+          document.getElementById('remove-cycle-mileage').addEventListener('submit', function (event) {
+              // Prevent the default form submission behavior
+              event.preventDefault();
+
+              // Add your logic here to navigate back to the previous page
+              history.back();
+          });
+      </script>
+
+
+    </div>
+
+  </div>
+{% endblock %}

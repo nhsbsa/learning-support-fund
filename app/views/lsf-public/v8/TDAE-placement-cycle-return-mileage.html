@@ -18,7 +18,7 @@ What is the return mileage to your placement?
 
 	    <div class="nhsuk-form-group">
 	      <label class="nhsuk-label" for="placement-mileage">
-	          <h1 class="nhsuk-heading-l">How many miles did it take to return from your placement? (optional)</h1>
+	          <h1 class="nhsuk-heading-l">How many miles did it take to return from your placement?{% if data['change'] != 'true' %} (optional){% endif %}</h1>
 	      </label>
 
 		  <div class="nhsuk-hint" id="contact-hint">
@@ -44,7 +44,11 @@ What is the return mileage to your placement?
 				</div>
 		  </details>
 
-			<button class="nhsuk-button" type="submit">Continue</button><br>
+			{% if data['change'] == 'true' %}
+			<a class="nhsuk-button" href="TDAE-placement-itinerary">Save and continue</a><br>
+			{% else %}
+				<button class="nhsuk-button" type="submit">Continue</button><br>
+			{% endif %}
 			<a href="TDAE-placement-itinerary">Cancel</a>
 
 		</form>
