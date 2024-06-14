@@ -239,7 +239,7 @@ router.post('/v8/evidence-mini-cya', (req, res) => {
   if (moreEvidence === 'yes'){
     res.redirect('/lsf-public/v8/TDAE-taxi/evidence')
   } else {
-    res.redirect('/lsf-public/v8/TDAE-taxi/comment')
+    res.redirect('/lsf-public/v8/TDAE-taxi/add-comment')
   }
 
 })
