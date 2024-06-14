@@ -66,15 +66,17 @@
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">{% if data['name'] %}
-                {{ data['name'] }}
+                {{ data['name'] }}<br>
+                (student)
                 {% else %}
-                Joe Bloggs
+                Joe Bloggs<br>
+                (student)
                 {% endif %}</td>
                 <td class="nhsuk-table__cell">3 September 2023</td>
                 <td class="nhsuk-table__cell "><strong>Claim submitted</strong><br></td>
               </tr>
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Mark Hirst (University)</td>
+              <td class="nhsuk-table__cell">Mark Hirst (university)</td>
               <td class="nhsuk-table__cell">16 September 2023</td>
               <td class="nhsuk-table__cell "><strong>Claim checks submitted</strong><br>Hire car was approved by unviersity.</td>
             </tr>
@@ -108,15 +110,17 @@
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">{% if data['name'] %}
-                  {{ data['name'] }}
+                  {{ data['name'] }}<br>
+                  (student)
                   {% else %}
-                  Joe Bloggs
+                  Joe Bloggs<br>
+                  (student)
                   {% endif %}</td>
                   <td class="nhsuk-table__cell">1 August 2023</td>
                   <td class="nhsuk-table__cell "><strong>Claim submitted</strong><br></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell">Mark Hirst (University)</td>
+                  <td class="nhsuk-table__cell">Mark Hirst (university)</td>
                   <td class="nhsuk-table__cell">6 August 2022</td>
                   <td class="nhsuk-table__cell "><strong>Claim checks submitted</strong><br></td>
                 </tr>
@@ -155,15 +159,17 @@
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">{% if data['name'] %}
-                  {{ data['name'] }}
+                  {{ data['name'] }}<br>
+                  (student)
                   {% else %}
-                  Joe Bloggs
+                  Joe Bloggs<br>
+                  (student)
                   {% endif %}</td>
                   <td class="nhsuk-table__cell">1 August 2023</td>
                   <td class="nhsuk-table__cell "><strong>Claim submitted</strong><br></td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell">Mark Hirst (University)</td>
+                  <td class="nhsuk-table__cell">Mark Hirst (university)</td>
                   <td class="nhsuk-table__cell">9 August 2023</td>
                   <td class="nhsuk-table__cell "><strong>Claim checks submitted</strong><br></td>
                 </tr>
@@ -173,7 +179,7 @@
                   <td class="nhsuk-table__cell "><strong>Evidence is incorrect</strong><br>Evidence of Parking ticket is missing. Return to student.</td>
                 </tr>
                 <tr role="row" class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell">Dean Cobb (University)</td>
+                  <td class="nhsuk-table__cell">Dean Cobb (university)</td>
                   <td class="nhsuk-table__cell">19 August 2023</td>
                   <td class="nhsuk-table__cell "><strong>Evidence is incorrect</strong><br>You need to add a receipt of your parking ticket for us to accept the additional cost. You have uploaded the same evidence twice for the Monday and Tuesday.</td>
                 </tr>
@@ -207,16 +213,18 @@
               <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">{% if data['name'] %}
-                  {{ data['name'] }}
+                  {{ data['name'] }}<br>
+                  (student)
                   {% else %}
-                  Joe Bloggs
+                  Joe Bloggs<br>
+                  (student)
                   {% endif %}</td>
                   <td class="nhsuk-table__cell">3 September 2023</td>
                   <td class="nhsuk-table__cell "><strong>Claim submitted</strong><br></td>
                 </tr>
                 {% if data['feedback-note'] == 'yes' %}
                 <tr role="row" class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell">Mark Hirst (University)</td>
+                  <td class="nhsuk-table__cell">Mark Hirst (university)</td>
                   <td class="nhsuk-table__cell"><p id="currentDate"</p></td>
                   <td class="nhsuk-table__cell ">{{ data['feedbacknote'] }}</td>
                 </tr>
