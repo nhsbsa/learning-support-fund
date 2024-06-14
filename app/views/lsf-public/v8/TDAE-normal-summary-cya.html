@@ -171,7 +171,7 @@ Check your answers
 					Comments
 				</dt>
 				<dd class="nhsuk-summary-list__value">
-					{% if data['related-comments']  === 'yes' %}
+					{% if data['study-additional-comment'] %}
 					 Comment added
 					{% else %}
 						None
@@ -179,12 +179,12 @@ Check your answers
 				</dd>
 				{% if data['submit-claim'] != 'completed' %}
 				<dd class="nhsuk-summary-list__actions">
-					{% if data['related-comments']  === 'yes' %}
+					{% if data['study-additional-comment'] %}
 					<a href="TDAE-normal-comments-view">
 						Review<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
 					</a>
 					{% else %}
-					<a href="TDAE-additional-costs-comments">
+					<a href="TDAE-comments">
 						Change<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
 					</a>
 					{% endif %}

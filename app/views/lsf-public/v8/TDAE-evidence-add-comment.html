@@ -16,15 +16,15 @@
     <form action="v8/TDAE-add-comment" method="POST">
 
 
-        <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="placement-additonal-comments">
-              <h1 class="nhsuk-heading-l">Tell us more about your evidence{% if data['placement-week'] == '2' %} for period {% if data['week'] != '2' %}1{% else %}2{% endif %}{% endif %}</h1>
-            </label>
-            <div class="nhsuk-form-group ">
-              <textarea class="nhsuk-textarea" id="additionalCostsComment" name="hire-car-comment" rows="8"></textarea>
-              <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">500 characters remaining</p>
-              <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 500 characters</p>
-            </div>
+      <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="placement-additonal-comments">
+            <h1 class="nhsuk-heading-l">Add a comment about your evidence{% if data['placement-week'] == '2' %} for period {% if data['week'] != '2' %}1{% else %}2{% endif %}{% endif %} (optional)</h1>
+          </label>
+          <div class="nhsuk-form-group ">
+            <textarea class="nhsuk-textarea" id="additionalCostsComment" name="hire-car-comment" rows="8"></textarea>
+            <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">500 characters remaining</p>
+            <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 500 characters</p>
+          </div>
 
         <button class="nhsuk-button" type="submit">Save and continue</button><br>
         <a href="TDAE-claims-list">Cancel</a>
