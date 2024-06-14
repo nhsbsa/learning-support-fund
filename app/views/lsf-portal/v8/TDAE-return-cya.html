@@ -21,14 +21,14 @@
 
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
-              Do you want to return or decline the claim?
+              Returning or declining?
             </dt>
             <dd class="nhsuk-summary-list__value">
               {{ data['return-student'] }}
             </dd>
             <dd class="nhsuk-summary-list__actions">
               <a href="TDAE-return-decline">
-                Change<span class="nhsuk-u-visually-hidden"> reason</span>
+                Change<span class="nhsuk-u-visually-hidden"> if returning or declining</span>
               </a>
             </dd>
           </div>
@@ -68,7 +68,11 @@
 
           </dl>
 
-        <a class="nhsuk-button" href="TDAE-sent-to-student">Submit to student</a><br>
+          {% if data['return-student'] != 'Decline claim' %}
+          <a class="nhsuk-button" href="TDAE-sent-to-student">Return to student</a><br>
+          {% else %}
+          <a class="nhsuk-button" href="TDAE-sent-to-student">Decline claim</a><br>
+          {% endif %}
 
     <!-- </form> -->
 
