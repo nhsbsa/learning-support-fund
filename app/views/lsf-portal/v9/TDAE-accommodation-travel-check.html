@@ -1,4 +1,4 @@
-{% extends 'layout-HEI.html' %}
+{% extends 'layout.html' %}
 
 {% block pageTitle %}
 Student and University details
@@ -13,24 +13,24 @@ Student and University details
     "text": "Go back"
     }) }}
 
-        <form action="v9/TDAE-accommodation-check" method="POST">
+        <form action="v9/TDAE-accommodation-travel-check" method="POST">
             <div class="nhsuk-form-group">
                 <fieldset class="nhsuk-fieldset">
                   <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-                    <h1 class="nhsuk-heading-l">Has the student given the correct details and evidence for their accommodation booking?</h1>
+                    <h1 class="nhsuk-heading-l">Has the student given the correct details and evidence for their accommodation travel journey 1?</h1>
                   </legend>
-                  
-                  <!-- If only one accommodation booking, the heading would be "Has the student given the correct details and evidence for their accommodation booking (1 or 2 if more than one present)?" -->
+
+                  <!-- If only one accommodation travel journey, then the heading would be "Has the student given the correct details and evidence for their accommodation travel?"-->
 
                   <div class="nhsuk-radios" data-module="nhsuk-radios">
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="evidence-match-yes" name="accommodation-check" type="radio" value="yes">
+                      <input class="nhsuk-radios__input" id="evidence-match-yes" name="accommodation-travel-check" type="radio" value="yes">
                       <label class="nhsuk-label nhsuk-radios__label" for="evidence-match-yes">
                         Yes
                       </label>
                     </div>
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="evidence-match-no" name="accommodation-check" type="radio" value="no">
+                      <input class="nhsuk-radios__input" id="evidence-match-no" name="accommodation-travel-check" type="radio" value="no">
                       <label class="nhsuk-label nhsuk-radios__label" for="evidence-match-no">
                         No
                       </label>

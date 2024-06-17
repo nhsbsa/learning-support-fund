@@ -31,7 +31,7 @@
       {% endif %}
 
       {% if data['read-only'] != 'true' %}
-        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim.</h2>
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim</h2>
         <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed <span id="completedCount">0</span> of <span id="sectionLength">5</span> sections.</p>
         <!-- <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed {% if data['status'] === 'Returned from NHSBSA' %}1{% else %}0{% endif %} of {% if data['scenario'] === 'accommodation-travel' %}3{% else %}2{% endif %} sections.</p> -->
       {% endif %}

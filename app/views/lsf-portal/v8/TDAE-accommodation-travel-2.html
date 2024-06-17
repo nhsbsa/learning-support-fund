@@ -1,0 +1,242 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Accommodation travel journey 2 details</h1>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Journey
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Accommodation to term time address
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Date travelled
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          9 February 2024
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Accommodation address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Premier Inn Alnwick Hotel, NE66 2PF
+          <details class="nhsuk-details" style="margin-bottom: 0;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <b>Premier Inn Alnwick Hotel</b><br>
+              Willowburn Industrial Estate<br>
+              South Road<br>
+              Alnwick<br>
+              NE66 2PF
+            </div>
+          </details>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Term time address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Stephenson House, NE2 1AW
+          <details class="nhsuk-details" style="margin-bottom: 0;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <b>Stephenson House</b><br>
+              Stoddart Street<br>
+              Shieldfield<br>
+              Newcastle upon Tyne<br>
+              NE2 1AW
+            </div>
+          </details>
+        </dd>
+      </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Transport method
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Car<br>
+            Public transport
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total driving mileage
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            6
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total extra costs
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            None provided
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Public transport type
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Train
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total public transport costs
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £12.50
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Evidence
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <a href="/images/train-ticket-2.jpg" target="_blank" rel="noopener">train-ticket-2.jpg<span class="nhsuk-u-visually-hidden">opens in new tab</span></a>
+          </dd>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Student comments
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            None provided
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Costs to be reimbursed (university journey deducted)
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £9.98
+          </dd>
+        </div>
+      </dl>
+
+
+		<details class="nhsuk-details">
+			<summary class="nhsuk-details__summary">
+			  <span class="nhsuk-details__summary-text">
+				Breakdown of travel costs
+			  </span>
+			</summary>
+			<div class="nhsuk-details__text">
+						<table class="nhsuk-table">
+						<thead role="rowgroup" class="nhsuk-table__head">
+							<tr role="row">
+								<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+
+								</th>
+								<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+										Placement journey
+								</th>
+								<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+										University journey
+								</th>
+							</tr>
+						</thead>
+						<tbody class="nhsuk-table__body">
+							<tr role="row" class="nhsuk-table__row">
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+										<b>Type of travel</b>
+								</td>
+								<td class="nhsuk-table__cell " style="font-size: 1rem;">
+										Car<br>
+                    Public Transport
+								</td>
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+										Walk
+								</td>
+							</tr>
+							<tr role="row" class="nhsuk-table__row">
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+									<b>Journey mileage cost</b>
+								</td>
+								<td class="nhsuk-table__cell " style="font-size: 1rem;">
+									£2.52
+								</td>
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+                  £5.04
+								</td>
+							</tr>
+							<tr role="row" class="nhsuk-table__row">
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+									<b>Journey public transport cost</b>
+								</td>
+								<td class="nhsuk-table__cell " style="font-size: 1rem;">
+									£12.50
+								</td>
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+
+								</td>
+							</tr>
+							<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+										<b>Additional costs</b>
+								</td>
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+                  <span class="nhsuk-u-visually-hidden">No cost</span>
+								</td>
+								<td class="nhsuk-table__cell " style="font-size: 1rem;">
+
+								</td>
+							</tr>
+							<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+										<b>Total cost</b>
+								</td>
+								<td class="nhsuk-table__cell " style="font-size: 1rem;">
+									£15.02
+								</td>
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+									£5.04
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<p><b>Costs to be reimbursed: £9.98</b></p>
+
+      </details>
+
+      {% if data['read-only'] != 'true' %}
+      <a class="nhsuk-button" href="TDAE-accommodation-travel-check-2">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}
