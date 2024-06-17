@@ -19,11 +19,16 @@
       <div class="nhsuk-form-group">
 				<label class="nhsuk-label" for="additionalCostsComment">
           {% if data['direction-of-travel'] == 'termtime-to-accommodation' %}
-						<h1 class="nhsuk-heading-l">Tell us more about travelling to your accommodation</h1>
+						<h1 class="nhsuk-heading-l">Add a comment about travelling to your accommodation (optional)</h1>
           {% else %}
-            <h1 class="nhsuk-heading-l">Tell us more about travelling to your term time address</h1>
-          {% endif %}	
+            <h1 class="nhsuk-heading-l">Add a comment about travelling to your term time address (optional)</h1>
+          {% endif %}
 				</label>
+
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>Do not tell us about other journeys. You can add these details soon.</p>
+        </div>
 
             <div class="nhsuk-form-group ">
               <textarea class="nhsuk-textarea" id="additionalCostsComment" name="additionalCostsComment" rows="8"></textarea>
@@ -31,8 +36,8 @@
               <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 500 characters</p>
             </div>
 
-        <button class="nhsuk-button" type="submit">Continue</button><br>
-        <a href="TDAE-claims-list">Cancel</a>
+        <button class="nhsuk-button" type="submit">Save and continue</button><br>
+        <p><a href="TDAE-claims-list">Cancel</a></p>
 
     </form>
 

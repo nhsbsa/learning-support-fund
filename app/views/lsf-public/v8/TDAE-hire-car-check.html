@@ -214,7 +214,7 @@ Check your answers
 					</dd>
 					{% endif %}
 				</div>
-				
+
 				<!-- first hire car booking authorised by -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
@@ -291,17 +291,11 @@ Check your answers
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
-						{% if data['additional-comments']  === 'yes' %}
-						<a href="TDAE-hire-car-comment">
-							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-						</a>
-						{% else %}
 						<a href="TDAE-hire-car-add-comment">
 							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 						</a>
-						{% endif %}
-						</dd>
-						{% endif %}
+					</dd>
+					{% endif %}
 				</div>
 
 						</dl>
@@ -357,11 +351,11 @@ Check your answers
 				  {% if data['hire-vehicle-start-day'] %}
 					  {{ data['hire-vehicle-start-day'] }} <span class="cya-month">{{ data['hire-vehicle-start-month'] }}</span> {{ data['hire-vehicle-start-year'] }}
 				  {% else %}
-					  1 December 2023 
-				{% endif %} 
-					  
+					  1 December 2023
+				{% endif %}
+
 				to <br>
-					
+
 				  {% if data['hire-vehicle-end-day'] %}
 					  {{ data['hire-vehicle-end-day'] }} <span class="cya-month">{{ data['hire-vehicle-end-month'] }}</span> {{ data['hire-vehicle-end-year'] }}
 				  {% else %}
@@ -455,17 +449,11 @@ Check your answers
 			</dd>
 			{% if data['submit-claim'] != 'completed' %}
 			<dd class="nhsuk-summary-list__actions">
-				{% if data['additional-comments']  === 'yes' %}
-				<a href="TDAE-hire-car-comment">
-					Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-				</a>
-				{% else %}
 				<a href="TDAE-hire-car-add-comment">
 					Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 				</a>
-				{% endif %}
-				</dd>
-				{% endif %}
+			</dd>
+			{% endif %}
 		</div>
 
 				  </dl>

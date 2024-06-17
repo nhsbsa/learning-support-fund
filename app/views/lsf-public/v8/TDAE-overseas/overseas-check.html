@@ -93,7 +93,7 @@ Check your answers
 							</a>
 						</dd>
 					{% endif %}
-				</div>				
+				</div>
 
 			</dl>
 
@@ -170,15 +170,9 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-							{% if data['insurance-comments']  === 'yes' %}
 							<a href="insurance-add-comment">
-								Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							</a>
-							{% else %}
-							<a href="insurance-comment">
 								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 							</a>
-							{% endif %}
 							</dd>
 						{% endif %}
 					</div>
@@ -255,15 +249,9 @@ Check your answers
 							</dd>
 							{% if data['submit-claim'] != 'completed' %}
 							<dd class="nhsuk-summary-list__actions">
-								{% if data['medical-tests-comments']  === 'yes' %}
 								<a href="medical-tests-add-comment">
-									Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-								</a>
-								{% else %}
-								<a href="medical-tests-comment">
 									Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 								</a>
-								{% endif %}
 								</dd>
 							{% endif %}
 						</div>
@@ -340,15 +328,9 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-							{% if data['vaccinations-comments']  === 'yes' %}
 							<a href="vaccinations-add-comment">
-								Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							</a>
-							{% else %}
-							<a href="vaccinations-comment">
 								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 							</a>
-							{% endif %}
 							</dd>
 						{% endif %}
 					</div>
@@ -419,21 +401,15 @@ Check your answers
 						<dd class="nhsuk-summary-list__value">
 							{% if data['additionalVisaFeesComment'] %}
 								{{ data['additionalVisaFeesComment'] }}
-								{% else %}
+							{% else %}
 								None provided
 							{% endif %}
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-							{% if data['visa-fees-comments']  === 'yes' %}
 							<a href="visa-fees-add-comment">
-								Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							</a>
-							{% else %}
-							<a href="visa-fees-comment">
 								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 							</a>
-							{% endif %}
 							</dd>
 						{% endif %}
 					</div>
@@ -441,12 +417,12 @@ Check your answers
 			  </div>
 			</details>
 			<!--- Visa fees expander ends --->
-			
+
 
 			<!-- If more than one Overseas cost has been selected, display each in an expander -->
 			<!-- This example includes Insurance and Visa fees -->
 			{% elif 'insurance' in data['overseas-cost'] and 'visa-fees' in data['overseas-cost'] %}
-			
+
 			<!--- Insurance expander begins --->
 			<details class="nhsuk-details nhsuk-expander">
 				<summary class="nhsuk-details__summary">
@@ -454,7 +430,7 @@ Check your answers
 					Insurance
 				  </span>
 				</summary>
-  
+
 				<div class="nhsuk-details__text">
 				  <dl class="nhsuk-summary-list">
 					  <div class="nhsuk-summary-list__row">
@@ -476,7 +452,7 @@ Check your answers
 						  </dd>
 						  {% endif %}
 					  </div>
-  
+
 					  <div class="nhsuk-summary-list__row">
 						  <dt class="nhsuk-summary-list__key">
 							  Evidence uploaded
@@ -500,7 +476,7 @@ Check your answers
 						  </dd>
 						  {% endif %}
 					  </div>
-  
+
 					  <div class="nhsuk-summary-list__row">
 						  <dt class="nhsuk-summary-list__key">
 							  Comments
@@ -514,19 +490,13 @@ Check your answers
 						  </dd>
 						  {% if data['submit-claim'] != 'completed' %}
 						  <dd class="nhsuk-summary-list__actions">
-							  {% if data['insurance-comments']  === 'yes' %}
 							  <a href="insurance-add-comment">
-								  Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							  </a>
-							  {% else %}
-							  <a href="insurance-comment">
 								  Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 							  </a>
-							  {% endif %}
-							  </dd>
+						  </dd>
 						  {% endif %}
 					  </div>
-  
+
 				</div>
 			  </details>
 
@@ -537,7 +507,7 @@ Check your answers
 					Visa fees
 				  </span>
 				</summary>
-  
+
 				 <div class="nhsuk-details__text">
 				  <dl class="nhsuk-summary-list">
 					  <div class="nhsuk-summary-list__row">
@@ -559,7 +529,7 @@ Check your answers
 						  </dd>
 						  {% endif %}
 					  </div>
-  
+
 					  <div class="nhsuk-summary-list__row">
 						  <dt class="nhsuk-summary-list__key">
 							  Evidence uploaded
@@ -583,7 +553,7 @@ Check your answers
 						  </dd>
 						  {% endif %}
 					  </div>
-  
+
 					  <div class="nhsuk-summary-list__row">
 						  <dt class="nhsuk-summary-list__key">
 							  Comments
@@ -597,24 +567,18 @@ Check your answers
 						  </dd>
 						  {% if data['submit-claim'] != 'completed' %}
 						  <dd class="nhsuk-summary-list__actions">
-							  {% if data['visa-fees-comments']  === 'yes' %}
 							  <a href="visa-fees-add-comment">
-								  Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							  </a>
-							  {% else %}
-							  <a href="visa-fees-comment">
 								  Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 							  </a>
-							  {% endif %}
-							  </dd>
+						  </dd>
 						  {% endif %}
 					  </div>
-  
+
 				</div>
 			  </details>
 			  <!--- Visa fees expander ends --->
 
-			
+
 			<!-- Only one Overseas cost type selected - displayed in summary list rather than expander -->
 
 			<!-- Insurance costs begins -->
@@ -678,15 +642,9 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-							{% if data['insurance-comments']  === 'yes' %}
 							<a href="insurance-add-comment">
-								Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							</a>
-							{% else %}
-							<a href="insurance-comment">
 								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 							</a>
-							{% endif %}
 							</dd>
 						{% endif %}
 					</div>
@@ -754,15 +712,9 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-							{% if data['medical-tests-comments']  === 'yes' %}
 							<a href="medical-tests-add-comment">
-								Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							</a>
-							{% else %}
-							<a href="medical-tests-comment">
 								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 							</a>
-							{% endif %}
 							</dd>
 						{% endif %}
 					</div>
@@ -830,15 +782,9 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-							{% if data['vaccinations-comments']  === 'yes' %}
 							<a href="vaccinations-add-comment">
-								Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							</a>
-							{% else %}
-							<a href="vaccinations-comment">
 								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 							</a>
-							{% endif %}
 							</dd>
 						{% endif %}
 					</div>
@@ -906,16 +852,10 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-							{% if data['visa-fees-comments']  === 'yes' %}
 							<a href="visa-fees-add-comment">
-								Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							</a>
-							{% else %}
-							<a href="visa-fees-comment">
 								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 							</a>
-							{% endif %}
-							</dd>
+						</dd>
 						{% endif %}
 					</div>
 				</dl>
@@ -988,7 +928,7 @@ Check your answers
 <script>
 	$(document).ready(function() {
 		let totalCost = 0;
-	
+
 		// Function to parse and add cost if applicable
 		function addIfSelected(costName) {
 			// Find all keys that contain the cost name
@@ -1001,19 +941,19 @@ Check your answers
 				console.log(costName + ": " + cost); // Debugging output
 			});
 		}
-	
+
 		// Attempt to parse each cost and add it if it's selected and presented in the summary
 		addIfSelected('Visa fees');
 		addIfSelected('Vaccinations');
 		addIfSelected('Medical tests');
 		addIfSelected('Insurance');
-	
+
 		// Display the calculated total
 		$("dd.nhsuk-summary-list__value:contains('£')").last().text('£' + totalCost);
 		console.log('Total: £' + totalCost); // Debugging output
 	});
 	</script>
-	
+
 
 
 </div>

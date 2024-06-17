@@ -500,7 +500,7 @@ router.post('/v7/TDAE-hire-car-mini-cya', (req, res) => {
   if (moreEvidence === 'yes') {
     res.redirect('/lsf-public/v7/TDAE-hire-car-evidence')
   } else {
-    res.redirect('/lsf-public/v7/TDAE-hire-car-comment')
+    res.redirect('/lsf-public/v7/TDAE-hire-car-add-comment')
   }
 
 })
@@ -649,7 +649,7 @@ router.post('/v7/TDAE-accommodation-travel-extra-costs', (req, res) => {
       res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-cycle-journey-mileage');
     } else if (isCarSelected) {
       // Redirect to additional comments page if only 'car' was selected and no extra costs were paid
-      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-comment');
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-add-comment');
     }
 
   } else if (didPayExtraCosts === 'yes') {
@@ -752,7 +752,7 @@ router.post('/v7/TDAE-accommodation-travel-cycle-journey-mileage', (req, res) =>
       res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence');
     } else {
       // Redirect to additional comments page if 'car' and 'cycle' were selected AND no extra costs were paid
-      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-comment');
+      res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-add-comment');
     }
 
   } else if (isCycleSelected && isPublicTransportSelected) {
@@ -761,7 +761,7 @@ router.post('/v7/TDAE-accommodation-travel-cycle-journey-mileage', (req, res) =>
 
   } else if (isCycleSelected) {
     // Redirect to upload evidence page if only 'cycle' was previously selected
-    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-comment');
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-add-comment');
   }
 
 });
@@ -780,7 +780,7 @@ router.post('/v7/TDAE-accommodation-travel-mini-cya', (req, res) => {
   if (moreEvidence === 'yes') {
     res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-evidence')
   } else {
-    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-comment')
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-add-comment')
   }
 
 })
@@ -897,7 +897,7 @@ router.post('/v7/TDAE-no-evidence-reason', (req, res) => {
   req.session.data['no-evidence'] = "true";
 
   if (claimingFor.includes('travel to accommodation')) {
-    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-comment');
+    res.redirect('/lsf-public/v7/accommodation-journey/TDAE-accommodation-travel-add-comment');
   } else {
     res.redirect('/lsf-public/v7/TDAE-evidence-cya');
   }

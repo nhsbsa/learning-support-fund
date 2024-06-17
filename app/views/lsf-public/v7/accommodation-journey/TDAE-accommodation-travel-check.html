@@ -226,7 +226,7 @@ Check your answers
 						  Review<span class="nhsuk-u-visually-hidden">reason for no evidence</span>
 						</a>
 					  </dd>
-				  
+
 					{% else %}
 					  <dt class="nhsuk-summary-list__key">
 						Evidence
@@ -245,8 +245,8 @@ Check your answers
 					  {% endif %}
 					{% endif %}
 				  </div>
-				  
-				  
+
+
 
 				<!-- if first journey = term time to accommodation and travelled by both car and public - additional comments -->
 				<div class="nhsuk-summary-list__row">
@@ -254,27 +254,17 @@ Check your answers
 					  Comments
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-					{% if data['accommodation-travel-comments'] == 'yes' %}
-						{% if data['additionalCostsComment'] %}
-							{{ data['additionalCostsComment'] }}
-						{% else %}
-							I bought a weekly parking ticket to park my car at Newcastle Central Station.
-						{% endif %}
+					{% if data['additionalCostsComment'] %}
+						{{ data['additionalCostsComment'] }}
 					{% else %}
 						None provided
 					{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					  <dd class="nhsuk-summary-list__actions">
-						{% if data['accommodation-travel-comments'] == 'no' %}
-						<a href="TDAE-accommodation-travel-comment">
+						  <a href="TDAE-accommodation-travel-add-comment">
 							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 						  </a>
-						{% else %}
-						  <a href="TDAE-accommodation-travel-add-comment">
-							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-						  </a>
-						{% endif %}
 					  </dd>
 					{% endif %}
 				  </div>
@@ -497,7 +487,7 @@ Check your answers
 						  Review<span class="nhsuk-u-visually-hidden">reason for no evidence</span>
 						</a>
 					  </dd>
-				  
+
 					{% else %}
 					  <dt class="nhsuk-summary-list__key">
 						Evidence
@@ -523,27 +513,17 @@ Check your answers
 					  Comments
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-					{% if data['accommodation-travel-comments'] == 'yes' %}
-						{% if data['additionalCostsComment'] %}
-							{{ data['additionalCostsComment'] }}
-						{% else %}
-							None provided
-						{% endif %}
+					{% if data['additionalCostsComment'] %}
+						{{ data['additionalCostsComment'] }}
 					{% else %}
 						None provided
 					{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					  <dd class="nhsuk-summary-list__actions">
-						{% if data['accommodation-travel-comments'] == 'no' %}
-						<a href="TDAE-accommodation-travel-comment">
+						  <a href="TDAE-accommodation-travel-add-comment">
 							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 						  </a>
-						{% else %}
-						  <a href="TDAE-accommodation-travel-add-comment">
-							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-						  </a>
-						{% endif %}
 					  </dd>
 					{% endif %}
 				  </div>
@@ -778,7 +758,7 @@ Check your answers
 							  Review<span class="nhsuk-u-visually-hidden">reason for no evidence</span>
 							</a>
 						  </dd>
-					  
+
 						{% else %}
 						  <dt class="nhsuk-summary-list__key">
 							Evidence
@@ -804,27 +784,17 @@ Check your answers
 						  Comments
 						</dt>
 						<dd class="nhsuk-summary-list__value">
-						{% if data['accommodation-travel-comments'] == 'yes' %}
-							{% if data['additionalCostsComment'] %}
-								{{ data['additionalCostsComment'] }}
-							{% else %}
-								I bought a weekly parking ticket to park my car at Newcastle Central Station.
-							{% endif %}
+						{% if data['additionalCostsComment'] %}
+							{{ data['additionalCostsComment'] }}
 						{% else %}
 							None provided
 						{% endif %}
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						  <dd class="nhsuk-summary-list__actions">
-							{% if data['accommodation-travel-comments'] == 'no' %}
-							<a href="TDAE-accommodation-travel-comment">
+							  <a href="TDAE-accommodation-travel-add-comment">
 								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							</a>
-							{% else %}
-							<a href="TDAE-accommodation-travel-add-comment">
-								Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							</a>
-							{% endif %}
+							  </a>
 						  </dd>
 						{% endif %}
 					  </div>
@@ -1061,7 +1031,7 @@ Check your answers
 						  Review<span class="nhsuk-u-visually-hidden">reason for no evidence</span>
 						</a>
 					  </dd>
-				  
+
 					{% else %}
 					  <dt class="nhsuk-summary-list__key">
 						Evidence
@@ -1086,27 +1056,17 @@ Check your answers
 					  Comments
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-					{% if data['accommodation-travel-comments'] == 'yes' %}
-						{% if data['additionalCostsComment'] %}
-							{{ data['additionalCostsComment'] }}
-						{% else %}
-							None provided
-						{% endif %}
+					{% if data['additionalCostsComment'] %}
+						{{ data['additionalCostsComment'] }}
 					{% else %}
 						None provided
 					{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					  <dd class="nhsuk-summary-list__actions">
-						{% if data['accommodation-travel-comments'] == 'no' %}
-						<a href="TDAE-accommodation-travel-comment">
+						  <a href="TDAE-accommodation-travel-add-comment">
 							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 						  </a>
-						{% else %}
-						  <a href="TDAE-accommodation-travel-add-comment">
-							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
-						  </a>
-						{% endif %}
 					  </dd>
 					{% endif %}
 				  </div>
