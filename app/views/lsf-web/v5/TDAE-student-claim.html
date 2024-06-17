@@ -22,7 +22,7 @@ Claim checks
     <details class="nhsuk-details">
       <summary class="nhsuk-details__summary">
         <span class="nhsuk-details__summary-text">
-          Students personal and course details
+          Student's personal and course details
         </span>
       </summary>
       <div class="nhsuk-details__text">
@@ -77,7 +77,7 @@ Claim checks
               Course
             </dt>
             <dd class="nhsuk-summary-list__value">
-              Adult nursing
+              Adult Nursing
             </dd>
           </div>
         </dl>
@@ -118,7 +118,7 @@ Claim checks
     </dl>
 
     {% if data['read-only'] != 'true' %}
-        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim.</h2>
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim</h2>
         {% if data['name'] === 'Emmit Mar' %}
         <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed <span id="completedCount">0</span> of <span id="sectionLength">4</span> sections.</p>
         {% else %}
@@ -193,12 +193,12 @@ Claim checks
             </tr>
             {% endif %}
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Mark Hirst (University)</td>
+              <td class="nhsuk-table__cell">Mark Hirst<br> (university)</td>
               <td class="nhsuk-table__cell">12 March 2024</td>
               <td class="nhsuk-table__cell "><strong>University checks submitted</strong><br>Student has only been able to upload 2 car parking receipts as they explained the ticket machine was out of paper but we are happy to accept they will have had this additional cost.</td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">{{ data['name'] }} (Student)</td>
+              <td class="nhsuk-table__cell">{{ data['name'] }}<br>(student)</td>
               <td class="nhsuk-table__cell">7 April 2024</td>
               <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
             </tr>
@@ -409,7 +409,7 @@ Claim checks
       </dl>
 
       {% if data['read-only'] != 'true' %}
-      <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim.</h2>
+      <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim</h2>
       <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed {% if data['status'] === 'Returned from NHSBSA' %}1{% else %}0{% endif %} of 3 sections.</p>
       {% endif %}
 
@@ -474,18 +474,18 @@ Claim checks
             <tbody class="nhsuk-table__body">
               {% if data['feedback-note'] == 'yes' %}
               <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Jane Doe <br> (NHSBSA)</td>
+                <td class="nhsuk-table__cell">Jane Doe<br>(NHSBSA)</td>
                 <td class="nhsuk-table__cell"> <p id="currentDate"</p> </td>
                 <td class="nhsuk-table__cell ">{{ data['feedbacknote'] }}</td>
               </tr>
               {% endif %}
               <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Mark Hirst (University)</td>
+                <td class="nhsuk-table__cell">Mark Hirst<br>(university)</td>
                 <td class="nhsuk-table__cell">11 April 2024</td>
                 <td class="nhsuk-table__cell "><strong>University checks submitted</strong></td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">{{ data['name'] }} (Student)</td>
+                <td class="nhsuk-table__cell">{{ data['name'] }}<br>(student)</td>
                 <td class="nhsuk-table__cell">7 April 2024</td>
                 <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
               </tr>
@@ -671,18 +671,18 @@ Claim checks
             <tbody class="nhsuk-table__body">
               {% if data['feedback-note'] == 'yes' %}
               <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Jane Doe <br> (NHSBSA)</td>
+                <td class="nhsuk-table__cell">Jane Doe<br>(NHSBSA)</td>
                 <td class="nhsuk-table__cell"> <p id="currentDate"</p> </td>
                 <td class="nhsuk-table__cell ">{{ data['feedbacknote'] }}</td>
               </tr>
               {% endif %}
               <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Mark Hirst (University)</td>
+                <td class="nhsuk-table__cell">Mark Hirst<br>(university)</td>
                 <td class="nhsuk-table__cell">4 March 2024</td>
                 <td class="nhsuk-table__cell "><strong>University checks submitted</strong></td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">{{ data['name'] }} (Student)</td>
+                <td class="nhsuk-table__cell">{{ data['name'] }}<br>(student)</td>
                 <td class="nhsuk-table__cell">28 February 2024</td>
                 <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
               </tr>

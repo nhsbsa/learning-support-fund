@@ -27,7 +27,7 @@ Claim checks
       </ul>
     </div> -->
 
-    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">This claim is currently read-only.</h2>
+    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">This claim is currently read-only</h2>
     <p class="nhsuk-body nhsuk-u-margin-bottom-7">You can view the submitted details and add a note, but you cannot process the claim.</p>
 
 
@@ -87,13 +87,13 @@ Claim checks
           <tbody class="nhsuk-table__body">
             {% if data['feedback-note'] == 'yes' %}
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Jane Doe <br> (NHSBSA)</td>
+              <td class="nhsuk-table__cell">Jane Doe<br>(NHSBSA)</td>
               <td class="nhsuk-table__cell"> <p id="currentDate"</p> </td>
               <td class="nhsuk-table__cell ">{{ data['feedbacknote'] }}</td>
             </tr>
             {% endif %}
             <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">{{ data['name'] }} (Student)</td>
+              <td class="nhsuk-table__cell">{{ data['name'] }}<br>(student)</td>
               <td class="nhsuk-table__cell">17 February 2024</td>
               <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
             </tr>
