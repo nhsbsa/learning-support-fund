@@ -15,7 +15,18 @@ Payment authorised
             <div class="nhsuk-card__content">
                 <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
                     Payment authorised for {{ data['name'] }}
-                    <span class="nhsuk-heading-m nhsuk-u-margin-top-5">Student number: {{ data['student number'] }}</span>
+                    <span class="nhsuk-heading-m nhsuk-u-margin-top-5">
+                      Student reference number: 
+                      {% if data['name'] === 'Emmit Mar' %}
+                      SSRN0010001
+                      {% elif data['name'] === 'Alyssa Geary' %}
+                      SSRN0010003
+                      {% elif data['name'] === 'Daniel Jackson' %}
+                      SSRN0010004
+                      {% else %}
+                      SSRN0010002
+                      {% endif %}
+                    </span>
                 </h1>
 
             </div>
@@ -23,7 +34,7 @@ Payment authorised
 
         <p>We have emailed {{ data['name'] }} to tell them their claim has been approved. They will receive their payment within the next 10 working days.</p>
 
-        <a class="nhsuk-button nhsuk-u-margin-right-4" href="student-course-details?Ansari=submitted">Return to Course details</a>
+        <a class="nhsuk-button nhsuk-u-margin-right-4" href="student-course-details?Ansari=submitted">Go to Course details</a>
 
 
     <!-- </form> -->

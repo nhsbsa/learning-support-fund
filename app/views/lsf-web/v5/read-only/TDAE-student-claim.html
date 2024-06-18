@@ -19,13 +19,76 @@ Claim checks
       Emmit Mar
     </h1>
 
-    <!-- <div class="nhsuk-inset-text">
-      <span class="nhsuk-u-visually-hidden">Information: </span>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li>Student name: Emmit Mar</li>
-        <li>Activity number: 1411</li>
-      </ul>
-    </div> -->
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Student's personal and course details
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              NHS Learning Support Fund reference number
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              SSRN0010001
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              University student ID
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              AB123456
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Academic year
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              2023 to 2024
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Course
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Adult Nursing
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </details>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Claim start<br>
+          and end date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          2 February 2024 to
+          31 March 2024
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Total claim value
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £614.62
+        </dd>
+      </div>
+    </dl>
+
 
     <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">This claim is currently read-only</h2>
     <p class="nhsuk-body nhsuk-u-margin-bottom-7">You can view the submitted details and add a note, but you cannot process the claim.</p>
@@ -93,10 +156,16 @@ Claim checks
             </tr>
             {% endif %}
             <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Mark Hirst<br> (university)</td>
+              <td class="nhsuk-table__cell">12 March 2024</td>
+              <td class="nhsuk-table__cell "><strong>University checks submitted</strong><br>Student has only been able to upload 2 car parking receipts as they explained the ticket machine was out of paper but we are happy to accept they will have had this additional cost.</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
               <td class="nhsuk-table__cell">{{ data['name'] }}<br>(student)</td>
-              <td class="nhsuk-table__cell">17 February 2024</td>
+              <td class="nhsuk-table__cell">7 April 2024</td>
               <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
             </tr>
+
           </tbody>
         </table>
         <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></p>
@@ -111,20 +180,52 @@ Claim checks
   <div class="nhsuk-grid-column-two-thirds">
 
     <ol class="app-task-list">
-        <li>
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> Travel details
-          </h2>
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1. </span> Travel details
+        </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item nhsuk-u-clear">
               <span class="app-task-list__task-name">
                 <a href="TDAE-student-university-details" aria-describedby="eligibility-status">
-                  Check university travel details
+                  View university travel details
+                </a>
+              </span>
+            </li>
+
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="TDAE-placement-mileage-details-table" aria-describedby="eligibility-status">
+                  View period 1 placement travel details
+                </a>
+              </span>
+            </li>
+
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="TDAE-placement-details-public-transport" aria-describedby="eligibility-status">
+                  View period 2 placement travel details
+                </a>
+              </span>
+            </li>
+
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="TDAE-hire-vehicle" aria-describedby="eligibility-status">
+                  View hire car details
+                </a>
+              </span>
+            </li>
+
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="TDAE-taxi" aria-describedby="eligibility-status">
+                  View taxi journey details
                 </a>
               </span>
             </li>
           </ul>
-        </li>
+      </li>
 
       <li>
         <h2 class="app-task-list__section">
@@ -138,6 +239,7 @@ Claim checks
               </a>
             </span>
           </li>
+
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
               <a href="TDAE-accommodation-2" aria-describedby="eligibility-status">
@@ -145,29 +247,40 @@ Claim checks
               </a>
             </span>
           </li>
+
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              <a href="TDAE-accommodation-travel" aria-describedby="eligibility-status">
+                View accommodation travel journey 1 details
+              </a>
+            </span>
+          </li>
+
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              <a href="TDAE-accommodation-travel-2" aria-describedby="eligibility-status">
+                View accommodation travel journey 2 details
+              </a>
+            </span>
+          </li>
         </ul>
       </li>
-      <!--<li>
+
+      <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">3. </span> Authorisation details
+          <span class="app-task-list__section-number">3. </span> Overseas costs details
         </h2>
         <ul class="app-task-list__items">
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
-              <a href="TDAE-authoriser-details" aria-describedby="eligibility-status">
-                Check Authoriser details
+              <a href="TDAE-overseas" aria-describedby="eligibility-status">
+                View overseas details
               </a>
             </span>
-            {% if data['hei-completed'] === 'completed' %}
-              <strong class="nhsuk-tag" style="float: right;" id="eligibility-status">Completed</strong>
-            {% elif data['hei-completed'] === 'in-progress' %}
-              <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to University</strong>
-            {% else %}
-              <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
-            {% endif %}
           </li>
         </ul>
-      </li>-->
+      </li>
+
 
 
     <a class="nhsuk-button nhsuk-button--secondary" href="/lsf-web/v5/student-course-details#tab-TDAE">Return to Course details</a>
