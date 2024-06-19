@@ -1,0 +1,177 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-full">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Placement cycle mileage details</h1>
+<!-- If more than one period's worth of placement mileage, the title would be "Placement cycle mileage details for period 1" (period 2, period 3 and so on)-->
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Term time address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Stephenson House, NE2 1AW
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <b>Stephenson House</b><br>
+              Stoddart Street<br>
+              Shieldfield<br>
+              Newcastle upon Tyne <br>
+              NE2 1AW
+            </div>
+          </details>
+        </dd>
+      </div>
+      {% if data['accommodation'] == 'yes' %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Placement accommodation address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Village Toby Carvery, NE2 2UY
+          <details class="nhsuk-details" style="margin-bottom: 0;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <b>Village Toby Carvery</b><br>
+              Beverley Road<br>
+              Willerby<br>
+              Newcastle upon Tyne<br>
+              NE2 2UY
+            </div>
+          </details>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Student comments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          I had to take a detour on the Friday due to a closed road
+        </dd>
+      </div>
+      {% endif %}
+    </dl>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Full placement address
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p><b>Alnwick Hospital</b><br>
+        Infirmary Drive<br>
+        Alnwick<br>
+        NE66 2NS</p>
+      </div>
+    </details>
+
+    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-4">
+      <caption class="nhsuk-table__caption">Journey to and from placement</caption>
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+          <th role="columnheader" class="" scope="col">
+            Date
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Placement address
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Mileage to
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Mileage from
+          </th>
+        </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell" style="white-space: nowrap;">
+            <span class="nhsuk-table-responsive__heading">Date </span>Thursday 30 November 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Placement address </span>
+            Alnwick Hospital
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Mileage to placement </span>10
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Mileage from placement </span>10
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell" style="white-space: nowrap;">
+            <span class="nhsuk-table-responsive__heading">Date </span>Friday 1 December 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Placement address </span>
+            Alnwick Hospital
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Mileage to placement </span>12.3
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Mileage from placement </span>12.3
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell" style="white-space: nowrap;">
+            <span class="nhsuk-table-responsive__heading">Date </span>Saturday 2 December 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Placement address </span>
+            Alnwick Hospital
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Mileage to placement </span>10
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Mileage from placement </span>10
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell" style="white-space: nowrap;">
+            <span class="nhsuk-table-responsive__heading">Date </span>Sunday 3 December 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Placement address </span>
+            Alnwick Hospital
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Mileage to placement </span>10
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Mileage from placement </span>10
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a class="nhsuk-button" href="TDAE-placement-additional-cost-evidence-table">Continue</a>
+
+  </div>
+
+</div>
+{% endblock %}

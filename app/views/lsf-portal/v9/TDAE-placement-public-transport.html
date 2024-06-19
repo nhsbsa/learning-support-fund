@@ -141,7 +141,7 @@ Claim details
         </tr>
         <tr role="row" class="nhsuk-table__row">
           <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Public transport ticket </span>Daily Train ticket
+            <span class="nhsuk-table-responsive__heading">Public transport ticket </span>Daily train ticket
           </td>
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Date </span>Friday 2 February 2024
@@ -159,7 +159,7 @@ Claim details
         </tr>
         <tr role="row" class="nhsuk-table__row">
           <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Public transport ticket </span>Daily Train ticket
+            <span class="nhsuk-table-responsive__heading">Public transport ticket </span>Daily train ticket
           </td>
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Date </span>Saturday 3 February 2024
@@ -177,7 +177,7 @@ Claim details
         </tr>
         <tr role="row" class="nhsuk-table__row">
           <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Public transport ticket </span>Daily Train ticket
+            <span class="nhsuk-table-responsive__heading">Public transport ticket </span>Daily train ticket
           </td>
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Date </span>Sunday 4 February 2024
@@ -195,7 +195,7 @@ Claim details
         </tr>
         <tr role="row" class="nhsuk-table__row">
           <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Public transport ticket </span>Daily Train ticket
+            <span class="nhsuk-table-responsive__heading">Public transport ticket </span>Daily train ticket
           </td>
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Date </span>Monday 5 February 2024
@@ -213,6 +213,38 @@ Claim details
         </tr>
       </tbody>
     </table>
+
+    {% if data['community-travel'] == 'yes' %}
+    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-4">
+      <caption class="nhsuk-table__caption">Community travel</caption>
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+          <th role="columnheader" class="" scope="col">
+            Date
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Placement address
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Cost
+          </th>
+        </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell" style="white-space: nowrap;">
+            <span class="nhsuk-table-responsive__heading">Date </span>Sunday 20 August 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Placement address </span>Alnwick Hospital
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Cost </span>£4.20
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    {% endif %}
 
     <a class="nhsuk-button" href="TDAE-placement-overview">Continue</a>
 
