@@ -105,7 +105,11 @@
                 <span class="app-task-list__task-name">
                     <a href="TDAE-taxi/pause">Taxi details and evidence</a>
                 </span>
+                {% if data['taxi-details'] == 'in-progress' %}
+                  <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag task-status">Task started</strong>
+                {% else %}
                   <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
+                {% endif %}
               </li>
               <li class="app-task-list__item nhsuk-u-clear">
                 <span class="app-task-list__task-name">

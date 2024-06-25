@@ -79,25 +79,6 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- Evidence uploaded for taxi authorisation -->
-				<div class="nhsuk-summary-list__row">
-					<dt class="nhsuk-summary-list__key">
-						Authorisation uploaded
-					</dt>
-					<dd class="nhsuk-summary-list__value">
-						<a href="/images/taxi-authorisation-email.png" download="Authorisation of Overseas Costs April 2024">
-						taxi-authorisation-email.jpg
-						</a>
-					</dd>
-					{% if data['submit-claim'] != 'completed' %}
-					<dd class="nhsuk-summary-list__actions">
-						<a href="authorisation-evidence">
-							Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
-						</a>
-					</dd>
-					{% endif %}
-				</div>
-
 				<!-- Date of taxi journey -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
@@ -133,7 +114,7 @@ Check your answers
 						  </span>
 						</summary>
 						<div class="nhsuk-details__text">
-						  <b>Alnwick Hospital</b><br>
+						  Alnwick Hospital<br>
 						  Infirmary Drive<br>
 						  Alnwick<br>
 						  NE66 2NS
@@ -163,7 +144,7 @@ Check your answers
 						  </span>
 						</summary>
 						<div class="nhsuk-details__text">
-						  <b>The Hog's Head Inn</b><br>
+						  The Hog's Head Inn<br>
 						  Hawfinch Drive<br>
 						  Alnwick<br>
 						  NE66 2BF
@@ -200,25 +181,6 @@ Check your answers
 					{% endif %}
 				</div>
 
-				<!-- Evidence uploaded for taxi -->
-				<div class="nhsuk-summary-list__row">
-					<dt class="nhsuk-summary-list__key">
-						Evidence uploaded
-					</dt>
-					<dd class="nhsuk-summary-list__value">
-						<a href="/images/taxi-evidence.png">
-							uber-receipt.jpg
-						</a>
-					</dd>
-					{% if data['submit-claim'] != 'completed' %}
-					<dd class="nhsuk-summary-list__actions">
-						<a href="evidence-mini-cya">
-							Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
-						</a>
-					</dd>
-					{% endif %}
-				</div>
-
 				<!-- Additional comments -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
@@ -240,6 +202,62 @@ Check your answers
 					{% endif %}
 				  </div>
 
+					<!-- Evidence uploaded for taxi authorisation -->
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Authorisation uploaded
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							<a href="/images/taxi-authorisation-email.png" download="Authorisation of Overseas Costs April 2024">
+							taxi-authorisation-email.jpg
+							</a>
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="authorisation-evidence">
+								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+							</a>
+						</dd>
+						{% endif %}
+					</div>
+
+					<!-- Evidence uploaded for taxi -->
+					{% if data['taxi-details'] != 'in-progress' %}
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Evidence uploaded
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							<a href="/images/taxi-evidence.png">
+								uber-receipt.jpg
+							</a>
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="evidence-mini-cya">
+								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+							</a>
+						</dd>
+						{% endif %}
+					</div>
+					{% else %}
+					<div class="nhsuk-summary-list__row" style="background-color: #fff9c4;">
+						<dt class="nhsuk-summary-list__key">
+							Evidence uploaded
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							Needs uploading
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="evidence-mini-cya">
+								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+							</a>
+						</dd>
+						{% endif %}
+					</div>
+					{% endif %}
+
 			</dl>
 
 
@@ -256,13 +274,13 @@ Check your answers
 				</div>
 	    </dl>
 
-
-			{% if data['submit-claim'] != 'completed' %}
+			{% if data['taxi-details'] == 'in-progress' %}
+				<a class="nhsuk-button">Add evidence</a>
+			{% elif data['submit-claim'] != 'completed' %}
 				<form action="/lsf-public/v8/TDAE-task-list?taxi-details=completed" method="POST">
-					<button style="float: left; margin-right:20px;" class="nhsuk-button" type="submit">Save and continue</button>
+					<button style="float: left; margin-right:20px;" class="nhsuk-button" type="submit">Continue</button>
 				</form>
 				<a class="nhsuk-button nhsuk-button--secondary" href="authorisation">Add another taxi journey</a><br>
-				<p><a href="../TDAE-task-list">Cancel</a></p>
 			{% endif %}
 
 		<!-- </form> -->

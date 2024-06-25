@@ -18,7 +18,7 @@ Evidence you have uploaded
 
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="placement-additional-costs">
-            <h1 class="nhsuk-heading-l">Evidence uploaded for this taxi journey</h1>
+            <h1 class="nhsuk-heading-l">Evidence uploaded of the taxi journey cost</h1>
           </label>
 
         <!-- Hide or show this section based on evidence status -->
@@ -48,7 +48,7 @@ Evidence you have uploaded
                     <a href="TDAE-evidence-mini-cya?evidence=removed" class="removeEvidence" data-row="evidenceRow1">Remove</a>
                 </td>
               </tr>
-            
+
               {% if data['more-evidence'] === 'yes' %}
               <tr role="row" class="nhsuk-table__row" id="evidenceRow2">
                 <td class="nhsuk-table__cell ">
@@ -97,7 +97,7 @@ Evidence you have uploaded
 
         <button class="nhsuk-button" type="submit">Continue</button><br>
          </div>
-        
+
          {% set displayStyle = "display:none;" if not(data['evidenceRow1'] == 'Removed' and data['evidenceRow2'] == 'Removed') else "" %}
          <div id="noEvidenceTextContainer">
            <div class="nhsuk-inset-text">
@@ -106,8 +106,8 @@ Evidence you have uploaded
            </div>
            <p style="margin-bottom:0px;"><a href="evidence?evidence=added" class="nhsuk-button">Add evidence</a></p>
          </div>
-           
-       <p><a href="../TDAE-task-list">Cancel</a></p>
+
+       <p><a href="../TDAE-task-list-full?taxi-details=in-progress">Return to task list </a></p>
      </div>
    </form>
  </div>
@@ -118,7 +118,7 @@ Evidence you have uploaded
    const evidenceTable = document.getElementById('evidenceTable');
    const noEvidenceTextContainer = document.getElementById('noEvidenceTextContainer');
    const evidenceSection = document.getElementById('evidenceSection');
- 
+
    function updateUIBasedOnEvidence() {
      if (!evidenceTable || evidenceTable.getElementsByTagName('tbody')[0].rows.length === 0) {
        noEvidenceTextContainer.style.display = 'block';
@@ -128,7 +128,7 @@ Evidence you have uploaded
        evidenceSection.style.display = 'block';
      }
    }
- 
+
    if (evidenceTable) {
      evidenceTable.addEventListener('click', function(event) {
        if (event.target.classList.contains('removeEvidence')) {
@@ -140,7 +140,7 @@ Evidence you have uploaded
        }
      });
    }
- 
+
    updateUIBasedOnEvidence();
  });
  </script>
