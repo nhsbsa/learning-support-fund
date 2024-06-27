@@ -36,7 +36,7 @@
   									{% endif %}
   								</dd>
   							</div>
-              
+
 
   							<div class="nhsuk-summary-list__row">
   								<dt class="nhsuk-summary-list__key">
@@ -47,11 +47,11 @@
                     {% if data['hire-vehicle-start-day'] %}
                       {{ data['hire-vehicle-start-day'] }} <span class="cya-month">{{ data['hire-vehicle-start-month'] }}</span> {{ data['hire-vehicle-start-year'] }}
                     {% else %}
-                      1 December 2023 
-                  {% endif %} 
-                      
+                      1 December 2023
+                  {% endif %}
+
                   to <br>
-                    
+
                     {% if data['hire-vehicle-end-day'] %}
                       {{ data['hire-vehicle-end-day'] }} <span class="cya-month">{{ data['hire-vehicle-end-month'] }}</span> {{ data['hire-vehicle-end-year'] }}
                     {% else %}
@@ -87,36 +87,35 @@
 				            {% endif %}
   								</dd>
   							</div>
-              
 
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Evidence
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  {% if data['file-upload-1'] %}
-                    {{ data['file-upload-1'] }}
-                  {% else %}
-                    1 evidence uploaded
-                  {% endif %}
-                </dd>
-              </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Comments
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {% if data['additionalCostsComment'] %}
+                      {{ data['additionalCostsComment'] }}
+                      {% else %}
+                      My car took longer at the garage to get repaired then they originally said it would. So I needed another hire car.
+                    {% endif %}
+                  </dd>
+                </div>
 
-
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Comments
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {% if data['additionalCostsComment'] %}
-                  {{ data['additionalCostsComment'] }}
-                  {% else %}
-                  My car took longer at the garage to get repaired then they originally said it would. So I needed another hire car.
-                {% endif %}
-              </dd>
-            </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Evidence
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {% if data['file-upload-1'] %}
+                      {{ data['file-upload-1'] }}
+                    {% else %}
+                      1 evidence uploaded
+                    {% endif %}
+                  </dd>
+                </div>
+                
           </dl>
-  							
+
 
               <div class="nhsuk-inset-text">
                 <span class="nhsuk-u-visually-hidden">Information: </span>

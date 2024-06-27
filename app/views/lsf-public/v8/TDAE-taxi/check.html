@@ -246,7 +246,7 @@ Check your answers
 							Evidence uploaded
 						</dt>
 						<dd class="nhsuk-summary-list__value">
-							Needs uploading
+							Not uploaded yet
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
@@ -275,7 +275,7 @@ Check your answers
 	    </dl>
 
 			{% if data['taxi-details'] == 'in-progress' %}
-				<a class="nhsuk-button">Add evidence</a>
+				<a class="nhsuk-button" href="evidence">Add evidence</a>
 			{% elif data['submit-claim'] != 'completed' %}
 				<form action="/lsf-public/v8/TDAE-task-list?taxi-details=completed" method="POST">
 					<button style="float: left; margin-right:20px;" class="nhsuk-button" type="submit">Continue</button>

@@ -103,7 +103,11 @@
               </li>
               <li class="app-task-list__item nhsuk-u-clear">
                 <span class="app-task-list__task-name">
+                  {% if data['taxi-details'] == 'in-progress' %}
+                    <a href="TDAE-taxi/check">Taxi details and evidence</a>
+                  {% else %}
                     <a href="TDAE-taxi/pause">Taxi details and evidence</a>
+                  {% endif %}
                 </span>
                 {% if data['taxi-details'] == 'in-progress' %}
                   <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag task-status">Task started</strong>
@@ -113,9 +117,17 @@
               </li>
               <li class="app-task-list__item nhsuk-u-clear">
                 <span class="app-task-list__task-name">
+                  {% if data['hire-car'] == 'in-progress' %}
+                    <a href="TDAE-hire-car-check">Hire car details and evidence</a>
+                  {% else %}
                     <a href="TDAE-hire-car-pause">Hire car details and evidence</a>
+                  {% endif %}
                 </span>
+                {% if data['hire-car'] == 'in-progress' %}
+                  <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag task-status">Task started</strong>
+                {% else %}
                   <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
+                {% endif %}
               </li>
             </ul>
           </li>
@@ -129,9 +141,17 @@
             <ul class="app-task-list__items">
               <li class="app-task-list__item nhsuk-u-clear">
                 <span class="app-task-list__task-name">
+                  {% if data['accommodation-details'] == 'in-progress' %}
+                    <a href="TDAE-accommodation-check">Accommodation details and evidence</a>
+                  {% else %}
                     <a href="TDAE-accommodation-term-time-costs">Accommodation details and evidence</a>
+                  {% endif %}
                 </span>
+                {% if data['accommodation-details'] == 'in-progress' %}
+                  <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag task-status">Task started</strong>
+                {% else %}
                   <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
+                {% endif %}
               </li>
               <li class="app-task-list__item nhsuk-u-clear">
                 <span class="app-task-list__task-name">

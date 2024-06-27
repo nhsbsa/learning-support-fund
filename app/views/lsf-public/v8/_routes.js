@@ -733,7 +733,7 @@ router.post('/v8/TDAE-hire-car-authorisation', function (req, res) {
 
 router.post('/v8/TDAE-hire-car-reason', function (req, res) {
 
-    res.redirect('/lsf-public/v8/TDAE-hire-car-evidence')
+    res.redirect('/lsf-public/v8/TDAE-hire-car-add-comment')
 
 })
 
@@ -751,7 +751,7 @@ router.post('/v8/TDAE-hire-car-mini-cya', (req, res) => {
   if (moreEvidence === 'yes') {
     res.redirect('/lsf-public/v8/TDAE-hire-car-evidence')
   } else {
-    res.redirect('/lsf-public/v8/TDAE-hire-car-add-comment')
+    res.redirect('/lsf-public/v8/TDAE-hire-car-check')
   }
 
 })
@@ -770,7 +770,7 @@ router.post('/v8/TDAE-hire-car-comment', (req, res) => {
 
 router.post('/v8/TDAE-hire-car-add-comment', (req, res) => {
 
-    res.redirect('/lsf-public/v8/TDAE-hire-car-check')
+    res.redirect('/lsf-public/v8/TDAE-hire-car-evidence')
 
 })
 
@@ -2568,7 +2568,7 @@ router.post('/v8/TDAE-accommodation-cost-different', (req, res) => {
           req.session.data['accommodation-different-cost-number'] = '2'
           res.redirect('/lsf-public/v8/TDAE-accommodation-cost-different')
         } else {
-            res.redirect('/lsf-public/v8/TDAE-accommodation-evidence')
+            res.redirect('/lsf-public/v8/TDAE-accommodation-add-comments')
         }
 
 })

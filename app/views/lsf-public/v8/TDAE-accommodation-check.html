@@ -168,24 +168,6 @@ Check your answers
 
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Uploaded evidence
-					</dt>
-					<dd class="nhsuk-summary-list__value">
-						<a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 17 Apr 2023 to 22 Apr 2023">
-							hotel-receipt.pdf
-						</a>
-					</dd>
-					{% if data['submit-claim'] != 'completed' %}
-					<dd class="nhsuk-summary-list__actions">
-						<a href="TDAE-accommodation-evidence">
-							Change<span class="nhsuk-u-visually-hidden"> uploaded evidence</span>
-						</a>
-					</dd>
-					{% endif %}
-				</div>
-
-				<div class="nhsuk-summary-list__row">
-					<dt class="nhsuk-summary-list__key">
 						Comments
 					</dt>
 					<dd class="nhsuk-summary-list__value">
@@ -209,6 +191,42 @@ Check your answers
 						</dd>
 						{% endif %}
 				</div>
+
+				{% if data['accommodation-details'] == 'in-progress' %}
+					<div class="nhsuk-summary-list__row" style="background-color: #fff9c4;">
+						<dt class="nhsuk-summary-list__key">
+							Uploaded evidence
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+								Not uploaded yet
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="TDAE-accommodation-evidence">
+								Change<span class="nhsuk-u-visually-hidden"> uploaded evidence</span>
+							</a>
+						</dd>
+						{% endif %}
+					</div>
+				{% else %}
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Uploaded evidence
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						<a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 17 Apr 2023 to 22 Apr 2023">
+							hotel-receipt.pdf
+						</a>
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						<a href="TDAE-accommodation-evidence">
+							Change<span class="nhsuk-u-visually-hidden"> uploaded evidence</span>
+						</a>
+					</dd>
+					{% endif %}
+				</div>
+				{% endif %}
 
 				</dl>
 			{% else %}
@@ -376,24 +394,6 @@ Check your answers
 
 							<div class="nhsuk-summary-list__row">
 								<dt class="nhsuk-summary-list__key">
-									Uploaded evidence
-								</dt>
-								<dd class="nhsuk-summary-list__value">
-									<a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 17 Apr 2023 to 22 Apr 2023">
-										hotel-receipt.pdf
-									</a>
-								</dd>
-								{% if data['submit-claim'] != 'completed' %}
-								<dd class="nhsuk-summary-list__actions">
-									<a href="TDAE-accommodation-evidence">
-										Change<span class="nhsuk-u-visually-hidden"> uploaded evidence</span>
-									</a>
-								</dd>
-								{% endif %}
-							</div>
-
-							<div class="nhsuk-summary-list__row">
-								<dt class="nhsuk-summary-list__key">
 									Comments
 								</dt>
 								<dd class="nhsuk-summary-list__value">
@@ -418,6 +418,24 @@ Check your answers
 									{% endif %}
 							</div>
 
+							<div class="nhsuk-summary-list__row">
+								<dt class="nhsuk-summary-list__key">
+									Uploaded evidence
+								</dt>
+								<dd class="nhsuk-summary-list__value">
+									<a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 17 Apr 2023 to 22 Apr 2023">
+										hotel-receipt.pdf
+									</a>
+								</dd>
+								{% if data['submit-claim'] != 'completed' %}
+								<dd class="nhsuk-summary-list__actions">
+									<a href="TDAE-accommodation-evidence">
+										Change<span class="nhsuk-u-visually-hidden"> uploaded evidence</span>
+									</a>
+								</dd>
+								{% endif %}
+							</div>
+
 						</dl>
 
 						<a class="nhsuk-button nhsuk-button--warning" href="TDAE-accommodation-remove-booking">Remove booking</a>
@@ -425,7 +443,11 @@ Check your answers
 				</details>
 
 				<details class="nhsuk-details nhsuk-expander">
-				  <summary class="nhsuk-details__summary">
+					{% if data['accommodation-details'] == 'in-progress' %}
+				  	<summary class="nhsuk-details__summary" style="background-color: #fff9c4;">
+					{% else %}
+						<summary class="nhsuk-details__summary">
+					{% endif %}
 				    <span class="nhsuk-details__summary-text">
 				      20 August 2023 to 23 August 2023
 				    </span>
@@ -616,23 +638,6 @@ Check your answers
 
 								</dd>
 							</div>
-							<div class="nhsuk-summary-list__row">
-								<dt class="nhsuk-summary-list__key">
-									Uploaded evidence
-								</dt>
-								<dd class="nhsuk-summary-list__value">
-									<a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 17 Apr 2023 to 22 Apr 2023">
-										hotel-receipt.pdf
-									</a>
-								</dd>
-								{% if data['submit-claim'] != 'completed' %}
-								<dd class="nhsuk-summary-list__actions">
-									<a href="TDAE-accommodation-evidence">
-										Change<span class="nhsuk-u-visually-hidden"> uploaded evidence</span>
-									</a>
-								</dd>
-								{% endif %}
-							</div>
 
 							<div class="nhsuk-summary-list__row">
 								<dt class="nhsuk-summary-list__key">
@@ -659,6 +664,42 @@ Check your answers
 									</dd>
 									{% endif %}
 							</div>
+
+						{% if data['accommodation-details'] == 'in-progress' %}
+							<div class="nhsuk-summary-list__row" style="background-color: #fff9c4;">
+								<dt class="nhsuk-summary-list__key">
+									Uploaded evidence
+								</dt>
+								<dd class="nhsuk-summary-list__value">
+										Not uploaded yet
+								</dd>
+								{% if data['submit-claim'] != 'completed' %}
+								<dd class="nhsuk-summary-list__actions">
+									<a href="TDAE-accommodation-evidence">
+										Change<span class="nhsuk-u-visually-hidden"> uploaded evidence</span>
+									</a>
+								</dd>
+								{% endif %}
+							</div>
+						{% else %}
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Uploaded evidence
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								<a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 17 Apr 2023 to 22 Apr 2023">
+									hotel-receipt.pdf
+								</a>
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-accommodation-evidence">
+									Change<span class="nhsuk-u-visually-hidden"> uploaded evidence</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+						{% endif %}
 
 						</dl>
 						<a class="nhsuk-button nhsuk-button--warning" href="TDAE-accommodation-remove-booking">Remove booking</a>
@@ -689,13 +730,15 @@ Check your answers
 
 	    </dl>
 
-
-			{% if data['submit-claim'] != 'completed' %}
-				<form action="v8/TDAE-accommodation-check" method="POST">
-					<button style="float: left; margin-right: 36px;" class="nhsuk-button" type="submit">Save and continue</button>
-				</form>
-				<a href="TDAE-accommodation-start-date"><button class="nhsuk-button nhsuk-button--secondary" type="submit">Add another booking</button></a><br>
-				<a href="TDAE-start-claim">Cancel</a>
+			{% if data['accommodation-details'] == 'in-progress' %}
+				<a class="nhsuk-button" href="TDAE-accommodation-evidence?accommodation-details=completed">Add evidence</a>
+			{% else %}
+				{% if data['submit-claim'] != 'completed' %}
+					<form action="v8/TDAE-accommodation-check" method="POST">
+						<button style="float: left; margin-right: 36px;" class="nhsuk-button" type="submit">Continue</button>
+					</form>
+					<a href="TDAE-accommodation-start-date"><button class="nhsuk-button nhsuk-button--secondary" type="submit">Add another booking</button></a><br>
+				{% endif %}
 			{% endif %}
 
 		<!-- </form> -->
