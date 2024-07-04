@@ -261,7 +261,7 @@ Check your answers
 			</dl>
 
 
-			<h2 class="nhsuk-heading-m">Total taxi costs to be reimbursed</h2>
+			<!--<h2 class="nhsuk-heading-m">Total taxi costs to be reimbursed</h2>
 	    <dl class="nhsuk-summary-list">
 
 				<div class="nhsuk-summary-list__row">
@@ -272,16 +272,17 @@ Check your answers
 							£10
 					</dd>
 				</div>
-	    </dl>
+	    </dl>-->
 
 			{% if data['taxi-details'] == 'in-progress' %}
 				<a class="nhsuk-button" href="evidence">Add evidence</a>
 			{% elif data['submit-claim'] != 'completed' %}
-				<form action="/lsf-public/v8/TDAE-task-list?taxi-details=completed" method="POST">
+				<form action="check-multiple?taxi-details=completed" method="POST">
 					<button style="float: left; margin-right:20px;" class="nhsuk-button" type="submit">Continue</button>
 				</form>
-				<a class="nhsuk-button nhsuk-button--secondary" href="authorisation">Add another taxi journey</a><br>
+				<!--<a class="nhsuk-button nhsuk-button--secondary" href="authorisation">Add another taxi journey</a><br>-->
 			{% endif %}
+			<p style="clear: both;"><a href="../TDAE-task-list-full?taxi-details=in-progress">Return to task list</a></p>
 
 		<!-- </form> -->
 

@@ -207,45 +207,6 @@ Check your answers
 						{% endif %}
 					</div>
 
-				<!-- if first journey = term time to accommodation and travelled by both car and public - evidence uploaded -->
-				<div class="nhsuk-summary-list__row">
-					<!-- if no evidence uploaded -->
-					{% if data['no-evidence-decision'] == 'reason' %}
-					  <dt class="nhsuk-summary-list__key">
-						Reason for no evidence
-					  </dt>
-					  <dd class="nhsuk-summary-list__value">
-						{% if data['study-additional-comment'] %}
-						  {{ data['study-additional-comment'] }}
-						{% else %}
-						  The ticket machine ran out of paper so I was unable to get a parking ticket at the station.
-						{% endif %}
-					  </dd>
-					  <dd class="nhsuk-summary-list__actions">
-						<a href="../TDAE-no-evidence-reason?claiming-for=travel%20to%20accommodation">
-						  Review<span class="nhsuk-u-visually-hidden">reason for no evidence</span>
-						</a>
-					  </dd>
-
-					{% else %}
-					  <dt class="nhsuk-summary-list__key">
-						Evidence
-					  </dt>
-					  <dd class="nhsuk-summary-list__value">
-						<a href="/images/parking-receipt-and-train-ticket.jpg" download="Supporting evidence for journey between term time address and accommodation">
-						  parking-receipt-and-train-ticket.jpg
-						</a>
-					  </dd>
-					  {% if data['submit-claim'] != 'completed' %}
-					  <dd class="nhsuk-summary-list__actions">
-						<a href="TDAE-accommodation-travel-evidence">
-						  Review<span class="nhsuk-u-visually-hidden"> evidence uploaded</span>
-						</a>
-					  </dd>
-					  {% endif %}
-					{% endif %}
-				  </div>
-
 				<!-- if first journey = term time to accommodation and travelled by both car and public - additional comments -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
@@ -266,6 +227,62 @@ Check your answers
 					  </dd>
 					{% endif %}
 				  </div>
+
+					<!-- if first journey = term time to accommodation and travelled by both car and public - evidence uploaded -->
+					{% if data['accommodation-travel'] == 'in-progress' %}
+						<div class="nhsuk-summary-list__row" style="background-color: #fff9c4;">
+							<dt class="nhsuk-summary-list__key">
+								Evidence
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								Not uploaded yet
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-accommodation-travel-evidence">
+									Change<span class="nhsuk-u-visually-hidden"> evidence uploaded</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+					{% else %}
+						<div class="nhsuk-summary-list__row">
+							<!-- if no evidence uploaded -->
+							{% if data['no-evidence-decision'] == 'reason' %}
+							  <dt class="nhsuk-summary-list__key">
+								Reason for no evidence
+							  </dt>
+							  <dd class="nhsuk-summary-list__value">
+								{% if data['study-additional-comment'] %}
+								  {{ data['study-additional-comment'] }}
+								{% else %}
+								  The ticket machine ran out of paper so I was unable to get a parking ticket at the station.
+								{% endif %}
+							  </dd>
+							  <dd class="nhsuk-summary-list__actions">
+								<a href="../TDAE-no-evidence-reason?claiming-for=travel%20to%20accommodation">
+								  Review<span class="nhsuk-u-visually-hidden">reason for no evidence</span>
+								</a>
+							  </dd>
+							{% else %}
+							  <dt class="nhsuk-summary-list__key">
+								Evidence
+							  </dt>
+							  <dd class="nhsuk-summary-list__value">
+								<a href="/images/parking-receipt-and-train-ticket.jpg" download="Supporting evidence for journey between term time address and accommodation">
+								  parking-receipt-and-train-ticket.jpg
+								</a>
+							  </dd>
+							  {% if data['submit-claim'] != 'completed' %}
+							  <dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-accommodation-travel-evidence">
+								  Review<span class="nhsuk-u-visually-hidden"> evidence uploaded</span>
+								</a>
+							  </dd>
+							  {% endif %}
+							{% endif %}
+						  </div>
+						{% endif %}
 
 				</dl>
 
@@ -466,45 +483,6 @@ Check your answers
 							{% endif %}
 						</div>
 
-				<!-- if first journey = accommodation to term time address, and travelled by both car and public transport - evidence uploaded -->
-				<div class="nhsuk-summary-list__row">
-					<!-- if no evidence uploaded -->
-					{% if data['no-evidence-decision'] == 'reason' %}
-					  <dt class="nhsuk-summary-list__key">
-						Reason for no evidence
-					  </dt>
-					  <dd class="nhsuk-summary-list__value">
-						{% if data['study-additional-comment'] %}
-						  {{ data['study-additional-comment'] }}
-						{% else %}
-						  The ticket machine ran out of paper so I was unable to get a parking ticket at the station.
-						{% endif %}
-					  </dd>
-					  <dd class="nhsuk-summary-list__actions">
-						<a href="../TDAE-no-evidence-reason?claiming-for=travel%20to%20accommodation">
-						  Review<span class="nhsuk-u-visually-hidden">reason for no evidence</span>
-						</a>
-					  </dd>
-
-					{% else %}
-					  <dt class="nhsuk-summary-list__key">
-						Evidence
-					  </dt>
-					  <dd class="nhsuk-summary-list__value">
-						<a href="/images/train-ticket-2.jpg" download="Supporting evidence for journey between accommodation and term time address">
-							snapshot-015-09-02-2024.jpg
-						</a>
-					  </dd>
-					  {% if data['submit-claim'] != 'completed' %}
-					  <dd class="nhsuk-summary-list__actions">
-						<a href="TDAE-accommodation-travel-evidence">
-						  Review<span class="nhsuk-u-visually-hidden"> evidence uploaded</span>
-						</a>
-					  </dd>
-					  {% endif %}
-					{% endif %}
-				  </div>
-
 				<!-- if first journey = accommodation to term time address, and travelled by both car and public transport - additional comments -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
@@ -525,6 +503,63 @@ Check your answers
 					  </dd>
 					{% endif %}
 				  </div>
+
+					<!-- if first journey = accommodation to term time address, and travelled by both car and public transport - evidence uploaded -->
+					{% if data['accommodation-travel'] == 'in-progress' %}
+						<div class="nhsuk-summary-list__row" style="background-color: #fff9c4;">
+							<dt class="nhsuk-summary-list__key">
+								Evidence
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								Not uploaded yet
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-accommodation-travel-evidence">
+									Change<span class="nhsuk-u-visually-hidden"> evidence uploaded</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+					{% else %}
+						<div class="nhsuk-summary-list__row">
+							<!-- if no evidence uploaded -->
+							{% if data['no-evidence-decision'] == 'reason' %}
+								<dt class="nhsuk-summary-list__key">
+								Reason for no evidence
+								</dt>
+								<dd class="nhsuk-summary-list__value">
+								{% if data['study-additional-comment'] %}
+									{{ data['study-additional-comment'] }}
+								{% else %}
+									The ticket machine ran out of paper so I was unable to get a parking ticket at the station.
+								{% endif %}
+								</dd>
+								<dd class="nhsuk-summary-list__actions">
+								<a href="../TDAE-no-evidence-reason?claiming-for=travel%20to%20accommodation">
+									Review<span class="nhsuk-u-visually-hidden">reason for no evidence</span>
+								</a>
+								</dd>
+
+							{% else %}
+								<dt class="nhsuk-summary-list__key">
+								Evidence
+								</dt>
+								<dd class="nhsuk-summary-list__value">
+								<a href="/images/train-ticket-2.jpg" download="Supporting evidence for journey between accommodation and term time address">
+									snapshot-015-09-02-2024.jpg
+								</a>
+								</dd>
+								{% if data['submit-claim'] != 'completed' %}
+								<dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-accommodation-travel-evidence">
+									Review<span class="nhsuk-u-visually-hidden"> evidence uploaded</span>
+								</a>
+								</dd>
+								{% endif %}
+							{% endif %}
+							</div>
+						{% endif %}
 
 
 				</dl>

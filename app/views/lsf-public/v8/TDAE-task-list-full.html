@@ -155,9 +155,17 @@
               </li>
               <li class="app-task-list__item nhsuk-u-clear">
                 <span class="app-task-list__task-name">
+                  {% if data['accommodation-travel'] == 'in-progress' %}
+                    <a href="accommodation-journey/TDAE-accommodation-travel-check">Accommodation travel details</a>
+                  {% else %}
                     <a href="accommodation-journey/TDAE-accommodation-journey-pause">Accommodation travel details</a>
+                  {% endif %}
                 </span>
+                {% if data['accommodation-travel'] == 'in-progress' %}
+                  <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag task-status">Task started</strong>
+                {% else %}
                   <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
+                {% endif %}
               </li>
             </ul>
           </li>

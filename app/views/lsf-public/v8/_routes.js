@@ -778,6 +778,14 @@ router.post('/v8/TDAE-hire-car-check', (req, res) => {
 
     req.session.data['hire-car'] = "completed"
 
+    res.redirect('/lsf-public/v8/TDAE-hire-car-check-multiple')
+
+})
+
+router.post('/v8/TDAE-hire-car-check-multiple', (req, res) => {
+
+    req.session.data['hire-car'] = "completed"
+
     res.redirect('/lsf-public/v8/TDAE-task-list')
 
 })
@@ -942,7 +950,7 @@ router.post('/v8/TDAE-accommodation-travel-extra-costs-input', (req, res) => {
       res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-cycle-journey-mileage');
     } else {
       // Redirect to travel evidence page if only car was selected
-      res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-evidence');
+      res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-add-comment');
     }
   }
 });
@@ -968,7 +976,7 @@ router.post('/v8/TDAE-accommodation-travel-public-transport-cost', (req, res) =>
 
   } else if (isCarSelected && isPublicTransportSelected) {
     // Redirect to travel evidence page if 'car' and 'public transport' were selected
-    res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-evidence');
+    res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-add-comment');
 
   } else if (isPublicTransportSelected && isCycleSelected) {
     // Redirect to cycle journey mileage page if 'public transport' and 'cycle' were selected
@@ -976,7 +984,7 @@ router.post('/v8/TDAE-accommodation-travel-public-transport-cost', (req, res) =>
 
   } else if (isPublicTransportSelected) {
     // Redirect to travel evidence page if only 'public transport' was selected
-    res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-evidence');
+    res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-add-comment');
   }
 
 });
@@ -993,27 +1001,7 @@ router.post('/v8/TDAE-accommodation-travel-cycle-journey-mileage', (req, res) =>
   // Check if the user had extra costs for driving
   const didPayExtraCosts = req.session.data['extra-costs'] === 'yes';
 
-  if (isCarSelected && isPublicTransportSelected && isCycleSelected) {
-    // Redirect to upload evidence page if 'car', 'public transport' and 'cycle' were selected
-    res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-evidence');
-
-  } else if (isCarSelected && isCycleSelected) {
-    if (didPayExtraCosts) {
-      // Redirect to upload evidence page if 'car' and 'cycle' were selected AND if extra costs were paid
-      res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-evidence');
-    } else {
-      // Redirect to additional comments page if 'car' and 'cycle' were selected AND no extra costs were paid
-      res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-add-comment');
-    }
-
-  } else if (isCycleSelected && isPublicTransportSelected) {
-    // Redirect to upload evidence page if 'cycle' and 'public transport' were selected
-    res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-evidence');
-
-  } else if (isCycleSelected) {
-    // Redirect to upload evidence page if only 'cycle' was previously selected
-    res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-add-comment');
-  }
+  res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-add-comment');
 
 });
 
@@ -1031,7 +1019,7 @@ router.post('/v8/TDAE-accommodation-travel-mini-cya', (req, res) => {
   if (moreEvidence === 'yes') {
     res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-evidence')
   } else {
-    res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-add-comment')
+    res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-check')
   }
 
 })
@@ -1050,9 +1038,24 @@ router.post('/v8/TDAE-accommodation-travel-comment', (req, res) => {
 
 router.post('/v8/TDAE-accommodation-travel-add-comment', (req, res) => {
 
-  res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-check')
+  // Retrieve the transportMethods from the session data
+  const transportMethods = req.session.data['transport-method'];
 
-})
+  // Check if the user previously selected 'car', 'public transport', and 'cycle' as transport methods
+  const isCarSelected = transportMethods.includes('car');
+  const isPublicTransportSelected = transportMethods.includes('public-transport');
+  const isCycleSelected = transportMethods.includes('cycle');
+
+  // Check if the user had extra costs for driving
+  const didPayExtraCosts = req.session.data['extra-costs'] === 'yes';
+
+  if (didPayExtraCosts || isPublicTransportSelected) {
+    res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-evidence');
+  } else {
+    res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-check');
+  }
+
+});
 
 router.post('/v8/TDAE-accommodation-travel-check', (req, res) => {
 

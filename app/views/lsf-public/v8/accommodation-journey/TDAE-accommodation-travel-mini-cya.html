@@ -20,7 +20,7 @@ Evidence you have uploaded
               <h1 class="nhsuk-heading-l">Uploaded evidence for your journey</h1>
           </label>
 
-  
+
           <!-- Hide or show this section based on evidence status -->
           {% set displayStyle = "display:none;" if (data['evidenceRow1'] == 'Removed' and data['evidenceRow2'] == 'Removed') else "" %}
           <div id="evidenceSection">
@@ -46,7 +46,7 @@ Evidence you have uploaded
                     <a href="#" class="removeEvidence" data-row="evidenceRow1">Remove</a>
                   </td>
                 </tr>
-              
+
                 {% if data['more-evidence'] === 'yes' %}
                 <tr role="row" class="nhsuk-table__row" id="evidenceRow2">
                   <td class="nhsuk-table__cell ">
@@ -97,8 +97,8 @@ Evidence you have uploaded
             </div>
             <p style="margin-bottom:0px;"><a href="TDAE-accommodation-travel-evidence?evidence=added" class="nhsuk-button">Add evidence</a></p>
           </div>
-            
-        <p><a href="../TDAE-task-list">Cancel</a></p>
+
+        <p><a href="../TDAE-task-list-full?accommodation-travel=in-progress">Return to task list</a></p>
       </div>
     </form>
   </div>
@@ -109,7 +109,7 @@ Evidence you have uploaded
     const evidenceTable = document.getElementById('evidenceTable');
     const noEvidenceTextContainer = document.getElementById('noEvidenceTextContainer');
     const evidenceSection = document.getElementById('evidenceSection');
-  
+
     function updateUIBasedOnEvidence() {
       if (!evidenceTable || evidenceTable.getElementsByTagName('tbody')[0].rows.length === 0) {
         noEvidenceTextContainer.style.display = 'block';
@@ -119,7 +119,7 @@ Evidence you have uploaded
         evidenceSection.style.display = 'block';
       }
     }
-  
+
     if (evidenceTable) {
       evidenceTable.addEventListener('click', function(event) {
         if (event.target.classList.contains('removeEvidence')) {
@@ -131,7 +131,7 @@ Evidence you have uploaded
         }
       });
     }
-  
+
     updateUIBasedOnEvidence();
   });
   </script>
