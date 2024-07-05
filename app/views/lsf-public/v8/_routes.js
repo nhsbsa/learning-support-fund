@@ -2127,10 +2127,16 @@ router.post('/v8/TDAE-placement-cya', (req, res) => {
 
 })
 
-router.post('/v8/TDAE-accommodation-check', (req, res) => {
+router.post('/v8/TDAE-accommodation-check-multiple', (req, res) => {
 
     req.session.data['accommodation-details'] = "completed"
     res.redirect('/lsf-public/v8/TDAE-task-list')
+
+})
+
+router.post('/v8/TDAE-accommodation-check', (req, res) => {
+
+    res.redirect('/lsf-public/v8/TDAE-accommodation-check-multiple')
 
 })
 
