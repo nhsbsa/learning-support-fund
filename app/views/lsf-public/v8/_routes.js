@@ -1059,6 +1059,12 @@ router.post('/v8/TDAE-accommodation-travel-add-comment', (req, res) => {
 
 router.post('/v8/TDAE-accommodation-travel-check', (req, res) => {
 
+  res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-check-multiple')
+
+})
+
+router.post('/v8/TDAE-accommodation-travel-check-multiple', (req, res) => {
+
   req.session.data['accommodation-travel'] = "completed"
 
   res.redirect('/lsf-public/v8/TDAE-task-list')
