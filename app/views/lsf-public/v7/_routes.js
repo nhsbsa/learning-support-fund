@@ -419,9 +419,9 @@ router.post('/v7/TDAE-reuse-details', (req, res) => {
     req.session.data['term-address-postcode'] = "NE2 1AW"
     if (claimReused === 'Alnwick') {
       req.session.data['placement-building-name'] = "Alnwick Hospital"
-      req.session.data['placement-address-line-1'] = "Main Street"
+      req.session.data['placement-address-line-1'] = "Infirmary Drive"
       req.session.data['placement-address-town'] = "Alnwick"
-      req.session.data['placement-address-postcode'] = "NE6 4EA"
+      req.session.data['placement-address-postcode'] = "NE66 2NS"
     } else {
       req.session.data['placement-building-name'] = "Newcastle Hospital"
       req.session.data['placement-address-line-1'] = "Main Street"
