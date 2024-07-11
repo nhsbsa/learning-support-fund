@@ -25,7 +25,13 @@ Check your answers
 			</div>
 		{% endif %}
 
-		<!--<h2 class="nhsuk-heading-s">Term time accommodation</h2>
+		<!--{% if data['accommodation-costs'] === 'yes' %}
+		<p>You told us you are paying for term time accommodation. <a href="TDAE-accommodation-term-time-costs">Change this answer</a>.</p>
+		{% else %}
+		<p>You told us you live with parents during term time. <a href="TDAE-accommodation-term-time-costs">Change this answer</a>.</p>
+		{% endif %}-->
+
+		<h2 class="nhsuk-heading-s">Term time accommodation</h2>
 		<dl class="nhsuk-summary-list">
 			<div class="nhsuk-summary-list__row">
 				<dt class="nhsuk-summary-list__key" style="width: 75%;">
@@ -36,7 +42,7 @@ Check your answers
 				</dd>
 				{% if data['submit-claim'] != 'completed' %}
 				<dd class="nhsuk-summary-list__actions">
-					<a href="TDAE-accommodation-start-date">
+					<a href="TDAE-accommodation-term-time-costs">
 						Change<span class="nhsuk-u-visually-hidden"> start date</span>
 					</a>
 				</dd>
@@ -51,13 +57,13 @@ Check your answers
 				</dd>
 				{% if data['submit-claim'] != 'completed' %}
 				<dd class="nhsuk-summary-list__actions">
-					<a href="TDAE-accommodation-start-date">
+					<a href="TDAE-accommodation-live-with-parents">
 						Change<span class="nhsuk-u-visually-hidden"> start date</span>
 					</a>
 				</dd>
 				{% endif %}
 			</div>
-		</dl>-->
+		</dl>
 
 		{% if data['stays'] != '2' %}
 			<details class="nhsuk-details nhsuk-expander">

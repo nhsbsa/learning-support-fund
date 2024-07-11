@@ -28,36 +28,6 @@ Check your answers
 		<dl class="nhsuk-summary-list">
 			<div class="nhsuk-summary-list__row">
 				<dt class="nhsuk-summary-list__key">
-				  Paying for term time accommodation
-				</dt>
-				<dd class="nhsuk-summary-list__value">
-				  Yes
-				</dd>
-				{% if data['submit-claim'] != 'completed' %}
-				<dd class="nhsuk-summary-list__actions">
-					<a href="TDAE-accommodation-start-date">
-						Change<span class="nhsuk-u-visually-hidden"> start date</span>
-					</a>
-				</dd>
-				{% endif %}
-			</div>
-			<div class="nhsuk-summary-list__row">
-				<dt class="nhsuk-summary-list__key">
-				  Live with parents during term time
-				</dt>
-				<dd class="nhsuk-summary-list__value">
-				  Yes
-				</dd>
-				{% if data['submit-claim'] != 'completed' %}
-				<dd class="nhsuk-summary-list__actions">
-					<a href="TDAE-accommodation-start-date">
-						Change<span class="nhsuk-u-visually-hidden"> start date</span>
-					</a>
-				</dd>
-				{% endif %}
-			</div>
-			<div class="nhsuk-summary-list__row">
-				<dt class="nhsuk-summary-list__key">
 					Start date
 				</dt>
 				<dd class="nhsuk-summary-list__value">
@@ -209,7 +179,7 @@ Check your answers
 			{% if data['accommodation-details'] == 'in-progress' %}
 				<div class="nhsuk-summary-list__row" style="background-color: #fff9c4;">
 					<dt class="nhsuk-summary-list__key">
-						Uploaded evidence
+						Evidence uploaded
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 							Not uploaded yet
@@ -217,7 +187,7 @@ Check your answers
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
 						<a href="TDAE-accommodation-evidence">
-							Change<span class="nhsuk-u-visually-hidden"> uploaded evidence</span>
+							Change<span class="nhsuk-u-visually-hidden"> Evidence uploaded</span>
 						</a>
 					</dd>
 					{% endif %}
@@ -225,7 +195,7 @@ Check your answers
 			{% else %}
 			<div class="nhsuk-summary-list__row">
 				<dt class="nhsuk-summary-list__key">
-					Uploaded evidence
+					Evidence uploaded
 				</dt>
 				<dd class="nhsuk-summary-list__value">
 					<a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 17 Apr 2023 to 22 Apr 2023">
@@ -235,7 +205,7 @@ Check your answers
 				{% if data['submit-claim'] != 'completed' %}
 				<dd class="nhsuk-summary-list__actions">
 					<a href="TDAE-accommodation-evidence">
-						Change<span class="nhsuk-u-visually-hidden"> uploaded evidence</span>
+						Change<span class="nhsuk-u-visually-hidden"> Evidence uploaded</span>
 					</a>
 				</dd>
 				{% endif %}
