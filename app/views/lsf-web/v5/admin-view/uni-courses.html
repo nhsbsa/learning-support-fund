@@ -1,35 +1,51 @@
-{% extends 'layout-admin.html' %}
+{% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
-Admin menu
+University courses
 {% endblock %}
 
 {% block content %}
-<div class="content-wrapper">
-	<div class="admin-page-header">
-		<div class="breadcrumbs">
-			<ol>
-				<li><a href="/lsf-web/v4/admin-view/manage-unis">Manage universities</a></li>
-				<li><a>Manage courses</a></li>
-			</ol>
+<form action="/lsf-web/v5/admin-view/manage-unis" method="POST">
+	<div class="nhsuk-grid-column-full">
+
+
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+	  <ol class="nhsuk-breadcrumb__list">
+		<li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/admin-view/manage-unis">Manage universities</a></li>
+		<li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/admin-view/manage-courses">Manage courses</a></li>
+	  </ol>
+	  <p class="nhsuk-breadcrumb__back">
+		<a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v5/admin-view/manage-unis">
+		  <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+		  Manage courses
+		</a>
+	  </p>
+</nav>
+
+<form action="/lsf-web/v5/admin-view/uni-courses" method="POST" novalidate="">
+
+		<h1 class="nhsuk-heading-l">Courses for ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</h1>
+	</div>
+		
+	<div class="nhsuk-grid-column-one-third">
+		<div class="nhsuk-form-group" id="filterCourses-group">
+			<label class="nhsuk-label" for="filterCourses">Filter courses</label>
+			<input class="nhsuk-input" id="filterCourses" name="filterCourses" type="text" onkeyup="filterTable('filterText', 'coursesTable')">
 		</div>
 	</div>
-	<div class="grid-row">
-		<div class="column-full">
-			<h1 class="heading-large mt-0 wordbreak">Courses for - ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</h1>
-			<div class="filterBox">
-				<form action="" class="search-box js-disabled">
-					<div class="inline-search-wrapper">
-						<label for="filterText" class="visually-hidden">Filter courses</label>
-						<input class="search-box__input form-control" type="text" name="search-box" placeholder="Filter courses"
-							value="" id="filterText" onkeyup="filterTable('filterText', 'coursesTable')">
-						<span class="inline-search-button">
-							<span class="visually-hidden">Search</span>
-						</span>
-					</div>
-				</form>
-				<a class="button right-float" href="/lsf-web/v4/admin-view/add-course" role="button">Add course</a>
-			</div>
+		
+	<div class="nhsuk-grid-column-full">
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">Filter</button>
+			<a class="nhsuk-button nhsuk-button--secondary float: right;" href="/lsf-web/v5/admin-view/add-course" data-module="nhsuk-button" type="submit" id="addCourseButton">Add course</a>
+			<p><a href="/lsf-web/v5/admin-view/user-results" id="clearButton">Reset filter</a></p>
+		</div>
+	</div>
+
+</form>
+
+<div class="nhsuk-grid-column-full">
+			
 			<table id="coursesTable">
 				<thead>
 					<tr>
@@ -41,50 +57,62 @@ Admin menu
 				<tbody>
 
 					<tr>
-						<td><a href="/lsf-web/v4/admin-view/course-details"><span class="wordbreak">Adult Nursing</span></a></td>
+						<td><a href="/lsf-web/v5/admin-view/course-details"><span class="wordbreak">Adult Nursing</span></a></td>
 						<td>No</td>
 						<td>Yes</td>
 					</tr>
 
 					<tr>
-						<td><a href="/lsf-web/v4/admin-view/course-details"><span class="wordbreak">Child Nursing</span></a></td>
+						<td><a href="/lsf-web/v5/admin-view/course-details"><span class="wordbreak">Child Nursing</span></a></td>
 						<td>No</td>
 						<td>Yes</td>
 					</tr>
 
 					<tr>
-						<td><a href="/lsf-web/v4/admin-view/course-details7"><span class="wordbreak">Fitness</span></a></td>
+						<td><a href="/lsf-web/v5/admin-view/course-details7"><span class="wordbreak">Fitness</span></a></td>
 						<td>Yes</td>
 						<td>Yes</td>
 					</tr>
 
 					<tr>
-						<td><a href="/lsf-web/v4/admin-view/course-details"><span class="wordbreak">Mental Health Nursing</span></a>
+						<td><a href="/lsf-web/v5/admin-view/course-details"><span class="wordbreak">Mental Health Nursing</span></a>
 						</td>
 						<td>Yes</td>
 						<td>Yes</td>
 					</tr>
 
 					<tr>
-						<td><a href="/lsf-web/v4/admin-view/course-details"><span class="wordbreak">Midwifery</span></a></td>
+						<td><a href="/lsf-web/v5/admin-view/course-details"><span class="wordbreak">Midwifery</span></a></td>
 						<td>No</td>
 						<td>Yes</td>
 					</tr>
 
 					<tr>
-						<td><a href="/lsf-web/v4/admin-view/course-details"><span class="wordbreak">Operating Department Practitioner</span></a></td>
+						<td><a href="/lsf-web/v5/admin-view/course-details"><span class="wordbreak">Operating Department Practitioner</span></a></td>
 						<td>No</td>
 						<td>Yes</td>
 					</tr>
 
 					<tr>
-						<td><a href="/lsf-web/v4/admin-view/course-details"><span class="wordbreak">Therapeutic Radiography</span></a></td>
+						<td><a href="/lsf-web/v5/admin-view/course-details"><span class="wordbreak">Therapeutic Radiography</span></a></td>
 						<td>Yes</td>
 						<td>Yes</td>
 					</tr>
 
 				</tbody>
 			</table>
+
+			<nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
+				<ul class="nhsbsa-pagination" >
+					<li class="nhsbsa-pagination__item nhsbsa-pagination-li">
+						<a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
+					</li>
+				</ul>
+				<a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href=" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a>
+		
+				<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">7</span> of <span id="tdaeTotalItemsNumber">38 results</span></div>
+			</nav>
+
 		</div>
 	</div>
 </div>

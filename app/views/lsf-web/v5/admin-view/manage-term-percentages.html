@@ -1,56 +1,171 @@
-{% extends 'layout-admin.html' %}
+{% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
 Manage term payment percentages
 {% endblock %}
 
 {% block content %}
-<div class="content-wrapper">
-	<div class="admin-page-header">
+<form action="/lsf-web/v5/admin-view/manage-term-percentages" method="POST">
+	<div class="nhsuk-grid-column-full">
 		<h1 class="heading-large mt-15">Manage term payment percentages</h1>
 	</div>
-	<div class="grid-row">
-		<div class="column-full">
-			<div class="filterBox">
-				<form action="" class="search-box js-disabled">
-					<div class="inline-search-wrapper">
-						<label for="filterText" class="visually-hidden">Filter</label>
-						<input class="search-box__input form-control" type="text" name="search-box" placeholder="Filter" value="" id="filterText" onkeyup="filterTable('filterText', 'percentsTable')">
-						<span class="inline-search-button">
-							<span class="visually-hidden">Search</span>
-						</span>
-					</div>
-				</form>
-				<a class="button right-float" href="/lsf/admin/addTermPercentages" role="button">Add new term payment
-					percentages</a>
-				
-			</div>
-			<table id="percentsTable" class="js-table-sortable">
-				<caption class="visually-hidden">term percentages table</caption>
+
+	<div class="nhsuk-grid-column-one-third">
+		<div class="nhsuk-form-group" id="filterTermPaymentPercentages-group">
+			<label class="nhsuk-label" for="filterTermPaymentPercentages">Filter term payment percentages</label>
+			<input class="nhsuk-input" id="filterTermPaymentPercentages" name="filterTermPaymentPercentages" type="text" onkeyup="filterTable('filterText', 'percentsTable')">
+		</div>
+	</div>
+		
+	<div class="nhsuk-grid-column-full">
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">Filter</button>
+			<a class="nhsuk-button nhsuk-button--secondary float: right;" href="/lsf-web/v5/admin-view/add-uni" data-module="nhsuk-button" type="submit" id="searchButton">Add term payment percentages</a>
+			<p><a href="/lsf-web/v5/admin-view/manage-term-percentages id="clearButton">Reset filter</a></p>
+		</div>
+	</div>
+
+</form>
+
+<div class="nhsuk-grid-column-full">
+	<hr class="" style="border-color: #005eb8; border-width: 4px">
+	<table id="percentsTable" class="wordbreak nhsuk-table-responsive js-table-sortable">
+		<h2 class="heading-large nhsuk-u-visually-hidden">Term payment percentages table</caption>
+			<caption class="heading-medium">Term payment percentages table<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 10 results</span><span id="resultMessage" aria-hidden="true"> - contains 10 results</span><span class="nhsuk-u-visually-hidden"> (column headers with links are sortable)</span></caption>
+	
 				<thead>
 					<tr>
-						<th class="bold" scope="col" data-sort="string">Valid from</th>
-						<th class="bold" scope="col" data-sort="string">Enabled</th>
-						<th class="bold" scope="col" data-sort="string" width="25%">Action</th>
+						<th class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Valid from</th>
+						<th class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Enabled</th>
+						<th class="bold sortable" scope="col" data-sort="string" width="25%"><a href="#" class="table-header__button">Action</th>
 					</tr>
 				</thead>
 				<tbody>
 					
 						<tr>
-							<td><span class="hidden">2000-01-01T00:00</span>
-								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=1"><span>01/01/2000</span></a>
+							<td><span class="nhsuk-u-visually-hidden">2025-01-01T00:00</span>
+								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=1"><span>01/01/2025</span></a>
 							</td>
 							<td>Yes</td>
 							<td>
 								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=1">Copy term
 									percentages</a>
-								
 							</td>
+						</tr>
 
+						<tr>
+							<td><span class="nhsuk-u-visually-hidden">2022-01-01T00:00</span>
+								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=2"><span>01/01/2022</span></a>
+							</td>
+							<td>Yes</td>
+							<td>
+								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=2">Copy term
+									percentages</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td><span class="nhsuk-u-visually-hidden">2009-01-01T00:00</span>
+								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=3"><span>01/01/2009</span></a>
+							</td>
+							<td>No</td>
+							<td>
+								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=3">Copy term
+									percentages</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td><span class="nhsuk-u-visually-hidden">2006-01-01T00:00</span>
+								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=4"><span>01/01/2006</span></a>
+							</td>
+							<td>No</td>
+							<td>
+								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=4">Copy term
+									percentages</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td><span class="nhsuk-u-visually-hidden">2005-01-01T00:00</span>
+								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=5"><span>01/01/2005</span></a>
+							</td>
+							<td>No</td>
+							<td>
+								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=5">Copy term
+									percentages</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td><span class="nhsuk-u-visually-hidden">2004-01-01T00:00</span>
+								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=6"><span>01/01/2004</span></a>
+							</td>
+							<td>No</td>
+							<td>
+								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=6">Copy term
+									percentages</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td><span class="nhsuk-u-visually-hidden">2003-01-01T00:00</span>
+								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=7"><span>01/01/2003</span></a>
+							</td>
+							<td>No</td>
+							<td>
+								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=7">Copy term
+									percentages</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td><span class="nhsuk-u-visually-hidden">2002-01-01T00:00</span>
+								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=8"><span>01/01/2002</span></a>
+							</td>
+							<td>No</td>
+							<td>
+								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=8">Copy term
+									percentages</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td><span class="nhsuk-u-visually-hidden">2001-01-01T00:00</span>
+								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=9"><span>01/01/2001</span></a>
+							</td>
+							<td>No</td>
+							<td>
+								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=9">Copy term
+									percentages</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td><span class="nhsuk-u-visually-hidden">2000-01-01T00:00</span>
+								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=10"><span>01/01/2000</span></a>
+							</td>
+							<td>Yes</td>
+							<td>
+								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=10">Copy term
+									percentages</a>
+							</td>
 						</tr>
 					
 				</tbody>
 			</table>
+
+			<nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
+				<ul class="nhsbsa-pagination" >
+					<li class="nhsbsa-pagination__item nhsbsa-pagination-li">
+						<a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
+					</li>
+				</ul>
+				<!--a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href="" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a-->
+		
+				<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">10</span> of <span id="tdaeTotalItemsNumber">10 results</span></div>
+			</nav>
+
 		</div>
 	</div>
 </div>

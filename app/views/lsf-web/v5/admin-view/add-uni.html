@@ -1,58 +1,80 @@
-{% extends 'layout-admin.html' %}
+{% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
-Admin menu
+Add university
 {% endblock %}
 
 {% block content %}
-<div class="content-wrapper">
-	<div class="grid-row">
-		<div class="column-two-thirds">
-			<form action="/lsf-web/v5/admin-view/manage-unis" method="POST">
-				
-				<a class="link-back" href="/lsf-web/v5/admin-view/manage-unis">Back</a>
-				
-				<h1 class="heading-large mt-0">University details</h1>
-				
-				<div class="form-group">
-					<label class="form-label-bold" for="universityName">University name</label>
-					
-					<input class="form-control" type="text" maxlength="100" id="universityName" name="name" value="">
-				</div>
-				
-				<div class="form-group">
-					<label class="form-label-bold" for="glCode">Payment Code</label>	
-					
-					<input class="form-control" type="text" maxlength="3" id="glCode" name="glCode" value="">
-				</div>
-		
-				<div class="form-group">
-					<fieldset>
-						<legend class="visually-hidden">Does the regional maintenance grant uplift apply?</legend>
-						<div class="multiple-choice">
-							<input type="checkbox" id="regional" name="regionalUplift" value="true">
-							<label class="form-label" for="regional">Regional maintenance grant uplift applies</label>
-						</div>
-					</fieldset>
-				</div>
-		
-				<div class="form-group">
-					<fieldset>
-						<legend class="visually-hidden">Do you want to enable this university?</legend>
-						<div class="multiple-choice">
-							<input type="checkbox" id="enabled" name="enabled" value="true"><input type="hidden" name="_enabled" value="on">
-							<label class="form-label" for="enabled">Enabled</label>
-						</div>
-					</fieldset>
-				</div>
+<div class="nhsuk-grid-column-two-thirds">
 
-				<div class="form-group">
-					<button class="button" type="submit" value="Save" name="Save">Save</button>
-					
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+
+	<form name="uniDetailsForm" action="/lsf-web/v5/admin-view/manage-unis" method="post" novalidate="">
+		<h1 class="nhsuk-heading-l">University details</h1>
+
+		<div style="width: 65%;" class="nhsuk-form-group">
+			<label class="nhsuk-label" id="universityName-label" for="universityName" class="form-label-bold">
+				University name
+			</label>
+			<input class="nhsuk-input" id="universityName" name="universityName" type="text" maxlength="100" spellcheck="false" autocomplete="off">
+		</div>
+
+		<div style="width: 20%;" class="nhsuk-form-group">
+			<label class="nhsuk-label" id="glCode-label" for="glCode" class="form-label-bold">
+				Payment code
+			</label>
+			<input class="nhsuk-input" id="glCode" name="glCode" type="text" maxlength="3" spellcheck="false" autocomplete="off">
+		</div>	
+
+		<fieldset class="nhsuk-fieldset">
+			<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Does the regional maintenance grant uplift apply?</legend>
+			<div class="nhsuk-form-group">
+				<div class="nhsuk-radios nhsuk-radios--inline">
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="regionalUpliftYes" name="regionalUplift" type="radio" value="Yes">
+						<label class="nhsuk-label nhsuk-radios__label" for="regionalUpliftYes">Yes</label>
+					</div>
+
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="regionalUpliftNo" name="regionalUplift" type="radio" value="No">
+						<label class="nhsuk-label nhsuk-radios__label" for="regionalUpliftNo">No</label>
+					</div>
 				</div>
-				<p><a href="/lsf-web/v5/admin-view/manage-unis">Cancel</a></p>
+			</div>
+		</fieldset>
+
+		<fieldset class="nhsuk-fieldset">
+			<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Do you want to enable this university?</legend>
+			<!-- div class="nhsuk-hint" id="contact-hint">Select No to xyz. For example, if they xyz.</div-->
+			<div class="nhsuk-form-group">
+				<div class="nhsuk-radios nhsuk-radios--inline">
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="enableUniYes" name="enableUni" type="radio" value="Yes">
+						<label class="nhsuk-label nhsuk-radios__label" for="enableUniYes">Yes</label>
+					</div>
+
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="enableUniNo" name="enableUni" type="radio" value="No">
+						<label class="nhsuk-label nhsuk-radios__label" for="enableUniNo">No</label>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+				
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button" type="submit" id="saveUniversity">Save and continue</button>
+			<p><a class="" href="/lsf-web/v5/admin-view/manage-unis">Cancel</a></p>
+		</div>
+
+	</form>
+</div>
+
+
 		
-				<div class="dialog" id="dialog-deleteCollege" aria-hidden="true">
+				<!--div class="dialog" id="dialog-deleteCollege" aria-hidden="true">
 					<div class="dialog-holder" aria-labelledby="dialog-title-1" aria-describedby="dialog-content-1" role="alertdialog">
 						<div class="dialog-content" id="dialog-content-1" role="document" tabindex="0">
 							<h1 class="dialog-heading" id="dialog-title-1">Delete university</h1>
@@ -68,9 +90,7 @@ Admin menu
 							
 						</div>
 					</div>
-				</div></form>
+				</div -->
 			
-		</div>
-	</div>
-</div>
+		
 {% endblock %}

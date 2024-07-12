@@ -1,40 +1,138 @@
-{% extends 'layout-admin.html' %}
+{% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
 Manage TDAE rates
 {% endblock %}
 
 {% block content %}
-<div class="content-wrapper">
-	<div class="admin-page-header">
-		<h1 class="heading-large mt-15">Manage TDAE rates</h1>
+<form action="/lsf-web/v5/admin-view/manage-unis" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Manage TDAE rates</h1>
 	</div>
-	<div class="grid-row">
-		<div class="column-full">
-			<div class="filterBox">
-				<form action="" class="search-box js-disabled">
-					<div class="inline-search-wrapper">
-						<label for="filterText" class="visually-hidden">Filter rates</label>
-						<input class="search-box__input form-control" type="text" name="search-box" placeholder="Filter rates" value="" id="filterText" onkeyup="filterTable('filterText', 'documentsTable')">
-						<span class="inline-search-button">
-							<span class="visually-hidden">Search</span>
-						</span>
-					</div>
-				</form>
-				<a class="button right-float" href="#" role="button">Add new TDAE rates</a>
+		
+	<div class="nhsuk-grid-column-one-third">
+		<div class="nhsuk-form-group" id="filterTDAERates-group">
+			<label class="nhsuk-label" for="filterTDAERates">Filter TDAE rates</label>
+			<input class="nhsuk-input" id="filterTDAERates" name="filterTDAERates" type="text" onkeyup="filterTable('filterText', 'ratesTable')">
+		</div>
+	</div>
+		
+	<div class="nhsuk-grid-column-full">
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">Filter</button>
+			<a class="nhsuk-button nhsuk-button--secondary float: right;" href="/lsf-web/v5/admin-view/add-TDAE-rates" data-module="nhsuk-button" type="submit" id="searchButton">Add TDAE rates</a>
+			<p><a href="/lsf-web/v5/admin-view/manage-TDAE-rates" id="clearButton">Reset filter</a></p>
+		</div>
+	</div>
+
+</form>
 				
-			</div>
+
+	<div class="nhsuk-grid-column-full">
+		<hr class="" style="border-color: #005eb8; border-width: 4px">
+
 			<table id="ratesTable" class="js-table-sortable">
-				<caption class="visually-hidden"> table</caption>
+				<h2 class="heading-large nhsuk-u-visually-hidden">TDAE rates table</caption>
+					<caption class="heading-medium">TDAE rates<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 10 result</span><span id="resultMessage" aria-hidden="true"> - contains 10 result</span><span class="nhsuk-u-visually-hidden"> (column headers with links are sortable)</span></caption>
 				<thead>
 					<tr>
-						<th class="bold" scope="col" data-sort="string">Valid from</th>
-						<th class="bold" scope="col" data-sort="string">Enabled</th>
-						<th class="bold" scope="col" data-sort="string" width="15%">Action</th>
+						<th class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Valid from</th>
+						<th class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Enabled</th>
+						<th class="bold sortable" scope="col" data-sort="string" width="15%"><a href="#" class="table-header__button">Action</th>
 					</tr>
 				</thead>
 				<tbody>
 					
+						<tr>
+							<td>
+								<a href="#"><span>01/01/2022</span></a>
+							</td>
+							<td>No</td>
+							<td>
+								<a id="copyButton" href="#">Copy rates</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<a href="#"><span>01/02/2014</span></a>
+							</td>
+							<td>No</td>
+							<td>
+								<a id="copyButton" href="#">Copy rates</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<a href="#"><span>01/02/2013</span></a>
+							</td>
+							<td>No</td>
+							<td>
+								<a id="copyButton" href="#">Copy rates</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<a href="#"><span>01/02/2012</span></a>
+							</td>
+							<td>No</td>
+							<td>
+								<a id="copyButton" href="#">Copy rates</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<a href="#"><span>01/02/2011</span></a>
+							</td>
+							<td>No</td>
+							<td>
+								<a id="copyButton" href="#">Copy rates</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<a href="#"><span>01/02/2010</span></a>
+							</td>
+							<td>No</td>
+							<td>
+								<a id="copyButton" href="#">Copy rates</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<a href="#"><span>01/02/2009</span></a>
+							</td>
+							<td>No</td>
+							<td>
+								<a id="copyButton" href="#">Copy rates</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<a href="#"><span>01/02/2008</span></a>
+							</td>
+							<td>No</td>
+							<td>
+								<a id="copyButton" href="#">Copy rates</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<a href="#"><span>01/02/2007</span></a>
+							</td>
+							<td>No</td>
+							<td>
+								<a id="copyButton" href="#">Copy rates</a>
+							</td>
+						</tr>
+
 						<tr>
 							<td>
 								<a href="#"><span>01/01/2000</span></a>
@@ -42,13 +140,23 @@ Manage TDAE rates
 							<td>Yes</td>
 							<td>
 								<a id="copyButton" href="#">Copy rates</a>
-								
 							</td>
-
 						</tr>
 					
 				</tbody>
 			</table>
+
+			<nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
+				<ul class="nhsbsa-pagination" >
+					<li class="nhsbsa-pagination__item nhsbsa-pagination-li">
+						<a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
+					</li>
+				</ul>
+				<!--a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href="" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a-->
+		
+				<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">10</span> of <span id="tdaeTotalItemsNumber">10 results</span></div>
+			</nav -->
+
 		</div>
 	</div>
 </div>

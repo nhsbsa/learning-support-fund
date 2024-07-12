@@ -1,34 +1,41 @@
-{% extends 'layout-admin.html' %}
+{% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
-Admin menu
+University courses
 {% endblock %}
 
 {% block content %}
-<div class="content-wrapper">
-	<div class="admin-page-header">
-		<div class="breadcrumbs">
-			<ol>
-				<li>
-					<a href="/lsf-web/v5/admin-view/manage-unis">Manage universities</a>
-				</li>
-				<li>
-					<a href="/lsf-web/v5/admin-view/uni-courses">Manage courses</a>
-				</li>
-				<li><a>Course details</a></li>
-			</ol>
-		</div>
-	</div>
-	<div class="grid-row">
-		<div class="column-two-thirds">
-			<form action="/lsf-web/v5/admin-view/uni-courses" method="POST" novalidate="">
-				
-				<h1 class="heading-large mt-0">Add course details for - ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</h1>
+<form action="/lsf-web/v5/admin-view/manage-unis" method="POST">
+	<div class="nhsuk-grid-column-full">
 
-				<div class="form-group" id="courseType-group">
-					<label id="typeLabel" for="courseTypeDrop" class="form-label-bold">Course type</label>
-					<select class="form-control" id="courseTypeDrop" name="courseType">
-						<option value="">Please select...</option>
+
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+	  <ol class="nhsuk-breadcrumb__list">
+		<li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/admin-view/manage-unis">Manage universities</a></li>
+		<li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/admin-view/manage-courses">Manage courses</a></li>
+		<li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/admin-view/add-course">Add course</a></li>
+	  </ol>
+	  <p class="nhsuk-breadcrumb__back">
+		<a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v5/admin-view/manage-courses">
+		  <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+		  Manage courses
+		</a>
+	  </p>
+</nav>
+
+		<h1 class="nhsuk-heading-l">Add course details for ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</h1>
+
+	</div>
+			<form action="/lsf-web/v5/admin-view/add-course" method="POST" novalidate="">
+				
+				<div class="nhsuk-grid-column-two-thirds">
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" id="courseType-Label" for="courseType" class="form-label">
+						Course type
+					</label>
+					<select class="nhsuk-select nhsuk-u-width-full" id="courseType" name="courseType">
+						<option value="">Select course type...</option>
+
 						<option value="1">Adult Nursing</option>
 						<option value="2">Adult Nursing and Social Work</option>
 						<option value="3">Child Nursing</option>
@@ -68,24 +75,15 @@ Admin menu
 						<option value="36">Speech and Language Therapy</option>
 						<option value="37">Therapeutic Radiography</option>
 					</select>
-					
 				</div>
 
-				<div class="form-group">
-					<fieldset>
-						<legend class="visually-hidden">Enable course details</legend>
-						
-						<div class="multiple-choice">
-							<input type="checkbox" id="enabled" name="enabled" value="true">
-							<label class="form-label" for="enabled">Enabled</label> 
-						</div>
-					</fieldset>
-				</div>
-		
-				<div class="form-group" id="courselength-group">
-					<label id="length-label" for="courseLengthDrop" class="form-label-bold">Course lengths (months)</label>
-					
-					<select class="select-multiple form-control w-100" multiple="multiple" id="courseLengthDrop" name="courseLengths" tabindex="-1" aria-hidden="true" data-select2-id="select2-data-courseLengthDrop">
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" id="courseLengthMonths-Label" for="courseLengthMonths" class="form-label">
+						Course length (months)
+					</label>
+					<select class="nhsuk-select nhsuk-u-width-full" id="courseLengthMonths" name="courseLengthMonths" tabindex="-1">
+						<option value="">Select course length...</option>
+
 						<option value="1">12</option>
 						<option value="2">13</option>
 						<option value="3">14</option>
@@ -185,12 +183,14 @@ Admin menu
 						<option value="97">108</option>
 					</select>
 				</div>
-		
-				<div class="form-group" id="courseyear-group">
-					<label id="year-label" for="courseYearDrop" class="form-label-bold">Course years</label>
-			
-					
-					<select class="select-multiple form-control w-100" multiple="" id="courseYearDrop" name="courseYears" tabindex="-1" aria-hidden="true" data-select2-id="select2-data-courseYearDrop">
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" id="courseLengthYears-Label" for="courseLengthYears" class="form-label">
+						Course length (years)
+					</label>
+					<select class="nhsuk-select nhsuk-u-width-full" id="courseLengthYears" name="courseLengthYears" tabindex="-1">
+						<option value="">Select course length...</option>
+				
 						<option value="1">Year 1</option>
 						<option value="2">Year 2</option>
 						<option value="3">Year 3</option>
@@ -204,10 +204,13 @@ Admin menu
 					</select>
 				</div>
 
-				<div class="form-group" id="coursemonth-group">
-					<label id="month-label" for="courseMonthDrop" class="form-label-bold">Course start months</label>
-					
-					<select class="select-multiple form-control w-100" multiple="" id="courseMonthDrop" name="courseMonths" tabindex="-1" aria-hidden="true" data-select2-id="select2-data-courseMonthDrop">
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" id="courseStart-Label" for="courseStartMonth" class="form-label">
+						Course start month
+					</label>
+					<select class="nhsuk-select nhsuk-u-width-full" id="courseStartMonth" name="courseStartMonth" tabindex="-1">
+						<option value="">Select course start month...</option>
+
 						<option value="1">January</option>
 						<option value="2">February</option>
 						<option value="3">March</option>
@@ -222,30 +225,62 @@ Admin menu
 						<option value="12">December</option>
 					</select>
 				</div>
-		
-				<div class="form-group">
-					<button class="button" type="submit" value="Save" name="Save">Save</button>
-					
-				</div>
-				<a href="/lsf-web/v5/admin-view/uni-courses">Cancel</a>
 
-				<div class="dialog" id="dialog-deleteCourse" aria-hidden="true">
-					<div class="dialog-holder" aria-labelledby="dialog-title-1" aria-describedby="dialog-content-1" role="alertdialog">
-						<div class="dialog-content" role="document" tabindex="0">
-							<h1 id="dialog-title-1" class="dialog-heading">Delete Course</h1>
-							
-								<p id="dialog-content-1">Are you sure you want to delete this course?</p>
-								<div class="dialog-actions">
-									<button class="button" type="submit" value="Delete" name="Delete">Yes</button>
-									<a class="dialog-cancel" href="/">Cancel</a>
-								</div>
-								<a class="dialog-close" aria-label="close" type="button"> <span class="icon icon-close">x</span></a>
-							
+				<fieldset class="nhsuk-fieldset">
+					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Do you want to enable the course details?</legend>
+					<!-- div class="nhsuk-hint" id="contact-hint">Select No to xyz. For example, if xyz.</div-->
+					<div class="nhsuk-form-group">
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="enableCourseDetailsYes" name="enableCourseDetails" type="radio" value="Yes">
+								<label class="nhsuk-label nhsuk-radios__label" for="enableCourseDetailsYes">Yes</label>
+							</div>
+		
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="enableCourseDetailsNo" name="enableCourseDetails" type="radio" value="No">
+								<label class="nhsuk-label nhsuk-radios__label" for="enableCourseDetailsNo">No</label>
+							</div>
 						</div>
 					</div>
-				</div></form>
+				</fieldset>
+
+				<div class="nhsuk-form-group">
+					<button class="nhsuk-button" type="submit" id="saveCourseDetails">Save and continue</button>
+					<p><a class="" href="/lsf-web/v5/admin-view/uni-courses">Cancel</a></p>
+				</div>
+		
 			
 		</div>
-	</div>
-</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    autoselect: true,  
+    selectElement: document.querySelector('#courseType')
+  });
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    autoselect: true,  
+    selectElement: document.querySelector('#courseLength')
+  });
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    autoselect: true,  
+    selectElement: document.querySelector('#courseLengthMonths')
+  });
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    autoselect: true,  
+    selectElement: document.querySelector('#courseLengthYears')
+  });
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    autoselect: true,  
+    selectElement: document.querySelector('#courseStartMonth')
+  });
+</script>
 {% endblock %}
