@@ -1,261 +1,277 @@
-{% extends 'layout-admin.html' %}
+{% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
 Attendance status search
 {% endblock %}
 
 {% block content %}
-<div class="content-wrapper">
-	<div class="admin-page-header">
+<form action="/lsf-web/v5/admin-view/manage-attendance-status" method="POST"></form>
+	<div class="nhsuk-grid-column-full">
+		
+		<h1 class="nhsuk-heading-l">Attendance status search</h1>
+	
+
+	<div class="nhsuk-grid-row">
+		<div class="nhsuk-grid-column-two-thirds">
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" id="college-label" for="college" class="form-label">
+					University
+				</label>
+				<select class="nhsuk-select nhsuk-u-width-full" id="collegeDrop" name="college" onchange="getColleges(this)"> 
+					<option value="">Select university...</option>
+					<option id="1" value="ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE">ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</option>
+					<option id="2" value="ANGLIA RUSKIN UNIVERSITY - CHELMSFORD">ANGLIA RUSKIN UNIVERSITY - CHELMSFORD</option>
+					<option id="3" value="ANGLIA RUSKIN UNIVERSITY - PETERBOROUGH">ANGLIA RUSKIN UNIVERSITY - PETERBOROUGH</option>
+					<option id="4" value="BIRMINGHAM CITY UNIVERSITY">BIRMINGHAM CITY UNIVERSITY</option>
+					<option id="5" value="BIRMINGHAM METROPOLITAN COLLEGE">BIRMINGHAM METROPOLITAN COLLEGE</option>
+					<option id="6" value="BOURNEMOUTH UNIVERSITY">BOURNEMOUTH UNIVERSITY</option>
+					<option id="7" value="BPP UNIVERSITY LTD">BPP UNIVERSITY LTD</option>
+					<option id="8" value="BRUNEL UNIVERSITY LONDON">BRUNEL UNIVERSITY LONDON</option>
+					<option id="9" value="BUCKS NEW UNIVERSITY">BUCKS NEW UNIVERSITY</option>
+					<option id="10" value="CANTERBURY CHRIST CHURCH UNIVERSITY">CANTERBURY CHRIST CHURCH UNIVERSITY</option>
+					<option id="11" value="CITY UNIVERSITY LONDON">CITY UNIVERSITY LONDON</option>
+					<option id="12" value="COLCHESTER INSTITUTE">COLCHESTER INSTITUTE</option>
+					<option id="13" value="COVENTRY UNIVERSITY">COVENTRY UNIVERSITY</option>
+					<option id="14" value="DE MONTFORT UNIVERSITY">DE MONTFORT UNIVERSITY</option>
+					<option id="15" value="EDGE HILL UNIVERSITY">EDGE HILL UNIVERSITY</option>
+					<option id="16" value="KEELE UNIVERSITY">KEELE UNIVERSITY</option>
+					<option id="17" value="KINGS COLLEGE LONDON">KINGS COLLEGE LONDON</option>
+					<option id="18" value="KINGSTON UNIVERSITY">KINGSTON UNIVERSITY</option>
+					<option id="19" value="LEEDS BECKETT UNIVERSITY">LEEDS BECKETT UNIVERSITY</option>
+					<option id="20" value="LIVERPOOL JOHN MOORES UNIVERSITY">LIVERPOOL JOHN MOORES UNIVERSITY</option>
+					<option id="21" value="LONDON METROPOLITAN UNIVERSITY">LONDON METROPOLITAN UNIVERSITY</option>
+					<option id="22" value="LONDON SOUTH BANK UNIVERSITY">LONDON SOUTH BANK UNIVERSITY</option>
+					<option id="23" value="MANCHESTER METROPOLITAN UNIVERSITY">MANCHESTER METROPOLITAN UNIVERSITY</option>
+					<option id="24" value="MIDDLESEX UNIVERSITY">MIDDLESEX UNIVERSITY</option>
+					<option id="25" value="NEW COLLEGE DURHAM">NEW COLLEGE DURHAM</option>
+					<option id="26" value="NORTHUMBRIA UNIVERSITY">NORTHUMBRIA UNIVERSITY</option>
+					<option id="27" value="OXFORD BROOKES UNIVERSITY">OXFORD BROOKES UNIVERSITY</option>
+					<option id="28" value="SHEFFIELD HALLAM UNIVERSITY">SHEFFIELD HALLAM UNIVERSITY</option>
+					<option id="29" value="SOLENT UNIVERSITY">SOLENT UNIVERSITY</option>
+					<option id="31" value="STAFFORDSHIRE UNIVERSITY">STAFFORDSHIRE UNIVERSITY</option>
+					<option id="30" value="ST GEORGE'S - UNIVERSITY OF LONDON">ST GEORGE'S - UNIVERSITY OF LONDON</option>
+					<option id="32" value="UNIVERSITY COLLEGE LONDON">UNIVERSITY COLLEGE LONDON</option>
+					<option id="33" value="UNIVERSITY OF BEDFORDSHIRE">UNIVERSITY OF BEDFORDSHIRE</option>
+					<option id="34" value="UNIVERSITY OF BIRMINGHAM">UNIVERSITY OF BIRMINGHAM</option>
+					<option id="35" value="UNIVERSITY OF BOLTON">UNIVERSITY OF BOLTON</option>
+					<option id="36" value="UNIVERSITY OF BRADFORD">UNIVERSITY OF BRADFORD</option>
+					<option id="37" value="UNIVERSITY OF BRIGHTON">UNIVERSITY OF BRIGHTON</option>
+					<option id="38" value="UNIVERSITY OF BRISTOL">UNIVERSITY OF BRISTOL</option>
+					<option id="39" value="UNIVERSITY OF CENTRAL LANCASHIRE">UNIVERSITY OF CENTRAL LANCASHIRE</option>
+					<option id="40" value="UNIVERSITY OF CHESTER">UNIVERSITY OF CHESTER</option>
+					<option id="41" value="UNIVERSITY OF CUMBRIA">UNIVERSITY OF CUMBRIA</option>
+					<option id="42" value="UNIVERSITY OF DERBY">UNIVERSITY OF DERBY</option>
+					<option id="43" value="UNIVERSITY OF EAST ANGLIA">UNIVERSITY OF EAST ANGLIA</option>
+					<option id="44" value="UNIVERSITY OF EAST LONDON">UNIVERSITY OF EAST LONDON</option>
+					<option id="45" value="UNIVERSITY OF ESSEX">UNIVERSITY OF ESSEX</option>
+					<option id="46" value="UNIVERSITY OF EXETER">UNIVERSITY OF EXETER</option>
+					<option id="47" value="UNIVERSITY OF GLOUCESTERSHIRE">UNIVERSITY OF GLOUCESTERSHIRE</option>
+					<option id="48" value="UNIVERSITY OF GREENWICH">UNIVERSITY OF GREENWICH</option>
+					<option id="49" value="UNIVERSITY OF HERTFORDSHIRE">UNIVERSITY OF HERTFORDSHIRE</option>
+					<option id="50" value="UNIVERSITY OF HUDDERSFIELD">UNIVERSITY OF HUDDERSFIELD</option>
+					<option id="51" value="UNIVERSITY OF HULL">UNIVERSITY OF HULL</option>
+					<option id="52" value="UNIVERSITY OF LEEDS">UNIVERSITY OF LEEDS</option>
+					<option id="53" value="UNIVERSITY OF LEICESTER">UNIVERSITY OF LEICESTER</option>
+					<option id="54" value="UNIVERSITY OF LINCOLN">UNIVERSITY OF LINCOLN</option>
+					<option id="55" value="UNIVERSITY OF LIVERPOOL">UNIVERSITY OF LIVERPOOL</option>
+					<option id="56" value="UNIVERSITY OF MANCHESTER">UNIVERSITY OF MANCHESTER</option>
+					<option id="57" value="UNIVERSITY OF NEWCASTLE">UNIVERSITY OF NEWCASTLE</option>
+					<option id="58" value="UNIVERSITY OF NORTHAMPTON">UNIVERSITY OF NORTHAMPTON</option>
+					<option id="59" value="UNIVERSITY OF NOTTINGHAM">UNIVERSITY OF NOTTINGHAM</option>
+					<option id="60" value="UNIVERSITY OF PLYMOUTH">UNIVERSITY OF PLYMOUTH</option>
+					<option id="61" value="UNIVERSITY OF PORTSMOUTH">UNIVERSITY OF PORTSMOUTH</option>
+					<option id="62" value="UNIVERSITY OF READING">UNIVERSITY OF READING</option>
+					<option id="63" value="UNIVERSITY OF ROEHAMPTON">UNIVERSITY OF ROEHAMPTON</option>
+					<option id="64" value="UNIVERSITY OF SALFORD">UNIVERSITY OF SALFORD</option>
+					<option id="65" value="UNIVERSITY OF SHEFFIELD">UNIVERSITY OF SHEFFIELD</option>
+					<option id="66" value="UNIVERSITY OF SOUTHAMPTON">UNIVERSITY OF SOUTHAMPTON</option>
+					<option id="67" value="UNIVERSITY OF ST MARK AND ST JOHN">UNIVERSITY OF ST MARK AND ST JOHN</option>
+					<option id="68" value="UNIVERSITY OF SUFFOLK">UNIVERSITY OF SUFFOLK</option>
+					<option id="69" value="UNIVERSITY OF SUNDERLAND">UNIVERSITY OF SUNDERLAND</option>
+					<option id="70" value="UNIVERSITY OF SURREY">UNIVERSITY OF SURREY</option>
+					<option id="71" value="UNIVERSITY OF TEESSIDE">UNIVERSITY OF TEESSIDE</option>
+					<option id="72" value="UNIVERSITY OF THE WEST OF ENGLAND">UNIVERSITY OF THE WEST OF ENGLAND</option>
+					<option id="73" value="UNIVERSITY OF WEST LONDON">UNIVERSITY OF WEST LONDON</option>
+					<option id="74" value="UNIVERSITY OF WINCHESTER">UNIVERSITY OF WINCHESTER</option>
+					<option id="75" value="UNIVERSITY OF WOLVERHAMPTON">UNIVERSITY OF WOLVERHAMPTON</option>
+					<option id="76" value="UNIVERSITY OF WORCESTER">UNIVERSITY OF WORCESTER</option>
+					<option id="77" value="UNIVERSITY OF YORK">UNIVERSITY OF YORK</option>
+					<option id="78" value="UNIVERSIYT OF PLYMOUTH">UNIVERSIYT OF PLYMOUTH</option>
+					<option id="79" value="YORK ST JOHN UNIVERSITY">YORK ST JOHN UNIVERSITY</option>
+				</select>
+			</div>
+
+			<div class="nhsuk-form-group" id="course-group">
+				<label class="nhsuk-label" id="course-label" for="courseDrop" class="form-label-bold">
+					Course
+				</label>
+				<input class="nhsuk-input" id="courseDrop" name="course" type="text" spellcheck="false" autocomplete="off" onchange="populateAllEnrolmentAndYears(this)">
+			</div>
+
+		</div>
 	</div>
 
-	<form id="searchForm" action="#" method="POST">
-		<div class="grid-row">
-			<div class="column-two-thirds">
-				<h1 class="heading-large mt-15">Attendance status search</h1>
+	<div class="nhsuk-grid-row">
+
+		<div class="nhsuk-grid-column-one-third">
+			<div class="nhsuk-form-group" id="courseYear-group">
+				<label class="nhsuk-label" id="courseYear-label" for="courseYear" class="form-label">
+					Course year
+				</label>
+				<select class="nhsuk-select nhsuk-u-width-full" id="courseYearDrop" name="courseYear" onchange="getCourseYear(this)">
+					<option value="">Select course year...</option>
+				</select>
 			</div>
 		</div>
-		<div class="grid-row">
-			<div class="column-two-thirds">
-				<input id="collegeId" type="hidden" onchange="getCourses(this)" name="course.college.Id" value="">
 
-				<div class="form-group" id="college-group">
-					<label id="college-label" for="collegeName" class="form-label-bold">University</label>
-					
-					<input class="form-control full-width" id="collegeName" oninput="selectCollege()" type="text" list="colleges-list" autocomplete="off" placeholder="Enter or select university..." name="course.college.name" value="">
-
-					<datalist id="colleges-list">
-						<option id="1">ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE
-						</option><option id="2">ANGLIA RUSKIN UNIVERSITY - CHELMSFORD
-						</option><option id="3">ANGLIA RUSKIN UNIVERSITY - PETERBOROUGH
-						</option><option id="4">BIRMINGHAM CITY UNIVERSITY
-						</option><option id="5">BIRMINGHAM METROPOLITAN COLLEGE
-						</option><option id="6">BOURNEMOUTH UNIVERSITY
-						</option><option id="7">BPP UNIVERSITY LTD
-						</option><option id="8">BRUNEL UNIVERSITY LONDON
-						</option><option id="9">BUCKS NEW UNIVERSITY
-						</option><option id="10">CANTERBURY CHRIST CHURCH UNIVERSITY
-						</option><option id="11">CITY UNIVERSITY LONDON
-						</option><option id="12">COLCHESTER INSTITUTE
-						</option><option id="13">COVENTRY UNIVERSITY
-						</option><option id="14">DE MONTFORT UNIVERSITY
-						</option><option id="15">EDGE HILL UNIVERSITY
-						</option><option id="16">KEELE UNIVERSITY
-						</option><option id="17">KINGS COLLEGE LONDON
-						</option><option id="18">KINGSTON UNIVERSITY
-						</option><option id="19">LEEDS BECKETT UNIVERSITY
-						</option><option id="20">LIVERPOOL JOHN MOORES UNIVERSITY
-						</option><option id="21">LONDON METROPOLITAN UNIVERSITY
-						</option><option id="22">LONDON SOUTH BANK UNIVERSITY
-						</option><option id="23">MANCHESTER METROPOLITAN UNIVERSITY
-						</option><option id="24">MIDDLESEX UNIVERSITY
-						</option><option id="25">NEW COLLEGE DURHAM
-						</option><option id="26">NORTHUMBRIA UNIVERSITY
-						</option><option id="27">OXFORD BROOKES UNIVERSITY
-						</option><option id="28">SHEFFIELD HALLAM UNIVERSITY
-						</option><option id="29">SOLENT UNIVERSITY
-						</option><option id="31">STAFFORDSHIRE UNIVERSITY
-						</option><option id="30">ST GEORGE'S - UNIVERSITY OF LONDON
-						</option><option id="32">UNIVERSITY COLLEGE LONDON
-						</option><option id="33">UNIVERSITY OF BEDFORDSHIRE
-						</option><option id="34">UNIVERSITY OF BIRMINGHAM
-						</option><option id="35">UNIVERSITY OF BOLTON
-						</option><option id="36">UNIVERSITY OF BRADFORD
-						</option><option id="37">UNIVERSITY OF BRIGHTON
-						</option><option id="38">UNIVERSITY OF BRISTOL
-						</option><option id="39">UNIVERSITY OF CENTRAL LANCASHIRE
-						</option><option id="40">UNIVERSITY OF CHESTER
-						</option><option id="41">UNIVERSITY OF CUMBRIA
-						</option><option id="42">UNIVERSITY OF DERBY
-						</option><option id="43">UNIVERSITY OF EAST ANGLIA
-						</option><option id="44">UNIVERSITY OF EAST LONDON
-						</option><option id="45">UNIVERSITY OF ESSEX
-						</option><option id="46">UNIVERSITY OF EXETER
-						</option><option id="47">UNIVERSITY OF GLOUCESTERSHIRE
-						</option><option id="48">UNIVERSITY OF GREENWICH
-						</option><option id="49">UNIVERSITY OF HERTFORDSHIRE
-						</option><option id="50">UNIVERSITY OF HUDDERSFIELD
-						</option><option id="51">UNIVERSITY OF HULL
-						</option><option id="52">UNIVERSITY OF LEEDS
-						</option><option id="53">UNIVERSITY OF LEICESTER
-						</option><option id="54">UNIVERSITY OF LINCOLN
-						</option><option id="55">UNIVERSITY OF LIVERPOOL
-						</option><option id="56">UNIVERSITY OF MANCHESTER
-						</option><option id="57">UNIVERSITY OF NEWCASTLE
-						</option><option id="58">UNIVERSITY OF NORTHAMPTON
-						</option><option id="59">UNIVERSITY OF NOTTINGHAM
-						</option><option id="60">UNIVERSITY OF PLYMOUTH
-						</option><option id="61">UNIVERSITY OF PORTSMOUTH
-						</option><option id="62">UNIVERSITY OF READING
-						</option><option id="63">UNIVERSITY OF ROEHAMPTON
-						</option><option id="64">UNIVERSITY OF SALFORD
-						</option><option id="65">UNIVERSITY OF SHEFFIELD
-						</option><option id="66">UNIVERSITY OF SOUTHAMPTON
-						</option><option id="67">UNIVERSITY OF ST MARK AND ST JOHN
-						</option><option id="68">UNIVERSITY OF SUFFOLK
-						</option><option id="69">UNIVERSITY OF SUNDERLAND
-						</option><option id="70">UNIVERSITY OF SURREY
-						</option><option id="71">UNIVERSITY OF TEESSIDE
-						</option><option id="72">UNIVERSITY OF THE WEST OF ENGLAND
-						</option><option id="73">UNIVERSITY OF WEST LONDON
-						</option><option id="74">UNIVERSITY OF WINCHESTER
-						</option><option id="75">UNIVERSITY OF WOLVERHAMPTON
-						</option><option id="76">UNIVERSITY OF WORCESTER
-						</option><option id="77">UNIVERSITY OF YORK
-						</option><option id="78">UNIVERSIYT OF PLYMOUTH
-						</option><option id="79">YORK ST JOHN UNIVERSITY</option></datalist>
-				</div>
-
-				<div class="form-group" id="course-group">
-					<label id="course-label" for="courseDrop" class="form-label-bold">Course</label>
-					
-					<select class="form-control full-width" id="courseDrop" onchange="populateAllEnrolmentAndYears(this)" name="course">
-						<option value="">Please select...</option>
-						
-					</select>
-				</div>
+		<div class="nhsuk-grid-column-one-third">
+			<div class="nhsuk-form-group" id="courseLength-group">
+				<label class="nhsuk-label" id="courseLength-label" for="courseLength" class="form-label">
+					Course length
+				</label>
+				<select class="nhsuk-select nhsuk-u-width-full" id="courseLengthDrop" name="courseLength" onchange="getCourseLength(this)">
+					<option value="">Select course length...</option>
+					<option value="1">1 year</option>
+									<option value="2">1 year 1 month</option>
+									<option value="3">1 year 2 months</option>
+									<option value="4">1 year 3 months</option>
+									<option value="5">1 year 4 months</option>
+									<option value="6">1 year 5 months</option>
+									<option value="7">1 year 6 months</option>
+									<option value="8">1 year 7 months</option>
+									<option value="9">1 year 8 months</option>
+									<option value="10">1 year 9 months</option>
+									<option value="11">1 year 10 months</option>
+									<option value="12">1 year 11 months</option>
+									<option value="13">2 years</option>
+									<option value="14">2 years 1 month</option>
+									<option value="15">2 years 2 months</option>
+									<option value="16">2 years 3 months</option>
+									<option value="17">2 years 4 months</option>
+									<option value="18">2 years 5 months</option>
+									<option value="19">2 years 6 months</option>
+									<option value="20">2 years 7 months</option>
+									<option value="21">2 years 8 months</option>
+									<option value="22">2 years 9 months</option>
+									<option value="23">2 years 10 months</option>
+									<option value="24">2 years 11 months</option>
+									<option value="25">3 years</option>
+									<option value="26">3 years 1 month</option>
+									<option value="27">3 years 2 months</option>
+									<option value="28">3 years 3 months</option>
+									<option value="29">3 years 4 months</option>
+									<option value="30">3 years 5 months</option>
+									<option value="31">3 years 6 months</option>
+									<option value="32">3 years 7 months</option>
+									<option value="33">3 years 8 months</option>
+									<option value="34">3 years 9 months</option>
+									<option value="35">3 years 10 months</option>
+									<option value="36">3 years 11 months</option>
+									<option value="37">4 years</option>
+									<option value="38">4 years 1 month</option>
+									<option value="39">4 years 2 months</option>
+									<option value="40">4 years 3 months</option>
+									<option value="41">4 years 4 months</option>
+									<option value="42">4 years 5 months</option>
+									<option value="43">4 years 6 months</option>
+									<option value="44">4 years 7 months</option>
+									<option value="45">4 years 8 months</option>
+									<option value="46">4 years 9 months</option>
+									<option value="47">4 years 10 months</option>
+									<option value="48">4 years 11 months</option>
+									<option value="49">5 years</option>
+									<option value="50">5 years 1 month</option>
+									<option value="51">5 years 2 months</option>
+									<option value="52">5 years 3 months</option>
+									<option value="53">5 years 4 months</option>
+									<option value="54">5 years 5 months</option>
+									<option value="55">5 years 6 months</option>
+									<option value="56">5 years 7 months</option>
+									<option value="57">5 years 8 months</option>
+									<option value="58">5 years 9 months</option>
+									<option value="59">5 years 10 months</option>
+									<option value="60">5 years 11 months</option>
+									<option value="61">6 years</option>
+									<option value="62">6 years 1 month</option>
+									<option value="63">6 years 2 months</option>
+									<option value="64">6 years 3 months</option>
+									<option value="65">6 years 4 months</option>
+									<option value="66">6 years 5 months</option>
+									<option value="67">6 years 6 months</option>
+									<option value="68">6 years 7 months</option>
+									<option value="69">6 years 8 months</option>
+									<option value="70">6 years 9 months</option>
+									<option value="71">6 years 10 months</option>
+									<option value="72">6 years 11 months</option>
+									<option value="73">7 years</option>
+									<option value="74">7 years 1 month</option>
+									<option value="75">7 years 2 months</option>
+									<option value="76">7 years 3 months</option>
+									<option value="77">7 years 4 months</option>
+									<option value="78">7 years 5 months</option>
+									<option value="79">7 years 6 months</option>
+									<option value="80">7 years 7 months</option>
+									<option value="81">7 years 8 months</option>
+									<option value="82">7 years 9 months</option>
+									<option value="83">7 years 10 months</option>
+									<option value="84">7 years 11 months</option>
+									<option value="85">8 years</option>
+									<option value="86">8 years 1 month</option>
+									<option value="87">8 years 2 months</option>
+									<option value="88">8 years 3 months</option>
+									<option value="89">8 years 4 months</option>
+									<option value="90">8 years 5 months</option>
+									<option value="91">8 years 6 months</option>
+									<option value="92">8 years 7 months</option>
+									<option value="93">8 years 8 months</option>
+									<option value="94">8 years 9 months</option>
+									<option value="95">8 years 10 months</option>
+									<option value="96">8 years 11 months</option>
+									<option value="97">9 years</option>
+				</select>
 			</div>
 
 		</div>
-		<div class="grid-row">
-			<div class="column-two-thirds">
-				<div class="grid-row">
-					<div class="column-one-third">
-						<div class="form-group" id="courseyear-group">
-							<label id="courseYear-label" for="courseYearDrop" class="form-label-bold">Course year</label>
-							
-							<select class="form-control full-width" id="courseYearDrop" name="courseYear">
-								<option value="">Please select...</option>
-								
-							</select>
-						</div>
-					</div>
-					<div class="column-third">
-						<div class="form-group" id="courseLength-group">
-							<label id="courseLength-label" for="courseLengthDrop" class="form-label-bold">Course length</label>
-							
-							<select class="form-control full-width" id="courseLengthDrop" name="courseLength">
-								<option value="">Please select...</option>
-								<option value="1">1 year</option>
-								<option value="2">1 year 1 month</option>
-								<option value="3">1 year 2 months</option>
-								<option value="4">1 year 3 months</option>
-								<option value="5">1 year 4 months</option>
-								<option value="6">1 year 5 months</option>
-								<option value="7">1 year 6 months</option>
-								<option value="8">1 year 7 months</option>
-								<option value="9">1 year 8 months</option>
-								<option value="10">1 year 9 months</option>
-								<option value="11">1 year 10 months</option>
-								<option value="12">1 year 11 months</option>
-								<option value="13">2 years</option>
-								<option value="14">2 years 1 month</option>
-								<option value="15">2 years 2 months</option>
-								<option value="16">2 years 3 months</option>
-								<option value="17">2 years 4 months</option>
-								<option value="18">2 years 5 months</option>
-								<option value="19">2 years 6 months</option>
-								<option value="20">2 years 7 months</option>
-								<option value="21">2 years 8 months</option>
-								<option value="22">2 years 9 months</option>
-								<option value="23">2 years 10 months</option>
-								<option value="24">2 years 11 months</option>
-								<option value="25">3 years</option>
-								<option value="26">3 years 1 month</option>
-								<option value="27">3 years 2 months</option>
-								<option value="28">3 years 3 months</option>
-								<option value="29">3 years 4 months</option>
-								<option value="30">3 years 5 months</option>
-								<option value="31">3 years 6 months</option>
-								<option value="32">3 years 7 months</option>
-								<option value="33">3 years 8 months</option>
-								<option value="34">3 years 9 months</option>
-								<option value="35">3 years 10 months</option>
-								<option value="36">3 years 11 months</option>
-								<option value="37">4 years</option>
-								<option value="38">4 years 1 month</option>
-								<option value="39">4 years 2 months</option>
-								<option value="40">4 years 3 months</option>
-								<option value="41">4 years 4 months</option>
-								<option value="42">4 years 5 months</option>
-								<option value="43">4 years 6 months</option>
-								<option value="44">4 years 7 months</option>
-								<option value="45">4 years 8 months</option>
-								<option value="46">4 years 9 months</option>
-								<option value="47">4 years 10 months</option>
-								<option value="48">4 years 11 months</option>
-								<option value="49">5 years</option>
-								<option value="50">5 years 1 month</option>
-								<option value="51">5 years 2 months</option>
-								<option value="52">5 years 3 months</option>
-								<option value="53">5 years 4 months</option>
-								<option value="54">5 years 5 months</option>
-								<option value="55">5 years 6 months</option>
-								<option value="56">5 years 7 months</option>
-								<option value="57">5 years 8 months</option>
-								<option value="58">5 years 9 months</option>
-								<option value="59">5 years 10 months</option>
-								<option value="60">5 years 11 months</option>
-								<option value="61">6 years</option>
-								<option value="62">6 years 1 month</option>
-								<option value="63">6 years 2 months</option>
-								<option value="64">6 years 3 months</option>
-								<option value="65">6 years 4 months</option>
-								<option value="66">6 years 5 months</option>
-								<option value="67">6 years 6 months</option>
-								<option value="68">6 years 7 months</option>
-								<option value="69">6 years 8 months</option>
-								<option value="70">6 years 9 months</option>
-								<option value="71">6 years 10 months</option>
-								<option value="72">6 years 11 months</option>
-								<option value="73">7 years</option>
-								<option value="74">7 years 1 month</option>
-								<option value="75">7 years 2 months</option>
-								<option value="76">7 years 3 months</option>
-								<option value="77">7 years 4 months</option>
-								<option value="78">7 years 5 months</option>
-								<option value="79">7 years 6 months</option>
-								<option value="80">7 years 7 months</option>
-								<option value="81">7 years 8 months</option>
-								<option value="82">7 years 9 months</option>
-								<option value="83">7 years 10 months</option>
-								<option value="84">7 years 11 months</option>
-								<option value="85">8 years</option>
-								<option value="86">8 years 1 month</option>
-								<option value="87">8 years 2 months</option>
-								<option value="88">8 years 3 months</option>
-								<option value="89">8 years 4 months</option>
-								<option value="90">8 years 5 months</option>
-								<option value="91">8 years 6 months</option>
-								<option value="92">8 years 7 months</option>
-								<option value="93">8 years 8 months</option>
-								<option value="94">8 years 9 months</option>
-								<option value="95">8 years 10 months</option>
-								<option value="96">8 years 11 months</option>
-								<option value="97">9 years</option>
-							</select>
-						</div>
-					</div>
-					<div class="column-third">
-						<div class="form-group" id="enrolmentyear-group">
-							<label id="enrolmentYear-label" for="enrolmentYearDrop" class="form-label-bold">Academic year</label>
-							
-							<select class="form-control full-width" id="enrolmentYearDrop" name="enrolmentYear">
-								<option value="">Please select...</option>
-								
-							</select>
-						</div>
-					</div>
-				</div>
 
-				<div class="form-group">
-					<button class="button" type="submit" value="Search" id="searchButton">Search</button>
-				</div>
-				<a href="#" id="clearButton" data-toggle="dialog" data-target="dialog-clearCosa">Clear</a>
+			
+		<div class="nhsuk-grid-column-one-third">
+			<div class="nhsuk-form-group" id="academicYear-group">
+				<label class="nhsuk-label" id="academicYear-label" for="academicYear" class="form-label">
+					Academic year
+				</label>
+				<select class="nhsuk-select nhsuk-u-width-full" id="academicYearDrop" name="academicYear" onchange="getAcademicYear(this)">
+					<option value="">Select academic year...</option>
+
+									
+				</select>
+			</div>
+		</div>
+	
+	</div>
+</div>
+</div>
+
+<div class="nhsuk-form-group">
+	<button class="nhsuk-button" type="submit" id="searchAttendanceStatus">Search</button>
+	<p><a class="" href="/lsf-web/v5/admin-view/manage-attendance-status">Cancel</a></p>
+</div>
 
 			</div>
 		</div>
 	</form>
 
 </div>
+{% endblock %}
+
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue : '',
+    autoselect : true,  
+    selectElement : document.querySelector('#collegeDrop')
+  })
+</script>
 {% endblock %}

@@ -1,17 +1,19 @@
-{% extends 'layout-admin.html' %}
+{% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
-Generate reports
+Reporting menu
 {% endblock %}
 
 {% block content %}
-<div class="content-wrapper">
-	<div class="admin-page-header">
-		<h1 class="heading-large">Generate reports</h1>
-	</div>
-	<div class="grid-row">
-		<div class="column-full">
-			<h2 class="heading-medium">Report name</h2>
+<form action="/lsf-web/v5/admin-view/reporting-menu" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Generate reports</h1>
+	
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+			<h3 class="heading-medium">Report name</h2>
 			<ul class="list list-bullet mt-20">
 				<li id="allAccountsByAcademicYearReportButton"><a href="#">All student accounts by academic year report</a></li>	
 				<li id="applicationStatusReportButton"><a href="#">Application status report</a></li>

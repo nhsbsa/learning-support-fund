@@ -63,15 +63,16 @@ Search users
 </form>
 
 <div class="nhsuk-grid-column-full">
-	<h2 class="heading-large">Search results</h2>
-	<hr class="" style="border-color: #005eb8; border-width: 4px">
-	<table id="searchresultsTable" class="wordbreak nhsuk-table-responsive js-table-sortable">
+		<hr class="" style="border-color: #005eb8; border-width: 4px">
+			<table role="table" id="searchresultsTable" class="wordbreak nhsuk-table-responsive js-table-sortable nhsuk-u-margin-bottom-5">
+				<caption class="nhsuk-table__caption">Search results<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 20 results</span><span id="resultMessage" aria-hidden="true"> - contains 20 results</span></caption>
+	
 		
 		<thead role="rowgroup" class="nhsuk-table__head">
 			<tr role="row" class="nhsuk-table__row">
 				<th role="columnheader" class="sortable" scope="col" data-sort="string">Email</th>
 				<th role="columnheader" class="sortable" scope="col" data-sort="string">Name</th>
-				<th role="columnheader" scope="col" data-sort="string">Role(s)</th>
+				<th role="columnheader" class="sortable" scope="col" data-sort="string">Role(s)</th>
 				<th role="columnheader" class="sortable" scope="col" data-sort="string">Active</th>
 				<th role="columnheader" class="sortable" scope="col" data-sort="string">Locked</th>
 			</tr>
@@ -504,16 +505,18 @@ Search users
 			</tr>
 		</tbody>
 	</table>
+
 	<nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
 		<ul class="nhsbsa-pagination" >
 			<li class="nhsbsa-pagination__item nhsbsa-pagination-li">
 				<a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
 			</li>
 		</ul>
-		<a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href="/lsf-web/v5/admin-view/user-results-2" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a>
+		<!--a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href="/lsf-web/v5/admin-view/user-results-2" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a-->
 
 		<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">20</span> of <span id="tdaeTotalItemsNumber">37 results</span></div>
 	</nav>
+
 </div>
 
 

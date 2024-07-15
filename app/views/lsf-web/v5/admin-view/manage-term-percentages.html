@@ -7,7 +7,7 @@ Manage term payment percentages
 {% block content %}
 <form action="/lsf-web/v5/admin-view/manage-term-percentages" method="POST">
 	<div class="nhsuk-grid-column-full">
-		<h1 class="heading-large mt-15">Manage term payment percentages</h1>
+		<h1 class="nhsuk-heading-l">Manage term payment percentages</h1>
 	</div>
 
 	<div class="nhsuk-grid-column-one-third">
@@ -29,124 +29,144 @@ Manage term payment percentages
 
 <div class="nhsuk-grid-column-full">
 	<hr class="" style="border-color: #005eb8; border-width: 4px">
-	<table id="percentsTable" class="wordbreak nhsuk-table-responsive js-table-sortable">
-		<h2 class="heading-large nhsuk-u-visually-hidden">Term payment percentages table</caption>
-			<caption class="heading-medium">Term payment percentages table<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 10 results</span><span id="resultMessage" aria-hidden="true"> - contains 10 results</span><span class="nhsuk-u-visually-hidden"> (column headers with links are sortable)</span></caption>
+	<table role="table" id="percentsTable" class="wordbreak nhsuk-table-responsive js-table-sortable nhsuk-u-margin-bottom-5">
+		<h2 class="heading-large nhsuk-u-visually-hidden">Term payment percentages table</h2>
+			<caption class="nhsuk-table__caption">Term payment percentages table<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 10 results</span><span id="resultMessage" aria-hidden="true"> - contains 10 results</span><span class="nhsuk-u-visually-hidden"> (column headers with links are sortable)</span></caption>
 	
-				<thead>
-					<tr>
-						<th class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Valid from</th>
-						<th class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Enabled</th>
-						<th class="bold sortable" scope="col" data-sort="string" width="25%"><a href="#" class="table-header__button">Action</th>
+				<thead role="rowgroup" class="nhsuk-table__head">
+					<tr role="row">
+						<th role="columnheader" class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Valid from</th>
+						<th role="columnheader" class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Enabled</th>
+						<th role="columnheader" class="bold sortable" scope="col" data-sort="string" width="20%"><a href="#" class="table-header__button">Action</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody class="nhsuk-table__body">
 					
-						<tr>
-							<td><span class="nhsuk-u-visually-hidden">2025-01-01T00:00</span>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-u-visually-hidden">2025-01-01T00:00</span>
 								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=1"><span>01/01/2025</span></a>
 							</td>
-							<td>Yes</td>
-							<td>
+							<td role="cell" class="nhsuk-table__cell">Yes
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
 								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=1">Copy term
 									percentages</a>
 							</td>
 						</tr>
 
-						<tr>
-							<td><span class="nhsuk-u-visually-hidden">2022-01-01T00:00</span>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-u-visually-hidden">2022-01-01T00:00</span>
 								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=2"><span>01/01/2022</span></a>
 							</td>
-							<td>Yes</td>
-							<td>
+							<td role="cell" class="nhsuk-table__cell">Yes
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
 								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=2">Copy term
 									percentages</a>
 							</td>
 						</tr>
 
-						<tr>
-							<td><span class="nhsuk-u-visually-hidden">2009-01-01T00:00</span>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-u-visually-hidden">2009-01-01T00:00</span>
 								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=3"><span>01/01/2009</span></a>
 							</td>
-							<td>No</td>
-							<td>
+							<td role="cell" class="nhsuk-table__cell">No
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
 								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=3">Copy term
 									percentages</a>
 							</td>
 						</tr>
 
-						<tr>
-							<td><span class="nhsuk-u-visually-hidden">2006-01-01T00:00</span>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-u-visually-hidden">2006-01-01T00:00</span>
 								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=4"><span>01/01/2006</span></a>
 							</td>
-							<td>No</td>
-							<td>
+							<td role="cell" class="nhsuk-table__cell">No
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
 								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=4">Copy term
 									percentages</a>
 							</td>
 						</tr>
 
-						<tr>
-							<td><span class="nhsuk-u-visually-hidden">2005-01-01T00:00</span>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-u-visually-hidden">2005-01-01T00:00</span>
 								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=5"><span>01/01/2005</span></a>
 							</td>
-							<td>No</td>
-							<td>
+							<td role="cell" class="nhsuk-table__cell">No
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
 								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=5">Copy term
 									percentages</a>
 							</td>
 						</tr>
 
-						<tr>
-							<td><span class="nhsuk-u-visually-hidden">2004-01-01T00:00</span>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-u-visually-hidden">2004-01-01T00:00</span>
 								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=6"><span>01/01/2004</span></a>
 							</td>
-							<td>No</td>
-							<td>
+							<td role="cell" class="nhsuk-table__cell">No
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
 								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=6">Copy term
 									percentages</a>
 							</td>
 						</tr>
 
-						<tr>
-							<td><span class="nhsuk-u-visually-hidden">2003-01-01T00:00</span>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-u-visually-hidden">2003-01-01T00:00</span>
 								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=7"><span>01/01/2003</span></a>
 							</td>
-							<td>No</td>
-							<td>
+							<td role="cell" class="nhsuk-table__cell">No
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
 								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=7">Copy term
 									percentages</a>
 							</td>
 						</tr>
 
-						<tr>
-							<td><span class="nhsuk-u-visually-hidden">2002-01-01T00:00</span>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-u-visually-hidden">2002-01-01T00:00</span>
 								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=8"><span>01/01/2002</span></a>
 							</td>
-							<td>No</td>
-							<td>
+							<td role="cell" class="nhsuk-table__cell">No
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
 								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=8">Copy term
 									percentages</a>
 							</td>
 						</tr>
 
-						<tr>
-							<td><span class="nhsuk-u-visually-hidden">2001-01-01T00:00</span>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-u-visually-hidden">2001-01-01T00:00</span>
 								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=9"><span>01/01/2001</span></a>
 							</td>
-							<td>No</td>
-							<td>
+							<td role="cell" class="nhsuk-table__cell">No
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
 								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=9">Copy term
 									percentages</a>
 							</td>
 						</tr>
 
-						<tr>
-							<td><span class="nhsuk-u-visually-hidden">2000-01-01T00:00</span>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-u-visually-hidden">2000-01-01T00:00</span>
 								<a href="/lsf/admin/termPercentDetails?termPaymentPercentageId=10"><span>01/01/2000</span></a>
 							</td>
-							<td>Yes</td>
-							<td>
+							<td role="cell" class="nhsuk-table__cell">Yes
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
 								<a id="copyButton" href="/lsf/admin/addTermPercentages?termPaymentPercentageId=10">Copy term
 									percentages</a>
 							</td>

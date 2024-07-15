@@ -29,10 +29,10 @@ Manage knowledge base
 				
 <div class="nhsuk-grid-column-full">
 	<hr class="" style="border-color: #005eb8; border-width: 4px">
-			<table id="knowledgeListTable">
-				<h2 class="heading-large nhsuk-u-visually-hidden">Knowledge base items table</caption>
-					<caption class="heading-medium">Knowledge base items<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 2 results</span><span id="resultMessage" aria-hidden="true"> - contains 2 results</span></caption>
-						<thead role="rowgroup">
+			<table role="table" id="knowledgeListTable" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+				<h2 class="heading-large nhsuk-u-visually-hidden">Knowledge base items table</h2>
+					<caption class="nhsuk-table__caption">Knowledge base items<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 2 results</span><span id="resultMessage" aria-hidden="true"> - contains 2 results</span></caption>
+						<thead role="rowgroup" class="nhsuk-table__head">
 							<tr role="row">
 								<th class="bold" role="columnheader" scope="col">Title</th>	
 								<th class="bold" role="columnheader" scope="col">Content</th>															
@@ -40,23 +40,40 @@ Manage knowledge base
 								<th class="bold" role="columnheader" scope="col">Action</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr role="row">
-								<td class="wordbreak">Changes to Travel And Dual Accommodation (TDAE) claim and approval process</td>
-								<td class="wordbreak">We have changed the process for TDAE</td>
-								<td>Yes</td>
-								<td>
-									<a id="edit0" href="#">Edit<span class="nhsuk-u-visually-hidden">:test 1</span></a>
+						<tbody class="nhsuk-table__body">
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell" class="wordbreak">
+									<span class="nhsuk-table-responsive__heading">Title</span>Changes to Travel And Dual Accommodation (TDAE) claim and approval process
+								</td>
+								<td role="cell" class="nhsuk-table__cell" class="wordbreak">
+									<span class="nhsuk-table-responsive__heading">Content</span>We have changed the process for TDAE
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Action</span>
+									<a href="#">Change<span class="nhsuk-u-visually-hidden">Knowledge base item 1</span></a>
 								</td>
 							</tr>
-							<tr role="row">
-								<td class="wordbreak">Confirmation of Attendance</td>
-								<td class="wordbreak">We have changed the way confirmation of attendance is completed</td>
-								<td>Yes</td>
-								<td>
-									<a id="edit1" href="#">Edit<span class="nhsuk-u-visually-hidden">:test 2</span></a>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell" class="wordbreak">
+									<span class="nhsuk-table-responsive__heading">Title</span>Confirmation of Attendance
+								</td>
+								<td role="cell" class="nhsuk-table__cell" class="wordbreak">
+									<span class="nhsuk-table-responsive__heading">Content</span>We have changed the way confirmation of attendance is completed
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Action</span>
+									<a href="#">Change<span class="nhsuk-u-visually-hidden">Knowledge base item 2</span></a>
 								</td>
 							</tr>
+
 						</tbody>
 			</table>
 
