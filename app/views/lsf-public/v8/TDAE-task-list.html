@@ -122,12 +122,20 @@
                 <span class="app-task-list__task-name">
                   {% if data['overseas-details'] === 'completed' %}
                     <a href="TDAE-overseas/overseas-check">Overseas costs details and evidence</a>
+                  {% elif data['overseas-details'] === 'in-progress' %}
+                    {% if data['more-overseas-evidence'] === 'yes' %}
+                      <a href="TDAE-overseas/overseas-check">Overseas costs details and evidence</a>
+                    {% else %}
+                      <a href="TDAE-overseas/overseas-evidence-mini-cya">Overseas costs details and evidence</a>
+                    {% endif %}
                   {% else %}
                     <a href="TDAE-overseas/authorisation">Overseas costs details and evidence</a>
                   {% endif %}
                 </span>
                 {% if data['overseas-details'] === 'completed' %}
                   <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
+                {% elif data['overseas-details'] === 'in-progress' %}
+                  <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag task-status">Task started</strong>
                 {% else %}
                   <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
                 {% endif %}

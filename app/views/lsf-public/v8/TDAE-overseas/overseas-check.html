@@ -56,7 +56,7 @@ Check your answers
 
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Evidence uploaded
+						Authorisation evidence
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						<a href="/images/overseas-authorisation.png" target="_blank" rel="noopener">
@@ -135,6 +135,26 @@ Check your answers
 
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
+							Comments
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['additionalInsuranceComment'] %}
+								{{ data['additionalInsuranceComment'] }}
+								{% else %}
+								None provided
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="insurance-add-comment">
+								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+							</a>
+							</dd>
+						{% endif %}
+					</div>
+
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
 							Evidence uploaded
 						</dt>
 						<dd class="nhsuk-summary-list__value">
@@ -154,26 +174,6 @@ Check your answers
 								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 							</a>
 						</dd>
-						{% endif %}
-					</div>
-
-					<div class="nhsuk-summary-list__row">
-						<dt class="nhsuk-summary-list__key">
-							Comments
-						</dt>
-						<dd class="nhsuk-summary-list__value">
-							{% if data['additionalInsuranceComment'] %}
-								{{ data['additionalInsuranceComment'] }}
-								{% else %}
-								None provided
-							{% endif %}
-						</dd>
-						{% if data['submit-claim'] != 'completed' %}
-						<dd class="nhsuk-summary-list__actions">
-							<a href="insurance-add-comment">
-								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							</a>
-							</dd>
 						{% endif %}
 					</div>
 
@@ -214,6 +214,26 @@ Check your answers
 
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
+								Comments
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['additionalMedicalTestsComment'] %}
+									{{ data['additionalMedicalTestsComment'] }}
+									{% else %}
+									None provided
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="medical-tests-add-comment">
+									Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+								</a>
+								</dd>
+							{% endif %}
+						</div>
+
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
 								Evidence uploaded
 							</dt>
 							<dd class="nhsuk-summary-list__value">
@@ -233,26 +253,6 @@ Check your answers
 									Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 								</a>
 							</dd>
-							{% endif %}
-						</div>
-
-						<div class="nhsuk-summary-list__row">
-							<dt class="nhsuk-summary-list__key">
-								Comments
-							</dt>
-							<dd class="nhsuk-summary-list__value">
-								{% if data['additionalMedicalTestsComment'] %}
-									{{ data['additionalMedicalTestsComment'] }}
-									{% else %}
-									None provided
-								{% endif %}
-							</dd>
-							{% if data['submit-claim'] != 'completed' %}
-							<dd class="nhsuk-summary-list__actions">
-								<a href="medical-tests-add-comment">
-									Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
-								</a>
-								</dd>
 							{% endif %}
 						</div>
 
@@ -293,6 +293,26 @@ Check your answers
 
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
+							Comments
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['additionalVaccinationsComment'] %}
+								{{ data['additionalVaccinationsComment'] }}
+								{% else %}
+								None provided
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="vaccinations-add-comment">
+								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+							</a>
+							</dd>
+						{% endif %}
+					</div>
+
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
 							Evidence uploaded
 						</dt>
 						<dd class="nhsuk-summary-list__value">
@@ -312,26 +332,6 @@ Check your answers
 								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 							</a>
 						</dd>
-						{% endif %}
-					</div>
-
-					<div class="nhsuk-summary-list__row">
-						<dt class="nhsuk-summary-list__key">
-							Comments
-						</dt>
-						<dd class="nhsuk-summary-list__value">
-							{% if data['additionalVaccinationsComment'] %}
-								{{ data['additionalVaccinationsComment'] }}
-								{% else %}
-								None provided
-							{% endif %}
-						</dd>
-						{% if data['submit-claim'] != 'completed' %}
-						<dd class="nhsuk-summary-list__actions">
-							<a href="vaccinations-add-comment">
-								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							</a>
-							</dd>
 						{% endif %}
 					</div>
 
@@ -372,30 +372,6 @@ Check your answers
 
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Evidence uploaded
-						</dt>
-						<dd class="nhsuk-summary-list__value">
-							<a href="/images/bank-statement-visa-fee.png" download="Visa fees evidence 31 March 2024">
-								bank-statement-visa-fee.png
-							</a>
-							{% if data['more-visa-fees-evidence'] === 'yes' %}
-							<br>
-							<a href="" target="_blank" rel="noopener">
-							screenshot-02.jpg
-						  	</a>
-							{% endif %}
-						</dd>
-						{% if data['submit-claim'] != 'completed' %}
-						<dd class="nhsuk-summary-list__actions">
-							<a href="visa-fees-evidence-mini-cya">
-								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
-							</a>
-						</dd>
-						{% endif %}
-					</div>
-
-					<div class="nhsuk-summary-list__row">
-						<dt class="nhsuk-summary-list__key">
 							Comments
 						</dt>
 						<dd class="nhsuk-summary-list__value">
@@ -411,6 +387,30 @@ Check your answers
 								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
 							</a>
 							</dd>
+						{% endif %}
+					</div>
+
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Evidence uploaded
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							<a href="/images/bank-statement-visa-fee.png" download="Visa fees evidence 31 March 2024">
+								bank-statement-visa-fee.png
+							</a>
+							{% if data['more-visa-fees-evidence'] === 'yes' %}
+							<br>
+							<a href="" target="_blank" rel="noopener">
+							screenshot-02.jpg
+								</a>
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="visa-fees-evidence-mini-cya">
+								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+							</a>
+						</dd>
 						{% endif %}
 					</div>
 
@@ -455,30 +455,6 @@ Check your answers
 
 					  <div class="nhsuk-summary-list__row">
 						  <dt class="nhsuk-summary-list__key">
-							  Evidence uploaded
-						  </dt>
-						  <dd class="nhsuk-summary-list__value">
-							<a href="/images/travel-insurance-screenshot-1.png" download="Insurance evidence 31 March 2024">
-								insurance-screenshot-1.png
-							</a>
-							{% if data['more-insurance-evidence']  === 'yes' %}
-							<br>
-								<a href="/images/travel-insurance-screenshot-2.png" download="Insurance evidence 2 31 March 2024">
-									insurance-screenshot-2.png
-								</a>
-							{% endif %}
-							</dd>
-						  {% if data['submit-claim'] != 'completed' %}
-						  <dd class="nhsuk-summary-list__actions">
-							  <a href="insurance-evidence-mini-cya">
-								  Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
-							  </a>
-						  </dd>
-						  {% endif %}
-					  </div>
-
-					  <div class="nhsuk-summary-list__row">
-						  <dt class="nhsuk-summary-list__key">
 							  Comments
 						  </dt>
 						  <dd class="nhsuk-summary-list__value">
@@ -496,6 +472,30 @@ Check your answers
 						  </dd>
 						  {% endif %}
 					  </div>
+
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Evidence uploaded
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+							<a href="/images/travel-insurance-screenshot-1.png" download="Insurance evidence 31 March 2024">
+								insurance-screenshot-1.png
+							</a>
+							{% if data['more-insurance-evidence']  === 'yes' %}
+							<br>
+								<a href="/images/travel-insurance-screenshot-2.png" download="Insurance evidence 2 31 March 2024">
+									insurance-screenshot-2.png
+								</a>
+							{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="insurance-evidence-mini-cya">
+									Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
 
 				</div>
 			  </details>
@@ -532,30 +532,6 @@ Check your answers
 
 					  <div class="nhsuk-summary-list__row">
 						  <dt class="nhsuk-summary-list__key">
-							  Evidence uploaded
-						  </dt>
-						  <dd class="nhsuk-summary-list__value">
-							<a href="/images/bank-statement-visa-fee.png" download="Visa fees evidence 31 March 2024">
-								bank-statement-visa-fee.png
-							</a>
-							{% if data['more-visa-fees-evidence'] === 'yes' %}
-							<br>
-							<a href="" target="_blank" rel="noopener">
-							screenshot-02.jpg
-						  	</a>
-							{% endif %}
-						  </dd>
-						  {% if data['submit-claim'] != 'completed' %}
-						  <dd class="nhsuk-summary-list__actions">
-							  <a href="visa-fees-evidence-mini-cya">
-								  Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
-							  </a>
-						  </dd>
-						  {% endif %}
-					  </div>
-
-					  <div class="nhsuk-summary-list__row">
-						  <dt class="nhsuk-summary-list__key">
 							  Comments
 						  </dt>
 						  <dd class="nhsuk-summary-list__value">
@@ -573,6 +549,30 @@ Check your answers
 						  </dd>
 						  {% endif %}
 					  </div>
+
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Evidence uploaded
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+							<a href="/images/bank-statement-visa-fee.png" download="Visa fees evidence 31 March 2024">
+								bank-statement-visa-fee.png
+							</a>
+							{% if data['more-visa-fees-evidence'] === 'yes' %}
+							<br>
+							<a href="" target="_blank" rel="noopener">
+							screenshot-02.jpg
+								</a>
+							{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="visa-fees-evidence-mini-cya">
+									Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
 
 				</div>
 			  </details>
@@ -607,6 +607,26 @@ Check your answers
 
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
+							Comments
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['additionalInsuranceComment'] %}
+								{{ data['additionalInsuranceComment'] }}
+								{% else %}
+								None provided
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="insurance-add-comment">
+								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+							</a>
+							</dd>
+						{% endif %}
+					</div>
+
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
 							Evidence uploaded
 						</dt>
 						<dd class="nhsuk-summary-list__value">
@@ -629,25 +649,6 @@ Check your answers
 						{% endif %}
 					</div>
 
-					<div class="nhsuk-summary-list__row">
-						<dt class="nhsuk-summary-list__key">
-							Comments
-						</dt>
-						<dd class="nhsuk-summary-list__value">
-							{% if data['additionalInsuranceComment'] %}
-								{{ data['additionalInsuranceComment'] }}
-								{% else %}
-								None provided
-							{% endif %}
-						</dd>
-						{% if data['submit-claim'] != 'completed' %}
-						<dd class="nhsuk-summary-list__actions">
-							<a href="insurance-add-comment">
-								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
-							</a>
-							</dd>
-						{% endif %}
-					</div>
 				</dl>
 			<!-- Insurance costs end -->
 
@@ -677,30 +678,6 @@ Check your answers
 
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Evidence uploaded
-						</dt>
-						<dd class="nhsuk-summary-list__value">
-							<a href="" download="Medical tests evidence 31 March 2024">
-								medical-tests-costs.pdf
-							</a>
-							{% if data['more-medical-tests-evidence'] === 'yes' %}
-							<br>
-							<a href="" target="_blank" rel="noopener">
-							screenshot-02.jpg
-						  	</a>
-							{% endif %}
-						</dd>
-						{% if data['submit-claim'] != 'completed' %}
-						<dd class="nhsuk-summary-list__actions">
-							<a href="medical-tests-evidence-mini-cya">
-								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
-							</a>
-						</dd>
-						{% endif %}
-					</div>
-
-					<div class="nhsuk-summary-list__row">
-						<dt class="nhsuk-summary-list__key">
 							Comments
 						</dt>
 						<dd class="nhsuk-summary-list__value">
@@ -718,6 +695,31 @@ Check your answers
 							</dd>
 						{% endif %}
 					</div>
+
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Evidence uploaded
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							<a href="" download="Medical tests evidence 31 March 2024">
+								medical-tests-costs.pdf
+							</a>
+							{% if data['more-medical-tests-evidence'] === 'yes' %}
+							<br>
+							<a href="" target="_blank" rel="noopener">
+							screenshot-02.jpg
+								</a>
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="medical-tests-evidence-mini-cya">
+								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+							</a>
+						</dd>
+						{% endif %}
+					</div>
+
 				</dl>
 			<!-- Medical tests costs ends -->
 
@@ -747,30 +749,6 @@ Check your answers
 
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Evidence uploaded
-						</dt>
-						<dd class="nhsuk-summary-list__value">
-							<a href="" download="Vaccinations evidence 31 March 2024">
-								vaccination-costs.pdf
-							</a>
-							{% if data['more-vaccinations-evidence'] === 'yes' %}
-							<br>
-							<a href="" target="_blank" rel="noopener">
-							screenshot-02.jpg
-						  	</a>
-							{% endif %}
-						</dd>
-						{% if data['submit-claim'] != 'completed' %}
-						<dd class="nhsuk-summary-list__actions">
-							<a href="vaccinations-evidence-mini-cya">
-								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
-							</a>
-						</dd>
-						{% endif %}
-					</div>
-
-					<div class="nhsuk-summary-list__row">
-						<dt class="nhsuk-summary-list__key">
 							Comments
 						</dt>
 						<dd class="nhsuk-summary-list__value">
@@ -788,6 +766,31 @@ Check your answers
 							</dd>
 						{% endif %}
 					</div>
+
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Evidence uploaded
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							<a href="" download="Vaccinations evidence 31 March 2024">
+								vaccination-costs.pdf
+							</a>
+							{% if data['more-vaccinations-evidence'] === 'yes' %}
+							<br>
+							<a href="" target="_blank" rel="noopener">
+							screenshot-02.jpg
+								</a>
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="vaccinations-evidence-mini-cya">
+								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+							</a>
+						</dd>
+						{% endif %}
+					</div>
+
 				</dl>
 			<!-- Vaccination costs ends -->
 
@@ -817,30 +820,6 @@ Check your answers
 
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
-							Evidence uploaded
-						</dt>
-						<dd class="nhsuk-summary-list__value">
-							<a href="/images/bank-statement-visa-fee.png" download="Visa fees evidence 31 March 2024">
-								bank-statement-visa-fee.png
-							</a>
-							{% if data['more-visa-fees-evidence'] === 'yes' %}
-							<br>
-							<a href="" target="_blank" rel="noopener">
-							screenshot-02.jpg
-						  	</a>
-							{% endif %}
-						</dd>
-						{% if data['submit-claim'] != 'completed' %}
-						<dd class="nhsuk-summary-list__actions">
-							<a href="visa-fees-evidence-mini-cya">
-								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
-							</a>
-						</dd>
-						{% endif %}
-					</div>
-
-					<div class="nhsuk-summary-list__row">
-						<dt class="nhsuk-summary-list__key">
 							Comments
 						</dt>
 						<dd class="nhsuk-summary-list__value">
@@ -854,6 +833,30 @@ Check your answers
 						<dd class="nhsuk-summary-list__actions">
 							<a href="visa-fees-add-comment">
 								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+							</a>
+						</dd>
+						{% endif %}
+					</div>
+
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Evidence uploaded
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							<a href="/images/bank-statement-visa-fee.png" download="Visa fees evidence 31 March 2024">
+								bank-statement-visa-fee.png
+							</a>
+							{% if data['more-visa-fees-evidence'] === 'yes' %}
+							<br>
+							<a href="" target="_blank" rel="noopener">
+							screenshot-02.jpg
+								</a>
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="visa-fees-evidence-mini-cya">
+								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 							</a>
 						</dd>
 						{% endif %}
@@ -882,7 +885,7 @@ Check your answers
 				<form action="/lsf-public/v8/TDAE-task-list?overseas-details=completed" method="POST">
 					<button class="nhsuk-button" type="submit">Save and continue</button>
 				</form>
-				<p><a href="../TDAE-task-list">Cancel</a></p>
+				<p><a href="../TDAE-task-list-full?overseas-details=in-progress">Return to task list</a></p>
 			{% endif %}
 
 		<!-- </form> -->
