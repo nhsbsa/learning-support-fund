@@ -1,30 +1,40 @@
-{% extends 'layout-admin.html' %}
+{% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
 Add enrolment year
 {% endblock %}
 
 {% block content %}
-<div class="content-wrapper">
-  <div class="admin-page-header">
-    <a class="link-back" href="/lsf-web/v5/admin-view/manage-enrolment-years" id="backButton">Back</a>
-  </div>
-  <div class="grid-row">
-    <div class="column-two-thirds">
-      <form action="/lsf-web/v5/admin-view/manage-enrolment-years" method="POST">
-        <h1 class="heading-large mt-0">Add enrolment year</h1>
-        <div class="form-group">
-          <label for="courseYear" class="form-label-bold">Year</label>
+<div class="nhsuk-grid-column-full">
 
-          <input class="form-control" type="number" pattern="[0-9]*" maxlength="4" id="courseYear" name="year" value="">
-        </div>
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
 
-        <div class="form-group" id="courseMonth-group">
-          <label for="courseMonthDrop" class="form-label-bold">Course
-            start month</label>
-          
-          <select class="form-control" id="courseMonthDrop" name="courseMonth">
-            <option value="">Please select...</option>
+<form action="v5/admin-view/add-enrolment-year" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Add enrolment year</h1>
+	</div>
+				
+	<div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" style="font-weight: bold;" for="enrolmentYear">
+        Enrolment year
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-10" id="enrolmentYear" name="enrolmentYear" type="text" pattern="[0-9]*" maxlength="4">
+    </div>
+
+         
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" style="font-weight: bold;" id="courseType-Label" for="courseStartMonth" class="form-label">
+        Course start month
+      </label>
+      <select class="nhsuk-select" id="courseStartMonth" name="courseStartMonth">
+        <option value="">Select course start month...</option>
             <option value="1">January</option>
             <option value="2">February</option>
             <option value="3">March</option>
@@ -40,62 +50,105 @@ Add enrolment year
           </select>
         </div>
 
-        <div class="form-group">
-          <span class="form-label-bold">Start of cosa window</span>
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset" aria-describedby="date-hint" role="group">
+            <label class="nhsuk-label form-label" id="dateLabel" for="cosaStartDate" style="font-weight: bold;">
+              Start of COSA window
+            </label>
+            <div class="nhsuk-hint" id="example-hint">
+            For example, 15 3 2024
+            </div>
           
-          <div class="form-date">
-            <fieldset id="cosaStartDate">
-              <legend class="visually-hidden">Start of cosa window</legend>
-              <div class="form-group form-group-day">
-                <label id="start-day-label-paydate" class="form-hint" for="start-day">Day</label> 
-                <input class="form-control date-tab" id="start-day" name="startDay" value="" type="number" pattern="[0-9]*" min="1" max="31" maxlength="2" oninput="this.value=this.value.slice(0,this.maxLength)">
+            <div class="nhsuk-date-input" id="example">
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="validFromDate-day-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="validFromDate-day" name="rate-day" type="text" pattern="[0-9]*" inputmode="numeric">
               </div>
-              <div class="form-group form-group-month">
-                <label id="start-month-label-paydate" class="form-hint" for="start-month">Month</label> <input class="form-control date-tab" id="start-month" name="startMonth" value="" type="number" pattern="[0-9]*" min="1" max="12" maxlength="2" oninput="this.value=this.value.slice(0,this.maxLength)">
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="validFromDate-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="validFromDate-month" name="rate-month" type="text" pattern="[0-9]*" inputmode="numeric">
               </div>
-              <div class="form-group form-group-year">
-                <label id="start-year-label-paydate" class="form-hint" for="start-year">Year</label> <input class="form-control date-tab" id="start-year" name="startYear" value="" type="number" pattern="[0-9]*" min="2000" max="3000" maxlength="4" oninput="this.value=this.value.slice(0,this.maxLength)">
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="validFromDate-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="validFromDate-year" name="rate-year" type="text" pattern="[0-9]*" inputmode="numeric">
               </div>
-            </fieldset>
-          </div>
+            </div>
+            </div>
+          </fieldset>
+        </div>
+        
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset" aria-describedby="date-hint" role="group">
+            <label class="nhsuk-label form-label" id="dateLabel" for="cosaEndDate" style="font-weight: bold;">
+              End of COSA window
+            </label>
+            <div class="nhsuk-hint" id="example-hint">
+            For example, 29 3 2024
+            </div>
+          
+            <div class="nhsuk-date-input" id="example">
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="endDate-day-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="endDate-day" name="rate-day" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="endDate-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="endDate-month" name="rate-month" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="endDate-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="endDate-year" name="rate-year" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            </div>
+          </fieldset>
         </div>
 
-        <div class="form-group">
-          <span class="form-label-bold">End of cosa window</span>
-          
-          <div class="form-date">
-            <fieldset id="cosaEndDate">
-              <legend class="visually-hidden">End of cosa window</legend>
-              <div class="form-group form-group-day">
-                <label id="end-day-label-paydate" class="form-hint" for="end-day">Day</label> 
-                <input class="form-control date-tab" id="end-day" name="endDay" value="" type="number" pattern="[0-9]*">
-              </div>
-              <div class="form-group form-group-month">
-                <label id="end-month-label-paydate" class="form-hint" for="end-month">Month</label> <input class="form-control date-tab" id="end-month" name="endMonth" value="" type="number" pattern="[0-9]*">
-              </div>
-              <div class="form-group form-group-year">
-                <label id="end-year-label-paydate" class="form-hint" for="end-year">Year</label> <input class="form-control date-tab" id="end-year" name="endYear" value="" type="number" pattern="[0-9]*">
-              </div>
-            </fieldset>
-          </div>
-        </div>
+        <fieldset class="nhsuk-fieldset">
+					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Do you want to enable the enrolment year?</legend>
+					<!-- div class="nhsuk-hint" id="contact-hint">Select No to xyz. For example, if xyz.</div-->
+					<div class="nhsuk-form-group">
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="enableEnrolmentYearYes" name="enableEnrolmentYear" type="radio" value="Yes">
+								<label class="nhsuk-label nhsuk-radios__label" for="enableEnrolmentYearYes">Yes</label>
+							</div>
+		
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="enableEnrolmentYearNo" name="enableEnrolmentYear" type="radio" value="No">
+								<label class="nhsuk-label nhsuk-radios__label" for="enableTDAERatesNo">No</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
 
-        <div class="form-group">
-          <div class="multiple-choice">
-            <input type="checkbox" id="enabled" name="enabled" value="true">
-            <label for="enabled" class="form-label">Enabled</label> 
-          </div>
-        </div>
-
-        <div class="form-group">
-          <button class="button" type="submit" value="Save" name="Save">Save</button>
-          
-        </div>
-        <div class="form-group">
-          <a href="/lsf/admin/enrolmentYearsDetails">Cancel</a>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+				<div class="nhsuk-form-group">
+					<button class="nhsuk-button" type="submit" id="saveEnrolmentYear">Save and continue</button>
+					<p><a class="" href="/lsf-web/v5/admin-view/manage-enrolment-years">Cancel</a></p>
+				</div>
+		
+			
+	</div>
 {% endblock %}

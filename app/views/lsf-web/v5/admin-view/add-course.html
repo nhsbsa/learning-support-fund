@@ -1,11 +1,11 @@
 {% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
-University courses
+Add university course details
 {% endblock %}
 
 {% block content %}
-<form action="/lsf-web/v5/admin-view/manage-unis" method="POST">
+<form action="/lsf-web/v5/admin-view/add-course" method="POST" novalidate="">
 	<div class="nhsuk-grid-column-full">
 
 
@@ -26,7 +26,6 @@ University courses
 		<h1 class="nhsuk-heading-l">Add course details for ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</h1>
 
 	</div>
-			<form action="/lsf-web/v5/admin-view/add-course" method="POST" novalidate="">
 				
 				<div class="nhsuk-grid-column-two-thirds">
 				<div class="nhsuk-form-group">
@@ -185,11 +184,11 @@ University courses
 				</div>
 
 				<div class="nhsuk-form-group">
-					<label class="nhsuk-label" id="courseLengthYears-Label" for="courseLengthYears" class="form-label">
-						Course length (years)
+					<label class="nhsuk-label" id="courseYears-Label" for="courseYears" class="form-label">
+						Course years
 					</label>
-					<select class="nhsuk-select nhsuk-u-width-full" id="courseLengthYears" name="courseLengthYears" tabindex="-1">
-						<option value="">Select course length...</option>
+					<select class="nhsuk-select nhsuk-u-width-full" id="courseYears" name="courseYears" tabindex="-1">
+						<option value="">Select course years...</option>
 				
 						<option value="1">Year 1</option>
 						<option value="2">Year 2</option>
@@ -275,7 +274,7 @@ University courses
   accessibleAutocomplete.enhanceSelectElement({
     defaultValue: '',
     autoselect: true,  
-    selectElement: document.querySelector('#courseLengthYears')
+    selectElement: document.querySelector('#courseYears')
   });
   accessibleAutocomplete.enhanceSelectElement({
     defaultValue: '',

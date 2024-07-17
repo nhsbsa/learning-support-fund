@@ -12,6 +12,9 @@ const router = express.Router();
 // Admin view
 // ********************************
 
+
+// Bank Details //
+
 router.post('/v5/bank-details-pended', (req, res) => {
 
     const pend = req.session.data['pend']
@@ -64,6 +67,8 @@ router.post('/v5/bank-details-check', (req, res) => {
 
 })
 
+// Create and Update User //
+
 router.post('/v5/create-role', (req, res) => {
 
     const userRole = req.session.data['role']
@@ -87,6 +92,125 @@ router.post('/v5/update-role', (req, res) => {
     }
 
 })
+
+// Calculation Rates //
+
+router.post('/v5/admin-view/add-calc-rates', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-calc-rates')
+
+})
+
+router.post('/v5/admin-view/edit-calc-rates', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-calc-rates')
+
+})
+
+// TDAE Rates //
+
+router.post('/v5/admin-view/add-tdae-rates', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-tdae-rates')
+
+})
+
+router.post('/v5/admin-view/edit-tdae-rates', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-tdae-rates')
+
+})
+
+// Term Payment Percentages //
+
+router.post('/v5/admin-view/add-term-percentages', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-term-percentages')
+
+})
+
+router.post('/v5/admin-view/edit-term-percentages', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-term-percentages')
+
+})
+
+// Knowledge Base //
+
+router.post('/v5/admin-view/add-item', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/preview-item')
+
+})
+
+router.post('/v5/admin-view/preview-item', (req, res) => {
+
+    const addItem = req.session.data['enableKnowledgeItem']
+
+    if (addItem === 'Yes') {
+        res.redirect('/lsf-web/v5/admin-view/manage-knowledge-base')
+    } else {
+        res.redirect('/lsf-web/v5/admin-view/add-item')
+    }
+
+})
+
+router.post('/v5/admin-view/edit-item', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/preview-item')
+
+})
+
+router.post('/v5/admin-view/delete-item', (req, res) => {
+
+    const deleteItem = req.session.data['deleteItem']
+
+    if (deleteItem === 'Yes') {
+        res.redirect('/lsf-web/v5/admin-view/manage-knowledge-base')
+    } else {
+        res.redirect('/lsf-web/v5/admin-view/preview-item')
+    }
+
+})
+
+// Enrolment Year //
+
+router.post('/v5/admin-view/add-enrolment-year', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-enrolment-years')
+
+})
+
+// Note Types //
+
+router.post('/v5/admin-view/add-note-type', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-note-types')
+
+})
+
+router.post('/v5/admin-view/edit-note-type', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-note-types')
+
+})
+
+// Forms //
+
+router.post('/v5/admin-view/edit-form', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-forms')
+
+})
+
+// Payment Runs //
+
+router.post('/v5/admin-view/add-payment-run', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-payment-runs')
+
+})
+
 
 // ********************************
 // Change student details

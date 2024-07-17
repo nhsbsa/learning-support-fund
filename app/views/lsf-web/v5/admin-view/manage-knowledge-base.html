@@ -20,7 +20,7 @@ Manage knowledge base
 	<div class="nhsuk-grid-column-full">
 		<div class="nhsuk-form-group">
 			<button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">Filter</button>
-			<a class="nhsuk-button nhsuk-button--secondary float: right;" href="/lsf-web/v5/admin-view/add-calc-rates" data-module="nhsuk-button" type="submit" id="searchButton">Add knowledge base item</a>
+			<a class="nhsuk-button nhsuk-button--secondary float: right;" href="/lsf-web/v5/admin-view/add-item" data-module="nhsuk-button" type="submit" id="searchButton">Add knowledge base item</a>
 			<p><a href="/lsf-web/v5/admin-view/manage-knowledge-base" id="clearButton">Reset filter</a></p>
 		</div>
 	</div>
@@ -54,7 +54,7 @@ Manage knowledge base
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Action</span>
-									<a href="#">Change<span class="nhsuk-u-visually-hidden">Knowledge base item 1</span></a>
+									<a href="/lsf-web/v5/admin-view/edit-item">Change<span class="nhsuk-u-visually-hidden">Knowledge base item 1</span></a>
 								</td>
 							</tr>
 
@@ -70,9 +70,27 @@ Manage knowledge base
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Action</span>
-									<a href="#">Change<span class="nhsuk-u-visually-hidden">Knowledge base item 2</span></a>
+									<a href="/lsf-web/v5/admin-view/edit-item">Change<span class="nhsuk-u-visually-hidden">Knowledge base item 2</span></a>
 								</td>
 							</tr>
+
+							{% if data['enableKnowledgeItem'] == 'Yes' %}
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell" class="wordbreak">
+									<span class="nhsuk-table-responsive__heading">Title</span><p>{{ data['itemTitle'] }}</p>
+								</td>
+								<td role="cell" class="nhsuk-table__cell" class="wordbreak">
+									<span class="nhsuk-table-responsive__heading">Content</span><p>{{ data['itemContent'] }}</p>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Action</span>
+									<a href="/lsf-web/v5/admin-view/edit-item">Change<span class="nhsuk-u-visually-hidden">Knowledge base item 2</span></a>
+								</td>
+							</tr>
+							{% endif %}
 
 						</tbody>
 			</table>

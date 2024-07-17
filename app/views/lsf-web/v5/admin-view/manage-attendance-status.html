@@ -102,11 +102,52 @@ Attendance status search
 				</select>
 			</div>
 
-			<div class="nhsuk-form-group" id="course-group">
-				<label class="nhsuk-label" id="course-label" for="courseDrop" class="form-label-bold">
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" id="courseType-Label" for="courseType" class="form-label">
 					Course
 				</label>
-				<input class="nhsuk-input" id="courseDrop" name="course" type="text" spellcheck="false" autocomplete="off" onchange="populateAllEnrolmentAndYears(this)">
+				<select class="nhsuk-select nhsuk-u-width-full" id="courseType" name="courseType">
+					<option value="">Select course...</option>
+
+					<option value="1">Adult Nursing</option>
+					<option value="2">Adult Nursing and Social Work</option>
+					<option value="3">Child Nursing</option>
+					<option value="4">Child Nursing and Social Work</option>
+					<option value="5">Dental Hygiene</option>
+					<option value="6">Dental Hygiene and Dental Therapy</option>
+					<option value="7">Dental Therapy</option>
+					<option value="8">Diagnostic Radiography</option>
+					<option value="9">Dietetics</option>
+					<option value="10">Dual Nursing - Adult and Child</option>
+					<option value="11">Dual Nursing - Adult and Learning Disabilities</option>
+					<option value="12">Dual Nursing - Adult and Mental Health</option>
+					<option value="13">Dual Nursing - Child and Learning Disabilities</option>
+					<option value="14">Dual Nursing - Child and Mental Health</option>
+					<option value="15">Dual Nursing - Mental Health and Learning Disabilities</option>
+					<option value="42">Fitness</option>
+					<option value="16">Language Pathology (MSc)</option>
+					<option value="17">Learning Disabilities Nursing</option>
+					<option value="18">Learning Disablilities Nursing and Social Work</option>
+					<option value="20">Mental Health Nursing</option>
+					<option value="21">Mental Health Nursing and Social Work</option>
+					<option value="22">Midwifery</option>
+					<option value="19">MSci Nurse Paramedic</option>
+					<option value="23">Nutrition and Dietetics</option>
+					<option value="24">Occupational Therapy</option>
+					<option value="25">Operating Department Practitioner</option>
+					<option value="26">Orthoptics</option>
+					<option value="31">Paramedicine</option>
+					<option value="27">Paramedic Practice</option>
+					<option value="28">Paramedic Science</option>
+					<option value="29">Paramedic Science 2 Years</option>
+					<option value="30">Paramedic Science And Out Of Hospital Care</option>
+					<option value="32">Physiotherapy</option>
+					<option value="33">Podiatry</option>
+					<option value="34">Prosthetics and Orthotics</option>
+					<option value="35">Radiotherapy and Oncology</option>
+					<option value="36">Speech and Language Therapy</option>
+					<option value="37">Therapeutic Radiography</option>
+				</select>
 			</div>
 
 		</div>
@@ -253,9 +294,237 @@ Attendance status search
 </div>
 
 <div class="nhsuk-form-group">
-	<button class="nhsuk-button" type="submit" id="searchAttendanceStatus">Search</button>
+	<button class="nhsuk-button" type="button" id="searchAttendanceStatus" onclick="performSearch()">Search</button>
 	<p><a class="" href="/lsf-web/v5/admin-view/manage-attendance-status">Cancel</a></p>
 </div>
+
+<div class="results" id="resultsContainer">
+	<!-- Search results will be displayed here -->
+</div>
+
+<script>
+	function performSearch() {
+		const resultsContainer = document.getElementById('resultsContainer');
+		resultsContainer.innerHTML = `
+			<div class="results" id="resultsContainer">
+					<hr class="" style="border-color: #005eb8; border-width: 4px">
+						<table role="table" id="coursesTable" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+						<h2 class="heading-large nhsuk-u-visually-hidden">Search results table</h2>
+							<caption class="nhsuk-table__caption">Search results<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 6 items</span><span id="resultMessage" aria-hidden="true"> - contains 6 items</span><span class="nhsuk-u-visually-hidden"> (column headers with links are sortable)</span></caption>
+						
+						<thead role="rowgroup" class="nhsuk-table__head">	
+							<tr role="row">
+							<th role="columnheader" class="bold" scope="col"><a href="#" class="table-header__button">Name</a></th>
+							<th role="columnheader" class="bold" scope="col"><a href="#" class="table-header__button">DOB</a></th>
+							<th role="columnheader" class="bold" scope="col"><a href="#" class="table-header__button">Part time</a></th>
+							<th role="columnheader" class="bold" scope="col"><a href="#" class="table-header__button">Student Reference</a></th>
+							<th role="columnheader" class="bold" scope="col"><a href="#" class="table-header__button">Status</a></th>
+							</tr>
+						</thead>
+						<tbody class="nhsuk-table__body">
+							
+							<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Name</span>Jane Doe</span>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">DOB</span>10/03/2004
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Part time</span>No
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Student Reference</span>
+								<a href="/lsf-web/v5/student-details?student%20number=SSRN0010001&activity%20number=1411&name=Emmit%20Mar&email=emmit.mar@myemail.com&username=Emmit.Mar#tab-Enrolments">SSRN0000401</a>
+							</td>
+
+							<td role="cell" class="nhsuk-table__cell">
+								<label for="enrolledStatusDrop0" class="nhsuk-u-visually-hidden" style="">Status drop down</label>
+								<select class="nhsuk-select nhsuk-u-width-full" id="enrolledStatusDrop0" name="enrolmentList[0].enrolledStatus.id">
+									<option value="6">Discontinued</option>
+									<option value="2">Information mismatch</option>
+									<option value="1">Matched student - in attendance</option>
+									<option value="8">Maternity leave</option>
+									<option value="5">Not enrolled</option>
+									<option value="3" selected="selected">Pending</option>
+									<option value="7">Pending NHSBSA</option>
+								</select>
+								<input type="hidden" value="294" id="hiddenIdField" name="enrolmentList[0].id">
+							</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Name</span>Joe Bloggs</span>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">DOB</span>21/08/2004
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Part time</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Student Reference</span>
+									<a href="/lsf-web/v5/student-details?student%20number=SSRN0010001&activity%20number=1411&name=Emmit%20Mar&email=emmit.mar@myemail.com&username=Emmit.Mar#tab-Enrolments">SSRN0000402</a>
+								</td>
+								
+								<td role="cell" class="nhsuk-table__cell">
+								<label for="enrolledStatusDrop0" class="nhsuk-u-visually-hidden" style="">Status drop down</label>
+								<select class="nhsuk-select nhsuk-u-width-full" id="enrolledStatusDrop0" name="enrolmentList[0].enrolledStatus.id">
+									<option value="6">Discontinued</option>
+									<option value="2">Information mismatch</option>
+									<option value="1"selected="selected">Matched student - in attendance</option>
+									<option value="8">Maternity leave</option>
+									<option value="5">Not enrolled</option>
+									<option value="3">Pending</option>
+									<option value="7">Pending NHSBSA</option>
+								</select>
+								<input type="hidden" value="294" id="hiddenIdField" name="enrolmentList[0].id">
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Name</span>John Doe</span>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">DOB</span>3/11/2003
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Part time</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Student Reference</span>
+									<a href="/lsf-web/v5/student-details?student%20number=SSRN0010001&activity%20number=1411&name=Emmit%20Mar&email=emmit.mar@myemail.com&username=Emmit.Mar#tab-Enrolments">SSRN0000403</a>
+								</td>
+								
+								<td role="cell" class="nhsuk-table__cell">
+								<label for="enrolledStatusDrop0" class="nhsuk-u-visually-hidden" style="">Status drop down</label>
+								<select class="nhsuk-select nhsuk-u-width-full" id="enrolledStatusDrop0" name="enrolmentList[0].enrolledStatus.id">
+									<option value="6"selected="selected">Discontinued</option>
+									<option value="2">Information mismatch</option>
+									<option value="1">Matched student - in attendance</option>
+									<option value="8">Maternity leave</option>
+									<option value="5">Not enrolled</option>
+									<option value="3">Pending</option>
+									<option value="7">Pending NHSBSA</option>
+								</select>
+								<input type="hidden" value="294" id="hiddenIdField" name="enrolmentList[0].id">
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Name</span>Jayne Doe</span>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">DOB</span>14/09/2003
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Part time</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Student Reference</span>
+									<a href="/lsf-web/v5/student-details?student%20number=SSRN0010001&activity%20number=1411&name=Emmit%20Mar&email=emmit.mar@myemail.com&username=Emmit.Mar#tab-Enrolments">SSRN0000404</a>
+								</td>
+
+								<td role="cell" class="nhsuk-table__cell">
+									<label for="enrolledStatusDrop0" class="nhsuk-u-visually-hidden" style="">Status drop down</label>
+								<select class="nhsuk-select nhsuk-u-width-full" id="enrolledStatusDrop0" name="enrolmentList[0].enrolledStatus.id">
+									<option value="6">Discontinued</option>
+									<option value="2">Information mismatch</option>
+									<option value="1">Matched student - in attendance</option>
+									<option value="8">Maternity leave</option>
+									<option value="5">Not enrolled</option>
+									<option value="3"selected="selected">Pending</option>
+									<option value="7">Pending NHSBSA</option>
+								</select>
+								<input type="hidden" value="294" id="hiddenIdField" name="enrolmentList[0].id">
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Name</span>Jonathan Doe</span>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">DOB</span>14/02/2004
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Part time</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Student Reference</span>
+									<a href="/lsf-web/v5/student-details?student%20number=SSRN0010001&activity%20number=1411&name=Emmit%20Mar&email=emmit.mar@myemail.com&username=Emmit.Mar#tab-Enrolments">SSRN0000405</a>
+								</td>
+								
+								<td role="cell" class="nhsuk-table__cell">
+								<label for="enrolledStatusDrop0" class="nhsuk-u-visually-hidden" style="">Status drop down</label>
+								<select class="nhsuk-select nhsuk-u-width-full" id="enrolledStatusDrop0" name="enrolmentList[0].enrolledStatus.id">
+									<option value="6">Discontinued</option>
+									<option value="2">Information mismatch</option>
+									<option value="1">Matched student - in attendance</option>
+									<option value="8">Maternity leave</option>
+									<option value="5">Not enrolled</option>
+									<option value="3"selected="selected">Pending</option>
+									<option value="7">Pending NHSBSA</option>
+								</select>
+								<input type="hidden" value="294" id="hiddenIdField" name="enrolmentList[0].id">
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Name</span>Josie Bloggs</span>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">DOB</span>17/05/2004
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Part time</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Student Reference</span>
+									<a href="/lsf-web/v5/student-details?student%20number=SSRN0010001&activity%20number=1411&name=Emmit%20Mar&email=emmit.mar@myemail.com&username=Emmit.Mar#tab-Enrolments">SSRN0000406</a>
+								</td>
+
+								<td role="cell" class="nhsuk-table__cell">
+								<label for="enrolledStatusDrop0" class="nhsuk-u-visually-hidden" style="">Status drop down</label>
+								<select class="nhsuk-select nhsuk-u-width-full" id="enrolledStatusDrop0" name="enrolmentList[0].enrolledStatus.id">
+									<option value="6">Discontinued</option>
+									<option value="2">Information mismatch</option>
+									<option value="1">Matched student - in attendance</option>
+									<option value="8">Maternity leave</option>
+									<option value="5">Not enrolled</option>
+									<option value="3"selected="selected">Pending</option>
+									<option value="7">Pending NHSBSA</option>
+								</select>
+								<input type="hidden" value="294" id="hiddenIdField" name="enrolmentList[0].id">
+								</td>
+							</tr>
+
+						</tbody>
+					</table>
+
+					<div class="nhsuk-form-group" style="overflow: hidden;">
+						<button class="nhsuk-button" style="float: right;" type="button" id="searchAttendanceStatus">Save changes</button>
+					</div>
+
+					<nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
+						<ul class="nhsbsa-pagination">
+							<li class="nhsbsa-pagination__item nhsbsa-pagination-li">
+								<a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
+							</li>
+						</ul>
+						<!--a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href="" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a-->
+				
+						<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment nhsuk-u-margin-bottom-5">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">6</span> of <span id="tdaeTotalItemsNumber">6 results</span></div>
+					</nav>
+
+			</div>
+			`;
+					}
+    </script>
 
 			</div>
 		</div>
@@ -272,6 +541,12 @@ Attendance status search
     defaultValue : '',
     autoselect : true,  
     selectElement : document.querySelector('#collegeDrop')
-  })
+  });
+
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    autoselect: true,  
+    selectElement: document.querySelector('#courseType')
+  });
 </script>
 {% endblock %}

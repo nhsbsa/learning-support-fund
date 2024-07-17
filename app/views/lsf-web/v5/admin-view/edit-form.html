@@ -1,0 +1,154 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Change form
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-full">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
+
+<form action="v5/admin-view/edit-form" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Change form</h1>
+	</div>
+				
+	<div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" style="font-weight: bold;" for="itemTitle">
+        Title
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="itemTitle" name="itemTitle" type="text" value="ESF">
+    </div>
+
+    <div class="nhsuk-form-group nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-7">
+      <label class="nhsuk-label nhsuk-u-visually-hidden" for="file-upload">
+          Upload file
+      </label>
+      
+      <label class="nhsuk-label" style="font-weight: bold;" for="uploadFileLabel">
+        File
+      </label>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            File guidance
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Files must be:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>readable, not blurry</li>
+          <li>the right way up - not upside down or sideways</li>
+          <li>PDF format</li>
+          <li>no more than 5MB</li>
+        </ul>
+      </div>
+      </details>
+     
+      <span class="nhsuk-hint">Leave blank if you are not amending the file </span>
+
+      <div class="nhsuk-error-message" id="fileSizeError" hidden="true">
+        <span id="fileSizeErrorMessage" class="nhsuk-error-message"></span>
+      </div>
+
+      <input class="nhsuk-input" id="file-upload" name="file-upload" type="file">
+    </div> 
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" style="font-weight: bold;" for="formComments">
+        Comments
+      </label>
+      <textarea class="nhsuk-textarea" id="formComments" maxlength="500" data-max-characters="500" name="formComments" spellcheck="false" rows="4" aria-describedby="form-comments">ESF Form 2023/24 V3 01.2024</textarea>
+      <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">500 characters remaining</p>
+      <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 500 characters</p>
+    </div>
+
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Do you want to enable the form?</legend>
+      <!-- div class="nhsuk-hint" id="contact-hint">Select No to xyz. For example, if xyz.</div-->
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-radios nhsuk-radios--inline">
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="enableForm" name="enableForm" type="radio" value="Yes" checked="checked">
+            <label class="nhsuk-label nhsuk-radios__label" for="enableFormYes">Yes</label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="enableForm" name="enableForm" type="radio" value="No">
+            <label class="nhsuk-label nhsuk-radios__label" for="enableFormNo">No</label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="nhsuk-form-group">
+      <button class="nhsuk-button nhsuk-u-margin-right-4" type="submit" id="saveForm">Save and continue</button>
+      <p><a class="" href="/lsf-web/v5/admin-view/manage-forms">Cancel</a></p>
+    </div>
+
+</div>
+
+<script>
+  const textarea = document.querySelector('#formComments');
+  const countRemaining = document.getElementById('charactersRemaining');
+  const staticMsg = document.querySelector('#char-count-screen-reader');
+  const maxCharacters = 500;
+  let timeoutId;
+
+  function updateCharacterCount() {
+    const textEntered = textarea.value;
+    const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+    const addition = newLines?.length || 0;
+    const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+
+    if (remainingCharacters >= 0) {
+      countRemaining.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+      countRemaining.classList.remove('nhsbsa-count-error-message');
+      countRemaining.classList.add('nhsuk-hint');
+      textarea.classList.remove('nhsuk-textarea--error');
+    } else {
+      countRemaining.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+      countRemaining.classList.add('nhsbsa-count-error-message');
+      countRemaining.classList.remove('nhsuk-hint');
+      textarea.classList.add('nhsuk-textarea--error');
+    }
+  }
+
+  function updateScreenReaderMessage() {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      const textEntered = textarea.value;
+      const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+      const addition = newLines?.length || 0;
+      const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+      // TO DO ADD FIX FOR 1 CHARACTER
+      if (remainingCharacters < 0) {
+        staticMsg.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+      } else {
+        staticMsg.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+      }
+    }, 500);
+  }
+
+  textarea.addEventListener('input', () => {
+    updateCharacterCount();
+    updateScreenReaderMessage();
+  });
+
+  // Update character count if textarea has a value on page load
+  window.addEventListener('load', () => {
+    updateCharacterCount();
+    updateScreenReaderMessage();
+  });
+</script>
+
+
+{% endblock %}

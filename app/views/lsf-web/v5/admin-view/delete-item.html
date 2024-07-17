@@ -1,0 +1,100 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Delete university details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-two-thirds">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+
+	<form action="v5/admin-view/delete-item" method="post" novalidate="">
+
+		<div class="nhsuk-form-group">
+			<fieldset class="nhsuk-fieldset">
+				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+				<h1 class="nhsuk-fieldset__heading">
+					Are you sure you want to delete this knowledge base item?
+				</h1>
+				</legend>
+
+				<dl class="nhsuk-summary-list">
+
+					<div class="nhsuk-summary-list__row">
+					  <dt class="nhsuk-summary-list__key">
+						Title
+					  </dt>
+					  <dd class="nhsuk-summary-list__value">
+						Changes to Travel And Dual Accommodation (TDAE) claim and approval process
+					  </dd>
+					</div>
+					<div class="nhsuk-summary-list__row">
+					  <dt class="nhsuk-summary-list__key">
+						Content
+					  </dt>
+					  <dd class="nhsuk-summary-list__value">
+						We have changed the process for TDAE
+					  </dd>
+					</div>
+					<div class="nhsuk-summary-list__row">
+					  <dt class="nhsuk-summary-list__key">
+						Hyperlink
+					  </dt>
+					  <dd class="nhsuk-summary-list__value">
+						Not provided
+					  </dd>
+					</div>
+
+					<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Hyperlink display text
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						Not provided
+					</dd>
+					</div>
+
+				  </dl>
+			
+				<div class="nhsuk-radios">
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="deleteItemYes" name="deleteItem" type="radio" value="Yes">
+						<label class="nhsuk-label nhsuk-radios__label" for="deleteItemYes">
+						Yes
+						</label>
+					</div>
+				
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="deleteItemNo" name="deleteItem" type="radio" value="No">
+						<label class="nhsuk-label nhsuk-radios__label" for="deleteItemNo">
+						No
+						</label>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+		
+				
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button nhsuk-u-margin-right-4" type="submit" id="saveItem">Save and continue</button>
+
+			<p><a class="" href="/lsf-web/v5/admin-view/manage-knowledge-base">Cancel</a></p>
+		</div>
+
+	</form>
+</div>
+
+
+		
+				
+							
+							
+						
+			
+		
+{% endblock %}

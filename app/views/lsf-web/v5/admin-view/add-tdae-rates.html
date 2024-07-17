@@ -1,0 +1,116 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Add TDAE rates
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-full">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
+
+<form action="v5/admin-view/add-tdae-rates" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Add TDAE rates details</h1>
+	</div>
+				
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<div class="nhsuk-form-group">
+			<fieldset class="nhsuk-fieldset" aria-describedby="date-hint" role="group">
+				<label class="nhsuk-label form-label" id="dateLabel" for="ratesDate" style="font-weight: bold;">
+					Rates effective from
+				</label>
+				<div class="nhsuk-hint" id="example-hint">
+				For example, 15 3 2024
+				</div>
+			
+				<div class="nhsuk-date-input" id="example">
+				<div class="nhsuk-date-input__item">
+					<div class="nhsuk-form-group">
+					<label class="nhsuk-label nhsuk-date-input__label" for="validFromDate-day-label">
+						Day
+					</label>
+					<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="validFromDate-day" name="rate-day" type="text" pattern="[0-9]*" inputmode="numeric">
+					</div>
+				</div>
+				<div class="nhsuk-date-input__item">
+					<div class="nhsuk-form-group">
+					<label class="nhsuk-label nhsuk-date-input__label" for="validFromDate-month-label">
+						Month
+					</label>
+					<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="validFromDate-month" name="rate-month" type="text" pattern="[0-9]*" inputmode="numeric">
+					</div>
+				</div>
+				<div class="nhsuk-date-input__item">
+					<div class="nhsuk-form-group">
+					<label class="nhsuk-label nhsuk-date-input__label" for="validFromDate-year-label">
+						Year
+					</label>
+					<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="validFromDate-year" name="rate-year" type="text" pattern="[0-9]*" inputmode="numeric">
+					</div>
+				</div>
+				</div>
+			</fieldset>
+		</div>
+
+				
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" style="font-weight: bold;" for="carMileageRate">
+						Car mileage rate
+					</label>
+					<input class="nhsuk-input nhsuk-input--width-10" id="carMileageRate" name="carMileageRate" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" style="font-weight: bold;" for="cycleMileageRate">
+						Cycle mileage rate
+					</label>
+					<input class="nhsuk-input nhsuk-input--width-10" id="cycleMileageRate" name="cycleMileageRate" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" style="font-weight: bold;" for="commericalAccommodationRate">
+						Commercial accommodation rate
+					</label>
+					<input class="nhsuk-input nhsuk-input--width-10" id="commericalAccommodationRate" name="commericalAccommodationRate" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" style="font-weight: bold;" for="nonCommericalAccommodationRate">
+						Non-commercial accommodation rate
+					</label>
+					<input class="nhsuk-input nhsuk-input--width-10" id="nonCommericalAccommodationRate" name="nonCommericalAccommodationRate" type="text">
+				</div>
+
+				<fieldset class="nhsuk-fieldset">
+					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Do you want to enable the TDAE rates details?</legend>
+					<!-- div class="nhsuk-hint" id="contact-hint">Select No to xyz. For example, if xyz.</div-->
+					<div class="nhsuk-form-group">
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="enableTDAERatesYes" name="enableTDAERatesDetails" type="radio" value="Yes">
+								<label class="nhsuk-label nhsuk-radios__label" for="enableTDAERatesYes">Yes</label>
+							</div>
+		
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="enableTDAERatesNo" name="enableTDAERatesDetails" type="radio" value="No">
+								<label class="nhsuk-label nhsuk-radios__label" for="enableTDAERatesNo">No</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<div class="nhsuk-form-group">
+					<button class="nhsuk-button" type="submit" id="saveTDAERatesDetails">Save and continue</button>
+					<p><a class="" href="/lsf-web/v5/admin-view/manage-tdae-rates">Cancel</a></p>
+				</div>
+		
+			
+	</div>
+
+{% endblock %}
