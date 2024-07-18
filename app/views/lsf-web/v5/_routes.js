@@ -107,6 +107,12 @@ router.post('/v5/admin-view/edit-calc-rates', (req, res) => {
 
 })
 
+router.post('/v5/admin-view/copy-calc-rates', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-calc-rates')
+
+})
+
 // TDAE Rates //
 
 router.post('/v5/admin-view/add-tdae-rates', (req, res) => {
@@ -121,6 +127,12 @@ router.post('/v5/admin-view/edit-tdae-rates', (req, res) => {
 
 })
 
+router.post('/v5/admin-view/copy-tdae-rates', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-tdae-rates')
+
+})
+
 // Term Payment Percentages //
 
 router.post('/v5/admin-view/add-term-percentages', (req, res) => {
@@ -130,6 +142,12 @@ router.post('/v5/admin-view/add-term-percentages', (req, res) => {
 })
 
 router.post('/v5/admin-view/edit-term-percentages', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-term-percentages')
+
+})
+
+router.post('/v5/admin-view/copy-term-percentages', (req, res) => {
 
     res.redirect('/lsf-web/v5/admin-view/manage-term-percentages')
 
@@ -203,11 +221,43 @@ router.post('/v5/admin-view/edit-form', (req, res) => {
 
 })
 
+// Payment Dates //
+
+router.post('/v5/admin-view/add-enrolment-year', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-enrolment-years')
+
+})
+
+router.post('/v5/admin-view/manage-payment-dates', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-payment-dates-cya')
+
+})
+
+router.post('/v5/admin-view/manage-payment-dates-cya', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-enrolment-years')
+
+})
+
 // Payment Runs //
 
 router.post('/v5/admin-view/add-payment-run', (req, res) => {
 
     res.redirect('/lsf-web/v5/admin-view/manage-payment-runs')
+
+})
+
+router.post('/v5/admin-view/delete-payment-run', (req, res) => {
+
+    const deletePaymentRun = req.session.data['deletePaymentRun']
+
+    if (deletePaymentRun === 'Yes') {
+        res.redirect('/lsf-web/v5/admin-view/manage-payment-runs')
+    } else {
+        res.redirect('/lsf-web/v5/admin-view/manage-payment-runs')
+    }
 
 })
 

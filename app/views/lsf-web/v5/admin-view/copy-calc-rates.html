@@ -1,7 +1,7 @@
 {% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
-Add term payment percentages
+Copy calculation rates
 {% endblock %}
 
 {% block content %}
@@ -13,9 +13,9 @@ Add term payment percentages
 	}) }}
 </div>
 
-<form action="v5/admin-view/add-term-percentages" method="POST">
+<form action="v5/admin-view/edit-calc-rates" method="POST">
 	<div class="nhsuk-grid-column-full">
-		<h1 class="nhsuk-heading-l">Add term payment percentage details</h1>
+		<h1 class="nhsuk-heading-l">Add calculation rates details</h1>
 	</div>
 				
 	<div class="nhsuk-grid-column-two-thirds">
@@ -58,65 +58,59 @@ Add term payment percentages
 			</fieldset>
 		</div>
 
-		<div class="nhsuk-form-group">
-            <fieldset class="nhsuk-fieldset">
-				<label class="nhsuk-label" style="font-weight: bold;" for="term1Percentage-label">
-					Term 1 percentage
-				</label>
-
-				<input class="nhsuk-input__suffix-input nhsuk-input nhsuk-input--width-5" id="term1Percentage" name="term1Percentage" type="text">
-              	<div class="nhsuk-input__suffix" aria-hidden="true">%</div>
-            </fieldset>
-          </div>
-
-		<div class="nhsuk-form-group">
-			<fieldset class="nhsuk-fieldset">
-				<label class="nhsuk-label" style="font-weight: bold;" for="term2Percentage-label">
-					Term 2 percentage
-				</label>
-
-				<input class="nhsuk-input__suffix-input nhsuk-input nhsuk-input--width-5" id="term2Percentage" name="term2Percentage" type="text">
-				<div class="nhsuk-input__suffix" aria-hidden="true">%</div>
-			</fieldset>
-		</div>
-
-		<div class="nhsuk-form-group">
-			<fieldset class="nhsuk-fieldset">
-				<label class="nhsuk-label" style="font-weight: bold;" for="term3Percentage-label">
-					Term 3 percentage
-				</label>
-
-				<input class="nhsuk-input__suffix-input nhsuk-input nhsuk-input--width-5" id="term3Percentage" name="term3Percentage" type="text">
-				<div class="nhsuk-input__suffix" aria-hidden="true">%</div>
-			</fieldset>
-		</div>
 				
-				
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" style="font-weight: bold;" for="trainingSupportRate">
+						Training Support rate
+					</label>
+					<input class="nhsuk-input nhsuk-input--width-10" id="trainingSupportRate" name="trainingSupportRate" type="text" value="100.00">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" style="font-weight: bold;" for="parentalSupportRate">
+						Parental Support rate
+					</label>
+					<input class="nhsuk-input nhsuk-input--width-10" id="parentalSupportRate" name="parentalSupportRate" type="text" value="100.00">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" style="font-weight: bold;" for="specialistCourseRate">
+						Specialist course rate
+					</label>
+					<input class="nhsuk-input nhsuk-input--width-10" id="specialistCourseRate" name="specialistCourseRate" type="text" value="100.00">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" style="font-weight: bold;" for="regionalUpliftRate">
+						Regional uplift rate
+					</label>
+					<input class="nhsuk-input nhsuk-input--width-10" id="regionalUpliftRate" name="regionalUpliftRate" type="text" value="100.00">
+				</div>
 
 				<fieldset class="nhsuk-fieldset">
-					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Do you want to enable the term payment percentage details?</legend>
+					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Do you want to enable the calculation rates details?</legend>
 					<!-- div class="nhsuk-hint" id="contact-hint">Select No to xyz. For example, if xyz.</div-->
 					<div class="nhsuk-form-group">
 						<div class="nhsuk-radios nhsuk-radios--inline">
 							<div class="nhsuk-radios__item">
-								<input class="nhsuk-radios__input" id="termPercentageDetailsYes" name="termPercentageDetails" type="radio" value="Yes">
-								<label class="nhsuk-label nhsuk-radios__label" for="termPercentageDetailsYes">Yes</label>
+								<input class="nhsuk-radios__input" id="enableCalcRatesDetailsYes" name="enableCalcRatesDetails" type="radio" value="Yes" checked="checked">
+								<label class="nhsuk-label nhsuk-radios__label" for="enableCourseDetailsYes">Yes</label>
 							</div>
 		
 							<div class="nhsuk-radios__item">
-								<input class="nhsuk-radios__input" id="termPercentageDetailsNo" name="termPercentageDetails" type="radio" value="No">
-								<label class="nhsuk-label nhsuk-radios__label" for="termPercentageDetailsNo">No</label>
+								<input class="nhsuk-radios__input" id="enableCalcRatesDetailsNo" name="enableCalcRatesDetails" type="radio" value="No">
+								<label class="nhsuk-label nhsuk-radios__label" for="enableCalcRatesDetailsNo">No</label>
 							</div>
 						</div>
 					</div>
 				</fieldset>
 
 				<div class="nhsuk-form-group">
-					<button class="nhsuk-button" type="submit" id="saveTermPercentageDetails">Save and continue</button>
-					<p><a class="" href="/lsf-web/v5/admin-view/manage-term-percentages">Cancel</a></p>
+					<button class="nhsuk-button" type="submit" id="saveCalcRatesDetails">Save and continue</button>
+					<p><a class="" href="/lsf-web/v5/admin-view/manage-calc-rates">Cancel</a></p>
 				</div>
 		
 			
-	</div>
+		</div>
 
 {% endblock %}
