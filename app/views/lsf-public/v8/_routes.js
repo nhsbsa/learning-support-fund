@@ -18,13 +18,15 @@ router.post('/v8/TDAE-overseas/authorisation', (req, res) => {
 
 router.post('/v8/TDAE-overseas/authorisation-evidence', (req, res) => {
 
-  res.redirect('/lsf-public/v8/TDAE-overseas/which-costs')
+  res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence-mini-cya')
 
 })
 
 router.post('/v8/TDAE-overseas/which-costs', (req, res) => {
 
   const overseasCost = req.session.data['overseas-cost']
+
+  req.session.data['evidence'] = 'removed';
 
   if (overseasCost.includes('insurance')){
     res.redirect('/lsf-public/v8/TDAE-overseas/insurance-cost')
@@ -66,7 +68,7 @@ router.post('/v8/TDAE-overseas/insurance-comment', (req, res) => {
   } else if (overseasCost.includes('visa-fees')) {
     res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
   } else {
-    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence')
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence-mini-cya')
   }
 
 })
@@ -82,7 +84,7 @@ router.post('/v8/TDAE-overseas/insurance-add-comment', (req, res) => {
   } else if (overseasCost.includes('visa-fees')) {
     res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
   } else {
-    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence')
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence-mini-cya')
   }
 
 })
@@ -111,7 +113,7 @@ router.post('/v8/TDAE-overseas/medical-tests-comment', (req, res) => {
   } else if (overseasCost.includes('visa-fees')) {
     res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
   } else {
-    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence')
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence-mini-cya')
   }
 
 })
@@ -125,7 +127,7 @@ router.post('/v8/TDAE-overseas/medical-tests-add-comment', (req, res) => {
   } else if (overseasCost.includes('visa-fees')) {
     res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
   } else {
-    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence')
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence-mini-cya')
   }
 
 })
@@ -152,7 +154,7 @@ router.post('/v8/TDAE-overseas/vaccinations-comment', (req, res) => {
   } else if (overseasCost.includes('visa-fees')) {
     res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
   } else {
-    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence')
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence-mini-cya')
   }
 
 })
@@ -164,7 +166,7 @@ router.post('/v8/TDAE-overseas/vaccinations-add-comment', (req, res) => {
   if (overseasCost.includes('visa-fees')) {
     res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
   } else {
-    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence')
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence-mini-cya')
   }
 
 })
@@ -189,14 +191,14 @@ router.post('/v8/TDAE-overseas/visa-fees-comment', (req, res) => {
   if (visaFeesComments === 'yes'){
     res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-add-comment')
   } else {
-    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence')
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence-mini-cya')
   }
 
 })
 
 router.post('/v8/TDAE-overseas/visa-fees-add-comment', (req, res) => {
 
-    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence')
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence-mini-cya')
 
 })
 
