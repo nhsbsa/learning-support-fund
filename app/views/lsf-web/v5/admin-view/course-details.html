@@ -1,38 +1,30 @@
 {% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
-University courses
+Change university course details
 {% endblock %}
 
 {% block content %}
-<form action="/lsf-web/v5/admin-view/course-details" method="POST" novalidate="">
-	<div class="nhsuk-grid-column-full">
+<div class="nhsuk-grid-column-two-thirds">
 
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
 
-<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-	  <ol class="nhsuk-breadcrumb__list">
-		<li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/admin-view/manage-unis">Manage universities</a></li>
-		<li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/admin-view/manage-courses">Manage courses</a></li>
-		<li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/admin-view/course-details">Course details</a></li>
-	  </ol>
-	  <p class="nhsuk-breadcrumb__back">
-		<a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v5/admin-view/manage-courses">
-		  <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
-		  Manage courses
-		</a>
-	  </p>
-</nav>
-
-		<h1 class="nhsuk-heading-l">Change course details for ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</h1>
+<div class="nhsuk-grid-column-two-thirds">
+	<form action="v5/admin-view/course-details" method="POST" novalidate="">
+	<h1 class="nhsuk-heading-l">Change course details for ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</h1>
 
 	</div>
 				
 				<div class="nhsuk-grid-column-two-thirds">
-				<div class="nhsuk-form-group">
+				<div style="width: 65%;" class="nhsuk-form-group">
 					<label class="nhsuk-label" id="courseType-Label" for="courseType" class="form-label">
 						Course type
 					</label>
-					<select class="nhsuk-select nhsuk-u-width-full" id="courseType" name="courseType">
+					<select class="nhsuk-select" id="courseType" name="courseType">
 						<option value="">Select course type...</option>
 
 						<option value="1" selected>Adult Nursing</option>
@@ -76,11 +68,11 @@ University courses
 					</select>
 				</div>
 
-				<div class="nhsuk-form-group">
+				<div style="width: 40%;" class="nhsuk-form-group">
 					<label class="nhsuk-label" id="courseLengthMonths-Label" for="courseLengthMonths" class="form-label">
 						Course length (months)
 					</label>
-					<select class="nhsuk-select nhsuk-u-width-full" id="courseLengthMonths" name="courseLengthMonths" tabindex="-1">
+					<select class="nhsuk-select" id="courseLengthMonths" name="courseLengthMonths" tabindex="-1">
 						<option value="">Select course length...</option>
 
 						<option value="1">12</option>
@@ -183,11 +175,11 @@ University courses
 					</select>
 				</div>
 
-				<div class="nhsuk-form-group">
+				<div style="width: 40%;" class="nhsuk-form-group">
 					<label class="nhsuk-label" id="courseYears-Label" for="courseYears" class="form-label">
 						Course years
 					</label>
-					<select class="nhsuk-select nhsuk-u-width-full" id="courseYears" name="courseYears" tabindex="-1">
+					<select class="nhsuk-select" id="courseYears" name="courseYears" tabindex="-1">
 						<option value="">Select course years...</option>
 				
 						<option value="1" selected>Year 1</option>
@@ -207,7 +199,7 @@ University courses
 					<label class="nhsuk-label" id="courseStart-Label" for="courseStartMonth" class="form-label">
 						Course start month
 					</label>
-					<select class="nhsuk-select nhsuk-u-width-full" id="courseStartMonth" name="courseStartMonth" tabindex="-1">
+					<select class="nhsuk-select" id="courseStartMonth" name="courseStartMonth" tabindex="-1">
 						<option value="">Select course start month...</option>
 
 						<option value="1" selected>January</option>
@@ -224,6 +216,40 @@ University courses
 						<option value="12">December</option>
 					</select>
 				</div>
+
+				<fieldset class="nhsuk-fieldset">
+					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Is this a blended learning course?</legend>
+					<div class="nhsuk-form-group">
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="blendedLearningYes" name="blendedLearning" type="radio" value="Yes">
+								<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningYes">Yes</label>
+							</div>
+		
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="blendedLearningNo" name="blendedLearning" type="radio" value="No" checked="checked">
+								<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningNo">No</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset class="nhsuk-fieldset">
+					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Does the regional maintenance grant uplift apply?</legend>
+					<div class="nhsuk-form-group">
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="regionalUpliftYes" name="regionalUplift" type="radio" value="Yes">
+								<label class="nhsuk-label nhsuk-radios__label" for="regionalUpliftYes">Yes</label>
+							</div>
+		
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="regionalUpliftNo" name="regionalUplift" type="radio" value="No" checked="checked">
+								<label class="nhsuk-label nhsuk-radios__label" for="regionalUpliftNo">No</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
 
 				<fieldset class="nhsuk-fieldset">
 					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Do you want to enable the course details?</legend>
@@ -281,5 +307,43 @@ University courses
     autoselect: true,  
     selectElement: document.querySelector('#courseStartMonth')
   });
+</script>
+
+<script>
+	function selectedCourseLengthMonthContainer() {
+		var selectedCourseLengthMonthContainer = document.getElementById("selectedCourseLengthMonthContainer");
+		var checkboxes = document.querySelectorAll('input[name="role"]:checked');
+
+		selectedCourseLengthMonthContainer.innerHTML = ""; // Clear the container
+
+		checkboxes.forEach(function (checkbox) {
+			var roleLabel = document.querySelector('label[for="' + checkbox.id + '"]').innerText;
+			var listItem = document.createElement('li');
+			var deleteButton = document.createElement('button');
+			deleteButton.className = "delete";
+			deleteButton.setAttribute('aria-label', 'Remove ' + roleLabel + ' from the list');
+			deleteButton.innerText = roleLabel;
+
+			// Add click event listener to the delete button
+			deleteButton.addEventListener('click', function () {
+				// Remove the tile
+				listItem.remove();
+
+				// Uncheck the corresponding checkbox
+				checkbox.checked = false;
+			});
+
+			listItem.appendChild(deleteButton);
+				selectedCourseLengthMonthContainer.appendChild(listItem);
+			});
+		}
+</script>
+<script>
+	document.getElementById('hei-user-btn').addEventListener('click', function (event) {
+		event.preventDefault();
+		var checkbox = document.getElementById('role-9');
+		checkbox.checked = false;
+		document.getElementById('hei-user-btn').style.display = 'none';
+	});
 </script>
 {% endblock %}

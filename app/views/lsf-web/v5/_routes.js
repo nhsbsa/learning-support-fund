@@ -67,9 +67,15 @@ router.post('/v5/bank-details-check', (req, res) => {
 
 })
 
-// Create and Update User //
+// Create User //
 
-router.post('/v5/create-role', (req, res) => {
+router.post('/v5/admin-view/create-user', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/create-user-roles')
+
+})
+
+router.post('/v5/admin-view/create-user-roles', (req, res) => {
 
     const userRole = req.session.data['role']
 
@@ -81,7 +87,33 @@ router.post('/v5/create-role', (req, res) => {
 
 })
 
-router.post('/v5/update-role', (req, res) => {
+router.post('/v5/admin-view/create-user-university-details', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/create-user-university-permissions')
+
+})
+
+router.post('/v5/admin-view/create-user-university-permissions', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/create-user-cya')
+
+})
+
+router.post('/v5/admin-view/create-user-cya', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/create-user-done')
+
+})
+
+// Update User //
+
+router.post('/v5/admin-view/update-user', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/update-user-roles')
+
+})
+
+router.post('/v5/admin-view/update-user-roles', (req, res) => {
 
     const userRole = req.session.data['role']
 
@@ -92,6 +124,66 @@ router.post('/v5/update-role', (req, res) => {
     }
 
 })
+
+router.post('/v5/admin-view/update-user-university-details', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/update-user-university-permissions')
+
+})
+
+router.post('/v5/admin-view/update-user-university-permissions', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/update-user-cya')
+
+})
+
+
+router.post('/v5/admin-view/update-user-cya', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/update-user-done')
+
+})
+
+// Manage Universities //
+
+router.post('/v5/admin-view/add-uni', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-unis')
+
+})
+
+router.post('/v5/admin-view/college-details', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-unis')
+
+})
+
+router.post('/v5/admin-view/delete-university', (req, res) => {
+
+    const deleteUniversity = req.session.data['deleteUniversity']
+
+    if (deleteUniversity === 'Yes') {
+        res.redirect('/lsf-web/v5/admin-view/manage-unis')
+    } else {
+        res.redirect('/lsf-web/v5/admin-view/manage-unis')
+    }
+
+})
+
+// Course Details //
+
+router.post('/v5/admin-view/add-course-details', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-courses')
+
+})
+
+router.post('/v5/admin-view/edit-course-details', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/manage-courses')
+
+})
+
 
 // Calculation Rates //
 

@@ -20,11 +20,10 @@ Manage courses
 	<div class="nhsuk-grid-column-full">
 		<div class="nhsuk-form-group">
 			<button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">Apply filter </button>
-			<a class="nhsuk-button nhsuk-button--secondary float: right;" href="/lsf-web/v5/admin-view/add-course" data-module="nhsuk-button" type="submit" id="searchButton">Add course</a>
+			<a class="nhsuk-button nhsuk-button--secondary" style="float: right;" href="/lsf-web/v5/admin-view/add-course-details" data-module="nhsuk-button" type="submit" id="searchButton">Add course</a>
 			<p><a href="/lsf-web/v5/admin-view/manage-courses" id="clearButton">Reset filter</a></p>
 		</div>
 	</div>
-
 </form>
 
 <div class="nhsuk-grid-column-full">
@@ -35,13 +34,13 @@ Manage courses
       
         <thead role="rowgroup" class="nhsuk-table__head">	
           <tr role="row">
-            <th role="columnheader" class="bold" scope="col">Course name</th>
+            <th role="columnheader" class="bold" scope="col" width="35%">Course name</th>
             <th role="columnheader" class="bold" scope="col">Payment code</th>
             <th role="columnheader" class="bold" scope="col">Course uplift</th>
             <th role="columnheader" class="bold" scope="col">Blended learning</th>
             <th role="columnheader" class="bold" scope="col">Linked universities</th>
             <th role="columnheader" class="bold" scope="col">Enabled</th>
-            <th role="columnheader" class="bold" scope="col">Action</th>
+            <th role="columnheader" class="bold" scope="col" width="20%">Action</th>
           </tr>
         </thead>
         <tbody class="nhsuk-table__body">
@@ -68,7 +67,7 @@ Manage courses
             </td>
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading">Action</span>
-              <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+              <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
             </td>
           </tr>
 
@@ -94,7 +93,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -120,7 +119,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -146,7 +145,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
 
@@ -172,7 +171,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -198,7 +197,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -224,7 +223,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -250,7 +249,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -276,7 +275,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -302,7 +301,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -328,7 +327,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -354,7 +353,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -380,7 +379,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -406,7 +405,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -432,7 +431,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -458,7 +457,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -484,7 +483,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -510,7 +509,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -536,7 +535,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -562,7 +561,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -588,7 +587,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
 
@@ -614,7 +613,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -640,7 +639,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -666,7 +665,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -692,7 +691,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -718,7 +717,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -744,7 +743,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -770,7 +769,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -796,7 +795,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
 
@@ -822,7 +821,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
 
@@ -848,7 +847,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
 
@@ -874,7 +873,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -900,7 +899,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
 
@@ -926,7 +925,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -952,7 +951,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -978,7 +977,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -1004,7 +1003,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -1030,7 +1029,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -1056,7 +1055,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           
@@ -1082,7 +1081,7 @@ Manage courses
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Action</span>
-                <a href="/lsf-web/v5/admin-view/course-details">Change<span class="nhsuk-u-visually-hidden">course details</span></a>
+                <a href="/lsf-web/v5/admin-view/edit-course-details">Change course details</a>
               </td>
             </tr>
           

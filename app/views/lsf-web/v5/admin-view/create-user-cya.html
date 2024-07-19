@@ -14,7 +14,8 @@ Create user
 </div>
 
 <div class="nhsuk-grid-column-two-thirds">	
-	<form name="userDetailsForm" action="/lsf-web/v5/admin-view/create-user-done" method="post" novalidate="">
+	<form name="userDetailsForm" action="v5/admin-view/create-user-cya" method="post" novalidate="">
+
 		<div class="content">
 			<h1 class="nhsuk-heading-l" id="title">Check your answers</h1>
 			<dl class="nhsuk-summary-list">
@@ -173,10 +174,48 @@ Create user
 					  <a href="/lsf-web/v5/admin-view/create-user-university-details#contactNumber" id="contactNumber-change" aria-label="Change preferred contact number">Change</a>
 				  </dd>
 			  </div>
-			  {% endif %} 
+			  {% endif %}
+				</dl>
 
-			  
+			  <!-- If user role is HEI User, Admin or Read provide data about university, department and phone number here -->
+			  {% if data['role'] in ['HEI user', 'HEI admin', 'HEI read'] %}
+			  <h1 class="nhsuk-heading-m" id="title">User permissions</h1>
+			  <dl class="nhsuk-summary-list">
+
+			  <div class="nhsuk-summary-list__row">
+				  <dt id="userTask" class="nhsuk-summary-list__key">
+					  User tasks
+				  </dt>
+				  <dd class="nhsuk-summary-list__value" id="university">
+				  {% if data ['userTask'] %} 
+					  {{ data['userTask'] }}
+				  {% else %} 
+					  Process Travel and Dual Accommodation Expenses claims
+				  {% endif %} 
+				  </dd>
+				  <dd class="nhsuk-summary-list__actions">
+					<a href="/lsf-web/v5/admin-view/create-user-university-permissions#userTask" id="user-tasks-change" aria-label="Change user tasks">Change</a>
+				  </dd>
+			  </div>
+				
+			  <div class="nhsuk-summary-list__row">
+				  <dt id="userPermissions" class="nhsuk-summary-list__key">
+					  User permissions
+				  </dt>
+				  <dd class="nhsuk-summary-list__value" id="job">
+				  {% if data ['userPermissions'] %} 
+					  {{ data['userPermissions'] }}
+				  {% else %} 
+					  Edit access
+				  {% endif %} 
+				  </dd>
+				  <dd class="nhsuk-summary-list__actions">
+					  <a href="/lsf-web/v5/admin-view/create-user-university-permissions#userPermissions" id="user-permissions-change" aria-label="Change user permissions">Change</a>
+				  </dd>
+			  </div>
+			  {% endif %} 
 			</dl>
+
 		  </div>
 		  
 

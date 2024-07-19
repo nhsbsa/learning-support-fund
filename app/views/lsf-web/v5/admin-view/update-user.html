@@ -5,40 +5,41 @@ Create user
 {% endblock %}
 
 {% block content %}
-
 <div class="nhsuk-grid-column-full">
 
-	{{ backLink({
+{{ backLink({
 	"href": "javascript:history.go(-1)",
 	"text": "Go back"
 	}) }}
 </div>
 
-<div class="nhsuk-grid-column-two-thirds">
+<form name="userDetailsForm" action="v5/admin-view/update-user" method="post" novalidate="">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Change user's personal details</h1>
+	</div>
 
-	<form name="userDetailsForm" action="/lsf-web/v5/admin-view/update-user-roles" method="post" novalidate="">
-				<h1 class="nhsuk-heading-l">Change user's personal details</h1>
+	<div class="nhsuk-grid-column-two-thirds">
 
 				<div class="nhsuk-form-group">
 					<label class="nhsuk-label" id="email-label" for="email" class="form-label-bold">Email address</label>
-					<input class="nhsuk-input" id="email" name="email" type="text" spellcheck="false" inputmode="email" autocomplete="off" value="sdsds@gmail.com">
+					<input class="nhsuk-input  nhsuk-input--width-20" id="email" name="email" type="text" spellcheck="false" inputmode="email" autocomplete="off" value="sdsds@gmail.com">
 				</div>
 
 				<div class="nhsuk-form-group">
 					<label class="nhsuk-label" id="firstname-label" for="firstname" class="form-label-bold">First name</label>
 					<div class="nhsuk-hint" id="contact-hint">Do not include any middle names</div>
-					<input class="nhsuk-input" id="firstName" name="firstName" type="text" spellcheck="false" autocomplete="off" value="Tin">
+					<input class="nhsuk-input  nhsuk-input--width-10" id="firstName" name="firstName" type="text" spellcheck="false" autocomplete="off" value="Tin">
 				</div>
 
 				<div class="nhsuk-form-group">
 					<label class="nhsuk-label" id="lastName-label" for="lastName" class="form-label-bold">Last name</label>
-					<input class="nhsuk-input" id="lastName" name="lastName" type="text" spellcheck="false" autocomplete="off" value="Cooper">
+					<input class="nhsuk-input  nhsuk-input--width-10" id="lastName" name="lastName" type="text" spellcheck="false" autocomplete="off" value="Cooper">
 				</div>
 
 				<div id="locationContainer">
 					<div class="nhsuk-form-group">
 						<label class="nhsuk-label" id="location-label" for="location" class="form-label-bold">Location</label>
-						<input class="nhsuk-input" id="location" name="location" type="text" spellcheck="false" autocomplete="off" value="Newcastle upon Tyne">
+						<input class="nhsuk-input  nhsuk-input--width-20" id="location" name="location" type="text" spellcheck="false" autocomplete="off" value="Newcastle upon Tyne">
 					</div>
 				
 					<div class="nhsuk-form-group">

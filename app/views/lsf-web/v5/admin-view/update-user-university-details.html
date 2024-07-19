@@ -5,17 +5,20 @@ University details
 {% endblock %}
 
 {% block content %}
+<div class="nhsuk-grid-column-full">
 
-	<div class="nhsuk-grid-column-two-thirds">
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
 
-		{{ backLink({
-		"href": "javascript:history.go(-1)",
-		"text": "Go back"
-		}) }}
-
-		<form name="userDetailsForm" action="/lsf-web/v5/admin-view/update-user-cya" method="post" novalidate="">
+		<form action="v5/admin-view/update-user-university-details" method="post">
+			<div class="nhsuk-grid-column-full">
 			<h1 class="nhsuk-heading-l">Change university details</h1>
+		</div>
 	
+		<div class="nhsuk-grid-column-two-thirds">
 			<div class="nhsuk-form-group">
 				<label class="nhsuk-label" id="college-label" for="college" class="form-label">
 					University
@@ -108,14 +111,14 @@ University details
 				<label class="nhsuk-label" id="job-label" for="department" class="form-label-bold">
 					Department
 				</label>
-				<input class="nhsuk-input" id="job" name="department" type="text" spellcheck="false" autocomplete="off" value="Administration">
+				<input class="nhsuk-input nhsuk-input--width-20" id="job" name="department" type="text" spellcheck="false" autocomplete="off" value="Administration">
 			</div>
 
 			<div class="nhsuk-form-group">
 				<label class="nhsuk-label" id="contactNumber-label" for="contactNumber" class="form-label-bold">
 					Phone number
 				</label>
-				<input class="nhsuk-input" id="contactNumber" name="contactNumber" type="text" spellcheck="false" autocomplete="off" maxlength="20" value="01911234567">
+				<input class="nhsuk-input nhsuk-input--width-10" id="contactNumber" name="contactNumber" type="text" spellcheck="false" autocomplete="off" maxlength="20" value="01911234567">
 			</div>
 
 			<div class="nhsuk-form-group">

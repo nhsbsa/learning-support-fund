@@ -1,0 +1,94 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-full">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
+
+	<div class="nhsuk-grid-column-full">
+		<form action="v5/admin-view/update-user-university-permissions" method="post">
+			<fieldset class="nhsuk-fieldset">
+				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+					<h1 class="nhsuk-fieldset__heading">Set the user's permissions</h1>
+				</legend>
+			</fieldset>
+	</div>
+
+		<div class="nhsuk-grid-column-two-thirds">
+			<div class="nhsuk-form-group">
+				<fieldset class="nhsuk-fieldset" aria-describedby="userTask-hint" role="group">
+				<label class="nhsuk-label form-label" id="userTask-label" for="userTask">
+					User tasks
+				</label>
+				<div class="nhsuk-hint" id="userTask-hint">
+					Select at least one user task
+				</div>
+
+				<div class="nhsuk-checkboxes">
+					<div class="nhsuk-checkboxes__item">
+					  <input class="nhsuk-checkboxes__input" id="userTask-1" name="userTask" type="checkbox" value="Confirm student attendance">
+					  <label class="nhsuk-label nhsuk-checkboxes__label" for="userTask-1">
+						Confirm student attendance
+					  </label>
+					</div>
+			
+					<div class="nhsuk-checkboxes__item">
+					  <input class="nhsuk-checkboxes__input" id="userTask-2" name="userTask" type="checkbox" value="Process Travel and Dual Accommodation Expenses claims" checked="checked">
+					  <label class="nhsuk-label nhsuk-checkboxes__label" for="userTask-2">
+						Process Travel and Dual Accommodation Expenses claims
+					  </label>
+					</div>
+				</div>
+				</fieldset>
+			</div>
+
+			<div class="nhsuk-form-group">
+				<fieldset class="nhsuk-fieldset" aria-describedby="userPermissions-hint" role="group">
+					<label class="nhsuk-label form-label" id="userPermissions-label" for="userPermissions">
+						User permissions
+					</label>
+				<div class="nhsuk-radios nhsuk-radios--inline">
+
+					<div class="nhsuk-radios__item">
+					  <input class="nhsuk-radios__input" id="userPermissions-1" name="userPermissions" type="radio" value="Edit access" checked="checked">
+					  <label class="nhsuk-label nhsuk-radios__label" for="userPermissions-1">
+						Edit access
+					  </label>
+					</div>
+			  
+					<div class="nhsuk-radios__item">
+					  <input class="nhsuk-radios__input" id="userPermissions-2" name="userPermissions" type="radio" value="Read only">
+					  <label class="nhsuk-label nhsuk-radios__label" for="userPermissions-2">
+						Read only
+					  </label>
+					</div>
+			  
+				  </div>
+				</fieldset>
+			</div>
+
+			<div class="nhsuk-form-group">
+				<button class="nhsuk-button" type="submit" id="saveUser">Continue</button>
+				<p><a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a></p>
+			</div>
+	</form>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue : '',
+    autoselect : true,  
+    selectElement : document.querySelector('#collegeDrop')
+  })
+</script>
+{% endblock %}

@@ -5,34 +5,26 @@ Add university course details
 {% endblock %}
 
 {% block content %}
-<form action="/lsf-web/v5/admin-view/add-course" method="POST" novalidate="">
-	<div class="nhsuk-grid-column-full">
+<div class="nhsuk-grid-column-two-thirds">
 
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
 
-<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-	  <ol class="nhsuk-breadcrumb__list">
-		<li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/admin-view/manage-unis">Manage universities</a></li>
-		<li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/admin-view/manage-courses">Manage courses</a></li>
-		<li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/admin-view/add-course">Add course</a></li>
-	  </ol>
-	  <p class="nhsuk-breadcrumb__back">
-		<a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v5/admin-view/manage-courses">
-		  <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
-		  Manage courses
-		</a>
-	  </p>
-</nav>
-
+<div class="nhsuk-grid-column-two-thirds">
+	<form action="v5/admin-view/add-course" method="POST" novalidate="">
 		<h1 class="nhsuk-heading-l">Add course details for ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</h1>
 
 	</div>
 				
 				<div class="nhsuk-grid-column-two-thirds">
-				<div class="nhsuk-form-group">
+				<div style="width: 65%;" class="nhsuk-form-group">
 					<label class="nhsuk-label" id="courseType-Label" for="courseType" class="form-label">
 						Course type
 					</label>
-					<select class="nhsuk-select nhsuk-u-width-full" id="courseType" name="courseType">
+					<select class="nhsuk-select" id="courseType" name="courseType">
 						<option value="">Select course type...</option>
 
 						<option value="1">Adult Nursing</option>
@@ -76,11 +68,11 @@ Add university course details
 					</select>
 				</div>
 
-				<div class="nhsuk-form-group">
+				<div style="width: 40%;" class="nhsuk-form-group">
 					<label class="nhsuk-label" id="courseLengthMonths-Label" for="courseLengthMonths" class="form-label">
 						Course length (months)
 					</label>
-					<select class="nhsuk-select nhsuk-u-width-full" id="courseLengthMonths" name="courseLengthMonths" tabindex="-1">
+					<select class="nhsuk-select" id="courseLengthMonths" name="courseLengthMonths" tabindex="-1">
 						<option value="">Select course length...</option>
 
 						<option value="1">12</option>
@@ -183,11 +175,11 @@ Add university course details
 					</select>
 				</div>
 
-				<div class="nhsuk-form-group">
+				<div style="width: 40%;" class="nhsuk-form-group">
 					<label class="nhsuk-label" id="courseYears-Label" for="courseYears" class="form-label">
 						Course years
 					</label>
-					<select class="nhsuk-select nhsuk-u-width-full" id="courseYears" name="courseYears" tabindex="-1">
+					<select class="nhsuk-select" id="courseYears" name="courseYears" tabindex="-1">
 						<option value="">Select course years...</option>
 				
 						<option value="1">Year 1</option>
@@ -207,7 +199,7 @@ Add university course details
 					<label class="nhsuk-label" id="courseStart-Label" for="courseStartMonth" class="form-label">
 						Course start month
 					</label>
-					<select class="nhsuk-select nhsuk-u-width-full" id="courseStartMonth" name="courseStartMonth" tabindex="-1">
+					<select class="nhsuk-select" id="courseStartMonth" name="courseStartMonth" tabindex="-1">
 						<option value="">Select course start month...</option>
 
 						<option value="1">January</option>
@@ -224,6 +216,40 @@ Add university course details
 						<option value="12">December</option>
 					</select>
 				</div>
+
+				<fieldset class="nhsuk-fieldset">
+					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Is this a blended learning course?</legend>
+					<div class="nhsuk-form-group">
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="blendedLearningYes" name="blendedLearning" type="radio" value="Yes">
+								<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningYes">Yes</label>
+							</div>
+		
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="blendedLearningNo" name="blendedLearning" type="radio" value="No">
+								<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningNo">No</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset class="nhsuk-fieldset">
+					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Does the regional maintenance grant uplift apply?</legend>
+					<div class="nhsuk-form-group">
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="regionalUpliftYes" name="regionalUplift" type="radio" value="Yes">
+								<label class="nhsuk-label nhsuk-radios__label" for="regionalUpliftYes">Yes</label>
+							</div>
+		
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="regionalUpliftNo" name="regionalUplift" type="radio" value="No">
+								<label class="nhsuk-label nhsuk-radios__label" for="regionalUpliftNo">No</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
 
 				<fieldset class="nhsuk-fieldset">
 					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Do you want to enable the course details?</legend>
