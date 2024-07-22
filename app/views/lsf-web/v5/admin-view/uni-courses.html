@@ -1,3 +1,7 @@
+<!-- Add these lines to the head section of your layout-admin-nhsuk.html -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
 {% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
@@ -6,196 +10,258 @@ University courses
 
 {% block content %}
 <form action="/lsf-web/v5/admin-view/manage-unis" method="POST">
-	<div class="nhsuk-grid-column-full">
+    <div class="nhsuk-grid-column-full">
 
+        <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+            <ol class="nhsuk-breadcrumb__list">
+                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/admin-view/manage-unis">Manage universities</a></li>
+                <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/admin-view/manage-courses">Manage courses</a></li>
+            </ol>
+            <p class="nhsuk-breadcrumb__back">
+                <a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v5/admin-view/manage-unis">
+                    <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
+                    Manage courses
+                </a>
+            </p>
+        </nav>
 
+        <form action="/lsf-web/v5/admin-view/uni-courses" method="POST" novalidate="">
 
-<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-	  <ol class="nhsuk-breadcrumb__list">
-		<li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/admin-view/manage-unis">Manage universities</a></li>
-		<li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v5/admin-view/manage-courses">Manage courses</a></li>
-	  </ol>
-	  <p class="nhsuk-breadcrumb__back">
-		<a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v5/admin-view/manage-unis">
-		  <span class="nhsuk-u-visually-hidden">Back to &nbsp;</span>
-		  Manage courses
-		</a>
-	  </p>
-</nav>
+            <h1 class="nhsuk-heading-l">Courses for ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</h1>
+        </div>
+            
+        <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-form-group" id="filterCourses-group">
+                <label class="nhsuk-label" for="filterCourses">Filter courses</label>
+                <div id="filterCourses-container"></div>
+            </div>
+        </div>
+            
+        <div class="nhsuk-grid-column-full">
+            <div class="nhsuk-form-group">
+                <button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">Apply Filter</button>
+                <a class="nhsuk-button nhsuk-button--secondary" style="float: right;" href="/lsf-web/v5/admin-view/add-course" data-module="nhsuk-button" type="submit" id="addCourseButton">Add course</a>
+                <p><a href="/lsf-web/v5/admin-view/user-results" id="clearButton">Reset filter</a></p>
+            </div>
+        </div>
 
-<form action="/lsf-web/v5/admin-view/uni-courses" method="POST" novalidate="">
+    </form>
 
-		<h1 class="nhsuk-heading-l">Courses for ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</h1>
-	</div>
-		
-	<div class="nhsuk-grid-column-one-third">
-		<div class="nhsuk-form-group" id="filterCourses-group">
-			<label class="nhsuk-label" for="filterCourses">Filter courses</label>
-			<input class="nhsuk-input" id="filterCourses" name="filterCourses" type="text" onkeyup="filterTable('filterText', 'coursesTable')">
-		</div>
-	</div>
-		
-	<div class="nhsuk-grid-column-full">
-		<div class="nhsuk-form-group">
-			<button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">Apply Filter</button>
-			<a class="nhsuk-button nhsuk-button--secondary" style="float: right;" href="/lsf-web/v5/admin-view/add-course" data-module="nhsuk-button" type="submit" id="addCourseButton">Add course</a>
-			<p><a href="/lsf-web/v5/admin-view/user-results" id="clearButton">Reset filter</a></p>
-		</div>
-	</div>
+    <div class="nhsuk-grid-column-full">
+        <hr class="" style="border-color: #005eb8; border-width: 4px">
+            <table role="table" id="coursesTable" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+              <h2 class="heading-large nhsuk-u-visually-hidden">Courses table</h2>
+                <caption class="nhsuk-table__caption">Courses<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 7 results</span><span id="resultMessage" aria-hidden="true"> - contains 7 results</span></caption>
+            
+                <thead role="rowgroup" class="nhsuk-table__head">    
+                    <tr role="row">
+                        <th role="columnheader" class="bold" scope="col" width="35%">Course name</th>
+                        <th role="columnheader" class="bold" scope="col">Course uplift</th>
+                        <th role="columnheader" class="bold" scope="col">Blended learning</th>
+                        <th role="columnheader" class="bold" scope="col">Enabled</th>
+                        <th role="columnheader" class="bold" scope="col">Action</th>
+                      </tr>
+                  </thead>
+                  <tbody class="nhsuk-table__body">
 
-</form>
+                    <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Course name</span>
+                          <span class="wordbreak">Adult Nursing</span></a>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action</span>
+                          <a href="/lsf-web/v5/admin-view/course-details">Manage courses</a>
+                        </td>
+                    </tr>
 
-<div class="nhsuk-grid-column-full">
-	<hr class="" style="border-color: #005eb8; border-width: 4px">
-		<table role="table" id="coursesTable" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
-		  <h2 class="heading-large nhsuk-u-visually-hidden">Courses table</h2>
-			<caption class="nhsuk-table__caption">Courses<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 7 results</span><span id="resultMessage" aria-hidden="true"> - contains 7 results</span></caption>
-		
+                    <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Course name</span>
+                          <span class="wordbreak">Child Nursing</span></a>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action</span>
+                          <a href="/lsf-web/v5/admin-view/course-details">Manage courses</a>
+                        </td>
+                    </tr>
 
-			<thead role="rowgroup" class="nhsuk-table__head">	
-				<tr role="row">
-				  <th role="columnheader" class="bold" scope="col">Course name</th>
-				  <th role="columnheader" class="bold" scope="col">Course uplift</th>
-				  <th role="columnheader" class="bold" scope="col">Enabled</th>
-				  <th role="columnheader" class="bold" scope="col">Action</th>
-				</tr>
-			  </thead>
-			  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Course name</span>
+                          <span class="wordbreak">Fitness</span></a>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action</span>
+                          <a href="/lsf-web/v5/admin-view/course-details">Manage courses</a>
+                        </td>
+                    </tr>
 
-				<tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Course name</span>
-					  <span class="wordbreak">Adult Nursing</span>
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Course uplift</span>No
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Action</span>
-						<a href="/lsf-web/v5/admin-view/course-details">Manage courses</a>
-					</td>
-				  </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Course name</span>
+                          <span class="wordbreak">Mental Health Nursing</span></a>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action</span>
+                          <a href="/lsf-web/v5/admin-view/course-details">Manage courses</a>
+                        </td>
+                    </tr>
 
-				  <tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Course name</span>
-					  <span class="wordbreak">Child Nursing</span>
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Course uplift</span>No
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Action</span>
-						<a href="/lsf-web/v5/admin-view/course-details">Manage courses</a>
-					</td>
-				  </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Course name</span>
+                          <span class="wordbreak">Midwifery</span></a>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action</span>
+                          <a href="/lsf-web/v5/admin-view/course-details">Manage courses</a>
+                        </td>
+                    </tr>
 
-				  <tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Course name</span>
-					  <span class="wordbreak">Fitness</span>
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Action</span>
-						<a href="/lsf-web/v5/admin-view/course-details">Manage courses</a>
-					</td>
-				  </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Course name</span>
+                          <span class="wordbreak">Operating Department Practitioner</span></a>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action</span>
+                          <a href="/lsf-web/v5/admin-view/course-details">Manage courses</a>
+                        </td>
+                    </tr>
 
-				  <tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Course name</span>
-					  <span class="wordbreak">Mental Health Nursing</span>
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Action</span>
-						<a href="/lsf-web/v5/admin-view/course-details">Manage courses</a>
-					</td>
-				  </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Course name</span>
+                          <span class="wordbreak">Therapeutic Radiography</span></a>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action</span>
+                          <a href="/lsf-web/v5/admin-view/edit-course-details">Manage courses</a>
+                        </td>
+                    </tr>
 
-				  <tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Course name</span>
-					  <span class="wordbreak">Midwifery</span>
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Course uplift</span>No
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Action</span>
-						<a href="/lsf-web/v5/admin-view/course-details">Manage courses</a>
-					</td>
-				  </tr>
+                    </tbody>
+                </table>
 
-				  <tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Course name</span>
-					  <span class="wordbreak">Operating Department Practitioner</span>
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Course uplift</span>No
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Action</span>
-						<a href="/lsf-web/v5/admin-view/course-details">Manage courses</a>
-					</td>
-				  </tr>
+                <nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
+                    <ul class="nhsbsa-pagination" >
+                        <li class="nhsbsa-pagination__item nhsbsa-pagination-li">
+                            <a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
+                        </li>
+                    </ul>
+            
+                    <div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">7</span> of <span id="tdaeTotalItemsNumber">7 results</span></div>
+                </nav>
 
-				  <tr role="row" class="nhsuk-table__row">
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Course name</span>
-					  <span class="wordbreak">Therapeutic Radiography</span>
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-					  <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
-					</td>
-					<td role="cell" class="nhsuk-table__cell">
-						<span class="nhsuk-table-responsive__heading">Action</span>
-						<a href="/lsf-web/v5/admin-view/course-details">Manage courses</a>
-					</td>
-				  </tr>
+            </div>
+        </div>
+    </div>
+{% endblock %}
 
-				</tbody>
-			</table>
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+    const courses = [
+        "Adult Nursing",
+        "Child Nursing",
+        "Fitness",
+        "Mental Health Nursing",
+        "Midwifery",
+        "Operating Department Practitioner",
+        "Therapeutic Radiography"
+    ];
 
-			<nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
-				<ul class="nhsbsa-pagination" >
-					<li class="nhsbsa-pagination__item nhsbsa-pagination-li">
-						<a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
-					</li>
-				</ul>
-				<!--a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href=" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a-->
-		
-				<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">7</span> of <span id="tdaeTotalItemsNumber">7 results</span></div>
-			</nav>
+    accessibleAutocomplete({
+        element: document.querySelector('#filterCourses-container'),
+        id: 'filterCourses', // To match it to the existing element
+        source: courses,
+        onConfirm: function(val) {
+            document.querySelector('#filterCourses').value = val;
+            filterTable(val, 'coursesTable');
+        }
+    });
 
-		</div>
-	</div>
-</div>
+    function filterTable(filterText, tableId) {
+        let filter, table, tr, td, i, txtValue;
+        filter = filterText.toUpperCase();
+        table = document.getElementById(tableId);
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+</script>
 {% endblock %}

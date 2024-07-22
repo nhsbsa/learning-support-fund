@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
 {% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
@@ -13,7 +16,7 @@ Manage courses
 	<div class="nhsuk-grid-column-one-third">
 		<div class="nhsuk-form-group" id="filterCourses-group">
 			<label class="nhsuk-label" for="filterCourses">Filter courses</label>
-			<input class="nhsuk-input" id="filterCourses" name="filterCourses" type="text" onkeyup="filterTable('filterText', 'coursesTable')">
+			<div id="filterCourses-container"></div>
 		</div>
 	</div>
 		
@@ -1106,51 +1109,75 @@ Manage courses
 
 {% block pageScripts %}
 <!-- autocomplete js -->
-<script>
-  $(function() {
-    var availableCourses = [
+<script type="text/javascript">
+    const courses = [
       "Adult Nursing",
-      "Adult Nursing and Social Work",
-      "Child Nursing",
-      "Child Nursing and Social Work",
-      "Dental Hygiene",
-      "Dental Hygiene and Dental Therapy",
-      "Dental Therapy",
-      "Diagnostic Radiography",
-      "Dietetics",
-      "Dual Nursing - Adult and Child",
-      "Dual Nursing - Adult and Learning Disabilities",
-      "Dual Nursing - Adult and Mental Health",
-      "Dual Nursing - Child and Learning Disabilities",
-      "Dual Nursing - Child and Mental Health",
-      "Dual Nursing - Mental Health and Learning Disabilities",
-      "Fitness",
-      "Language Pathology (MSc)",
-      "Learning Disabilities Nursing",
-      "Learning Disablilities Nursing and Social Work",
-      "Mental Health Nursing",
-      "Mental Health Nursing and Social Work",
-      "Midwifery",
-      "MSci Nurse Paramedic",
-      "Nutrition and Dietetics",
-      "Occupational Therapy",
-      "Operating Department Practitioner",
-      "Orthoptics",
-      "Paramedicine",
-      "Paramedic Practice",
-      "Paramedic Science",
-      "Paramedic Science 2 Years",
-      "Paramedic Science and Out Of Hospital Care",
-      "Physiotherapy",
-      "Podiatry",
-      "Prosthetics and Orthotics",
-      "Radiotherapy and Oncology",
-      "Speech and Language Therapy",
-      "Therapeutic Radiography"
+        "Adult Nursing and Social Work",
+        "Child Nursing",
+        "Child Nursing and Social Work",
+        "Dental Hygiene",
+        "Dental Hygiene and Dental Therapy",
+        "Dental Therapy",
+        "Diagnostic Radiography",
+        "Dietetics",
+        "Dual Nursing - Adult and Child",
+        "Dual Nursing - Adult and Learning Disabilities",
+        "Dual Nursing - Adult and Mental Health",
+        "Dual Nursing - Child and Learning Disabilities",
+        "Dual Nursing - Child and Mental Health",
+        "Dual Nursing - Mental Health and Learning Disabilities",
+        "Fitness",
+        "Language Pathology (MSc)",
+        "Learning Disabilities Nursing",
+        "Learning Disablilities Nursing and Social Work",
+        "Mental Health Nursing",
+        "Mental Health Nursing and Social Work",
+        "Midwifery",
+        "MSci Nurse Paramedic",
+        "Nutrition and Dietetics",
+        "Occupational Therapy",
+        "Operating Department Practitioner",
+        "Orthoptics",
+        "Paramedicine",
+        "Paramedic Practice",
+        "Paramedic Science",
+        "Paramedic Science 2 Years",
+        "Paramedic Science and Out Of Hospital Care",
+        "Physiotherapy",
+        "Podiatry",
+        "Prosthetics and Orthotics",
+        "Radiotherapy and Oncology",
+        "Speech and Language Therapy",
+        "Therapeutic Radiography"
     ];
-    $("#filterCourses").autocomplete({
-      source: availableCourses
+
+    accessibleAutocomplete({
+        element: document.querySelector('#filterCourses-container'),
+        id: 'filterCourses', // To match it to the existing element
+        source: courses,
+        onConfirm: function(val) {
+            document.querySelector('#filterCourses').value = val;
+            filterTable(val, 'coursesTable');
+        }
     });
-  });
+
+    function filterTable(filterText, tableId) {
+        let filter, table, tr, td, i, txtValue;
+        filter = filterText.toUpperCase();
+        table = document.getElementById(tableId);
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
 </script>
 {% endblock %}

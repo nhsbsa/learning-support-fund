@@ -1,7 +1,7 @@
 {% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
-Update university details
+Change university details
 {% endblock %}
 
 {% block content %}
@@ -15,7 +15,7 @@ Update university details
 
 <div class="nhsuk-grid-column-two-thirds">
 	<form action="v5/admin-view/college-details" method="POST">
-		<h1 class="nhsuk-heading-l">University details</h1>
+		<h1 class="nhsuk-heading-l">Change university details</h1>
 
 		<div style="width: 65%;" class="nhsuk-form-group">
 			<label class="nhsuk-label" id="universityName-label" for="universityName" class="form-label-bold">
@@ -31,23 +31,7 @@ Update university details
 			<input class="nhsuk-input" id="glCode" name="glCode" type="text" maxlength="4" spellcheck="false" autocomplete="off" value="AA0">
 		</div>	
 
-		<fieldset class="nhsuk-fieldset">
-			<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Is this a blended learning course?</legend>
-			<div class="nhsuk-form-group">
-				<div class="nhsuk-radios nhsuk-radios--inline">
-					<div class="nhsuk-radios__item">
-						<input class="nhsuk-radios__input" id="blendedLearningYes" name="blendedLearning" type="radio" value="Yes">
-						<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningYes">Yes</label>
-					</div>
-
-					<div class="nhsuk-radios__item">
-						<input class="nhsuk-radios__input" id="blendedLearningNo" name="blendedLearning" type="radio" value="No" checked="checked">
-						<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningNo">No</label>
-					</div>
-				</div>
-			</div>
-		</fieldset>
-
+		
 		<fieldset class="nhsuk-fieldset">
 			<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Does the regional maintenance grant uplift apply?</legend>
 			<div class="nhsuk-form-group">
@@ -60,6 +44,23 @@ Update university details
 					<div class="nhsuk-radios__item">
 						<input class="nhsuk-radios__input" id="regionalUpliftNo" name="regionalUplift" type="radio" value="No" checked="checked">
 						<label class="nhsuk-label nhsuk-radios__label" for="regionalUpliftNo">No</label>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset class="nhsuk-fieldset">
+			<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Is this a blended learning course?</legend>
+			<div class="nhsuk-form-group">
+				<div class="nhsuk-radios nhsuk-radios--inline">
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="blendedLearningYes" name="blendedLearning" type="radio" value="Yes">
+						<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningYes">Yes</label>
+					</div>
+
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="blendedLearningNo" name="blendedLearning" type="radio" value="No" checked="checked">
+						<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningNo">No</label>
 					</div>
 				</div>
 			</div>
@@ -87,7 +88,7 @@ Update university details
 				
 		<div class="nhsuk-form-group">
 			<button class="nhsuk-button nhsuk-u-margin-right-4" type="submit" id="saveUniversity">Save and continue</button>
-      		<button class="nhsuk-button nhsuk-button--secondary" href="/lsf-web/v5/admin-view/delete-university" data-module="nhsuk-button" type="submit" id="deleteUniversity">Delete</button>
+      		<a class="nhsuk-button nhsuk-button--secondary" href="/lsf-web/v5/admin-view/delete-university" data-module="nhsuk-button" type="submit" id="deleteUniversity">Delete</a>
 			<p><a class="" href="/lsf-web/v5/admin-view/manage-unis">Cancel</a></p>
 		</div>
 

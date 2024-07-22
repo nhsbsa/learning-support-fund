@@ -13,7 +13,7 @@ Add university
 	}) }}
 
 	<form name="uniDetailsForm" action="v5/admin-view/add-uni" method="post" novalidate="">
-		<h1 class="nhsuk-heading-l">University details</h1>
+		<h1 class="nhsuk-heading-l">Add university details</h1>
 
 		<div style="width: 65%;" class="nhsuk-form-group">
 			<label class="nhsuk-label" id="universityName-label" for="universityName" class="form-label-bold">
@@ -29,22 +29,6 @@ Add university
 			<input class="nhsuk-input" id="glCode" name="glCode" type="text" maxlength="3" spellcheck="false" autocomplete="off">
 		</div>	
 
-		<fieldset class="nhsuk-fieldset">
-			<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Is this a blended learning course?</legend>
-			<div class="nhsuk-form-group">
-				<div class="nhsuk-radios nhsuk-radios--inline">
-					<div class="nhsuk-radios__item">
-						<input class="nhsuk-radios__input" id="blendedLearningYes" name="blendedLearning" type="radio" value="Yes">
-						<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningYes">Yes</label>
-					</div>
-
-					<div class="nhsuk-radios__item">
-						<input class="nhsuk-radios__input" id="blendedLearningNo" name="blendedLearning" type="radio" value="No">
-						<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningNo">No</label>
-					</div>
-				</div>
-			</div>
-		</fieldset>
 
 		<fieldset class="nhsuk-fieldset">
 			<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Does the regional maintenance grant uplift apply?</legend>
@@ -58,6 +42,23 @@ Add university
 					<div class="nhsuk-radios__item">
 						<input class="nhsuk-radios__input" id="regionalUpliftNo" name="regionalUplift" type="radio" value="No">
 						<label class="nhsuk-label nhsuk-radios__label" for="regionalUpliftNo">No</label>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset class="nhsuk-fieldset">
+			<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Is this a blended learning course?</legend>
+			<div class="nhsuk-form-group">
+				<div class="nhsuk-radios nhsuk-radios--inline">
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="blendedLearningYes" name="blendedLearning" type="radio" value="Yes">
+						<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningYes">Yes</label>
+					</div>
+
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="blendedLearningNo" name="blendedLearning" type="radio" value="No">
+						<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningNo">No</label>
 					</div>
 				</div>
 			</div>

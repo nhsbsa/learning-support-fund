@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
 {% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
@@ -12,8 +15,8 @@ Manage knowledge base
 
 	<div class="nhsuk-grid-column-one-third">
 		<div class="nhsuk-form-group" id="filterKnowledgeList-group">
-			<label class="nhsuk-label" for="filterKnowledgeList">Filter knowledge base items</label>
-			<input class="nhsuk-input" id="filterKnowledgeList" name="filterKnowledgeList" type="text" onkeyup="filterTable('filterText', 'knowledgeListTable')">
+			<label class="nhsuk-label" for="filterKnowledgeList">Filter knowledge base items by title</label>
+			<div id="filterKnowledgeList-container"></div>
 		</div>
 	</div>
 		
@@ -107,4 +110,43 @@ Manage knowledge base
 			</nav>
 
 		</div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+    const knowledgeItems = [
+        "Changes to Travel And Dual Accommodation (TDAE) claim and approval process",
+        "Confirmation of Attendance"
+    ];
+
+    accessibleAutocomplete({
+        element: document.querySelector('#filterKnowledgeList-container'),
+        id: 'filterKnowledgeList', // To match it to the existing element
+        source: knowledgeItems,
+        onConfirm: function(val) {
+            document.querySelector('#filterKnowledgeList').value = val;
+            filterTable(val, 'knowledgeListTable');
+        }
+    });
+
+    function filterTable(filterText, tableId) {
+        let filter, table, tr, td, i, txtValue;
+        filter = filterText.toUpperCase();
+        table = document.getElementById(tableId);
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+</script>
 {% endblock %}

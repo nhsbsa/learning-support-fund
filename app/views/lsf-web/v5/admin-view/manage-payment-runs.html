@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
 {% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
@@ -12,8 +15,8 @@ Manage payment runs
 		
 	<div class="nhsuk-grid-column-one-third">
 		<div class="nhsuk-form-group" id="filterPaymentRuns-group">
-			<label class="nhsuk-label" for="filterPaymentRuns">Filter payment runs</label>
-			<input class="nhsuk-input" id="filterPaymentRuns" name="filterPaymentRuns" type="text" onkeyup="filterTable('filterText', 'paymentRunsTable')">
+			<label class="nhsuk-label wide-label" for="filterPaymentRuns">Filter payment runs by run date or time</label>
+			<div id="filterPaymentRuns-container"></div>
 		</div>
 	</div>
 		
@@ -36,6 +39,7 @@ Manage payment runs
         <thead role="rowgroup" class="nhsuk-table__head">	
           <tr role="row">
             <th role="columnheader" class="bold" scope="col" data-sort="string"><a href="#">Run date</th>
+            <th role="columnheader" class="bold" scope="col" data-sort="string"><a href="#">Run time</th>
             <th role="columnheader" class="bold" scope="col" data-sort="string"><a href="#">Payment date</th>
             <th role="columnheader" class="bold" scope="col">Status</th>
             <th role="columnheader" class="bold" scope="col">Enabled</th>
@@ -47,7 +51,11 @@ Manage payment runs
           <tr role="row" class="nhsuk-table__row">
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading">Run date</span>
-              <span class="wordbreak">07/11/2022 12:44</span>
+              <span class="wordbreak">07/11/2022</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Run time</span>
+              <span class="wordbreak">12:44</span>
             </td>
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading">Payment date</span>20/11/2025
@@ -68,7 +76,11 @@ Manage payment runs
 		  <tr role="row" class="nhsuk-table__row">
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading">Run date</span>
-              <span class="wordbreak">22/03/2024 09:10</span>
+              <span class="wordbreak">22/03/2024</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Run time</span>
+              <span class="wordbreak">09:10</span>
             </td>
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading">Payment date</span>	01/01/2025
@@ -89,7 +101,11 @@ Manage payment runs
 		  <tr role="row" class="nhsuk-table__row">
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading">Run date</span>
-              <span class="wordbreak">22/03/2024 15:11</span>
+              <span class="wordbreak">22/03/2024</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Run time</span>
+              <span class="wordbreak">15:11</span>
             </td>
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading">Payment date</span>01/01/2025
@@ -110,7 +126,11 @@ Manage payment runs
 		  <tr role="row" class="nhsuk-table__row">
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading">Run date</span>
-              <span class="wordbreak">22/03/2024 16:30</span>
+              <span class="wordbreak">22/03/2024</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Run time</span>
+              <span class="wordbreak">16:30</span>
             </td>
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading">Payment date</span>09/08/2024
@@ -131,7 +151,11 @@ Manage payment runs
 		  <tr role="row" class="nhsuk-table__row">
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading">Run date</span>
-              <span class="wordbreak">02/01/2015 12:01</span>
+              <span class="wordbreak">02/01/2015</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Run time</span>
+              <span class="wordbreak">12:01</span>
             </td>
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading">Payment date</span>01/03/2017
@@ -158,10 +182,63 @@ Manage payment runs
 					  <a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
 				  </li>
 			  </ul>
-			  <!--a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href="" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a-->
+			  <a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href="" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a>
 	  
 			  <div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">5</span> of <span id="tdaeTotalItemsNumber">96 results</span></div>
 		  </nav>
 
-		</div>
-  {% endblock %}
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript">
+  const paymentRuns = [
+      "07/11/2022",
+      "22/03/2024",
+      "22/03/2024",
+      "22/03/2024",
+      "02/01/2015",
+      "12:44",
+      "09:10",
+      "15:11",
+      "16:30",
+      "12:01"
+  ];
+
+  accessibleAutocomplete({
+      element: document.querySelector('#filterPaymentRuns-container'),
+      id: 'filterPaymentRuns', // To match it to the existing element
+      source: paymentRuns,
+      onConfirm: function(val) {
+          document.querySelector('#filterPaymentRuns').value = val;
+          filterTable(val, 'paymentRunsTable');
+      }
+  });
+
+  function filterTable(filterText, tableId) {
+      let filter, table, tr, td, i, txtValue;
+      filter = filterText.toUpperCase();
+      table = document.getElementById(tableId);
+      tr = table.getElementsByTagName("tr");
+
+      for (i = 1; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+              } else {
+                  tr[i].style.display = "none";
+              }
+          }       
+      }
+  }
+</script>
+
+<style>
+	.wide-label {
+		display: inline-block;
+		width: 380px; /* Adjust the width as needed */
+	}
+</style>
+{% endblock %}

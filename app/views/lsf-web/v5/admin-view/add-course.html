@@ -68,11 +68,12 @@ Add university course details
 					</select>
 				</div>
 
-				<div style="width: 40%;" class="nhsuk-form-group">
-					<label class="nhsuk-label" id="courseLengthMonths-Label" for="courseLengthMonths" class="form-label">
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" id="courseLengthMonths-Label" for="courseLengthMonths">
 						Course length (months)
 					</label>
-					<select class="nhsuk-select" id="courseLengthMonths" name="courseLengthMonths" tabindex="-1">
+
+					<select class="nhsuk-select" id="courseLengthMonths" name="courseLengthMonths">
 						<option value="">Select course length...</option>
 
 						<option value="1">12</option>
@@ -173,13 +174,19 @@ Add university course details
 						<option value="96">107</option>
 						<option value="97">108</option>
 					</select>
+
+					<div class="multi-select-container">
+						<ul id="selectedCourseLengthMonths" class="selected-container">
+							<!-- Selected items will be displayed here -->
+						</ul>
+					</div>
 				</div>
 
-				<div style="width: 40%;" class="nhsuk-form-group">
-					<label class="nhsuk-label" id="courseYears-Label" for="courseYears" class="form-label">
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" id="courseYears-Label" for="courseYears">
 						Course years
 					</label>
-					<select class="nhsuk-select" id="courseYears" name="courseYears" tabindex="-1">
+					<select class="nhsuk-select" id="courseYears" name="courseYears">
 						<option value="">Select course years...</option>
 				
 						<option value="1">Year 1</option>
@@ -193,13 +200,19 @@ Add university course details
 						<option value="9">Year 9</option>
 						<option value="10">Year 10</option>
 					</select>
+
+					<div class="multi-select-container">
+						<ul id="selectedCourseYears" class="selected-container">
+							<!-- Selected items will be displayed here -->
+						</ul>
+					</div>
 				</div>
 
 				<div class="nhsuk-form-group">
-					<label class="nhsuk-label" id="courseStart-Label" for="courseStartMonth" class="form-label">
+					<label class="nhsuk-label" id="courseStart-Label" for="courseStartMonth">
 						Course start month
 					</label>
-					<select class="nhsuk-select" id="courseStartMonth" name="courseStartMonth" tabindex="-1">
+					<select class="nhsuk-select" id="courseStartMonth" name="courseStartMonth">
 						<option value="">Select course start month...</option>
 
 						<option value="1">January</option>
@@ -215,24 +228,13 @@ Add university course details
 						<option value="11">November</option>
 						<option value="12">December</option>
 					</select>
-				</div>
 
-				<fieldset class="nhsuk-fieldset">
-					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Is this a blended learning course?</legend>
-					<div class="nhsuk-form-group">
-						<div class="nhsuk-radios nhsuk-radios--inline">
-							<div class="nhsuk-radios__item">
-								<input class="nhsuk-radios__input" id="blendedLearningYes" name="blendedLearning" type="radio" value="Yes">
-								<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningYes">Yes</label>
-							</div>
-		
-							<div class="nhsuk-radios__item">
-								<input class="nhsuk-radios__input" id="blendedLearningNo" name="blendedLearning" type="radio" value="No">
-								<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningNo">No</label>
-							</div>
-						</div>
+					<div class="multi-select-container">
+						<ul id="selectedCourseStartMonth" class="selected-container">
+							<!-- Selected items will be displayed here -->
+						</ul>
 					</div>
-				</fieldset>
+				</div>
 
 				<fieldset class="nhsuk-fieldset">
 					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Does the regional maintenance grant uplift apply?</legend>
@@ -246,6 +248,23 @@ Add university course details
 							<div class="nhsuk-radios__item">
 								<input class="nhsuk-radios__input" id="regionalUpliftNo" name="regionalUplift" type="radio" value="No">
 								<label class="nhsuk-label nhsuk-radios__label" for="regionalUpliftNo">No</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset class="nhsuk-fieldset">
+					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Is this a blended learning course?</legend>
+					<div class="nhsuk-form-group">
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="blendedLearningYes" name="blendedLearning" type="radio" value="Yes">
+								<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningYes">Yes</label>
+							</div>
+		
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="blendedLearningNo" name="blendedLearning" type="radio" value="No">
+								<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningNo">No</label>
 							</div>
 						</div>
 					</div>
@@ -307,5 +326,50 @@ Add university course details
     autoselect: true,  
     selectElement: document.querySelector('#courseStartMonth')
   });
+</script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const selectElements = [
+			{ selectId: 'courseLengthMonths', containerId: 'selectedCourseLengthMonths' },
+			{ selectId: 'courseYears', containerId: 'selectedCourseYears' },
+			{ selectId: 'courseStartMonth', containerId: 'selectedCourseStartMonth' }
+		];
+	
+		selectElements.forEach(({ selectId, containerId }) => {
+			const select = document.getElementById(selectId);
+			const selectedTagsContainer = document.getElementById(containerId);
+	
+			// Add an event listener for changes on the select element
+			select.addEventListener('change', updateSelectedTags);
+	
+			function updateSelectedTags() {
+				selectedTagsContainer.innerHTML = ''; // Clear existing tags
+	
+				const selectedOptions = Array.from(select.selectedOptions);
+	
+				selectedOptions.forEach(option => {
+					if (option.value) {
+						const listItem = document.createElement('li');
+						const tag = document.createElement('button');
+						tag.className = 'tag delete';
+						tag.textContent = option.text + " ";
+	
+						// Add click event listener to the delete button
+						tag.addEventListener('click', function () {
+							option.selected = false; // Unselect the option
+							updateSelectedTags(); // Update the tags
+						});
+	
+						listItem.appendChild(tag);
+						selectedTagsContainer.appendChild(listItem);
+					}
+				});
+			}
+	
+			// Trigger the updateSelectedTags function initially to handle default state
+			updateSelectedTags();
+		});
+	});
 </script>
 {% endblock %}

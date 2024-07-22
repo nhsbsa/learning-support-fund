@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
 {% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
@@ -12,8 +15,8 @@ Manage TDAE rates
 		
 	<div class="nhsuk-grid-column-one-third">
 		<div class="nhsuk-form-group" id="filterTDAERates-group">
-			<label class="nhsuk-label" for="filterTDAERates">Filter TDAE rates</label>
-			<input class="nhsuk-input" id="filterTDAERates" name="filterTDAERates" type="text" onkeyup="filterTable('filterText', 'ratesTable')">
+			<label class="nhsuk-label" for="filterTDAERates">Filter TDAE rates by date</label>
+			<div id="filterTDAERates-container"></div>
 		</div>
 	</div>
 		
@@ -199,4 +202,51 @@ Manage TDAE rates
 		</div>
 	</div>
 </div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+    const tdaeRates = [
+        "01/01/2022",
+        "01/02/2014",
+        "01/02/2013",
+        "01/02/2012",
+        "01/02/2011",
+        "01/02/2010",
+        "01/02/2009",
+		"01/02/2008",
+		"01/02/2007",
+        "01/01/2000"
+    ];
+
+    accessibleAutocomplete({
+        element: document.querySelector('#filterTDAERates-container'),
+        id: 'filterTDAERates', // To match it to the existing element
+        source: tdaeRates,
+        onConfirm: function(val) {
+            document.querySelector('#filterTDAERates').value = val;
+            filterTable(val, 'ratesTable');
+        }
+    });
+
+    function filterTable(filterText, tableId) {
+        let filter, table, tr, td, i, txtValue;
+        filter = filterText.toUpperCase();
+        table = document.getElementById(tableId);
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+</script>
 {% endblock %}

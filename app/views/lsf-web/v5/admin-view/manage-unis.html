@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
 {% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
@@ -13,14 +16,14 @@ Manage universities
 	<div class="nhsuk-grid-column-one-third">
 		<div class="nhsuk-form-group" id="filterUnis-group">
 			<label class="nhsuk-label" for="filterUnis">Filter universities</label>
-			<input class="nhsuk-input" id="filterUnis" name="filterUnis" type="text" onkeyup="filterTable('filterText', 'collegesTable')">
+			<div id="filterUnis-container"></div>
 		</div>
 	</div>
 		
 	<div class="nhsuk-grid-column-full">
 		<div class="nhsuk-form-group">
 			<button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">Apply filter</button> 
-			<a class="nhsuk-button nhsuk-button--secondary" style="float: right;" href="/lsf-web/v5/admin-view/add-uni" data-module="nhsuk-button" type="submit" id="searchButton">Add university</a>
+			<a class="nhsuk-button nhsuk-button--secondary" style="float: right;" href="/lsf-web/v5/admin-view/add-uni" data-module="nhsuk-button" type="submit" id="addUniButton">Add university</a>
 			<p><a href="/lsf-web/v5/admin-view/manage-unis" id="clearButton">Reset filter</a></p>
 		</div>
 	</div>
@@ -1411,11 +1414,9 @@ Manage universities
 
 {% block pageScripts %}
 <!-- autocomplete js -->
-<script>
- $(function() {
-    var availableUnis = [
-
-	"ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE",
+<script type="text/javascript">
+    const universities = [
+    "ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE",
 	"ANGLIA RUSKIN UNIVERSITY - CHELMSFORD",
 	"ANGLIA RUSKIN UNIVERSITY - PETERBOROUGH",
 	"BIRMINGHAM CITY UNIVERSITY",
@@ -1495,9 +1496,34 @@ Manage universities
 	"UNIVERSITY OF PLYMOUTH",
 	"YORK ST JOHN UNIVERSITY",
 	];
-    $("#filterCourses").autocomplete({
-      source: availableUnis
+
+    accessibleAutocomplete({
+        element: document.querySelector('#filterUnis-container'),
+        id: 'filterUnis', // To match it to the existing element
+        source: universities,
+        onConfirm: function(val) {
+            document.querySelector('#filterUnis').value = val;
+            filterTable(val, 'collegesTable');
+        }
     });
-  });
+
+    function filterTable(filterText, tableId) {
+        let filter, table, tr, td, i, txtValue;
+        filter = filterText.toUpperCase();
+        table = document.getElementById(tableId);
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
 </script>
 {% endblock %}

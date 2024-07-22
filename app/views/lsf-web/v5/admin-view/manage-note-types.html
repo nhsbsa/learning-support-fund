@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
 {% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
@@ -12,8 +15,8 @@ Manage note types
 		
 	<div class="nhsuk-grid-column-one-third">
 		<div class="nhsuk-form-group" id="filterNoteTypes-group">
-			<label class="nhsuk-label" for="filterNoteTypes">Filter by note name</label>
-			<input class="nhsuk-input" id="filterNoteTypes" name="filterNoteTypes" type="text" onkeyup="filterTable('filterText', 'noteTable')">
+			<label class="nhsuk-label" for="filterNoteTypes">Filter note types by name</label>
+			<div id="filterNoteTypes-container"></div>
 		</div>
 	</div>
 		
@@ -231,7 +234,7 @@ Manage note types
 					<tr role="row" class="nhsuk-table__row">
 						<td role="cell" class="nhsuk-table__cell">
 						  <span class="nhsuk-table-responsive__heading">Note name</span>
-						  <span class="wordbreak">Email notification of Parental support rejectedsent</span></a>
+						  <span class="wordbreak">Email notification of Parental support rejected sent</span></a>
 						</td>
 						<td role="cell" class="nhsuk-table__cell">
 							<span class="nhsuk-table-responsive__heading">System note</span>Yes
@@ -333,7 +336,7 @@ Manage note types
 					<tr role="row" class="nhsuk-table__row">
 						<td role="cell" class="nhsuk-table__cell">
 						  <span class="nhsuk-table-responsive__heading">Note name</span>
-						  <span class="wordbreak">Email Sent</span></a>
+						  <span class="wordbreak">Email sent</span></a>
 						</td>
 						<td role="cell" class="nhsuk-table__cell">
 							<span class="nhsuk-table-responsive__heading">System note</span>Yes
@@ -520,7 +523,7 @@ Manage note types
 					<tr role="row" class="nhsuk-table__row">
 						<td role="cell" class="nhsuk-table__cell">
 						  <span class="nhsuk-table-responsive__heading">Note name</span>
-						  <span class="wordbreak">New payments Scheduled</span></a>
+						  <span class="wordbreak">New payments scheduled</span></a>
 						</td>
 						<td role="cell" class="nhsuk-table__cell">
 							<span class="nhsuk-table-responsive__heading">System note</span>Yes
@@ -622,7 +625,7 @@ Manage note types
 					<tr role="row" class="nhsuk-table__row">
 						<td role="cell" class="nhsuk-table__cell">
 						  <span class="nhsuk-table-responsive__heading">Note name</span>
-						  <span class="wordbreak">Payments Held</span></a>
+						  <span class="wordbreak">Payments held</span></a>
 						</td>
 						<td role="cell" class="nhsuk-table__cell">
 							<span class="nhsuk-table-responsive__heading">System note</span>No
@@ -840,4 +843,87 @@ Manage note types
 		</div>
 	</div>
 </div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+    const noteTypes = [
+        "Attendance discontinued",
+        "Bank details updated",
+        "Call referrals",
+        "Change of Circumstances",
+        "Change of email address",
+        "Change to course details",
+        "Eligibility",
+		"Email notification of ESF further evidence request sent",
+		"Email notification of ESF rejected sent",
+        "Email notification of Parental support further evidence request sent",
+		"Email notification of Parental support non-funded year sent",
+		"Email notification of Parental support rejected sent",
+		"Email notification of TDAE further evidence request sent",
+		"Email notification of TDAE rejected sent",
+		"Email notification of Training grant further evidence request sent",
+		"Email notification of Training grant non-funded year sent",
+		"Email notification of Training grant rejected sent",
+		"Email sent",
+		"Enrolment confirmation",
+		"ESF",
+		"Finance",
+		"General",
+		"HEI overruled student COSA",
+		"Maintenance Award",
+		"Management Information",
+		"Matched student - Attendance confirmed",
+		"Matched student - Maternity confirmed",
+		"Maternity",
+		"New payments scheduled",
+		"Not enrolled",
+		"Over payment",
+		"Parental support",
+		"Password has been changed",
+		"Password reset",
+		"Payments held",
+		"Pending - Attendance reset",
+		"Personal details updated",
+		"Quality Assurance",
+		"Repeat",
+		"Return debtors",
+		"TDAE",
+		"Termly COSA status reset",
+		"Unmatched - Attendance not confirmed",
+		"Username reminder",
+		"Withdrawal",
+		"Withdrawn - Attendance withdrawn"
+    ];
+
+    accessibleAutocomplete({
+        element: document.querySelector('#filterNoteTypes-container'),
+        id: 'filterNoteTypes', // To match it to the existing element
+        source: noteTypes,
+        onConfirm: function(val) {
+            document.querySelector('#filterNoteTypes').value = val;
+            filterTable(val, 'noteTable');
+        }
+    });
+
+    function filterTable(filterText, tableId) {
+        let filter, table, tr, td, i, txtValue;
+        filter = filterText.toUpperCase();
+        table = document.getElementById(tableId);
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+</script>
 {% endblock %}

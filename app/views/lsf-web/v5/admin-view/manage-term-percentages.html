@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
 {% extends 'layout-admin-nhsuk.html' %}
 
 {% block pageTitle %}
@@ -12,8 +15,8 @@ Manage term payment percentages
 
 	<div class="nhsuk-grid-column-one-third">
 		<div class="nhsuk-form-group" id="filterTermPaymentPercentages-group">
-			<label class="nhsuk-label" for="filterTermPaymentPercentages">Filter term payment percentages</label>
-			<input class="nhsuk-input" id="filterTermPaymentPercentages" name="filterTermPaymentPercentages" type="text" onkeyup="filterTable('filterText', 'percentsTable')">
+			<label class="nhsuk-label wide-label" for="filterTermPaymentPercentages">Filter term payment percentages by date</label>
+			<div id="filterTermPaymentPercentages-container"></div>
 		</div>
 	</div>
 		
@@ -220,4 +223,58 @@ Manage term payment percentages
 		</div>
 	</div>
 </div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+    const termPercentages = [
+        "01/01/2025",
+        "01/01/2022",
+        "01/01/2009",
+        "01/01/2006",
+        "01/01/2005",
+        "01/01/2004",
+        "01/01/2003",
+		"01/01/2002",
+		"01/01/2001",
+        "01/01/2000"
+    ];
+
+    accessibleAutocomplete({
+        element: document.querySelector('#filterTermPaymentPercentages-container'),
+        id: 'filterTermPaymentPercentages', // To match it to the existing element
+        source: termPercentages,
+        onConfirm: function(val) {
+            document.querySelector('#filterTermPaymentPercentages').value = val;
+            filterTable(val, 'percentsTable');
+        }
+    });
+
+    function filterTable(filterText, tableId) {
+        let filter, table, tr, td, i, txtValue;
+        filter = filterText.toUpperCase();
+        table = document.getElementById(tableId);
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+</script>
+
+<style>
+	.wide-label {
+		display: inline-block;
+		width: 380px; /* Adjust the width as needed */
+	}
+</style>
 {% endblock %}
