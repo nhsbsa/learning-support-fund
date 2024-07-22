@@ -68,7 +68,7 @@ router.post('/v8/TDAE-overseas/insurance-comment', (req, res) => {
   } else if (overseasCost.includes('visa-fees')) {
     res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
   } else {
-    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence-mini-cya')
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-check')
   }
 
 })
@@ -84,7 +84,7 @@ router.post('/v8/TDAE-overseas/insurance-add-comment', (req, res) => {
   } else if (overseasCost.includes('visa-fees')) {
     res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
   } else {
-    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence-mini-cya')
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-check')
   }
 
 })
@@ -113,7 +113,7 @@ router.post('/v8/TDAE-overseas/medical-tests-comment', (req, res) => {
   } else if (overseasCost.includes('visa-fees')) {
     res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
   } else {
-    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence-mini-cya')
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-check')
   }
 
 })
@@ -127,7 +127,7 @@ router.post('/v8/TDAE-overseas/medical-tests-add-comment', (req, res) => {
   } else if (overseasCost.includes('visa-fees')) {
     res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
   } else {
-    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence-mini-cya')
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-check')
   }
 
 })
@@ -154,7 +154,7 @@ router.post('/v8/TDAE-overseas/vaccinations-comment', (req, res) => {
   } else if (overseasCost.includes('visa-fees')) {
     res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
   } else {
-    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence-mini-cya')
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-check')
   }
 
 })
@@ -166,7 +166,7 @@ router.post('/v8/TDAE-overseas/vaccinations-add-comment', (req, res) => {
   if (overseasCost.includes('visa-fees')) {
     res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-cost')
   } else {
-    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence-mini-cya')
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-check')
   }
 
 })
@@ -191,14 +191,14 @@ router.post('/v8/TDAE-overseas/visa-fees-comment', (req, res) => {
   if (visaFeesComments === 'yes'){
     res.redirect('/lsf-public/v8/TDAE-overseas/visa-fees-add-comment')
   } else {
-    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence-mini-cya')
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-check')
   }
 
 })
 
 router.post('/v8/TDAE-overseas/visa-fees-add-comment', (req, res) => {
 
-    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-evidence-mini-cya')
+    res.redirect('/lsf-public/v8/TDAE-overseas/overseas-check')
 
 })
 

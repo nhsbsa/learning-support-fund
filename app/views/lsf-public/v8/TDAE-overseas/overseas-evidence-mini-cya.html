@@ -206,7 +206,9 @@ Evidence you have uploaded
         {% endif %}
 
         {% if data['more-overseas-evidence'] == 'yes' %}
-          <a class="nhsuk-button" href="overseas-check">Save and continue</a>
+          <form action="/lsf-public/v8/TDAE-task-list?overseas-details=completed" method="POST">
+            <button class="nhsuk-button" type="submit">Save and continue</button>
+          </form>
         {% endif %}
         <p><a href="../TDAE-task-list-full?overseas-details=in-progress">Return to task list</a></p>
       </div>
