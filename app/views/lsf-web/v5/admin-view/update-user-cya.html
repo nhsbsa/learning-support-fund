@@ -204,21 +204,37 @@ Create user
 						  
 						<div class="nhsuk-summary-list__row">
 							<dt id="userPermissions" class="nhsuk-summary-list__key">
-								User permissions
+							  Confirmation of Student Attendance access
 							</dt>
 							<dd class="nhsuk-summary-list__value" id="job">
-							{% if data ['userPermissions'] %} 
-								{{ data['userPermissions'] }}
+							{% if data ['userPermissionsCOSA'] %} 
+								{{ data['userPermissionsCOSA'] }}
 							{% else %} 
-								Edit access
+								No access
 							{% endif %} 
 							</dd>
 							<dd class="nhsuk-summary-list__actions">
-								<a href="/lsf-web/v5/admin-view/update-user-university-permissions#userPermissions" id="user-permissions-change" aria-label="Change user permissions">Change</a>
+								<a href="/lsf-web/v5/admin-view/update-user-university-permissions#userPermissionsCOSA" id="user-permissions-change" aria-label="Change user permissions">Change</a>
 							</dd>
 						</div>
+		  
+						<div class="nhsuk-summary-list__row">
+						  <dt id="userPermissions" class="nhsuk-summary-list__key">
+							  Travel and Dual Accommodation Expenses access
+						  </dt>
+						  <dd class="nhsuk-summary-list__value" id="job">
+						  {% if data ['userPermissionsTDAE'] %} 
+							  {{ data['userPermissionsTDAE'] }}
+						  {% else %} 
+							  Edit access
+						  {% endif %} 
+						  </dd>
+						  <dd class="nhsuk-summary-list__actions">
+							  <a href="/lsf-web/v5/admin-view/update-user-university-permissions#userPermissionsTDAE" id="user-permissions-change" aria-label="Change user permissions">Change</a>
+						  </dd>
+					  </div>
 						{% endif %} 
-
+					  </dl>
 						
 					  </dl>
 					</div>

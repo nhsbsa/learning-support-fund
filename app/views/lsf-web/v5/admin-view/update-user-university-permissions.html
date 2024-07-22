@@ -25,7 +25,7 @@ University details
 		<div class="nhsuk-grid-column-two-thirds">
 			<div class="nhsuk-form-group">
 				<fieldset class="nhsuk-fieldset" aria-describedby="userTask-hint" role="group">
-				<label class="nhsuk-label form-label" id="userTask-label" for="userTask">
+				<label class="nhsuk-label form-label" style="font-weight: bold;" id="userTask-label" for="userTask">
 					User tasks
 				</label>
 				<div class="nhsuk-hint" id="userTask-hint">
@@ -51,29 +51,63 @@ University details
 			</div>
 
 			<div class="nhsuk-form-group">
-				<fieldset class="nhsuk-fieldset" aria-describedby="userPermissions-hint" role="group">
-					<label class="nhsuk-label form-label" id="userPermissions-label" for="userPermissions">
-						User permissions
+				<fieldset class="nhsuk-fieldset" aria-describedby="userAccess-hint" role="group">
+					
+					<label class="nhsuk-label form-label" style="font-weight: bold;" id="userAccess-label" for="userAccess">
+						User access
 					</label>
-				<div class="nhsuk-radios nhsuk-radios--inline">
-
-					<div class="nhsuk-radios__item">
-					  <input class="nhsuk-radios__input" id="userPermissions-1" name="userPermissions" type="radio" value="Edit access" checked="checked">
-					  <label class="nhsuk-label nhsuk-radios__label" for="userPermissions-1">
-						Edit access
-					  </label>
+					
+					<!-- Confirmation of Student Attendance access -->
+					<div class="nhsuk-radios nhsuk-radios--inline">
+						<label class="nhsuk-label form-label" id="userPermissions-cosa-label" for="userPermissions-cosa">
+							Confirmation of Student Attendance access
+						</label>
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="userPermissions-cosa-1" name="userPermissionsCOSA" type="radio" value="Edit access">
+							<label class="nhsuk-label nhsuk-radios__label" for="userPermissions-cosa-1">
+								Edit access
+							</label>
+						</div>
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="userPermissions-cosa-2" name="userPermissionsCOSA" type="radio" value="Read only">
+							<label class="nhsuk-label nhsuk-radios__label" for="userPermissions-cosa-2">
+								Read only
+							</label>
+						</div>
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="userPermissions-cosa-3" name="userPermissionsCOSA" type="radio" value="No access" checked="checked">
+							<label class="nhsuk-label nhsuk-radios__label" for="userPermissions-cosa-3">
+								No access
+							</label>
+						</div>
 					</div>
-			  
-					<div class="nhsuk-radios__item">
-					  <input class="nhsuk-radios__input" id="userPermissions-2" name="userPermissions" type="radio" value="Read only">
-					  <label class="nhsuk-label nhsuk-radios__label" for="userPermissions-2">
-						Read only
-					  </label>
+					
+					<br>
+					
+					<!-- Travel and Dual Accommodation Expenses access -->
+					<div class="nhsuk-form-group">
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<label class="nhsuk-label form-label" id="userPermissions-tdae-label" for="userPermissions-tdae">
+								Travel and Dual Accommodation Expenses access
+							</label>
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="userPermissions-tdae-1" name="userPermissionsTDAE" type="radio" value="Edit access" checked="checked">
+								<label class="nhsuk-label nhsuk-radios__label" for="userPermissions-tdae-1">
+									Edit access
+								</label>
+							</div>
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="userPermissions-tdae-2" name="userPermissionsTDAE" type="radio" value="Read only">
+								<label class="nhsuk-label nhsuk-radios__label" for="userPermissions-tdae-2">
+									Read only
+								</label>
+							</div>
+						</div>
 					</div>
-			  
-				  </div>
+					
 				</fieldset>
 			</div>
+			
 
 			<div class="nhsuk-form-group">
 				<button class="nhsuk-button" type="submit" id="saveUser">Continue</button>
