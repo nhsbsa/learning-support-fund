@@ -15,16 +15,23 @@ test{% extends 'layout-HEI.html' %}
 
     <form action="v9/TDAE-nhsbsa-comments" method="POST">
 
-        <div class="nhsuk-form-group">
+          {% if data['submitted'] === 'late' %}
+          <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="nhsbsa-comments">
-              <h1 class="nhsuk-heading-l">Tell us more about this claim</h1>
+              <h1 class="nhsuk-heading-l">Add a comment about this claim</h1>
             </label>
           </div>
 
-          {% if data['submitted'] === 'late' %}
           <div class="nhsuk-inset-text">
             <span class="nhsuk-u-visually-hidden">Information: </span>
             <p>Because the student submitted their claim over 6 months after their placement dates, you will need to provide a comment on the reason why the claim is still being submitted.</p>
+          </div>
+              
+          {% else %}
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="nhsbsa-comments">
+              <h1 class="nhsuk-heading-l">Add a comment about this claim (optional)</h1>
+            </label>
           </div>
           {% endif %}
 

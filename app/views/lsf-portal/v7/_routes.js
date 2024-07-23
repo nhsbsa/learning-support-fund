@@ -307,21 +307,9 @@ router.post('/v7/TDAE-approve-pend-reject', (req, res) => {
 
     if (claimOutcome) {
         req.session.data['approve-in-progress'] = 'in-progress'
-        res.redirect('/lsf-portal/v7/TDAE-provide-nhsbsa-comments')
-    } else {
-        res.redirect('/lsf-portal/v7/TDAE-approve-pend-reject')
-    }
-
-})
-
-router.post('/v7/TDAE-provide-nhsbsa-comments', (req, res) => {
-
-    const sendCommentsToNHSBSA = req.session.data['provide-comments-nhsbsa']
-
-    if (sendCommentsToNHSBSA === 'yes') {
         res.redirect('/lsf-portal/v7/TDAE-nhsbsa-comments')
     } else {
-        res.redirect('/lsf-portal/v7/TDAE-claim-declaration')
+        res.redirect('/lsf-portal/v7/TDAE-approve-pend-reject')
     }
 
 })
