@@ -23,61 +23,64 @@ University details
 	</div>
 
 		<div class="nhsuk-grid-column-two-thirds">
+
+			{% if data['role'] == 'HEI admin' %}
 			<div class="nhsuk-form-group">
 				<fieldset class="nhsuk-fieldset" aria-describedby="userTask-hint" role="group">
-				<label class="nhsuk-label form-label" style="font-weight: bold;" id="userTask-label" for="userTask">
-					User tasks
-				</label>
-				<div class="nhsuk-hint" id="userTask-hint">
-					Select at least one user task
-				</div>
+					<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+						<h3 class="nhsuk-fieldset__heading">User tasks</h3>
+					</legend>
 
-				<div class="nhsuk-checkboxes">
-					<div class="nhsuk-checkboxes__item">
-					  <input class="nhsuk-checkboxes__input" id="userTask-1" name="userTask" type="checkbox" value="Confirm student attendance">
-					  <label class="nhsuk-label nhsuk-checkboxes__label" for="userTask-1">
-						Confirm student attendance
-					  </label>
+					<div class="nhsuk-hint" id="userTask-hint">
+						Select at least one user task
 					</div>
-			
-					<div class="nhsuk-checkboxes__item">
-					  <input class="nhsuk-checkboxes__input" id="userTask-2" name="userTask" type="checkbox" value="Process Travel and Dual Accommodation Expenses claims" checked="checked">
-					  <label class="nhsuk-label nhsuk-checkboxes__label" for="userTask-2">
-						Process Travel and Dual Accommodation Expenses claims
-					  </label>
+
+					<div class="nhsuk-checkboxes">
+						<div class="nhsuk-checkboxes__item">
+						<input class="nhsuk-checkboxes__input" id="userTask-1" name="userTask" type="checkbox" value="Confirm student attendance">
+						<label class="nhsuk-label nhsuk-checkboxes__label" for="userTask-1">
+							Confirm student attendance
+						</label>
+						</div>
+				
+						<div class="nhsuk-checkboxes__item">
+						<input class="nhsuk-checkboxes__input" id="userTask-2" name="userTask" type="checkbox" value="Process Travel and Dual Accommodation Expenses claims" checked="checked">
+						<label class="nhsuk-label nhsuk-checkboxes__label" for="userTask-2">
+							Process Travel and Dual Accommodation Expenses claims
+						</label>
+						</div>
 					</div>
-				</div>
+
 				</fieldset>
 			</div>
+			{% endif %}
 
 			<div class="nhsuk-form-group">
 				<fieldset class="nhsuk-fieldset" aria-describedby="userAccess-hint" role="group">
 					
-					<label class="nhsuk-label form-label" style="font-weight: bold;" id="userAccess-label" for="userAccess">
-						User access
-					</label>
+					<h3 class="nhsuk-heading-m">User access</h3>
 					
 					<!-- Confirmation of Student Attendance access -->
 					<div class="nhsuk-radios nhsuk-radios--inline">
 						<label class="nhsuk-label form-label" id="userPermissions-cosa-label" for="userPermissions-cosa">
-							Confirmation of Student Attendance
+							Confirmation of Student Attendance access
 						</label>
 						<div class="nhsuk-radios__item">
-							<input class="nhsuk-radios__input" id="userPermissions-cosa-1" name="userPermissionsCOSA" type="radio" value="Edit">
+							<input class="nhsuk-radios__input" id="userPermissions-cosa-1" name="userPermissionsCOSA" type="radio" value="COSA user">
 							<label class="nhsuk-label nhsuk-radios__label" for="userPermissions-cosa-1">
-								Edit
+								COSA user
 							</label>
 						</div>
 						<div class="nhsuk-radios__item">
-							<input class="nhsuk-radios__input" id="userPermissions-cosa-2" name="userPermissionsCOSA" type="radio" value="Read only">
+							<input class="nhsuk-radios__input" id="userPermissions-cosa-2" name="userPermissionsCOSA" type="radio" value="COSA read only">
 							<label class="nhsuk-label nhsuk-radios__label" for="userPermissions-cosa-2">
-								Read only
+								COSA read only
 							</label>
 						</div>
 						<div class="nhsuk-radios__item">
-							<input class="nhsuk-radios__input" id="userPermissions-cosa-3" name="userPermissionsCOSA" type="radio" value="No access" checked="checked">
+							<input class="nhsuk-radios__input" id="userPermissions-cosa-3" name="userPermissionsCOSA" type="radio" value="None" checked="checked">
 							<label class="nhsuk-label nhsuk-radios__label" for="userPermissions-cosa-3">
-								No access
+								None
 							</label>
 						</div>
 					</div>
@@ -88,24 +91,24 @@ University details
 					<div class="nhsuk-form-group">
 						<div class="nhsuk-radios nhsuk-radios--inline">
 							<label class="nhsuk-label form-label" id="userPermissions-tdae-label" for="userPermissions-tdae">
-								Travel and Dual Accommodation Expenses
+								Travel and Dual Accommodation Expenses access
 							</label>
 							<div class="nhsuk-radios__item">
-								<input class="nhsuk-radios__input" id="userPermissions-tdae-1" name="userPermissionsTDAE" type="radio" value="Edit" checked="checked">
+								<input class="nhsuk-radios__input" id="userPermissions-tdae-1" name="userPermissionsTDAE" type="radio" value="TDAE user" checked="checked">
 								<label class="nhsuk-label nhsuk-radios__label" for="userPermissions-tdae-1">
-									Edit
+									TDAE user
 								</label>
 							</div>
 							<div class="nhsuk-radios__item">
-								<input class="nhsuk-radios__input" id="userPermissions-tdae-2" name="userPermissionsTDAE" type="radio" value="Read only">
+								<input class="nhsuk-radios__input" id="userPermissions-tdae-2" name="userPermissionsTDAE" type="radio" value="TDAE read only">
 								<label class="nhsuk-label nhsuk-radios__label" for="userPermissions-tdae-2">
-									Read only
+									TDAE read only
 								</label>
 							</div>
 							<div class="nhsuk-radios__item">
-								<input class="nhsuk-radios__input" id="userPermissions-tdae-2" name="userPermissionsTDAE" type="radio" value="No access">
+								<input class="nhsuk-radios__input" id="userPermissions-tdae-2" name="userPermissionsTDAE" type="radio" value="None">
 								<label class="nhsuk-label nhsuk-radios__label" for="userPermissions-tdae-2">
-									No access
+									None
 								</label>
 							</div>
 						</div>

@@ -108,9 +108,7 @@ Create user
 					{% if data['role'] %}
 						{{ data['role'] }}
 					{% elif data['role'] in ['role-9', 'role-10', 'role-11'] %}
-						HEI user
-					{% else %}
-						Administration
+						HEI admin
 					{% endif %} 
 				  </dd>
 				  <dd class="nhsuk-summary-list__actions">
@@ -119,69 +117,12 @@ Create user
 			  </div>		
 			</dl>				  
 			  
-			  
-			  
-			  <!-- If user role is HEI User, Admin or Read provide data about university, department and phone number here -->
-			 
-			  {% if data['role'] in ['HEI user', 'HEI admin', 'HEI read'] %}
-			  <h1 class="nhsuk-heading-m" id="title">University details</h1>
-				<dl class="nhsuk-summary-list">
-
-			  <div class="nhsuk-summary-list__row">
-				  <dt id="university" class="nhsuk-summary-list__key">
-					  University
-				  </dt>
-				  <dd class="nhsuk-summary-list__value" id="university">
-					{% if data ['college'] %} 
-						{{ data['college'] }}
-					{% else %} 
-						Northumbria University
-					{% endif %} 
-				  </dd>
-				  <dd class="nhsuk-summary-list__actions">
-					<a href="/lsf-web/v5/admin-view/create-user-university-details#college" id="university-change" aria-label="Change university">Change</a>
-				  </dd>
-			  </div>
-				
-			  <div class="nhsuk-summary-list__row">
-				  <dt id="department" class="nhsuk-summary-list__key">
-					  Department
-				  </dt>
-				  <dd class="nhsuk-summary-list__value" id="job">
-					{% if data ['department'] %} 
-						{{ data['department'] }}
-					{% else %} 
-						Administration
-					{% endif %} 
-				  </dd>
-				  <dd class="nhsuk-summary-list__actions">
-					  <a href="/lsf-web/v5/admin-view/create-user-university-details#job" id="department-change" aria-label="Change department">Change</a>
-				  </dd>
-			  </div>
-	
-			  <div class="nhsuk-summary-list__row">
-				  <dt id="details-by-email" class="nhsuk-summary-list__key">
-					  Phone number
-				  </dt>
-				  <dd class="nhsuk-summary-list__value" id="contactNumber">
-					{% if data ['contactNumber'] %} 
-						{{ data['contactNumber'] }}
-					{% else %} 
-						01911234567
-					{% endif %} 
-				  </dd>
-				  <dd class="nhsuk-summary-list__actions">
-					  <a href="/lsf-web/v5/admin-view/create-user-university-details#contactNumber" id="contactNumber-change" aria-label="Change preferred contact number">Change</a>
-				  </dd>
-			  </div>
-			  {% endif %}
-				</dl>
-
 			  <!-- If user role is HEI User, Admin or Read provide data about university, department and phone number here -->
 			  {% if data['role'] in ['HEI user', 'HEI admin', 'HEI read'] %}
-			  <h1 class="nhsuk-heading-m" id="title">User access</h1>
+			  <h1 class="nhsuk-heading-m" id="title">User permissions</h1>
 			  <dl class="nhsuk-summary-list">
 
+			  {% if data['role'] == 'HEI admin' %}
 			  <div class="nhsuk-summary-list__row">
 				  <dt id="userTask" class="nhsuk-summary-list__key">
 					  User tasks
@@ -194,9 +135,10 @@ Create user
 				  {% endif %} 
 				  </dd>
 				  <dd class="nhsuk-summary-list__actions">
-					<a href="/lsf-web/v5/admin-view/create-user-university-permissions#userTask" id="user-tasks-change" aria-label="Change user tasks">Change</a>
+					<a href="/lsf-web/v5/admin-view/update-user-university-permissions#userTask" id="user-tasks-change" aria-label="Change user tasks">Change</a>
 				  </dd>
 			  </div>
+			  {% endif %}
 				
 			  <div class="nhsuk-summary-list__row">
 				  <dt id="userPermissions" class="nhsuk-summary-list__key">
@@ -206,11 +148,11 @@ Create user
 				  {% if data ['userPermissionsCOSA'] %} 
 					  {{ data['userPermissionsCOSA'] }}
 				  {% else %} 
-					  No access
+					  None
 				  {% endif %} 
 				  </dd>
 				  <dd class="nhsuk-summary-list__actions">
-					  <a href="/lsf-web/v5/admin-view/create-user-university-permissions#userPermissionsCOSA" id="user-permissions-change" aria-label="Change user permissions">Change</a>
+					  <a href="/lsf-web/v5/admin-view/update-user-university-permissions#userPermissionsCOSA" id="user-permissions-change" aria-label="Change user permissions">Change</a>
 				  </dd>
 			  </div>
 
@@ -222,17 +164,78 @@ Create user
 				{% if data ['userPermissionsTDAE'] %} 
 					{{ data['userPermissionsTDAE'] }}
 				{% else %} 
-					Edit
+					TDAE user
 				{% endif %} 
 				</dd>
 				<dd class="nhsuk-summary-list__actions">
-					<a href="/lsf-web/v5/admin-view/create-user-university-permissions#userPermissionsTDAE" id="user-permissions-change" aria-label="Change user permissions">Change</a>
+					<a href="/lsf-web/v5/admin-view/update-user-university-permissions#userPermissionsTDAE" id="user-permissions-change" aria-label="Change user permissions">Change</a>
 				</dd>
 			</div>
 			  {% endif %} 
 			</dl>
+		  
+			  
+			  <!-- If user role is HEI User, Admin or Read provide data about university, department and phone number here -->
+			  {% if data['role'] in ['HEI user', 'HEI admin', 'HEI read'] %}
+			  <h1 class="nhsuk-heading-m" id="title">University details</h1>
+			  <dl class="nhsuk-summary-list">
 
+			  <div class="nhsuk-summary-list__row">
+				  <dt id="university" class="nhsuk-summary-list__key">
+					  University
+				  </dt>
+				  <dd class="nhsuk-summary-list__value" id="university">
+				  {% if data ['college'] %} 
+					  {{ data['college'] }}
+				  {% else %} 
+					  Northumbria University
+				  {% endif %} 
+				  </dd>
+				  <dd class="nhsuk-summary-list__actions">
+					<a href="/lsf-web/v5/admin-view/update-user-university-details#college" id="university-change" aria-label="Change university">Change</a>
+				  </dd>
+			  </div>
+				
+			  <div class="nhsuk-summary-list__row">
+				  <dt id="department" class="nhsuk-summary-list__key">
+					  Department
+				  </dt>
+				  <dd class="nhsuk-summary-list__value" id="job">
+				  {% if data ['department'] %} 
+					  {{ data['department'] }}
+				  {% else %} 
+					  Administration
+				  {% endif %} 
+				  </dd>
+				  <dd class="nhsuk-summary-list__actions">
+					  <a href="/lsf-web/v5/admin-view/update-user-university-details#job" id="department-change" aria-label="Change department">Change</a>
+				  </dd>
+			  </div>
+	
+			  <div class="nhsuk-summary-list__row">
+				  <dt id="details-by-email" class="nhsuk-summary-list__key">
+					  Phone number
+				  </dt>
+				  <dd class="nhsuk-summary-list__value" id="contactNumber">
+				  {% if data ['contactNumber'] %} 
+					  {{ data['contactNumber'] }}
+				  {% else %} 
+					  01911234567
+				  {% endif %} 
+				  </dd>
+				  <dd class="nhsuk-summary-list__actions">
+					  <a href="/lsf-web/v5/admin-view/update-user-university-details#contactNumber" id="contactNumber-change" aria-label="Change preferred contact number">Change</a>
+				  </dd>
+			  </div>
+			  {% endif %} 
+			</dl>
+
+
+			
+			  
+			</dl>
 		  </div>
+		  
 		  
 
 	  <div class="nhsuk-form-group">
