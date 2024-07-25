@@ -80,24 +80,25 @@ router.post('/v5/admin-view/create-user-roles', (req, res) => {
     const userRole = req.session.data['role']
 
     if (userRole.includes('HEI user') || userRole.includes('HEI admin') || userRole.includes('HEI read')) {
-        res.redirect('/lsf-web/v5/admin-view/create-user-university-details');
+        res.redirect('/lsf-web/v5/admin-view/create-user-university-permissions');
     } else {
         res.redirect('/lsf-web/v5/admin-view/create-user-cya');
     }
 
 })
 
-router.post('/v5/admin-view/create-user-university-details', (req, res) => {
+router.post('/v5/admin-view/create-user-university-permissions', (req, res) => {
 
-    res.redirect('/lsf-web/v5/admin-view/create-user-university-permissions')
+    res.redirect('/lsf-web/v5/admin-view/create-user-university-details')
 
 })
 
-router.post('/v5/admin-view/create-user-university-permissions', (req, res) => {
+router.post('/v5/admin-view/create-user-university-details', (req, res) => {
 
     res.redirect('/lsf-web/v5/admin-view/create-user-cya')
 
 })
+
 
 router.post('/v5/admin-view/create-user-cya', (req, res) => {
 
@@ -118,20 +119,20 @@ router.post('/v5/admin-view/update-user-roles', (req, res) => {
     const userRole = req.session.data['role']
 
     if (userRole.includes('HEI user') || userRole.includes('HEI admin') || userRole.includes('HEI read')) {
-        res.redirect('/lsf-web/v5/admin-view/update-user-university-details');
+        res.redirect('/lsf-web/v5/admin-view/update-user-university-permissions');
     } else {
         res.redirect('/lsf-web/v5/admin-view/update-user-cya');
     }
 
 })
 
-router.post('/v5/admin-view/update-user-university-details', (req, res) => {
+router.post('/v5/admin-view/update-user-university-permissions', (req, res) => {
 
-    res.redirect('/lsf-web/v5/admin-view/update-user-university-permissions')
+    res.redirect('/lsf-web/v5/admin-view/update-user-university-details')
 
 })
 
-router.post('/v5/admin-view/update-user-university-permissions', (req, res) => {
+router.post('/v5/admin-view/update-user-university-details', (req, res) => {
 
     res.redirect('/lsf-web/v5/admin-view/update-user-cya')
 
