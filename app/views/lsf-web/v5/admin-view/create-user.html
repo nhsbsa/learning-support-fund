@@ -41,7 +41,7 @@ Create user
 					<label class="nhsuk-label" id="location-label" for="location" class="form-label-bold">Location</label>
 					<input class="nhsuk-input nhsuk-input--width-20" id="location" name="location" type="text" spellcheck="false" autocomplete="off">
 				</div>
-						
+
 				<div class="nhsuk-form-group">
 					<label class="nhsuk-label" id="active" for="active" class="form-label-bold">
 						Is the user active?
@@ -50,20 +50,38 @@ Create user
 						Select No to stop a user accessing the system. For example, if they leave the NHSBSA.
 					  </div>
 
-						<div class="nhsuk-radios nhsuk-radios--inline">
-							<div class="nhsuk-radios__item">
-								<input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="Yes">
-								<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveYes">Yes</label>
-							</div>
-		
-							<div class="nhsuk-radios__item">
-								<input class="nhsuk-radios__input" id="optionsActiveNo" name="active" type="radio" value="No">
-								<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveNo">No</label>
-							</div>
+					<div class="nhsuk-radios nhsuk-radios--inline">
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="Yes">
+							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveYes">Yes</label>
+						</div>
+	
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="optionsActiveNo" name="active" type="radio" value="No">
+							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveNo">No</label>
 						</div>
 					</div>
-				</fieldset>
+				</div>
 
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" id="active" for="active" class="form-label-bold">
+						Select user type
+					</label>
+
+					<div class="nhsuk-radios nhsuk-radios--inline">
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="userType-NHSBSA" name="userType" type="radio" value="NHSBSA user">
+							<label class="nhsuk-label nhsuk-radios__label" for="userType-NHSBSA">NHSBSA user</label>
+						</div>
+	
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="userType-HEI" name="userType" type="radio" value="HEI user">
+							<label class="nhsuk-label nhsuk-radios__label" for="userType-HEI">HEI user</label>
+						</div>
+					</div>
+				</div>
+						
+				
 				<div class="nhsuk-form-group">
 					<button class="nhsuk-button" type="submit" id="saveUser">Continue</button>
 					<p><a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a></p>

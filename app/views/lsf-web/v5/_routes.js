@@ -71,19 +71,25 @@ router.post('/v5/bank-details-check', (req, res) => {
 
 router.post('/v5/admin-view/create-user', (req, res) => {
 
-    res.redirect('/lsf-web/v5/admin-view/create-user-roles')
+    const userType = req.session.data['userType']
+
+    if (userType === 'NHSBSA user') {
+        res.redirect('/lsf-web/v5/admin-view/create-nhsbsa-user')
+    } else {
+        res.redirect('/lsf-web/v5/admin-view/create-hei-user')
+    }
 
 })
 
-router.post('/v5/admin-view/create-user-roles', (req, res) => {
+router.post('/v5/admin-view/create-nhsbsa-user', (req, res) => {
 
-    const userRole = req.session.data['role']
+    res.redirect('/lsf-web/v5/admin-view/create-user-cya')
 
-    if (userRole.includes('HEI user') || userRole.includes('HEI admin') || userRole.includes('HEI read')) {
-        res.redirect('/lsf-web/v5/admin-view/create-user-university-permissions');
-    } else {
-        res.redirect('/lsf-web/v5/admin-view/create-user-cya');
-    }
+})
+
+router.post('/v5/admin-view/create-hei-user', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/create-user-university-permissions')
 
 })
 
@@ -110,19 +116,25 @@ router.post('/v5/admin-view/create-user-cya', (req, res) => {
 
 router.post('/v5/admin-view/update-user', (req, res) => {
 
-    res.redirect('/lsf-web/v5/admin-view/update-user-roles')
+    const userType = req.session.data['userType']
+
+    if (userType === 'NHSBSA user') {
+        res.redirect('/lsf-web/v5/admin-view/update-nhsbsa-user')
+    } else {
+        res.redirect('/lsf-web/v5/admin-view/update-hei-user')
+    }
 
 })
 
-router.post('/v5/admin-view/update-user-roles', (req, res) => {
+router.post('/v5/admin-view/update-nhsbsa-user', (req, res) => {
 
-    const userRole = req.session.data['role']
+    res.redirect('/lsf-web/v5/admin-view/update-user-cya')
 
-    if (userRole.includes('HEI user') || userRole.includes('HEI admin') || userRole.includes('HEI read')) {
-        res.redirect('/lsf-web/v5/admin-view/update-user-university-permissions');
-    } else {
-        res.redirect('/lsf-web/v5/admin-view/update-user-cya');
-    }
+})
+
+router.post('/v5/admin-view/update-hei-user', (req, res) => {
+
+    res.redirect('/lsf-web/v5/admin-view/update-user-university-permissions')
 
 })
 

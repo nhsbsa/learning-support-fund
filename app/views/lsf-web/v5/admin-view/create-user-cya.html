@@ -101,6 +101,22 @@ Create user
 			  </div>
 
 			  <div class="nhsuk-summary-list__row">
+				<dt id="mother-email-address" class="nhsuk-summary-list__key">
+				  User type
+			  </dt>
+				<dd class="nhsuk-summary-list__value" id="userType">
+					{% if data ['userType'] %} 
+						{{ data['userType'] }}
+					{% else %} 
+						HEI admin
+					{% endif %}
+			  </dd>
+				<dd class="nhsuk-summary-list__actions">
+				  <a href="/lsf-web/v5/admin-view/create-user#userType" id="userType-change" aria-label="Change user type">Change</a>
+				</dd>
+			  </div>
+
+			  <div class="nhsuk-summary-list__row">
 				  <dt id="role" class="nhsuk-summary-list__key">
 					Role
 				  </dt>
@@ -112,30 +128,34 @@ Create user
 					{% endif %} 
 				  </dd>
 				  <dd class="nhsuk-summary-list__actions">
-					<a href="/lsf-web/v5/admin-view/create-user-roles" id="roles-change" aria-label="Change user's role">Change</a>
+				  	{% if data['userType'] == 'HEI user' %}
+				 		<a href="/lsf-web/v5/admin-view/create-hei-user" id="roles-change" aria-label="Change user's role">Change</a>
+					  {% else %}
+						<a href="/lsf-web/v5/admin-view/create-nhsbsa-user" id="roles-change" aria-label="Change user's role">Change</a>
+					{% endif %}
 				  </dd>
 			  </div>		
 			</dl>				  
 			  
-			  <!-- If user role is HEI User, Admin or Read provide data about university, department and phone number here -->
-			  {% if data['role'] in ['HEI user', 'HEI admin', 'HEI read'] %}
+			  <!-- If user role is HEI User or HEI Admin provide data about university, department and phone number here -->
+			  {% if data['role'] in ['HEI user', 'HEI admin'] %}
 			  <h1 class="nhsuk-heading-m" id="title">User permissions</h1>
 			  <dl class="nhsuk-summary-list">
 
 			  {% if data['role'] == 'HEI admin' %}
 			  <div class="nhsuk-summary-list__row">
 				  <dt id="userTask" class="nhsuk-summary-list__key">
-					  User tasks
+					  Admin permissions
 				  </dt>
 				  <dd class="nhsuk-summary-list__value" id="university">
 				  {% if data ['userTask'] %} 
 					  {{ data['userTask'] }}
 				  {% else %} 
-					  Process Travel and Dual Accommodation Expenses claims
+					 Travel and Dual Accommodation Expenses
 				  {% endif %} 
 				  </dd>
 				  <dd class="nhsuk-summary-list__actions">
-					<a href="/lsf-web/v5/admin-view/update-user-university-permissions#userTask" id="user-tasks-change" aria-label="Change user tasks">Change</a>
+					<a href="/lsf-web/v5/admin-view/create-user-university-permissions#userTask" id="user-tasks-change" aria-label="Change admin permissions">Change</a>
 				  </dd>
 			  </div>
 			  {% endif %}
@@ -152,7 +172,7 @@ Create user
 				  {% endif %} 
 				  </dd>
 				  <dd class="nhsuk-summary-list__actions">
-					  <a href="/lsf-web/v5/admin-view/update-user-university-permissions#userPermissionsCOSA" id="user-permissions-change" aria-label="Change user permissions">Change</a>
+					  <a href="/lsf-web/v5/admin-view/create-user-university-permissions#userPermissionsCOSA" id="user-permissions-change" aria-label="Change user permissions">Change</a>
 				  </dd>
 			  </div>
 
@@ -168,15 +188,15 @@ Create user
 				{% endif %} 
 				</dd>
 				<dd class="nhsuk-summary-list__actions">
-					<a href="/lsf-web/v5/admin-view/update-user-university-permissions#userPermissionsTDAE" id="user-permissions-change" aria-label="Change user permissions">Change</a>
+					<a href="/lsf-web/v5/admin-view/create-user-university-permissions#userPermissionsTDAE" id="user-permissions-change" aria-label="Change user permissions">Change</a>
 				</dd>
 			</div>
 			  {% endif %} 
 			</dl>
 		  
 			  
-			  <!-- If user role is HEI User, Admin or Read provide data about university, department and phone number here -->
-			  {% if data['role'] in ['HEI user', 'HEI admin', 'HEI read'] %}
+			  <!-- If user role is HEI User or HEI Admin provide data about university, department and phone number here -->
+			  {% if data['role'] in ['HEI user', 'HEI admin'] %}
 			  <h1 class="nhsuk-heading-m" id="title">University details</h1>
 			  <dl class="nhsuk-summary-list">
 
@@ -192,7 +212,7 @@ Create user
 				  {% endif %} 
 				  </dd>
 				  <dd class="nhsuk-summary-list__actions">
-					<a href="/lsf-web/v5/admin-view/update-user-university-details#college" id="university-change" aria-label="Change university">Change</a>
+					<a href="/lsf-web/v5/admin-view/create-user-university-details#college" id="university-change" aria-label="Change university">Change</a>
 				  </dd>
 			  </div>
 				
@@ -208,7 +228,7 @@ Create user
 				  {% endif %} 
 				  </dd>
 				  <dd class="nhsuk-summary-list__actions">
-					  <a href="/lsf-web/v5/admin-view/update-user-university-details#job" id="department-change" aria-label="Change department">Change</a>
+					  <a href="/lsf-web/v5/admin-view/create-user-university-details#job" id="department-change" aria-label="Change department">Change</a>
 				  </dd>
 			  </div>
 	
@@ -224,7 +244,7 @@ Create user
 				  {% endif %} 
 				  </dd>
 				  <dd class="nhsuk-summary-list__actions">
-					  <a href="/lsf-web/v5/admin-view/update-user-university-details#contactNumber" id="contactNumber-change" aria-label="Change preferred contact number">Change</a>
+					  <a href="/lsf-web/v5/admin-view/create-user-university-details#contactNumber" id="contactNumber-change" aria-label="Change preferred contact number">Change</a>
 				  </dd>
 			  </div>
 			  {% endif %} 

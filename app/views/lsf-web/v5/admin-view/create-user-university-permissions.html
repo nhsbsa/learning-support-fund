@@ -28,29 +28,29 @@ University details
 			<div class="nhsuk-form-group">
 				<fieldset class="nhsuk-fieldset" aria-describedby="userTask-hint" role="group">
 					<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-						<h3 class="nhsuk-fieldset__heading">User tasks</h3>
+						<h3 class="nhsuk-fieldset__heading">Admin permissions</h3>
 					</legend>
 
 					<div class="nhsuk-hint" id="userTask-hint">
-						Select at least one user task
+						Select the tasks this admin user can grant access to
 					</div>
 
 					<div class="nhsuk-checkboxes">
 						<div class="nhsuk-checkboxes__item">
-						<input class="nhsuk-checkboxes__input" id="userTask-1" name="userTask" type="checkbox" value="Confirm student attendance">
+						<input class="nhsuk-checkboxes__input" id="userTask-1" name="userTask" type="checkbox" value="Confirmation of Student Attendance">
 						<label class="nhsuk-label nhsuk-checkboxes__label" for="userTask-1">
-							Confirm student attendance
+							Confirmation of Student Attendance
 						</label>
 						</div>
 				
 						<div class="nhsuk-checkboxes__item">
-						<input class="nhsuk-checkboxes__input" id="userTask-2" name="userTask" type="checkbox" value="Process Travel and Dual Accommodation Expenses claims">
+						<input class="nhsuk-checkboxes__input" id="userTask-2" name="userTask" type="checkbox" value="Travel and Dual Accommodation Expenses">
 						<label class="nhsuk-label nhsuk-checkboxes__label" for="userTask-2">
-							Process Travel and Dual Accommodation Expenses claims
+							Travel and Dual Accommodation Expenses
 						</label>
 						</div>
 					</div>
-					
+
 				</fieldset>
 			</div>
 			{% endif %}
@@ -59,7 +59,9 @@ University details
 			<div class="nhsuk-form-group">
 				<fieldset class="nhsuk-fieldset" aria-describedby="userAccess-hint" role="group">
 					
+					{% if data['role'] == 'HEI admin' %}
 					<h3 class="nhsuk-heading-m">User access</h3>
+					{% endif %}
 					
 					<!-- Confirmation of Student Attendance access -->
 					<div class="nhsuk-radios nhsuk-radios--inline">
