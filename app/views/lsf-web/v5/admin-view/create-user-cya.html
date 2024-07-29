@@ -20,6 +20,24 @@ Create user
 			<h1 class="nhsuk-heading-l" id="title">Check your answers</h1>
 			<dl class="nhsuk-summary-list">
 
+				<div class="nhsuk-summary-list__row">
+					<dt id="role" class="nhsuk-summary-list__key">
+						Role
+					</dt>
+					<dd class="nhsuk-summary-list__value" id="role">
+						{% if data['user-role'] %}
+							{{ data['user-role'] }}
+						{% elif data['user-role'] == 'HEI user' or data['user-role'] == 'HEI admin' %}
+							HEI admin
+						{% else %} 
+							Processor
+						{% endif %} 
+					</dd>
+					<dd class="nhsuk-summary-list__actions">
+						<a href="/lsf-web/v5/admin-view/create-user" id="roles-change" aria-label="Change user's role">Change</a>
+					</dd>
+				</div>
+
 			  <div class="nhsuk-summary-list__row">
 				<dt id="email-address" class="nhsuk-summary-list__key">
 				  Email address
@@ -75,8 +93,10 @@ Create user
 				<dd class="nhsuk-summary-list__value" id="university">
 					{% if data ['location'] %} 
 						{{ data['location'] }}
-					{% else %} 
+					{% elif data['user-role'] == 'HEI user' or data['user-role'] == 'HEI admin' %}
 						Newcastle upon Tyne
+					{% else %} 
+						Fleetwood
 					{% endif %} 
 			  </dd>
 				<dd class="nhsuk-summary-list__actions">
@@ -100,7 +120,7 @@ Create user
 				</dd>
 			  </div>
 
-			  <div class="nhsuk-summary-list__row">
+			  <!-- div class="nhsuk-summary-list__row">
 				<dt id="mother-email-address" class="nhsuk-summary-list__key">
 				  User type
 			  </dt>
@@ -114,36 +134,18 @@ Create user
 				<dd class="nhsuk-summary-list__actions">
 				  <a href="/lsf-web/v5/admin-view/create-user#userType" id="userType-change" aria-label="Change user type">Change</a>
 				</dd>
-			  </div>
+			  </div -->
 
-			  <div class="nhsuk-summary-list__row">
-				  <dt id="role" class="nhsuk-summary-list__key">
-					Role
-				  </dt>
-				  <dd class="nhsuk-summary-list__value" id="roles">
-					{% if data['role'] %}
-						{{ data['role'] }}
-					{% elif data['role'] in ['role-9', 'role-10', 'role-11'] %}
-						HEI admin
-					{% endif %} 
-				  </dd>
-				  <dd class="nhsuk-summary-list__actions">
-				  	{% if data['userType'] == 'HEI user' %}
-				 		<a href="/lsf-web/v5/admin-view/create-hei-user" id="roles-change" aria-label="Change user's role">Change</a>
-					  {% else %}
-						<a href="/lsf-web/v5/admin-view/create-nhsbsa-user" id="roles-change" aria-label="Change user's role">Change</a>
-					{% endif %}
-				  </dd>
-			  </div>		
+			  		
 			</dl>				  
 			  
 			  <!-- If user role is HEI User or HEI Admin provide data about university, department and phone number here -->
-			  {% if data['role'] in ['HEI user', 'HEI admin'] %}
-			  <h1 class="nhsuk-heading-m" id="title">User permissions</h1>
+			  {% if data['user-role'] in ['HEI user', 'HEI admin'] %}
+			  <h1 class="nhsuk-heading-m" id="title">User access</h1>
 			  <dl class="nhsuk-summary-list">
 
-			  {% if data['role'] == 'HEI admin' %}
-			  <div class="nhsuk-summary-list__row">
+			  {% if data['user-role'] == 'HEI admin' %}
+			  <!--div class="nhsuk-summary-list__row">
 				  <dt id="userTask" class="nhsuk-summary-list__key">
 					  Admin permissions
 				  </dt>
@@ -157,12 +159,12 @@ Create user
 				  <dd class="nhsuk-summary-list__actions">
 					<a href="/lsf-web/v5/admin-view/create-user-university-permissions#userTask" id="user-tasks-change" aria-label="Change admin permissions">Change</a>
 				  </dd>
-			  </div>
+			  </div-->
 			  {% endif %}
 				
 			  <div class="nhsuk-summary-list__row">
 				  <dt id="userPermissions" class="nhsuk-summary-list__key">
-					Confirmation of Student Attendance access
+					Confirmation of Student Attendance
 				  </dt>
 				  <dd class="nhsuk-summary-list__value" id="job">
 				  {% if data ['userPermissionsCOSA'] %} 
@@ -178,7 +180,7 @@ Create user
 
 			  <div class="nhsuk-summary-list__row">
 				<dt id="userPermissions" class="nhsuk-summary-list__key">
-					Travel and Dual Accommodation Expenses access
+					Travel and Dual Accommodation Expenses
 				</dt>
 				<dd class="nhsuk-summary-list__value" id="job">
 				{% if data ['userPermissionsTDAE'] %} 
@@ -196,7 +198,7 @@ Create user
 		  
 			  
 			  <!-- If user role is HEI User or HEI Admin provide data about university, department and phone number here -->
-			  {% if data['role'] in ['HEI user', 'HEI admin'] %}
+			  {% if data['user-role'] in ['HEI user', 'HEI admin'] %}
 			  <h1 class="nhsuk-heading-m" id="title">University details</h1>
 			  <dl class="nhsuk-summary-list">
 

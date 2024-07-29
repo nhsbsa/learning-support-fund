@@ -19,7 +19,33 @@ Create user
 				<h1 class="nhsuk-heading-l">Create a user</h1>
 		</div>
 
-		<div class="nhsuk-grid-column-two-thirds">
+			<div class="nhsuk-grid-column-two-thirds">
+
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="user-role-label">
+					  What is the user's role?
+					</label>
+					<select class="nhsuk-select" id="user-role" name="user-role">
+					<option value="">Select role...</option>
+					<optgroup label="NHSBSA">
+					  <option value="Processor">Processor</option>
+					  <option value="Technical support officer">Technical support officer</option>
+					  <option value="Management support">Management support</option>
+					  <option value="Team manager">Team manager</option>
+					  <option value="Call centre">Call centre</option>
+					  <option value="Call centre manager">Call centre manager</option>
+					  <option value="Finance">Finance</option>
+					  <option value="Super user">Super user</option>
+					</optgroup>
+					<optgroup label="HEI">
+					  <option value="HEI user">HEI user</option>
+					  <option value="HEI admin">HEI admin</option>
+					</optgroup>
+					</select>
+				  </div>
+
+
 
 				<div class="nhsuk-form-group">
 					<label class="nhsuk-label" id="email-label" for="email" class="form-label-bold">Email address</label>
@@ -48,44 +74,26 @@ Create user
 					</label>
 					<div class="nhsuk-hint" id="active-user-hint">
 						Select No to stop a user accessing the system. For example, if they leave the NHSBSA.
-					  </div>
+						</div>
 
 					<div class="nhsuk-radios nhsuk-radios--inline">
 						<div class="nhsuk-radios__item">
 							<input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="Yes">
 							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveYes">Yes</label>
 						</div>
-	
+
 						<div class="nhsuk-radios__item">
 							<input class="nhsuk-radios__input" id="optionsActiveNo" name="active" type="radio" value="No">
 							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveNo">No</label>
 						</div>
 					</div>
 				</div>
-
-				<div class="nhsuk-form-group">
-					<label class="nhsuk-label" id="active" for="active" class="form-label-bold">
-						Select user type
-					</label>
-
-					<div class="nhsuk-radios nhsuk-radios--inline">
-						<div class="nhsuk-radios__item">
-							<input class="nhsuk-radios__input" id="userType-NHSBSA" name="userType" type="radio" value="NHSBSA user">
-							<label class="nhsuk-label nhsuk-radios__label" for="userType-NHSBSA">NHSBSA user</label>
-						</div>
-	
-						<div class="nhsuk-radios__item">
-							<input class="nhsuk-radios__input" id="userType-HEI" name="userType" type="radio" value="HEI user">
-							<label class="nhsuk-label nhsuk-radios__label" for="userType-HEI">HEI user</label>
-						</div>
-					</div>
-				</div>
-						
 				
 				<div class="nhsuk-form-group">
 					<button class="nhsuk-button" type="submit" id="saveUser">Continue</button>
 					<p><a class="" href="/lsf-web/v5/admin-view/user-results">Cancel</a></p>
 				</div>
+
 			</div>
 		</div>
 	</form>
