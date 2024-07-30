@@ -73,19 +73,19 @@ router.post('/v5/admin-view/create-user', (req, res) => {
     const userRole = req.session.data['user-role'];
 
     if (userRole === 'HEI user' || userRole === 'HEI admin') {
-        res.redirect('/lsf-web/v5/admin-view/create-user-access');
+        res.redirect('/lsf-web/v5/admin-view/create-user-university-details');
     } else {
         res.redirect('/lsf-web/v5/admin-view/create-user-cya');
     }
 });
 
-router.post('/v5/admin-view/create-user-access', (req, res) => {
+router.post('/v5/admin-view/create-user-university-details', (req, res) => {
 
-    res.redirect('/lsf-web/v5/admin-view/create-user-university-details')
+    res.redirect('/lsf-web/v5/admin-view/create-user-access')
 
 })
 
-router.post('/v5/admin-view/create-user-university-details', (req, res) => {
+router.post('/v5/admin-view/create-user-access', (req, res) => {
 
     res.redirect('/lsf-web/v5/admin-view/create-user-cya')
 
@@ -104,19 +104,19 @@ router.post('/v5/admin-view/update-user', (req, res) => {
     const userRole = req.session.data['user-role'];
 
     if (userRole === 'HEI user' || userRole === 'HEI admin') {
-        res.redirect('/lsf-web/v5/admin-view/update-user-access');
+        res.redirect('/lsf-web/v5/admin-view/update-user-university-details');
     } else {
         res.redirect('/lsf-web/v5/admin-view/update-user-cya');
     }
 });
 
-router.post('/v5/admin-view/update-user-access', (req, res) => {
+router.post('/v5/admin-view/update-user-university-details', (req, res) => {
 
-    res.redirect('/lsf-web/v5/admin-view/update-user-university-details')
+    res.redirect('/lsf-web/v5/admin-view/update-user-access')
 
 })
 
-router.post('/v5/admin-view/update-user-university-details', (req, res) => {
+router.post('/v5/admin-view/update-user-access', (req, res) => {
 
     res.redirect('/lsf-web/v5/admin-view/update-user-cya')
 

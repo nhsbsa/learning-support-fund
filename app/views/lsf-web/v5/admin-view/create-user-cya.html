@@ -120,81 +120,7 @@ Create user
 				</dd>
 			  </div>
 
-			  <!-- div class="nhsuk-summary-list__row">
-				<dt id="mother-email-address" class="nhsuk-summary-list__key">
-				  User type
-			  </dt>
-				<dd class="nhsuk-summary-list__value" id="userType">
-					{% if data ['userType'] %} 
-						{{ data['userType'] }}
-					{% else %} 
-						HEI admin
-					{% endif %}
-			  </dd>
-				<dd class="nhsuk-summary-list__actions">
-				  <a href="/lsf-web/v5/admin-view/create-user#userType" id="userType-change" aria-label="Change user type">Change</a>
-				</dd>
-			  </div -->
-
-			  		
 			</dl>				  
-			  
-			  <!-- If user role is HEI User or HEI Admin provide data about university, department and phone number here -->
-			  {% if data['user-role'] in ['HEI user', 'HEI admin'] %}
-			  <h1 class="nhsuk-heading-m" id="title">User access</h1>
-			  <dl class="nhsuk-summary-list">
-
-			  {% if data['user-role'] == 'HEI admin' %}
-			  <!--div class="nhsuk-summary-list__row">
-				  <dt id="userTask" class="nhsuk-summary-list__key">
-					  Admin permissions
-				  </dt>
-				  <dd class="nhsuk-summary-list__value" id="university">
-				  {% if data ['userTask'] %} 
-					  {{ data['userTask'] }}
-				  {% else %} 
-					 Travel and Dual Accommodation Expenses
-				  {% endif %} 
-				  </dd>
-				  <dd class="nhsuk-summary-list__actions">
-					<a href="/lsf-web/v5/admin-view/create-user-university-permissions#userTask" id="user-tasks-change" aria-label="Change admin permissions">Change</a>
-				  </dd>
-			  </div-->
-			  {% endif %}
-				
-			  <div class="nhsuk-summary-list__row">
-				  <dt id="userPermissions" class="nhsuk-summary-list__key">
-					Confirmation of Student Attendance
-				  </dt>
-				  <dd class="nhsuk-summary-list__value" id="job">
-				  {% if data ['userPermissionsCOSA'] %} 
-					  {{ data['userPermissionsCOSA'] }}
-				  {% else %} 
-					  None
-				  {% endif %} 
-				  </dd>
-				  <dd class="nhsuk-summary-list__actions">
-					  <a href="/lsf-web/v5/admin-view/create-user-university-permissions#userPermissionsCOSA" id="user-permissions-change" aria-label="Change user permissions">Change</a>
-				  </dd>
-			  </div>
-
-			  <div class="nhsuk-summary-list__row">
-				<dt id="userPermissions" class="nhsuk-summary-list__key">
-					Travel and Dual Accommodation Expenses
-				</dt>
-				<dd class="nhsuk-summary-list__value" id="job">
-				{% if data ['userPermissionsTDAE'] %} 
-					{{ data['userPermissionsTDAE'] }}
-				{% else %} 
-					TDAE user
-				{% endif %} 
-				</dd>
-				<dd class="nhsuk-summary-list__actions">
-					<a href="/lsf-web/v5/admin-view/create-user-university-permissions#userPermissionsTDAE" id="user-permissions-change" aria-label="Change user permissions">Change</a>
-				</dd>
-			</div>
-			  {% endif %} 
-			</dl>
 		  
 			  
 			  <!-- If user role is HEI User or HEI Admin provide data about university, department and phone number here -->
@@ -253,9 +179,45 @@ Create user
 			</dl>
 
 
-			
-			  
-			</dl>
+			 <!-- If user role is HEI User or HEI Admin provide data about university, department and phone number here -->
+			 {% if data['user-role'] in ['HEI user', 'HEI admin'] %}
+			 <h1 class="nhsuk-heading-m" id="title">User access</h1>
+			 <dl class="nhsuk-summary-list">
+			   
+			 <div class="nhsuk-summary-list__row">
+				 <dt id="userPermissions" class="nhsuk-summary-list__key">
+				   Confirmation of Student Attendance
+				 </dt>
+				 <dd class="nhsuk-summary-list__value" id="job">
+				 {% if data ['userPermissionsCOSA'] %} 
+					 {{ data['userPermissionsCOSA'] }}
+				 {% else %} 
+					 None
+				 {% endif %} 
+				 </dd>
+				 <dd class="nhsuk-summary-list__actions">
+					 <a href="/lsf-web/v5/admin-view/create-user-university-permissions#userPermissionsCOSA" id="user-permissions-change" aria-label="Change user permissions">Change</a>
+				 </dd>
+			 </div>
+
+			 <div class="nhsuk-summary-list__row">
+			   <dt id="userPermissions" class="nhsuk-summary-list__key">
+				   Travel and Dual Accommodation Expenses
+			   </dt>
+			   <dd class="nhsuk-summary-list__value" id="job">
+			   {% if data ['userPermissionsTDAE'] %} 
+				   {{ data['userPermissionsTDAE'] }}
+			   {% else %} 
+				   TDAE user
+			   {% endif %} 
+			   </dd>
+			   <dd class="nhsuk-summary-list__actions">
+				   <a href="/lsf-web/v5/admin-view/create-user-university-permissions#userPermissionsTDAE" id="user-permissions-change" aria-label="Change user permissions">Change</a>
+			   </dd>
+		   </div>
+			 {% endif %} 
+		   </dl>
+
 		  </div>
 		  
 		  

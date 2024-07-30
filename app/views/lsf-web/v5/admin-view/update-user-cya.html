@@ -122,103 +122,8 @@ Create user
 							  <a href="/lsf-web/v5/admin-view/update-user#active" id="active-change" aria-label="Change active user">Change</a>
 							</dd>
 						  </div>
-
-						  <!--div class="nhsuk-summary-list__row">
-							<dt id="mother-email-address" class="nhsuk-summary-list__key">
-							  User type
-						  </dt>
-							<dd class="nhsuk-summary-list__value" id="userType">
-								{% if data ['userType'] %} 
-									{{ data['userType'] }}
-								{% else %} 
-									HEI user
-								{% endif %}
-						  </dd>
-							<dd class="nhsuk-summary-list__actions">
-							  <a href="/lsf-web/v5/admin-view/update-user#userType" id="userType-change" aria-label="Change user type">Change</a>
-							</dd>
-						  </div>
-
-						  <div class="nhsuk-summary-list__row">
-							<dt id="role" class="nhsuk-summary-list__key">
-							  Role
-							</dt>
-							<dd class="nhsuk-summary-list__value" id="roles">
-							  {% if data['role'] %}
-								{{ data['role'] }}
-							  {% elif data['role'] in ['role-9', 'role-10', 'role-11'] %}
-								HEI admin
-							  {% else %}
-								Processor
-							  {% endif %} 
-							</dd>
-							<dd class="nhsuk-summary-list__actions">
-								{% if data['userType'] == 'HEI user' %}
-							  <a href="/lsf-web/v5/admin-view/update-hei-user" id="roles-change" aria-label="Change user's role">Change</a>
-							  	{% else %}
-								<a href="/lsf-web/v5/admin-view/update-nhsbsa-user" id="roles-change" aria-label="Change user's role">Change</a>
-								{% endif %}
-							</dd>
-						</div-->	
 						</dl>
 
-						<!-- If user role is HEI User or HEI Admin data about university, department and phone number provided here -->
-						{% if data['user-role'] in ['HEI user', 'HEI admin'] %}
-						<h1 class="nhsuk-heading-m" id="title">User access</h1>
-						<dl class="nhsuk-summary-list">
-
-						{% if data['user-role'] == 'HEI admin' %}
-						<!--div class="nhsuk-summary-list__row">
-							<dt id="userTask" class="nhsuk-summary-list__key">
-								Admin permissions
-							</dt>
-							<dd class="nhsuk-summary-list__value" id="university">
-							{% if data ['userTask'] %} 
-								{{ data['userTask'] }}
-							{% else %} 
-								Travel and Dual Accommodation Expenses
-							{% endif %} 
-							</dd>
-							<dd class="nhsuk-summary-list__actions">
-							  <a href="/lsf-web/v5/admin-view/update-user-university-permissions#userTask" id="user-tasks-change" aria-label="Change admin permissions">Change</a>
-							</dd>
-						</div-->
-						{% endif %}
-						  
-						<div class="nhsuk-summary-list__row">
-							<dt id="userPermissions" class="nhsuk-summary-list__key">
-							  Confirmation of Student Attendance
-							</dt>
-							<dd class="nhsuk-summary-list__value" id="job">
-							{% if data ['userPermissionsCOSA'] %} 
-								{{ data['userPermissionsCOSA'] }}
-							{% else %} 
-								None
-							{% endif %} 
-							</dd>
-							<dd class="nhsuk-summary-list__actions">
-								<a href="/lsf-web/v5/admin-view/update-user-access#userPermissionsCOSA" id="user-permissions-change" aria-label="Change user permissions">Change</a>
-							</dd>
-						</div>
-		  
-						<div class="nhsuk-summary-list__row">
-						  <dt id="userPermissions" class="nhsuk-summary-list__key">
-							  Travel and Dual Accommodation Expenses
-						  </dt>
-						  <dd class="nhsuk-summary-list__value" id="job">
-						  {% if data ['userPermissionsTDAE'] %} 
-							  {{ data['userPermissionsTDAE'] }}
-						  {% else %} 
-							  TDAE user
-						  {% endif %} 
-						  </dd>
-						  <dd class="nhsuk-summary-list__actions">
-							  <a href="/lsf-web/v5/admin-view/update-user-access#userPermissionsTDAE" id="user-permissions-change" aria-label="Change user permissions">Change</a>
-						  </dd>
-					  </div>
-						{% endif %} 
-					  </dl>
-					
 						
 						<!-- If user role is HEI User or HEI Admin provide data about university, department and phone number here -->
 						{% if data['user-role'] in ['HEI user', 'HEI admin'] %}
@@ -275,10 +180,45 @@ Create user
 						{% endif %} 
 					  </dl>
 
-
-					  
-						
+					  <!-- If user role is HEI User or HEI Admin data about university, department and phone number provided here -->
+						{% if data['user-role'] in ['HEI user', 'HEI admin'] %}
+						<h1 class="nhsuk-heading-m" id="title">User access</h1>
+						<dl class="nhsuk-summary-list">
+						  
+						<div class="nhsuk-summary-list__row">
+							<dt id="userPermissions" class="nhsuk-summary-list__key">
+							  Confirmation of Student Attendance
+							</dt>
+							<dd class="nhsuk-summary-list__value" id="job">
+							{% if data ['userPermissionsCOSA'] %} 
+								{{ data['userPermissionsCOSA'] }}
+							{% else %} 
+								None
+							{% endif %} 
+							</dd>
+							<dd class="nhsuk-summary-list__actions">
+								<a href="/lsf-web/v5/admin-view/update-user-access#userPermissionsCOSA" id="user-permissions-change" aria-label="Change user permissions">Change</a>
+							</dd>
+						</div>
+		  
+						<div class="nhsuk-summary-list__row">
+						  <dt id="userPermissions" class="nhsuk-summary-list__key">
+							  Travel and Dual Accommodation Expenses
+						  </dt>
+						  <dd class="nhsuk-summary-list__value" id="job">
+						  {% if data ['userPermissionsTDAE'] %} 
+							  {{ data['userPermissionsTDAE'] }}
+						  {% else %} 
+							  TDAE user
+						  {% endif %} 
+						  </dd>
+						  <dd class="nhsuk-summary-list__actions">
+							  <a href="/lsf-web/v5/admin-view/update-user-access#userPermissionsTDAE" id="user-permissions-change" aria-label="Change user permissions">Change</a>
+						  </dd>
+					  </div>
+						{% endif %} 
 					  </dl>
+
 					</div>
 					
 
