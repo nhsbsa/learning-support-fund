@@ -19,6 +19,18 @@ Check your answers
 
 		<h1 class="nhsuk-heading-xl">Check your answers</h1>
 
+		{% if data['university-details'] === 'action' %}
+			<div class="nhsuk-warning-callout">
+			  <h3 class="nhsuk-warning-callout__label">
+			    <span role="text">
+			      <span class="nhsuk-u-visually-hidden">Important: </span>
+			      University feedback
+			    </span>
+			  </h3>
+			  <p>Your University address is incorrect for the building your lectures are in. You have provided the incorrect evidence of a parking charge for Monday 4 July.</p>
+			</div>
+		{% endif %}
+
 		<dl class="nhsuk-summary-list">
 
 			<div class="nhsuk-summary-list__row">

@@ -10,6 +10,18 @@ What is the return mileage to your placement?
 
     <h1 class="nhsuk-heading-l">Your placement travel details</h1>
 
+		{% if data['placement-details'] === 'action' %}
+			<div class="nhsuk-warning-callout">
+			  <h3 class="nhsuk-warning-callout__label">
+			    <span role="text">
+			      <span class="nhsuk-u-visually-hidden">Important: </span>
+			      University feedback
+			    </span>
+			  </h3>
+			  <p>This is the comment left by the University when returning to student.</p>
+			</div>
+		{% endif %}
+
 	</div>
 </div>
 

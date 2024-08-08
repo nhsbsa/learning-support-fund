@@ -13,7 +13,17 @@ Check your answers
 
 		<h1 class="nhsuk-heading-xl">Hire car bookings</h1>
 
-
+		{% if data['hire-car-details'] === 'action' %}
+			<div class="nhsuk-warning-callout">
+				<h3 class="nhsuk-warning-callout__label">
+					<span role="text">
+						<span class="nhsuk-u-visually-hidden">Important: </span>
+						University feedback
+					</span>
+				</h3>
+				<p>This is the comment left by the University when returning to student.</p>
+			</div>
+		{% endif %}
 
 		{% if data['vehicle-number'] != '2' %}
 		<!-- Hire Car Booking 1 -->

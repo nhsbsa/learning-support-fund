@@ -35,6 +35,18 @@ What is the start date of your claim?
 					</h1>
 				  </legend>
 
+					{% if data['evidence-details'] === 'action' %}
+		  			<div class="nhsuk-warning-callout">
+		  			  <h3 class="nhsuk-warning-callout__label">
+		  			    <span role="text">
+		  			      <span class="nhsuk-u-visually-hidden">Important: </span>
+		  			      University feedback
+		  			    </span>
+		  			  </h3>
+		  			  <p>This is the comment left by the University when returning to student.</p>
+		  			</div>
+		  		{% endif %}
+
 					<p>You need to give us evidence for your placement travel costs.</p>
 					<p>Because you have told us you have extra costs for multiple days, you need to upload your evidence for each 7 day period.</p>
 

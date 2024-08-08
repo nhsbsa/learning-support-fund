@@ -13,6 +13,18 @@ Check your answers
 
 		<h1 class="nhsuk-heading-xl">Taxi journeys</h1>
 
+		{% if data['taxi-details'] === 'action' %}
+			<div class="nhsuk-warning-callout">
+				<h3 class="nhsuk-warning-callout__label">
+					<span role="text">
+						<span class="nhsuk-u-visually-hidden">Important: </span>
+						University feedback
+					</span>
+				</h3>
+				<p>This is the comment left by the University when returning to student.</p>
+			</div>
+		{% endif %}
+
 			{% if data['taxi-journeys'] != '2' %}
 			<details class="nhsuk-details nhsuk-expander">
 				<summary class="nhsuk-details__summary">

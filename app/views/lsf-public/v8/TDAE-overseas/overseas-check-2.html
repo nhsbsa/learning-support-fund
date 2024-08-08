@@ -13,6 +13,18 @@ Check your answers
 
 		<h1 class="nhsuk-heading-xl">Check your overseas costs answers</h1>
 
+		{% if data['overseas-details'] === 'action' %}
+		<div class="nhsuk-warning-callout">
+			<h3 class="nhsuk-warning-callout__label">
+				<span role="text">
+					<span class="nhsuk-u-visually-hidden">Important: </span>
+					University feedback
+				</span>
+			</h3>
+			<p>The evidence uploaded for insurance is the same as the evidence uploaded for visa fees.</p>
+		</div>
+		{% endif %}
+
 			<dl class="nhsuk-summary-list">
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
@@ -65,7 +77,7 @@ Check your answers
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
-						<a href="authorisation-evidence">
+						<a href="overseas-evidence-mini-cya?more-overseas-evidence=yes">
 							Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 						</a>
 					</dd>
@@ -170,7 +182,7 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-							<a href="insurance-evidence-mini-cya">
+							<a href="overseas-evidence-mini-cya?more-overseas-evidence=yes">
 								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 							</a>
 						</dd>
@@ -249,7 +261,7 @@ Check your answers
 							</dd>
 							{% if data['submit-claim'] != 'completed' %}
 							<dd class="nhsuk-summary-list__actions">
-								<a href="medical-tests-evidence-mini-cya">
+								<a href="overseas-evidence-mini-cya?more-overseas-evidence=yes">
 									Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 								</a>
 							</dd>
@@ -328,7 +340,7 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-							<a href="vaccinations-evidence-mini-cya">
+							<a href="overseas-evidence-mini-cya?more-overseas-evidence=yes">
 								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 							</a>
 						</dd>
@@ -407,7 +419,7 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-							<a href="visa-fees-evidence-mini-cya">
+							<a href="overseas-evidence-mini-cya?more-overseas-evidence=yes">
 								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 							</a>
 						</dd>
@@ -490,7 +502,7 @@ Check your answers
 							</dd>
 							{% if data['submit-claim'] != 'completed' %}
 							<dd class="nhsuk-summary-list__actions">
-								<a href="insurance-evidence-mini-cya">
+								<a href="overseas-evidence-mini-cya?more-overseas-evidence=yes">
 									Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 								</a>
 							</dd>
@@ -567,7 +579,7 @@ Check your answers
 							</dd>
 							{% if data['submit-claim'] != 'completed' %}
 							<dd class="nhsuk-summary-list__actions">
-								<a href="visa-fees-evidence-mini-cya">
+								<a href="overseas-evidence-mini-cya?more-overseas-evidence=yes">
 									Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 								</a>
 							</dd>
@@ -642,7 +654,7 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-							<a href="insurance-evidence-mini-cya">
+							<a href="overseas-evidence-mini-cya?more-overseas-evidence=yes">
 								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 							</a>
 						</dd>
@@ -713,7 +725,7 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-							<a href="medical-tests-evidence-mini-cya">
+							<a href="overseas-evidence-mini-cya?more-overseas-evidence=yes">
 								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 							</a>
 						</dd>
@@ -784,7 +796,7 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-							<a href="vaccinations-evidence-mini-cya">
+							<a href="overseas-evidence-mini-cya?more-overseas-evidence=yes">
 								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 							</a>
 						</dd>
@@ -855,7 +867,7 @@ Check your answers
 						</dd>
 						{% if data['submit-claim'] != 'completed' %}
 						<dd class="nhsuk-summary-list__actions">
-							<a href="visa-fees-evidence-mini-cya">
+							<a href="overseas-evidence-mini-cya?more-overseas-evidence=yes">
 								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
 							</a>
 						</dd>

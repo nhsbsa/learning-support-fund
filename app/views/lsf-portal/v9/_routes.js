@@ -136,11 +136,8 @@ router.post('/v9/returnordecline', (req, res) => {
 
     const returnstudent = req.session.data['return-student']
 
-    if (returnstudent === 'Return to student') {
-        res.redirect('/lsf-portal/v9/TDAE-send-to-student')
-    } else {
         res.redirect('/lsf-portal/v9/TDAE-details-for-return')
-    }
+
 
 })
 
@@ -414,7 +411,7 @@ router.post('/v9/TDAE-send-to-student', (req, res) => {
 
     const returnStudent = req.session.data['return-student']
 
-    res.redirect('/lsf-portal/v9/TDAE-details-for-return')
+    res.redirect('/lsf-portal/v9/TDAE-return-cya')
 
 })
 

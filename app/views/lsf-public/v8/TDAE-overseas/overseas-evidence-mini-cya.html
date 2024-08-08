@@ -14,7 +14,6 @@ Evidence you have uploaded
     "text": "Go back"
     }) }}
 
-      <form id="evidenceForm" action="../v8/TDAE-overseas/insurance-evidence-mini-cya" method="POST">
 
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="placement-additional-costs">
@@ -206,13 +205,12 @@ Evidence you have uploaded
         {% endif %}
 
         {% if data['more-overseas-evidence'] == 'yes' %}
-          <form action="/lsf-public/v8/TDAE-task-list?overseas-details=completed" method="POST">
+          <form action="overseas-check-2" method="POST">
             <button class="nhsuk-button" type="submit">Save and continue</button>
           </form>
         {% endif %}
         <p><a href="../TDAE-task-list-full?overseas-details=in-progress">Return to task list</a></p>
       </div>
-    </form>
   </div>
 </div>
 

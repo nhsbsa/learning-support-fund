@@ -12,6 +12,17 @@ Check your answers
 		<!-- <form action="" method="POST"> -->
 		<h1 class="nhsuk-heading-xl">Your accommodation travel journeys</h1>
 
+		{% if data['accommodation-travel-details'] === 'action' %}
+			<div class="nhsuk-warning-callout">
+				<h3 class="nhsuk-warning-callout__label">
+					<span role="text">
+						<span class="nhsuk-u-visually-hidden">Important: </span>
+						University feedback
+					</span>
+				</h3>
+				<p>This is the comment left by the University when returning to student.</p>
+			</div>
+		{% endif %}
 
 		<!-- if only one journey and direction of travel is from term time address to accommodation -->
 		{% if data['number-of-journeys'] != '2' %}

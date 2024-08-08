@@ -33,6 +33,18 @@ Evidence you have uploaded
 
       <h1 class="nhsuk-heading-l">Uploaded evidence{% if data['placement-week'] == '2' %} for period 1{% endif %}</h1>
 
+      {% if data['evidence-details'] === 'action' %}
+  			<div class="nhsuk-warning-callout">
+  			  <h3 class="nhsuk-warning-callout__label">
+  			    <span role="text">
+  			      <span class="nhsuk-u-visually-hidden">Important: </span>
+  			      University feedback
+  			    </span>
+  			  </h3>
+  			  <p>This is the comment left by the University when returning to student.</p>
+  			</div>
+  		{% endif %}
+
       {% if data['evidenceNumber'] == '2' or data['evidenceNumber'] == '3' or data['claiming-for'] == 'car' %}
         <p>You have uploaded evidence for all the extra costs. You can still upload more evidence if you want to.</p>
       {% else %}
