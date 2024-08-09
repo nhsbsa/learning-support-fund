@@ -22,9 +22,55 @@ Which days does this evidence relate to?
               <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                   <h1 class="nhsuk-fieldset__heading">
-                    Your placement addresses
+                    Your placement travel dates
                   </h1>
                 </legend>
+
+                <dl class="nhsuk-summary-list">
+
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Period 1 placement travel dates
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          Friday 6 October 2023<br>
+                          Saturday 7 October 2023<br>
+                          Sunday 8 October 2023<br>
+                          Monday 9 October 2023
+                        </dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a href="TDAE-placement-days">
+                                Change<span class="nhsuk-u-visually-hidden"> week 1 placement travel days</span>
+                            </a>
+                        </dd>
+                    </div>
+                    {% if data['placement-week'] == '2' %}
+                      <div class="nhsuk-summary-list__row">
+                          <dt class="nhsuk-summary-list__key">
+                              Period 2 placement travel dates
+                          </dt>
+                          <dd class="nhsuk-summary-list__value">
+                              Wednesday 14 June 2023,<br>
+                              Thursday 15 June 2023,<br>
+                              Friday 16 June 2023<br>
+                              Saturday 17 June 2023<br>
+                              Sunday 18 June 2023<br>
+                          </dd>
+                          <dd class="nhsuk-summary-list__actions">
+                              <a href="TDAE-placement-days">
+                                  Change<span class="nhsuk-u-visually-hidden"> week 2 placement travel days</span>
+                              </a>
+                              or
+                              <a href="TDAE-week-warning">
+                                  remove<span class="nhsuk-u-visually-hidden"> week 2 placement travel days</span>
+                              </a>
+                          </dd>
+                      </div>
+                    {% endif %}
+
+                </dl>
+
+                <h2 class="nhsuk-heading-l">Placement addresses</h2>
 
                 <dl class="nhsuk-summary-list">
 

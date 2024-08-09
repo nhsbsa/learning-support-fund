@@ -109,21 +109,25 @@ Check your answers
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['placement-additonal-comments'] %}
-						 Comment added
+							Comment added<br>
+							<details class="nhsuk-details">
+							 <summary class="nhsuk-details__summary">
+								 <span class="nhsuk-details__summary-text">
+									 View comment
+								 </span>
+							 </summary>
+							 <div class="nhsuk-details__text">
+								 <p>This is a comment that is over 100 characters therefore it is in a details dropdown.</p>
+							 </div>
+						 </details>
 						{% else %}
-							Comment not added
+							None provided
 						{% endif %}
 					</dd>
 					<dd class="nhsuk-summary-list__actions">
-						{% if data['placement-additonal-comments'] %}
-						<a href="TDAE-placement-comments-view">
-							Review<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
-						</a>
-						{% else %}
 						<a href="TDAE-placement-comments">
 							Change<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
 						</a>
-						{% endif %}
 					</dd>
 				</div>
 	    </dl>

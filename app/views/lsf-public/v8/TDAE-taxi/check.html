@@ -26,6 +26,12 @@ Check your answers
 							{% else %}
 							John Doe
 						{% endif %}
+						<br>
+						{% if data['authoriser-role'] %}
+							{{ data['authoriser-role'] }}
+							{% else %}
+							Placement co-ordinator
+						{% endif %}
 					</dd>
 					{% if data['submit-claim'] != 'completed' %}
 					<dd class="nhsuk-summary-list__actions">
@@ -35,8 +41,8 @@ Check your answers
 					</dd>
 					{% endif %}
 				</div>
-
-				<!-- Authoriser's role -->
+<!-- Combined in above row
+				 Authoriser's role
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Authoriser's role
@@ -55,7 +61,7 @@ Check your answers
 						</a>
 					</dd>
 					{% endif %}
-				</div>
+				</div> -->
 
 				<!-- Reason for taxi -->
 				<div class="nhsuk-summary-list__row">

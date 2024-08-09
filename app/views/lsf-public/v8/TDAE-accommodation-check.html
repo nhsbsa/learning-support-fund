@@ -156,24 +156,28 @@ Check your answers
 				</dt>
 				<dd class="nhsuk-summary-list__value">
 					{% if data['accomodation-comments-added'] %}
-					 	Provided
+						Comment added<br>
+					 <details class="nhsuk-details">
+						<summary class="nhsuk-details__summary">
+							<span class="nhsuk-details__summary-text">
+								View comment
+							</span>
+						</summary>
+						<div class="nhsuk-details__text">
+							<p>This is a comment that is over 100 characters therefore it is in a details dropdown.</p>
+						</div>
+					</details>
 					{% else %}
-						None
+						None provided
 					{% endif %}
 				</dd>
 				{% if data['submit-claim'] != 'completed' %}
 				<dd class="nhsuk-summary-list__actions">
-					{% if data['accomodation-comments-added'] %}
-					<a href="TDAE-accommodation-comments-view">
-						Review<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
-					</a>
-					{% else %}
 					<a href="TDAE-accommodation-add-comments">
 						Change<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
 					</a>
-					{% endif %}
-					</dd>
-					{% endif %}
+				</dd>
+				{% endif %}
 			</div>
 
 			{% if data['accommodation-details'] == 'in-progress' %}
