@@ -32,6 +32,7 @@ Check your answers
 			<span class="nhsuk-details__summary-text">
 				4 February 2024
 			</span>
+			{% if data['accommodation-travel-details'] === 'action' %}<strong class="nhsuk-tag nhsuk-tag--yellow app-task-list__tag task-status">Action needed</strong>{% endif %}
 			</summary>
 
 			<!-- if first journey = term time to accommodation - direction of travel -->
@@ -240,6 +241,7 @@ Check your answers
 				<span class="nhsuk-details__summary-text">
 					4 February 2024
 				</span>
+				{% if data['accommodation-travel-details'] === 'action' %}<strong class="nhsuk-tag nhsuk-tag--yellow app-task-list__tag task-status">Action needed</strong>{% endif %}
 				</summary>
 
 				<!-- if first journey = term time to accommodation - direction of travel -->

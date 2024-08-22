@@ -71,6 +71,7 @@ Check your answers
 					<span class="nhsuk-details__summary-text">
 						14 August 2023 to 17 August 2023
 					</span>
+					{% if data['accommodation-details'] === 'action' %}<strong class="nhsuk-tag nhsuk-tag--yellow app-task-list__tag task-status">Action needed</strong>{% endif %}
 				</summary>
 				<div class="nhsuk-details__text">
 					<dl class="nhsuk-summary-list">
@@ -177,6 +178,7 @@ Check your answers
 				    <span class="nhsuk-details__summary-text">
 				      14 August 2023 to 17 August 2023
 				    </span>
+						{% if data['accommodation-details'] === 'action' %}<strong class="nhsuk-tag nhsuk-tag--yellow app-task-list__tag task-status">Action needed</strong>{% endif %}
 				  </summary>
 				  <div class="nhsuk-details__text">
 						<dl class="nhsuk-summary-list">

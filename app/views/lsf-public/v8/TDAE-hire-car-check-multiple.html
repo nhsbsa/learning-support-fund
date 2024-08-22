@@ -32,6 +32,7 @@ Check your answers
 						<span class="nhsuk-details__summary-text">
 							30 November 2023
 						</span>
+						{% if data['hire-car-details'] === 'action' %}<strong class="nhsuk-tag nhsuk-tag--yellow app-task-list__tag task-status">Action needed</strong>{% endif %}
 					</summary>
 
 								 <!-- cost of first hire car booking -->
@@ -93,6 +94,7 @@ Check your answers
 				    <span class="nhsuk-details__summary-text">
 				      30 November 2023
 				    </span>
+						{% if data['hire-car-details'] === 'action' %}<strong class="nhsuk-tag nhsuk-tag--yellow app-task-list__tag task-status">Action needed</strong>{% endif %}
 				  </summary>
 
 								 <!-- cost of first hire car booking -->

@@ -247,11 +247,11 @@ router.post('/v8/TDAE-evidence-match', (req, res) => {
 
   if (evidenceMatch === 'yes') {
       req.session.data['evidence-completed'] = 'completed'
+      res.redirect('/lsf-portal/v9/TDAE-student-claim')
   } else {
       req.session.data['evidence-completed'] = 'in-progress'
+      res.redirect('/lsf-portal/v9/TDAE-evidence-reason')
   }
-
-  res.redirect('/lsf-portal/v8/TDAE-student-claim')
 
 })
 

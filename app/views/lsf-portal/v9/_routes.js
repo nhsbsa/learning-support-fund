@@ -136,7 +136,11 @@ router.post('/v9/returnordecline', (req, res) => {
 
     const returnstudent = req.session.data['return-student']
 
+    if (returnstudent === 'Decline claim') {
         res.redirect('/lsf-portal/v9/TDAE-details-for-return')
+    } else {
+        res.redirect('/lsf-portal/v9/TDAE-return-reasons')
+    }
 
 
 })
@@ -244,11 +248,13 @@ router.post('/v9/TDAE-evidence-match', (req, res) => {
 
   if (evidenceMatch === 'yes') {
       req.session.data['evidence-completed'] = 'completed'
+      res.redirect('/lsf-portal/v9/TDAE-student-claim')
   } else {
       req.session.data['evidence-completed'] = 'in-progress'
+      res.redirect('/lsf-portal/v9/TDAE-evidence-reason')
   }
 
-  res.redirect('/lsf-portal/v9/TDAE-student-claim')
+
 
 })
 
