@@ -9,13 +9,20 @@ Student declaration
 
     <div class="nhsuk-grid-column-two-thirds">
 
-        <form action="dashboard" method="POST">
+        <form action="dashboard?bank-details-complete=true" method="POST">
 
             <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
                 <div class="nhsuk-card__content">
+                    {% if data['bank-details-complete'] == 'true' %}
                     <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
                         Bank or building society account details changed
                     </h1>
+                    {% else %}
+                    <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                        Bank or building society account details added
+                    </h1>
+                    {% endif %}
+                    
                 </div>
             </div>
 

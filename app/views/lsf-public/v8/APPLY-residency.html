@@ -69,8 +69,11 @@ Your residency
             <a class="nhsuk-button" href="APPLY-add-residency">Add residency</a><br>
             {% if data['country'] and data['reason'] %}
                 <a class="nhsuk-button" href="APPLY-add-residency">Clear all residencies</a><br>
-                <a class="nhsuk-button" href="APPLY-bank-details">Next</a><br>
+                <!-- Removed Bank Details entry page from journey - now collected later after funding approval - Rob 28/8/24 -->
+                <!-- <a class="nhsuk-button" href="APPLY-bank-details">Next</a><br> --> 
+                <a class="nhsuk-button" href="APPLY-submit-your-evidence">Next</a><br>
             {% endif %}
+        
             <a href="dashboard">Cancel</a>
 
         </div>

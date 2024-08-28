@@ -1734,7 +1734,9 @@ router.post('/v8/APPLY-applied-student-loan', (req, res) => {
     const studentLoan = req.session.data['student-loan']
 
     if (studentLoan === 'yes') {
-        res.redirect('/lsf-public/v8/APPLY-bank-details')
+        // Removed Bank Details entry page from journey - now collected later after funding approval - Rob 28/8/24
+        // res.redirect('/lsf-public/v8/APPLY-bank-details')
+        res.redirect('/lsf-public/v8/APPLY-submit-your-evidence')
     } else {
         res.redirect('/lsf-public/v8/APPLY-nationality')
     }
@@ -1757,17 +1759,19 @@ router.post('/v8/APPLY-add-residency', (req, res) => {
 
 })
 
+
+// Removed Bank Details entry page from journey - now collected later after funding approval - Rob 28/8/24
 // Please enter your bank details
-router.post('/v8/APPLY-bank-details', (req, res) => {
+// router.post('/v8/APPLY-bank-details', (req, res) => {
 
-    const accountHolder = req.session.data['account-holder']
-    const sortCode = req.session.data['sort-code']
-    const accountNumber = req.session.data['account-number']
-    const buildingSocietyNumber = req.session.data['building-society-number']
+//     const accountHolder = req.session.data['account-holder']
+//     const sortCode = req.session.data['sort-code']
+//     const accountNumber = req.session.data['account-number']
+//     const buildingSocietyNumber = req.session.data['building-society-number']
 
-    res.redirect('/lsf-public/v8/APPLY-submit-your-evidence')
+//     res.redirect('/lsf-public/v8/APPLY-submit-your-evidence')
 
-})
+// })
 
 // Upload your Student loan award letter
 router.post('/v8/APPLY-upload-sl-award-letter', (req, res) => {
