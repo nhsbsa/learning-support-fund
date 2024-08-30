@@ -48,10 +48,10 @@
           <h2 class="nhsuk-tabs__title">Contents</h2>
           <ul class="nhsuk-tabs__list">
             <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
-              {% if data['bank-details-complete'] == 'true' %}
-              <a class="nhsuk-tabs__tab" href="#tab-one">Notifications (4)</a>
+              {% if (data['questionnaire-completed'] == 'Completed') and (data['bank-details-complete'] != 'true') %}
+                <a class="nhsuk-tabs__tab" href="#tab-one">Notifications (5)</a>
               {% else %}
-              <a class="nhsuk-tabs__tab" href="#tab-one">Notifications (5)</a>
+                <a class="nhsuk-tabs__tab" href="#tab-one">Notifications (4)</a>
               {% endif %}
             </li>
             <li class="nhsuk-tabs__list-item">
@@ -153,7 +153,7 @@
                           </td>
                       </tr>
 
-                      {% if data['bank-details-complete'] != 'true' %}
+                      {% if (data['questionnaire-completed'] == 'Completed') and (data['bank-details-complete'] != 'true') %}
                       <tr role="row" class="nhsuk-table__row">
                           <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Notification</span> Bank details required
@@ -232,8 +232,12 @@
 								<h2 class="nhsuk-heading-m">Bank or building society account details</h2>
 							</div>
 
+              {% if data['questionnaire-completed'] != 'Completed' %}
+              <div class="nhsuk-grid-column-full">
+                <p>You must have an approved application for a Training Grant before you can enter your bank details.</p>
+              </div>
 
-              {% if data['bank-details-complete'] == 'true' %}
+              {% elseif data['bank-details-complete'] == 'true' %}
               <div class="nhsuk-grid-column-two-thirds">
 								<details class="nhsuk-details" id="userBank">
 									<summary class="nhsuk-details__summary">
@@ -256,12 +260,12 @@
 												<p id="buildingSocietyNo">************</p>
 
                         <a id="bankDetailsEdit" href="bank-details?prefilled=true">Change<span class="nhsuk-u-visually-hidden"> bank details</span></a>
-
 											</div>
 										</div>
 									</div>
 								</details>
 							</div>
+
               {% else %}
               <div class="nhsuk-grid-column-full">
                 <p>You now have an approved application and payments have been scheduled for you. Enter your bank details so that we can make these payments.</p>
