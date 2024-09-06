@@ -156,13 +156,13 @@
                       {% if (data['questionnaire-completed'] == 'Completed') and (data['bank-details-complete'] != 'true') %}
                       <tr role="row" class="nhsuk-table__row">
                           <td role="cell" class="nhsuk-table__cell">
-                              <span class="nhsuk-table-responsive__heading">Notification</span> Bank details required
+                              <span class="nhsuk-table-responsive__heading">Notification</span> Bank details needed
                           </td>
                           <td role="cell" class="nhsuk-table__cell">
-                              <span class="nhsuk-table-responsive__heading">Description </span> You now have an approved application and payments have been scheduled for you. Enter your bank details so that we can make these payments.
+                              <span class="nhsuk-table-responsive__heading">Description </span> We've approved your application and you're now due payments. Add your bank details so we can pay you.
                           </td>
                           <td role="cell" class="nhsuk-table__cell">
-                              <span class="nhsuk-table-responsive__heading">Action </span> <a href="bank-details">Enter bank details</a>
+                              <span class="nhsuk-table-responsive__heading">Action </span> <a href="bank-details">Add bank details</a>
                           </td>
                       </tr>
                       {% endif %}
@@ -234,7 +234,7 @@
 
               {% if data['questionnaire-completed'] != 'Completed' %}
               <div class="nhsuk-grid-column-full">
-                <p>You must have an approved application for a Training Grant before you can enter your bank details.</p>
+                <p>You need to be approved for a Training Grant before you can add your bank details.</p>
               </div>
 
               {% elseif data['bank-details-complete'] == 'true' %}
@@ -268,8 +268,8 @@
 
               {% else %}
               <div class="nhsuk-grid-column-full">
-                <p>You now have an approved application and payments have been scheduled for you. Enter your bank details so that we can make these payments.</p>
-                <p><a href="bank-details">Enter bank details</a></p>
+                <p>We've approved your application and you're now due payments. Add your bank details so we can pay you.</p>
+                <p><a href="bank-details">Add bank details</a></p>
               </div>
               {% endif %}
           
