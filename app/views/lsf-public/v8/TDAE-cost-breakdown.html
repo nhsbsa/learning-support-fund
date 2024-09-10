@@ -1,0 +1,679 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Your costs
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-full">
+
+    {{ backLink({
+    "href": "TDAE-placement-cost-summary",
+    "text": "Go back"
+    }) }}
+
+    <h1 class="nhsuk-heading-l">Claim costs breakdown</h1>
+
+    <h2 class="nhsuk-heading-m">Travel</h2>
+
+    <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+      <h2 class="nhsuk-tabs__title">
+        Travel
+      </h2>
+
+      <ul class="nhsuk-tabs__list">
+
+        <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+          <a class="nhsuk-tabs__tab" href="#period-1">
+            Period 1
+          </a>
+        </li>
+
+        <li class="nhsuk-tabs__list-item">
+          <a class="nhsuk-tabs__tab" href="#period-2">
+            Period 2
+          </a>
+        </li>
+
+        <li class="nhsuk-tabs__list-item">
+          <a class="nhsuk-tabs__tab" href="#period-3">
+            Period 3
+          </a>
+        </li>
+
+        <li class="nhsuk-tabs__list-item">
+          <a class="nhsuk-tabs__tab" href="#period-4">
+            Period 4
+          </a>
+        </li>
+
+      </ul>
+
+      <div class="nhsuk-tabs__panel" id="period-1">
+
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption"></caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">Date</th>
+              <th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Placement cost</th>
+              <th role="columnheader" class="nhsuk-table__header--numeric" scope="col">University cost</th>
+              <th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Cost reimbursed</th>
+              <th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="row">Monday 8 September 2024</th>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£8.20
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Public transport</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£5</dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Driving mileage</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3.20</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£3
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Cycling</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£5.20</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                <a href="#" class="toggle-details" onclick="toggleDetails(this); return false;">View details</a>
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="row">Tuesday 9 September 2024</th>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£5
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Public transport</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£5</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£3
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Cycling</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£2</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                <a href="#" class="toggle-details" onclick="toggleDetails(this); return false;">View details</a>
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="row">Wednesday 10 September 2024</th>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£2.10
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Public transport</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£2.10</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£3
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Cycling</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£0</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                <a href="#" class="toggle-details" onclick="toggleDetails(this); return false;">View details</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="period-2">
+
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption"></caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">Date</th>
+              <th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Placement cost</th>
+              <th role="columnheader" class="nhsuk-table__header--numeric" scope="col">University cost</th>
+              <th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Cost reimbursed</th>
+              <th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="row">Monday 15 September 2024</th>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£8.20
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Public transport</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£5</dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Driving mileage</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3.20</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£3
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Cycling</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£5.20</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                <a href="#" class="toggle-details" onclick="toggleDetails(this); return false;">View details</a>
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="row">Tuesday 16 September 2024</th>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£5
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Public transport</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£5</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£3
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Cycling</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£2</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                <a href="#" class="toggle-details" onclick="toggleDetails(this); return false;">View details</a>
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="row">Wednesday 17 September 2024</th>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£2.10
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Public transport</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£2.10</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£3
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Cycling</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£0</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                <a href="#" class="toggle-details" onclick="toggleDetails(this); return false;">View details</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="period-3">
+
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption"></caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">Date</th>
+              <th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Placement cost</th>
+              <th role="columnheader" class="nhsuk-table__header--numeric" scope="col">University cost</th>
+              <th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Cost reimbursed</th>
+              <th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="row">Monday 22 September 2024</th>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£8.20
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Public transport</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£5</dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Driving mileage</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3.20</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£3
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Cycling</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£5.20</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                <a href="#" class="toggle-details" onclick="toggleDetails(this); return false;">View details</a>
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="row">Tuesday 23 September 2024</th>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£5
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Public transport</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£5</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£3
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Cycling</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£2</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                <a href="#" class="toggle-details" onclick="toggleDetails(this); return false;">View details</a>
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="row">Wednesday 24 September 2024</th>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£2.10
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Public transport</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£2.10</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£3
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Cycling</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£0</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                <a href="#" class="toggle-details" onclick="toggleDetails(this); return false;">View details</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="period-4">
+
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption"></caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">Date</th>
+              <th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Placement cost</th>
+              <th role="columnheader" class="nhsuk-table__header--numeric" scope="col">University cost</th>
+              <th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Cost reimbursed</th>
+              <th role="columnheader" class="nhsuk-table__header--numeric" scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="row">Monday 29 September 2024</th>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£8.20
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Public transport</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£5</dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Driving mileage</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3.20</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£3
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Cycling</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£5.20</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                <a href="#" class="toggle-details" onclick="toggleDetails(this); return false;">View details</a>
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="row">Tuesday 30 September 2024</th>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£5
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Public transport</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£5</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£3
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Cycling</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£2</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                <a href="#" class="toggle-details" onclick="toggleDetails(this); return false;">View details</a>
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="row">Wednesday 1 October 2024</th>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£2.10
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Public transport</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£2.10</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£3
+                <div class="ss-details-text" style="display: none;">
+                  <dl class="nhsuk-summary-list ss-details-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key ss-details-summary-list__key">Cycling</dt>
+                      <dd class="nhsuk-summary-list__value ss-details-summary-list__value">£3</dd>
+                    </div>
+                  </dl>
+                </div>
+              </td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£0</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+                <a href="#" class="toggle-details" onclick="toggleDetails(this); return false;">View details</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+
+    <h2 class="nhsuk-heading-m">Accommodation</h2>
+
+    <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+      <h2 class="nhsuk-tabs__title">
+        Accommodation
+      </h2>
+
+      <ul class="nhsuk-tabs__list">
+
+        <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+          <a class="nhsuk-tabs__tab" href="#booking-1">
+            Booking 1
+          </a>
+        </li>
+
+        <li class="nhsuk-tabs__list-item">
+          <a class="nhsuk-tabs__tab" href="#booking-2">
+            Booking 2
+          </a>
+        </li>
+
+      </ul>
+
+      <div class="nhsuk-tabs__panel" id="booking-1">
+
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Accommodation</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                Date
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Type
+              </th>
+              <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                Cost
+              </th>
+              <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                Capped amount
+              </th>
+              <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                Cost reimbursed
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="row">Monday 8 September 2024</th>
+              <td class="nhsuk-table__cell">Commercial</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£110</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£82.50</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£82.50</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="row">Tuesday 9 September 2024</th>
+              <td class="nhsuk-table__cell">Commercial</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£75</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£82.50</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£75</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="booking-2">
+
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Accommodation</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                Date
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Type
+              </th>
+              <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                Cost
+              </th>
+              <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                Capped amount
+              </th>
+              <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+                Cost reimbursed
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="row">Wednesday 10 September 2024</th>
+              <td class="nhsuk-table__cell">Non-commercial</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£75</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£37.50</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£37.50</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="row">Thursday 11 September 2024</th>
+              <td class="nhsuk-table__cell">Non-commercial</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£30</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£37.50</td>
+              <td class="nhsuk-table__cell nhsuk-table__cell--numeric">£30</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h2 class="nhsuk-heading-s">Hire cars</h2>
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 80%;">
+          30 November 2023
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £120
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 80%;">
+          1 December 2023 to 3 December 2023
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £175
+        </dd>
+      </div>
+
+    </dl>
+
+    <h2 class="nhsuk-heading-s">Overseas</h2>
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 80%;">
+          Insurance
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £60
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 80%;">
+          Visa fees
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £35
+        </dd>
+      </div>
+
+    </dl>
+
+
+    <h2 class="nhsuk-heading-m">Total amount to be reimbursed</h2>
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Total amount
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <strong>£435.20</strong>
+        </dd>
+      </div>
+    </dl>
+
+    <p><a href="TDAE-placement-cost-summary">Return to Claims cost summary</a></p>
+
+  </div>
+
+</div>
+
+<script>
+  function toggleDetails(link) {
+    // Get all 'ss-details-text' divs within the same row
+    const detailsDivs = link.closest('tr').querySelectorAll('.ss-details-text');
+
+    detailsDivs.forEach(div => {
+      if (div.style.display === 'none' || div.style.display === '') {
+        div.style.display = 'block';
+        link.textContent = 'Hide details';
+      } else {
+        div.style.display = 'none';
+        link.textContent = 'View details';
+      }
+    });
+  }
+</script>
+
+<style>
+
+  @media (min-width: 40.0625em) {
+    .nhsuk-summary-list__key {
+        width: 50%;
+    }
+  }
+
+</style>
+{% endblock %}
