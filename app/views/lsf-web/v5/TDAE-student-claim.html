@@ -59,7 +59,7 @@ Claim checks
               {% else %}
               SSRN0010002
               {% endif %}
-              
+
             </dd>
           </div>
 
@@ -104,6 +104,9 @@ Claim checks
           2 February 2024 to
           31 March 2024
         </dd>
+        <dd class="nhsuk-summary-list__actions">
+
+        </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
@@ -112,6 +115,9 @@ Claim checks
         </dt>
         <dd class="nhsuk-summary-list__value">
           £614.62
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <nobr><p><a href="TDAE-student-cost-summary">View Costs summary</a></p></nobr>
         </dd>
       </div>
 
@@ -786,14 +792,14 @@ Claim checks
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
               {% if data['university-travel'] === 'completed' and
-                    data['evidence-completed'] === 'completed' and 
-                    data['evidence-completed-2'] === 'completed' and 
-                    data['hire-vehicle-completed'] === 'completed' and 
-                    data['taxi-completed'] === 'completed' and 
-                    data['accommodation-completed'] === 'completed' and 
-                    data['accommodation-completed-2'] === 'completed' and 
-                    data['accommodation-travel-completed'] === 'completed' and 
-                    data['accommodation-travel-completed-2'] === 'completed' and 
+                    data['evidence-completed'] === 'completed' and
+                    data['evidence-completed-2'] === 'completed' and
+                    data['hire-vehicle-completed'] === 'completed' and
+                    data['taxi-completed'] === 'completed' and
+                    data['accommodation-completed'] === 'completed' and
+                    data['accommodation-completed-2'] === 'completed' and
+                    data['accommodation-travel-completed'] === 'completed' and
+                    data['accommodation-travel-completed-2'] === 'completed' and
                     data['overseas-completed'] === 'completed' %}
               <a class="app-task-list__task-name" href="TDAE-claim-summary">
                 Authorise payment
@@ -805,14 +811,14 @@ Claim checks
               {% endif %}
             </span>
             {% if data['university-travel'] === 'completed' and
-                    data['evidence-completed'] === 'completed' and 
-                    data['evidence-completed-2'] === 'completed' and 
-                    data['hire-vehicle-completed'] === 'completed' and 
-                    data['taxi-completed'] === 'completed' and 
-                    data['accommodation-completed'] === 'completed' and 
-                    data['accommodation-completed-2'] === 'completed' and 
-                    data['accommodation-travel-completed'] === 'completed' and 
-                    data['accommodation-travel-completed-2'] === 'completed' and 
+                    data['evidence-completed'] === 'completed' and
+                    data['evidence-completed-2'] === 'completed' and
+                    data['hire-vehicle-completed'] === 'completed' and
+                    data['taxi-completed'] === 'completed' and
+                    data['accommodation-completed'] === 'completed' and
+                    data['accommodation-completed-2'] === 'completed' and
+                    data['accommodation-travel-completed'] === 'completed' and
+                    data['accommodation-travel-completed-2'] === 'completed' and
                     data['overseas-completed'] === 'completed' %}
                 <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
             {% else %}
@@ -825,25 +831,25 @@ Claim checks
     </ol>
 
     {% if data['read-only'] != 'true' %}
-    <h2 class="nhsuk-heading-m">Return to university</h2>
-    <p>You can return this claim to the university if there are any issues with it. You will need to explain:</p>
+    <h2 class="nhsuk-heading-m">Return or decline this claim</h2>
+    <p>If there are issues with this claim, you can either:</p>
     <ul>
-      <li>why you have returned the claim</li>
-      <li>what the student needs to change to re-submit the claim</li>
+      <li>return it to the university</li>
+      <li>decline the claim</li>
     </ul>
-    {% if data['university-travel'] === 'in-progress' or 
-          data['evidence-completed'] === 'in-progress' or 
-          data['evidence-completed-2'] === 'in-progress' or 
-          data['hire-vehicle-completed'] === 'in-progress' or 
-          data['taxi-completed'] === 'in-progress' or 
-          data['accommodation-completed'] === 'in-progress' or 
-          data['accommodation-completed-2'] === 'in-progress' or 
-          data['accommodation-travel-completed'] === 'in-progress' or 
-          data['accommodation-travel-completed-2'] === 'in-progress' or 
+    {% if data['university-travel'] === 'in-progress' or
+          data['evidence-completed'] === 'in-progress' or
+          data['evidence-completed-2'] === 'in-progress' or
+          data['hire-vehicle-completed'] === 'in-progress' or
+          data['taxi-completed'] === 'in-progress' or
+          data['accommodation-completed'] === 'in-progress' or
+          data['accommodation-completed-2'] === 'in-progress' or
+          data['accommodation-travel-completed'] === 'in-progress' or
+          data['accommodation-travel-completed-2'] === 'in-progress' or
           data['overseas-completed'] === 'in-progress' %}
-    <a class="nhsuk-button" href="TDAE-return-decline">Return to university</a>
+    <a class="nhsuk-button" href="TDAE-return-decline">Return or decline claim</a>
     {% else %}
-    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Return to university</a>
+    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Return or decline claim</a>
     {% endif %}
     {% endif %}
 
@@ -859,9 +865,9 @@ Claim checks
         <ul class="app-task-list__items">
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
-              {% if data['university-travel'] === 'completed' and 
-                    data['evidence-completed-2'] === 'completed' and 
-                    data['taxi-completed'] === 'completed' and 
+              {% if data['university-travel'] === 'completed' and
+                    data['evidence-completed-2'] === 'completed' and
+                    data['taxi-completed'] === 'completed' and
                     data['overseas-completed'] === 'completed' %}
               <a class="app-task-list__task-name" href="TDAE-claim-summary">
                 Authorise payment
@@ -872,9 +878,9 @@ Claim checks
               </span>
               {% endif %}
             </span>
-            {% if data['university-travel'] === 'completed' and 
-                  data['evidence-completed-2'] === 'completed' and 
-                  data['taxi-completed'] === 'completed' and 
+            {% if data['university-travel'] === 'completed' and
+                  data['evidence-completed-2'] === 'completed' and
+                  data['taxi-completed'] === 'completed' and
                   data['overseas-completed'] === 'completed' %}
                 <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
             {% else %}
@@ -887,19 +893,19 @@ Claim checks
     </ol>
 
     {% if data['read-only'] != 'true' %}
-    <h2 class="nhsuk-heading-m">Return to university</h2>
-    <p>You can return this claim to the university if there are any issues with it. You will need to explain:</p>
+    <h2 class="nhsuk-heading-m">Return or decline this claim</h2>
+    <p>If there are issues with this claim, you can either:</p>
     <ul>
-      <li>why you have returned the claim</li>
-      <li>what the student needs to change to re-submit the claim</li>
+      <li>return it to the university</li>
+      <li>decline the claim</li>
     </ul>
-    {% if data['university-completed'] === 'in-progress' or 
-          data['evidence-completed-2'] === 'in-progress' or 
-          data['taxi-completed'] === 'in-progress' or 
+    {% if data['university-completed'] === 'in-progress' or
+          data['evidence-completed-2'] === 'in-progress' or
+          data['taxi-completed'] === 'in-progress' or
           data['overseas-completed'] === 'in-progress' %}
-    <a class="nhsuk-button" href="TDAE-return-decline">Return to university</a>
+    <a class="nhsuk-button" href="TDAE-return-decline">Return or decline claim</a>
     {% else %}
-    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Return to university</a>
+    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Return or decline claim</a>
     {% endif %}
     {% endif %}
 
@@ -914,9 +920,9 @@ Claim checks
         <ul class="app-task-list__items">
           <li class="app-task-list__item nhsuk-u-clear">
             <span class="app-task-list__task-name">
-              {% if data['university-travel'] === 'completed' and 
-                    data['accommodation-completed-3'] === 'completed' and 
-                    data['accommodation-travel-completed-3'] === 'completed' and 
+              {% if data['university-travel'] === 'completed' and
+                    data['accommodation-completed-3'] === 'completed' and
+                    data['accommodation-travel-completed-3'] === 'completed' and
                     data['accommodation-travel-completed-4'] === 'completed' %}
               <a class="app-task-list__task-name" href="TDAE-claim-summary">
                 Authorise payment
@@ -927,9 +933,9 @@ Claim checks
               </span>
               {% endif %}
             </span>
-            {% if data['university-travel'] === 'completed' and 
-                    data['accommodation-completed-3'] === 'completed' and 
-                    data['accommodation-travel-completed-3'] === 'completed' and 
+            {% if data['university-travel'] === 'completed' and
+                    data['accommodation-completed-3'] === 'completed' and
+                    data['accommodation-travel-completed-3'] === 'completed' and
                     data['accommodation-travel-completed-4'] === 'completed' %}
                 <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
             {% else %}
@@ -942,19 +948,19 @@ Claim checks
     </ol>
 
     {% if data['read-only'] != 'true' %}
-    <h2 class="nhsuk-heading-m">Return to university</h2>
-    <p>You can return this claim to the university if there are any issues with it. You will need to explain:</p>
+    <h2 class="nhsuk-heading-m">Return or decline this claim</h2>
+    <p>If there are issues with this claim, you can either:</p>
     <ul>
-      <li>why you have returned the claim</li>
-      <li>what the student needs to change to re-submit the claim</li>
+      <li>return it to the university</li>
+      <li>decline the claim</li>
     </ul>
-    {% if data['university-travel'] === 'in-progress' or 
-          data['accommodation-completed-3'] === 'in-progress' or 
-          data['accommodation-travel-completed-3'] === 'in-progress' or 
+    {% if data['university-travel'] === 'in-progress' or
+          data['accommodation-completed-3'] === 'in-progress' or
+          data['accommodation-travel-completed-3'] === 'in-progress' or
           data['accommodation-travel-completed-4'] === 'in-progress' %}
-    <a class="nhsuk-button" href="TDAE-return-decline">Return to university</a>
+    <a class="nhsuk-button" href="TDAE-return-decline">Return or decline claim</a>
     {% else %}
-    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Return to university</a>
+    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Return or decline claim</a>
     {% endif %}
     {% endif %}
 

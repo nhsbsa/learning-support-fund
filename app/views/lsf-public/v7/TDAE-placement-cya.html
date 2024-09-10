@@ -62,6 +62,7 @@ Check your answers
 						</a>
 					</dd>
 				</div>
+
 				<!--<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
 						Community miles travelled
@@ -70,6 +71,7 @@ Check your answers
 						38
 					</dd>
 				</div>-->
+
 				{% endif %}
 				{% if checked('claiming-for', 'Cycle') %}
 				<div class="nhsuk-summary-list__row">
@@ -92,7 +94,7 @@ Check your answers
 						Total public transport tickets cost
 					</dt>
 					<dd class="nhsuk-summary-list__value">
-						£46.40
+						£41.28
 					</dd>
 					<dd class="nhsuk-summary-list__actions">
 						<a href="TDAE-public-transport-overview">
@@ -107,33 +109,53 @@ Check your answers
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['placement-additonal-comments'] %}
-						 Comment added
+							Comment added<br>
+							<details class="nhsuk-details">
+							 <summary class="nhsuk-details__summary">
+								 <span class="nhsuk-details__summary-text">
+									 View comment
+								 </span>
+							 </summary>
+							 <div class="nhsuk-details__text">
+								 <p>This is a comment that is over 100 characters therefore it is in a details dropdown.</p>
+							 </div>
+						 </details>
 						{% else %}
-							Comment not added
+							None provided
 						{% endif %}
 					</dd>
 					<dd class="nhsuk-summary-list__actions">
-						{% if data['placement-additonal-comments'] %}
-						<a href="TDAE-placement-comments-view">
-							Review<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
-						</a>
-						{% else %}
 						<a href="TDAE-placement-comments">
 							Change<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
 						</a>
-						{% endif %}
 					</dd>
 				</div>
+				<!--<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Total amount
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if checked('claiming-for', 'car') %}
+						£49.60
+						{% elif data['claiming-for'] == 'Cycle' %}
+						£15.84
+						{% else %}
+						£21.12
+						{% endif %}
+					</dd>
+					<dd class="nhsuk-summary-list__actions">
+					</dd>
+				</div>-->
 	    </dl>
 
 			<a href="TDAE-placement-itinerary" class="nhsuk-button nhsuk-button--secondary">Change your placement travel details</a>
 
-			<h2 class="nhsuk-heading-m">Total placement travel costs to be reimbursed</h2>
+			<h2 class="nhsuk-heading-m">Total placement travel costs</h2>
 	    <dl class="nhsuk-summary-list">
 
 				<div class="nhsuk-summary-list__row">
 	        <dt class="nhsuk-summary-list__key">
-	          Amount to be reimbursed
+	          Total amount
 	        </dt>
 	        <dd class="nhsuk-summary-list__value">
 	            {% if checked('claiming-for', 'car') %}
@@ -141,14 +163,14 @@ Check your answers
 							{% elif data['claiming-for'] == 'Cycle' %}
 							£15.84
 							{% else %}
-							£46.40
+							£21.12
 							{% endif %}
 	        </dd>
 	      </div>
 
 	    </dl>
 
-			<details class="nhsuk-details">
+			<!--<details class="nhsuk-details">
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-details__summary-text">
             Breakdown of your travel costs
@@ -238,7 +260,7 @@ Check your answers
 									£18
 							</td>
 						</tr>-->
-						<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+						<!--<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
 							<td class="nhsuk-table__cell" style="font-size: 1rem;">
 									<b>Total cost</b>
 							</td>
@@ -277,12 +299,13 @@ Check your answers
 	                  Public transport
 	              </td>
 	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
-	                  Walk
+	                  Car
 	              </td>
 	            </tr>
-	            <!--<tr role="row" class="nhsuk-table__row">
+	            <tr role="row" class="nhsuk-table__row">
 	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
-	                <b>Journey mileage cost</b>
+	                <b>Journey mileage cost<br>
+					(0.42p per mile)</b>
 	              </td>
 	              <td class="nhsuk-table__cell " style="font-size: 1rem;">
 
@@ -290,13 +313,13 @@ Check your answers
 	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
 	                £20.16
 	              </td>
-	            </tr>-->
+	            </tr>
 	            <tr role="row" class="nhsuk-table__row">
 	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
 	                <b>Journey public transport cost</b>
 	              </td>
 	              <td class="nhsuk-table__cell " style="font-size: 1rem;">
-	                £46.40
+	                £41.28
 	              </td>
 	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
 
@@ -324,28 +347,28 @@ Check your answers
 	                  £18
 	              </td>
 	            </tr>-->
-	            <tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+	            <!--<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
 	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
 	                  <b>Total cost</b>
 	              </td>
 	              <td class="nhsuk-table__cell " style="font-size: 1rem;">
-	                £46.40
+	                £41.28
 	              </td>
 	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
-	                £0
+	                £20.16
 	              </td>
 	            </tr>
 	          </tbody>
 	          </table>
 
-	          <p><b>Amount to be reimbursed: £46.40</b></p>
+	          <p><b>Amount to be reimbursed: £21.12</b></p>
 					{% endif %}
         </div>
-      </details>
+      </details>-->
 
 
 			{% if data['submit-claim'] != 'completed' %}
-				<form action="v7/TDAE-placement-cya" method="POST">
+				<form action="v8/TDAE-placement-cya" method="POST">
 					<button class="nhsuk-button" type="submit">Save and continue</button><br>
 				</form>
 			{% endif %}

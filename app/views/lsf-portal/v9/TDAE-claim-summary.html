@@ -14,7 +14,7 @@ Claim summary
     }) }}
 
 
-    <h1 class="nhsuk-heading-l">Authorising payment</h1>
+    <h1 class="nhsuk-heading-l">Claim summary</h1>
 
     <dl class="nhsuk-summary-list">
 
@@ -26,65 +26,12 @@ Claim summary
           <div id="currentDate"></div>
         </dd>
       </div>
-
-      {% if data['name'] === 'Emmit Mar' %}
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Student number
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          SSRN0010001
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Student name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Emmit Mar
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Course
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Adult Nursing
-        </dd>
-      </div>
-
-      {% elif data['name'] === 'Alyssa Geary' %}
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
           Student number
         </dt>
         <dd class="nhsuk-summary-list__value">
           SSRN0010003
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Student name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Alyssa Geary
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Course
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Adult Nursing
-        </dd>
-      </div>
-      {% else %}
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Student number
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          {{ data['student number'] }}
         </dd>
       </div>
 
@@ -105,7 +52,6 @@ Claim summary
           Adult Nursing
         </dd>
       </div>
-      {% endif %}
 
     </dl>
 
@@ -217,7 +163,7 @@ Claim summary
     </dl>
 
     <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-student-claim">Return to claim</a><br>
-    <a class="nhsuk-button" href="TDAE-payment-authorised">Authorise payment</a>
+    <a class="nhsuk-button" href="TDAE-NHSBSA-comments">Continue</a>
 
 
   </div>

@@ -9,10 +9,18 @@ Claim costs breakdown
 
   <div class="nhsuk-grid-column-full">
 
+    {% if data['previous'] == 'cost-summary' %}
     {{ backLink({
-    "href": "TDAE-placement-cost-summary",
+    "href": "TDAE-student-cost-summary",
     "text": "Go back"
     }) }}
+    {% else %}
+    {{ backLink({
+    "href": "TDAE-claim-summary",
+    "text": "Go back"
+    }) }}
+    {% endif %}
+
 
     <h1 class="nhsuk-heading-l">Claim costs breakdown</h1>
 
@@ -644,7 +652,11 @@ Claim costs breakdown
       </div>
     </dl>
 
-    <p><a href="TDAE-placement-cost-summary">Return to Claims cost summary</a></p>
+    {% if data['previous'] == 'cost-summary' %}
+      <p><a href="TDAE-student-cost-summary">Return to Costs summary for {% if data['name'] %}{{ data['name'] }}{% else %}Joe Bloggs{% endif %}</a></p>
+    {% else %}
+      <p><a href="TDAE-claim-summary">Return to Claim summary</a></p>
+    {% endif %}
 
   </div>
 

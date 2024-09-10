@@ -130,16 +130,32 @@ Check your answers
 						</a>
 					</dd>
 				</div>
+				<!--<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Total amount
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if checked('claiming-for', 'car') %}
+						£49.60
+						{% elif data['claiming-for'] == 'Cycle' %}
+						£15.84
+						{% else %}
+						£21.12
+						{% endif %}
+					</dd>
+					<dd class="nhsuk-summary-list__actions">
+					</dd>
+				</div>-->
 	    </dl>
 
 			<a href="TDAE-placement-itinerary" class="nhsuk-button nhsuk-button--secondary">Change your placement travel details</a>
 
-			<h2 class="nhsuk-heading-m">Total placement travel costs to be reimbursed</h2>
+			<h2 class="nhsuk-heading-m">Total placement travel costs</h2>
 	    <dl class="nhsuk-summary-list">
 
 				<div class="nhsuk-summary-list__row">
 	        <dt class="nhsuk-summary-list__key">
-	          Amount to be reimbursed
+	          Total amount
 	        </dt>
 	        <dd class="nhsuk-summary-list__value">
 	            {% if checked('claiming-for', 'car') %}
@@ -154,7 +170,7 @@ Check your answers
 
 	    </dl>
 
-			<details class="nhsuk-details">
+			<!--<details class="nhsuk-details">
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-details__summary-text">
             Breakdown of your travel costs
@@ -244,7 +260,7 @@ Check your answers
 									£18
 							</td>
 						</tr>-->
-						<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+						<!--<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
 							<td class="nhsuk-table__cell" style="font-size: 1rem;">
 									<b>Total cost</b>
 							</td>
@@ -331,7 +347,7 @@ Check your answers
 	                  £18
 	              </td>
 	            </tr>-->
-	            <tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+	            <!--<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
 	              <td class="nhsuk-table__cell" style="font-size: 1rem;">
 	                  <b>Total cost</b>
 	              </td>
@@ -348,7 +364,7 @@ Check your answers
 	          <p><b>Amount to be reimbursed: £21.12</b></p>
 					{% endif %}
         </div>
-      </details>
+      </details>-->
 
 
 			{% if data['submit-claim'] != 'completed' %}

@@ -17,14 +17,14 @@ Not eligible
 				Invalid costs
 			  </h1>
 			  <h2 class="nhsuk-card__heading nhsuk-u-font-weight-normal" style="text-align: center; color: white;">
-				Some placement travel costs cannot be reimbursed
+				Some travel costs cannot be reimbursed
 			  </h2>
 			</div>
 		</div>
 
-		<p>You told us that your university travel costs are £4 per day. Some of your daily placement travel costs are less than this.</p>
+		<p>You told us that your university travel costs are £4 per day. Some of your daily travel costs are less than this.</p>
 
-		<p>We cannot reimburse you for any placement travel costs if they are less than your daily university travel costs.</p>
+		<p>We cannot reimburse you for placement travel, taxi and accommodation travel costs if they are less than your daily university travel costs.</p>
 
 
 
@@ -34,6 +34,9 @@ Not eligible
         <tr role="row">
           <th role="columnheader" class="" scope="col">
 						Day
+          </th>
+					<th role="columnheader" class="" scope="col">
+						Costs
           </th>
           <th role="columnheader" class="" scope="col">
             Total daily cost
@@ -45,32 +48,47 @@ Not eligible
           <td class="nhsuk-table__cell">
             Friday 6 October 2023
           </td>
+					<td class="nhsuk-table__cell">
+            <ul class="nhsuk-list" style="margin-bottom: 0px;">
+							<li>Public transport tickets</li>
+							<li>Taxi</li>
+						</ul>
+          </td>
           <td class="nhsuk-table__cell">
             £3.20
+          </td>
+        </tr>
+				<tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            Saturday 7 October 2023
+          </td>
+					<td class="nhsuk-table__cell">
+            <ul class="nhsuk-list" style="margin-bottom: 0px;">
+							<li>Driving mileage</li>
+							<li>Extra costs</li>
+						</ul>
+          </td>
+          <td class="nhsuk-table__cell">
+            £2.60
           </td>
         </tr>
       </tbody>
       </table>
 
-		<h2 class="nhsuk-heading-m">How would you like to continue?</h2>
+		<h2 class="nhsuk-heading-m">Do you want to continue submitting this claim?</h2>
+
 		<div class="nhsuk-form-group">
 			<div class="nhsuk-radios">
 		    <div class="nhsuk-radios__item">
-		      <input class="nhsuk-radios__input" id="costs-correct-yes" name="invalid-costs-partial" type="radio" value="change-details">
-		      <label class="nhsuk-label nhsuk-radios__label" for="costs-correct-yes">
-		        Change placement travel details
-		      </label>
-		    </div>
-		    <div class="nhsuk-radios__item">
 		      <input class="nhsuk-radios__input" id="costs-correct-no" name="invalid-costs-partial" type="radio" value="remove">
 		      <label class="nhsuk-label nhsuk-radios__label" for="costs-correct-no">
-		        Remove placement travel days where costs are lower than university travel
+						Yes, I accept these costs will not be reimbursed
 		      </label>
 		    </div>
 				<div class="nhsuk-radios__item">
-		      <input class="nhsuk-radios__input" id="costs-correct-no" name="invalid-costs-partial" type="radio" value="save">
-		      <label class="nhsuk-label nhsuk-radios__label" for="costs-correct-no">
-		        Save placement travel details and come back later
+		      <input class="nhsuk-radios__input" id="costs-correct-yes" name="invalid-costs-partial" type="radio" value="change-details">
+		      <label class="nhsuk-label nhsuk-radios__label" for="costs-correct-yes">
+		        No, change claim details
 		      </label>
 		    </div>
 		  </div>
@@ -78,6 +96,8 @@ Not eligible
 		<button class="nhsuk-button" data-module="nhsuk-button" type="submit">
 		  Continue
 		</button>
+
+		<p><a href="TDAE-task-list">Cancel</a></p>
 
 		</form>
 

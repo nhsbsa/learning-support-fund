@@ -20,66 +20,84 @@
           <h2 class="nhsuk-heading-m">SHEFFIELD HALLAM UNIVERSITY</h2>
 
           {% if data['user-role'] == 'TDAE' %}
-            <div class="nhsuk-grid-row">
-              <div style="display:flex;" class="nhsuk-u-margin-bottom-5">
-              <div style="width:40%; text-align: center;" class="nhsuk-grid-column-one-third" >
-                    <p class="nhsuk-heading-xl nhsuk-u-margin-bottom-1">34</p>
-                    <p><strong>Active TDAE claims</strong></p>
-                </div>
-                <div style="width:40%; display: flex; align-items: center; justify-content: left;" class="nhsuk-grid-column-one-third" >
-                    <a class="nhsuk-button" href="TDAE-claims-list">View active TDAE claims</a>
-                </div>
-                </div>
+        </div>
+          <div class="nhsuk-grid-column-one-half">
+            <div class="nhsbsa-card">
+              <div class="nhsbsa-card-content-head">
+                <h3 class="nhsuk-card__heading">Travel and Dual Accommodation Expenses</h3>
+                <p class="nhsuk-u-margin-bottom-0">
+                  <span class="nhsuk-heading-xl nhsuk-u-font-size-64 nhsuk-u-margin-bottom-1 nhsuk-u-display-block">34</span>
+                  <span class="nhsuk-u-display-block">Active TDAE claims</span>
+                </p>
+              </div>
+              <!-- To be displayed only if TDAE is showing -->
+              <div class="nhsbsa-card-content-button">
+                <a class="nhsuk-button" role="button" data-module="nhsuk-button" href="TDAE-claims-list">View active TDAE claims</a>
+              </div>
+              <!-- /. -->
             </div>
+          </div>
+
+            <div class="nhsuk-grid-column-full">
           {% elif data['user-role'] == 'COSA' %}
-            <div class="nhsuk-grid-row">
-              <div style="display:flex;" class="nhsuk-u-margin-bottom-5">
-              <div style="width:40%; text-align: center;" class="nhsuk-grid-column-one-third" >
-                  <p class="nhsuk-heading-xl nhsuk-u-margin-bottom-1">295</p>
-                  <p><strong>Students needing action</strong></p>
+        </div>
+          <div class="nhsuk-grid-column-one-half">
+            <div class="nhsbsa-card">
+              <div class="nhsbsa-card-content-head">
+                <h3 class="nhsuk-card__heading">Confirmation of student attendance</h3>
+                <p class="nhsuk-u-margin-bottom-0">
+                  <span class="nhsuk-heading-xl nhsuk-u-font-size-64 nhsuk-u-margin-bottom-1 nhsuk-u-display-block">295</span>
+                  <span class="nhsuk-u-display-block">Students needing action</span>
+                </p>
               </div>
-              <!--<div style="width:20%" class="nhsuk-grid-column-one-third" >
-                  <p class="nhsuk-heading-xl nhsuk-u-margin-bottom-1">12</p>
-                  <p><strong>Courses</strong></p>
-              </div>-->
-              <div style="width:40%; display: flex; align-items: center; justify-content: left;" class="nhsuk-grid-column-one-third" >
-                  <a class="nhsuk-button" href="courses">View course details</a>
+              <!-- To be displayed only if COSA is showing -->
+              <div class="nhsbsa-card-content-button">
+                <a class="nhsuk-button" role="button" data-module="nhsuk-button" href="courses">View course details</a>
               </div>
-              </div>
+              <!-- /. -->
             </div>
+          </div>
+          <div class="nhsuk-grid-column-full">
           {% else %}
           </div>
         </div>
-        <div class="nhsuk-grid-column-full">
-            <div class="nhsuk-grid-row">
-              <h3 class="nhsuk-heading-m">Confirmation of student attendance</h3>
-                <div style="display:flex;" class="nhsuk-u-margin-bottom-5">
-                <div style="width:40%; text-align: center;" class="nhsuk-grid-column-one-third" >
-                    <p class="nhsuk-heading-xl nhsuk-u-margin-bottom-1">295</p>
-                    <p style="margin-bottom:0px;"><strong>Students needing action</strong></p>
-                </div>
-                <!--<div style="width:20%; text-align: center;" class="nhsuk-grid-column-one-third" >
-                    <p class="nhsuk-heading-xl nhsuk-u-margin-bottom-1">12</p>
-                    <p style="margin-bottom:0px;"><strong>Courses</strong></p>
-                </div>-->
-                <div style="width:40%; display: flex; align-items: center; justify-content: left;" class="nhsuk-grid-column-one-third" >
-                    <a style="margin: 0;" class="nhsuk-button" href="courses">View course details</a>
-                </div>
-                </div>
+        <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-half">
+          <div class="nhsbsa-card">
+            <div class="nhsbsa-card-content-head">
+              <h3 class="nhsuk-card__heading">Confirmation of student attendance</h3>
+              <p class="nhsuk-u-margin-bottom-0">
+                <span class="nhsuk-heading-xl nhsuk-u-font-size-64 nhsuk-u-margin-bottom-1 nhsuk-u-display-block">295</span>
+                <span class="nhsuk-u-display-block">Students needing action</span>
+              </p>
             </div>
-            <div class="nhsuk-grid-row">
-              <h3 class="nhsuk-heading-m">Travel and Dual Accommodation Expenses</h3>
-                <div style="display:flex;" class="nhsuk-u-margin-bottom-4">
-                <div style="width:40%; text-align: center;'" class="nhsuk-grid-column-one-third" >
-                  <p class="nhsuk-heading-xl nhsuk-u-margin-bottom-1">34</p>
-                  <p style="margin-bottom:0px;"><strong>Active TDAE claims</strong></p>
-                </div>
-                <div style="width:40%; display: flex; align-items: center; justify-content: left;" class="nhsuk-grid-column-one-third" >
-                    <a style="margin: 0;" class="nhsuk-button" href="TDAE-claims-list">View active TDAE claims</a>
-                </div>
-                </div>
+            <!-- To be displayed if both TDAE and COSA are showing -->
+            <div class="nhsbsa-card-content-link">
+              <p class="nhsuk-u-margin-bottom-0"><a class="nhsuk-link--no-visited-state" href="courses">View course details</a></p>
             </div>
+            <!-- /. -->
           </div>
+        </div>
+        <div class="nhsuk-grid-column-one-half">
+          <div class="nhsbsa-card">
+            <div class="nhsbsa-card-content-head">
+              <h3 class="nhsuk-card__heading">Travel and Dual Accommodation Expenses</h3>
+              <p class="nhsuk-u-margin-bottom-0">
+                <span class="nhsuk-heading-xl nhsuk-u-font-size-64 nhsuk-u-margin-bottom-1 nhsuk-u-display-block">34</span>
+                <span class="nhsuk-u-display-block">Active TDAE claims</span>
+              </p>
+            </div>
+            <!-- To be displayed if both TDAE and COSA are showing -->
+            <div class="nhsbsa-card-content-link">
+              <p class="nhsuk-u-margin-bottom-0"><a class="nhsuk-link--no-visited-state" href="TDAE-claims-list">View active TDAE claims</a></p>
+            </div>
+            <!-- /. -->
+          </div>
+        </div>
+        </div>
+
+
+
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
           <!--

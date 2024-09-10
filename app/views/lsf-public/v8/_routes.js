@@ -463,7 +463,7 @@ router.post('/v8/TDAE-sure-remove', (req, res) => {
   const remove = req.session.data['remove']
 
   if (remove === 'yes') {
-      res.redirect('/lsf-public/v8/TDAE-task-list')
+      res.redirect('/lsf-public/v8/TDAE-placement-cost-summary')
   } else {
       res.redirect('/lsf-public/v8/TDAE-signpost/TDAE-invalid-costs-partial')
   }
@@ -476,12 +476,9 @@ router.post('/v8/TDAE-invalid-costs-partial', (req, res) => {
   const invalidCostsPartial = req.session.data['invalid-costs-partial']
 
   if (invalidCostsPartial === 'change-details') {
-      res.redirect('/lsf-public/v8/TDAE-placement-itinerary')
+      res.redirect('/lsf-public/v8/TDAE-task-list')
   }  else if (invalidCostsPartial === 'remove') {
-      res.redirect('/lsf-public/v8/TDAE-signpost/TDAE-sure-remove')
-  } else if (invalidCostsPartial === 'save') {
-    req.session.data['add-placement-travel'] = 'in-progress';
-    res.redirect('/lsf-public/v8/TDAE-task-list')
+      res.redirect('/lsf-public/v8/TDAE-placement-cost-summary')
   } else {
       res.redirect('/lsf-public/v8/TDAE-signpost/TDAE-invalid-costs-partial')
   }
@@ -520,20 +517,16 @@ router.post('/v8/TDAE-invalid-costs-all', (req, res) => {
   const invalidCostsAll = req.session.data['invalid-costs-all']
 
   if (invalidCostsAll === 'change-details') {
-      res.redirect('/lsf-public/v8/TDAE-placement-itinerary')
-  }
-  else if (invalidCostsAll === 'change-university-details') {
-      res.redirect('/lsf-public/v8/TDAE-normal-summary-cya')
+      res.redirect('/lsf-public/v8/TDAE-task-list')
   }
   else if (invalidCostsAll === 'remove-all') {
-      res.redirect('/lsf-public/v8/TDAE-signpost/TDAE-sure-remove-all')
+      res.redirect('/lsf-public/v8/TDAE-placement-cost-summary')
   }
   else if (invalidCostsAll === 'delete') {
       res.redirect('/lsf-public/v8/TDAE-signpost/TDAE-sure-delete')
   }
   else if (invalidCostsAll === 'save') {
-      req.session.data['add-placement-travel'] = 'in-progress';
-      res.redirect('/lsf-public/v8/TDAE-task-list')
+      res.redirect('/lsf-public/v8/academic-year-details')
   }
   else {
       res.redirect('/lsf-public/v8/TDAE-signpost/TDAE-invalid-costs-all')
