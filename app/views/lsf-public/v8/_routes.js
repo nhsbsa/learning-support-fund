@@ -491,7 +491,7 @@ router.post('/v8/TDAE-sure-delete', (req, res) => {
   const deleteClaim = req.session.data['delete']
 
   if (deleteClaim === 'yes') {
-      res.redirect('/lsf-public/v8/TDAE-returning-student/academic-year-details')
+      res.redirect('/lsf-public/v8/TDAE-signpost/TDAE-deleted')
   } else {
       res.redirect('/lsf-public/v8/TDAE-signpost/TDAE-invalid-costs-all')
   }
