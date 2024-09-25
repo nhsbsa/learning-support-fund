@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html id="adminTheme" lang="en" class="html-admin">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+
+    <title>{% block pageTitle %}NHS.UK prototype kit{% endblock %}</title>
+
+    {% block headCSS %}
+      <link href="/css/admin-screen.css" rel="stylesheet" />
+    {% endblock %}
+
+    {% block customStyles %}
+    {% endblock %}
+
+    {% block headIcons %}
+    <link rel="shortcut icon" href="/nhsuk-frontend/assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/nhsuk-frontend/assets/favicons/apple-touch-icon-180x180.png">
+    <link rel="mask-icon" href="/nhsuk-frontend/assets/favicons/favicon.svg" color="#005eb8">
+    <link rel="icon" sizes="192x192" href="/nhsuk-frontend/assets/favicons/favicon-192x192.png">
+    <meta name="msapplication-TileImage" content="/nhsuk-frontend/assets/favicons/mediumtile-144x144.png">
+    <meta name="msapplication-TileColor" content="#005eb8">
+    <meta name="msapplication-square70x70logo" content="/nhsuk-frontend/assets/favicons/smalltile-70x70.png">
+    <meta name="msapplication-square150x150logo" content="/nhsuk-frontend/assets/favicons/mediumtile-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="/nhsuk-frontend/assets/favicons/widetile-310x150.png">
+    <meta name="msapplication-square310x310logo" content="/nhsuk-frontend/assets/favicons/largetile-310x310.png"> 
+    {% endblock %}
+
+    {% block head %}{% endblock %}
+    
+  </head>
+
+  <body class="{{ bodyClasses }}">
+
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+    {% block bodyStart %}{% endblock %}
+
+      
+      {% block header %}
+        
+      {% endblock %}
+
+      {% block beforeContent %}{% endblock %}
+
+      {% block main %}
+          <div class="page-container">
+            <nav class="side-nav dft-sidebar" role="navigation" aria-label="Navigation">
+              <ul role="list">
+                <li class="side-nav__item"><a id="studentSearchButton" href="/lsf-web/v4/current-search-student">Student search</a></li>
+                <li class="side-nav__item"><a id="manageUsersButton" href="/lsf-web/v4/admin-view/manage-users">Manage users</a></li>
+                <li class="side-nav__item"><a id="manageCollegesButton" href="/lsf-web/v4/admin-view/manage-unis">Manage universities</a></li>
+                <li class="side-nav__item"><a id="manageCoursesButton" href="/lsf-web/v4/admin-view/manage-courses">Manage courses</a></li>
+                <li class="side-nav__item"><a id="manageRatesButton" href="/lsf-web/v4/admin-view/manage-calc-rates">Manage calculation rates</a></li>
+                <li class="side-nav__item"><a id="manageTdaeRatesButton" href="/lsf-web/v4/admin-view/manage-tdae-rates">Manage TDAE rates</a></li>
+                <li class="side-nav__item"><a id="manageTermPaymentPercentsButton" href="/lsf-web/v4/admin-view/manage-term-percentages">Manage term payment percentages</a></li>
+                <li class="side-nav__item"><a id="manageKnowledgeBaseButton" href="/lsf-web/v4/admin-view/manage-knowledge-base">Manage knowledge base</a></li>
+                <li class="side-nav__item"><a id="manageEnrolmentYearsButton" href="/lsf-web/v4/admin-view/manage-enrolment-years">Manage enrolment year</a>
+                </li>
+                <li class="side-nav__item"><a id="manageCosaButton" href="/lsf-web/v4/admin-view/manage-attendance-status">Manage attendance status</a></li>
+                <li class="side-nav__item"><a id="manageNoteTypes" href="/lsf-web/v4/admin-view/manage-note-types">Manage note types</a></li> 
+                <li class="side-nav__item"><a id="manageFormsButton" href="/lsf-web/v4/admin-view/manage-forms">Manage forms</a></li>
+                <li class="side-nav__item"><a id="managePaymentRunButton" href="/lsf-web/v4/admin-view/manage-payment-runs">Manage payment runs</a></li>
+                <li class="side-nav__item"><a id="invalidBankDetailsButton" href="/lsf-web/v4/admin-view/invalid-bank-details">Invalid bank details</a>
+                </li>
+                <li class="side-nav__item"><a id="reportMenuButton" href="/lsf-web/v4/admin-view/reporting-menu">Reporting menu</a></li>
+              </ul>
+            </nav>
+            {% block outerContent %}{% endblock %}
+            <main class="elements-index" id="adminContent" role="main">
+              {% block content %}{% endblock %}
+            </main>
+          </div>
+      {% endblock %}
+
+      {% block footer %}
+       
+      {% endblock %}
+
+    {% block bodyEnd %}{% endblock %}
+
+  </body>
+</html>
