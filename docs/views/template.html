@@ -1,9 +1,8 @@
-{%- from 'header/macro.njk' import header %}
-{%- from 'footer/macro.njk' import footer %}
 {%- from 'skip-link/macro.njk' import skipLink %}
 {%- from 'action-link/macro.njk' import actionLink %}
 {%- from 'breadcrumb/macro.njk' import breadcrumb %}
 {%- from 'card/macro.njk' import card %}
+{%- from 'character-count/macro.njk' import characterCount %}
 {%- from 'contents-list/macro.njk' import contentsList %}
 {%- from 'details/macro.njk' import details %}
 {%- from 'header/macro.njk' import header %}
@@ -29,6 +28,7 @@
 {%- from 'radios/macro.njk' import radios %}
 {%- from 'select/macro.njk' import select %}
 {%- from 'summary-list/macro.njk' import summaryList %}
+{%- from 'tabs/macro.njk' import tabs %} 
 {%- from 'tag/macro.njk' import tag %}
 {%- from 'textarea/macro.njk' import textarea %}
 
@@ -94,24 +94,11 @@
 
       {% block main %}
         <div class="nhsuk-width-container {{ containerClasses }}">
-
-          <!-- phase banner -->
-          <div class="nhsuk-phase-banner">
-            <p class="nhsuk-phase-banner__content">
-              <strong class="nhsuk-tag nhsuk-phase-banner__content__tag">
-                BETA
-              </strong>
-              <span class="nhsuk-phase-banner__text">
-                This is a new service – your <a class="nhsuk-link" href="#">feedback</a> will help us to improve it.
-              </span>
-            </p>
-          </div>
-
           {% block outerContent %}{% endblock %}
           <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
             {% block content %}{% endblock %}
           </main>
-        </div>  
+        </div>
       {% endblock %}
 
       {% block footer %}
