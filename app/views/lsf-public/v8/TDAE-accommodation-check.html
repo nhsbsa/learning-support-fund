@@ -179,7 +179,7 @@ Check your answers
 				</dd>
 				{% endif %}
 			</div>
-
+<!--
 			{% if data['accommodation-details'] == 'in-progress' %}
 				<div class="nhsuk-summary-list__row" style="background-color: #fff9c4;">
 					<dt class="nhsuk-summary-list__key">
@@ -215,20 +215,20 @@ Check your answers
 				{% endif %}
 			</div>
 			{% endif %}
-
+-->
 			</dl>
 
 			{% if data['accommodation-details'] == 'in-progress' %}
 				<a class="nhsuk-button" href="TDAE-accommodation-evidence?accommodation-details=completed">Add evidence</a>
 			{% else %}
 				{% if data['submit-claim'] != 'completed' %}
-					<form action="v8/TDAE-accommodation-check" method="POST">
-						<button class="nhsuk-button" type="submit">Continue</button>
+					<form action="TDAE-accommodation-evidence-overview" method="POST">
+						<button class="nhsuk-button" type="submit">Save and continue to evidence</button>
 					</form>
 				{% endif %}
 			{% endif %}
 
-			<p><a href="TDAE-task-list-full?accommodation-details=in-progress">Return to task list</a></p>
+			<p><a href="TDAE-task-list-full">Cancel</a></p>
 
 		<!-- </form> -->
 

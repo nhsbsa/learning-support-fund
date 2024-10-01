@@ -149,7 +149,7 @@
                               <span class="nhsuk-table-responsive__heading">Description </span> Adding your university student ID can make it quicker and easier for your university to review your TDAE claims.
                           </td>
                           <td role="cell" class="nhsuk-table__cell">
-                              <span class="nhsuk-table-responsive__heading">Action </span> <a href="change-student-id?notification=true">Add ID</a>
+                              <span class="nhsuk-table-responsive__heading">Action </span> <a href="change-student-id?notification=true&TDAE=false">Add ID</a>
                           </td>
                       </tr>
 
@@ -214,12 +214,23 @@
 												</dd>
 											</div>
                       <div class="nhsuk-summary-list__row">
+												<dt class="nhsuk-summary-list__key">National Insurance number</dt>
+												<dd class="nhsuk-summary-list__value">
+													QQ 12 34 56 C
+												</dd>
+												<dd class="nhsuk-summary-list__actions">
+													<a id="updateNINO" href="national-insurance-number?change=true">
+														Change<span class="nhsuk-u-visually-hidden"> National Insurance number</span>
+													</a>
+												</dd>
+											</div>
+                      <div class="nhsuk-summary-list__row">
 												<dt class="nhsuk-summary-list__key">University student ID</dt>
 												<dd class="nhsuk-summary-list__value">
 													AB12345678
 												</dd>
 												<dd class="nhsuk-summary-list__actions">
-													<a id="updateAddress" href="change-student-id">
+													<a id="updateAddress" href="change-student-id?TDAE=false">
 														Change<span class="nhsuk-u-visually-hidden"> University Student ID</span>
 													</a>
 												</dd>
@@ -272,8 +283,8 @@
                 <p><a href="bank-details">Add bank details</a></p>
               </div>
               {% endif %}
-          
-							
+
+
 
 							<div class="nhsuk-grid-column-full">
 								<hr aria-hidden="true" />

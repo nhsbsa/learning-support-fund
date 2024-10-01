@@ -31,12 +31,17 @@
           </span>
         </summary>
         <div class="nhsuk-details__text">
-          <p>If you are unable to locate your National Insurance number, please refer to <a href="https://www.gov.uk/find-national-insurance-number">find your National Insurance number</a>.</p>
+          <p>If you are unable to locate your National Insurance number, refer to <a href="https://www.gov.uk/find-national-insurance-number">find your National Insurance number</a>.</p>
         </div>
       </details>
 
-      <a class="nhsuk-button" href="full-name">Continue</a><br>
-      <p><a href="start-screen">Cancel</a></p>
+      {% if data['change'] == "true" %}
+        <a class="nhsuk-button" href="national-insurance-number-changed">Save and continue</a><br>
+        <p><a href="dashboard?questionnaire-completed=Completed#tab-two">Cancel</a></p>
+      {% else %}
+        <a class="nhsuk-button" href="address">Continue</a><br>
+        <p><a href="start-screen">Cancel</a></p>
+      {% endif %}
 
     </div>
 

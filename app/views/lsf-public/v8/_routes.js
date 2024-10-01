@@ -9,6 +9,20 @@ const session = require('express-session');
 // const moment = require('moment');
 const router = express.Router();
 
+// Registration National Insurance number
+
+router.post('/v8/national-insurance-number-question', (req, res) => {
+
+  const nationalInsuranceNumberQuestion = req.session.data['national-insurance-number-question']
+
+  if (nationalInsuranceNumberQuestion === 'No'){
+    res.redirect('/lsf-public/v8/national-insurance-number-reason')
+  } else {
+    res.redirect('/lsf-public/v8/national-insurance-number')
+  }
+
+})
+
 // TDAE Overseas
 router.post('/v8/TDAE-overseas/authorisation', (req, res) => {
 

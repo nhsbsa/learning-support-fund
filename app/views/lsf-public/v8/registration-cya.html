@@ -72,6 +72,54 @@ Choose a username and password
           </div>
           <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
+                  Have a National Insurance number?
+              <dd class="nhsuk-summary-list__value">
+                  {% if data['national-insurance-number-question'] %}
+                    {{ data['national-insurance-number-question'] }}
+                  {% else %}
+                    Yes
+                  {% endif %}
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                  <a href="national-insurance-number-question">
+                      Change<span class="nhsuk-u-visually-hidden"> National Insurance number</span>
+                  </a>
+              </dd>
+          </div>
+          {% if data['national-insurance-number-question'] == 'No' %}
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Reason
+                <dd class="nhsuk-summary-list__value">
+                    {% if data['national-insurance-number-reason'] %}
+                      {{ data['national-insurance-number-reason'] }}
+                    {% else %}
+                      I was not living in the UK when I turned 16 and have not worked in the UK.
+                    {% endif %}
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="national-insurance-number-question">
+                        Change<span class="nhsuk-u-visually-hidden"> reason</span>
+                    </a>
+                </dd>
+            </div>
+          {% else %}
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    National Insurance number
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    QQ 12 34 56 C
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="national-insurance-number">
+                        Change<span class="nhsuk-u-visually-hidden"> National Insurance number</span>
+                    </a>
+                </dd>
+            </div>
+          {% endif %}
+          <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
                   Address
               </dt>
               <dd class="nhsuk-summary-list__value">

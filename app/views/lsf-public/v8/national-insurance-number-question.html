@@ -1,0 +1,53 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Do you have a National Insurance number?
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+      <form action="v8/national-insurance-number-question" method="POST">
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Do you have a National Insurance number?
+            </h1>
+          </legend>
+
+          <div class="nhsuk-form-group">
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="national-insurance-number-question-yes" name="national-insurance-number-question" type="radio" value="Yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="national-insurance-number-question-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="national-insurance-number-question-no" name="national-insurance-number-question" type="radio" value="No">
+                <label class="nhsuk-label nhsuk-radios__label" for="national-insurance-number-question-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <p><a href="TDAE-claims-list">Cancel</a></p>
+
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

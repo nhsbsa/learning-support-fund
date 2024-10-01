@@ -1,7 +1,7 @@
 {% extends 'layout-public.html' %}
 
 {% block pageTitle %}
-  What are your contact details?
+  What is your university student ID?
 {% endblock %}
 
 
@@ -16,6 +16,10 @@
 
         <h1 class="nhsuk-heading-l">What is your university student ID?</h1>
 
+        {% if data['TDAE'] == 'true' %}
+          <p>We'll save this in the Personal details section of your NHS Learning Support Fund account.</p>
+        {% endif %}
+
         <div class="nhsuk-form-group">
 					<!--<div class="nhsuk-hint" id="formhint"> For example, 15 3 1984</div>-->
           <div class="nhsuk-form-group">
@@ -23,8 +27,13 @@
           </div>
 				</div>
 
-        <a class="nhsuk-button" href="change-student-id-changed">Save and continue</a><br>
-        <p><a href="dashboard">Cancel</a></p>
+        {% if data['TDAE'] == 'true' %}
+          <a class="nhsuk-button" href="TDAE-incur-costs">Continue</a><br>
+          <p><a href="TDAE-returning-student/academic-year-details#tab-two">Cancel</a></p>
+        {% else %}
+          <a class="nhsuk-button" href="change-student-id-changed">Save and continue</a><br>
+          <p><a href="dashboard">Cancel</a></p>
+        {% endif %}
 
     </div>
 
