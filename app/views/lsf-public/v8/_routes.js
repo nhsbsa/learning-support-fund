@@ -1017,7 +1017,9 @@ router.post('/v8/TDAE-accommodation-travel-cycle-journey-mileage', (req, res) =>
 
 router.post('/v8/TDAE-accommodation-travel-evidence', (req, res) => {
 
-  res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-mini-cya')
+  req.session.data['accommodation-travel-evidence'] = "added"
+
+  res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-evidence-overview')
 
 })
 
@@ -1058,17 +1060,36 @@ router.post('/v8/TDAE-accommodation-travel-add-comment', (req, res) => {
   // Check if the user had extra costs for driving
   const didPayExtraCosts = req.session.data['extra-costs'] === 'yes';
 
-  if (didPayExtraCosts || isPublicTransportSelected) {
-    res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-evidence');
-  } else {
-    res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-check');
-  }
+  res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-check');
+
+  //if (didPayExtraCosts || isPublicTransportSelected) {
+  //  res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-evidence');
+  //} else {
+  //  res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-check');
+  //}
 
 });
 
 router.post('/v8/TDAE-accommodation-travel-check', (req, res) => {
 
-  res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-check-multiple')
+  // Retrieve the transportMethods from the session data
+  const transportMethods = req.session.data['transport-method'];
+
+  // Check if the user previously selected 'car', 'public transport', and 'cycle' as transport methods
+  const isCarSelected = transportMethods.includes('car');
+  const isPublicTransportSelected = transportMethods.includes('public-transport');
+  const isCycleSelected = transportMethods.includes('cycle');
+
+  // Check if the user had extra costs for driving
+  const didPayExtraCosts = req.session.data['extra-costs'] === 'yes';
+
+  if (didPayExtraCosts || isPublicTransportSelected) {
+    res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-evidence-overview');
+  } else {
+    res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-check-multiple');
+  }
+
+  //res.redirect('/lsf-public/v8/accommodation-journey/TDAE-accommodation-travel-check-multiple')
 
 })
 

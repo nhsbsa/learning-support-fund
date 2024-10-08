@@ -228,7 +228,7 @@ Check your answers
 					{% endif %}
 				  </div>
 
-					<!-- if first journey = term time to accommodation and travelled by both car and public - evidence uploaded -->
+					<!-- if first journey = term time to accommodation and travelled by both car and public - evidence uploaded
 					{% if data['accommodation-travel'] == 'in-progress' %}
 						<div class="nhsuk-summary-list__row" style="background-color: #fff9c4;">
 							<dt class="nhsuk-summary-list__key">
@@ -247,7 +247,7 @@ Check your answers
 						</div>
 					{% else %}
 						<div class="nhsuk-summary-list__row">
-							<!-- if no evidence uploaded -->
+							<!-- if no evidence uploaded
 							{% if data['no-evidence-decision'] == 'reason' %}
 							  <dt class="nhsuk-summary-list__key">
 								Reason for no evidence
@@ -283,7 +283,7 @@ Check your answers
 							{% endif %}
 						  </div>
 						{% endif %}
-
+						-->
 				</dl>
 
 				{% else %}
@@ -435,6 +435,7 @@ Check your answers
 						</div>
 
 				<!-- if first journey = accommodation to term time address, and travelled by both car and public transport - public transport method -->
+				{% if 'public-transport' in data['transport-method'] %}
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
 							Public transport type
@@ -479,6 +480,7 @@ Check your answers
 							</dd>
 							{% endif %}
 						</div>
+						{% endif %}
 
 				<!-- if first journey = accommodation to term time address, and travelled by both car and public transport - additional comments -->
 				<div class="nhsuk-summary-list__row">
@@ -501,7 +503,7 @@ Check your answers
 					{% endif %}
 				  </div>
 
-					<!-- if first journey = accommodation to term time address, and travelled by both car and public transport - evidence uploaded -->
+					<!-- if first journey = accommodation to term time address, and travelled by both car and public transport - evidence uploaded
 					{% if data['accommodation-travel'] == 'in-progress' %}
 						<div class="nhsuk-summary-list__row" style="background-color: #fff9c4;">
 							<dt class="nhsuk-summary-list__key">
@@ -520,7 +522,7 @@ Check your answers
 						</div>
 					{% else %}
 						<div class="nhsuk-summary-list__row">
-							<!-- if no evidence uploaded -->
+							<!-- if no evidence uploaded
 							{% if data['no-evidence-decision'] == 'reason' %}
 								<dt class="nhsuk-summary-list__key">
 								Reason for no evidence
@@ -557,6 +559,7 @@ Check your answers
 							{% endif %}
 							</div>
 						{% endif %}
+						-->
 
 
 				</dl>
@@ -566,11 +569,16 @@ Check your answers
 		<div class="button-container">
 
 			{% if data['submit-claim'] != 'completed' %}
-				<form action="../v8/TDAE-accommodation-travel-check" method="POST">
-					<button style="margin-right:20px;" class="nhsuk-button style=padding-right:10px;" type="submit">
-						Continue
-					</button>
-				</form>
+					<form action="../v8/TDAE-accommodation-travel-check" method="POST">
+						<button style="margin-right:20px;" class="nhsuk-button style=padding-right:10px;" type="submit">
+							{% if data['extra-costs'] == 'yes' or 'public-transport' in data['transport-method'] %}
+								Save and continue to evidence
+							{% else %}
+								Save and continue
+							{% endif %}
+						</button>
+					</form>
+
 
 		</div>
 
