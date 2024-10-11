@@ -18,14 +18,17 @@ Upload your evidence for travelling between your accommodation and term time add
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="placement-additional-costs">
-          <h1 class="nhsuk-heading-l">Upload evidence for your journey</h1>
+          <h1 class="nhsuk-heading-l">Upload evidence of your {{ data['heading'] }}</h1>
         </label>
 
-
-        <p>You need to show us evidence for your journey. This could be physical tickets, receipts from an online account, or a bank statement if necessary.</p>
-
-
-        <p>You can upload evidence for multiple costs in one image. For example, you can take a picture of multiple receipts.</p>
+        {% if data['heading'] == 'driving extra costs' %}
+          <p>You need to give us evidence for any parking , tunnel, toll or clean air charges you're claiming for.</p>
+          <p>This could be physical tickets, receipts from an online account, or a bank statement if necessary.</p>
+          <p>You can upload evidence for multiple costs in one image. For example, you can take a picture of multiple receipts.</p>
+        {% else %}
+          <p>You need to show us evidence for your journey. This could be physical tickets, receipts from an online account, or a bank statement if necessary.</p>
+          <p>You can upload evidence for multiple costs in one image. For example, you can take a picture of multiple receipts.</p>
+        {% endif %}
 
         <details class="nhsuk-details">
           <summary class="nhsuk-details__summary">
