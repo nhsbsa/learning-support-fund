@@ -1,0 +1,43 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Are you sure you want to delete evidence?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="TDAE-deleted" method="POST">
+
+      <div class="nhsuk-form-group">
+
+          <h1 class="nhsuk-heading-l">Delete this Travel and Dual Accommodation Expenses claim</h1>
+
+					<p>If you delete your Travel and Dual Accommodation Expenses claim all information relating to it will also be deleted. This includes:</p>
+
+					<ul class="nhsuk-list nhsuk-list--bullet">
+						<li>information you've given us</li>
+						<li>evidence you've uploaded</li>
+						<li>any claim notes by your university or NHS BSA, if provided</li>
+					</ul>
+
+					<!--<p>You'll not be able to undo this.</p>-->
+
+        </div>
+
+			<a class="nhsuk-button nhsuk-button--warning">Delete claim</a><br>
+			<p><a href="../TDAE-task-list">Cancel and return to task list</a></p>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}
