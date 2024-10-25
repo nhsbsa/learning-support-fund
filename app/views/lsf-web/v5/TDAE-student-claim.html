@@ -136,6 +136,29 @@ Claim checks
     <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-7">Claim currently being processed by Samuel Jackson</h2>
     {% endif %}
 
+    {% if data['late-submission'] === 'true' %}
+      <details class="nhsuk-details nhsuk-expander-warning" open>
+        <summary style="" class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Claim submitted late
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>This claim was submitted over 6 months after their placement travel dates.</p>
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Students comment
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Sorry for submitting it late I forgot about this placement.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </details>
+    {% endif %}
+
     {% if data['read-only'] != 'true' %}
       <details class="nhsuk-details nhsuk-expander-warning" open>
         <summary style="" class="nhsuk-details__summary">

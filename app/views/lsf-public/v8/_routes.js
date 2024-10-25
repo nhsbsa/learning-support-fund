@@ -9,6 +9,41 @@ const session = require('express-session');
 // const moment = require('moment');
 const router = express.Router();
 
+// Submit claim not all tasks completed
+
+router.post('/v8/TDAE-tasks-not-completed', (req, res) => {
+
+  const tasksNotCompleted = req.session.data['tasks-not-completed']
+
+  if (tasksNotCompleted === 'change-details') {
+      res.redirect('/lsf-public/v8/TDAE-task-list')
+  }
+  else {
+      res.redirect('/lsf-public/v8/TDAE-signpost/TDAE-over-six-months')
+  }
+
+
+})
+
+// Submit claim over six months
+
+router.post('/v8/TDAE-over-six-months', (req, res) => {
+
+  const invalidCostsAll = req.session.data['submit-over-six-months']
+
+  if (invalidCostsAll === 'change-details') {
+      res.redirect('/lsf-public/v8/TDAE-task-list')
+  }
+  else if (invalidCostsAll === 'delete') {
+      res.redirect('/lsf-public/v8/TDAE-signpost/TDAE-sure-delete')
+  }
+  else {
+      res.redirect('/lsf-public/v8/TDAE-signpost/TDAE-over-six-months-reason')
+  }
+
+
+})
+
 // Registration National Insurance number
 
 router.post('/v8/national-insurance-number-question', (req, res) => {
