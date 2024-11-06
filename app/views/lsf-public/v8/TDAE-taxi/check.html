@@ -208,62 +208,6 @@ Check your answers
 					{% endif %}
 				  </div>
 
-					<!-- Evidence uploaded for taxi authorisation -->
-					<div class="nhsuk-summary-list__row">
-						<dt class="nhsuk-summary-list__key">
-							Authorisation uploaded
-						</dt>
-						<dd class="nhsuk-summary-list__value">
-							<a href="/images/taxi-authorisation-email.png" download="Authorisation of Overseas Costs April 2024">
-							taxi-authorisation-email.jpg
-							</a>
-						</dd>
-						{% if data['submit-claim'] != 'completed' %}
-						<dd class="nhsuk-summary-list__actions">
-							<a href="authorisation-evidence">
-								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
-							</a>
-						</dd>
-						{% endif %}
-					</div>
-
-					<!-- Evidence uploaded for taxi -->
-					{% if data['taxi-details'] != 'in-progress' %}
-					<div class="nhsuk-summary-list__row">
-						<dt class="nhsuk-summary-list__key">
-							Evidence uploaded
-						</dt>
-						<dd class="nhsuk-summary-list__value">
-							<a href="/images/taxi-evidence.png">
-								uber-receipt.jpg
-							</a>
-						</dd>
-						{% if data['submit-claim'] != 'completed' %}
-						<dd class="nhsuk-summary-list__actions">
-							<a href="evidence-mini-cya">
-								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
-							</a>
-						</dd>
-						{% endif %}
-					</div>
-					{% else %}
-					<div class="nhsuk-summary-list__row" style="background-color: #fff9c4;">
-						<dt class="nhsuk-summary-list__key">
-							Evidence uploaded
-						</dt>
-						<dd class="nhsuk-summary-list__value">
-							Not uploaded yet
-						</dd>
-						{% if data['submit-claim'] != 'completed' %}
-						<dd class="nhsuk-summary-list__actions">
-							<a href="evidence-mini-cya">
-								Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
-							</a>
-						</dd>
-						{% endif %}
-					</div>
-					{% endif %}
-
 			</dl>
 
 
@@ -280,15 +224,10 @@ Check your answers
 				</div>
 	    </dl>-->
 
-			{% if data['taxi-details'] == 'in-progress' %}
-				<a class="nhsuk-button" href="evidence">Add evidence</a>
-			{% elif data['submit-claim'] != 'completed' %}
-				<form action="check-multiple?taxi-details=completed" method="POST">
-					<button style="float: left; margin-right:20px;" class="nhsuk-button" type="submit">Continue</button>
+				<form action="evidence-overview" method="POST">
+					<button style="float: left; margin-right:20px;" class="nhsuk-button" type="submit">Save and continue to evidence</button>
 				</form>
-				<!--<a class="nhsuk-button nhsuk-button--secondary" href="authorisation">Add another taxi journey</a><br>-->
-			{% endif %}
-			<p style="clear: both;"><a href="../TDAE-task-list-full?taxi-details=in-progress">Return to task list</a></p>
+			<p style="clear: both;"><a href="../TDAE-task-list-full">Cancel</a></p>
 
 		<!-- </form> -->
 

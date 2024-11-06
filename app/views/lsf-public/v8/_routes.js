@@ -784,7 +784,7 @@ router.post('/v8/TDAE-hire-car-reason', function (req, res) {
 
 router.post('/v8/TDAE-hire-car-evidence', (req, res) => {
 
-    res.redirect('/lsf-public/v8/TDAE-hire-car-mini-cya')
+    res.redirect('/lsf-public/v8/TDAE-hire-car-evidence-overview')
 
 })
 
@@ -814,7 +814,7 @@ router.post('/v8/TDAE-hire-car-comment', (req, res) => {
 
 router.post('/v8/TDAE-hire-car-add-comment', (req, res) => {
 
-    res.redirect('/lsf-public/v8/TDAE-hire-car-evidence')
+    res.redirect('/lsf-public/v8/TDAE-hire-car-check')
 
 })
 

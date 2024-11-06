@@ -131,6 +131,7 @@ Check your answers
 		</div>
 
 		<!-- Evidence uploaded for first hire car booking -->
+		<!--
 		{% if data['hire-car'] == 'in-progress' %}
 		<div class="nhsuk-summary-list__row" style="background-color: #fff9c4;">
 			<dt class="nhsuk-summary-list__key">
@@ -166,22 +167,18 @@ Check your answers
 			{% endif %}
 		</div>
 		{% endif %}
-
+		-->
 		</dl>
 
-		{% if data['hire-car'] == 'in-progress' %}
-			<a class="nhsuk-button" href="TDAE-hire-car-evidence">Add evidence</a>
-		{% else %}
-			<div class="button-container">
-				{% if data['submit-claim'] != 'completed' %}
-					<form action="v8/TDAE-hire-car-check" method="POST">
-						<button style="margin-right:20px;" class="nhsuk-button style=padding-right:10px;" type="submit">
-							Continue
-						</button>
-					</form>
-				{% endif %}
-			</div>
-		{% endif %}
+		<div class="button-container">
+			{% if data['submit-claim'] != 'completed' %}
+				<form action="TDAE-hire-car-evidence-overview" method="POST">
+					<button style="margin-right:20px;" class="nhsuk-button style=padding-right:10px;" type="submit">
+						Save and continue to evidence
+					</button>
+				</form>
+			{% endif %}
+		</div>
 
 		<p><a href="TDAE-task-list?hire-car=i">Return to task list</a></p>
 
