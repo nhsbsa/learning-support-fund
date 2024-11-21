@@ -22,7 +22,40 @@
         </label>
 
         {% if data['hire-car-evidence'] == "added" %}
-        <p>You need to show us evidence of your hire car booking. For example, a receipt or invoice.</p>
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-3">Authorisation for hire car</h2>
+				<p>You need to show us evidence of authorisation from your university to hire a car. For example, an email or note.</p>
+
+        <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+          <caption class="nhsuk-table__caption"></caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                  File
+              </th>
+              <th role="columnheader" class="" scope="col">
+                  Action
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+              <td style="width:75%;" class="nhsuk-table__cell ">
+                <a href="/images/taxi-authorisation-email.png" download="Authorisation of Overseas Costs April 2024">
+                  hire-car-authorisation-email.jpg
+                </a>
+              </td>
+              <td class="nhsuk-table__cell ">
+                <a href="TDAE-hire-car-evidence-overview?hire-car-evidence=removed">Remove</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><a href="TDAE-hire-car-authorisation-evidence?hire-car-evidence=added">Add more evidence</a></p>
+
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-3 nhsuk-u-margin-top-5">Hire car cost</h2>
+
+				<p>You need to show us evidence of your hire car booking. For example, a receipt or invoice.</p>
 
         <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
           <caption class="nhsuk-table__caption"></caption>
@@ -59,9 +92,16 @@
 
         <p>You'll need to add evidence before you can continue.</p>
 
-        <p>You need to show us evidence of your hire car booking. For example, a receipt or invoice.</p>
+				<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-3">Authorisation for hire car</h2>
+				<p>You need to show us evidence of authorisation from your university to hire a car. For example, an email or note.</p>
 
-        <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-hire-car-evidence?hire-car-evidence=added">Add evidence</a>
+        <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-hire-car-authorisation-evidence?hire-car-evidence=added">Add authorisation evidence</a>
+
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-3 nhsuk-u-margin-top-5">Hire car cost</h2>
+
+				<p>You need to show us evidence of your hire car booking. For example, a receipt or invoice.</p>
+
+        <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-hire-car-evidence?hire-car-evidence=added">Add cost evidence</a>
 
         <p><a href="TDAE-task-list">Return to task list</a></p>
         {% endif %}

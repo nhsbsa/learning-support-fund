@@ -80,7 +80,8 @@ Check your answers
 								</div>
 
 							</dl>
-							<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-hire-car-check">Change booking</a>
+							<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-hire-car-check"  style="float: left; margin-right:20px;">Change booking</a>
+						  <a class="nhsuk-button nhsuk-button--warning" href="TDAE-hire-car-remove-booking-2">Remove booking</a>
 						</div>
 					</details>
 
@@ -270,7 +271,7 @@ Check your answers
 
 				<div class="button-container">
 					{% if data['submit-claim'] != 'completed' %}
-						<form action="v8/TDAE-hire-car-check" method="POST">
+						<form action="TDAE-task-list" method="POST">
 							<button style="margin-right:20px;" class="nhsuk-button style=padding-right:10px;" type="submit">
 								Continue
 							</button>
