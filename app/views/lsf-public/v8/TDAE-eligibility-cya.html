@@ -20,8 +20,8 @@ Check your answers
               Q5109476
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a href="change-student-id?TDAE=true">
-                Change<span class="nhsuk-u-visually-hidden"> claim start date</span>
+              <a href="change-student-id?TDAE=true&change=yes">
+                Change<span class="nhsuk-u-visually-hidden"> university student ID</span>
               </a>
             </dd>
           </div>
@@ -42,9 +42,11 @@ Check your answers
                 {% endif %}
               </dd>
               <dd class="nhsuk-summary-list__actions">
-                <a href="TDAE-incur-costs">
-                  Change<span class="nhsuk-u-visually-hidden"> claim start date</span>
-                </a>
+                {% if data['task-completed'] != 'yes' %}
+                  <a href="TDAE-incur-costs">
+                    Change<span class="nhsuk-u-visually-hidden"> claim start date</span>
+                  </a>
+                {% endif %}
               </dd>
             </div>
             <div class="nhsuk-summary-list__row">
@@ -57,7 +59,6 @@ Check your answers
                   {% else %}
                     September 2023 to 2024
                   {% endif %}
-                </span>
               </dd>
               <dd class="nhsuk-summary-list__actions">
 
@@ -77,22 +78,6 @@ Check your answers
                 </a>
               </dd>
             </div>
-<!--
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Reused answers from previous claim
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {{ data['reused-details'] }}
-              </dd>
-              <dd class="nhsuk-summary-list__actions">
-                <a href="TDAE-reuse-details">
-                  Change<span class="nhsuk-u-visually-hidden"> are you claiming for a car journey?</span>
-                </a>
-
-              </dd>
-            </div>
--->
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
@@ -147,9 +132,9 @@ Check your answers
                   {% endif %}
               </dd>
               <dd class="nhsuk-summary-list__actions">
-                  <a href="TDAE-placement-address-cya">
-                      Change<span class="nhsuk-u-visually-hidden"> placement address</span>
-                  </a>
+                <a href="TDAE-placement-address-cya?change=yes&address-number=1">
+                    Change<span class="nhsuk-u-visually-hidden"> placement address</span>
+                </a>
               </dd>
             </div>
 
@@ -181,9 +166,11 @@ Check your answers
                 </dd>
                 {% if data['submit-claim'] != 'completed' %}
                 <dd class="nhsuk-summary-list__actions">
+                  {% if data['task-completed'] != 'yes' %}
                     <a href="TDAE-term-time-address">
-                        Change<span class="nhsuk-u-visually-hidden"> term time address</span>
+                      Change<span class="nhsuk-u-visually-hidden"> term time address</span>
                     </a>
+                  {% endif %}
                 </dd>
                 {% endif %}
             </div>

@@ -28,7 +28,11 @@
 				</div>
 
         {% if data['TDAE'] == 'true' %}
-          <a class="nhsuk-button" href="TDAE-incur-costs">Continue</a><br>
+          {% if data['change'] == 'yes' %}
+            <a class="nhsuk-button" href="TDAE-eligibility-cya?task-completed=yes">Continue</a><br>
+          {% else %}
+            <a class="nhsuk-button" href="TDAE-incur-costs">Continue</a><br>
+          {% endif %}
           <p><a href="TDAE-returning-student/academic-year-details#tab-two">Cancel</a></p>
         {% else %}
           <a class="nhsuk-button" href="change-student-id-changed">Save and continue</a><br>

@@ -7,7 +7,7 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      
+
       {{ backLink({
         "href": "javascript:history.go(-1)",
         "text": "Go back"
@@ -23,6 +23,10 @@
                     Placement addresses
                 </h1>
               </legend>
+
+              {% if data['change'] == 'yes' %}
+              <p>You cannot change or remove addresses you've already given us information for.</p>
+              {% endif %}
 
               <dl class="nhsuk-summary-list">
 
@@ -68,13 +72,15 @@
                     Tanzania
                     {% endif %}
                   </dd>
-                  <dd class="nhsuk-summary-list__actions">
-                        <a href="TDAE-international-placement-address">Change<span class="nhsuk-u-visually-hidden"> placement address</span></a>
-                        {% if data['add-another'] === 'yes' %}
-                            or
-                            <a href="TDAE-placement-address-cya">Remove<span class="nhsuk-u-visually-hidden"> placement address</span></a>
-                        {% endif %}
-                </dd>                  
+                  {% if data['change'] != 'yes' %}
+                    <dd class="nhsuk-summary-list__actions">
+                      <a href="TDAE-international-placement-address">Change<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                      {% if data['add-another'] === 'yes' %}
+                          or
+                          <a href="TDAE-placement-address-cya">Remove<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                      {% endif %}
+                    </dd>
+                  {% endif %}
                 </div>
                 {% else %}
                   <div class="nhsuk-summary-list__row">
@@ -100,13 +106,15 @@
                       NE66 2NS
                       {% endif %}
                     </dd>
-                    <dd class="nhsuk-summary-list__actions">
-                          <a href="TDAE-placement-address">Change<span class="nhsuk-u-visually-hidden"> placement address</span></a>
-                          {% if data['add-another'] === 'yes' %}
-                              or
-                              <a href="TDAE-placement-address-cya">Remove<span class="nhsuk-u-visually-hidden"> placement address</span></a>
-                          {% endif %}
-                  </dd>                  
+                    {% if data['change'] != 'yes' %}
+                      <dd class="nhsuk-summary-list__actions">
+                        <a href="TDAE-placement-address">Change<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                        {% if data['add-another'] === 'yes' %}
+                            or
+                            <a href="TDAE-placement-address-cya">Remove<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                        {% endif %}
+                      </dd>
+                    {% endif %}
                   </div>
                   {% endif %}
 
@@ -133,14 +141,16 @@
                         NE12 3AB
                         {% endif %}
                       </dd>
-                      <dd class="nhsuk-summary-list__actions">
-                        <a href="TDAE-placement-address">
-                          Change<span class="nhsuk-u-visually-hidden"> placement address</span>
-                        </a> or
-                        <a href="TDAE-placement-address-cya">
-                          Remove<span class="nhsuk-u-visually-hidden"> placement address</span>
-                        </a>
-                      </dd>
+                      {% if data['change'] != 'yes' %}
+                        <dd class="nhsuk-summary-list__actions">
+                          <a href="TDAE-placement-address">
+                            Change<span class="nhsuk-u-visually-hidden"> placement address</span>
+                          </a> or
+                          <a href="TDAE-placement-address-cya">
+                            Remove<span class="nhsuk-u-visually-hidden"> placement address</span>
+                          </a>
+                        </dd>
+                      {% endif %}
                     </div>
                   {% endif %}
 
@@ -167,14 +177,16 @@
                       NE12 3AB
                       {% endif %}
                     </dd>
-                    <dd class="nhsuk-summary-list__actions">
-                      <a href="TDAE-placement-address">
-                        Change<span class="nhsuk-u-visually-hidden"> placement address</span>
-                      </a> or
-                      <a href="TDAE-placement-address-cya">
-                        Remove<span class="nhsuk-u-visually-hidden"> placement address</span>
-                      </a>
-                    </dd>
+                    {% if data['change'] != 'yes' %}
+                      <dd class="nhsuk-summary-list__actions">
+                        <a href="TDAE-placement-address">
+                          Change<span class="nhsuk-u-visually-hidden"> placement address</span>
+                        </a> or
+                        <a href="TDAE-placement-address-cya">
+                          Remove<span class="nhsuk-u-visually-hidden"> placement address</span>
+                        </a>
+                      </dd>
+                    {% endif %}
                   </div>
                   {% endif %}
 
@@ -201,14 +213,16 @@
                       NE12 3AB
                       {% endif %}
                     </dd>
-                    <dd class="nhsuk-summary-list__actions">
-                      <a href="TDAE-placement-address">
-                        Change<span class="nhsuk-u-visually-hidden"> placement address</span>
-                      </a> or
-                      <a href="TDAE-placement-address-cya">
-                        Remove<span class="nhsuk-u-visually-hidden"> placement address</span>
-                      </a>
-                    </dd>
+                    {% if data['change'] != 'yes' %}
+                      <dd class="nhsuk-summary-list__actions">
+                        <a href="TDAE-placement-address">
+                          Change<span class="nhsuk-u-visually-hidden"> placement address</span>
+                        </a> or
+                        <a href="TDAE-placement-address-cya">
+                          Remove<span class="nhsuk-u-visually-hidden"> placement address</span>
+                        </a>
+                      </dd>
+                    {% endif %}
                   </div>
                   {% endif %}
 
@@ -253,16 +267,18 @@
                           Zanzibar<br>
                           R6Q6 6HJ<br>
                           Tanzania
-                        {% endif %} 
-                      </dd>
-                      <dd class="nhsuk-summary-list__actions">
-                        <a href="TDAE-international-placement-address">Change<span class="nhsuk-u-visually-hidden"> placement address</span></a>
-                        {% if data['add-another'] === 'yes' %}
-                          or
-                          <a href="TDAE-placement-address-cya">Remove<span class="nhsuk-u-visually-hidden"> placement address</span></a>
                         {% endif %}
-                      </dd>                  
-                    </div>   
+                      </dd>
+                      {% if data['change'] != 'yes' %}
+                        <dd class="nhsuk-summary-list__actions">
+                          <a href="TDAE-international-placement-address">Change<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                          {% if data['add-another'] === 'yes' %}
+                            or
+                            <a href="TDAE-placement-address-cya">Remove<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                          {% endif %}
+                        </dd>
+                      {% endif %}
+                    </div>
                   {% endif %}
 
                   {% if data['international-placement-3-building-name'] %}
@@ -306,16 +322,18 @@
                           Town or city<br>
                           Postcode<br>
                           Country
-                        {% endif %} 
-                      </dd>
-                      <dd class="nhsuk-summary-list__actions">
-                        <a href="TDAE-international-placement-address">Change<span class="nhsuk-u-visually-hidden"> placement address</span></a>
-                        {% if data['add-another'] === 'yes' %}
-                          or
-                          <a href="TDAE-placement-address-cya">Remove<span class="nhsuk-u-visually-hidden"> placement address</span></a>
                         {% endif %}
-                      </dd>                  
-                    </div>   
+                      </dd>
+                      {% if data['change'] != 'yes' %}
+                        <dd class="nhsuk-summary-list__actions">
+                          <a href="TDAE-international-placement-address">Change<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                          {% if data['add-another'] === 'yes' %}
+                            or
+                            <a href="TDAE-placement-address-cya">Remove<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                          {% endif %}
+                        </dd>
+                      {% endif %}
+                    </div>
                   {% endif %}
 
                   {% if data['international-placement-4-building-name'] %}
@@ -359,19 +377,21 @@
                           Town or city<br>
                           Postcode<br>
                           Country
-                        {% endif %} 
-                      </dd>
-                      <dd class="nhsuk-summary-list__actions">
-                        <a href="TDAE-international-placement-address">Change<span class="nhsuk-u-visually-hidden"> placement address</span></a>
-                        {% if data['add-another'] === 'yes' %}
-                          or
-                          <a href="TDAE-placement-address-cya">Remove<span class="nhsuk-u-visually-hidden"> placement address</span></a>
                         {% endif %}
-                      </dd>                  
-                    </div>   
+                      </dd>
+                      {% if data['change'] != 'yes' %}
+                        <dd class="nhsuk-summary-list__actions">
+                          <a href="TDAE-international-placement-address">Change<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                          {% if data['add-another'] === 'yes' %}
+                            or
+                            <a href="TDAE-placement-address-cya">Remove<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                          {% endif %}
+                        </dd>
+                      {% endif %}
+                    </div>
                   {% endif %}
 
-                  
+
 
               </dl>
 

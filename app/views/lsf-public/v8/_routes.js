@@ -1957,6 +1957,7 @@ router.post('/v8/TDAE-placement-address-cya', (req, res) => {
     const reusedDetails = req.session.data['reused-details']
     const isInternational = req.session.data['international']
     const claimingFor = req.session.data['claiming-for']
+    const change = req.session.data['change']
 
     const onlyOverseasSelected = (claimingFor) => {
       return claimingFor.length === 1 && claimingFor.includes('overseas');
@@ -1984,6 +1985,8 @@ router.post('/v8/TDAE-placement-address-cya', (req, res) => {
         res.redirect('/lsf-public/v8/TDAE-placement-address-more');
         }
     } else if (onlyOverseasSelected(claimingFor) && addAnother === 'no') {
+      res.redirect('/lsf-public/v8/TDAE-eligibility-cya');
+    } else if (addAnother === 'no' && change === 'yes') {
       res.redirect('/lsf-public/v8/TDAE-eligibility-cya');
     } else {
       if (reusedDetails && reusedDetails.indexOf('term-time-address') !== -1) {
