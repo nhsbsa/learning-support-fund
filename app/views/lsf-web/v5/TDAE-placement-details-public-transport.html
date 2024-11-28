@@ -20,8 +20,8 @@ Claim details
     <h1 class="nhsuk-heading-l">Public transport tickets</h1>
     {% endif %}
 
-    {% if data['name'] === 'Emmit Mar' %}
     <dl class="nhsuk-summary-list">
+    {% if data['name'] === 'Emmit Mar' %}
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key" style="width: 40%;">
           Term time address
@@ -52,9 +52,6 @@ Claim details
           I have sent a screenshot of my bus app for the weekly ticket and the train PDFs.
         </dd>
       </div>
-    </dl>
-
-
     {% else %}
     <dl class="nhsuk-summary-list">
       <div class="nhsuk-summary-list__row">
@@ -79,23 +76,51 @@ Claim details
           </details>
         </dd>
       </div>
-    </dl>
     {% endif %}
-
-
-    <details class="nhsuk-details">
-      <summary class="nhsuk-details__summary">
-        <span class="nhsuk-details__summary-text">
-          Full placement address
-        </span>
-      </summary>
-      <div class="nhsuk-details__text">
-          Alnwick Hospital<br>
-          Infirmary Drive<br>
-          Alnwick<br>
-          NE66 2NS
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Placement accommodation address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          The Village Inn, NE65 8AD
+          <details class="nhsuk-details" style="margin-bottom: 0;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              The Village Inn<br>
+              Front Street<br>
+              Longframlington<br>
+              Morpeth<br>
+              NE65 8AD
+            </div>
+          </details>
+        </dd>
       </div>
-    </details>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Placement address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Alnwick Hospital, NE66 2NS
+          <details class="nhsuk-details" style="margin-bottom: 0;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              Alnwick Hospital<br>
+              Infirmary Drive<br>
+              Alnwick<br>
+              NE66 2NS
+            </div>
+          </details>
+        </dd>
+      </div>
+    </dl>
 
     <div class="nhsuk-warning-callout">
       <h3 class="nhsuk-warning-callout__label">
