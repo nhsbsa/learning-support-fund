@@ -1936,6 +1936,19 @@ router.post('/v8/TDAE-placement-address-days', (req, res) => {
 
 })
 
+router.post('/v8/add-placement-travel-dates/TDAE-placement-address-days', (req, res) => {
+
+    const addressDays = req.session.data['address-days']
+
+    if (addressDays === '2') {
+        res.redirect('/lsf-public/v8/add-placement-travel-dates/TDAE-placement-address-days-cya')
+    } else {
+        req.session.data['address-days'] = '2'
+        res.redirect('/lsf-public/v8/add-placement-travel-dates/TDAE-placement-address-days')
+    }
+
+})
+
 router.post('/v8/TDAE-placement-address-days-cya', (req, res) => {
 
   const claimingFor = req.session.data['claiming-for']

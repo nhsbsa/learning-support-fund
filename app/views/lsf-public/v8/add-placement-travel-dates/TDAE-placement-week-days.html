@@ -14,8 +14,12 @@
         "text": "Go back"
     }) }}
 
-    <form action="v8/TDAE-placement-week-days" method="POST">
-
+    {% if data['address-number'] == '2' or data['address-number'] == '3' or data['address-number'] == '4' %}
+      <form action="TDAE-placement-address-days-cya?period=added" method="POST">
+    {% else %}
+      <form action="TDAE-check-dates" method="POST">
+    {% endif %}
+    
         <div class="nhsuk-form-group">
 
             <fieldset class="nhsuk-fieldset">
@@ -157,7 +161,7 @@
 
       <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-week-days?placement-week=2">Save and add more dates</a><br>
       <button class="nhsuk-button" type="submit">Save and continue</button><br>
-      <a href="TDAE-start-claim">Cancel</a>
+      <p><a href="TDAE-placement-address-days-cya">Cancel</a></p>
 
     </form>
 
