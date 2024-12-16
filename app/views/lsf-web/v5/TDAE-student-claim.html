@@ -117,7 +117,7 @@ Claim checks
           £614.62
         </dd>
         <dd class="nhsuk-summary-list__actions">
-          <nobr><p><a href="TDAE-student-cost-summary">View Costs summary</a></p></nobr>
+          <nobr><p><a href="TDAE-student-cost-summary">View costs summary</a></p></nobr>
         </dd>
       </div>
 
@@ -160,80 +160,90 @@ Claim checks
     {% endif %}
 
     {% if data['read-only'] != 'true' %}
-      <details class="nhsuk-details nhsuk-expander-warning" open>
-        <summary style="" class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-            Another claim was submitted for these dates
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <p>Emmit Mar has previously submitted a claim with costs on these dates.</p>
-          <dl class="nhsuk-summary-list">
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Claim dates
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                9 February 2024 to 12 February 2024
-              </dd>
-            </div>
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Costs claimed
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                Hire car
-              </dd>
-            </div>
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Claim status
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                Claim paid
-              </dd>
-            </div>
-          </dl>
-          <p>You need to <a target="_blank" href="TDAE-student-claim-previous">check the previous claim (opens in new tab)</a> to make sure they have not claimed for the same costs again.</p>
-        </div>
-      </details>
-      <details class="nhsuk-details nhsuk-expander-warning" open>
-        <summary style="" class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-            Another claim was submitted for these dates
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <p>Emmit Mar has previously submitted a claim with costs on these dates.</p>
-          <dl class="nhsuk-summary-list">
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Claim dates
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                9 February 2024 to 12 February 2024
-              </dd>
-            </div>
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Costs claimed
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                Hire car
-              </dd>
-            </div>
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Claim status
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                Declined
-              </dd>
-            </div>
-          </dl>
-          <p>You need to <a target="_blank" href="TDAE-student-claim-previous">check the previous claim (opens in new tab)</a> to make sure they have not claimed for the same costs again.</p>
-        </div>
-      </details>
+    <details class="nhsuk-details nhsuk-expander-warning" open>
+      <summary style="" class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Another claim was submitted for these dates
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>{% if data['name'] %}{{ data['name'] }}{% else %}Joe Bloggs{% endif %} has previously submitted a claim with costs on these dates.</p>
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Claim dates
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              6 October 2023 to 9 October 2023
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Costs claimed
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Hire car
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Claim status
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Claim paid
+            </dd>
+          </div>
+        </dl>
+        <p>To make sure they're not claiming the same costs as this previous claim, you can:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li><a href="TDAE-cost-breakdown-previous" target="_blank">View Costs breakdown of previously submitted claim (opens in a new tab)</a></li>
+          <li><a href="#">View the previously submitted claim</a> in full, but you'll be navigated away from the active claim.</li>
+        </ul>
+        <!--<p>You need to <a target="_blank" href="TDAE-student-claim-previous">check the previous claim (opens in new tab)</a> to make sure they have not claimed for the same costs again.</p>-->
+      </div>
+    </details>
+    <details class="nhsuk-details nhsuk-expander-warning" open>
+      <summary style="" class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Another claim was submitted for these dates
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>{% if data['name'] %}{{ data['name'] }}{% else %}Joe Bloggs{% endif %} has previously submitted a claim with costs on these dates.</p>
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Claim dates
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              6 October 2023 to 9 October 2023
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Costs claimed
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Hire car
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Claim status
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Declined
+            </dd>
+          </div>
+        </dl>
+        <p>To make sure they're not claiming the same costs as this previous claim, you can:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li><a href="TDAE-cost-breakdown-previous" target="_blank">View Costs breakdown of previously submitted claim (opens in a new tab)</a></li>
+          <li><a href="#">View the previously submitted claim</a> in full, but you'll be navigated away from the active claim.</li>
+        </ul>
+        <!--<p>You need to <a target="_blank" href="TDAE-student-claim-previous">check the previous claim (opens in new tab)</a> to make sure they have not claimed for the same costs again.</p>-->
+      </div>
+    </details>
     {% endif %}
 
     <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
