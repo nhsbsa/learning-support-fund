@@ -23,7 +23,7 @@
       <details class="nhsuk-details">
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-details__summary-text">
-            Students personal and course details
+            Student's personal and course details
           </span>
         </summary>
         <div class="nhsuk-details__text">
@@ -52,7 +52,7 @@
                 Academic year
               </dt>
               <dd class="nhsuk-summary-list__value">
-                2023/24
+                2023 to 2024
               </dd>
             </div>
 
@@ -102,7 +102,7 @@
             {% endif %}
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <nobr><p><a href="TDAE-student-cost-summary">View Costs summary</a></p></nobr>
+            <nobr><p><a href="TDAE-student-cost-summary">View costs summary</a></p></nobr>
           </dd>
         </div>
 
@@ -213,7 +213,12 @@
               </dd>
             </div>
           </dl>
-          <p>You need to <a target="_blank" href="TDAE-student-claim-previous">check the previous claim (opens in new tab)</a> to make sure they have not claimed for the same costs again.</p>
+          <p>To make sure they're not claiming the same costs as this previous claim, you can:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a href="TDAE-cost-breakdown-previous" target="_blank">View Costs breakdown of previously submitted claim (opens in a new tab)</a></li>
+            <li><a href="#">View the previously submitted claim</a> in full, but you'll be navigated away from the active claim.</li>
+          </ul>
+          <!--<p>You need to <a target="_blank" href="TDAE-student-claim-previous">check the previous claim (opens in new tab)</a> to make sure they have not claimed for the same costs again.</p>-->
         </div>
       </details>
       {% if data['status'] === 'Submitted to NHSBSA' %}

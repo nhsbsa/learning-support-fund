@@ -177,8 +177,10 @@
 
       <p><a href="TDAE-returning-student/academic-year-details">Save and come back later</a></p>
 
-      <h2 class="nhsuk-heading-m">Delete claim</h2>
-      <p>If you've made a mistake or no longer want to submit this claim, you can <a href="TDAE-signpost/TDAE-delete-check">delete this claim</a>.</p>
+      {% if data['submit-claim'] != 'completed' %}
+        <h2 class="nhsuk-heading-m">Delete claim</h2>
+        <p>If you've made a mistake or no longer want to submit this claim, you can <a href="TDAE-signpost/TDAE-delete-check">delete this claim</a>.</p>
+      {% endif %}
 
     </div>
   </div>
