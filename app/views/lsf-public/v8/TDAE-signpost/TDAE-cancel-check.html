@@ -1,0 +1,37 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Are you sure you want to delete evidence?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="TDAE-deleted" method="POST">
+
+      <div class="nhsuk-form-group">
+
+          <h1 class="nhsuk-heading-l">Cancel this Travel and Dual Accommodation Expenses claim</h1>
+
+					<p>If you cancel this claim, you'll not be able to submit it.</p>
+
+					<p>You'll not be able to undo this.</p>
+
+        </div>
+
+			<a href="TDAE-cancelled" class="nhsuk-button nhsuk-button--warning">Cancel claim</a><br>
+			<p><a href="../TDAE-returning-student/TDAE-task-list-actions">Return to task list</a></p>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}
