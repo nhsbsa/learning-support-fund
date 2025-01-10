@@ -1,0 +1,189 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Additional costs for your normal daily journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-full">
+
+		<form action="v9/TDAE-public-transport-overview" method="POST">
+
+	<div class="nhsuk-form-group">
+			<h1 class="nhsuk-heading-l">
+				<h1 class="nhsuk-heading-l">Your public transport tickets</h1>
+			</h1>
+
+			{% if data['multiple'] != 'yes' and data['daily'] != 'yes' %}
+				<p>You do not have any saved public transport tickets.</p>
+			{% else %}
+
+			<p>These are the public transport tickets you have added so far.</p>
+
+			{% if data['multiple'] == 'yes' %}
+			<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+			  <caption class="nhsuk-table__caption">Bus tickets</caption>
+			  <thead role="rowgroup" class="nhsuk-table__head">
+			    <tr role="row">
+						<th role="columnheader" class="" scope="col">
+			        Ticket type
+			      </th>
+			      <th role="columnheader" class="" scope="col">
+			        Dates
+			      </th>
+			      <th role="columnheader" class="" scope="col">
+			        Cost
+			      </th>
+						<th role="columnheader" class="" scope="col">
+			        Action
+			      </th>
+			    </tr>
+			  </thead>
+			  <tbody class="nhsuk-table__body">
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Multiple day ticket
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>
+								Friday 6 October 2023<br>
+								Saturday 7 October 2023<br>
+								Sunday 8 October 2023<br>
+								Monday 9 October 2023
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell">
+				        <span class="nhsuk-table-responsive__heading">Travel cost </span>£12
+				      </td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<a href="TDAE-public-transport-check?public-transport-ticket=Multiple day ticket">Change</a> or <a href="TDAE-public-transport-remove?daily=false">remove</a>
+							</td>
+				    </tr>
+			  </tbody>
+			</table>
+			{% endif %}
+
+			{% if data['daily'] == 'yes' %}
+			<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+			  <caption class="nhsuk-table__caption">Train tickets</caption>
+			  <thead role="rowgroup" class="nhsuk-table__head">
+			    <tr role="row">
+						<th role="columnheader" class="" scope="col">
+			        Ticket type
+			      </th>
+			      <th role="columnheader" class="" scope="col">
+			        Dates
+			      </th>
+			      <th role="columnheader" class="" scope="col">
+			        Ticket cost
+			      </th>
+						<th role="columnheader" class="" scope="col">
+			        Action
+			      </th>
+			    </tr>
+			  </thead>
+			  <tbody class="nhsuk-table__body">
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Daily
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Friday 6 October 2023
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell">
+				        <span class="nhsuk-table-responsive__heading">Travel cost </span>£8.60
+				      </td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<a href="TDAE-public-transport-change-daily2?train-date=Friday 6 October 2023">Change</a> or <a href="TDAE-public-transport-remove?daily=true">remove</a>
+							</td>
+				    </tr>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Daily
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Saturday 7 October 2023
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell">
+				        <span class="nhsuk-table-responsive__heading">Travel cost </span>£8.60
+				      </td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<a href="TDAE-public-transport-change-daily2?train-date=Saturday 7 October 2023">Change</a> or <a href="TDAE-public-transport-remove?daily=true">remove</a>
+							</td>
+				    </tr>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Daily
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Sunday 8 October 2023
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell">
+				        <span class="nhsuk-table-responsive__heading">Travel cost </span>£8.60
+				      </td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<a href="TDAE-public-transport-change-daily2?train-date=Sunday 8 October 2023">Change</a> or <a href="TDAE-public-transport-remove?daily=true">remove</a>
+							</td>
+				    </tr>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Daily
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Monday 9 October 2023
+				      </td>
+				      <td role="cell" class="nhsuk-table__cell">
+				        <span class="nhsuk-table-responsive__heading">Travel cost </span>£8.60
+				      </td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<a href="TDAE-public-transport-change-daily2?train-date=Monday 9 October 2023">Change</a> or <a href="TDAE-public-transport-remove?daily=true">remove</a>
+							</td>
+				    </tr>
+			  </tbody>
+			</table>
+			{% endif %}
+
+			{% endif %}
+
+			<div class="nhsuk-form-group">
+
+				{% if data['multiple'] != 'yes' and data['daily'] != 'yes' %}
+					<h2 class="nhsuk-heading-s">Do you want to add a ticket?</h2>
+				{% else %}
+					<h2 class="nhsuk-heading-s">Do you want to add another ticket?</h2>
+				{% endif %}
+
+				<div class="nhsuk-radios">
+
+					<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="public-transport-add-another" name="public-transport-add-another" type="radio" value="Yes">
+							<label class="nhsuk-label nhsuk-radios__label" for="public-transport-add-another-yes">
+								Yes
+							</label>
+					</div>
+
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="public-transport-add-another-no" name="public-transport-add-another" type="radio" value="No">
+						<label class="nhsuk-label nhsuk-radios__label" for="public-transport-add-another-no">
+							No
+						</label>
+					</div>
+
+				</div>
+			</div>
+			<div class="nhsuk-form-group">
+			<button class="nhsuk-button">Save and continue</button>
+			</div>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

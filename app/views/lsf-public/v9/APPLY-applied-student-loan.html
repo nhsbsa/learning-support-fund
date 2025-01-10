@@ -1,0 +1,59 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+        <form action="v9/APPLY-applied-student-loan" method="POST">
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <h1 class="nhsuk-heading-l">Have you applied for a student loan?</h1>
+                    </legend>
+
+                    <p>If you select Yes, you'll need to upload a copy of your student loan award letter for the relevant academic year.</p>
+
+                    <p>If you select No,  you’ll need to give us some more information to confirm your eligibility.</p>
+
+                <div class="nhsuk-radios nhsuk-radios--inline">
+
+                    <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="student-loan-yes" name="student-loan" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="student-loan-yes">
+                        Yes
+                    </label>
+                    </div>
+
+                    <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="student-loan-no" name="student-loan" type="radio" value="no">
+                    <label class="nhsuk-label nhsuk-radios__label" for="student-loan-no">
+                        No
+                    </label>
+                    </div>
+
+                </div>
+                </fieldset>
+
+            </div>
+
+            <button class="nhsuk-button" type="submit">Continue</button><br>
+            <p><a href="academic-year-details">Cancel</a></p>
+
+        </form>
+
+
+    </div>
+
+  </div>
+{% endblock %}

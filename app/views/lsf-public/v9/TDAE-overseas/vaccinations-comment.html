@@ -1,0 +1,54 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Do you want to provide any related comments to your placement additional costs?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="../v9/TDAE-overseas/vaccinations-comment" method="POST">
+
+      <div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+						<h1 class="nhsuk-heading-l">Do you want to tell us anything more about your vaccination costs?</h1>
+				</label>
+
+              <div class="nhsuk-hint">For example, a breakdown of costs if you had multiple vaccinations.</div>
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="vaccination-comments-yes" name="vaccinations-comments" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="vaccination-comments-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="vaccination-comments-no" name="vaccinations-comments" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="vaccination-comments-no">
+                    No
+                  </label>
+                </div>
+
+              </div>
+
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <p><a href="../TDAE-task-list">Cancel</a></p>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

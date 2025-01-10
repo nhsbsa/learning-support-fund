@@ -1,0 +1,434 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Do you want to provide any related comments to your placement additional costs?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v9/TDAE-placement-address-cya" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                    Placement addresses
+                </h1>
+              </legend>
+
+              {% if data['change'] == 'yes' %}
+              <p>You cannot change or remove addresses you've already entered.</p>
+              {% endif %}
+
+              <dl class="nhsuk-summary-list">
+
+                {% if data['international'] === 'true' %}
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Placement address 1
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {% if data['international-placement-building-name'] %}
+                          <!-- Display international placement address fields if available -->
+                            {{ data['international-placement-building-name'] }}<br>
+                            {{ data['international-placement-address-line-1'] }}<br>
+
+                          <!-- Conditionally display Address Line 2 depending if user inputs anything into field -->
+                          {% if data['international-placement-address-line-2'] %}
+                            {{ data['international-placement-address-line-2'] }}<br>
+                          {% endif %}
+
+                           <!-- Conditionally display Address Line 3 depending if user inputs anything into field -->
+                          {% if data['international-placement-address-line-3'] %}
+                            {{ data['international-placement-address-line-3'] }}<br>
+                          {% endif %}
+
+                            {{ data['international-placement-address-town'] }}<br>
+
+                          <!-- Conditionally display Country, province or region depending if user inputs anything into field -->
+                          {% if data['international-placement-address-region'] %}
+                            {{ data['international-placement-address-region'] }}<br>
+                          {% endif %}
+
+                          <!-- Conditionally display Postcode depending if user inputs anything into field -->
+                          {% if data['international-placement-address-postcode'] %}
+                            {{ data['international-placement-address-postcode'] }}<br>
+                          {% endif %}
+
+                            {{ data['international-placement-address-country'] }}
+                        {% else %}
+                    Mnazi Mmoja Hospital<br>
+                    Kaunda Road<br>
+                    Zanzibar<br>
+                    R5JR R2G<br>
+                    Tanzania
+                    {% endif %}
+                  </dd>
+                  {% if data['change'] != 'yes' %}
+                    <dd class="nhsuk-summary-list__actions">
+                      <a href="TDAE-international-placement-address">Change<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                      {% if data['add-another'] === 'yes' %}
+                          or
+                          <a href="TDAE-placement-address-cya">Remove<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                      {% endif %}
+                    </dd>
+                  {% endif %}
+                </div>
+                {% else %}
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Placement address 1
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      {% if data['placement-building-name'] %}
+                        {{ data['placement-building-name'] }}<br>
+                        {{ data['placement-address-line-1'] }}<br>
+                        {% if data['placement-address-line-2'] %}
+                          {{ data['placement-address-line-2'] }}<br>
+                        {% endif %}
+                        {% if data['placement-address-line-3'] %}
+                          {{ data['placement-address-line-3'] }}<br>
+                        {% endif %}
+                        {{ data['placement-address-town'] }}<br>
+                        {{ data['placement-address-postcode'] }}<br>
+                      {% else %}
+                      Alnwick Hospital<br>
+                      Infirmary Drive<br>
+                      Alnwick<br>
+                      NE66 2NS
+                      {% endif %}
+                    </dd>
+                    {% if data['change'] != 'yes' %}
+                      <dd class="nhsuk-summary-list__actions">
+                        <a href="TDAE-placement-address">Change<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                        {% if data['add-another'] === 'yes' %}
+                            or
+                            <a href="TDAE-placement-address-cya">Remove<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                        {% endif %}
+                      </dd>
+                    {% endif %}
+                  </div>
+                  {% endif %}
+
+                  {% if data['placement-2-building-name'] %}
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Placement address 2
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        {% if data['placement-2-building-name'] %}
+                          {{ data['placement-2-building-name'] }}<br>
+                          {{ data['placement-2-address-line-1'] }}<br>
+                          {% if data['placement-2-address-line-2'] %}
+                            {{ data['placement-2-address-line-2'] }}<br>
+                          {% endif %}
+                          {% if data['placement-2-address-line-3'] %}
+                            {{ data['placement-2-address-line-3'] }}<br>
+                          {% endif %}
+                          {{ data['placement-2-address-town'] }}<br>
+                          {{ data['placement-2-address-postcode'] }}<br>
+                        {% else %}
+                        123 Practice Placement<br>
+                        Newcastle Tyne and Wear<br>
+                        NE12 3AB
+                        {% endif %}
+                      </dd>
+                      {% if data['change'] != 'yes' %}
+                        <dd class="nhsuk-summary-list__actions">
+                          <a href="TDAE-placement-address">
+                            Change<span class="nhsuk-u-visually-hidden"> placement address</span>
+                          </a> or
+                          <a href="TDAE-placement-address-cya">
+                            Remove<span class="nhsuk-u-visually-hidden"> placement address</span>
+                          </a>
+                        </dd>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+
+                  {% if data['placement-3-building-name'] %}
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Placement address 3
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      {% if data['placement-3-building-name'] %}
+                        {{ data['placement-3-building-name'] }}<br>
+                        {{ data['placement-3-address-line-1'] }}<br>
+                        {% if data['placement-3-address-line-2'] %}
+                          {{ data['placement-3-address-line-2'] }}<br>
+                        {% endif %}
+                        {% if data['placement-3-address-line-3'] %}
+                          {{ data['placement-3-address-line-3'] }}<br>
+                        {% endif %}
+                        {{ data['placement-3-address-town'] }}<br>
+                        {{ data['placement-3-address-postcode'] }}<br>
+                      {% else %}
+                      123 Practice Placement<br>
+                      Newcastle Tyne and Wear<br>
+                      NE12 3AB
+                      {% endif %}
+                    </dd>
+                    {% if data['change'] != 'yes' %}
+                      <dd class="nhsuk-summary-list__actions">
+                        <a href="TDAE-placement-address">
+                          Change<span class="nhsuk-u-visually-hidden"> placement address</span>
+                        </a> or
+                        <a href="TDAE-placement-address-cya">
+                          Remove<span class="nhsuk-u-visually-hidden"> placement address</span>
+                        </a>
+                      </dd>
+                    {% endif %}
+                  </div>
+                  {% endif %}
+
+                  {% if data['placement-4-building-name'] %}
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Placement address 4
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      {% if data['placement-4-building-name'] %}
+                        {{ data['placement-4-building-name'] }}<br>
+                        {{ data['placement-4-address-line-1'] }}<br>
+                        {% if data['placement-4-address-line-2'] %}
+                          {{ data['placement-4-address-line-2'] }}<br>
+                        {% endif %}
+                        {% if data['placement-4-address-line-3'] %}
+                          {{ data['placement-4-address-line-3'] }}<br>
+                        {% endif %}
+                        {{ data['placement-4-address-town'] }}<br>
+                        {{ data['placement-4-address-postcode'] }}<br>
+                      {% else %}
+                      123 Practice Placement<br>
+                      Newcastle Tyne and Wear<br>
+                      NE12 3AB
+                      {% endif %}
+                    </dd>
+                    {% if data['change'] != 'yes' %}
+                      <dd class="nhsuk-summary-list__actions">
+                        <a href="TDAE-placement-address">
+                          Change<span class="nhsuk-u-visually-hidden"> placement address</span>
+                        </a> or
+                        <a href="TDAE-placement-address-cya">
+                          Remove<span class="nhsuk-u-visually-hidden"> placement address</span>
+                        </a>
+                      </dd>
+                    {% endif %}
+                  </div>
+                  {% endif %}
+
+                  {% if data['international-placement-2-building-name'] %}
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Placement address 2
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        {% if data['international-placement-2-building-name'] %}
+                          <!-- Display international placement address fields if available -->
+                            {{ data['international-placement-2-building-name'] }}<br>
+                            {{ data['international-placement-2-address-line-1'] }}<br>
+
+                          <!-- Conditionally display Address Line 2 depending if user inputs anything into field -->
+                          {% if data['international-placement-2-address-line-2'] %}
+                            {{ data['international-placement-2-address-line-2'] }}<br>
+                          {% endif %}
+
+                           <!-- Conditionally display Address Line 3 depending if user inputs anything into field -->
+                          {% if data['international-placement-2-address-line-3'] %}
+                            {{ data['international-placement-2-address-line-3'] }}<br>
+                          {% endif %}
+
+                            {{ data['international-placement-2-address-town'] }}<br>
+
+                          <!-- Conditionally display Country, province or region depending if user inputs anything into field -->
+                          {% if data['international-placement-2-address-region'] %}
+                            {{ data['international-placement-2-address-region'] }}<br>
+                          {% endif %}
+
+                          <!-- Conditionally display Postcode depending if user inputs anything into field -->
+                          {% if data['international-placement-2-address-postcode'] %}
+                            {{ data['international-placement-2-address-postcode'] }}<br>
+                          {% endif %}
+
+                            {{ data['international-placement-2-address-country'] }}
+                        {% else %}
+                          <!-- Default international placement address -->
+                          Mikungui Hospital<br>
+                          Mkele<br>
+                          Zanzibar<br>
+                          R6Q6 6HJ<br>
+                          Tanzania
+                        {% endif %}
+                      </dd>
+                      {% if data['change'] != 'yes' %}
+                        <dd class="nhsuk-summary-list__actions">
+                          <a href="TDAE-international-placement-address">Change<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                          {% if data['add-another'] === 'yes' %}
+                            or
+                            <a href="TDAE-placement-address-cya">Remove<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                          {% endif %}
+                        </dd>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+
+                  {% if data['international-placement-3-building-name'] %}
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Placement address 3
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        {% if data['international-placement-3-building-name'] %}
+                          <!-- Display international placement address fields if available -->
+                            {{ data['international-placement-3-building-name'] }}<br>
+                            {{ data['international-placement-3-address-line-1'] }}<br>
+
+                          <!-- Conditionally display Address Line 2 depending if user inputs anything into field -->
+                          {% if data['international-placement-3-address-line-2'] %}
+                            {{ data['international-placement-3-address-line-2'] }}<br>
+                          {% endif %}
+
+                           <!-- Conditionally display Address Line 3 depending if user inputs anything into field -->
+                          {% if data['international-placement-3-address-line-3'] %}
+                            {{ data['international-placement-3-address-line-3'] }}<br>
+                          {% endif %}
+
+                            {{ data['international-placement-3-address-town'] }}<br>
+
+                          <!-- Conditionally display Country, province or region depending if user inputs anything into field -->
+                          {% if data['international-placement-3-address-region'] %}
+                            {{ data['international-placement-3-address-region'] }}<br>
+                          {% endif %}
+
+                          <!-- Conditionally display Postcode depending if user inputs anything into field -->
+                          {% if data['international-placement-3-address-postcode'] %}
+                            {{ data['international-placement-3-address-postcode'] }}<br>
+                          {% endif %}
+
+                            {{ data['international-placement-3-address-country'] }}
+                        {% else %}
+                          <!-- Default international placement address -->
+                          Placement address 3<br>
+                          Address line 2<br>
+                          Town or city<br>
+                          Postcode<br>
+                          Country
+                        {% endif %}
+                      </dd>
+                      {% if data['change'] != 'yes' %}
+                        <dd class="nhsuk-summary-list__actions">
+                          <a href="TDAE-international-placement-address">Change<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                          {% if data['add-another'] === 'yes' %}
+                            or
+                            <a href="TDAE-placement-address-cya">Remove<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                          {% endif %}
+                        </dd>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+
+                  {% if data['international-placement-4-building-name'] %}
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Placement address 4
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        {% if data['international-placement-4-building-name'] %}
+                          <!-- Display international placement address fields if available -->
+                            {{ data['international-placement-4-building-name'] }}<br>
+                            {{ data['international-placement-4-address-line-1'] }}<br>
+
+                          <!-- Conditionally display Address Line 2 depending if user inputs anything into field -->
+                          {% if data['international-placement-4-address-line-2'] %}
+                            {{ data['international-placement-4-address-line-2'] }}<br>
+                          {% endif %}
+
+                           <!-- Conditionally display Address Line 3 depending if user inputs anything into field -->
+                          {% if data['international-placement-4-address-line-3'] %}
+                            {{ data['international-placement-4-address-line-3'] }}<br>
+                          {% endif %}
+
+                            {{ data['international-placement-4-address-town'] }}<br>
+
+                          <!-- Conditionally display Country, province or region depending if user inputs anything into field -->
+                          {% if data['international-placement-4-address-region'] %}
+                            {{ data['international-placement-4-address-region'] }}<br>
+                          {% endif %}
+
+                          <!-- Conditionally display Postcode depending if user inputs anything into field -->
+                          {% if data['international-placement-4-address-postcode'] %}
+                            {{ data['international-placement-4-address-postcode'] }}<br>
+                          {% endif %}
+
+                            {{ data['international-placement-4-address-country'] }}
+                        {% else %}
+                          <!-- Default international placement address -->
+                          Placement address 4<br>
+                          Address line 2<br>
+                          Town or city<br>
+                          Postcode<br>
+                          Country
+                        {% endif %}
+                      </dd>
+                      {% if data['change'] != 'yes' %}
+                        <dd class="nhsuk-summary-list__actions">
+                          <a href="TDAE-international-placement-address">Change<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                          {% if data['add-another'] === 'yes' %}
+                            or
+                            <a href="TDAE-placement-address-cya">Remove<span class="nhsuk-u-visually-hidden"> placement address</span></a>
+                          {% endif %}
+                        </dd>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+
+
+
+              </dl>
+
+              <p>You need to add a placement address for each day you’re claiming for. If you were at more than one address on the same day, only add the main one.</p>
+
+              <h2 class="nhsuk-heading-m">
+                Do you want to add another placement address?
+              </h2>
+
+              <div class="nhsuk-hint">If you are claiming costs for spoke placements as well as your hub placement, select Yes.</div>
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="placement-related-comments-yes" name="add-another" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="placement-related-comments-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="placement-related-comments-no" name="add-another" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="placement-related-comments-no">
+                    No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+
+
+          <button class="nhsuk-button">Save and continue</button><br>
+
+        <p><a href="TDAE-claims-list">Cancel</a></p>
+      </div>
+     </form>
+    </div>
+  </div>
+{% endblock %}

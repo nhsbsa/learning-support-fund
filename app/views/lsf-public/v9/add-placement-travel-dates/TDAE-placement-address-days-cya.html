@@ -1,0 +1,201 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Which days does this evidence relate to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="TDAE-placement-itinerary?address-number=2" method="POST">
+
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Your placement travel dates
+            </h1>
+          </legend>
+
+          <p>Because you've added costs to your placement travel details, you cannot remove placement travel dates. However, you can add dates.</p>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                How do I add dates?
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>To add a date within a period of placement travel, select Add dates.</p>
+              <p>For dates outside of a period, select Add more dates.</p>
+            </div>
+          </details>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Period 1<br>
+                    <div style="font-weight: 400;">(1 September to 7 September)</div>
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Monday 1 September 2024<br>
+                  Tuesday 2 September 2024<br>
+                  Wednesday 3 September 2024<br>
+                  Thursday 4 September 2024
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="TDAE-placement-days">
+                      Add dates<span class="nhsuk-u-visually-hidden"> to period 1</span>
+                  </a>
+                </dd>
+            </div>
+            {% if data['placement-week'] == '2' %}
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Period 2<br>
+                  <div style="font-weight: 400;">(8 September to 14 September)</div>
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Monday 8 September 2024<br>
+                  Tuesday 9 September 2024<br>
+                  Wednesday 10 September 2024<br>
+                  Thursday 11 September 2024
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="TDAE-placement-days">
+                      Add dates<span class="nhsuk-u-visually-hidden"> to period 2</span>
+                  </a>
+                </dd>
+              </div>
+            {% endif %}
+
+          </dl>
+
+          <h2 class="nhsuk-heading-m">Placement addresses</h2>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key" style="font-weight: 400; width: 50%;">
+                <strong>Placement address 1</strong><br>
+                {% if data['placement-building-name'] %}
+                  {{ data['placement-building-name'] }}<br>
+                  {{ data['placement-address-line-1'] }}<br>
+                  {% if data['placement-address-line-2'] %}
+                    {{ data['placement-address-line-2'] }}<br>
+                  {% endif %}
+                  {% if data['placement-address-line-3'] %}
+                    {{ data['placement-address-line-3'] }}<br>
+                  {% endif %}
+                  {{ data['placement-address-town'] }}<br>
+                  {{ data['placement-address-postcode'] }}<br>
+                {% else %}
+                Newcastle Hospital<br>
+                Newcastle Street<br>
+                Newcastle Tyne and Wear<br>
+                NE12 3AB
+                {% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Monday 1 September 2024<br>
+                Tuesday 2 September 2024<br>
+                Wednesday 3 September 2024
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="TDAE-placement-address-days?address-days=1">
+                  Change<span class="nhsuk-u-visually-hidden"> placement address 1</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key" style="font-weight: 400; width: 50%;">
+                <strong>Placement address 2</strong><br>
+                {% if data['placement-2-building-name'] %}
+                  {{ data['placement-2-building-name'] }}<br>
+                  {{ data['placement-2-address-line-1'] }}<br>
+                  {% if data['placement-2-address-line-2'] %}
+                    {{ data['placement-2-address-line-2'] }}<br>
+                  {% endif %}
+                  {% if data['placement-2-address-line-3'] %}
+                    {{ data['placement-2-address-line-3'] }}<br>
+                  {% endif %}
+                  {{ data['placement-2-address-town'] }}<br>
+                  {{ data['placement-2-address-postcode'] }}<br>
+                {% else %}
+                Alnwick Hospital<br>
+                Infirmary Drive<br>
+                Alnwick<br>
+                NE66 2NS
+                {% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Thursday 4 September 2024
+                {% if data['period'] == 'changed' %}
+                <br>Monday 8 September 2024<br>
+                Tuesday 9 September 2024<br>
+                Wednesday 10 September 2024<br>
+                Thursday 11 September 2024
+                {% endif %}
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="TDAE-placement-address-days?address-days=2">
+                  Change<span class="nhsuk-u-visually-hidden"> placement address 2</span>
+                </a>
+              </dd>
+            </div>
+            {% if data['placement-week'] == '2' and data['period'] != 'changed' %}
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key" style="width: 50%;">
+                  Unallocated dates
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Monday 8 September 2024<br>
+                  Tuesday 9 September 2024<br>
+                  Wednesday 10 September 2024<br>
+                  Thursday 11 September 2024
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="TDAE-placement-address-days?address-days=2&period=changed">
+                    Change<span class="nhsuk-u-visually-hidden"> dates not yet allocated to a placement address</span>
+                  </a>
+                </dd>
+              </div>
+            {% endif %}
+
+          </dl>
+
+          {% if data['placement-week'] == '2' and data['period'] != 'changed' %}
+            <p>You cannot continue until all you allocate all dates to a placement address.</p>
+          {% endif %}
+
+          <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-week-days?placement-week=2">Add more dates</a><br>
+
+          {% if data['period'] != 'added' %}
+            <button class="nhsuk-button">Save and continue</button><br>
+          {% endif %}
+
+          {% if data['period'] == 'added' %}
+            <p><a href="#">Save and come back later</a></p>
+          {% else %}
+            <p><a href="#">Return to Your placement travel details</a></p>
+          {% endif %}
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Which mode of transport do you take to and from your normal place of study?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+    <form action="v9/TDAE-public-transport-type" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-heading-l">
+                  What type of public transport is this ticket for?
+                </h1>
+              </legend>
+
+              <!--<div class="nhsuk-hint" id="example-hint">
+                Select all that apply.
+              </div>-->
+
+              <div class="nhsuk-radios nhsuk-radios--conditional">
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="public-transport-type" name="public-transport-type" type="radio" value="Bus">
+                    <label class="nhsuk-label nhsuk-radios__label" for="mode-of-transport-walk">
+                      Bus
+                    </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="public-transport-type" name="public-transport-type" type="radio" value="Train">
+                  <label class="nhsuk-label nhsuk-radios__label" for="mode-of-transport-drive">
+                    Train
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="public-transport-type" name="public-transport-type" type="radio" value="Tube or metro system">
+                  <label class="nhsuk-label nhsuk-radios__label" for="mode-of-transport-drive">
+                      Tube or metro system
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="public-transport-type" name="public-transport-type" type="radio" value="Tram">
+                  <label class="nhsuk-label nhsuk-radios__label" for="mode-of-transport-drive">
+                      Tram
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="public-transport-type" name="public-transport-type" type="radio" value="Ferry">
+                    <label class="nhsuk-label nhsuk-radios__label" for="mode-of-transport-drive">
+                      Ferry
+                    </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="public-transport-type" name="public-transport-type" type="radio" value="Cable car">
+                    <label class="nhsuk-label nhsuk-radios__label" for="mode-of-transport-drive">
+                      Cable car
+                    </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="other" aria-controls="conditional-contact-1" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                    Other
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="other-input">
+                      Enter public transport type
+                    </label>
+                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="public-transport-type" type="text">
+                  </div>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+      <button class="nhsuk-button" type="submit">Continue</button><br>
+      <a href="TDAE-start-claim">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

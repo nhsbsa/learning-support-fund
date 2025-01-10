@@ -1,0 +1,39 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Additional costs for your normal daily journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v9/TDAE-placement-community-mileage-costs" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+					<h1 class="nhsuk-heading-l">
+						<h1 class="nhsuk-heading-l">How many community miles did you travel on {{ data['community-mileage-day'] }}?</h1>
+					</h1>
+				</label>
+				<input class="nhsuk-input__suffix-input nhsuk-input nhsuk-input--width-5" id="community-mileage-miles" name="community-mileage-miles" type="text">
+				<div class="nhsuk-input__suffix" aria-hidden="true">miles</div>
+			</div>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

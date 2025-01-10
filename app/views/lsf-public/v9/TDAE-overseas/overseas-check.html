@@ -1,0 +1,348 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<!-- <form action="" method="POST"> -->
+
+		<h1 class="nhsuk-heading-xl">Check your answers</h1>
+
+			<dl class="nhsuk-summary-list">
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Authorised by
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['authorised-by'] %}
+							{{ data['authorised-by'] }}
+							{% else %}
+							John Doe
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						<a href="authorisation">
+							Change<span class="nhsuk-u-visually-hidden">authorisation</span>
+						</a>
+					</dd>
+					{% endif %}
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Authoriser's role
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['authoriser-role'] %}
+							{{ data['authoriser-role'] }}
+							{% else %}
+							Placement co-ordinator
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						<a href="authorisation">
+							Change<span class="nhsuk-u-visually-hidden">authoriser's role</span>
+						</a>
+					</dd>
+					{% endif %}
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Overseas costs paid for
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if 'insurance' in data['overseas-cost'] and 'visa-fees' in data['overseas-cost'] %}
+							Insurance<br>
+							Visa fees
+						{% else %}
+							{% if data['overseas-cost'] %}
+								<span class="capitalize">{{ data['overseas-cost'] }}</span>
+							{% endif %}
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="which-costs">
+								Change<span class="nhsuk-u-visually-hidden">overseas costs paid for</span>
+							</a>
+						</dd>
+					{% endif %}
+				</div>
+
+		{% if 'insurance' in data['overseas-cost'] %}
+
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Insurance costs
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['insurance-cost'] %}
+								£{{ data['insurance-cost'] }}
+							{% else %}
+								£60
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="insurance-cost">
+								Change<span class="nhsuk-u-visually-hidden">insurance costs</span>
+							</a>
+						</dd>
+						{% endif %}
+					</div>
+
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Insurance comments
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['additionalInsuranceComment'] %}
+								{{ data['additionalInsuranceComment'] }}
+								{% else %}
+								None provided
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="insurance-add-comment">
+								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+							</a>
+							</dd>
+						{% endif %}
+					</div>
+
+			{% endif %}
+			{% if 'medical-tests' in data['overseas-cost'] %}
+
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Medical tests costs
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['medical-tests-cost'] %}
+									£{{ data['medical-tests-cost'] }}
+								{% else %}
+									£60
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="medical-tests-cost">
+									Change<span class="nhsuk-u-visually-hidden">medical tests costs</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Medical tests comments
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['additionalMedicalTestsComment'] %}
+									{{ data['additionalMedicalTestsComment'] }}
+									{% else %}
+									None provided
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="medical-tests-add-comment">
+									Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+								</a>
+								</dd>
+							{% endif %}
+						</div>
+
+				{% endif %}
+
+				{% if 'vaccinations' in data['overseas-cost'] %}
+
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Vaccination costs
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['vaccinations-cost'] %}
+								£{{ data['vaccinations-cost'] }}
+							{% else %}
+								£40
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="vaccinations-cost">
+								Change<span class="nhsuk-u-visually-hidden">vaccination costs</span>
+							</a>
+						</dd>
+						{% endif %}
+					</div>
+
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Vaccination comments
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['additionalVaccinationsComment'] %}
+								{{ data['additionalVaccinationsComment'] }}
+								{% else %}
+								None provided
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="vaccinations-add-comment">
+								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+							</a>
+							</dd>
+						{% endif %}
+					</div>
+
+			{% endif %}
+
+			{% if 'visa-fees' in data['overseas-cost'] %}
+
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Visa fees
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['visa-fees-cost'] %}
+								£{{ data['visa-fees-cost'] }}
+							{% else %}
+								£35
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="visa-fees-cost">
+								Change<span class="nhsuk-u-visually-hidden">visa fees cost</span>
+							</a>
+						</dd>
+						{% endif %}
+					</div>
+
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Visa fees comments
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['additionalVisaFeesComment'] %}
+								{{ data['additionalVisaFeesComment'] }}
+							{% else %}
+								None provided
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+							<a href="visa-fees-add-comment">
+								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+							</a>
+							</dd>
+						{% endif %}
+					</div>
+
+				{% endif %}
+
+			</dl>
+
+			<h2 class="nhsuk-heading-m">Total overseas costs to be reimbursed</h2>
+	    <dl class="nhsuk-summary-list">
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Total overseas costs
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+							£95
+					</dd>
+				</div>
+	    </dl>
+
+
+			{% if data['submit-claim'] != 'completed' %}
+				<form action="overseas-evidence-mini-cya" method="POST">
+					<button class="nhsuk-button" type="submit">Save and continue to evidence</button>
+				</form>
+				<p><a href="../TDAE-task-list-full?overseas-details=in-progress">Return to task list</a></p>
+			{% endif %}
+
+		<!-- </form> -->
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			const months = {
+				"01": "January",
+				"02": "February",
+				"03": "March",
+				"04": "April",
+				"05": "May",
+				"06": "June",
+				"07": "July",
+				"08": "August",
+				"09": "September",
+				"1": "January",
+				"2": "February",
+				"3": "March",
+				"4": "April",
+				"5": "May",
+				"6": "June",
+				"7": "July",
+				"8": "August",
+				"9": "September",
+				"10": "October",
+				"11": "November",
+				"12": "December",
+			};
+
+			$(".cya-month").text(function () {
+				const month = $(this).text();
+				console.log("month:", month);
+				console.log("months[month]:", months[month]);
+				return months[month];
+			});
+		});
+		</script>
+
+<script>
+	$(document).ready(function() {
+		let totalCost = 0;
+
+		// Function to parse and add cost if applicable
+		function addIfSelected(costName) {
+			// Find all keys that contain the cost name
+			$("dt.nhsuk-summary-list__key:contains('" + costName + "')").each(function() {
+				const valueElement = $(this).next("dd.nhsuk-summary-list__value"); // assuming value is next to key
+				const cost = parseInt(valueElement.text().replace('£', '').trim(), 10);
+				if (!isNaN(cost)) {
+					totalCost += cost;
+				}
+				console.log(costName + ": " + cost); // Debugging output
+			});
+		}
+
+		// Attempt to parse each cost and add it if it's selected and presented in the summary
+		addIfSelected('Visa fees');
+		addIfSelected('Vaccinations');
+		addIfSelected('Medical tests');
+		addIfSelected('Insurance');
+
+		// Display the calculated total
+		$("dd.nhsuk-summary-list__value:contains('£')").last().text('£' + totalCost);
+		console.log('Total: £' + totalCost); // Debugging output
+	});
+	</script>
+
+</div>
+{% endblock %}

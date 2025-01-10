@@ -1,0 +1,73 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- <form action="" method="POST"> -->
+
+        <h1 class="nhsuk-heading-l">Your placement travel dates</h1>
+
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Period 1 placement travel dates
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Friday 6 October 2023<br>
+                  Saturday 7 October 2023<br>
+                  Sunday 8 October 2023<br>
+                  Monday 9 October 2023
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="TDAE-placement-days">
+                        Change<span class="nhsuk-u-visually-hidden"> week 1 placement travel days</span>
+                    </a>
+                </dd>
+            </div>
+            {% if data['placement-week'] == '2' %}
+              <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                      Period 2 placement travel dates
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                      Wednesday 14 June 2023,<br>
+                      Thursday 15 June 2023,<br>
+                      Friday 16 June 2023<br>
+                      Saturday 17 June 2023<br>
+                      Sunday 18 June 2023<br>
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                      <a href="TDAE-placement-days">
+                          Change<span class="nhsuk-u-visually-hidden"> week 2 placement travel days</span>
+                      </a>
+                      or
+                      <a href="TDAE-week-warning">
+                          remove<span class="nhsuk-u-visually-hidden"> week 2 placement travel days</span>
+                      </a>
+                  </dd>
+              </div>
+            {% endif %}
+
+        </dl>
+
+        <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-week-days?placement-week=2">Add more dates</a>
+
+        <form action="v9/TDAE-check-dates" method="POST">
+            <button class="nhsuk-button" type="submit">Save and continue</button><br>
+        </form>
+
+        <a class="nhsuk-button nhsuk-button--warning" href="TDAE-dates-warning" style="background-color: #d4351c;">Reset all placement travel days</a>
+
+        <!-- </form> -->
+
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,641 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<!-- <form action="" method="POST"> -->
+
+		<h1 class="nhsuk-heading-xl">Check your answers</h1>
+
+		
+
+		{% if data['vehicles'] == '1' %}
+			<dl class="nhsuk-summary-list">
+
+				<!-- number of hire vehicles -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Hire vehicles
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						1
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="">
+							Change<span class="nhsuk-u-visually-hidden"> number of hire vehicles</span>
+						</a>
+
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- cost of first hire vehicle -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Cost of hire vehicle
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['hire-vehicle-cost'] %}
+							£{{ data['hire-vehicle-cost'] }}
+							{% else %}
+							£120.00
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="TDAE-hire-car-cost">
+							Change<span class="nhsuk-u-visually-hidden">cost of hire vehicle</span>
+						</a>
+
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- start date of first hire vehicle -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Start date
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['hire-vehicle-start-day'] %}
+							{{ data['hire-vehicle-start-day'] }} <span class="cya-month">{{ data['hire-vehicle-start-month'] }}</span> {{ data['hire-vehicle-start-year'] }}
+						{% else %}
+							30 November 2023
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="TDAE-hire-car-return">
+							Change<span class="nhsuk-u-visually-hidden"> start date</span>
+						</a>
+
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- end date of first hire vehicle -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						End date
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['hire-vehicle-end-day'] %}
+							{{ data['hire-vehicle-end-day'] }} <span class="cya-month">{{ data['hire-vehicle-end-month'] }}</span> {{ data['hire-vehicle-end-year'] }}
+						{% else %}
+							30 November 2023
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="TDAE-hire-car-return">
+							Change<span class="nhsuk-u-visually-hidden"> end date</span>
+						</a>
+
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- first hire vehicle authorised by -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Authorised by
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['authorised-by'] %}
+							{{ data['authorised-by'] }}
+							{% else %}
+							John Doe
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						<a href="TDAE-hire-car-authorisation">
+							Change<span class="nhsuk-u-visually-hidden">who it was authorised by</span>
+						</a>
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- reason for first hire vehicle -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Reason for hire vehicle
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['reason-for-hire'] %}
+							{{ data['reason-for-hire'] }}
+							{% else %}
+							I had an emergency situation.
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						<a href="TDAE-hire-car-reason">
+							Change<span class="nhsuk-u-visually-hidden"> reason for hire vehicle</span>
+						</a>
+					</dd>
+					{% endif %}
+				</div>
+
+				
+				<!-- Evidence uploaded for first hire vehicle -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Evidence uploaded
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						<a href="/images/snapshot-032-07-03-2023.jpg" download="Joe Bloggs hire vehicle evidence 30 November 2023">
+							hire-car-receipt.pdf
+						</a>
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						<a href="TDAE-hire-car-evidence">
+							Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+						</a>
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- Additional comments for first hire vehicle -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Comments
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['additionalCostsComment'] %}
+							{{ data['additionalCostsComment'] }}
+							{% else %}
+							My car broke down and is currently at the garage being repaired.
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						{% if data['additional-comments']  === 'yes' %}
+						<a href="TDAE-hire-car-comment">
+							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
+						</a>
+						{% else %}
+						<a href="TDAE-hire-car-add-comment">
+							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+						</a>
+						{% endif %}
+						</dd>
+						{% endif %}
+				</div>
+
+				</dl>
+
+
+
+		<!-- Expanders for more than one hire vehicle -->
+			{% else %}
+				<dl class="nhsuk-summary-list">
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Vehicles hired
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							2
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+						<dd class="nhsuk-summary-list__actions">
+
+							<a href="">
+								Change<span class="nhsuk-u-visually-hidden"> number of vehicles hired</span>
+							</a>
+
+						</dd>
+						{% endif %}
+					</div>
+				</dl>
+
+<!-- Vehicle 1 -->
+				<details class="nhsuk-details nhsuk-expander">
+				  <summary class="nhsuk-details__summary">
+				    <span class="nhsuk-details__summary-text">
+				      Vehicle 1
+				    </span>
+				  </summary>
+
+				 <!-- cost of first hire vehicle -->
+		<div class="nhsuk-details__text">
+			<dl class="nhsuk-summary-list">
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Cost of hire vehicle
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['hire-vehicle-cost'] %}
+							£{{ data['hire-vehicle-cost'] }}
+							{% else %}
+							£120.00
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="TDAE-hire-car-cost">
+							Change<span class="nhsuk-u-visually-hidden">cost of hire vehicle</span>
+						</a>
+
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- start date of first hire vehicle -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Start date
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['hire-vehicle-start-day'] %}
+							{{ data['hire-vehicle-start-day'] }} <span class="cya-month">{{ data['hire-vehicle-start-month'] }}</span> {{ data['hire-vehicle-start-year'] }}
+						{% else %}
+							30 November 2023
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="TDAE-hire-car-return">
+							Change<span class="nhsuk-u-visually-hidden"> start date</span>
+						</a>
+
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- end date of first hire vehicle -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						End date
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['hire-vehicle-end-day'] %}
+							{{ data['hire-vehicle-end-day'] }} <span class="cya-month">{{ data['hire-vehicle-end-month'] }}</span> {{ data['hire-vehicle-end-year'] }}
+						{% else %}
+							30 November 2023
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+
+						<a href="TDAE-hire-car-return">
+							Change<span class="nhsuk-u-visually-hidden"> end date</span>
+						</a>
+
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- first hire vehicle authorised by -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Authorised by
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['authorised-by'] %}
+							{{ data['authorised-by'] }}
+							{% else %}
+							John Doe
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						<a href="TDAE-hire-car-authorisation">
+							Change<span class="nhsuk-u-visually-hidden">who it was authorised by</span>
+						</a>
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- reason for first hire vehicle -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Reason for hire vehicle
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['reason-for-hire'] %}
+							{{ data['reason-for-hire'] }}
+							{% else %}
+							I had an emergency situation.
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						<a href="TDAE-hire-car-reason">
+							Change<span class="nhsuk-u-visually-hidden"> reason for hire vehicle</span>
+						</a>
+					</dd>
+					{% endif %}
+				</div>
+
+				
+				<!-- Evidence uploaded for first hire vehicle -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Evidence uploaded
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						<a href="/images/snapshot-032-07-03-2023.jpg" download="Joe Bloggs hire vehicle evidence 30 November 2023">
+							hire-car-receipt.pdf
+						</a>
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						<a href="TDAE-hire-car-evidence">
+							Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+						</a>
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- Additional comments for first hire vehicle -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Comments
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['additionalCostsComment'] %}
+							{{ data['additionalCostsComment'] }}
+							{% else %}
+							My car broke down and is currently at the garage being repaired.
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						{% if data['additional-comments']  === 'yes' %}
+						<a href="TDAE-hire-car-comment">
+							Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
+						</a>
+						{% else %}
+						<a href="TDAE-hire-car-add-comment">
+							Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+						</a>
+						{% endif %}
+						</dd>
+						{% endif %}
+				</div>
+
+						</dl>
+						<a class="nhsuk-button nhsuk-button--warning" href="TDAE-hire-car-remove-vehicle">Remove hire vehicle</a>
+				  </div>
+				</details>
+</div>
+
+
+
+
+
+<!-- Vehicle 2 -->
+	<div class="nhsuk-grid-column-two-thirds">
+		<details class="nhsuk-details nhsuk-expander">
+			<summary class="nhsuk-details__summary">
+			  <span class="nhsuk-details__summary-text">
+				Vehicle 2
+			  </span>
+			</summary>
+
+		   <!-- cost of second hire vehicle -->
+  <div class="nhsuk-details__text">
+	  <dl class="nhsuk-summary-list">
+		  <div class="nhsuk-summary-list__row">
+			  <dt class="nhsuk-summary-list__key">
+				  Cost of hire vehicle
+			  </dt>
+			  <dd class="nhsuk-summary-list__value">
+				  {% if data['hire-vehicle-cost'] %}
+					  £{{ data['hire-vehicle-cost'] }}
+					  {% else %}
+					  £120.00
+				  {% endif %}
+			  </dd>
+			  {% if data['submit-claim'] != 'completed' %}
+			  <dd class="nhsuk-summary-list__actions">
+
+				  <a href="TDAE-hire-car-cost">
+					  Change<span class="nhsuk-u-visually-hidden">cost of hire vehicle</span>
+				  </a>
+
+			  </dd>
+			  {% endif %}
+		  </div>
+
+		  <!-- start date of second hire vehicle -->
+		  <div class="nhsuk-summary-list__row">
+			  <dt class="nhsuk-summary-list__key">
+				  Start date
+			  </dt>
+			  <dd class="nhsuk-summary-list__value">
+				  {% if data['hire-vehicle-start-day'] %}
+					  {{ data['hire-vehicle-start-day'] }} <span class="cya-month">{{ data['hire-vehicle-start-month'] }}</span> {{ data['hire-vehicle-start-year'] }}
+				  {% else %}
+					  30 November 2023
+				  {% endif %}
+			  </dd>
+			  {% if data['submit-claim'] != 'completed' %}
+			  <dd class="nhsuk-summary-list__actions">
+
+				  <a href="TDAE-hire-car-return">
+					  Change<span class="nhsuk-u-visually-hidden"> start date</span>
+				  </a>
+
+			  </dd>
+			  {% endif %}
+		  </div>
+
+		  <!-- end date of second hire vehicle -->
+		  <div class="nhsuk-summary-list__row">
+			  <dt class="nhsuk-summary-list__key">
+				  End date
+			  </dt>
+			  <dd class="nhsuk-summary-list__value">
+				  {% if data['hire-vehicle-end-date'] %}
+					  {{ data['hire-vehicle-end-day'] }} <span class="cya-month">{{ data['hire-vehicle-end-month'] }}</span> {{ data['hire-vehicle-end-year'] }}
+				  {% else %}
+					  30 November 2023
+				  {% endif %}
+			  </dd>
+			  {% if data['submit-claim'] != 'completed' %}
+			  <dd class="nhsuk-summary-list__actions">
+
+				  <a href="TDAE-hire-car-return">
+					  Change<span class="nhsuk-u-visually-hidden"> end date</span>
+				  </a>
+
+			  </dd>
+			  {% endif %}
+		  </div>
+
+		  <!-- second hire vehicle authorised by -->
+		  <div class="nhsuk-summary-list__row">
+			  <dt class="nhsuk-summary-list__key">
+				  Authorised by
+			  </dt>
+			  <dd class="nhsuk-summary-list__value">
+				  {% if data['authorised-by'] %}
+					  {{ data['authorised-by'] }}
+					  {% else %}
+					  John Doe
+				  {% endif %}
+			  </dd>
+			  {% if data['submit-claim'] != 'completed' %}
+			  <dd class="nhsuk-summary-list__actions">
+				  <a href="TDAE-hire-car-authorisation">
+					  Change<span class="nhsuk-u-visually-hidden">who it was authorised by</span>
+				  </a>
+			  </dd>
+			  {% endif %}
+		  </div>
+
+		  <!-- reason for second hire vehicle -->
+		  <div class="nhsuk-summary-list__row">
+			  <dt class="nhsuk-summary-list__key">
+				  Reason for hire vehicle
+			  </dt>
+			  <dd class="nhsuk-summary-list__value">
+				  {% if data['reason-for-hire'] %}
+					  {{ data['reason-for-hire'] }}
+					  {% else %}
+					  I had an emergency situation.
+				  {% endif %}
+			  </dd>
+			  {% if data['submit-claim'] != 'completed' %}
+			  <dd class="nhsuk-summary-list__actions">
+				  <a href="TDAE-hire-car-reason">
+					  Change<span class="nhsuk-u-visually-hidden"> reason for hire vehicle</span>
+				  </a>
+			  </dd>
+			  {% endif %}
+		  </div>
+
+		  
+		  <!-- Evidence uploaded for second hire vehicle -->
+		  <div class="nhsuk-summary-list__row">
+			  <dt class="nhsuk-summary-list__key">
+				  Evidence uploaded
+			  </dt>
+			  <dd class="nhsuk-summary-list__value">
+				  <a href="/images/snapshot-032-07-03-2023.jpg" download="Joe Bloggs hire vehicle evidence 30 November 2023">
+					  hire-car-receipt.pdf
+				  </a>
+			  </dd>
+			  {% if data['submit-claim'] != 'completed' %}
+			  <dd class="nhsuk-summary-list__actions">
+				  <a href="TDAE-hire-car-evidence">
+					  Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+				  </a>
+			  </dd>
+			  {% endif %}
+		  </div>
+
+		  <!-- Additional comments for second hire vehicle -->
+		  <div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Comments
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				{% if data['additionalCostsComment'] %}
+					{{ data['additionalCostsComment'] }}
+					{% else %}
+					My car broke down and is currently at the garage being repaired.
+				{% endif %}
+			</dd>
+			{% if data['submit-claim'] != 'completed' %}
+			<dd class="nhsuk-summary-list__actions">
+				{% if data['additional-comments']  === 'yes' %}
+				<a href="TDAE-hire-car-comment">
+					Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
+				</a>
+				{% else %}
+				<a href="TDAE-hire-car-add-comment">
+					Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+				</a>
+				{% endif %}
+				</dd>
+				{% endif %}
+		</div>
+
+				  </dl>
+				  <a class="nhsuk-button nhsuk-button--warning" href="TDAE-hire-car-remove-vehicle">Remove hire vehicle</a>
+			</div>
+		  </details>
+
+
+			{% endif %}
+
+			<h2 class="nhsuk-heading-m">Total vehicle hire costs to be reimbursed</h2>
+	    <dl class="nhsuk-summary-list">
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Total vehicle hire costs
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+							£240
+					</dd>
+				</div>
+	    </dl>
+
+
+			{% if data['submit-claim'] != 'completed' %}
+				<form action="/lsf-public/v9/TDAE-task-list" method="POST">
+					<button class="nhsuk-button" type="submit">Save and continue</button><br>
+					<a href="TDAE-start-claim">Cancel</a>
+				</form>
+			{% endif %}
+
+		<!-- </form> -->
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			const months = {
+				"01": "January",
+				"02": "February",
+				"03": "March",
+				"04": "April",
+				"05": "May",
+				"06": "June",
+				"07": "July",
+				"08": "August",
+				"09": "September",
+				"1": "January",
+				"2": "February",
+				"3": "March",
+				"4": "April",
+				"5": "May",
+				"6": "June",
+				"7": "July",
+				"8": "August",
+				"9": "September",
+				"10": "October",
+				"11": "November",
+				"12": "December",
+			};
+
+			$(".cya-month").text(function () {
+				const month = $(this).text();
+				console.log("month:", month);
+				console.log("months[month]:", months[month]);
+				return months[month];
+			});
+		});
+		</script>
+
+</div>
+{% endblock %}

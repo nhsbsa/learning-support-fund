@@ -1,0 +1,59 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Did you hire more than one vehicle?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v9/TDAE-hire-vehicles" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Did you hire more than one vehicle?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-hint">Multiple bookings for the same vehicle should be separated.</div>
+
+              <div class="nhsuk-radios nhsuk-radios--conditional">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="more-vehicles-yes" name="more-vehicles" type="radio" value="yes" aria-controls="conditional-contact-1" aria-expanded="2">
+                  <label class="nhsuk-label nhsuk-radios__label" for="more-vehicles-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="more-vehicles-no" name="more-vehicles" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="2">
+                  <label class="nhsuk-label nhsuk-radios__label" for="more-vehicles-no">
+                    No
+                  </label>
+                </div>
+
+              </div>
+
+            </fieldset>
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

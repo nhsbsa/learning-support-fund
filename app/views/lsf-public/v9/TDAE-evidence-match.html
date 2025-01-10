@@ -1,0 +1,184 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Which days does this evidence relate to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v9/TDAE-evidence-match" method="POST">
+
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                Which costs is this evidence for?
+              </h1>
+            </legend>
+
+            
+            <div class="nhsuk-hint" id="example-hint">
+              Select all that apply.
+            </div>
+
+            <!-- Select all link -->
+          <!-- div class="select-all-container">
+            <a href="#" id="select-all-link">Select all</a>
+          </div>
+
+          <br -->
+
+            {% if data['claiming-for'] == 'car' %}
+            <div class="nhsuk-checkboxes">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input example-checkbox" id="example-1" name="example" type="checkbox" value="parking-charge-1">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                  Parking charges of £4 on Friday 6 October 2023
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input example-checkbox" id="example-2" name="example" type="checkbox" value="parking-charge-2">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                  Parking charges of £4 on Saturday 7 October 2023
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input example-checkbox" id="example-3" name="example" type="checkbox" value="parking-charge-3">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                  Parking charges of £4 on Sunday 8 October 2023
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input example-checkbox" id="example-4" name="example" type="checkbox" value="parking-charge-4">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-4">
+                  Parking charges of £4 on Monday 9 October 2023
+                </label>
+              </div>
+            </div>
+            {% elif data['claiming-for'] == 'Public transport' %}
+            <div class="nhsuk-checkboxes">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input example-checkbox" id="example-1" name="example" type="checkbox" value="bus-ticket-1">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                  Bus ticket charges of £3.00 from Friday 6 October 2023 to Thursday 12 October 2023
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input example-checkbox" id="example-2" name="example" type="checkbox" value="train-ticket-1">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                  Train ticket charges of £4.25 on Friday 6 October 2023
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input example-checkbox" id="example-3" name="example" type="checkbox" value="train-ticket-2">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                  Train ticket charges of £4.25 on Saturday 7 October 2023
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input example-checkbox" id="example-4" name="example" type="checkbox" value="train-ticket-3">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-4">
+                  Train ticket charges of £4.25 on Sunday 8 October 2023
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input example-checkbox" id="example-5" name="example" type="checkbox" value="train-ticket-4">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-5">
+                  Train ticket charges of £4.25 on Monday 9 October 2023
+                </label>
+              </div>
+            </div>
+            {% else %}
+            <div class="nhsuk-checkboxes">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input example-checkbox" id="example-1" name="example" type="checkbox" value="ticket-1">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                  Train ticket charges of £8.60 on Friday 6 October 2023
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input example-checkbox" id="example-2" name="example" type="checkbox" value="ticket-2">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                  Train ticket charges of £8.60 on Saturday 7 October 2023
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input example-checkbox" id="example-3" name="example" type="checkbox" value="ticket-3">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                  Train ticket charges of £8.60 on Sunday 8 October 2023
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input example-checkbox" id="example-4" name="example" type="checkbox" value="ticket-4">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-4">
+                  Train ticket charges of £8.60 on Monday 9 October 2023
+                </label>
+              </div>
+            </div>
+            {% endif %}
+          </fieldset>
+        </div>
+        
+        <button class="nhsuk-button">Continue</button><br>
+        <a href="TDAE-start-claim">Cancel</a>
+
+    </form>
+  </div>
+</div>
+
+
+
+<style>
+  .select-all-container {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  #select-all-link {
+    text-decoration: none;
+    color: #005eb8;
+    font-size: 1.1875rem;
+    text-decoration: underline;
+  }
+</style>
+
+
+<!-- Script for 'Select all' link -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const selectAllLink = document.getElementById('select-all-link');
+    const checkboxes = document.querySelectorAll('.example-checkbox');
+    let allSelected = false;
+
+    selectAllLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      allSelected = !allSelected;
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = allSelected;
+      });
+      selectAllLink.textContent = allSelected ? 'Unselect all' : 'Select all';
+    });
+
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        if (!checkbox.checked) {
+          allSelected = false;
+          selectAllLink.textContent = 'Select all';
+        } else if (Array.from(checkboxes).every(checkbox => checkbox.checked)) {
+          allSelected = true;
+          selectAllLink.textContent = 'Unselect all';
+        }
+      });
+    });
+  });
+</script>
+
+{% endblock %}

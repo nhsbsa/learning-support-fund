@@ -1,0 +1,56 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Is your course full or part time?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <!-- <form action="v9/final-year" method="POST"> -->
+
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">SSRN0000059 - Joe Bloggs</span>Is your course full or part time?</h1>
+                </legend>
+            
+                <div class="nhsuk-radios nhsuk-radios--inline">
+            
+                    <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="part-time" name="full-part-time" type="radio" value="part time">
+                    <label class="nhsuk-label nhsuk-radios__label" for="part-time">
+                        Part time
+                    </label>
+                    </div>
+            
+                    <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="full-time" name="full-part-time" type="radio" value="full time">
+                    <label class="nhsuk-label nhsuk-radios__label" for="full-time">
+                        Full time
+                    </label>
+                    </div>
+            
+                </div>
+                </fieldset>
+            
+            </div>
+
+            <a class="nhsuk-button" href="enrol-check-answers">Next</a><br>
+            <a href="dashboard">Cancel</a>
+
+        <!-- </form> -->
+
+
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Additional costs for your normal daily journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="reason" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+					<h1 class="nhsuk-heading-l">Who authorised you to use a taxi?</h1>
+				</label>
+
+				<div class="nhsuk-form-group">
+					<div class="nhsuk-hint">This should be someone from your university or placement.</div>
+					<label class="nhsuk-label" for="authorised-by">Authoriser's full name</label>
+					<input class="nhsuk-input" id="authorised-by" name="authorised-by" type="text">
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="authoriser-role">Role</label>
+					<div class="nhsuk-hint">For example, hospital mentor or placement co-ordinator</div>
+					<input class="nhsuk-input" id="authoriser-role" name="authoriser-role" type="text">
+				</div>
+
+
+			</div>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<p><a href="../TDAE-task-list">Cancel</a></p>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

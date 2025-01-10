@@ -1,0 +1,149 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+What is the start date of your claim?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<style>
+		ul, .nhsuk-list--circle {
+		  list-style-type: circle;
+		    padding-left: 20px;
+		}
+
+		.nhsuk-list-style-none{
+		  list-style: none;
+		}
+		</style>
+
+		<form action="v9/TDAE-evidence-pause" method="POST">
+
+			{% if data['week'] != '2' %}
+
+			<div class="nhsuk-form-group">
+				<fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+				  <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+					<h1 class="nhsuk-fieldset__heading">
+						{% if data['placement-week'] != '2' %}
+					  	Placement travel evidence
+						{% else %}
+							Evidence for period 1
+						{% endif %}
+					</h1>
+				  </legend>
+
+					<p>You need to show us evidence for:</p>
+
+					{% if data['claiming-for'] == 'car' %}
+					<ul class="nhsuk-list nhsuk-list--bullet">
+						<li>Parking charges</li>
+						<li class="nhsuk-list-style-none">
+					    <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
+					       <li>Friday 6 October 2023</li>
+						   <li>Saturday 7 October 2023</li>
+						   <li>Sunday 8 October 2023</li>
+						   <li>Monday 9 October 2023</li>
+					    </ul>
+					  </li>
+					  </li>
+					</ul>
+					
+					{% else %}
+					<ul class="nhsuk-list nhsuk-list--bullet">
+						<li>Bus ticket</li>
+						<li class="nhsuk-list-style-none">
+					    <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
+					       <li>Friday 6 October 2023 to Thursday 12 October 2023</li>
+					    </ul>
+					  </li>
+					  <li>Train tickets</li>
+						<li class="nhsuk-list-style-none">
+					    <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
+					       <li>Friday 6 October 2023</li>
+					       <li>Saturday 7 October 2023</li>
+								 <li>Sunday 8 October 2023</li>
+								 <li>Monday 9 October 2023</li>
+					    </ul>
+					  </li>
+					</ul>
+					{% endif %}
+
+					
+					  <!--<li>Tunnel or toll charges</li>
+						<li class="nhsuk-list-style-none">
+					    <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
+					       <li>Monday 5 June 2023</li>
+					    </ul>
+					  </li>
+					  <li>Congestion or clean air charges</li>
+						<li class="nhsuk-list-style-none">
+					    <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
+					       <li>Monday 5 June 2023</li>
+					    </ul>
+					  </li>-->
+					
+
+					<p>You can upload evidence for multiple costs in one image. For example, you can take a picture of multiple receipts that cover different days.</p>
+					<p>You can also upload one piece of evidence that covers multiple days. For example, a weekly parking pass. You only need to upload this once per period.</p>
+
+					<p>Evidence can be physical tickets, receipts from an online account, or a bank statement if necessary. These can be uploaded as images, screenshots, or PDFs.</p>
+
+
+				</fieldset>
+
+			  </div>
+
+			{% else %}
+
+			<div class="nhsuk-form-group">
+				<fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+				  <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+					<h1 class="nhsuk-fieldset__heading">
+					  Evidence for period 2
+					</h1>
+				  </legend>
+
+					<p>You need to give us evidence for your extra costs.</p>
+
+					<ul class="nhsuk-list nhsuk-list--bullet">
+					  <li>Parking charges</li>
+						<li class="nhsuk-list-style-none">
+					    <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
+					       <li>Monday 12 June 2023</li>
+					       <li>Tuesday 13 June 2023</li>
+								 <li>Wednesday 14 June 2023</li>
+								 <li>Thursday 15 June 2023</li>
+								 <li>Friday 16 June 2023</li>
+					    </ul>
+					  </li>
+					</ul>
+
+					<p>You can upload evidence for multiple costs in one image. For example, you can take a picture of multiple receipts that cover different days.</p>
+					<p>You can also upload one piece of evidence that covers multiple days. For example, a weekly parking pass. You only need to upload this once per period.</p>
+
+					<p>Evidence can be physical tickets, receipts from an online account, or a bank statement if necessary. These can be uploaded as images, screenshots, or PDFs.</p>
+
+				</fieldset>
+
+			  </div>
+
+			{% endif %}
+
+			<button class="nhsuk-button" type="submit">Upload evidence</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

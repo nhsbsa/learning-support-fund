@@ -1,0 +1,226 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<!-- <form action="" method="POST"> -->
+
+		<h1 class="nhsuk-heading-xl">Check your answers</h1>
+
+		<!-- if only one hire car booking -->
+		<dl class="nhsuk-summary-list">
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Total amount
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				{% if data['hire-vehicle-cost'] %}
+					£{{ data['hire-vehicle-cost'] }}
+					{% else %}
+					£120
+				{% endif %}
+			</dd>
+			{% if data['submit-claim'] != 'completed' %}
+			<dd class="nhsuk-summary-list__actions">
+
+				<a href="TDAE-hire-car-cost">
+					Change<span class="nhsuk-u-visually-hidden">cost of hire car</span>
+				</a>
+
+			</dd>
+			{% endif %}
+		</div>
+
+		<!-- start and end date of first hire car booking -->
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Booking start and end date
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				{% if data['hire-vehicle-start-day'] %}
+					{{ data['hire-vehicle-start-day'] }} <span class="cya-month">{{ data['hire-vehicle-start-month'] }}</span> {{ data['hire-vehicle-start-year'] }}
+				{% else %}
+					30 November 2023
+				{% endif %}
+			</dd>
+			{% if data['submit-claim'] != 'completed' %}
+			<dd class="nhsuk-summary-list__actions">
+
+				<a href="TDAE-hire-car-dates">
+					Change<span class="nhsuk-u-visually-hidden"> start and end date of booking</span>
+				</a>
+
+			</dd>
+			{% endif %}
+		</div>
+
+
+		<!-- first hire car booking authorised by -->
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Authorised by
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				{% if data['authorised-by'] %}
+					{{ data['authorised-by'] }}
+					{% else %}
+					John Doe
+				{% endif %}
+			</dd>
+			{% if data['submit-claim'] != 'completed' %}
+			<dd class="nhsuk-summary-list__actions">
+				<a href="TDAE-hire-car-authorisation">
+					Change<span class="nhsuk-u-visually-hidden">who it was authorised by</span>
+				</a>
+			</dd>
+			{% endif %}
+		</div>
+
+		<!-- reason for first hire car booking -->
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Reason for booking
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				{% if data['reason-for-hire'] %}
+					{{ data['reason-for-hire'] }}
+					{% else %}
+					My own car had an issue
+				{% endif %}
+			</dd>
+			{% if data['submit-claim'] != 'completed' %}
+			<dd class="nhsuk-summary-list__actions">
+				<a href="TDAE-hire-car-reason">
+					Change<span class="nhsuk-u-visually-hidden"> the reason for booking</span>
+				</a>
+			</dd>
+			{% endif %}
+		</div>
+
+		<!-- Additional comments for first hire car booking -->
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Comments
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				{% if data['additionalCostsComment'] %}
+					{{ data['additionalCostsComment'] }}
+					{% else %}
+					My car broke down and is currently at the garage being repaired.
+				{% endif %}
+			</dd>
+			{% if data['submit-claim'] != 'completed' %}
+			<dd class="nhsuk-summary-list__actions">
+				{% if data['additional-comments']  === 'yes' %}
+				<a href="TDAE-hire-car-comment">
+					Review<span class="nhsuk-u-visually-hidden"> additional comments</span>
+				</a>
+				{% else %}
+				<a href="TDAE-hire-car-add-comment">
+					Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
+				</a>
+				{% endif %}
+				</dd>
+				{% endif %}
+		</div>
+
+		<!-- Evidence uploaded for first hire car booking -->
+		<!--
+		{% if data['hire-car'] == 'in-progress' %}
+		<div class="nhsuk-summary-list__row" style="background-color: #fff9c4;">
+			<dt class="nhsuk-summary-list__key">
+				Evidence uploaded
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				Not uploaded yet
+			</dd>
+			{% if data['submit-claim'] != 'completed' %}
+			<dd class="nhsuk-summary-list__actions">
+				<a href="TDAE-hire-car-evidence">
+					Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+				</a>
+			</dd>
+			{% endif %}
+		</div>
+		{% else %}
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Evidence uploaded
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				<a href="/images/hire-car-booking-confirmation.jpg" download="Hire car evidence 30 November 2023">
+					snapshot-045-28-11-2023.jpg
+				</a>
+			</dd>
+			{% if data['submit-claim'] != 'completed' %}
+			<dd class="nhsuk-summary-list__actions">
+				<a href="TDAE-hire-car-evidence">
+					Change<span class="nhsuk-u-visually-hidden">evidence uploaded</span>
+				</a>
+			</dd>
+			{% endif %}
+		</div>
+		{% endif %}
+		-->
+		</dl>
+
+		<div class="button-container">
+			{% if data['submit-claim'] != 'completed' %}
+				<form action="TDAE-hire-car-evidence-overview" method="POST">
+					<button style="margin-right:20px;" class="nhsuk-button style=padding-right:10px;" type="submit">
+						Save and continue to evidence
+					</button>
+				</form>
+			{% endif %}
+		</div>
+
+		<p><a href="TDAE-task-list?hire-car=i">Cancel</a></p>
+
+		<!-- </form> -->
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			const months = {
+				"01": "January",
+				"02": "February",
+				"03": "March",
+				"04": "April",
+				"05": "May",
+				"06": "June",
+				"07": "July",
+				"08": "August",
+				"09": "September",
+				"1": "January",
+				"2": "February",
+				"3": "March",
+				"4": "April",
+				"5": "May",
+				"6": "June",
+				"7": "July",
+				"8": "August",
+				"9": "September",
+				"10": "October",
+				"11": "November",
+				"12": "December",
+			};
+
+			$(".cya-month").text(function () {
+				const month = $(this).text();
+				console.log("month:", month);
+				console.log("months[month]:", months[month]);
+				return months[month];
+			});
+		});
+		</script>
+
+</div>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Upload your evidence for week 2
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="overseas-evidence-mini-cya" method="POST">
+
+      <div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+					<h1 class="nhsuk-heading-l">What does your evidence relate to?</h1>
+				</label>
+
+        <div class="nhsuk-radios">
+
+        <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+          <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+            Authorisation of overseas placement
+          </label>
+        </div>
+        {% if data['overseas-cost'] %}
+          {% if 'insurance' in data['overseas-cost'] %}
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Insurance costs
+              </label>
+            </div>
+          {% endif %}
+
+          {% if 'medical-tests' in data['overseas-cost'] %}
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Medical test costs
+              </label>
+            </div>
+          {% endif %}
+
+          {% if 'vaccinations' in data['overseas-cost'] %}
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Vaccinations costs
+              </label>
+            </div>
+          {% endif %}
+
+          {% if 'visa-fees' in data['overseas-cost'] %}
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Visa fees costs
+              </label>
+            </div>
+          {% endif %}
+        {% endif %}
+
+      </div>
+
+      </div>
+
+      <button class="nhsuk-button" type="submit">Save and continue</button><br>
+
+      <p><a href="../TDAE-task-list-full?overseas-details=in-progress">Return to task list</a></p>
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

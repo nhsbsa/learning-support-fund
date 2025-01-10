@@ -1,0 +1,76 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Do you incur daily additional costs to your placement?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="v9/TDAE-placement-additional-costs-often" method="POST">
+
+
+            <div class="nhsuk-form-group">
+
+
+                <fieldset class="nhsuk-fieldset">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                        <h1 class="nhsuk-fieldset__heading">
+                            Do you incur daily additional costs to your placement?
+                        </h1>
+                    </legend>
+
+                    <div class="nhsuk-radios">
+                        <p>This is additional costs you incur while travelling between your term time address and placement.</p>
+                        <details class="nhsuk-details">
+                            <summary class="nhsuk-details__summary">
+                              <span class="nhsuk-details__summary-text">
+                                What are additional costs?
+                              </span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                              <p>The additional costs you can claim back are as follows:</p>
+                              <ul class="nhsuk-list nhsuk-list--bullet">
+                                <li>car parking - receipts, permits or invoices</li>
+                                <li>tunnel and toll charges - receipts</li>
+                                <li>Congestion and clean air charges - receipts, permits or invoices</li>
+                              </ul>
+                            </div>
+                          </details>
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="addition-costs-daily" name="often-additional-costs"
+                                type="radio" value="yes">
+                            <label class="nhsuk-label nhsuk-radios__label" for="addition-costs-daily">
+                                Yes
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="addition-costs-weekly" name="often-additional-costs"
+                                type="radio" value="no">
+                            <label class="nhsuk-label nhsuk-radios__label" for="addition-costs-weekly">
+                                No
+                            </label>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+    </div>
+
+    <button class="nhsuk-button" type="submit">Continue</button><br>
+    <a href="TDAE-start-claim">Cancel</a>
+
+    </form>
+
+</div>
+
+</div>
+{% endblock %}

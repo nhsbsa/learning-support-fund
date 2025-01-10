@@ -1,0 +1,111 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Which days does this evidence relate to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="TDAE-evidence-type" method="POST">
+
+
+            <div class="nhsuk-form-group">
+
+              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  <h1 class="nhsuk-fieldset__heading">
+                    Which day does this evidence relate to?
+                  </h1>
+                </legend>
+                {% if data['TDAE-multiple-weeks'] %}
+                  <div class="nhsuk-hint" id="example-hint">
+                    Select all options that are relevant to your evidence between
+                    {% if data['upload-week-2'] === 'yes' %}
+                      24 April 2023 and 28 April 2023.
+                    {% else %}
+                      17 April 2023 and 21 April 2023.
+                    {% endif %}
+                  </div>
+                {% else %}
+                  <div class="nhsuk-hint" id="example-hint">
+                    Select all options that are relevant to your evidence between 17 April 2023 and 21 April 2023.
+                  </div>
+                {% endif %}
+
+
+                <div class="nhsuk-checkboxes">
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="evidence-day-monday" name="evidence-day" type="checkbox" value="Monday">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="evidence-day-monday">
+                      {% if data['TDAE-multiple-weeks'] === 'yes' %}
+                          {% if data['upload-week-2'] === 'yes' %}
+                            Monday 24 April
+                          {% else %}
+                            Monday 17 April
+                          {% endif %}
+                      {% else %}
+                        Monday 17 April
+                      {% endif %}
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="evidence-day-wednesday" name="evidence-day" type="checkbox" value="Thursday">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="evidence-day-wednesday">
+                      {% if data['TDAE-multiple-weeks'] === 'yes' %}
+                          {% if data['upload-week-2'] === 'yes' %}
+                            {% if data['claiming-same-days'] === 'yes' %}
+                              Thursday 20 April
+                            {% else %}
+                              Tuesday 25 April
+                            {% endif %}
+                          {% else %}
+                            Thursday 20 April
+                          {% endif %}
+                      {% else %}
+                        Thursday 20 April
+                      {% endif %}
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="evidence-day-thursday" name="evidence-day" type="checkbox" value="Friday">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="evidence-day-thursday">
+                      {% if data['TDAE-multiple-weeks'] === 'yes' %}
+                          {% if data['upload-week-2'] === 'yes' %}
+                            Friday 28 April
+                          {% else %}
+                            Friday 21 April
+                          {% endif %}
+                      {% else %}
+                        Friday 21 April
+                      {% endif %}
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+
+            </div>
+
+            <button class="nhsuk-button">Continue</button><br>
+            <a href="TDAE-start-claim">Cancel</a>
+
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

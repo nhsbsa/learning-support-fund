@@ -1,0 +1,142 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Additional costs for your normal daily journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v9/TDAE-placement-cycle-journey-cya" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+					<h1 class="nhsuk-heading-l">
+						<h1 class="nhsuk-heading-l">Check placement cycle journey</h1>
+					</h1>
+
+					<dl class="nhsuk-summary-list">
+
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+							 Placement address
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['placement-cycle-mileage-address'] == 'Newcastle Hospital' %}
+									Newcastle Hospital<br>
+									Main Street<br>
+									Newcastle<br>
+									NE1 1AA
+								{% else %}
+									Alnwick Hospital<br>
+									Infirmary Drive<br>
+									Alnwick<br>
+									NE66 2NS
+								{% endif %}
+							</dd>
+							<dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-placement-cycle-mileage-address">
+									Change<span class="nhsuk-u-visually-hidden"> placement address</span>
+								</a>
+							</dd>
+						</div>
+
+						<div class="nhsuk-summary-list__row">
+					    <dt class="nhsuk-summary-list__key">
+					      Days travelled
+					    </dt>
+					    <dd class="nhsuk-summary-list__value">
+							{% if data['placement-cycle-mileage-address'] == 'Newcastle Hospital' %}
+								Friday 6 October 2023<br>
+								Saturday 7 October 2023
+							{% else %}
+								Sunday 8 October 2023<br>
+								Monday 9 October 2023
+							{% endif %}
+					    </dd>
+					    <dd class="nhsuk-summary-list__actions">
+					      <a href="TDAE-placement-cycle-journey-days">
+					        Change<span class="nhsuk-u-visually-hidden"> Days travelled to and from placement</span>
+					      </a>
+					    </dd>
+					  </div>
+
+						<div class="nhsuk-summary-list__row">
+					    <dt class="nhsuk-summary-list__key">
+					      Mileage to placement
+					    </dt>
+					    <dd class="nhsuk-summary-list__value">
+							{% if data['placement-cycle-to-mileage'] %}
+					  			{{ data['placement-cycle-to-mileage'] }}
+					  		{% else %}
+							  	No details entered
+				  			{% endif %}
+					    </dd>
+					    <dd class="nhsuk-summary-list__actions">
+					      <a href="TDAE-placement-cycle-to-mileage">
+					        Change<span class="nhsuk-u-visually-hidden"> Mileage to placement</span>
+					      </a>
+					    </dd>
+					  </div>
+
+						<div class="nhsuk-summary-list__row">
+					    <dt class="nhsuk-summary-list__key">
+					      Mileage from placement
+					    </dt>
+					    <dd class="nhsuk-summary-list__value">
+							{% if data['placement-cycle-return-mileage'] %}
+					  			{{ data['placement-cycle-return-mileage'] }}
+					  		{% else %}
+							  	No details entered
+				  			{% endif %}
+					    </dd>
+					    <dd class="nhsuk-summary-list__actions">
+					      <a href="TDAE-placement-cycle-return-mileage">
+					        Change<span class="nhsuk-u-visually-hidden"> Mileage returning from placement</span>
+					      </a>
+					    </dd>
+					  </div>
+
+					</dl>
+
+			</div>
+
+			{% if not data['placement-cycle-to-mileage'] and data['placement-cycle-return-mileage'] %}
+			<div class="nhsuk-inset-text">
+				<span class="nhsuk-u-visually-hidden">Information: </span>
+				<p>You can only claim mileage travelling from your placement because you did not tell us about any mileage to your placement.</p>
+			</div>
+			<button class="nhsuk-button" type="submit">Save and continue</button><br>
+			{% elif data['placement-cycle-to-mileage'] and not data['placement-cycle-return-mileage'] %}
+			<div class="nhsuk-inset-text">
+				<span class="nhsuk-u-visually-hidden">Information: </span>
+				<p>You can only claim mileage travelling to your placement because you did not tell us about any mileage from your placement.</p>
+			</div>
+			<button class="nhsuk-button" type="submit">Save and continue</button><br>
+			{% else %}
+			{% if not data['placement-cycle-to-mileage'] or not data['placement-cycle-return-mileage'] %}
+				<div class="nhsuk-inset-text">
+				<span class="nhsuk-u-visually-hidden">Information: </span>
+				<p>You cannot claim mileage for this journey because you did not enter any mileage details.</p>
+				</div>
+			{% else %}
+				<button class="nhsuk-button" type="submit">Save and continue</button><br>
+			{% endif %}
+			{% endif %}
+
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Student declaration
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="dashboard?bank-details-complete=true" method="POST">
+
+            <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+                <div class="nhsuk-card__content">
+                    {% if data['bank-details-complete'] == 'true' %}
+                    <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                        Bank or building society account details changed
+                    </h1>
+                    {% else %}
+                    <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                        Bank or building society account details added
+                    </h1>
+                    {% endif %}
+                    
+                </div>
+            </div>
+
+            <h2 class="nhsuk-heading-m">What happens next</h2>
+            <p>We'll pay your NHS Learning Support Fund payments into this account.</p>
+            <p>You can contact us by:</p>
+            <p>Telephone: 0300 330 0521<br>
+            Text Relay service: 18001 0300 330 0521</p>
+
+            <button class="nhsuk-button" type="submit">Go to your NHS Learning Support Fund account</button>
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

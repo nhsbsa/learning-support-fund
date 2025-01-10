@@ -1,0 +1,161 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Your residency
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <div class="nhsuk-form-group">
+
+            <h1 class="nhsuk-heading-l">Your residency details</h1>
+
+            <p>You need to tell us which countries you lived in for
+              {% if data['nationality'] === 'uk national' %}3
+              {% elif data['nationality'] === 'eu eea swiss national'%}5
+              {% else %}3
+              {% endif %}
+               years leading up to the start date of your course's first year.</p>
+
+
+            {% if data['residency'] != '' %}
+
+
+                <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+                    <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Added residencies</caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" class="" scope="col">
+                                Country
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Reason
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Date from
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Date to
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Country </span>
+                                {% if data['country'] %}
+                                  {{ data['country'] }}
+                                {% else %}
+                                  spain
+                                {% endif %}
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Reason </span>
+                                {% if data['reason'] %}
+                                  {{ data['reason'] }}
+                                {% else %}
+                                  I lived there for a few years with family
+                                {% endif %}
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Date from </span>1 September 2020
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Date to </span>
+                                {% if data['to-date-day'] %}
+                                {{ data['to-date-day'] }} <span class="cya-month">{{ data['to-date-month'] }}</span> {{ data['to-date-year'] }}
+                              {% else %}
+                                2 February 2023
+                              {% endif %}
+                            </td>
+                        </tr>
+                        {% if data['residency'] == '2' %}
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Country </span>
+                                  United Kingdom
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Reason </span>
+                                  Moved back to UK
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Date from </span>2 February 2023
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Date to </span>
+                                18 July 2023
+                            </td>
+                        </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            {% endif %}
+
+
+
+
+            {% if data['residency'] == '1' %}
+              <p><a class="" href="APPLY-residency?residency=">Clear all residencies</a></p><br>
+              <a class="nhsuk-button" href="APPLY-add-residency?residency=2">Add residency details</a><br>
+              <a class="nhsuk-button nhsuk-button--secondary" href="APPLY-submit-your-evidence">Continue</a><br>
+            {% elif data['residency'] == '2' %}
+              <p><a class="" href="APPLY-residency?residency=">Clear all residencies</a></p><br>
+              <a class="nhsuk-button nhsuk-button--secondary" href="APPLY-add-residency">Add residency details</a><br>
+              <a class="nhsuk-button" href="APPLY-submit-your-evidence">Continue</a><br>
+            {% else %}
+              <a class="nhsuk-button" href="APPLY-add-residency?residency=1">Add residency details</a><br>
+            {% endif %}
+
+            <a href="dashboard">Cancel</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        const months = {
+          "01": "January",
+          "02": "February",
+          "03": "March",
+          "04": "April",
+          "05": "May",
+          "06": "June",
+          "07": "July",
+          "08": "August",
+          "09": "September",
+          "1": "January",
+          "2": "February",
+          "3": "March",
+          "4": "April",
+          "5": "May",
+          "6": "June",
+          "7": "July",
+          "8": "August",
+          "9": "September",
+          "10": "October",
+          "11": "November",
+          "12": "December",
+        };
+
+        $(".cya-month").text(function () {
+          const month = $(this).text();
+          console.log("month:", month);
+          console.log("months[month]:", months[month]);
+          return months[month];
+        });
+      });
+      </script>
+{% endblock %}

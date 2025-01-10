@@ -1,0 +1,47 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Claim Travel and Dual Accommodation Expenses
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="v9/TDAE-hire-car-pause" method="POST">
+
+          <h1 class="nhsuk-heading-l">Add your hire car details</h1>
+
+          <div class="nhsuk-inset-text nhsuk-u-margin-top-3">
+						<p>You can only claim hire car costs if you have authorisation from your university. You'll need to upload evidence of this authorisation. For example, an email or note</p>
+					</div>
+
+					<p>You need to tell us about any cars you've hired to travel to or from your placements. For each one, we need to know:</p>
+
+					<ul class="nhsuk-list nhsuk-list--bullet">
+						<li>the cost you paid</li>
+						<li>the start and end date of the booking</li>
+						<li>who from your university authorised the car hire</li>
+						<li>the reason why you hired a car</li>
+					</ul>
+
+					<p>You also need to show us evidence for your car hire, such as receipts or invoices.</p>
+					<p>We only need details about your bookings, not the cars themselves. So you can enter a single booking with multiple cars together.
+					However, multiple bookings for the same car need to be separated.</p>
+					<p>If you had multiple bookings, you can add these after you have told us about the first one.</p>
+
+          <button class="nhsuk-button" type="submit">Add first hire car booking</button><br>
+      		<p><a href="TDAE-task-list">Cancel</a></p>
+
+      </form>
+
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Travel between accommodation and term time journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="../v9/TDAE-accommodation-journey-pause" method="POST">
+
+          <h1 class="nhsuk-heading-l">Add your accommodation travel details</h1>
+
+          <p>You need to tell us about any journeys you have made between your term time address and your accommodation. For each one, we need to know:</p>
+
+          <ul>
+            <li>whether you were travelling to or from your accommodation</li>
+            <li>the date of your journey</li>
+            <li>your method of transport</li>
+            <li>the total cost of your journey</li>
+          </ul>
+
+          <p>You also need to show us evidence for your costs. For example, public transport tickets or receipts for parking charges.</p>
+
+          <p>If you did multiple journeys, you can add these after you've told us about the first one.</p>
+
+          <button class="nhsuk-button" type="submit">Add first journey</button><br>
+      		<a href="TDAE-task-list">Cancel</a>
+
+      </form>
+
+    </div>
+
+</div>
+{% endblock %}

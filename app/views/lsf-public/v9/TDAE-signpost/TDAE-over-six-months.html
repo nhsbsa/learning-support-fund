@@ -1,0 +1,66 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Are you claiming for the previous academic year?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-l">
+
+      </h1>
+
+      <div class="nhsuk-card" style="background: #4B6271; margin-top: 0;">
+  			<div class="nhsuk-card__content">
+  			  <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+  				Your claim end date is over 6 months ago
+  			  </h1>
+  			  <!--h2 class="nhsuk-card__heading nhsuk-u-font-weight-normal" style="text-align: center; color: white;">
+  				Your claim end date is over 6 months ago
+  			  </h2>-->
+  			</div>
+  		</div>
+
+      <p>You can only submit a claim if its end date is less than 6 months ago.</p>
+
+      <p>If you were not able to submit it earlier due to exceptional circumstances, you'll need to tell us about this.<p>
+
+    <form action="../v9/TDAE-over-six-months" method="post">
+
+      <h2 class="nhsuk-heading-m">How do you want to continue?</h2>
+
+  		<div class="nhsuk-form-group">
+  			<div class="nhsuk-radios">
+  		    <div class="nhsuk-radios__item">
+  		      <input class="nhsuk-radios__input" id="submit-over-six-months-submit" name="submit-over-six-months" type="radio" value="submit">
+  		      <label class="nhsuk-label nhsuk-radios__label" for="submit-over-six-months-submit">
+  						Submit claim and tell us reason for exceptional circumstance
+  		      </label>
+  		    </div>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="submit-over-six-months-change" name="submit-over-six-months" type="radio" value="change-details">
+            <label class="nhsuk-label nhsuk-radios__label" for="submit-over-six-months-change">
+              Change claim details
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+  		      <input class="nhsuk-radios__input" id="submit-over-six-months-delete" name="submit-over-six-months" type="radio" value="delete">
+  		      <label class="nhsuk-label nhsuk-radios__label" for="submit-over-six-months-delete">
+  		        Delete this claim
+  		      </label>
+  		    </div>
+  		  </div>
+  		</div>
+  		<button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+  		  Continue
+  		</button>
+
+  		</form>
+
+    </div>
+
+  </div>
+{% endblock %}

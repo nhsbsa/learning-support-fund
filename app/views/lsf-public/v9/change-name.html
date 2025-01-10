@@ -1,0 +1,40 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  What are your contact details?
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+        <h1 class="nhsuk-heading-l">What is your name?</h1>
+
+        <div class="nhsuk-form-group">
+					<label id="firstname-label" for="firstname" class="nhsuk-label">First name</label>
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" name="firstName" id="firstname" type="text"
+						maxlength="35"
+						value="Joe" />
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label id="lastName-label" for="lastName" class="nhsuk-label">Last name</label>
+
+					<input name="lastName" id="lastName" class="nhsuk-input nhsuk-u-width-two-thirds"
+						type="text" maxlength="35"
+						value="Hutchinson" />
+				</div>
+
+        <a class="nhsuk-button" href="change-name-changed">Save and continue</a><br>
+        <p><a href="dashboard">Cancel</a></p>
+
+    </div>
+
+  </div>
+{% endblock %}

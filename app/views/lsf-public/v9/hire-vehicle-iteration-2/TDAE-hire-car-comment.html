@@ -1,0 +1,59 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Do you want to provide any related comments to your placement additional costs?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v9/TDAE-hire-car-comment" method="POST">
+
+      <div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+					{% if data['more-vehicles'] === "yes" %}
+						<h1 class="nhsuk-heading-l">Do you want to tell us anything more about the second hire vehicle?</h1>
+					{% else %}
+						<h1 class="nhsuk-heading-l">Do you want to tell us anything more about the hire vehicle?</h1>
+					{% endif %}
+				</label>
+
+              <p>Select yes if you'd like to further explain anything about hiring a vehicle you feel would help support your claim.</p>
+              <p>For example, if you'd like to tell us more about the evidence you have uploaded.</p>
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="hire-car-comments-yes" name="hire-car-comments" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="hire-car-comments-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="hire-car-comments-no" name="hire-car-comments" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="hire-car-comments-no">
+                    No
+                  </label>
+                </div>
+
+              </div>
+           
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

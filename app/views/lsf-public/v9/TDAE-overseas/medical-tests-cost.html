@@ -1,0 +1,64 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Is your term time address the same?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="medical-tests-add-comment" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  How much did your medical tests cost?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-hint">If you had multiple medical tests, enter the total amount.</div>
+
+              <label class="nhsuk-label" for="example">
+      					Cost in pounds
+      				</label>
+              <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+              <input class="nhsuk-input__prefix-input nhsuk-input nhsuk-input--width-5" id="medical-tests-cost" name="medical-tests-cost" type="text">
+
+
+
+            </fieldset>
+
+          </div>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                My costs are in a foreign currency
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>You need to enter all costs in pounds sterling.</p>
+
+              <p>If you used a card to pay costs, your bank statement should show you the correct value.</p>
+
+              <p>If you used cash, you need to convert your costs using the exchange rate on the day that you paid them.</p>
+            </div>
+          </details>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <p><a href="../TDAE-task-list">Cancel</a></p>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

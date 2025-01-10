@@ -1,0 +1,50 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Choose a username and password
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+          <div class="nhsuk-card__content">
+              <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                  Email sent to change phone number
+              </h1>
+          </div>
+      </div>
+
+      {% if data['new-email'] == "sent" %}
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>New email sent.</p>
+        </div>
+      {% endif %}
+
+      <p>We've sent you an email with a link to sign in to your NHS Learning Support Fund account. You can then change your phone number. You must sign in using the link in the email to do this.</p>
+
+      <h2 class="nhsuk-heading-m">What to do if you do not receive the email</h2>
+
+      <p>Check your spam or junk folder as the email may be there. If it's not, you can <a href="change-phone-number-email?new-email=sent">send a new email</a>.</p>
+
+      <p>If you have any further problems, you can contact us by:</p>
+
+      <ul class="nhsuk-list">
+          <li>Telephone: 0300 330 0521</li>
+          <li>Text relay service: 0800 7311 888</li>
+      </ul>
+
+      <p>We're open Monday to Friday 8am to 6pm, and Saturday 9am to 3pm.</p>
+
+      <p><a href="dashboard">Return to your NHS Learning Support Fund account</a></p>
+
+      <a href="sign-in?test-scenario=true">[link from email]</a>
+
+    </div>
+
+</div>
+{% endblock %}

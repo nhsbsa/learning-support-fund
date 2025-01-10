@@ -1,0 +1,148 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  What are your contact details?
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+      <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Check your bank details change request
+                </h1>
+              </legend>
+
+              {% if data['photo-id'] == 'requested' %}
+                <div class="nhsuk-warning-callout">
+                  <h3 class="nhsuk-warning-callout__label">
+                    <span role="text">
+                      <span class="nhsuk-u-visually-hidden">Important: </span>
+                      Different photo ID needed
+                    </span>
+                  </h3>
+                  <p>You need to upload different photo ID so we can complete your bank details change request. Select <b>Change</b> in the Photo ID section.</p>
+                  <p>If you have any questions, contact us by:</p>
+                  <ul class="nhsuk-list">
+                    <li>Telephone: 0300 330 0521</li>
+                    <li>Text relay service: 18001 0300 330 0521</li>
+                  </ul>
+                </div>
+              {% endif %}
+
+              <h2 class="nhsuk-heading-m">Existing bank or building society account details</h2>
+
+              <dl style="margin-bottom: 24px;" class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Name on account
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Joe Bloggs
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Sort code
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    111545
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Account number
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    00000003
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Building society roll number
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Not entered
+                  </dd>
+                </div>
+
+              </dl>
+
+              <p style="margin-bottom: 40px;"><a href="#">Change</a></p>
+
+              <h2 class="nhsuk-heading-m">New bank or building society account details</h2>
+
+              <dl style="margin-bottom: 24px;" class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Name on account
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Joe Bloggs
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Sort code
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    111545
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Account number
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    00000003
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Building society roll number
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Not entered
+                  </dd>
+                </div>
+              </dl>
+
+              <p style="margin-bottom: 40px;"><a href="#">Change</a></p>
+
+              <h2 class="nhsuk-heading-m">Photo ID</h2>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    File uploaded
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <a href="#">Passport.jpeg</a>
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="bank-details-evidence">Change</a>
+                  </dd>
+                </div>
+              </dl>
+
+              <div class="nhsuk-form-group">
+                <a class="nhsuk-button" href="bank-details-submitted">Submit bank details change request</a>
+                <p><a href="dashboard-2">Cancel</a></p>
+              </div>
+            </fieldset>
+
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- <form action="" method="POST"> -->
+
+        <h1 class="nhsuk-heading-xl">Check your answers</h1>
+
+        <h2 class="nhsuk-heading-m">Your placement</h2>
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Address
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    675 Building stree 1,<br>
+                    Building street 2,<br>
+                    Town,<br>
+                    County,<br>
+                    NE33 3CD
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="TDAE-term time-address">
+                        Change<span class="nhsuk-u-visually-hidden"> placement address</span>
+                    </a>
+
+                </dd>
+
+            </div>
+
+            
+
+        </dl>
+
+        <a class="nhsuk-button" href="TDAE-student-declaration">Save and continue</a><br>
+        <a href="TDAE-start-claim">Cancel</a>
+
+        <!-- </form> -->
+
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Claim Travel and Dual Accommodation Expenses
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <!-- <form action="" method="POST"> -->
+
+        <h1 class="nhsuk-heading-xl">Claim Travel and Dual Accommodation Expenses</h1>
+
+        <p>If your journey between your term time address and your placement cost more than your usual journey to university, you can claim back some of the excess costs. If you paid for accommodation to attend your placement, you can also claim back these costs up to a certain amount.</p>
+
+        <p>You can find out more about the service and what you’ll be reimbursed on our <a href="https://www.nhsbsa.nhs.uk/nhs-bursary-students/travel-and-dual-accommodation-expenses-tdae" target="_blank">Travel and Dual Accommodation website page (opens in new tab)</a>.</p>
+
+        <h2 class="nhsuk-heading-m">Before you start</h2>
+
+        <p>You’ll need to tell us:</p>
+
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>your university student ID, if you've not already told us this</li>
+            <li>your university address</li>
+            <li>your placement addresses</li>
+            <li>your accommodation addresses, if relevant</li>
+            <li>your travel details</li>
+            <li>information about all your costs</li>
+        </ul>
+
+        <h2 class="nhsuk-heading-m">Evidence you'll need</h2>
+
+        <p>You’ll also need to show us evidence for some of the costs you paid. You can upload images, screenshots, or PDFs of receipts, permits, or invoices.</p>
+
+        <p>Examples of costs we need evidence for are:</p>
+
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>parking charges</li>
+            <li>public transport charges</li>
+            <li>tunnel or toll charges</li>
+            <li>congestion or clean air charges</li>
+            <li>accommodation charges</li>
+            <li>hire car receipts</li>
+        </ul>
+
+        <p>You do not need to give us evidence of petrol costs.</p>
+
+        <a class="nhsuk-button nhsuk-u-margin-top-3" href="change-student-id?TDAE=true">Start now</a>
+
+        <h2 class="nhsuk-heading-m">Get help claiming your costs</h2>
+
+        <p>If you have any problems claiming your costs online, you can <a href="https://www.nhsbsa.nhs.uk/nhs-learning-support-fund-lsf/contact-us" target="_blank">contact us (opens in new tab)</a>.</p>
+
+        <!-- </form> -->
+
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,151 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Evidence you have uploaded
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form id="evidenceForm" action="../v9/TDAE-overseas/vaccinations-evidence-mini-cya" method="POST">
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="placement-additional-costs">
+            <h1 class="nhsuk-heading-l">Evidence uploaded for your vaccination costs</h1>
+          </label>
+
+        <!-- Hide or show this section based on evidence status -->
+        {% set displayStyle = "display:none;" if (data['evidenceRow1'] == 'Removed' and data['evidenceRow2'] == 'Removed') else "" %}
+        <div id="evidenceSection">
+        <div id="evidenceContainer">
+          <table id="evidenceTable" class="nhsuk-table">
+            <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Evidence uploaded</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                    File
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Action
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+                <td class="nhsuk-table__cell ">
+                    <a href="" target="_blank" rel="noopener">
+                      vaccination-costs.pdf
+                    </a>
+                </td>
+                <td class="nhsuk-table__cell ">
+                  <a href="#" class="removeEvidence" data-row="evidenceRow1">Remove</a>
+                </td>
+              </tr>
+            
+              {% if data['more-vaccinations-evidence'] === 'yes' %}
+              <tr role="row" class="nhsuk-table__row" id="evidenceRow2">
+                <td class="nhsuk-table__cell ">
+                    <a href="" target="_blank" rel="noopener">
+                      snapshot-02.jpg
+                    </a>
+                </td>
+                <td class="nhsuk-table__cell ">
+                  <a href="#" class="removeEvidence" data-row="evidenceRow2">Remove</a>
+                </td>
+              </tr>
+              {% endif %}
+            </tbody>
+            </table>
+          </div>
+     
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                <h2 class="nhsuk-fieldset__heading">
+                  Do you want to add more evidence?
+                </h2>
+              </legend>
+
+              <div class="nhsuk-hint" id="contact-hint">
+                If you had multiple vaccinations, upload evidence for each one separately. 
+              </div>
+
+              <div class="nhsuk-radios nhsuk-radios--inline">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="more-evidence-yes" name="more-vaccinations-evidence" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="more-evidence-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="more-evidence-no" name="more-vaccinations-evidence" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="more-evidence-no">
+                    No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+           
+          <br>
+          <button class="nhsuk-button" type="submit">Continue</button><br>
+
+          </div>
+
+          {% set displayStyle = "display:none;" if not(data['evidenceRow1'] == 'Removed' and data['evidenceRow2'] == 'Removed') else "" %}
+          <div id="noEvidenceTextContainer">
+            <div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+                <p>You have removed all evidence and will need to add new evidence.</p>
+            </div>
+            <p style="margin-bottom:0px;"><a href="vaccinations-evidence?evidence=added" class="nhsuk-button">Add evidence</a></p>
+          </div>
+            
+        <p><a href="../TDAE-task-list">Cancel</a></p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const evidenceTable = document.getElementById('evidenceTable');
+    const noEvidenceTextContainer = document.getElementById('noEvidenceTextContainer');
+    const evidenceSection = document.getElementById('evidenceSection');
+  
+    function updateUIBasedOnEvidence() {
+      if (!evidenceTable || evidenceTable.getElementsByTagName('tbody')[0].rows.length === 0) {
+        noEvidenceTextContainer.style.display = 'block';
+        evidenceSection.style.display = 'none';
+      } else {
+        noEvidenceTextContainer.style.display = 'none';
+        evidenceSection.style.display = 'block';
+      }
+    }
+  
+    if (evidenceTable) {
+      evidenceTable.addEventListener('click', function(event) {
+        if (event.target.classList.contains('removeEvidence')) {
+          event.preventDefault();
+          const rowId = event.target.getAttribute('data-row');
+          const row = document.getElementById(rowId);
+          row.remove();
+          updateUIBasedOnEvidence();
+        }
+      });
+    }
+  
+    updateUIBasedOnEvidence();
+  });
+  </script>
+{% endblock %}

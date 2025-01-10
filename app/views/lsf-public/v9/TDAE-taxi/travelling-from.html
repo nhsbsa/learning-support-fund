@@ -1,0 +1,122 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Additional costs for your normal daily journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="../v9/travelling-from" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+					<h1 class="nhsuk-heading-l">Where did you get the taxi from?</h1>
+				</label>
+
+				<div class="nhsuk-hint" id="contact-hint"></div>
+
+
+				<div class="nhsuk-radios">
+
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="travelling-from" name="travelling-from" type="radio" value="yes">
+						<label class="nhsuk-label nhsuk-radios__label" for="travelling-from">
+							Alnwick Hospital, NE66 2NS
+						</label>
+						<div class="nhsuk-hint nhsuk-checkboxes__hint" id="accommodation-address-1-hint">
+							<details class="nhsuk-details">
+								<summary class="nhsuk-details__summary">
+									<span class="nhsuk-details__summary-text">
+										View full address
+									</span>
+								</summary>
+								<div class="nhsuk-details__text">
+									Alnwick Hospital<br>
+									Infirmary Drive<br>
+									Alnwick<br>
+									NE66 2NS
+								</div>
+							</details>
+						</div>
+					</div>
+
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="travelling-from" name="travelling-from" type="radio" value="yes">
+						<label class="nhsuk-label nhsuk-radios__label" for="travelling-from">
+							The Hog's Head Inn, NE66 2BF
+						</label>
+						<div class="nhsuk-hint nhsuk-checkboxes__hint" id="accommodation-address-1-hint">
+							<details class="nhsuk-details">
+								<summary class="nhsuk-details__summary">
+									<span class="nhsuk-details__summary-text">
+										View full address
+									</span>
+								</summary>
+								<div class="nhsuk-details__text">
+									The Hog's Head Inn<br>
+									Hawfinch Drive<br>
+									Alnwick<br>
+									NE66 2BF
+								</div>
+							</details>
+						</div>
+					</div>
+
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="travelling-to" name="travelling-from" type="radio" value="yes">
+						<label class="nhsuk-label nhsuk-radios__label" for="travelling-from">
+							Stephenson House, NE2 1AW
+						</label>
+						<div class="nhsuk-hint nhsuk-checkboxes__hint" id="accommodation-address-1-hint">
+						<details class="nhsuk-details">
+							<summary class="nhsuk-details__summary">
+								<span class="nhsuk-details__summary-text">
+									View full address
+								</span>
+							</summary>
+							<div class="nhsuk-details__text">
+								Stephenson House<br>
+								Stoddart St<br>
+								Shieldfield<br>
+								Newcastle upon Tyne<br>
+								NE2 1AW
+							</div>
+						</details>
+						</div>
+					</div>
+
+					<p>or</p>
+
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="travelling-from-new" name="travelling-from" type="radio" value="new">
+						<label class="nhsuk-label nhsuk-radios__label" for="travelling-from-new">
+							Add a new address
+						</label>
+					</div>
+
+				</div>
+
+
+			</div>
+	</div>
+</div>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<p><a href="../TDAE-task-list">Cancel</a></p>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Are you claiming for the previous academic year?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+      <h1 class="nhsuk-heading-l">
+          Which academic year is your claim for?
+      </h1>
+
+      <p>You're making a claim for the current academic year, but your claim start date 01 May 2023 is in the previous year.</p>
+
+      <p>You need to change your start date so that it's in this academic year to continue.</p>
+
+      <p>If you want to claim for the previous year, you need to choose it from the dashboard first.</p>
+
+      <a href="#" class="nhsuk-button nhsuk-button--secondary">Change claim dates</a><br>
+      <a href="#" class="nhsuk-button">Go to dashboard</a>
+
+      <p><a href="#">Cancel</a></p>
+
+    </div>
+
+  </div>
+{% endblock %}

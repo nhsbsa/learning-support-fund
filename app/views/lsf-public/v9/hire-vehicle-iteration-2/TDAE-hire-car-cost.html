@@ -1,0 +1,45 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Additional costs for your normal daily journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v9/TDAE-hire-car-cost" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+					{% if data['more-vehicles'] === "yes" %}
+						<h1 class="nhsuk-heading-l">How much did hiring a second vehicle cost you?</h1>
+					{% else %}
+						<h1 class="nhsuk-heading-l">How much did hiring a vehicle cost you?</h1>
+					{% endif %}
+				</label>
+
+				<label class="nhsuk-label" for="example">
+					Cost in pounds
+				</label>
+				<div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+				<input class="nhsuk-input__prefix-input nhsuk-input nhsuk-input--width-5" id="hire-vehicle-cost" name="hire-vehicle-cost" type="text">
+			</div>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<a href="TDAE-task-list">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

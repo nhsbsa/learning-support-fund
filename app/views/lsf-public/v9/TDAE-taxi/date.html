@@ -1,0 +1,67 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Additional costs for your normal daily journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="travelling-from" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+					<h1 class="nhsuk-heading-l">When was this taxi journey?</h1>
+				</label>
+
+				<div class="nhsuk-form-group">
+					  <div class="nhsuk-hint" id="contact-hint">For example, 15 5 2024</div>
+
+					<div class="nhsuk-date-input" id="example">
+					  <div class="nhsuk-date-input__item">
+						<div class="nhsuk-form-group">
+						  <label class="nhsuk-label nhsuk-date-input__label" for="taxi-journey-day">
+							Day
+						  </label>
+						  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="taxi-journey-day" name="taxi-journey-day" type="text" pattern="[0-9]*" inputmode="numeric">
+						</div>
+					  </div>
+					  <div class="nhsuk-date-input__item">
+						<div class="nhsuk-form-group">
+						  <label class="nhsuk-label nhsuk-date-input__label" for="taxi-journey-month">
+							Month
+						  </label>
+						  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="taxi-journey-month" name="taxi-journey-month" type="text" pattern="[0-9]*" inputmode="numeric">
+						</div>
+					  </div>
+					  <div class="nhsuk-date-input__item">
+						<div class="nhsuk-form-group">
+						  <label class="nhsuk-label nhsuk-date-input__label" for="taxi-journey-year">
+							Year
+						  </label>
+						  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="taxi-journey-year" name="taxi-journey-year" type="text" pattern="[0-9]*" inputmode="numeric">
+						</div>
+					  </div>
+					</div>
+				</div>
+
+			</div>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<p><a href="../TDAE-task-list">Cancel</a></p>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

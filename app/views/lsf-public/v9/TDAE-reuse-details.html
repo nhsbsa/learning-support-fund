@@ -1,0 +1,193 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Do you want to provide any related comments to your placement additional costs?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v9/TDAE-reuse-details" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Which answers from this claim do you want to reuse?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-hint" id="contact-hint">
+                Select all that apply.
+              </div>
+
+            {% if data['claim-reused'] == 'Newcastle' %}
+
+              <div class="nhsuk-checkboxes">
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="placement-address-1" name="reused-details" type="checkbox" value="placement-address-1" aria-describedby="placement-address-1-hint">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="placement-address-1">
+                    Placement address 1
+                  </label>
+                  <div class="nhsuk-hint nhsuk-checkboxes__hint" id="placement-address-1-hint">
+                    Newcastle Hospital, NE1 1AA
+                    <details class="nhsuk-details">
+                      <summary class="nhsuk-details__summary">
+                        <span class="nhsuk-details__summary-text">
+                          View placement address 1
+                        </span>
+                      </summary>
+                      <div class="nhsuk-details__text">
+                        Newcastle Hospital<br>
+                        Main Street<br>
+                        Newcastle<br>
+                        NE1 1AA
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="placement-address-2" name="reused-details" type="checkbox" value="placement-address-2" aria-describedby="placement-address-2-hint">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="placement-address-2">
+                    Placement address 2
+                  </label>
+                  <div class="nhsuk-hint nhsuk-checkboxes__hint" id="placement-address-2-hint">
+                    Freemans Hospital, NE2 2BC
+                    <details class="nhsuk-details">
+                      <summary class="nhsuk-details__summary">
+                        <span class="nhsuk-details__summary-text">
+                          View placement address 2
+                        </span>
+                      </summary>
+                      <div class="nhsuk-details__text">
+                        Freemans Hospital<br>
+                        Freemans Road<br>
+                        Newcastle<br>
+                        NE2 2BC
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="term-time-address" name="reused-details" type="checkbox" value="term-time-address" aria-describedby="term-time-address-hint">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="term-time-address">
+                    Term time address
+                  </label>
+                  <div class="nhsuk-hint nhsuk-checkboxes__hint" id="term-time-address-hint">
+                    Stephenson House, NE2 1AW
+                    <details class="nhsuk-details">
+                      <summary class="nhsuk-details__summary">
+                        <span class="nhsuk-details__summary-text">
+                          View term time address
+                        </span>
+                      </summary>
+                      <div class="nhsuk-details__text">
+                        Stephenson House<br>
+                        Stoddart St<br>
+                        Shieldfield<br>
+                        Newcastle upon Tyne <br>
+                        NE2 1AW
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="university-travel-details" name="reused-details" type="checkbox" value="university-travel-details" aria-describedby="university-travel-details-hint">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="university-travel-details">
+                    University travel details
+                  </label>
+                  <div class="nhsuk-hint nhsuk-checkboxes__hint" id="university-travel-details-hint">
+                    <a href="TDAE-normal-summary-cya?submit-claim=completed&mode-of-transport=walk">View university travel details</a>
+                  </div>
+                </div>
+
+              </div>
+            {% else %}
+
+            <div class="nhsuk-checkboxes">
+
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="placement-address-1" name="reused-details" type="checkbox" value="placement-address-1" aria-describedby="placement-address-1-hint">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="placement-address-1">
+                  Placement address
+                </label>
+                <div class="nhsuk-hint nhsuk-checkboxes__hint" id="placement-address-1-hint">
+                  Alnwick Hospital, NE66 2NS
+                  <details class="nhsuk-details">
+                    <summary class="nhsuk-details__summary">
+                      <span class="nhsuk-details__summary-text">
+                        View placement address 1
+                      </span>
+                    </summary>
+                    <div class="nhsuk-details__text">
+                      Alnwick Hospital<br>
+                      Infirmary Drive<br>
+                      Alnwick<br>
+                      NE66 2NS
+                    </div>
+                  </details>
+                </div>
+              </div>
+
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="term-time-address" name="reused-details" type="checkbox" value="term-time-address" aria-describedby="term-time-address-hint">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="term-time-address">
+                  Term time address
+                </label>
+                <div class="nhsuk-hint nhsuk-checkboxes__hint" id="term-time-address-hint">
+                  Stephenson House, NE2 1AW
+                  <details class="nhsuk-details">
+                    <summary class="nhsuk-details__summary">
+                      <span class="nhsuk-details__summary-text">
+                        View term time address
+                      </span>
+                    </summary>
+                    <div class="nhsuk-details__text">
+                      Stephenson House<br>
+                      Stoddart St<br>
+                      Shieldfield<br>
+                      Newcastle upon Tyne <br>
+                      NE2 1AW
+                    </div>
+                  </details>
+                </div>
+              </div>
+
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="university-travel-details" name="reused-details" type="checkbox" value="university-travel-details" aria-describedby="university-travel-details-hint">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="university-travel-details">
+                  University travel details
+                </label>
+                <div class="nhsuk-hint nhsuk-checkboxes__hint" id="university-travel-details-hint">
+                  <a href="TDAE-normal-summary-cya?submit-claim=completed&mode-of-transport=walk">View university travel details</a>
+                </div>
+              </div>
+
+            </div>
+
+            {% endif %}
+
+            </fieldset>
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

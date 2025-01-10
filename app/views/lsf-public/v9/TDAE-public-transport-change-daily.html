@@ -1,0 +1,96 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Which mode of transport do you take to and from your normal place of study?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+    <form action="TDAE-public-transport-overview" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-heading-l">
+                  How much did this {{ data['public-transport-ticket'] | default('') | lower }} {{ data['public-transport-type'] | default('') | lower }} ticket cost?
+                </h1>
+              </legend>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Public transport type
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Train
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Ticket type
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Daily
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Date
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {{ data['train-date'] }}
+                  </dd>
+                </div>
+
+              </dl>
+
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="example">
+                  Cost in pounds
+                </label>
+                <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+                <input class="nhsuk-input__prefix-input nhsuk-input nhsuk-input--width-5" id="public-transport-daily-cost" name="public-transport-daily-cost" type="text">
+              </div>
+
+            </fieldset>
+
+          </div>
+
+          {% if 'overseas' in data['claiming-for'] %}
+              <details class="nhsuk-details">
+                <summary class="nhsuk-details__summary">
+                  <span class="nhsuk-details__summary-text">
+                  My costs are in a foreign currency
+                  </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                  <p>You need to enter all costs in pounds sterling.</p>
+
+                  <p>If you used a card to pay costs, your bank statement should show you the correct value.</p>
+
+                  <p>If you used cash, you need to convert your costs using the exchange rate on the day that you paid them.</p>
+                </div>
+            	</details>
+            {% endif %}
+
+      <button class="nhsuk-button" type="submit">Save and continue</button><br>
+      <a href="TDAE-public-transport-overview">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Student declaration
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <form id="dec-form" action="TDAE-claim-submitted" method="POST">
+      
+      <!-- JS error summary container -->
+      <div id="error-summary"></div>
+      <!-- /. -->
+
+      <h1 class="nhsuk-heading-xl">Student declaration</h1>
+      <div class="nhsuk-warning-callout">
+        <h2 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Declaration
+          </span>
+        </h2>
+        <p>Review all information you have provided before completing this declaration. Read this declaration carefully before accepting it. If you choose not to accept it, your funding application will not be processed.</p>
+        <p>I declare that:</p>
+        <ol class="nhsuk-list nhsuk-list--number nhsuk-u-margin-bottom-7">
+          <li>I am undertaking a pre-registration healthcare programme at a university in England that is eligible for Travel and Dual Accommodation Expenses.</li>
+          <li>I have read and understood the relevant booklet/s and/or any other other information regarding the conditions for claiming Travel and Dual Accommodation Expenses.</li>
+          <li>By signing this declaration I am also aware of the main NHS Learning Support Fund terms and conditions, including the Privacy Notice and Consent to share information clauses, as set out in the declaration I signed when I registered for my NHS LSF account.</li>
+          <li>I confirm that I have enrolled and commenced on my programme of study and am still in active training.</li>
+          <li>I confirm that the expenses claimed were essentially incurred as a result of my attending practice placements and that my normal daily travel to university costs have been deducted.</li>
+          <li>I confirm that I have used the cheapest available transport, where available, to access the practice placement/s.</li>
+          <li>I confirm that, if I have claimed for a private motor vehicle, I have appropriate insurance in place.</li>
+          <li>I understand that the administration of Travel and Dual Accommodation Expenses and responsibility for counter fraud and security management in the NHS are both responsibilities of the NHS Business Services Authority. I understand that NHSBSA Student Services may share the information on this form with NHS Counter Fraud Authority for the purposes of the prevention, detection, investigation and prosecution of fraud or any other unlawful activity affecting the NHS.</li>
+          <li>I understand and accept that if I fail to give sufficient notice of any change to my bank or building society account details, or provide incorrect details, NHSBSA Student Services cannot take responsibility for payments made to an incorrect account, delayed payments or non-payment of the funding.</li>
+          <li>I understand and accept that the terms and conditions (including rates) of Travel and Dual Accommodation Expenses may change at any time without notice, and the scheme is subject to continued government funding, which may cease at any time without notice.</li>
+          <li>I declare that the information given on this form and in any supporting documents provided is complete and accurate. I understand and accept that if I provide NHSBSA Student Services with false or misleading information, financial support may be refused or withdrawn and I may be liable to prosecution and/or civil proceedings.</li>
+        </ol>
+      </div>
+
+      <div id="checkbox-group" class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-u-visually-hidden">Do you accept the declaration?</legend>
+          <div id="error-msg" class="nhsuk-error-message"></div>
+          <div class="nhsuk-checkboxes__item nhsuk-u-margin-bottom-3">
+            <input class="nhsuk-checkboxes__input" id="student-declaration" name="student-declaration" type="checkbox" value="email">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="student-declaration">Accept declaration</label>
+          </div>
+        </fieldset>
+      </div>
+      
+      <button class="nhsuk-button" id="button-submit" type="submit">Submit claim</button>
+      <p><a href="TDAE-start-claim">Cancel</a></p>
+    </form>
+  </div>
+</div>
+{% endblock %}
+{% block pageScripts %}
+  <script>
+    var checkbox = document.getElementById('student-declaration');
+    var submit = document.getElementById('button-submit');
+    var ErrSummary = document.getElementById('error-summary');
+    var ErrMsg = document.getElementById('error-msg');
+    var summaryHTML =
+    "<div id='innerSummary' class='nhsuk-error-summary' role='alert' aria-labelledby='errorSummary'>" +
+    "<h2 class='nhsuk-error-summary__title' id='errorSummary'>There is a problem</h2>" +
+    "<ul id='jsSummaryList' class='nhsuk-list nhsuk-error-summary__list'>" +
+    "<li>" +
+    "<a href='#student-declaration' id='errorLink'>You must accept the declaration to continue</a>" +
+    "</li>" +
+    "</ul>" +
+    "</div>";
+
+    function checkDeclaration(event){
+      event.preventDefault();
+      if (checkbox.checked) {
+        var form = document.getElementById('dec-form')
+        form.submit();
+      } else {
+        ErrSummary.innerHTML = summaryHTML;
+        document.getElementById('innerSummary').setAttribute('tabindex', '-1');
+        document.getElementById('innerSummary').focus(); 
+        document.getElementById('checkbox-group').classList.add('nhsuk-form-group--error');
+        ErrMsg.innerHTML = 'You must accept the declaration to continue';
+        document.title = 'Error: ' + document.title;
+      }
+    }
+    submit.addEventListener('click', checkDeclaration);
+  </script>
+{% endblock %}
+

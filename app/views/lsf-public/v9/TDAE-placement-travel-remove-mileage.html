@@ -1,0 +1,105 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Are you sure you want to remove this hire vehicle?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                    Are you sure you want to remove this mileage?
+                </h1>
+              </legend>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+  								<dt class="nhsuk-summary-list__key">
+  									Date
+  								</dt>
+  								<dd class="nhsuk-summary-list__value">
+                    {{ data['mileage-date'] }}
+  								</dd>
+  							</div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Placement address
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Newcastle Hospital<br>
+                    Main Street<br>
+                    Newcastle<br>
+                    NE1 1AA
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    {% if data['journey'] == 'to' %}
+  									  Mileage to placement
+                    {% else %}
+                      Mileage returning from placement
+                    {% endif %}
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    10
+                  </dd>
+                </div>
+
+              </dl>
+
+              <div class="nhsuk-radios nhsuk-radios--inline">
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="dates-warning-yes" name="dates-warning" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="dates-warning-yes">
+                        Yes
+                    </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="dates-warning-no" name="dates-warning" type="radio" value="no">
+                    <label class="nhsuk-label nhsuk-radios__label" for="dates-warning-no">
+                        No
+                    </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+          <form id="vehicle-hire" action="TDAE-placement-itinerary" method="POST">
+              <button class="nhsuk-button" type="submit">Save and continue</button><br>
+          </form>
+          <!--<p><a href="TDAE-placement-itinerary">Cancel</a></p>-->
+
+      <script>
+          // Add an event listener to the form submission
+          document.getElementById('vehicle-hire').addEventListener('submit', function (event) {
+              // Prevent the default form submission behavior
+              event.preventDefault();
+
+              // Add your logic here to navigate back to the previous page
+              history.back();
+          });
+      </script>
+
+
+    </div>
+
+  </div>
+{% endblock %}

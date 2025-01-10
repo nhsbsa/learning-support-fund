@@ -1,0 +1,123 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Evidence summary
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<!-- <form action="#" method="POST"> -->
+
+
+      <h1 class="nhsuk-heading-l">Evidence summary</h1>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Week 1
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+
+          <p>Evidence for the dates between 28 November 2022 and 4 December 2022</p>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dd class="nhsuk-summary-list__value">
+                congestion-charge.jpg
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+
+                <a href="TDAE-delete-evidence">
+                  Delete<span class="nhsuk-u-visually-hidden"> evidence</span>
+                </a>
+
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dd class="nhsuk-summary-list__value">
+                parking-receipt.jpg
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+
+                <a href="#">
+                  Delete<span class="nhsuk-u-visually-hidden"> evidence</span>
+                </a>
+
+              </dd>
+
+            </div>
+
+          </dl>
+        </div>
+      </details>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Week 2
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Evidence for the dates between 5 December 2022 and 9 December 2022</p>
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dd class="nhsuk-summary-list__value">
+                congestion-charge.jpg
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+
+                <a href="#">
+                  Delete<span class="nhsuk-u-visually-hidden"> evidence</span>
+                </a>
+
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dd class="nhsuk-summary-list__value">
+                parking-receipt.jpg
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+
+                <a href="#">
+                  Delete<span class="nhsuk-u-visually-hidden"> evidence</span>
+                </a>
+
+              </dd>
+
+            </div>
+
+          </dl>
+        </div>
+      </details>
+
+
+
+			<a class="nhsuk-button nhsuk-u-margin-right-3" href="TDAE-placement-cost-summary">Continue</a>
+            <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-add-evidence-week">Add more evidence</a><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		<!-- </form> -->
+
+	</div>
+
+</div>
+{% endblock %}

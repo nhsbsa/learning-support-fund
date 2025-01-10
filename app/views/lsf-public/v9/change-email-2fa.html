@@ -1,0 +1,76 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Enter the security code
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+        <h1 class="nhsuk-heading-l">Check your phone</h1>
+
+        {% if data['send-again'] == 'true' %}
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>New code sent.</p>
+          </div>
+        {% endif %}
+
+        <p>We've sent a text message with a security code to <b>*******6920</b>.
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Not received a text message?
+            </span>
+          </summary>
+          {% if data['request-new'] == 'max' %}
+          <div class="nhsuk-details__text">
+            <p>Text messages sometimes take a few minutes to arrive. You cannot request a new code as you've reached the maximum number of codes you can receive.</p>
+          </div>
+          {% else %}
+          <div class="nhsuk-details__text">
+            <p>Text messages sometimes take a few minutes to arrive. If you do not receive the text message, you can <a href="phone-number-2fa?send-again=true&request-new=max">request a new one</a>.</p>
+          </div>
+          {% endif %}
+        </details>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="sign-in-email">
+              Security code
+            </label>
+            <div class="nhsuk-hint" id="example-with-hint-text-hint">
+              This is a 5 digit code
+            </div>
+            <input class="nhsuk-input nhsuk-input--width-10" id="security-code" name="security-code" type="text">
+        </div>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              I cannot access my phone
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>You cannot change some details without entering a security code. Try again later when you're able to access your phone.</p>
+            <p>If you no longer use this phone number, you can change it in your personal details or contact us by:</p>
+            <ul class="nhsuk-list">
+              <li>Telephone: 0300 330 0521</li>
+              <li>Text relay service: 18001 0300 330 0521</li>
+            </ul>
+          </div>
+        </details>
+
+        <a class="nhsuk-button" href="change-email-changed">Save and continue</a><br>
+        <p><a href="sign-in">Cancel</a></p>
+
+    </div>
+
+  </div>
+{% endblock %}

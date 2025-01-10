@@ -1,0 +1,58 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Are you sure you want to delete evidence?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="../v9/TDAE-sure-remove-all" method="POST">
+
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <h1 class="nhsuk-fieldset__heading">
+                      Are you sure you want to continue submitting this claim?
+                    </h1>
+                  </legend>
+
+									<div class="nhsuk-hint">You'll still be reimbursed for costs other than placement travel, taxi and accommodation travel.</div>
+
+                  <div class="nhsuk-radios">
+
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="delete-evidence-yes" name="remove-all" type="radio" value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="delete-evidence-yes">
+                        Yes
+                      </label>
+                    </div>
+
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="delete-evidence-no" name="remove-all" type="radio" value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="delete-evidence-no">
+                        No
+                      </label>
+                    </div>
+
+                  </div>
+                </fieldset>
+
+              </div>
+
+			<button class="nhsuk-button" type="submit">Save and continue</button><br>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

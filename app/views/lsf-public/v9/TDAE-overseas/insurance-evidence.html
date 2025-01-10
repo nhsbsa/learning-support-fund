@@ -1,0 +1,74 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Upload your evidence for week 2
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="overseas-evidence-mini-cya" method="POST">
+
+      <div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+					<h1 class="nhsuk-heading-l">Upload evidence of your insurance costs</h1>
+				</label>
+
+      <p>You need to show us evidence of your insurance costs. For example, a receipt or invoice.</p>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Rules for evidence files
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Evidence must be:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>readable, not blurry</li>
+          <li>the right way up - not upside down or sideways</li>
+          <li>JPG, JPEG, PNG or PDF format</li>
+          <li>no more than 8MB</li>
+        </ul>
+      </div>
+      </details>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            I'm using an iPhone or iPad
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Any photos you take of your evidence may be in HEIC format. This is also known as HEIF. We cannot accept photos in this format.</p>
+
+          <p>To check if you need to change your Camera settings to make JPEG your default image format, visit <a href="https://support.apple.com/en-gb/HT207022#:~:text=Capturing%20this%20media" rel="noopener" target="_blank">Apple Support's advice (opens in a new tab)</a> on this.</p>
+        </div>
+      </details>
+
+      <div class="nhsuk-form-group nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-7">
+        <label class="nhsuk-label nhsuk-u-visually-hidden" for="file-upload-1">
+            Upload your evidence file
+        </label>
+        <input class="nhsuk-input" id="file-upload-1" name="file-upload-1" type="file">
+      </div>
+
+      <button class="nhsuk-button" type="submit">Upload evidence</button><br>
+
+      <p><a href="../TDAE-task-list">Cancel</a></p>
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

@@ -1,0 +1,248 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Evidence you have uploaded
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="placement-additional-costs">
+            <h1 class="nhsuk-heading-l">Overseas costs evidence</h1>
+          </label>
+
+          <p>You'll need to add evidence for each section before you can continue.</p>
+
+          <!--<h2 class="nhsuk-heading-s">Authorisation for overseas placement</h2>-->
+
+          {% if data['evidence'] === 'removed' %}
+          <h2 style="margin-bottom: 0px;" class="nhsuk-heading-s">Authorisation for overseas placement</h2>
+          <a style="margin-top: 24px; margin-bottom: 48px;" class="nhsuk-button nhsuk-button--secondary" href="authorisation-evidence?evidence=no">Add evidence</a>
+          {% else %}
+          <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+            <caption class="nhsuk-table__caption">Authorisation for overseas placement</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                    File
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Action
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+                <td style="width:75%;" class="nhsuk-table__cell ">
+                  <a href="/images/overseas-authorisation.png" target="_blank" rel="noopener">
+                    overseas-authorisation.png
+                  </a>
+                </td>
+                <td class="nhsuk-table__cell ">
+                  <a href="overseas-evidence-mini-cya?evidence=removed">Remove</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-bottom: 48px;"><a href="authorisation-evidence">Add more evidence of authorisation</a></p>
+          {% endif %}
+
+          {% if data['overseas-cost'] %}
+            {% if 'insurance' in data['overseas-cost'] %}
+
+              {% if data['more-overseas-evidence'] === 'yes' %}
+                <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+                  <caption class="nhsuk-table__caption">Insurance</caption>
+                  <thead role="rowgroup" class="nhsuk-table__head">
+                    <tr role="row">
+                      <th role="columnheader" class="" scope="col">
+                          File
+                      </th>
+                      <th role="columnheader" class="" scope="col">
+                          Action
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+                      <td style="width:75%;" class="nhsuk-table__cell ">
+                        <a href="/images/travel-insurance-screenshot-1.png" download="Insurance evidence 31 March 2024">
+          								insurance-screenshot-1.png
+          							</a>
+                      </td>
+                      <td class="nhsuk-table__cell ">
+                        <a href="#" class="removeEvidence" data-row="evidenceRow1">Remove</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p style="margin-bottom: 48px;"><a href="overseas-evidence">Add more evidence of insurance costs</a></p>
+              {% else %}
+                <h2 style="margin-bottom: 0px;" class="nhsuk-heading-s">Insurance</h2>
+                <!--<div style="margin-top: 24px; margin-bottom: 24px;" class="nhsuk-inset-text">
+                  <span class="nhsuk-u-visually-hidden">Information: </span>
+                  <p>Not uploaded yet</p>
+                </div>-->
+                <a style="margin-top: 24px; margin-bottom: 48px;" class="nhsuk-button nhsuk-button--secondary" href="insurance-evidence?more-overseas-evidence=yes">Add evidence</a>
+              {% endif %}
+          {% endif %}
+
+          {% if 'medical-tests' in data['overseas-cost'] %}
+
+            {% if data['more-overseas-evidence'] === 'yes' %}
+              <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+                <caption class="nhsuk-table__caption">Medical tests</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                        File
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+                    <td style="width:75%;" class="nhsuk-table__cell ">
+                      <a href="" download="Medical tests evidence 31 March 2024">
+      									medical-tests-costs.pdf
+      								</a>
+                    </td>
+                    <td class="nhsuk-table__cell ">
+                      <a href="#" class="removeEvidence" data-row="evidenceRow1">Remove</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style="margin-bottom: 48px;"><a href="medical-tests-evidence">Add more evidence of medical tests costs</a></p>
+            {% else %}
+              <h2 style="margin-bottom: 0px;" class="nhsuk-heading-s">Medical tests</h2>
+              <a style="margin-top: 24px; margin-bottom: 48px;" class="nhsuk-button nhsuk-button--secondary" href="medical-tests-evidence?more-overseas-evidence=yes">Add evidence</a>
+            {% endif %}
+          {% endif %}
+
+          {% if 'vaccinations' in data['overseas-cost'] %}
+
+            {% if data['more-overseas-evidence'] === 'yes' %}
+              <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+                <caption class="nhsuk-table__caption">Vaccinations</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                        File
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+                    <td style="width:75%;" class="nhsuk-table__cell ">
+                      <a href="" target="_blank" rel="noopener">
+          						 screenshot-02.jpg
+          						</a>
+                    </td>
+                    <td class="nhsuk-table__cell ">
+                      <a href="#" class="removeEvidence" data-row="evidenceRow1">Remove</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style="margin-bottom: 48px;"><a href="vaccinations-evidence">Add more evidence of vaccination costs</a></p>
+            {% else %}
+              <h2 style="margin-bottom: 0px;" class="nhsuk-heading-s">Vaccinations</h2>
+              <a style="margin-top: 24px; margin-bottom: 48px;" class="nhsuk-button nhsuk-button--secondary" href="vaccinations-evidence?more-overseas-evidence=yes">Add evidence</a>
+            {% endif %}
+          {% endif %}
+
+          {% if 'visa-fees' in data['overseas-cost'] %}
+
+            {% if data['more-overseas-evidence'] === 'yes' %}
+              <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+                <caption class="nhsuk-table__caption">Visa fees</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                        File
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+                    <td style="width:75%;" class="nhsuk-table__cell">
+                      <a href="/images/bank-statement-visa-fee.png" download="Visa fees evidence 31 March 2024">
+        								bank-statement-visa-fee.png
+        							</a>
+                    </td>
+                    <td class="nhsuk-table__cell ">
+                      <a href="#" class="removeEvidence" data-row="evidenceRow1">Remove</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style="margin-bottom: 48px;"><a href="visa-fees-evidence">Add more evidence of visa fees</a></p>
+            {% else %}
+              <h2 style="margin-bottom: 0px;" class="nhsuk-heading-s">Visa fees</h2>
+              <a style="margin-top: 24px; margin-bottom: 48px;" class="nhsuk-button nhsuk-button--secondary" href="visa-fees-evidence?more-overseas-evidence=yes">Add evidence</a>
+            {% endif %}
+          {% endif %}
+
+
+        {% endif %}
+
+        {% if data['more-overseas-evidence'] == 'yes' %}
+          <form action="overseas-check-2" method="POST">
+            <button class="nhsuk-button" type="submit">Continue</button>
+          </form>
+        {% endif %}
+        <p><a href="../TDAE-task-list-full?overseas-details=in-progress">Return to task list</a></p>
+      </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const evidenceTable = document.getElementById('evidenceTable');
+    const noEvidenceTextContainer = document.getElementById('noEvidenceTextContainer');
+    const evidenceSection = document.getElementById('evidenceSection');
+
+    function updateUIBasedOnEvidence() {
+      if (!evidenceTable || evidenceTable.getElementsByTagName('tbody')[0].rows.length === 0) {
+        noEvidenceTextContainer.style.display = 'block';
+        evidenceSection.style.display = 'none';
+      } else {
+        noEvidenceTextContainer.style.display = 'none';
+        evidenceSection.style.display = 'block';
+      }
+    }
+
+    if (evidenceTable) {
+      evidenceTable.addEventListener('click', function(event) {
+        if (event.target.classList.contains('removeEvidence')) {
+          event.preventDefault();
+          const rowId = event.target.getAttribute('data-row');
+          const row = document.getElementById(rowId);
+          row.remove();
+          updateUIBasedOnEvidence();
+        }
+      });
+    }
+
+    updateUIBasedOnEvidence();
+  });
+  </script>
+{% endblock %}

@@ -1,0 +1,402 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Placement additional costs comments
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="TDAE-accommodation-travel-check-multiple" method="POST">
+
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+              <h1 class="nhsuk-heading-l">Accommodation travel evidence</h1>
+            </label>
+
+            {% if data['accommodation-travel-evidence'] == "added" %}
+
+            <h2 class="nhsuk-heading-m">Driving extra costs</h2>
+            <p>You need to give us evidence for any parking , tunnel, toll or clean air charges you're claiming for.</p>
+            <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+              <caption class="nhsuk-table__caption"></caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                      File
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                      Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+                  <td style="width:75%;" class="nhsuk-table__cell ">
+                    <a href="/images/parking-receipt-and-train-ticket.jpg" download="Supporting evidence for journey between term time address and accommodation">
+    								  parking-receipt-and-train-ticket.jpg
+    								</a>
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <a href="TDAE-accommodation-travel-evidence-overview?accommodation-travel-evidence=removed">Remove</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><a href="TDAE-accommodation-travel-evidence">Add more evidence</a></p>
+
+            <details style="margin-bottom: 48px;" class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  I do not have evidence for an extra cost
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p>If you do not give us evidence for a cost, your university may ask you to remove it from your claim. We'll only reimburse costs without evidence in exceptional circumstances.</p>
+                <p>You can <a href="TDAE-accommodation-travel-check">change your answers</a> to no longer include the cost you cannot give evidence for.</p>
+                <p>Or, you can <a href="TDAE-accommodation-no-evidence-decision">tell us why you cannot give us evidence</a>.</p>
+              </div>
+            </details>
+
+            <h2 class="nhsuk-heading-m">Public transport costs</h2>
+            <p>You need to give us evidence for any public transport costs you're claiming for.</p>
+            <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+              <caption class="nhsuk-table__caption"></caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                      File
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                      Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+                  <td style="width:75%;" class="nhsuk-table__cell ">
+                    <a href="/images/parking-receipt-and-train-ticket.jpg" download="Supporting evidence for journey between term time address and accommodation">
+    								  parking-receipt-and-train-ticket.jpg
+    								</a>
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <a href="TDAE-accommodation-travel-evidence-overview?accommodation-travel-evidence=removed">Remove</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><a href="TDAE-accommodation-travel-evidence">Add more evidence</a></p>
+
+            <details style="margin-bottom: 48px;" class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  I do not have evidence for a public transport cost
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p>If you do not give us evidence for a cost, your university may ask you to remove it from your claim. We'll only reimburse costs without evidence in exceptional circumstances.</p>
+                <p>You can <a href="TDAE-accommodation-travel-check">change your answers</a> to no longer include the cost you cannot give evidence for.</p>
+                <p>Or, you can <a href="TDAE-accommodation-no-evidence">tell us why you cannot give us evidence</a>.</p>
+              </div>
+            </details>
+
+
+            <button class="nhsuk-button" type="submit">Continue</button><br>
+            <p><a href="TDAE-task-list">Return to task list</a></p>
+
+            {% elif data['accommodation-travel-evidence'] == "not-added" %}
+
+            <h2 class="nhsuk-heading-m">Driving extra costs</h2>
+            <p>You need to give us evidence for any parking , tunnel, toll or clean air charges you're claiming for.</p>
+            <p><a href="TDAE-accommodation-travel-evidence">Add evidence</a></p>
+
+            <table style="margin-bottom: 48px;" id="evidenceTable" class="nhsuk-table">
+              <caption class="nhsuk-table__caption"></caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                      Reason for not providing evidence
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                      Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+                  <td style="width:75%;" class="nhsuk-table__cell ">
+                    I have lost my receipt for this day.
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <a href="TDAE-accommodation-travel-evidence-overview?accommodation-travel-evidence=removed">Remove</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+            <h2 class="nhsuk-heading-m">Public transport costs</h2>
+            <p>You need to give us evidence for any public transport costs you're claiming for.</p>
+            <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+              <caption class="nhsuk-table__caption"></caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                      File
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                      Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+                  <td style="width:75%;" class="nhsuk-table__cell ">
+                    <a href="/images/parking-receipt-and-train-ticket.jpg" download="Supporting evidence for journey between term time address and accommodation">
+    								  parking-receipt-and-train-ticket.jpg
+    								</a>
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <a href="TDAE-accommodation-travel-evidence-overview?accommodation-travel-evidence=removed">Remove</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><a href="TDAE-accommodation-travel-evidence">Add more evidence</a></p>
+
+            <details style="margin-bottom: 48px;" class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  I do not have evidence for a public transport cost
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p>If you do not give us evidence for a cost, your university may ask you to remove it from your claim. We'll only reimburse costs without evidence in exceptional circumstances.</p>
+                <p>You can <a href="TDAE-accommodation-travel-check">change your answers</a> to no longer include the cost you cannot give evidence for.</p>
+                <p>Or, you can <a href="TDAE-accommodation-no-evidence">tell us why you cannot give us evidence</a>.</p>
+              </div>
+            </details>
+
+            <button class="nhsuk-button" type="submit">Continue</button><br>
+            <p><a href="TDAE-task-list">Return to task list</a></p>
+
+            {% elif data['accommodation-travel-evidence'] == "both" %}
+
+            <h2 class="nhsuk-heading-m">Driving extra costs</h2>
+            <p>You need to give us evidence for any parking , tunnel, toll or clean air charges you're claiming for.</p>
+            <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+              <caption class="nhsuk-table__caption"></caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                      File
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                      Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+                  <td style="width:75%;" class="nhsuk-table__cell ">
+                    <a href="/images/parking-receipt-and-train-ticket.jpg" download="Supporting evidence for journey between term time address and accommodation">
+    								  parking-receipt-and-train-ticket.jpg
+    								</a>
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <a href="TDAE-accommodation-travel-evidence-overview?accommodation-travel-evidence=removed">Remove</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><a href="TDAE-accommodation-travel-evidence">Add more evidence</a></p>
+
+            <table style="margin-bottom: 48px;" id="evidenceTable" class="nhsuk-table">
+              <caption class="nhsuk-table__caption"></caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                      Reason for not providing evidence
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                      Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+                  <td style="width:75%;" class="nhsuk-table__cell ">
+                    I have lost my receipt for this day.
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <a href="TDAE-accommodation-travel-evidence-overview?accommodation-travel-evidence=removed">Remove</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+            <h2 class="nhsuk-heading-m">Public transport costs</h2>
+            <p>You need to give us evidence for any public transport costs you're claiming for.</p>
+            <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+              <caption class="nhsuk-table__caption"></caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                      File
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                      Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+                  <td style="width:75%;" class="nhsuk-table__cell ">
+                    <a href="/images/parking-receipt-and-train-ticket.jpg" download="Supporting evidence for journey between term time address and accommodation">
+    								  parking-receipt-and-train-ticket.jpg
+    								</a>
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <a href="TDAE-accommodation-travel-evidence-overview?accommodation-travel-evidence=removed">Remove</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><a href="TDAE-accommodation-travel-evidence">Add more evidence</a></p>
+
+            <details style="margin-bottom: 48px;" class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  I do not have evidence for a public transport cost
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p>If you do not give us evidence for a cost, your university may ask you to remove it from your claim. We'll only reimburse costs without evidence in exceptional circumstances.</p>
+                <p>You can <a href="TDAE-accommodation-travel-check">change your answers</a> to no longer include the cost you cannot give evidence for.</p>
+                <p>Or, you can <a href="TDAE-accommodation-no-evidence">tell us why you cannot give us evidence</a>.</p>
+              </div>
+            </details>
+
+            <button class="nhsuk-button" type="submit">Continue</button><br>
+            <p><a href="TDAE-task-list">Return to task list</a></p>
+
+            {% else %}
+
+            <p>You'll need to add evidence of your costs travelling to your {% if data['direction-of-travel'] == 'termtime-to-accommodation' %}accommodation{% else %}term time address{% endif %} on Wednesday 3 September 2024 before you can continue.</p>
+
+            <h2 class="nhsuk-heading-m">Driving extra costs</h2>
+            <p>You need to give us evidence for any parking , tunnel, toll or clean air charges you're claiming for.</p>
+            <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-accommodation-travel-evidence?heading=driving extra costs">Add evidence</a>
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  I do not have evidence for an extra cost
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p>If you do not give us evidence for a cost, your university may ask you to remove it from your claim. We'll only reimburse costs without evidence in exceptional circumstances.</p>
+                <p>You can <a href="TDAE-accommodation-travel-check">change your answers</a> to no longer include the cost you cannot give evidence for.</p>
+                <p>Or, you can <a href="TDAE-accommodation-no-evidence">tell us why you cannot give us evidence</a>.</p>
+              </div>
+            </details>
+
+            <h2 class="nhsuk-heading-m">Public transport costs</h2>
+            <p>You need to give us evidence for any public transport costs you're claiming for.</p>
+            <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-accommodation-travel-evidence?heading=public transport costs">Add evidence</a>
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  I do not have evidence for a public transport cost
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p>If you do not give us evidence for a cost, your university may ask you to remove it from your claim. We'll only reimburse costs without evidence in exceptional circumstances.</p>
+                <p>You can <a href="TDAE-accommodation-travel-check">change your answers</a> to no longer include the cost you cannot give evidence for.</p>
+                <p>Or, you can <a href="TDAE-accommodation-no-evidence">tell us why you cannot give us evidence</a>.</p>
+              </div>
+            </details>
+
+            <p><a href="TDAE-task-list">Return to task list</a></p>
+            {% endif %}
+
+
+
+
+          </div>
+
+
+    </form>
+
+    </div>
+
+    <script>
+    const textarea = document.querySelector('#additionalCostsComment');
+    const countRemaining = document.getElementById('charactersRemaining');
+    const staticMsg = document.querySelector('#char-count-screen-reader');
+    const maxCharacters = 500;
+    let timeoutId;
+
+    function updateCharacterCount() {
+      const textEntered = textarea.value;
+      const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+      const addition = newLines?.length || 0;
+      const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+
+      if (remainingCharacters >= 0) {
+        countRemaining.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+        countRemaining.classList.remove('nhsbsa-count-error-message');
+        countRemaining.classList.add('nhsuk-hint');
+        textarea.classList.remove('nhsuk-textarea--error');
+      } else {
+        countRemaining.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+        countRemaining.classList.add('nhsbsa-count-error-message');
+        countRemaining.classList.remove('nhsuk-hint');
+        textarea.classList.add('nhsuk-textarea--error');
+      }
+    }
+
+    function updateScreenReaderMessage() {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        const textEntered = textarea.value;
+        const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+        const addition = newLines?.length || 0;
+        const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+        // TO DO ADD FIX FOR 1 CHARACTER
+        if (remainingCharacters < 0) {
+          staticMsg.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+        } else {
+          staticMsg.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+        }
+      }, 500);
+    }
+
+    textarea.addEventListener('input', () => {
+      updateCharacterCount();
+      updateScreenReaderMessage();
+    });
+
+    // Update character count if textarea has a value on page load
+    window.addEventListener('load', () => {
+      updateCharacterCount();
+      updateScreenReaderMessage();
+    });
+  </script>
+
+  </div>
+{% endblock %}

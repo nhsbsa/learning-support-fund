@@ -1,0 +1,67 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+What is the start date of your claim?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="v9/TDAE-DSA-pause" method="POST">
+
+			<div class="nhsuk-form-group">
+				<fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+				  <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+					<h1 class="nhsuk-fieldset__heading">
+					  Disabled Students allowance travel support
+					</h1>
+				  </legend>
+
+					<p>Because you receive travel support through Disabled Students Allowance you will not be able to claim reimbursement for travel costs.</p>
+
+					<p>You can however, claim reimbursement for accommodation and overseas costs.</p>
+
+					<h2 class="nhsuk-heading-m">Would you like to continue your claim?</h2>
+
+					<div class="nhsuk-hint" id="contact-hint">
+			      Select yes, if claiming for accommodation or overseas costs.
+			    </div>
+
+					<div class="nhsuk-radios">
+
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="DSA-continue-yes" name="DSA-continue" type="radio" value="yes">
+							<label class="nhsuk-label nhsuk-radios__label" for="DSA-continue-yes">
+								Yes
+							</label>
+						</div>
+
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="DSA-continue-no" name="DSA-continue" type="radio" value="no">
+							<label class="nhsuk-label nhsuk-radios__label" for="DSA-continue-no">
+								No
+							</label>
+						</div>
+
+					</div>
+
+				</fieldset>
+
+			  </div>
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<a href="TDAE-start-claim">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

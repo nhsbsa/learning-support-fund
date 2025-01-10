@@ -1,0 +1,60 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Which evidence do you want to provide for your claim
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="v9/TDAE-type-journey-evidence" method="POST">
+
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <h1 class="nhsuk-fieldset__heading">
+                        Which type of evidence do you want to provide for your claim
+                    </h1>
+                  </legend>
+                  <p>Once you have uploaded your evidence, you will be able to return to provide more.</p>
+
+                  <div class="nhsuk-radios">
+
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="evidence-car-mileage" name="type-of-evidence" type="radio" value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="evidence-car-mileage">
+                        Car journey mileage
+                      </label>
+                    </div>
+
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="evidence-car-parking" name="type-of-evidence" type="radio" value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="evidence-car-parking">
+                        Car parking
+                      </label>
+                    </div>
+
+                    <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="evidence-tunnel-toll" name="type-of-evidence" type="radio" value="no">
+                        <label class="nhsuk-label nhsuk-radios__label" for="evidence-tunnel-toll">
+                          Tunnel or Toll charges
+                        </label>
+                    </div>
+
+                  </div>
+                </fieldset>
+
+              </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-start-claim">Cancel</a>
+
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

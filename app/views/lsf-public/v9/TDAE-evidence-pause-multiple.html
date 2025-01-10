@@ -1,0 +1,153 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+What is the start date of your claim?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<style>
+		ul, .nhsuk-list--circle {
+		  list-style-type: circle;
+		    padding-left: 20px;
+		}
+
+		.nhsuk-list-style-none{
+		  list-style: none;
+		}
+		</style>
+
+		<form action="v9/TDAE-evidence-pause-multiple" method="POST">
+
+			<div class="nhsuk-form-group">
+				<fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+				  <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+					<h1 class="nhsuk-fieldset__heading">
+					  Placement travel evidence
+					</h1>
+				  </legend>
+
+					{% if data['evidence-details'] === 'action' %}
+		  			<div class="nhsuk-warning-callout">
+		  			  <h3 class="nhsuk-warning-callout__label">
+		  			    <span role="text">
+		  			      <span class="nhsuk-u-visually-hidden">Important: </span>
+		  			      University feedback
+		  			    </span>
+		  			  </h3>
+		  			  <p>This is the comment left by the University when returning to student.</p>
+		  			</div>
+		  		{% endif %}
+
+					<p>You need to give us evidence for your placement travel costs.</p>
+					<p>Because you have told us you have extra costs for multiple days, you need to upload your evidence for each 7 day period.</p>
+
+					<!--<ul class="nhsuk-list nhsuk-list--bullet">
+					  <li>Wednesday 7 June 2023 to Tuesday 13 June 2023</li>
+						<li>Wednesday 14 June 2023 to Friday 16 June 2023</li>
+					</ul>-->
+
+					<table role="table" class="nhsuk-table-responsive">
+					  <!--<caption class="nhsuk-table__caption">Ibuprofen tablet dosages for children</caption>-->
+					  <thead role="rowgroup" class="nhsuk-table__head">
+					    <tr role="row">
+								<th role="columnheader" class="" scope="col">
+					        Period
+					      </th>
+								<th role="columnheader" class="" scope="col">
+					        Dates
+					      </th>
+					      <th role="columnheader" class="" scope="col">
+					        Status
+					      </th>
+					      {% if data['week-1'] === 'completed' or data['week-2'] === 'completed' %}
+									<th role="columnheader" class="" scope="col">
+						        Action
+						      </th>
+								{% endif %}
+					    </tr>
+					  </thead>
+					  <tbody class="nhsuk-table__body">
+					    <tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+					        <span class="nhsuk-table-responsive__heading">Period </span>1
+					      </td>
+								<td role="cell" class="nhsuk-table__cell">
+					        <span class="nhsuk-table-responsive__heading">Dates </span>Friday 6 October 2023 to Monday 9 October 2023
+					      </td>
+					      <td role="cell" class="nhsuk-table__cell">
+					        <span class="nhsuk-table-responsive__heading">Status </span>
+									{% if data['week-1'] === 'completed' or data['week-2'] === 'completed' %}
+										<strong class="nhsuk-tag">Completed</strong
+									{% else %}
+										<strong class="nhsuk-tag nhsuk-tag--white">Not started</strong>
+									{% endif %}
+					      </td>
+					      {% if data['week-1'] === 'completed' or data['week-2'] === 'completed' %}
+									<td role="cell" class="nhsuk-table__cell">
+										{% if data['week-1'] === 'completed' or data['week-2'] === 'completed' %}
+											<a href="TDAE-evidence-cya">Review</a>
+										{% else %}
+											<span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No action available</span>
+										{% endif %}
+						      </td>
+								{% endif %}
+					    </tr>
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+					        <span class="nhsuk-table-responsive__heading">Week </span>2
+					      </td>
+					      <td role="cell" class="nhsuk-table__cell">
+					        <span class="nhsuk-table-responsive__heading">Dates </span>Wednesday 14 June 2023 to Friday 16 June 2023
+					      </td>
+					      <td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Status </span>
+									{% if data['week-2'] === 'completed' %}
+										<strong class="nhsuk-tag">Completed</strong>
+									{% elif data['week-1'] === 'completed' %}
+										<strong class="nhsuk-tag nhsuk-tag--white">Not started</strong>
+									{% else %}
+										<strong class="nhsuk-tag nhsuk-tag--grey">Cannot be completed yet</strong>
+									{% endif %}
+					      </td>
+								{% if data['week-1'] === 'completed' or data['week-2'] === 'completed' %}
+						      <td role="cell" class="nhsuk-table__cell">
+										{% if data['week-2'] === 'completed' %}
+										<a href="TDAE-evidence-cya">Review</a>
+										{% else %}
+						        <span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No action available</span>
+										{% endif %}
+						      </td>
+								{% endif %}
+					    </tr>
+					  </tbody>
+					</table>
+
+				</fieldset>
+
+			  </div>
+
+			{% if data['week-2'] === 'completed' %}
+				<a class="nhsuk-button" href="TDAE-task-list?add-travel-date-evidence=completed">Save and continue</a><br>
+			{% elif data['week-1'] === 'completed' %}
+				<button class="nhsuk-button" type="submit">Upload evidence for period 2</button><br>
+			{% else %}
+				<button class="nhsuk-button" type="submit">Upload evidence for period 1</button><br>
+			{% endif %}
+
+			<p><a href="TDAE-task-list">Save and come back later</a></p>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

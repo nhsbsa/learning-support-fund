@@ -1,0 +1,175 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+What is your placement address?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="TDAE-placement-address-cya" method="POST">
+
+
+			<fieldset class="nhsuk-fieldset">
+				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+					<h1 class="nhsuk-fieldset__heading">
+						Add another placement address
+					</h1>
+				</legend>
+
+				<p><a href="TDAE-placement-address-more">Add a UK address</a></p>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="international-placement-building-name">
+						Building name or number
+					</label>
+					{% if data['address-number'] == '1' %}
+					<input class="nhsuk-input" id="international-placement-building-name" name="international-placement-building-name" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '2' %}
+					<input class="nhsuk-input" id="international-placement-building-name" name="international-placement-2-building-name" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '3' %}
+					<input class="nhsuk-input" id="international-placement-building-name" name="international-placement-3-building-name" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '4' %}
+					<input class="nhsuk-input" id="international-placement-building-name" name="international-placement-4-building-name" type="text" autocomplete="cc-csc">
+					{% else %}
+					<input class="nhsuk-input" id="international-placement-building-name" name="new-international-placement-building-name" type="text" autocomplete="cc-csc">
+					{% endif %}
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="international-placement-address-line-1">
+						Address line 1
+					</label>
+					{% if data['address-number'] == '1' %}
+					<input class="nhsuk-input" id="international-placement-address-line-1" name="international-placement-address-line-1" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '2' %}
+					<input class="nhsuk-input" id="international-placement-address-line-1" name="international-placement-2-address-line-1" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '3' %}
+					<input class="nhsuk-input" id="international-placement-address-line-1" name="international-placement-3-address-line-1" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '4' %}
+					<input class="nhsuk-input" id="international-placement-address-line-1" name="international-placement-4-address-line-1" type="text" autocomplete="cc-csc">
+					{% else %}
+					<input class="nhsuk-input" id="international-placement-address-line-1" name="new-international-placement-address-line-1" type="text" autocomplete="cc-csc">
+					{% endif %}
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="international-placement-address-line-2">
+						Address line 2 (optional)
+					</label>
+					{% if data['address-number'] == '1' %}
+					<input class="nhsuk-input" id="international-placement-address-line-2" name="international-placement-address-line-2" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '2' %}
+					<input class="nhsuk-input" id="international-placement-address-line-2" name="international-placement-2-address-line-2" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '3' %}
+					<input class="nhsuk-input" id="international-placement-address-line-2" name="international-placement-3-address-line-2" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '4' %}
+					<input class="nhsuk-input" id="international-placement-address-line-2" name="international-placement-4-address-line-2" type="text" autocomplete="cc-csc">
+					{% else %}
+					<input class="nhsuk-input" id="international-placement-address-line-2" name="new-international-placement-address-line-2" type="text" autocomplete="cc-csc">
+					{% endif %}
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="international-placement-address-line-3">
+						Address line 3 (optional)
+					</label>
+					{% if data['address-number'] == '1' %}
+					<input class="nhsuk-input" id="international-placement-address-line-3" name="international-placement-address-line-3" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '2' %}
+					<input class="nhsuk-input" id="international-placement-address-line-3" name="international-placement-2-address-line-3" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '3' %}
+					<input class="nhsuk-input" id="international-placement-address-line-3" name="international-placement-3-address-line-3" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '4' %}
+					<input class="nhsuk-input" id="international-placement-address-line-3" name="international-placement-4-address-line-3" type="text" autocomplete="cc-csc">
+					{% else %}
+					<input class="nhsuk-input" id="international-placement-address-line-3" name="new-international-placement-address-line-3" type="text" autocomplete="cc-csc">
+					{% endif %}
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="international-placement-address-town">
+						Town or city
+					</label>
+					{% if data['address-number'] == '1' %}
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="international-placement-address-town" name="international-placement-address-town" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '2' %}
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="international-placement-address-town" name="international-placement-2-address-town" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '3' %}
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="international-placement-address-town" name="international-placement-3-address-town" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '4' %}
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="international-placement-address-town" name="international-placement-4-address-town" type="text" autocomplete="cc-csc">
+					{% else %}
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="international-placement-address-town" name="new-international-placement-address-town" type="text" autocomplete="cc-csc">
+					{% endif %}
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="international-placement-address-region">
+						County, providence or region (optional)
+					</label>
+					{% if data['address-number'] == '1' %}
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="international-placement-address-region" name="international-placement-address-region" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '2' %}
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="international-placement-address-region" name="international-placement-2-address-region" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '3' %}
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="international-placement-address-region" name="international-placement-3-address-region" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '4' %}
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="international-placement-address-region" name="international-placement-4-address-region" type="text" autocomplete="cc-csc">
+					{% else %}
+					<input class="nhsuk-input nhsuk-u-width-two-thirds" id="international-placement-address-region" name="new-international-placement-address-region" type="text" autocomplete="cc-csc">
+					{% endif %}
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="international-placement-address-postcode">
+						Postcode (optional)
+					</label>
+					{% if data['address-number'] == '1' %}
+					<input class="nhsuk-input nhsuk-input--width-10" id="international-placement-address-postcode" name="international-placement-address-postcode" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '2' %}
+					<input class="nhsuk-input nhsuk-input--width-10" id="international-placement-address-postcode" name="international-placement-2-address-postcode" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '3' %}
+					<input class="nhsuk-input nhsuk-input--width-10" id="international-placement-address-postcode" name="international-placement-3-address-postcode" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '4' %}
+					<input class="nhsuk-input nhsuk-input--width-10" id="international-placement-address-postcode" name="international-placement-4-address-postcode" type="text" autocomplete="cc-csc">
+					{% else %}
+					<input class="nhsuk-input nhsuk-input--width-10" id="international-placement-address-postcode" name="new-international-placement-address-postcode" type="text" autocomplete="cc-csc">
+					{% endif %}
+				</div>
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" for="international-placement-address-country">
+						Country
+					</label>
+					{% if data['address-number'] == '1' %}
+					<input class="nhsuk-input nhsuk-input--width-10" id="international-placement-address-country" name="international-placement-address-country" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '2' %}
+					<input class="nhsuk-input nhsuk-input--width-10" id="international-placement-address-country" name="international-placement-2-address-country" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '3' %}
+					<input class="nhsuk-input nhsuk-input--width-10" id="international-placement-address-country" name="international-placement-3-address-country" type="text" autocomplete="cc-csc">
+					{% elif data['address-number'] == '4' %}
+					<input class="nhsuk-input nhsuk-input--width-10" id="international-placement-address-country" name="international-placement-4-address-country" type="text" autocomplete="cc-csc">
+					{% else %}
+					<input class="nhsuk-input nhsuk-input--width-10" id="international-placement-address-country" name="new-international-placement-address-country" type="text" autocomplete="cc-csc">
+					{% endif %}
+				</div>
+
+			</fieldset>
+
+			<button class="nhsuk-button" type="submit">Save and continue</button>
+			<p><a href="TDAE-start-claim">Cancel</a></p>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

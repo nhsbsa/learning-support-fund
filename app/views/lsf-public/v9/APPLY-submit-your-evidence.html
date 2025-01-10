@@ -1,0 +1,83 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+		<div class="nhsuk-grid-column-two-thirds">
+
+      {{ backLink({
+          "href": "javascript:history.go(-1)",
+          "text": "Go back"
+      }) }}
+
+      <h1 class="nhsuk-heading-l">Upload your evidence</h1>
+
+			<p>We need evidence of:</p>
+
+			<ul class="nhsuk-list nhsuk-list--bullet">
+				<li>Full student loan award letter</li>
+			</ul>
+
+      {% if data['evidence-submitted'] === 'Submitted' %}
+			<table class="nhsuk-table">
+				<caption class="nhsuk-u-visually-hidden">Uploaded documents table</caption>
+				<thead role="rowgroup" class="nhsuk-table__head">
+					<tr role="row">
+						<th role="columnheader" scope="col">Type</th>
+						<th role="columnheader" scope="col">Status</th>
+						<th role="columnheader" scope="col">Action</th>
+					</tr>
+				</thead>
+				<tbody class="nhsuk-table__body">
+  				<tr scope="row" class="nhsuk-table__row">
+  					<td class="nhsuk-table__cell">
+              <a href="#" target="_blank" rel="noopener"><span class="nhsuk-u-visually-hidden">View</span>Full student loan award letter</a>
+            </td>
+  					<td class="nhsuk-table__cell">
+  						<span>Pending approval</span>
+  					</td>
+  					<td class="nhsuk-table__cell">
+  							<a href="APPLY-submit-your-evidence?evidence-submitted=no" class="preventDoubleClick" >Remove<span class="nhsuk-u-visually-hidden"> Full student loan award letter</span></a>
+  					</td>
+  				</tr>
+  			</tbody>
+  		</table>
+
+      <p><a href="APPLY-upload-sl-award-letter" id="addDocument" role="button">Add more evidence</a></p>
+      {% else %}
+      <div class="nhsuk-form-group">
+        <a class="nhsuk-button nhsuk-button--secondary" href="APPLY-upload-sl-award-letter" id="addDocument" role="button">Add evidence</a>
+      </div>
+      {% endif %}
+
+      {% if data['evidence-submitted'] != 'Submitted' %}
+    		<div class="nhsuk-form-group nhsuk-u-margin-bottom-8">
+          {% if data['student-loan'] == 'yes' %}
+            <!--<h2 class="nhsuk-heading-m">I’ve not applied for a student loan</h2>
+            <p>If you’ve not applied for a student loan, you need to <a href="#">give us more information</a>.</p>-->
+            <p><a href="#">I've not applied for a student loan</a></p>
+          {% else %}
+            <!--<h2 class="nhsuk-heading-m">I have applied for a student loan</h2>
+            <p>If you have applied for a student loan we only require a copy of your student loan award letter.</p>-->
+            <p><a href="#">I'v'e applied for a student loan</a></p>
+          {% endif %}
+    		</div>
+      {% endif %}
+
+
+  		<div class="nhsuk-form-group">
+        {% if data['evidence-submitted'] === 'Submitted' %}
+          <form action="v9/APPLY-submit-your-evidence" method="POST">
+            <button class="nhsuk-button" type="submit">Save and continue</button>
+          </form>
+        {% endif %}
+        <p><a href="academic-year-details">Save and come back later</a></p>
+  		</div>
+  	</div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,211 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Your active claims
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+
+      {{ backLink({
+  		"href": "academic-year-details#tab-two",
+  		"text": "Go back to academic year details"
+  		}) }}
+
+        <h1 class="nhsuk-heading-l">Your active claims</h1>
+
+        {% if data['active'] == 'none' %}
+          <p>Claims that you have in progress or being processed by your Univeristy or NHSBSA will appear here.</p>
+        {% else %}
+        <p>These are claims that you've started, submitted or need an action.</p>
+
+        <div class="nhsuk-form-group">
+            <table role="table" class="nhsuk-table-responsive">
+                <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Travel expense claims list</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                        Placement address
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Start date
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        End date
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Status
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Action
+                    </th>
+                </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Placement address </span>Mnazi Mmoja Hospital, R5JR R2G
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Start date </span>Friday 2 February 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">End date </span>Thursday 8 February 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--green">Submitted to university</strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span><a href="../TDAE-task-list?claiming-for=overseas&university-details=completed&overseas-details=completed&submit-claim=completed">View claim</a>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Placement address </span>Newcastle Hospital, NE1 1AA<br>Alnwick Hospital, NE66 2NS
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Start date </span>Friday 6 October 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">End date </span>Monday 9 October 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--green">Submitted to university</strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span><a href="../TDAE-task-list?claiming-for=Public transport&university-details=completed&placement-details=completed&add-travel-date-evidence=completed&add-placement-travel=completed&submit-claim=completed">View claim</a>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Placement address </span>Old Forge Surgery, DL7 2EB
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Start date </span>Friday 11 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">End date </span>Friday 11 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--yellow">Action needed</strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span>
+                        <form action="TDAE-task-list-actions?claiming-for=overseas&overseas-details=action" method="POST">
+                            <button class="nhsbsa-link--custom" type="submit">Review claim</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Placement address </span>Newcastle Hospital, NE1 1AA
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Start date </span>Monday 7 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">End date </span>Wednesday 10 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--white">Claim started</strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span>
+                        <a href="../TDAE-task-list?claiming-for=car&claiming-for=hire-car&university-details=completed&add-placement-travel=completed&add-travel-date-evidence=completed">Continue claim</a>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Placement address </span>Alnwick Hospital, NE66 2NS
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Start date </span>Monday 17 July 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">End date </span>Friday 21 July 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--green">Submitted to university</strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">View claim</a>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Placement address </span>Friars Lane GP Surgery, NE2 3PO
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Start date </span>Monday 26 June 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">End date </span>Friday 30 June 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--blue">Returned to university</strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">View claim</a>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Placement address </span>Friars Lane GP Surgery, NE2 3PO
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Start date </span>Monday 19 June 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">End date </span>Friday 23 June 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--green">Submitted to NHSBSA</strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">View claim</a>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Placement address </span>Friars Lane GP Surgery, NE2 3PO
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Start date </span>Monday 5 June 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">End date </span>Wednesday 7 June 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag">Payment approved</strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span><a href="#">View claim</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            {% endif %}
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    // JavaScript code
+    var currentDateElement = document.getElementById("currentDate");
+
+    // Get the current date
+    var currentDate = new Date();
+
+    // Format the date as desired
+    var options = { day: 'numeric', month: 'long', year: 'numeric' };
+    var formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+    // Set the formatted date as the content of the element
+    currentDateElement.textContent = formattedDate;
+  </script>
+{% endblock %}

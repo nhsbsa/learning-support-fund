@@ -17,6 +17,14 @@ router.post('/clear-session-data/', (req, res) => {
 // Version number variables
 // ================================
 
+// V9 Public
+router.get('/lsf-public/v9/:page', (req, res) => {
+    const number = 'v9';
+    const templatePath = `lsf-public/v9/${req.params.page}`;
+    res.locals.number = number;
+    res.render(templatePath, { number });
+});
+
 // V8 Public
 router.get('/lsf-public/v8/:page', (req, res) => {
     const number = 'v8';
@@ -74,6 +82,7 @@ router.use('/lsf-portal/v1', require('./views/lsf-portal/v1/_routes'));
 // ================================
 // Routes for LSF Public
 // ================================
+router.use('/lsf-public/v9', require('./views/lsf-public/v9/_routes'));
 router.use('/lsf-public/v8', require('./views/lsf-public/v8/_routes'));
 router.use('/lsf-public/v7-demo', require('./views/lsf-public/v7-demo/_routes'));
 router.use('/lsf-public/v7', require('./views/lsf-public/v7/_routes'));

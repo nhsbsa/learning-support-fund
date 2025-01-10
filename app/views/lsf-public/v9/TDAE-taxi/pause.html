@@ -1,0 +1,47 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Travel between accommodation and term time journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="authorisation" method="POST">
+
+          <h1 class="nhsuk-heading-l">Add your taxi journeys</h1>
+
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>You can only claim taxi costs if you have authorisation from your university or placement. You'll need to upload evidence of this authorisation. For example, an email or note.</p>
+          </div>
+
+          <p>You need to tell us about any taxi journeys you paid for relating to your placement. For each one, we need to know:</p>
+
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>who authorised you to use a taxi</li>
+            <li>the reason you used a taxi</li>
+            <li>the date you travelled</li>
+            <li>the cost you paid</li>
+          </ul>
+
+          <p>You also need to show us evidence for the costs, such as receipts or invoices.</p>
+
+          <p>If you used multiple taxis, you can add these after you have told us about the first one.</p>
+
+          <button class="nhsuk-button" type="submit">Add first taxi journey</button><br>
+      		<p><a href="../TDAE-task-list">Cancel</a></p>
+
+      </form>
+
+    </div>
+
+</div>
+{% endblock %}

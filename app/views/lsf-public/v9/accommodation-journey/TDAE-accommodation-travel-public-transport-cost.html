@@ -1,0 +1,70 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Enter the total amount of all of the tickets you bought on the day you travelled
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="../v9/TDAE-accommodation-travel-public-transport-cost" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+					<h1 class="nhsuk-heading-l">How much did you pay for tickets on this date?</h1>
+				</label>
+
+
+				<label class="nhsuk-label" for="example">
+					Cost in pounds
+				</label>
+				<div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+				<input class="nhsuk-input__prefix-input nhsuk-input nhsuk-input--width-5" id="accommodation-travel-public-transport-cost" name="accommodation-travel-public-transport-cost" type="text">
+			</div>
+
+			<details class="nhsuk-details">
+				<summary class="nhsuk-details__summary">
+				  <span class="nhsuk-details__summary-text">
+					What if my ticket covers more than one day?
+				  </span>
+				</summary>
+				<div class="nhsuk-details__text">
+				  <p>You only need to tell us about a ticket once. If it covered more than one day, such as a weekly bus pass, tell us the total amount on the first journey it covers.</p>
+			</div>
+			</details>
+
+			{% if 'overseas' in data['claiming-for'] %}
+              <details class="nhsuk-details">
+                <summary class="nhsuk-details__summary">
+                  <span class="nhsuk-details__summary-text">
+                  My costs are in a foreign currency
+                  </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                  <p>You need to enter all costs in pounds sterling.</p>
+          
+                  <p>If you used a card to pay costs, your bank statement should show you the correct value.</p>
+                  
+                  <p>If you used cash, you need to convert your costs using the exchange rate on the day that you paid them.</p>
+                </div>
+                </details>
+            {% endif %}
+
+			<button class="nhsuk-button" type="submit">Continue</button><br>
+			<a href="TDAE-task-list">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

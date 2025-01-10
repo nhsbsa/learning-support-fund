@@ -1,0 +1,57 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Do you want to provide any related comments to your placement additional costs?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="TDAE-task-list" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Have you given us all the information needed?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-hint">If you select No, you'll return to the tasklist and you can complete this later.</div>
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="hire-car-comments-yes" name="evidence-comments" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="hire-car-comments-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="hire-car-comments-no" name="evidence-comments" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="hire-car-comments-no">
+                    No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Save and continue</button><br>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Which mode of transport do you take to and from your normal place of study?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+    <form action="v9/TDAE-normal-transport" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                    How do you usually get to and from university?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-hint" id="example-hint">
+                Select all that apply.
+              </div>
+
+              <div class="nhsuk-checkboxes">
+
+                <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="mode-of-transport-walk" name="mode-of-transport" type="checkbox" value="walk">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="mode-of-transport-walk">
+                      Walk
+                    </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="mode-of-transport-drive" name="mode-of-transport" type="checkbox" value="drive">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="mode-of-transport-drive">
+                      Drive (including giving a lift to someone else)
+                    </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="mode-of-transport-lift" name="mode-of-transport" type="checkbox" value="lift">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="mode-of-transport-lift">
+                      Get a lift from someone else
+                    </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="mode-of-transport-public" name="mode-of-transport" type="checkbox" value="public">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="mode-of-transport-public">
+                      Public transport
+                    </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="mode-of-transport-cycle" name="mode-of-transport" type="checkbox" value="cycle">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="mode-of-transport-cycle">
+                      Cycle
+                    </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+      <button class="nhsuk-button" type="submit">Continue</button><br>
+      <a href="TDAE-start-claim">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

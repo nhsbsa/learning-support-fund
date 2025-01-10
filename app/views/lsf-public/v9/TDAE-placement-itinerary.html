@@ -1,0 +1,951 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+What is the return mileage to your placement?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+	<div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-l">Your placement travel details</h1>
+
+		{% if data['placement-details'] === 'action' %}
+			<div class="nhsuk-warning-callout">
+			  <h3 class="nhsuk-warning-callout__label">
+			    <span role="text">
+			      <span class="nhsuk-u-visually-hidden">Important: </span>
+			      University feedback
+			    </span>
+			  </h3>
+			  <p>This is the comment left by the University when returning to student.</p>
+			</div>
+		{% endif %}
+
+	</div>
+</div>
+
+<div class="nhsuk-grid-row">
+	<div class="nhsuk-grid-column-full">
+		<p>You can add more information about your journeys and costs for each day of your placement.</p>
+	</div>
+	<div class="nhsuk-grid-column-full">
+		{% if data['address-number'] == '2' or data['address-number'] == '3' or data['address-number'] == '4' %}
+		<details class="nhsuk-details">
+		  <summary class="nhsuk-details__summary">
+		    <span class="nhsuk-details__summary-text">
+		      Placement addresses
+		    </span>
+		  </summary>
+		  <div class="nhsuk-details__text">
+				<dl class="nhsuk-summary-list">
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Placement address 1
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							Newcastle Hospital<br>
+							Newcastle Street<br>
+							Newcastle Tyne and Wear<br>
+							NE1 1AA
+						</dd>
+					</div>
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Placement address 2
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							Alnwick Hospital<br>
+							Infirmary Drive<br>
+							Alnwick<br>
+							NE66 2NS
+						</dd>
+					</div>
+				</dl>
+		  </div>
+		</details>
+		{% endif %}
+
+		{% if checked('claiming-for', 'Cycle') %}
+			<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+				<caption>
+					<span class="nhsuk-heading-m">Placement travel details and costs</span>
+					<span class="nhsuk-u-visually-hidden"> - </span>
+					<span class="nhsuk-hint">Showing 1-5 of 5 dates</span>
+				</caption>
+				<thead role="rowgroup" class="nhsuk-table__head">
+					<tr role="row">
+						<th role="columnheader" class="" scope="col">Date</th>
+						<th role="columnheader" class="" scope="col">Placement address</th>
+						<th role="columnheader" class="" scope="col">Travel details</th>
+						<th role="columnheader" class="" scope="col">Value</th>
+						<th role="columnheader" class="" scope="col">Action</th>
+					</tr>
+				</thead>
+				<tbody class="nhsuk-table__body">
+					{% if data['cycle-journey'] == '1' %}
+						<tr role="row" class="nhsuk-table__row">
+							<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Date </span>
+								Friday 6 October 2023
+							</th>
+							<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+							</th>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Cycle mileage to placement
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>5.2 miles
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container">
+									<a href="TDAE-placement-cycle-to-mileage?change=true&placement-cycle-mileage-address=Newcastle Hospital">Change</a> or <a href="TDAE-placement-travel-remove-cycle-mileage?journey=to&mileage-date=Friday 6 October 2023&placement-cycle-mileage-address=Newcastle Hospital">remove</a>
+								</div>
+							</td>
+						</tr>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Cycle mileage returning from placement
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>5.2 miles
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container">
+									<a href="TDAE-placement-cycle-return-mileage?change=true&placement-cycle-mileage-address=Newcastle Hospital">Change</a> or <a href="TDAE-placement-travel-remove-cycle-mileage?journey=return&mileage-date=Friday 6 October 2023&placement-cycle-mileage-address=Newcastle Hospital">remove</a>
+								</div>
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Date </span>Saturday 7 October 2023
+							</th>
+							<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+							</th>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Cycle mileage to placement
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>5.2 miles
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container">
+									<a href="TDAE-placement-cycle-to-mileage?change=true&placement-cycle-mileage-address=Newcastle Hospital">Change</a> or <a href="TDAE-placement-travel-remove-cycle-mileage?journey=to&mileage-date=Saturday 7 October 2023&placement-cycle-mileage-address=Newcastle Hospital">remove</a>
+								</div>
+							</td>
+						</tr>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Cycle mileage returning from placement
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>5.2 miles
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container">
+									<a href="TDAE-placement-cycle-return-mileage?change=true&placement-cycle-mileage-address=Newcastle Hospital">Change</a> or <a href="TDAE-placement-travel-remove-cycle-mileage?journey=return&mileage-date=Saturday 7 October 2023&placement-cycle-mileage-address=Newcastle Hospital">remove</a>
+								</div>
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<th rowspan="1" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Date </span>Sunday 8 October 2023
+							</th>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE66 2NS
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container"></div>
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<th rowspan="1" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Date </span>Monday 9 October 2023
+							</th>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE66 2NS
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container"></div>
+							</td>
+						</tr>
+					{% elif data['cycle-journey'] == '2' %}
+						<tr role="row" class="nhsuk-table__row">
+							<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Date </span>Friday 6 October 2023
+							</th>
+							<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+							</th>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Cycle mileage to placement
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>5.2 miles
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container">
+									<a href="TDAE-placement-cycle-to-mileage?change=true&placement-cycle-mileage-address=Newcastle Hospital">Change</a> or <a href="TDAE-placement-travel-remove-cycle-mileage?journey=to&mileage-date=Friday 6 October 2023&placement-cycle-mileage-address=Newcastle Hospital">remove</a>
+								</div>
+							</td>
+						</tr>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Cycle mileage returning from placement
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>5.2 miles
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container">
+									<a href="TDAE-placement-cycle-return-mileage?change=true&placement-cycle-mileage-address=Newcastle Hospital">Change</a> or <a href="TDAE-placement-travel-remove-cycle-mileage?journey=return&mileage-date=Friday 6 October 2023&placement-cycle-mileage-address=Newcastle Hospital">remove</a>
+								</div>
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Date </span>Saturday 7 October 2023
+							</th>
+							<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+							</th>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Cycle mileage to placement
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>5.2 miles
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container">
+									<a href="TDAE-placement-cycle-to-mileage?change=true&placement-cycle-mileage-address=Newcastle Hospital">Change</a> or <a href="TDAE-placement-travel-remove-cycle-mileage?journey=to&mileage-date=Saturday 6 October 2023&placement-cycle-mileage-address=Newcastle Hospital">remove</a>
+								</div>
+							</td>
+						</tr>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Cycle mileage returning from placement
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>5.2 miles
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container">
+									<a href="TDAE-placement-cycle-return-mileage?change=true&placement-cycle-mileage-address=Newcastle Hospital">Change</a> or <a href="TDAE-placement-travel-remove-cycle-mileage?journey=return&mileage-date=Saturday 7 October 2023&placement-cycle-mileage-address=Newcastle Hospital">remove</a>
+								</div>
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Date </span>Sunday 8 October 2023
+							</th>
+							<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE66 2NS
+							</th>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Cycle mileage to placement
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>8 miles
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container">
+									<a href="TDAE-placement-cycle-to-mileage?change=true&placement-cycle-mileage-address=Alnwick Hospital">Change</a> or <a href="TDAE-placement-travel-remove-cycle-mileage?journey=to&mileage-date=Sunday 8 October 2023&placement-cycle-mileage-address=Alnwick Hospital">remove</a>
+								</div>
+							</td>
+						</tr>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Cycle mileage returning from placement
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>8 miles
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container">
+									<a href="TDAE-placement-cycle-return-mileage?change=true&placement-cycle-mileage-address=Alnwick Hospital">Change</a> or <a href="TDAE-placement-travel-remove-cycle-mileage?journey=return&mileage-date=Sunday 8 October 2023&placement-cycle-mileage-address=Alnwick Hospital">remove</a>
+								</div>
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Date </span>Monday 9 October 2023
+							</th>
+							<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE66 2NS
+							</th>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Cycle mileage to placement
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>8 miles
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container">
+									<a href="TDAE-placement-cycle-to-mileage?change=true&placement-cycle-mileage-address=Alnwick Hospital">Change</a> or <a href="TDAE-placement-travel-remove-cycle-mileage?journey=to&mileage-date=Monday 9 October 2023&placement-cycle-mileage-address=Alnwick Hospital">remove</a>
+								</div>
+							</td>
+						</tr>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>Cycle mileage returning from placement
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>8 miles
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container">
+									<a href="TDAE-placement-cycle-return-mileage?change=true&placement-cycle-mileage-address=Alnwick Hospital">Change</a> or <a href="TDAE-placement-travel-remove-cycle-mileage?journey=return&mileage-date=Sunday 8 October 2023&placement-cycle-mileage-address=Alnwick Hospital">remove</a>
+								</div>
+							</td>
+						</tr>
+					{% else %}
+						<tr role="row" class="nhsuk-table__row">
+							<th rowspan="1" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Date </span>Friday 6 October 2023
+							</th>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container"></div>
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<th rowspan="1" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Date </span>Saturday 7 October 2023
+							</th>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container"></div>
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<th rowspan="1" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Date </span>Sunday 8 October 2023
+							</th>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE66 2NS
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container"></div>
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<th rowspan="1" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Date </span>Monday 9 October 2023
+							</th>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span>Address 2, NE66 2NS
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Action </span>
+								<div class="link-container"></div>
+							</td>
+						</tr>
+					{% endif %}
+				</tbody>
+			</table>
+
+			{% elif checked('claiming-for', 'car') %}
+			<tbody class="nhsuk-table__body">
+					<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-0">
+						<caption>
+							<span class="nhsuk-heading-m">Placement travel details and costs</span>
+							<span class="nhsuk-u-visually-hidden"> - </span>
+							<span class="nhsuk-hint">Showing 1-4 of 4 dates</span>
+						</caption>
+						<thead role="rowgroup" class="nhsuk-table__head">
+							<tr role="row">
+								<th role="columnheader" class="" scope="col">Date</th>
+								<th role="columnheader" class="" scope="col">Travel details</th>
+								<th role="columnheader" class="" scope="col">Value</th>
+								<th role="columnheader" class="" scope="col">Actions</th>
+							</tr>
+						</thead>
+
+					<tbody class="nhsuk-table__body">
+						<tr role="row" class="nhsuk-table__row">
+							{% if data['additional-cost'] == "1" %}
+							<th rowspan="3" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+							{% else %}
+							<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+							{% endif %}
+								<span class="nhsuk-table-responsive__heading">Date </span>
+								Friday 6 October 2023
+							</th>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>
+								Mileage to placement
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>
+								10 miles
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Actions </span>
+								<div class="link-container">
+									<a href="TDAE-placement-car-to-mileage?change=true">Change</a> or <a href="TDAE-placement-travel-remove-mileage?journey=to&mileage-date=Friday 6 October 2023">remove</a>
+								</div>
+							</td>
+						</tr>
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel type </span>
+								Mileage returning from placement
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Travel cost </span>
+								10 miles
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Actions </span>
+								<div class="link-container">
+									<a href="TDAE-placement-car-return-mileage?change=true">Change</a> or <a href="TDAE-placement-travel-remove-mileage?journey=return&mileage-date=Friday 6 October 2023">remove</a>
+								</div>
+							</td>
+						</tr>
+
+						{% if data['additional-cost'] == "1" %}
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Additional cost type </span>
+								Parking charges
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Additional cost </span>
+								£4
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Actions </span>
+								<div class="link-container">
+									<a href="TDAE-placement-additional-costs-cya">Change</a> or <a href="#">remove</a>
+								</div>
+							</td>
+						</tr>
+						{% endif %}
+
+
+					<tr role="row" class="nhsuk-table__row">
+						{% if data['additional-cost'] == "1" %}
+						<th rowspan="3" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+						{% else %}
+						<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+						{% endif %}
+							<span class="nhsuk-table-responsive__heading">Date </span>
+							Saturday 7 October 2023
+						</th>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>
+							Mileage to placement
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							10 miles
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions </span>
+							<div class="link-container">
+								<a href="TDAE-placement-car-to-mileage?change=true">Change</a> or <a href="#">remove</a>
+							</div>
+						</td>
+					</tr>
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>
+							Mileage returning from placement
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							10 miles
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions </span>
+							<div class="link-container">
+								<a href="TDAE-placement-car-return-mileage?change=true">Change</a> or <a href="#">remove</a>
+							</div>
+						</td>
+					</tr>
+
+					{% if data['additional-cost'] == "1" %}
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Additional cost type </span>
+							Parking charges
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Additional cost </span>
+							£4
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions </span>
+							<div class="link-container">
+								<a href="TDAE-placement-additional-costs-cya">Change</a> or <a href="#">remove</a>
+							</div>
+						</td>
+					</tr>
+					{% endif %}
+
+					<tr role="row" class="nhsuk-table__row">
+						{% if data['additional-cost'] == "1" %}
+						<th rowspan="3" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+						{% else %}
+						<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+						{% endif %}
+							<span class="nhsuk-table-responsive__heading">Date </span>
+							Sunday 8 October 2023
+						</th>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>
+							Mileage to placement
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							10 miles
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions </span>
+							<div class="link-container">
+								<a href="TDAE-placement-car-to-mileage?change=true">Change</a> or <a href="#">remove</a>
+							</div>
+						</td>
+					</tr>
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>
+							Mileage returning from placement
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							10 miles
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions </span>
+							<div class="link-container">
+								<a href="TDAE-placement-car-return-mileage?change=true">Change</a> or <a href="#">remove</a>
+							</div>
+						</td>
+					</tr>
+
+					{% if data['additional-cost'] == "1" %}
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Additional cost type </span>
+							Parking charges
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Additional cost </span>
+							£4
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions </span>
+							<div class="link-container">
+								<a href="TDAE-placement-additional-costs-cya">Change</a> or <a href="#">remove</a>
+							</div>
+						</td>
+					</tr>
+					{% endif %}
+
+					<tr role="row" class="nhsuk-table__row">
+						{% if data['additional-cost'] == "1" %}
+						<th rowspan="3" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+						{% else %}
+						<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+						{% endif %}
+							<span class="nhsuk-table-responsive__heading">Date </span>
+							Monday 9 October 2023
+						</th>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>
+							Mileage to placement
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							10 miles
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions </span>
+							<div class="link-container">
+								<a href="TDAE-placement-car-to-mileage?change=true">Change</a> or <a href="#">remove</a>
+							</div>
+						</td>
+					</tr>
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>
+							Mileage returning from placement
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>
+							10 miles
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions </span>
+							<div class="link-container">
+								<a href="TDAE-placement-car-return-mileage?change=true">Change</a> or <a href="#">remove</a>
+							</div>
+						</td>
+					</tr>
+
+					{% if data['additional-cost'] == "1" %}
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Additional cost type </span>
+							Parking charges
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Additional cost </span>
+							£4
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions </span>
+							<div class="link-container">
+								<a href="TDAE-placement-additional-costs-cya">Change</a> or <a href="#">remove</a>
+							</div>
+						</td>
+					</tr>
+					{% endif %}
+				</tbody>
+			</table>
+			<br>
+
+		{% else %}
+			<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+			  <caption>
+					<span class="nhsuk-heading-m">Placement travel details and costs</span>
+					<span class="nhsuk-u-visually-hidden"> - </span>
+					<span class="nhsuk-hint">Showing 1-4 of 4 dates</span>
+				</caption>
+			  <thead role="rowgroup" class="nhsuk-table__head">
+			    <tr role="row">
+			      <th role="columnheader" class="" scope="col">Date</th>
+						{% if data['address-number'] == '2' or data['address-number'] == '3' or data['address-number'] == '4' %}
+							<th role="columnheader" class="" scope="col">Placement address</th>
+						{% endif %}
+			      <th role="columnheader" class="" scope="col">Travel details</th>
+			      <th role="columnheader" class="" scope="col">Value</th>
+						<th role="columnheader" class="" scope="col">Action</th>
+			    </tr>
+			  </thead>
+			  <tbody class="nhsuk-table__body">
+					<tr role="row" class="nhsuk-table__row">
+						<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Date </span>Friday 6 October 2023
+				    </th>
+						{% if data['address-number'] == '2' or data['address-number'] == '3' or data['address-number'] == '4' %}
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 1, NE1 1AA</span>
+							</td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Daily train ticket
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>£8.60
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span>
+							<div class="link-container">
+								<a href="TDAE-public-transport-change-daily2?train-date=Friday 6 October 2023">Change</a> or <a href="TDAE-public-transport-remove?daily=true">remove</a>
+							</div>
+						</td>
+					</tr>
+					<tr role="row" class="nhsuk-table__row">
+						{% if data['address-number'] == '2' or data['address-number'] == '3' or data['address-number'] == '4' %}
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 1, NE1 1AA</span>
+							</td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Multiple day bus ticket
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>£3
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span>
+							<div class="link-container">
+								<a href="TDAE-public-transport-check?public-transport-ticket=Multiple day ticket">Change</a> or <a href="TDAE-public-transport-remove?daily=false">remove</a>
+							</div>
+						</td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Date </span>Saturday 7 October 2023
+						</th>
+						{% if data['address-number'] == '2' or data['address-number'] == '3' or data['address-number'] == '4' %}
+							<td role="cell" class="nhsuk-table__cell">
+				        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+				      </td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Daily train ticket
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>£8.60
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span>
+							<div class="link-container">
+								<a href="TDAE-public-transport-change-daily2?train-date=Saturday 7 October 2023">Change</a> or <a href="TDAE-public-transport-remove?daily=true">remove</a>
+							</div>
+						</td>
+					</tr>
+					<tr role="row" class="nhsuk-table__row">
+				    {% if data['address-number'] == '2' or data['address-number'] == '3' or data['address-number'] == '4' %}
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 1, NE1 1AA</span>
+							</td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Multiple day bus ticket
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>£3
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span>
+							<div class="link-container">
+								<a href="TDAE-public-transport-check?public-transport-ticket=Multiple day ticket">Change</a> or <a href="TDAE-public-transport-remove?daily=false">remove</a>
+							</div>
+						</td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Date </span>Sunday 8 October 2023
+						</th>
+						{% if data['address-number'] == '2' or data['address-number'] == '3' or data['address-number'] == '4' %}
+							<td role="cell" class="nhsuk-table__cell">
+				        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+				      </td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Daily train ticket
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>£8.60
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span>
+							<div class="link-container">
+								<a href="TDAE-public-transport-change-daily2?train-date=Sunday 8 October 2023">Change</a> or <a href="TDAE-public-transport-remove?daily=true">remove</a>
+							</div>
+						</td>
+					</tr>
+					<tr role="row" class="nhsuk-table__row">
+				    {% if data['address-number'] == '2' or data['address-number'] == '3' or data['address-number'] == '4' %}
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 1, NE1 1AA</span>
+							</td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Multiple day bus ticket
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>£3
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span>
+							<div class="link-container">
+								<a href="TDAE-public-transport-check?public-transport-ticket=Multiple day ticket">Change</a> or <a href="TDAE-public-transport-remove?daily=false">remove</a>
+							</div>
+						</td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<th rowspan="2" scope="row" class="nhsbsa-row__header nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Date </span>Monday 9 October 2023
+				    </th>
+						{% if data['address-number'] == '2' or data['address-number'] == '3' or data['address-number'] == '4' %}
+							<td role="cell" class="nhsuk-table__cell">
+				        <span class="nhsuk-table-responsive__heading">Placement address </span>Address 1, NE1 1AA
+				      </td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Daily train ticket
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>£8.60
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span>
+							<div class="link-container">
+								<a href="TDAE-public-transport-change-daily2?train-date=Monday 9 October 2023">Change</a> or <a href="TDAE-public-transport-remove?daily=true">remove</a>
+							</div>
+						</td>
+					</tr>
+					<tr role="row" class="nhsuk-table__row">
+						{% if data['address-number'] == '2' or data['address-number'] == '3' or data['address-number'] == '4' %}
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Placement address </span><span class="nhsuk-u-visually-hidden">Address 1, NE1 1AA</span>
+							</td>
+						{% endif %}
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel type </span>Multiple day bus ticket
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Travel cost </span>£3
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action </span>
+							<div class="link-container">
+								<a href="TDAE-public-transport-check?public-transport-ticket=Multiple day ticket">Change</a> or <a href="TDAE-public-transport-remove?daily=false">remove</a>
+							</div>
+						</td>
+					</tr>
+			  </tbody>
+			</table>
+		{% endif %}
+
+		<div class="action-block">
+			<h2 class="nhsuk-heading-s">What you can do</h2>
+			<div class="nhsuk-grid-row">
+				{% if checked('claiming-for', 'car') %}
+				<div class="nhsuk-grid-column-one-quarter">
+					<a class="nhsuk-button nhsuk-button--secondary" href="v9/add-journey-mileage">Add driving mileage</a>
+				</div>
+				{% endif %}
+				{% if checked('claiming-for', 'Cycle') %}
+				<div class="nhsuk-grid-column-one-quarter">
+					<a class="nhsuk-button nhsuk-button--secondary" href="v9/add-cycle-journey-mileage">Add cycling mileage</a>
+				</div>
+				{% endif %}
+				{% if checked('claiming-for', 'Public transport') %}
+				<div class="nhsuk-grid-column-one-quarter">
+					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-public-transport-overview">Add more public transport tickets</a>
+				</div>
+				{% endif %}
+				{% if checked('claiming-for', 'car') %}
+				<div class="extra-cost-button nhsuk-grid-column-one-quarter">
+					<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-evidence-type">Add extra costs</a>
+				</div>
+				{% endif %}
+				{% if checked('claiming-for', 'community') %}
+				<div class="nhsuk-grid-column-one-quarter">
+				<a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-community-mileage-day">Add community travel</a>
+				</div>
+				{% endif %}
+				<!--<div class="nhsuk-grid-column-one-quarter" style="width: 30%;">
+				<a href="TDAE-placement-comments" class="nhsuk-button">Complete placement travel details</a>
+				</div>-->
+			</div>
+			<!--<p><a href="#">Save and come back later</a></p>-->
+			<h3 class="nhsuk-heading-xs">Change previous answers</h3>
+			<!--<p>You can: </p>-->
+				{% if data['address-number'] == '2' or data['address-number'] == '3' or data['address-number'] == '4' %}
+					<p><a href="TDAE-placement-address-days-cya">Change placement travel dates or addresses</a></p>
+				{% else %}
+					<p><a href="TDAE-check-dates">Change placement travel dates</a></p>
+				{% endif %}
+		</div>
+
+		<a href="TDAE-placement-comments" class="nhsuk-button">Save placement travel details</a>
+		<p><a href="#">Save and come back later</a></p>
+
+	</div>
+
+
+</div>
+
+<style>
+	.nhsbsa-row__header{
+		font-weight: normal;
+	}
+	@media only screen and (min-width:769px) {
+		.nhsbsa-row__header{
+			vertical-align: middle;
+		}
+	}
+	@media only screen and (max-width:768px) {
+		.nhsbsa-row__header{
+			text-align: right;
+			padding-right:0;
+			padding-left: 0;
+			display:flex;
+			justify-content: space-between;
+			border: 1px solid	#d8dde0;
+			outline: 5px solid #d8dde0;
+			margin-bottom: 5px;
+			background: #d8dde0;
+			/* padding: 10px; */
+			font-weight: 800;
+		}
+		.nav {
+    	flex-direction: row;
+    	align-items: center;
+		}
+		.pagination__summary {
+			font-size: 16px;
+			text-align:right;
+		}
+	}
+</style>
+
+{% endblock %}

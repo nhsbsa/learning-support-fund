@@ -1,0 +1,61 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Is your term time address the same?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="v9/TDAE-accommodation-same-start-date" method="POST">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Was {% if data['incur-cost-start-day'] %}{{ data['incur-cost-start-day']}}{% else %}4{% endif %} February 2024 the start date of your booking?
+                </h1>
+              </legend>
+
+              <!--<div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+                <p>13 September 2023</p>
+              </div>-->
+
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="same-accommodation-start-date-yes" name="same-accommodation-start-date" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="same-accommodation-start-date-yes">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="same-accommodation-start-date-no" name="same-accommodation-start-date" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="same-accommodation-start-date-no">
+                    No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <a href="TDAE-claims-list">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

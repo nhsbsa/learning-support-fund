@@ -1,0 +1,169 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Placement additional costs comments
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <form action="check-multiple" method="POST">
+
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+              <h1 class="nhsuk-heading-l">Taxi evidence</h1>
+            </label>
+
+            {% if data['taxi-evidence'] == "added" %}
+
+            <h2 class="nhsuk-heading-m">Authorisation for taxi</h2>
+            <p>You need to show us evidence of authorisation from your university or placement to use a taxi. For example, an email or note.</p>
+            <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+              <caption class="nhsuk-table__caption"></caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                      File
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                      Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+                  <td style="width:75%;" class="nhsuk-table__cell ">
+                    <a href="/images/taxi-authorisation-email.png" download="Authorisation of Overseas Costs April 2024">
+      							taxi-authorisation-email.jpg
+      							</a>
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <a href="evidence-overview?taxi-evidence=removed">Remove</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><a href="authorisation-evidence">Add more evidence of authorisation</a></p>
+
+            <h2 class="nhsuk-heading-m">Taxi cost</h2>
+            <p>You need to show us evidence of your taxi cost. For example, a receipt or invoice.</p>
+            <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+              <caption class="nhsuk-table__caption"></caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                      File
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                      Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+                  <td style="width:75%;" class="nhsuk-table__cell ">
+                    <a href="/images/taxi-evidence.png">
+      								uber-receipt.jpg
+      							</a>
+                  </td>
+                  <td class="nhsuk-table__cell ">
+                    <a href="evidence-overview?taxi-evidence=removed">Remove</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><a href="evidence">Add more evidence of taxi costs</a></p>
+
+            <button class="nhsuk-button" type="submit">Continue</button><br>
+            <p><a href="TDAE-task-list">Return to task list</a></p>
+
+            {% else %}
+
+            <p>You'll need to add evidence for each section before you can continue.</p>
+
+            <h2 class="nhsuk-heading-m">Authorisation for taxi</h2>
+            <p>You need to show us evidence of authorisation from your university or placement to use a taxi. For example, an email or note.</p>
+            <a class="nhsuk-button nhsuk-button--secondary" href="authorisation-evidence?taxi-evidence=added">Add authorisation evidence</a>
+
+            <h2 class="nhsuk-heading-m">Taxi cost</h2>
+            <p>You need to show us evidence of your taxi cost. For example, a receipt or invoice.</p>
+            <a class="nhsuk-button nhsuk-button--secondary" href="evidence?taxi-evidence=added">Add cost evidence</a>
+
+            <p><a href="TDAE-task-list">Return to task list</a></p>
+            {% endif %}
+
+
+
+
+          </div>
+
+
+    </form>
+
+    </div>
+
+    <script>
+    const textarea = document.querySelector('#additionalCostsComment');
+    const countRemaining = document.getElementById('charactersRemaining');
+    const staticMsg = document.querySelector('#char-count-screen-reader');
+    const maxCharacters = 500;
+    let timeoutId;
+
+    function updateCharacterCount() {
+      const textEntered = textarea.value;
+      const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+      const addition = newLines?.length || 0;
+      const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+
+      if (remainingCharacters >= 0) {
+        countRemaining.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+        countRemaining.classList.remove('nhsbsa-count-error-message');
+        countRemaining.classList.add('nhsuk-hint');
+        textarea.classList.remove('nhsuk-textarea--error');
+      } else {
+        countRemaining.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+        countRemaining.classList.add('nhsbsa-count-error-message');
+        countRemaining.classList.remove('nhsuk-hint');
+        textarea.classList.add('nhsuk-textarea--error');
+      }
+    }
+
+    function updateScreenReaderMessage() {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        const textEntered = textarea.value;
+        const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+        const addition = newLines?.length || 0;
+        const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+        // TO DO ADD FIX FOR 1 CHARACTER
+        if (remainingCharacters < 0) {
+          staticMsg.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+        } else {
+          staticMsg.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+        }
+      }, 500);
+    }
+
+    textarea.addEventListener('input', () => {
+      updateCharacterCount();
+      updateScreenReaderMessage();
+    });
+
+    // Update character count if textarea has a value on page load
+    window.addEventListener('load', () => {
+      updateCharacterCount();
+      updateScreenReaderMessage();
+    });
+  </script>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Student declaration
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="" method="POST">
+
+          <h1 class="nhsuk-heading-l">Check your emails</h1>
+
+          {% if data['new-email'] == "sent" %}
+            <div class="nhsuk-inset-text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+              <p>New email sent.</p>
+            </div>
+          {% endif %}
+
+          <p>We've sent you an email with a confirmation link. You need to use this link to change your phone number.</p>
+
+          <h2 class="nhsuk-heading-m">What to do if you do not receive the email</h2>
+          <p>Check your spam or junk folder as the email may be there. If it's not, you can <a href="change-phone-number-email-sent?new-email=sent">send a new email</a>.</p>
+
+          <p>If you have any further problems, you can contact us by:</p>
+          <ul class="nhsuk-list">
+            <li>Telephone: 0300 330 0521</li>
+            <li>Text relay service: 18001 0300 330 0521</li>
+          </ul>
+
+          <p>We're open Monday to Friday 8am to 6pm, and Saturday 9am to 3pm.</p>
+
+          <button class="nhsuk-button nhsuk-button--secondary" type="submit">Go to your NHS Learning Support Fund account</button>
+          <br>
+          <a href="change-phone-number">Link from email</a>
+
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

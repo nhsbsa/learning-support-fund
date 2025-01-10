@@ -1,0 +1,42 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+      <form action="v9/APPLY-student-reference-number" method="POST">
+        <div class="nhsuk-form-group">
+
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-l">What is your student finance reference number?</h1>
+            </legend>
+
+            <p>This may be called a Customer Reference Number or a SAAS Reference Number on letters or emails from your student finance body.</p>
+
+            <div class="nhsuk-form-group">
+							<input class="nhsuk-input nhsuk-u-width-two-thirds" name="sfReferenceNo" id="sfNumber" type="text" maxlength="15" value="">
+						</div>
+          </fieldset>
+
+        </div>
+
+        <button class="nhsuk-button" type="submit">Continue</button><br>
+        <p><a href="academic-year-details">Cancel</a></p>
+
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Which days does this evidence relate to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v9/TDAE-no-evidence-cost" method="POST">
+
+
+            <div class="nhsuk-form-group">
+
+              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  <h1 class="nhsuk-fieldset__heading">
+                    Which cost do you not have evidence for?
+                  </h1>
+                </legend>
+
+                <div class="nhsuk-radios">
+                  {% if data ['claiming-for'] == 'car' %}
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="no-evidence-1" name="no-evidence-for" type="radio" value="Parking charges on Friday 6 October 2023">
+                    <label class="nhsuk-label nhsuk-radios__label" for="no-evidence-1">
+                      Parking charges on Friday 6 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="no-evidence-2" name="no-evidence-for" type="radio" value="Parking charges on Saturday 7 October 2023">
+                    <label class="nhsuk-label nhsuk-radios__label" for="no-evidence-2">
+                      Parking charges on Saturday 7 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="no-evidence-3" name="no-evidence-for" type="radio" value="Parking charges on Sunday 8 October 2023">
+                    <label class="nhsuk-label nhsuk-radios__label" for="no-evidence-3">
+                      Parking charges on Sunday 8 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="no-evidence-3" name="no-evidence-for" type="radio" value="Parking charges on Monday 9 October 2023">
+                    <label class="nhsuk-label nhsuk-radios__label" for="no-evidence-3">
+                      Parking charges on Monday 9 October 2023
+                    </label>
+                  </div>
+
+                  {% elif data ['claiming-for'] == 'travel to accommodation' and data ['direction-of-travel'] == 'termtime-to-accommodation' %}
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="no-evidence-1" name="no-evidence-for" type="radio" value="Parking charges on Sunday 4 February 2024">
+                    <label class="nhsuk-label nhsuk-radios__label" for="no-evidence-1">
+                      Parking charges on Sunday 4 February 2024
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="no-evidence-2" name="no-evidence-for" type="radio" value="Train ticket on Sunday 4 February 2024">
+                    <label class="nhsuk-label nhsuk-radios__label" for="no-evidence-2">
+                      Train ticket on Sunday 4 February 2024
+                    </label>
+                  </div>
+
+                  {% elif data ['claiming-for'] == 'travel to accommodation' and data ['direction-of-travel'] == 'accommodation-to-termtime' %}
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="no-evidence-1" name="no-evidence-for" type="radio" value="Train ticket on Friday 9 February 2024">
+                    <label class="nhsuk-label nhsuk-radios__label" for="no-evidence-1">
+                      Train ticket on Friday 9 February 2024
+                    </label>
+                  </div>
+
+                  {% else %}
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="no-evidence-1" name="no-evidence-for" type="radio" value="Parking charges on Monday 5 June 2023">
+                    <label class="nhsuk-label nhsuk-radios__label" for="no-evidence-1">
+                      Parking charges on Monday 5 June 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="no-evidence-2" name="no-evidence-for" type="radio" value="Parking charges on Tuesday 6 June 2023">
+                    <label class="nhsuk-label nhsuk-radios__label" for="no-evidence-2">
+                      Parking charges on Tuesday 6 June 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="no-evidence-3" name="no-evidence-for" type="radio" value="Parking charges on Wednesday 7 June 2023">
+                    <label class="nhsuk-label nhsuk-radios__label" for="no-evidence-3">
+                      Parking charges on Wednesday 7 June 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="no-evidence-4" name="no-evidence-for" type="radio" value="Parking charges on Thursday 8 June 2023">
+                    <label class="nhsuk-label nhsuk-radios__label" for="no-evidence-4">
+                      Parking charges on Thursday 8 June 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="no-evidence-5" name="no-evidence-for" type="radio" value="Parking charges on Friday 9 June 2023">
+                    <label class="nhsuk-label nhsuk-radios__label" for="no-evidence-5">
+                      Parking charges on Friday 9 June 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="no-evidence-6" name="no-evidence-for" type="radio" value="Tunnel and toll charges on Monday 5 June 2023">
+                    <label class="nhsuk-label nhsuk-radios__label" for="no-evidence-6">
+                      Tunnel and toll charges on Monday 5 June 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="no-evidence-7" name="no-evidence-for" type="radio" value="Congestion and clean air charges on Monday 5 June 2023">
+                    <label class="nhsuk-label nhsuk-radios__label" for="no-evidence-7">
+                      Congestion and clean air charges on Monday 5 June 2023
+                    </label>
+                  </div>
+                  {% endif %}
+
+                </div>
+              </fieldset>
+
+            </div>
+
+            <button class="nhsuk-button">Continue</button><br>
+
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

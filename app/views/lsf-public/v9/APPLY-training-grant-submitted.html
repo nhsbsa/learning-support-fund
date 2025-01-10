@@ -1,0 +1,42 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+            <div class="nhsuk-card__content">
+                <h1 class="nhsuk-card__heading nhsuk-heading-xl" style="text-align: center; color: white;">
+                    Training Grant application submitted
+                </h1>
+            </div>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <h2 class="nhsuk-heading-m">What happens next</h2>
+          <p>We'll email you once we've reviewed your application.</p>
+
+          <h2 class="nhsuk-heading-m">Parental support</h2>
+          <p>You're eligible for Parental Support if you have parental responsibility for a child who is either:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>under the age of 15 years</li>
+            <li>under 17 years if the child is registered with special educational needs</li>
+          </ul>
+          <p>Read the guidance on our <a href="#">NHS Learning Support Fund website page</a> before applying.</p>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <form action="v9/APPLY-training-grant-submitted" method="POST">
+              <button class="nhsuk-button" type="submit">Return to academic year details</button>
+          </form>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

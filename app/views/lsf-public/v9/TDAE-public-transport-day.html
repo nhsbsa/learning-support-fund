@@ -1,0 +1,75 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Which days does this evidence relate to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v9/TDAE-public-transport-days" method="POST">
+
+
+            <div class="nhsuk-form-group">
+
+              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  <h1 class="nhsuk-heading-l">
+                    On which day did you buy this ticket?
+                  </h1>
+                </legend>
+
+                <div class="nhsuk-radios">
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-1" name="public-transport-days" type="radio" value="Friday 6 October 2023">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                      Friday 6 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-2" name="public-transport-days" type="radio" value="Saturday 7 October 2023">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                      Saturday 7 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-3" name="public-transport-days" type="radio" value="Sunday 8 October 2023">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-3">
+                      Sunday 8 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-3" name="public-transport-days" type="radio" value="Monday 9 October 2023">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-3">
+                      Monday 9 October 2023
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+
+            </div>
+
+            <button class="nhsuk-button">Continue</button><br>
+            <a href="TDAE-start-claim">Cancel</a>
+
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

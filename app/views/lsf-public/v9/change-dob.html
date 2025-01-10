@@ -1,0 +1,57 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  What are your contact details?
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+        <h1 class="nhsuk-heading-l">What is your date of birth?</h1>
+
+        <div class="nhsuk-form-group">
+					<div class="nhsuk-hint" id="formhint"> For example, 15 3 1984</div>
+
+
+					<div class="nhsuk-date-input">
+						<div class="nhsuk-date-input__item">
+							<label id="dob-day-label" class="nhsuk-label nhsuk-date-input__label" for="dob-day">Day</label>
+							<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+								id="dob-day" name="day" type="number"
+								pattern="[0-9]*" maxlength="2"
+								oninput="this.value=this.value.slice(0,this.maxLength)"
+								inputmode="numeric" value="12">
+						</div>
+
+						<div class="nhsuk-date-input__item">
+							<label id="dob-month-label" class="nhsuk-label nhsuk-date-input__label" for="dob-month">Month</label>
+							<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+								id="dob-month" name="month" type="number" pattern="[0-9]*" maxlength="2"
+								oninput="this.value=this.value.slice(0,this.maxLength)"
+								inputmode="numeric" value="4">
+						</div>
+						<div class="nhsuk-date-input__item">
+							<label id="dob-year-label" class="nhsuk-label nhsuk-date-input__label" for="dob-year">Year</label>
+							<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+								id="dob-year" name="year" type="number"
+								pattern="[0-9]*" maxlength="4"
+								oninput="this.value=this.value.slice(0,this.maxLength)"
+								inputmode="numeric" value="1997">
+						</div>
+					</div>
+				</div>
+
+        <a class="nhsuk-button" href="change-dob-changed">Save and continue</a><br>
+        <p><a href="dashboard">Cancel</a></p>
+
+    </div>
+
+  </div>
+{% endblock %}

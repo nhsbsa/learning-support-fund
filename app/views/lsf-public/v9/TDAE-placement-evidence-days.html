@@ -1,0 +1,171 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Which days does this evidence relate to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v9/TDAE-placement-evidence-days" method="POST">
+
+
+            <div class="nhsuk-form-group">
+
+              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  {% if data['additional-cost-single-day'] == 'No' %}
+                    <h1 class="nhsuk-fieldset__heading">
+                      Which days did this cost cover?
+                    </h1>
+                  {% else %}
+                    <h1 class="nhsuk-fieldset__heading">
+                      On which days did you pay this extra cost?
+                    </h1>
+                  {% endif %}
+                </legend>
+
+                <dl class="nhsuk-summary-list">
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Extra cost
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      {{ data['additional-cost-type']}}
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Amount
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      £{{ data['placement-additional-costs']}}
+                    </dd>
+                  </div>
+
+                  {% if data['additional-cost-single-day'] == 'No' %}
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Start and end date
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        Friday 6 October 2023 to <br>
+                        Thursday 12 October 2023
+                      </dd>
+                    </div>
+                  {% endif %}
+
+                </dl>
+
+                <div class="nhsuk-hint" id="example-hint">
+                  Select all that apply.
+                </div>
+
+                {% if data['additional-cost-single-day'] == 'Yes' %}
+                <div class="nhsuk-checkboxes">
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                      Friday 6 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                      Saturday 7 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                     Sunday 8 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                      Monday 9 October 2023
+                    </label>
+                  </div>
+
+                  {% else %}
+                <div class="nhsuk-checkboxes">
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                      Friday 6 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                      Saturday 7 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                     Sunday 8 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                      Monday 9 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                      Tuesday 10 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                      Wednesday 11 October 2023
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                      Thursday 12 October 2023
+                    </label>
+                  </div>
+                  {% endif %}
+              </fieldset>
+
+            </div>
+
+            <button class="nhsuk-button">Continue</button><br>
+            <a href="TDAE-placement-itinerary">Cancel</a>
+
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

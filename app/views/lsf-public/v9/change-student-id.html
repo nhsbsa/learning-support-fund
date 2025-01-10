@@ -1,0 +1,45 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  What is your university student ID?
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+        <h1 class="nhsuk-heading-l">What is your university student ID?</h1>
+
+        {% if data['TDAE'] == 'true' %}
+          <p>We'll save this in the Personal details section of your NHS Learning Support Fund account.</p>
+        {% endif %}
+
+        <div class="nhsuk-form-group">
+					<!--<div class="nhsuk-hint" id="formhint"> For example, 15 3 1984</div>-->
+          <div class="nhsuk-form-group">
+            <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+          </div>
+				</div>
+
+        {% if data['TDAE'] == 'true' %}
+          {% if data['change'] == 'yes' %}
+            <a class="nhsuk-button" href="TDAE-eligibility-cya?task-completed=yes">Continue</a><br>
+          {% else %}
+            <a class="nhsuk-button" href="TDAE-incur-costs">Continue</a><br>
+          {% endif %}
+          <p><a href="TDAE-returning-student/academic-year-details#tab-two">Cancel</a></p>
+        {% else %}
+          <a class="nhsuk-button" href="change-student-id-changed">Save and continue</a><br>
+          <p><a href="dashboard">Cancel</a></p>
+        {% endif %}
+
+    </div>
+
+  </div>
+{% endblock %}

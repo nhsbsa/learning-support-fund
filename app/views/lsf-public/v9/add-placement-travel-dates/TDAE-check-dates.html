@@ -1,0 +1,84 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- <form action="" method="POST"> -->
+
+        <h1 class="nhsuk-heading-l">Your placement travel dates</h1>
+
+        <p>Because you've added costs to your placement travel details, you cannot remove placement travel dates. However, you can add dates.</p>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              How do I add dates?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>To add a date within a period of placement travel, select Add dates.</p>
+            <p>For dates outside of a period, select Add more dates.</p>
+          </div>
+        </details>
+
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                  Period 1<br>
+                  <div style="font-weight: 400;">(1 September to 7 September)</div>
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Monday 1 September 2024<br>
+                Tuesday 2 September 2024<br>
+                Wednesday 3 September 2024<br>
+                Thursday 4 September 2024
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="TDAE-placement-days">
+                    Add dates<span class="nhsuk-u-visually-hidden"> to period 1</span>
+                </a>
+              </dd>
+          </div>
+          {% if data['placement-week'] == '2' %}
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Period 2<br>
+                <div style="font-weight: 400;">(8 September to 14 September)</div>
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Monday 8 September 2024<br>
+                Tuesday 9 September 2024<br>
+                Wednesday 10 September 2024<br>
+                Thursday 11 September 2024
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="TDAE-placement-days">
+                    Add dates<span class="nhsuk-u-visually-hidden"> to period 2</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+
+        </dl>
+
+        <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-week-days?placement-week=2">Add more dates</a>
+
+        <form action="v9/TDAE-check-dates" method="POST">
+            <button class="nhsuk-button" type="submit">Save and continue</button><br>
+        </form>
+
+        <a class="nhsuk-button nhsuk-button--warning" href="TDAE-dates-warning" style="background-color: #d4351c;">Reset all placement travel days</a>
+
+        <!-- </form> -->
+
+    </div>
+
+</div>
+{% endblock %}

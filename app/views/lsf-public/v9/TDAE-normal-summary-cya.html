@@ -1,0 +1,231 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+		{% if data['submit-claim'] == 'completed' %}
+			{{ backLink({
+				"href": "javascript:history.go(-1)",
+				"text": "Go back"
+			}) }}
+		{% endif %}
+
+		<!-- <form action="" method="POST"> -->
+
+		<h1 class="nhsuk-heading-xl">Check your answers</h1>
+
+		{% if data['university-details'] === 'action' %}
+			<div class="nhsuk-warning-callout">
+			  <h3 class="nhsuk-warning-callout__label">
+			    <span role="text">
+			      <span class="nhsuk-u-visually-hidden">Important: </span>
+			      University feedback
+			    </span>
+			  </h3>
+			  <p>Your University address is incorrect for the building your lectures are in. You have provided the incorrect evidence of a parking charge for Monday 4 July.</p>
+			</div>
+		{% endif %}
+
+		<dl class="nhsuk-summary-list">
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					University address
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{% if data['study-building-name'] %}
+						{{ data['study-building-name'] }}<br>
+						{{ data['study-address-line-1'] }}<br>
+						{% if data['study-address-line-2'] %}
+							{{ data['study-address-line-2'] }}<br>
+						{% endif %}
+						{% if data['study-address-line-3'] %}
+							{{ data['study-address-line-3'] }}<br>
+						{% endif %}
+						{{ data['study-address-town'] }}<br>
+						{{ data['study-address-postcode'] }}<br>
+					{% else %}
+					Grizedale building<br>
+					Newcastle University<br>
+					University street<br>
+					Newcastle upon Tyne<br>
+					NE1 1DF
+					{% endif %}
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+
+					<a href="TDAE-normal-place-study">
+						Change<span class="nhsuk-u-visually-hidden"> normal place of study</span>
+					</a>
+
+				</dd>
+		{% endif %}
+			</div>
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Transport method
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					<span class="capitalize">{{ data['mode-of-transport'] }}</span>
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+
+					<a href="TDAE-normal-transport">
+						Change<span class="nhsuk-u-visually-hidden"> mode of transport</span>
+					</a>
+
+				</dd>
+				{% endif %}
+			</div>
+
+			{% if data['mode-of-transport'] %}
+				{% if 'drive' in data['mode-of-transport'] %}
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Driving total daily mileage
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['mode-of-transport'] == 'drive' %}
+								{{ data['return-mileage'] }}
+							{% else %}
+								3.5
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-normal-return-mileage">
+									Change<span class="nhsuk-u-visually-hidden"> drive to University return mileage</span>
+								</a>
+							</dd>
+						{% endif %}
+					</div>
+
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Driving extra daily costs
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['normal-often-additional-costs']  === 'yes' %}
+							 {{ data['study-additional-cost'] }}
+							{% else %}
+								No additional costs
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-normal-additional-costs-often">
+									Change<span class="nhsuk-u-visually-hidden"> additional costs total</span>
+								</a>
+							</dd>
+						{% endif %}
+					</div>
+				{% endif %}
+			{% endif %}
+
+			{% if data['mode-of-transport'] %}
+				{% if 'cycle' in data['mode-of-transport'] %}
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Cycling total daily mileage
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['mode-of-transport'] == 'cycle' %}
+								{{ data['cycle-return-mileage'] }}
+							{% else %}
+								3.5
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-normal-cycle-return-mileage">
+									Change<span class="nhsuk-u-visually-hidden"> drive to University return mileage</span>
+								</a>
+							</dd>
+						{% endif %}
+					</div>
+				{% endif %}
+			{% endif %}
+
+			{% if data['mode-of-transport'] %}
+				{% if 'public' in data['mode-of-transport'] %}
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Public transport daily costs
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['normal-public-often-additional-costs'] == 'yes' %}
+								{{ data['public-additional-cost'] }}
+							{% else %}
+								No costs
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-normal-additional-costs-often">
+									Change<span class="nhsuk-u-visually-hidden"> additional costs total</span>
+								</a>
+							</dd>
+						{% endif %}
+					</div>
+				{% endif %}
+			{% endif %}
+
+			<div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Comments
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					{% if data['study-additional-comment'] %}
+					 Comment added<br>
+					 <details class="nhsuk-details">
+					  <summary class="nhsuk-details__summary">
+					    <span class="nhsuk-details__summary-text">
+					      View comment
+					    </span>
+					  </summary>
+					  <div class="nhsuk-details__text">
+					    <p>This is a comment that is over 100 characters therefore it is in a details dropdown.</p>
+					  </div>
+					</details>
+					{% else %}
+						None provided
+					{% endif %}
+				</dd>
+				{% if data['submit-claim'] != 'completed' %}
+				<dd class="nhsuk-summary-list__actions">
+					<a href="TDAE-comments">
+						Change<span class="nhsuk-u-visually-hidden"> additional costs comments</span>
+					</a>
+				</dd>
+
+			</div>
+
+				{% endif %}
+
+			</dl>
+
+						<h2 class="nhsuk-heading-m">Total daily cost</h2>
+
+						<p>Your total daily cost of travelling to your university is £0.
+
+			{% if data['submit-claim'] != 'completed' %}
+				<form action="v9/TDAE-normal-summary-cya" method="POST">
+					<button class="nhsuk-button" type="submit">Save and continue</button><br>
+					<a href="TDAE-start-claim">Cancel</a>
+				</form>
+			{% endif %}
+
+		<!-- </form> -->
+
+	</div>
+
+</div>
+{% endblock %}

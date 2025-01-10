@@ -1,0 +1,125 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Which placement address were you travelling to?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="v9/TDAE-placement-mileage-address" method="POST">
+
+      <div class="nhsuk-form-group">
+
+        <div class="nhsuk-card" style="background: #4B6271; margin-top: 0;">
+    			<div class="nhsuk-card__content">
+    			  <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+    				 Cannot add more mileage for Newcastle University
+    			  </h1>
+    			</div>
+    		</div>
+
+        <p>You cannot add more mileage for Newcastle University because you have already added mileage for all dates you travelled there.</p>
+
+        <p>Go to Your placement travel details to add more travel dates, or change and remove previously entered mileage.</p>
+
+        <a class="nhsuk-button" href="TDAE-placement-itinerary">Go to Your placement travel details</a>
+
+    		<!--<table class="nhsuk-table">
+    			<caption class="nhsuk-table__caption">Mileage entered for Newcastle University</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+    						Day
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Mileage to placement
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Mileage returning from placement
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">
+                Friday 6 October 2023
+              </td>
+              <td class="nhsuk-table__cell">
+                8
+              </td>
+              <td class="nhsuk-table__cell">
+                8
+              </td>
+              <td class="nhsuk-table__cell">
+               <a href="#">Change</a>
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">
+                Saturday 7 October 2023
+              </td>
+              <td class="nhsuk-table__cell">
+                8
+              </td>
+              <td class="nhsuk-table__cell">
+                8
+              </td>
+              <td class="nhsuk-table__cell">
+               <a href="#">Change</a>
+              </td>
+            </tr>
+          </tbody>
+          </table>
+
+    		<h2 class="nhsuk-heading-m">How would you like to continue?</h2>
+
+    		<div class="nhsuk-form-group">
+    			<div class="nhsuk-radios">
+    		    <div class="nhsuk-radios__item">
+    		      <input class="nhsuk-radios__input" id="costs-correct-yes" name="invalid-costs-partial" type="radio" value="change-details">
+    		      <label class="nhsuk-label nhsuk-radios__label" for="costs-correct-yes">
+    		        Change placement travel details
+    		      </label>
+    		    </div>
+    		    <div class="nhsuk-radios__item">
+    		      <input class="nhsuk-radios__input" id="costs-correct-no" name="invalid-costs-partial" type="radio" value="remove">
+    		      <label class="nhsuk-label nhsuk-radios__label" for="costs-correct-no">
+    		        Remove placement travel days where costs are lower than university travel
+    		      </label>
+    		    </div>
+    				<div class="nhsuk-radios__item">
+    		      <input class="nhsuk-radios__input" id="costs-correct-no" name="invalid-costs-partial" type="radio" value="save">
+    		      <label class="nhsuk-label nhsuk-radios__label" for="costs-correct-no">
+    		        Save placement travel details and come back later
+    		      </label>
+    		    </div>
+    		  </div>
+    		</div>
+
+        <div class="nhsuk-form-group">
+    		<button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+    		  Continue
+    		</button><br>
+        <a href="TDAE-placement-itinerary">Cancel</a>
+        </div>
+      </div>-->
+
+    </form>
+
+  </div>
+
+</div>
+
+</script>
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Which mode of transport do you take to and from your normal place of study?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+    <form action="v9/TDAE-hire-car-reason" method="POST">
+
+      <div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="placement-additional-costs">
+					{% if data['more-vehicles'] === "yes" %}
+						<h1 class="nhsuk-heading-l">What was the reason for hiring Vehicle 1?</h1>
+					{% else %}
+						<h1 class="nhsuk-heading-l">What was the reason for hiring the vehicle?</h1>
+					{% endif %}
+				</label>
+
+              <div class="nhsuk-form-group">
+                <div class="nhsuk-hint" id="reason-for-vehicle-hire-hint">
+                  You will have the opportunity to go into more detail about the reason for hiring a vehicle after you have uploaded evidence.
+                </div>
+               
+              </div>
+
+              <div class="nhsuk-radios nhsuk-radios--conditional">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="public-transport-type" name="public-transport-type" type="radio" value="I couldn't get public transport to the location I needed and I do not own my own vehicle">
+                  <label class="nhsuk-label nhsuk-radios__label" for="reason-1">
+                    I couldn't get public transport to the location I needed and I do not own my own vehicle
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="public-transport-type" name="public-transport-type" type="radio" value="I had an emergency situation">
+                  <label class="nhsuk-label nhsuk-radios__label" for="reason-2">
+                    I had an emergency situation
+                  <div class="nhsuk-hint" id="contact-hint">
+                  This covers breakdowns, accidents and repairs.
+                  </div>
+                </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="public-transport-type" name="public-transport-type" type="radio" value="I was relocated or transferred and needed a temporary vehicle">
+                  <label class="nhsuk-label nhsuk-radios__label" for="reason-3">
+                    I was relocated or transferred and needed a temporary vehicle
+                  </label>
+              </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="public-transport-type" name="public-transport-type" type="radio" value="I needed to transport goods and/or equipment and required more space">
+                  <label class="nhsuk-label nhsuk-radios__label" for="reason-4">
+                    I needed to transport goods and/or equipment and required more space
+                  </label>
+                </div>                
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="public-transport-type" name="public-transport-type" type="radio" value="It was cheaper than using public transport">
+                    <label class="nhsuk-label nhsuk-radios__label" for="reason-5">
+                      It was cheaper than using public transport
+                    </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="public-transport-type" name="public-transport-type" type="radio" value="A group of us hired the vehicle">
+                  <label class="nhsuk-label nhsuk-radios__label" for="reason-6">
+                    A group of us hired the vehicle
+                  </label>
+              </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="other" aria-controls="conditional-contact-1" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-radios__label" for="reason-7">
+                    Other
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="other-input">
+                      Provide another reason for hiring the vehicle
+                    </label>
+                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="public-transport-type" type="text">
+                  </div>
+                </div>
+                
+
+              </div>
+            </fieldset>
+
+          </div>
+
+      <button class="nhsuk-button" type="submit">Continue</button><br>
+      <a href="TDAE-start-claim">Cancel</a>
+
+    </form>
+
+    </div>
+
+  </div>
+{% endblock %}

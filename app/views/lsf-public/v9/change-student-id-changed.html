@@ -1,0 +1,26 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Student declaration
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+            <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+                <div class="nhsuk-card__content">
+                    <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                      University student ID {% if data['notification'] == 'true' %}added{% else %}changed{% endif %}
+                    </h1>
+                </div>
+            </div>
+
+
+            <a href="dashboard?notification=false" class="nhsuk-button">Go to your NHS Learning Support Fund account</a>
+
+    </div>
+
+</div>
+{% endblock %}

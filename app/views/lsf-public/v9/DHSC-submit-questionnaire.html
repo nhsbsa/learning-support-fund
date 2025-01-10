@@ -1,0 +1,29 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Questionnaire submitted
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Department of Health and SocialCare questionnaire</span>Questionnaire submitted</h1>
+
+        <h2 class="nhsuk-heading-m">Thank you</h2>
+        <p>Your questionnaire has been successfully submitted. You can now apply for your Training Grant from the academic year details screen.</p>
+
+        <form action="v9/DHSC-submit-questionnaire" method="POST">
+          <button class="nhsuk-button" type="submit">Return to academic year details</a>
+        </form>
+
+    </div>
+
+  </div>
+{% endblock %}

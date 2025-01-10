@@ -1,0 +1,226 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Academic year September 2022
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Your NHS Learning Support Fund reference number is SSRN0000059</span>Academic year September 2024 details</h1>
+
+    </div>
+
+</div>
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-one-half">
+
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+                {% if data['questionnaire-completed'] == 'Completed' %}
+                {% else %}
+                    <div class="nhsuk-card nhsuk-card--clickable">
+                        <div class="nhsuk-card__content">
+                            <p class="nhsuk-card__description">Before you are able to apply for funding you need to answer some questions</p>
+                            <a href="DHSC-start">Answer Department of Health and Social Care questions</a>
+                        </div>
+                    </div>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="nhsuk-grid-row">
+  <!-- ENROLMENT DETAILS -->
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-one-third">
+
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course name</h2>
+        <p id="courseName">Adult Nursing</p>
+      </div>
+      <div class="nhsuk-grid-column-one-third">
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Attendance status</h2>
+        <p>University confirmation needed for term 1</p>
+      </div>
+      <div class="nhsuk-grid-column-one-third">
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course length</h2>
+        <p id="courseLength">3 years</p>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-one-third">
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">University</h2>
+        <p id="universityName">UNIVERSITY OF NEWCASTLE</p>
+
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Academic year</h2>
+        <p id="academicYear">September 2024</p>
+
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course details</h2>
+        <p><a id="updateEnrolment" href="#">Edit <span class="visually-hidden">enrolment details</span></a></p>
+      </div>
+      <div class="nhsuk-grid-column-one-third">
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Declaration</h2>
+        <p><a id="declarationLink" href="#">View <span class="visually-hidden">course declaration</span></a></p>
+
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Attendance</h2>
+        <p id="partTime">Full Time</p>
+
+
+          <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Repeat year</h3>
+          <p id="repeatYear">No</p>
+
+
+      </div>
+      <div class="nhsuk-grid-column-one-third">
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course year</h2>
+        <p id="courseYear">Year 1</p>
+
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Final year</h2>
+        <p id="finalYear">No</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% if data['questionnaire-completed'] == 'Completed' %}
+    {% if data['training-grant-submitted'] == 'Submitted' %}
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+                <hr>
+                <h2 class="nhsuk-heading-l">Training Grant</h2>
+                <h3 class="nhsuk-heading-m">Application for Training Grant</h3>
+                <p>Training grant is a non-means tested grant of £5,000 per academic year. For more information, <a href="#">Please visit our website</a>.</p>
+
+                <h2 class="nhsuk-heading-m">Application status</h2>
+                <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+                    <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Application status</caption>
+                    <thead role="rowgroup" class="nhsuk-table__head">
+                      <tr role="row">
+                        <th role="columnheader" class="" scope="col">
+                          Application
+                        </th>
+                        <th role="columnheader" class="" scope="col">
+                          Status
+                        </th>
+                        <th role="columnheader" class="" scope="col">
+                          Action
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Application </span>Training Grant
+                        </td>
+
+                        <!-- <td role="cell" class="nhsuk-table__cell">
+                          {% if data['bank-details-complete'] == 'true' %}
+                          <span class="nhsuk-table-responsive__heading">Status </span>Approved for payment
+                          {% else %}
+                          <span class="nhsuk-table-responsive__heading">Status </span>Pending approval
+                          {% endif %}
+                        </td> -->
+                        <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Status </span>Approved for payment
+                        </td>
+
+                        <!--<td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Upload further evidence</a>
+                        </td>-->
+                      </tr>
+                    </tbody>
+                </table>
+
+                <h2 class="nhsuk-heading-l">Apply for further NHS Learning Support Funding</h2>
+                <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+                    <h2 class="nhsuk-tabs__title">Contents</h2>
+
+                    <ul class="nhsuk-tabs__list">
+                        <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+                            <a class="nhsuk-tabs__tab" href="#tab-one">Parental Support</a>
+                        </li>
+                        <li class="nhsuk-tabs__list-item">
+                            <a class="nhsuk-tabs__tab" href="#tab-two">Travel and Dual Accommodation Expenses</a>
+                        </li>
+                    </ul>
+
+                    <div class="nhsuk-tabs__panel" id="tab-one">
+                        <h3 class="nhsuk-heading-m">Parental Support</h3>
+                        <p>Parental Support is available to students who have parental responsibility for a child. Please ensure you have read the NHS Learning Support Fund guide relating to Parental Support before completing this application.</p>
+                        <a class="nhsuk-button" href="#">Apply</a>
+                    </div>
+                    <div class="nhsuk-tabs__panel" id="tab-two">
+                        <h3 class="nhsuk-heading-m">Travel and Dual Accommodation Expense (TDAE)</h3>
+                        <p>Travel and Dual Accommodation Expenses reimburses excess costs you paid when undertaking clinical placements.</p>
+                        <h3 class="nhsuk-heading-m">When to submit a TDAE claim</h3>
+                        <p>You'll need to submit your form within nine months of the last date of the placement period you are claiming for.</p>
+                        <a class="nhsuk-button" href="TDAE-start-screen">Make a claim</a>
+                        <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+                            <caption class="nhsuk-table__caption">Your TDAE claims</caption>
+                            <thead role="rowgroup" class="nhsuk-table__head">
+                              <tr role="row">
+                                <th role="columnheader" class="" scope="col">
+                                  Application
+                                </th>
+                                <th role="columnheader" class="" scope="col">
+                                  Status
+                                </th>
+                                <th role="columnheader" class="" scope="col">
+                                  Dates
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody class="nhsuk-table__body">
+                              {% if data['TDAE-claim'] == 'Submitted' %}
+                                <tr role="row" class="nhsuk-table__row">
+                                  <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Application </span>Travel expenses (Car journey)
+                                  </td>
+                                  <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Status </span>Pending
+                                  </td>
+                                  <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Dates </span><a href="#">21-Nov-2022 to 23-Nov-2022</a>
+                                  </td>
+                                </tr>
+                              {% endif %}
+                              <tr role="row" class="nhsuk-table__row">
+                                <td role="cell" class="nhsuk-table__cell">
+                                  <span class="nhsuk-table-responsive__heading">Application </span>Travel and Dual Accommodation Expenses
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                  <span class="nhsuk-table-responsive__heading">Status </span>Approved for payment
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                  <span class="nhsuk-table-responsive__heading">Dates </span><a href="#">01-Sep-2020 to 02-Sep-2020</a>
+                                </td>
+                              </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+  {% else %}
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+                <hr>
+                <h2 class="nhsuk-heading-l">Training Grant</h2>
+                <h3 class="nhsuk-heading-m">Application for Training Grant</h3>
+                <p>Training grant is a non-means tested grant of £5,000 per academic year. For more information, <a href="#">Please visit our website</a>.</p>
+                <a class="nhsuk-button" href="APPLY-applied-student-loan">Apply for Training Grant</a>
+            </div>
+        </div>
+    {% endif %}
+{% endif %}
+{% endblock %}

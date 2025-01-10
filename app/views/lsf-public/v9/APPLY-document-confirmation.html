@@ -1,0 +1,48 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ backLink({
+      "href": "javascript:history.go(-1)",
+      "text": "Go back"
+      }) }}
+
+      <form action="v9/APPLY-document-confirmation" method="POST">
+        <h1 class="nhsuk-heading-l">Have you provided all the required documents for this section?</h1>
+
+        <div class="nhsuk-form-group" id="group-docs">
+					<p class="nhsuk-body">If you select yes you will not be able to return later to add additional document.</p>
+
+					<div class="nhsuk-radios">
+						<div class="nhsuk-radios__item">
+							<input type="radio" class="nhsuk-radios__input" id="documentsConfirmedYes" value="1" name="documentsConfirmed" />
+							<label for="documentsConfirmedYes" class="nhsuk-label nhsuk-radios__label">Yes</label>
+						</div>
+						<div class="nhsuk-radios__item">
+							<input type="radio" class="nhsuk-radios__input" id="documentsConfirmedNo" value="0" name="documentsConfirmed" />
+							<label class="nhsuk-label nhsuk-radios__label" for="documentsConfirmedNo">No</label>
+						</div>
+					</div>
+				</div>
+
+  			<div class="nhsuk-form-group">
+
+              <button class="nhsuk-button" type="submit">Continue</button>
+
+          <p><a href="academic-year-details">Save and come back later</a></p>
+  			</div>
+      </form>
+
+
+
+    </div>
+
+</div>
+{% endblock %}

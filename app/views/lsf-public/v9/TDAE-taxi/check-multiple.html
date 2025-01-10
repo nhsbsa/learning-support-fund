@@ -1,0 +1,320 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<!-- <form action="" method="POST"> -->
+
+		<h1 class="nhsuk-heading-xl">Taxi journeys</h1>
+
+		{% if data['taxi-details'] === 'action' %}
+			<div class="nhsuk-warning-callout">
+				<h3 class="nhsuk-warning-callout__label">
+					<span role="text">
+						<span class="nhsuk-u-visually-hidden">Important: </span>
+						University feedback
+					</span>
+				</h3>
+				<p>This is the comment left by the University when returning to student.</p>
+			</div>
+		{% endif %}
+
+			{% if data['taxi-journeys'] != '2' %}
+			<details class="nhsuk-details nhsuk-expander">
+				<summary class="nhsuk-details__summary">
+					<span class="nhsuk-details__summary-text">
+						23 February 2024
+					</span>
+					{% if data['taxi-details'] === 'action' %}<strong class="nhsuk-tag nhsuk-tag--yellow app-task-list__tag task-status">Action needed</strong>{% endif %}
+				</summary>
+				<div class="nhsuk-details__text">
+					<dl class="nhsuk-summary-list">
+
+						<!-- Travelling from -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Travelling from
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+									Alnwick Hospital<br>
+									Infirmary Drive<br>
+									Alnwick<br>
+									NE66 2NS
+							</dd>
+						</div>
+
+						<!-- Travelling to -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Travelling to
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+									The Hog's Head Inn<br>
+									Hawfinch Drive<br>
+									Alnwick<br>
+									NE66 2BF
+							</dd>
+						</div>
+
+						<!-- Cost of taxi -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Cost
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['taxi-cost'] %}
+									£{{ data['taxi-cost'] }}
+								{% else %}
+									£10
+								{% endif %}
+							</dd>
+						</div>
+					</dl>
+					<a class="nhsuk-button nhsuk-button--secondary" href="check" style="float: left; margin-right:20px;">Change journey</a>
+					<a class="nhsuk-button nhsuk-button--warning" href="remove">Remove journey</a>
+				</div>
+			</details>
+			{% else %}
+			<details class="nhsuk-details nhsuk-expander">
+				<summary class="nhsuk-details__summary">
+					<span class="nhsuk-details__summary-text">
+						23 February 2024
+					</span>
+					{% if data['taxi-details'] === 'action' %}<strong class="nhsuk-tag nhsuk-tag--yellow app-task-list__tag task-status">Action needed</strong>{% endif %}
+				</summary>
+				<div class="nhsuk-details__text">
+					<dl class="nhsuk-summary-list">
+
+						<!-- Travelling from -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Travelling from
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+									Alnwick Hospital<br>
+									Infirmary Drive<br>
+									Alnwick<br>
+									NE66 2NS
+							</dd>
+						</div>
+
+						<!-- Travelling to -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Travelling to
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+									The Hog's Head Inn<br>
+									Hawfinch Drive<br>
+									Alnwick<br>
+									NE66 2BF
+							</dd>
+						</div>
+
+						<!-- Cost of taxi -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Cost
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['taxi-cost'] %}
+									£{{ data['taxi-cost'] }}
+								{% else %}
+									£10
+								{% endif %}
+							</dd>
+						</div>
+
+					</dl>
+					<a class="nhsuk-button nhsuk-button--secondary" href="check" style="float: left; margin-right:20px;">Change journey</a>
+					<a class="nhsuk-button nhsuk-button--warning" href="remove">Remove journey</a>
+				</div>
+			</details>
+
+			<details class="nhsuk-details nhsuk-expander">
+					<summary class="nhsuk-details__summary">
+					<span class="nhsuk-details__summary-text">
+						24 February 2024
+					</span>
+				</summary>
+				<div class="nhsuk-details__text">
+					<dl class="nhsuk-summary-list">
+
+						<!-- Travelling from -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Travelling from
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+									The Hog's Head Inn<br>
+									Hawfinch Drive<br>
+									Alnwick<br>
+									NE66 2BF
+							</dd>
+						</div>
+
+						<!-- Travelling to -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Travelling to
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+									Alnwick Hospital<br>
+									Infirmary Drive<br>
+									Alnwick<br>
+									NE66 2NS
+							</dd>
+						</div>
+
+						<!-- Cost of taxi -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Cost
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['taxi-cost'] %}
+									£{{ data['taxi-cost'] }}
+								{% else %}
+									£7.30
+								{% endif %}
+							</dd>
+						</div>
+
+					</dl>
+					<a class="nhsuk-button nhsuk-button--secondary" href="check" style="float: left; margin-right:20px;">Change journey</a>
+					<a class="nhsuk-button nhsuk-button--warning" href="remove">Remove journey</a>
+				</div>
+			</details>
+			{% endif %}
+
+
+			<h2 class="nhsuk-heading-m">Total taxi costs</h2>
+	    <dl class="nhsuk-summary-list">
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Total amount
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+							£10
+					</dd>
+				</div>
+	    </dl>
+
+			<!--<details class="nhsuk-details">
+				<summary class="nhsuk-details__summary">
+				  <span class="nhsuk-details__summary-text">
+					Breakdown of your travel costs
+				  </span>
+				</summary>
+				<div class="nhsuk-details__text">
+							<table class="nhsuk-table">
+							<thead role="rowgroup" class="nhsuk-table__head">
+								<tr role="row">
+									<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+
+									</th>
+									<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+											Taxi journey
+									</th>
+									<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+											University journey
+									</th>
+								</tr>
+							</thead>
+							<tbody class="nhsuk-table__body">
+								<tr role="row" class="nhsuk-table__row">
+									<td class="nhsuk-table__cell" style="font-size: 1rem;">
+											<b>Type of travel</b>
+									</td>
+									<td class="nhsuk-table__cell " style="font-size: 1rem;">
+											Taxi
+									</td>
+									<td class="nhsuk-table__cell" style="font-size: 1rem;">
+											Walk
+									</td>
+								</tr>
+								<tr role="row" class="nhsuk-table__row">
+									<td class="nhsuk-table__cell" style="font-size: 1rem;">
+										<b>Journey mileage cost<br>
+									</td>
+									<td class="nhsuk-table__cell " style="font-size: 1rem;">
+										£10
+									</td>
+									<td class="nhsuk-table__cell" style="font-size: 1rem;">
+
+									</td>
+								</tr>
+								<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+									<td class="nhsuk-table__cell" style="font-size: 1rem;">
+											<b>Total cost</b>
+									</td>
+									<td class="nhsuk-table__cell " style="font-size: 1rem;">
+										£10
+									</td>
+									<td class="nhsuk-table__cell" style="font-size: 1rem;">
+										£0
+									</td>
+								</tr>
+							</tbody>
+							</table>
+
+							<p><b>Amount to be reimbursed: £10</b></p>
+						</div>
+					</details>-->
+
+			<form action="/lsf-public/v9/TDAE-task-list?taxi-details=completed" method="POST">
+				<button style="float: left; margin-right:20px;" class="nhsuk-button" type="submit">Continue</button>
+			</form>
+			<a class="nhsuk-button nhsuk-button--secondary" href="authorisation?taxi-journeys=2">Add another taxi journey</a><br>
+			<p><a href="../TDAE-task-list-full?taxi-details=in-progress">Return to task list</a></p>
+
+		<!-- </form> -->
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			const months = {
+				"01": "January",
+				"02": "February",
+				"03": "March",
+				"04": "April",
+				"05": "May",
+				"06": "June",
+				"07": "July",
+				"08": "August",
+				"09": "September",
+				"1": "January",
+				"2": "February",
+				"3": "March",
+				"4": "April",
+				"5": "May",
+				"6": "June",
+				"7": "July",
+				"8": "August",
+				"9": "September",
+				"10": "October",
+				"11": "November",
+				"12": "December",
+			};
+
+			$(".cya-month").text(function () {
+				const month = $(this).text();
+				console.log("month:", month);
+				console.log("months[month]:", months[month]);
+				return months[month];
+			});
+		});
+		</script>
+
+
+</div>
+{% endblock %}

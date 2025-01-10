@@ -1,0 +1,155 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Your claims history
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+
+      {{ backLink({
+  		"href": "academic-year-details#tab-two",
+  		"text": "Go back"
+  		}) }}
+
+        <h1 class="nhsuk-heading-l">Previous claims</h1>
+
+        {% if data['claims'] == 'none' %}
+          <p>Claims that have been completed either with a payment sent or declined will appear here.</p>
+        {% else %}
+        <p>These are claims you've submitted that we've processed.</p>
+
+        <!-- <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                What does each status mean?
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                <p>There are 3 statuses:</p>
+                <ul class="nhsuk-list nhsuk-list--bullet">
+                    <li><strong class="nhsuk-tag nhsuk-tag--blue">In progress</strong></li>
+                    <li><strong class="nhsuk-tag nhsuk-tag--green">Submitted</strong></li>
+                    <li><strong class="nhsuk-tag">Claim paid</strong></li>
+                </ul>
+            </div>
+          </details> -->
+
+
+        <div class="nhsuk-form-group">
+            <table role="table" class="nhsuk-table-responsive">
+                <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Travel expense claims list</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                        Placement address
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Start date
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        End date
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Status
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Claim total
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        View
+                    </th>
+                </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Placement address </span>Old Forge Surgery, DL7 2EB
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Start date </span>Monday 5 June 2023
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">End date </span>Wednesday 7 June 2023
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag">Claim paid</strong>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Claim total </span>£22.50
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">View </span><a href="../TDAE-task-list?claiming-for=accommodation&claiming-for=car&claiming-for=hire-car&university-details=completed&placement-details=completed&add-travel-date-evidence=completed&hire-car=completed&accommodation-details=completed&submit-claim=completed">	View claim</a>
+                        </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Placement address </span>Newcastle Hospital, NE1 1AA
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Start date </span>Monday 20 March 2023
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">End date </span>Friday 24 March 2023
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag">Claim paid</strong>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Claim total </span>£22.50
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">View </span><a href="../TDAE-task-list?claiming-for=accommodation&claiming-for=car&claiming-for=hire-car&university-details=completed&placement-details=completed&add-travel-date-evidence=completed&hire-car=completed&accommodation-details=completed&submit-claim=completed">	View claim</a>
+                        </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Placement address </span>Newcastle Hospital, NE1 1AA
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Start date </span>Monday 13 March 2023
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">End date </span>Friday 17 March 2023
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--red">Declined</strong>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Claim total </span>£54.50
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">View </span><a href="../TDAE-task-list?claiming-for=accommodation&claiming-for=car&claiming-for=hire-car&university-details=completed&placement-details=completed&add-travel-date-evidence=completed&hire-car=completed&accommodation-details=completed&submit-claim=completed">	View claim</a>
+                        </td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                        <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Placement address </span>Barcelona Hospital, Spain
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Start date </span>Monday 5 February 2023
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">End date </span>Friday 12 Feburary 2023
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--grey">Cancelled</strong>
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Claim total </span>£95
+                        </td>
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">View </span><a href="TDAE-task-list-actions">	View claim</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            {% endif %}
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
