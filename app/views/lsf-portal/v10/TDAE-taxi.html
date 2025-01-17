@@ -1,0 +1,150 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Taxi journey details</h1>
+    <!-- If more than one taxi journey, Taxi journey 1 details, Taxi journey 2 details, etc. -->
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Authorised by
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Jane Doe
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Authoriser's role
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Ward sister
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Reason for taxi
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Suddenly felt unwell during my night shift and didn't feel comfortable
+          walking in early hours through the city centre so got a taxi back to hotel instead
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Authorisation uploaded
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/images/taxi-authorisation-email.png" target="_blank" rel="noopener">View authorisation<span class="nhsuk-u-visually-hidden">opens in new tab</span></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          23 February 2024
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Travelling from
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Alnwick Hospital, NE66 2NS
+          <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+            View full address
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            Alnwick Hospital<br>
+            Infirmary Drive<br>
+            Alnwick<br>
+            NE66 2NS
+          </div>
+          </details>
+        </dd>
+      </div>
+
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Travelling to
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          The Hog's Head Inn, NE66 2BF
+          <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+            View full address
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            The Hog's Head Inn<br>
+            Hawfinch Drive<br>
+            Alnwick<br>
+            NE66 2BF
+          </div>
+          </details>
+        </dd>
+      </div>
+
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Taxi cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £10
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Evidence uploaded
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/images/taxi-evidence.png" target="_blank" rel="noopener">View evidence<span class="nhsuk-u-visually-hidden">opens in new tab</span></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student comments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          None provided
+        </dd>
+      </div>
+
+    </dl>
+
+    {% if data['read-only'] != 'true' %}
+      <a class="nhsuk-button" href="TDAE-checked-taxi">Continue</a>
+    {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

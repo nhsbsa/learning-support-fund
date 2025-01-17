@@ -68,6 +68,7 @@ router.get('/lsf-public/v4/:page', (req, res) => {
 // ================================
 // Routes for LSF Portal
 // ================================
+router.use('/lsf-portal/v10', require('./views/lsf-portal/v10/_routes'));
 router.use('/lsf-portal/v9', require('./views/lsf-portal/v9/_routes'));
 router.use('/lsf-portal/v8', require('./views/lsf-portal/v8/_routes'));
 router.use('/lsf-portal/v7-demo', require('./views/lsf-portal/v7-demo/_routes'));

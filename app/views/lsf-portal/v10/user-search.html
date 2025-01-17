@@ -1,0 +1,39 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+  Search for a student
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>User search</h1>
+
+        <div class="nhsuk-grid-row nhsuk-u-margin-bottom-5">
+            <div class="nhsuk-grid-column-two-thirds">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-one-half">
+                        <label class="nhsuk-label" for="example">
+                            Surname
+                        </label>
+                        <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+                    </div>
+                    <div class="nhsuk-grid-column-one-half">
+                        <label class="nhsuk-label" for="example">
+                            Email address
+                        </label>
+                        <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a class="nhsuk-button" style="margin-right:16px;" href="user-search-results">Search</a>
+        <a class="nhsuk-button nhsuk-button--secondary" href="create-user">Create a new user</a>
+
+    </div>
+
+  </div>
+{% endblock %}

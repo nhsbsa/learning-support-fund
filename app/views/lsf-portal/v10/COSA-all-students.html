@@ -1,0 +1,407 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+  Course intake
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  function change() // no ';' here
+{
+  var btn = document.getElementById("toggle-filter");
+  if(btn.innerText=="Show filter"){
+     btn.innerText="Hide filter";
+    }
+  else{
+    btn.innerText="Show filter";
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+        {{ backLink({
+          "href": "javascript:history.go(-1)",
+          "text": "Go back"
+        }) }}
+        <h1 class="nhsuk-heading-l">
+          <span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>
+          All students studying Diagnostic Radiography at SHEFFIELD HALLAM UNIVERSITY
+        </h1>
+
+        <p class="nhsuk-body-s">
+          <b>Course name:</b> Diagnostic Radiography<br>
+          <b>Academic year:</b> September 2023<br>
+          <b>Study year:</b> Year 1
+        </p>
+
+    </div>
+
+
+
+    <div class="nhsuk-grid-column-full">
+
+      <button class="nhsuk-button nhsuk-button--secondary" id="toggle-filter" style="margin-bottom: 24px;" value="Show filter" onclick="change()">Show filter</button>
+
+      <div class="moj-filter-layout">
+
+          <div class="nhsuk-grid-column-full nhsuk-u-padding-0 moj-filter-layout__filter nhsbsa-hide-filter nhsuk-u-margin-bottom-5" id="filter-column">
+
+            <div class="moj-filter">
+
+              <div class="moj-filter__header">
+
+                <div class="moj-filter__header-title">
+                  <h2 class="nhsuk-heading-m">Filter</h2>
+                </div>
+
+                <div class="moj-filter__header-action">
+
+                </div>
+
+              </div>
+
+              <div class="moj-filter__content">
+
+                <div class="moj-filter__options">
+
+                  <div class="nhsuk-form-group nhsuk-u-padding-right-5">
+                    <label class="nhsuk-label" for="student-name">
+                      Student name
+                    </label>
+                    <input class="nhsuk-input nhsuk-input--width-20" id="student-name" name="student-name" type="text" {% if data['filter'] == 'yes' %} value="Joe Bloggs" {% endif %}>
+                  </div>
+
+                  <div class="nhsuk-form-group">
+
+                    <label class="nhsuk-label" for="student-name">
+                      Term
+                    </label>
+
+                    <div class="nhsuk-hint" id="contact-hint">
+                      Select the terms you want shown.
+                    </div>
+
+                    <div class="nhsuk-checkboxes nhsuk-checkboxes--small nhsuk-u-padding-bottom-5" data-module="nhsuk-checkboxes">
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="status" name="status" type="checkbox" value="1">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="status">
+                          Term 1 (96)
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="status-2">
+                          Term 2 (0)
+                        </label>
+                      </div>
+
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
+                          Term 3 (0)
+                        </label>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="nhsuk-form-group" style="clear: both;">
+
+                    <fieldset class="nhsuk-fieldset">
+
+                      <label class="nhsuk-label" for="student-name">
+                        Status
+                      </label>
+
+                      <div class="nhsuk-hint" id="contact-hint">
+                        Select the statuses you want shown.
+                      </div>
+
+                      <div class="nhsuk-checkboxes nhsuk-checkboxes--small nhsuk-u-padding-bottom-5" data-module="nhsuk-checkboxes">
+
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="status" name="status" type="checkbox" value="1">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="status">
+                            Student not responded (5)
+                          </label>
+                        </div>
+
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="status-2">
+                            University confirmation needed (1)
+                          </label>
+                        </div>
+
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
+                            In attendance (2)
+                          </label>
+                        </div>
+
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="status-4">
+                            Discontinued and Interrupted (1)
+                          </label>
+                        </div>
+
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="4">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
+                            Information mismatch (7)
+                          </label>
+                        </div>
+
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="5">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
+                            Not enrolled (15)
+                          </label>
+                        </div>
+
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="6">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
+                            Maternity leave (4)
+                          </label>
+                        </div>
+
+                      </div>
+                      <form style="" action="course-intake?filter=yes" method="POST">
+                        <button style="float: left; clear: left;" class="nhsuk-button" data-module="nhsuk-button" style="margin-bottom: 0px;">
+                          Apply filters
+                        </button>
+                      </form>
+                      {% if data['filter'] == 'yes' %}
+                      <p style="float: left; padding-top: 15px; padding-left: 15px;"><a href="course-intake?filter=no">Reset filters</a></p>
+                      {% endif %}
+                    </fieldset>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      <!--<p>These students are yet to respond. They need to respond through the link sent to them by email or notifications in their LSF account.</p>
+
+      <p><a href="#">Download details of students yet to respond (CSV, 432KB)</a></p>-->
+
+      <div class="nhsuk-table-responsive">
+                  <table class="nhsuk-table">
+                    <thead class="nhsuk-table__head">
+                      <tr class="nhsuk-table__row">
+                        <th class="nhsuk-table__header" scope="col">Name</th>
+                        <th class="nhsuk-table__header" scope="col">Date of birth</th>
+                        <th class="nhsuk-table__header" scope="col">Attendance type</th>
+                        <th class="nhsuk-table__header" scope="col">Attendance status</th>
+                        <th class="nhsuk-table__header" scope="col">Change</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="nhsuk-table__body">
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Priya Banerjee</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--grey">Student not responded for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Elijah Brown</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--white">University confirmation needed for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Olivia Chen</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--red">Discontinued for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Luca Ferrari</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Malik Johnson</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Emma Johnson</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Lucas Kim</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Amir Khan</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Maya Kumar</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Dylan Lee</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Matthew Lee</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Juan Lopez</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Jake Martinez</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Connor Murphy</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Liam Murphy</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Leila Nkosi</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Lily Nguyen</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Daniel O'Connor</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Aisha Patel</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Carlos Ramirez</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 1</strong></td>
+                        <td class="nhsuk-table__cell "><a href="change-request">Change request</a></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+                <nav class="nav" role="navigation" aria-label="Pagination">
+
+                  <ul class="pagination">
+                      <li class="pagination__item pagination-li"><a class="pagination__link current" href="#" aria-current="true"
+                              aria-label="Page 1, current page">1</a></li>
+                      <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">2</a></li>
+                      <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">3</a></li>
+                      <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">4</a></li>
+                      <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">5</a></li>
+                  </ul>
+
+                  <a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true"
+                          role="presentation">&nbsp;&raquo;</span></a>
+
+                  <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 20 of 96 students
+                  </div>
+              </nav>
+
+
+    </div>
+
+  </div>
+
+{% endblock %}

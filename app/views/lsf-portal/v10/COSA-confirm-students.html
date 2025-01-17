@@ -1,0 +1,478 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+Course intake
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/js/main.js"></script>
+<script>
+  function change() {
+    var btn = document.getElementById("toggle-filter");
+    if (btn.innerText == "Show filter") {
+      btn.innerText = "Hide filter";
+    } else {
+      btn.innerText = "Show filter";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var selectAllLink = document.getElementById("js-select-all");
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener("change", function () {
+        var allChecked = Array.from(checkboxes).every(function (checkbox) {
+          return checkbox.checked;
+        });
+
+        if (allChecked) {
+          selectAllLink.innerText = "Deselect all";
+        } else {
+          selectAllLink.innerText = "Select all";
+        }
+      });
+    });
+
+    selectAllLink.addEventListener("click", function () {
+      var selectAll = selectAllLink.innerText === "Select all";
+      checkboxes.forEach(function (checkbox) {
+        checkbox.checked = selectAll;
+      });
+
+      if (selectAll) {
+        selectAllLink.innerText = "Deselect all";
+      } else {
+        selectAllLink.innerText = "Select all";
+      }
+    });
+  });
+</script>
+{% endblock %}
+
+{% block content %}
+<script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-full">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+    <h1 class="nhsuk-heading-l">
+      <span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>
+      Confirm students who are attending
+    </h1>
+
+    <p class="nhsuk-body-s">
+      <b>Course name:</b> Diagnostic Radiography<br>
+      <b>Academic year:</b> September 2023<br>
+      <b>Study year:</b> Year 1
+    </p>
+
+  </div>
+
+  <div class="nhsuk-grid-column-full">
+
+    <p><a href="#">Download details of students you need to confirm attendance for (CSV, 432KB)</a></p>
+
+    <div class="nhsuk-hint" id="contact-hint">
+      Select students who are attending this course.<br>
+      You can review students that you have not selected later.
+    </div>
+
+
+    <table class="nhsuk-table nhsbsa-table-select">
+      <thead class="nhsuk-table__head">
+        <tr class="nhsuk-table__row">
+          <th class="nhsuk-table__header" scope="col">
+            <a href="#0" id="js-select-all">Select all</a>
+          </th>
+          <th class="nhsuk-table__header" scope="col">Name</th>
+          <th class="nhsuk-table__header" scope="col">Date of birth</th>
+          <th class="nhsuk-table__header" scope="col">Attendance type</th>
+        </tr>
+      </thead>
+
+      <tbody class="nhsuk-table__body">
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox" value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Caleb Adams</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Zoe Carter</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Liam Chen</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Harper Cooper</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Sophia Davis</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Elijah Flores</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Emma Garcia</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Mia Gonzalez</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Aiden Gupta</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Jackson Hernandez</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+              </div>
+            </td>
+          <td class="nhsuk-table__cell ">Isabella Hill</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Mason Jackson</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Olivia James</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Mia Khan</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Olivia Nguyen</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Logan Patel</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Mia Nkosi</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Liam Rivera</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Caleb Singh</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">
+            <div class="nhsuk-checkboxes nhsuk-checkboxes--small">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox"
+                  value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="nhsuk-table__cell ">Jackson Wang</td>
+          <td class="nhsuk-table__cell ">15 June 2003</td>
+          <td class="nhsuk-table__cell ">Full time</td>
+
+        </tr>
+
+      </tbody>
+    </table>
+
+    <nav class="nav" role="navigation" aria-label="Pagination">
+
+      <ul class="pagination">
+        <li class="pagination__item pagination-li"><a class="pagination__link current" href="#" aria-current="true"
+            aria-label="Page 1, current page">1</a></li>
+        <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">2</a></li>
+        <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 3">3</a></li>
+      </ul>
+
+      <a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true"
+          role="presentation">&nbsp;&raquo;</span></a>
+
+      <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 20 of 45 students
+      </div>
+    </nav>
+    <br>
+    <a class="nhsuk-button" href="COSA-check-students">Save and continue</a>
+
+  </div>
+
+</div>
+
+<script>
+  var checkboxes = document.querySelectorAll('.nhsuk-checkboxes__input');
+
+checkboxes.forEach(function (checkbox) {
+  checkbox.addEventListener('change', function () {
+    var row = this.closest('tr');
+    if (this.checked) {
+      row.classList.add('nhsbsa-row--selected');
+    } else {
+      row.classList.remove('nhsbsa-row--selected');
+    }
+  });
+});
+
+</script>
+{% endblock %}

@@ -1,0 +1,246 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+  Course intake
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  function change() // no ';' here
+{
+  var btn = document.getElementById("toggle-filter");
+  if(btn.innerText=="Show filter"){
+     btn.innerText="Hide filter";
+    }
+  else{
+    btn.innerText="Show filter";
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning SupportFund</span>Results for students studying Diagnostic Radiography at SHEFFIELD HALLAM UNIVERSITY</h1>
+
+    </div>
+
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-inset-text nhsuk-inset--custom-width">
+            <div class="nhsuk-custom-three-column">
+                <h2 class="nhsuk-heading-xs">Course name</h2>
+                <p>Diagnostic Radiography</p>
+            </div>
+            <div class="nhsuk-custom-three-column">
+                <h2 class="nhsuk-heading-xs">Academic year</h2>
+                <p>March 2022</p>
+            </div>
+            <div class="nhsuk-custom-three-column">
+                <h2 class="nhsuk-heading-xs">Study year</h2>
+                <p>Year 1</p>
+            </div>
+        </div>
+
+        <button class="nhsuk-button nhsuk-button--secondary" id="toggle-filter" style="margin-bottom: 24px;" value="Show filter" onclick="change()">Show filter</button>
+
+        <div class="moj-filter-layout">
+
+            <div class="nhsuk-grid-column-full nhsuk-u-padding-0 moj-filter-layout__filter nhsbsa-hide-filter nhsuk-u-margin-bottom-5" id="filter-column">
+
+              <div class="moj-filter">
+
+                <div class="moj-filter__header">
+
+                  <div class="moj-filter__header-title">
+                    <h2 class="nhsuk-heading-m">Filter</h2>
+                  </div>
+
+                  <div class="moj-filter__header-action">
+
+                  </div>
+
+                </div>
+
+                <div class="moj-filter__content">
+
+                  <div class="moj-filter__options">
+
+                    <div class="nhsuk-form-group nhsuk-u-padding-right-5">
+                      <label class="nhsuk-label" for="student-name">
+                        Student name
+                      </label>
+                      <input class="nhsuk-input nhsuk-input--width-20" id="student-name" name="student-name" type="text" {% if data['filter'] == 'yes' %} value="Joe Bloggs" {% endif %}>
+                    </div>
+
+                    <div class="nhsuk-form-group">
+
+                      <fieldset class="nhsuk-fieldset">
+
+                        <label class="nhsuk-label" for="student-name">
+                          Status
+                        </label>
+
+                        <div class="nhsuk-hint" id="contact-hint">
+                          Select the statuses you want shown.
+                        </div>
+
+                        <div class="nhsuk-checkboxes nhsuk-checkboxes--small nhsuk-u-padding-bottom-5" data-module="nhsuk-checkboxes">
+
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="status" name="status" type="checkbox" value="1">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status">
+                              Pending (5)
+                            </label>
+                          </div>
+
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-2">
+                              Discontinued (1)
+                            </label>
+                          </div>
+
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
+                              Information mismatch (2)
+                            </label>
+                          </div>
+
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-4">
+                              Interruption (1)
+                            </label>
+                          </div>
+
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="4">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
+                              Matched student - in attendance (7)
+                            </label>
+                          </div>
+
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="5">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
+                              Not enrolled (15)
+                            </label>
+                          </div>
+
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="6">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
+                              Pending nhsbsa (4)
+                            </label>
+                          </div>
+
+
+
+                        </div>
+                        <form style="" action="course-intake?filter=yes" method="POST">
+                          <button style="float: left;" class="nhsuk-button" data-module="nhsuk-button" style="margin-bottom: 0px;">
+                            Apply filters
+                          </button>
+                        </form>
+                        {% if data['filter'] == 'yes' %}
+                        <p style="float: left; padding-top: 15px; padding-left: 15px;"><a href="course-intake?filter=no">Reset filters</a></p>
+                        {% endif %}
+                      </fieldset>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-3">
+            <caption class="nhsuk-table__caption">Intake contains 1 students
+            {% if data['filter'] == 'yes' %}
+            <div class="nhsuk-hint nhsuk-u-padding-top-3" id="Filtered-results">Filtered results contain 1 students</div>
+            {% endif %}
+            </caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                        Name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Date of birth
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Attendance type
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Start date
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Term 1<br>attendance
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Term 2<br>attendance
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Term 3<br>attendance
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Name</span> <a href="student-details">Joe Bloggs</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date of birth </span>10/11/1989
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Attendance type </span>Full time
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Start date </span>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span>Tick
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span>Tick
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                      <div class="nhsuk-checkboxes">
+                        <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                          <label class="nhsuk-checkboxes__label" for="example-1">
+                            <span class="nhsuk-u-visually-hidden">Test</span>
+                          </label>
+                        </div>
+                      </div>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span><a href="change-request">Change request</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Showing 1 - 1 of 1 students results</p>
+        <a class="nhsuk-button nhsuk-button-custom" href="course-intake-student-status-change">Save changes</a>
+
+
+    </div>
+
+  </div>
+{% endblock %}

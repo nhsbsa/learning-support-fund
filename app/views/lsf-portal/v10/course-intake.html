@@ -1,0 +1,131 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+  Course intake
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  function change() // no ';' here
+{
+  var btn = document.getElementById("toggle-filter");
+  if(btn.innerText=="Show filter"){
+     btn.innerText="Hide filter";
+    }
+  else{
+    btn.innerText="Show filter";
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>Course details for Diagnostic Radiography at SHEFFIELD HALLAM UNIVERSITY</h1>
+
+    </div>
+
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-inset-text nhsuk-inset--custom-width">
+            <div class="nhsuk-custom-three-column">
+                <h2 class="nhsuk-heading-xs">Course name</h2>
+                <p>Diagnostic Radiography</p>
+            </div>
+            <div class="nhsuk-custom-three-column">
+                <h2 class="nhsuk-heading-xs">Academic year</h2>
+                <p>March 2022</p>
+            </div>
+            <div class="nhsuk-custom-three-column">
+                <h2 class="nhsuk-heading-xs">Study year</h2>
+                <p>Year 1</p>
+            </div>
+        </div>
+
+        <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-6">
+          <caption class="nhsuk-table__caption">Review the attendance status of students</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                Term
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Window opens
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Window closes
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Status
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Term </span>Term 1
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Window opens </span>1 November 2023
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Window closes </span>31 March 2023
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag">Open</strong>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action </span><a href="COSA-term-1-overview?term=1">Review attendance</a>
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Term </span>Term 2
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Window opens </span>1 January 2023
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Window closes </span>31 May 2023
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--red">Closed</strong>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action </span><a href="COSA-term-1-overview?term=2">Review attendance</a>
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Term </span>Term 3
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Window opens </span>1 April 2023
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Window closes </span>31 August 2023
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--red">Closed</strong>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action </span><span class="nhsuk-u-visually-hidden">No actions available</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><a href="COSA-all-students">View all students on this course</a></p>
+
+    </div>
+
+  </div>
+{% endblock %}

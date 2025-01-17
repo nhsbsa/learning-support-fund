@@ -9,6 +9,22 @@ const session = require('express-session');
 // const moment = require('moment');
 const router = express.Router();
 
+// TDAE TIMESHEETS
+
+router.post('/v9/TDAE-timesheets', (req, res) => {
+
+  const timesheets = req.session.data['timesheets']
+
+  if (timesheets === 'no') {
+      res.redirect('/lsf-public/v9/TDAE-timesheets/timesheets-check')
+  }
+  else {
+      res.redirect('/lsf-public/v9/TDAE-timesheets/timesheets-evidence-overview')
+  }
+
+
+})
+
 // Submit claim not all tasks completed
 
 router.post('/v9/TDAE-tasks-not-completed', (req, res) => {

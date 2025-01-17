@@ -1,0 +1,253 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+  Course intake
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/js/main.js"></script>
+<script>
+  function change() // no ';' here
+{
+  var btn = document.getElementById("toggle-filter");
+  if(btn.innerText=="Show filter"){
+     btn.innerText="Hide filter";
+    }
+  else{
+    btn.innerText="Show filter";
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+        {{ backLink({
+            "href": "COSA-term-1-overview",
+            "text": "Go to Attendance overview for term 1"
+        }) }}
+        <h1 class="nhsuk-heading-l">
+          <span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>
+          Students who have not responded
+        </h1>
+
+        <p class="nhsuk-body-s">
+          <b>Course name:</b> Diagnostic Radiography<br>
+          <b>Academic year:</b> September 2023<br>
+          <b>Study year:</b> Year 1
+        </p>
+
+    </div>
+
+    <div class="nhsuk-grid-column-full">
+
+      <p>These students have not told us their attendance status yet.</p>
+
+      <p>We emailed them using the addresses listed. They need to respond using the link on the email or the notification in their LSF dashboard.</p>
+
+      <p><a href="#">Download details of students who have not responded (CSV, 432KB)</a></p>
+
+      <div class="nhsuk-table-responsive">
+                  <table class="nhsuk-table">
+                    <thead class="nhsuk-table__head">
+                      <tr class="nhsuk-table__row">
+                        <th class="nhsuk-table__header" scope="col">Name</th>
+                        <th class="nhsuk-table__header" scope="col">Date of birth</th>
+                        <th class="nhsuk-table__header" scope="col">Attendance type</th>
+                        <th class="nhsuk-table__header" scope="col">Email</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="nhsuk-table__body">
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Ethan Adams</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Priya Ahmed</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Maria Bennett</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Omar Brown</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Zoe Campbell</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Diego Chen</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Mia Choi</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Layla Collins</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Liam Cooper</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Aisha Davis</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Ava Edwards</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Mateo Flores</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Harper Garcia</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Owen Green</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Isabella Gupta</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Elijah Hernandez</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Aiden Hill</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Chloe Hughes</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Olivia Jackson</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell "><a href="student-details-amara">Leo Johnson</a></td>
+                        <td class="nhsuk-table__cell ">15 June 2003</td>
+                        <td class="nhsuk-table__cell ">Full time</td>
+                        <td class="nhsuk-table__cell ">emmit.mar@email.com</td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+                <nav class="nav" role="navigation" aria-label="Pagination">
+
+                  <ul class="pagination">
+                      <li class="pagination__item pagination-li"><a class="pagination__link current" href="#" aria-current="true"
+                              aria-label="Page 1, current page">1</a></li>
+                      <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">2</a></li>
+                      <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">3</a></li>
+                      <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">4</a></li>
+                      <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">5</a></li>
+                  </ul>
+
+                  <a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true"
+                          role="presentation">&nbsp;&raquo;</span></a>
+
+                  <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 20 of 96 students
+                  </div>
+              </nav>
+
+
+    </div>
+
+  </div>
+
+{% endblock %}

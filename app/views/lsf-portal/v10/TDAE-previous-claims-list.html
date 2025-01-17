@@ -1,0 +1,118 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+Travel and Dual Accommodation Expense claims
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-full">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+        <h1 class="nhsuk-heading-l">Previously processed TDAE claims</h1>
+        <p>These are claims that have been processed in the past 30 days. Either the student has not been paid yet or the claim was returned to them. </p>
+
+        <p>To view claims that have been paid or rejected, you can <a href="search-for-student">search for a student</a> and view their claims in their profile.</p>
+
+        <p><a href="/images/TDAE-claims-list.csv" download="TDAE claims list 18 September 2023 11:41">Download details of claims you have previously processed but the student has not been paid yet (CSV, 4KB)</a></p>
+
+        <div class="nhsuk-form-group">
+            <table role="table" class="nhsuk-table-responsive">
+                <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Travel expense claims list</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                        Student name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Course
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Date of claim
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Status
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Action
+                    </th>
+                </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                {% if data['Ansari'] == 'submitted' %}
+
+                  <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Student name </span>Emmit Mar
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Course </span>Adult nursing
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>3 September 2023
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Status </span>
+                          <strong class="nhsuk-tag nhsuk-tag--green">Submitted to NHSBSA</strong>
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span>
+                          <a class="nhsuk-link--no-visited-state"
+                              href="TDAE-student-claim?name=Emmit Mar&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
+                              claim</a>
+                      </td>
+                  </tr>
+                  {% endif %}
+                  <tr role="row" class="nhsuk-table__row">
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Student name </span>Mia Smith
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Course </span>Mental Health Nursing
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>30 April 2023
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Status </span><strong
+                              class="nhsuk-tag nhsuk-tag--green">Submitted to NHSBSA</strong>
+                      </td>
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span>
+                          <!--<a class="nhsuk-link--no-visited-state" href="TDAE-student-claim?name=Mia Smith&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View claim</a>-->
+                          <a class="nhsuk-link--no-visited-state" href="#">View claim</a>
+                      </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>George Hill
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Podiatry
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim submitted date </span>1 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span>
+                        <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span><a
+                            class="nhsuk-link--no-visited-state"
+                            href="TDAE-student-claim?name=George Hill&status=Returned to student&evidence-completed=in-progress&evidence-completed-2=completed&accommodation-completed=completed&vehicle-hire-check=yes&accommodation-completed-2=completed&university-completed=completed&approve-in-progress=&read-only=true">View
+                            claim</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

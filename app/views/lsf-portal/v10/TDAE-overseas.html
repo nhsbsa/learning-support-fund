@@ -1,0 +1,81 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Overseas details</h1>
+
+    <dl class="nhsuk-summary-list">
+
+      <dl class="nhsuk-summary-list">
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Authorised by
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						John Doe
+					</dd>
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Authoriser's role
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						Placement co-ordinator
+					</dd>
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Evidence uploaded
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						<a href="/images/overseas-authorisation.png" target="_blank" rel="noopener">overseas-authorisation.png<span class="nhsuk-u-visually-hidden">opens in new tab</span></a>
+					</dd>
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Overseas costs paid for
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						Insurance<br>
+						Visa fees
+					</dd>
+				</div>
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Placement address
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						Mnazi Mmoja Hospital<br>
+						Kaunda Road<br>
+						Zanzibar<br>
+						R5JR R2G<br>
+						Tanzania
+					</dd>
+				</div>
+
+    </dl>
+
+      {% if (data['read-only'] != 'true') and (data['scenario'] != 'previous') %}
+      <a class="nhsuk-button" href="TDAE-overseas-insurance-details">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

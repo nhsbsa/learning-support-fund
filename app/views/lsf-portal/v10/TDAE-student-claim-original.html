@@ -1,0 +1,301 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Travel and Dual Accommodation Expenses</span>
+      {% if data['name'] %}
+      {{ data['name'] }}
+      {% else %}
+      Joe Bloggs
+      {% endif %}
+    </h1>
+
+    {% if data['status'] == 'Returned from NHSBSA' %}
+      <strong class="nhsuk-tag nhsuk-tag--white nhsuk-u-margin-bottom-3">Returned from NHSBSA</strong>
+    {% else %}
+      <strong class="nhsuk-tag nhsuk-tag--green nhsuk-u-margin-bottom-3">Submitted to NHSBSA</strong>
+    {% endif %}
+
+    {% if data['read-only'] != 'true' %}
+    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Claim checks incomplete</h2>
+    <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed {% if data['status'] === 'Returned from NHSBSA' %}1{% else %}0{% endif %} of 3 sections.</p>
+    {% endif %}
+
+    {% if data['status'] == 'University processing' %}
+    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-7">Claim currently being processed by Samuel Jackson</h2>
+    {% endif %}
+
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-row">
+
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <!--{% if data['read-only'] == 'true' and data['status'] != 'University processing' or data['status'] == 'Returned from NHSBSA' %}
+
+          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Claim submitted to NHSBSA</h2>
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Date
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                31 November 2022
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Processor
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Mark Hirst
+              </dd>
+            </div>
+
+          </dl>
+        {% endif %}-->
+
+    {% if data['status'] === 'Submitted to NHSBSA' %}
+    <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent nhsuk-u-margin-top-0">
+      <div class="nhsuk-card--care__heading-container">
+        <h2 class="nhsuk-card--care__heading">
+          <span role="text">Claim feedback and history</span>
+        </h2>
+        <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-card__content">
+
+        <table class="nhsuk-table-responsive">
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                From
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Date
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Feedback
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Mark Hirst (University)</td>
+              <td class="nhsuk-table__cell">31 November 2022</td>
+              <td class="nhsuk-table__cell ">Student has only been able to upload 2 receipts as they have lost one but we are happy to accept they will have had this additional cost.</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+    {% endif %}
+    {% if data['status'] === 'Returned from NHSBSA' %}
+    <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent nhsuk-u-margin-top-0">
+      <div class="nhsuk-card--care__heading-container">
+        <h2 class="nhsuk-card--care__heading">
+          <span role="text">Claim feedback and history</span>
+        </h2>
+        <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-card__content">
+
+        <table class="nhsuk-table-responsive">
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                From
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Date
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Feedback
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Mark Hirst (University)</td>
+              <td class="nhsuk-table__cell">31 November 2022</td>
+              <td class="nhsuk-table__cell "></td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Catherine S (NHSBSA)</td>
+              <td class="nhsuk-table__cell">9 December 2022</td>
+              <td class="nhsuk-table__cell "><strong>Placement details incorrect</strong><br>Daily return mileage cost is £840 appears to be input incorrectly.</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+    {% endif %}
+    {% if data['status'] === 'Returned to student' %}
+    <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent nhsuk-u-margin-top-0">
+      <div class="nhsuk-card--care__heading-container">
+        <h2 class="nhsuk-card--care__heading">
+          <span role="text">Claim feedback and history</span>
+        </h2>
+        <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-card__content">
+
+        <table class="nhsuk-table-responsive">
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                From
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Date
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Feedback
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Mark Hirst (University)</td>
+              <td class="nhsuk-table__cell">31 November 2022</td>
+              <td class="nhsuk-table__cell "></td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Catherine S (NHSBSA)</td>
+              <td class="nhsuk-table__cell">9 October 2022</td>
+              <td class="nhsuk-table__cell "><strong>Evidence is incorrect</strong><br>Evidence of Parking ticket is missing. Return to student.</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Dean Cobb (University)</td>
+              <td class="nhsuk-table__cell">11 October 2022</td>
+              <td class="nhsuk-table__cell "><strong>Evidence is incorrect</strong><br>You need to add a receipt of your parking ticket for us to accept the additional cost.</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+
+
+</div>
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1. </span> University details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              <a href="TDAE-student-university-details" aria-describedby="eligibility-status">
+                Check university details
+              </a>
+            </span>
+            {% if data['university-completed'] === 'completed' %}
+              <strong class="nhsuk-tag" style="float: right;" id="eligibility-status">Completed</strong>
+            {% elif data['university-completed'] === 'in-progress' %}
+              <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to student</strong>
+            {% else %}
+              <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">2. </span> Placement details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              <a href="TDAE-claim-evidence" aria-describedby="eligibility-status">
+                Check placement details
+              </a>
+            </span>
+            {% if data['evidence-completed'] === 'completed' %}
+              <strong class="nhsuk-tag" style="float: right;" id="eligibility-status">Completed</strong>
+            {% elif data['evidence-completed'] === 'in-progress' %}
+              <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to student</strong>
+            {% else %}
+              <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+      {% if data['read-only'] != 'true' %}
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">3. </span> Finish checking claim
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              {% if data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' %}
+              <a class="app-task-list__task-name" href="TDAE-provide-nhsbsa-comments">
+                Submit claim checks
+              </a>
+              {% else %}
+              <span class="app-task-list__task-name">
+                Submit claim checks
+              </span>
+              {% endif %}
+            </span>
+            {% if data['university-completed'] === 'completed' and data['evidence-completed'] === 'completed' %}
+              {% if data['approve-in-progress'] === 'in-progress' %}
+                <strong class="nhsuk-tag nhsuk-tag--yellow" style="float: right;" id="eligibility-status">Return to student</strong>
+              {% elif data['approve-in-progress'] === 'completed' %}
+                <strong class="nhsuk-tag" style="float: right;" id="eligibility-status">Completed</strong>
+              {% else %}
+                <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
+              {% endif %}
+            {% else %}
+              <strong class="nhsuk-tag nhsuk-tag--grey" style="float: right;" id="eligibility-status">Cannot start yet</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+      {% endif %}
+    </ol>
+
+    {% if data['read-only'] != 'true' %}
+    <h2 class="nhsuk-heading-m">Return to student</h2>
+    <p>If there are any issues with the claim you can send it back to the student either explaining:</p>
+    <ul>
+      <li>what needs changing for them to re-submit the claim</li>
+      <li>why the claim is being declined</li>
+    </ul>
+    {% if data['university-completed'] === 'in-progress' or data['evidence-completed'] === 'in-progress' %}
+    <a class="nhsuk-button" href="TDAE-return-decline">Send to student</a>
+    {% else %}
+    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Send to student</a>
+    {% endif %}
+    {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,193 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Accommodation booking 2 details</h1>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Paying for term time accommodation
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          No
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Living with parents
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Yes
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Term time address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Stephenson House, NE2 1AW
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              Stephenson House<br>
+              Stoddart Street<br>
+              Shieldfield<br>
+              Newcastle upon Tyne <br>
+              NE2 1AW
+            </div>
+          </details>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Placement address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Alnwick Hospital, NE66 2NS
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              Alnwick Hospital<br>
+              Infirmary Drive<br>
+              Alnwick<br>
+              NE66 2NS
+            </div>
+          </details>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Placement accommodation address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          The Hog's Head Inn, NE66 2BF
+          <details class="nhsuk-details" style="margin-bottom: 0;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              The Hog's Head Inn<br>
+              Hawfinch Drive<br>
+              Alnwick<br>
+              NE66 2BF
+            </div>
+          </details>
+        </dd>
+      </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Start date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            20 August 2023
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            End date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            21 August 2023
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Number of nights
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            1
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Accommodation type
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Commercial
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Nightly cost paid
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £80
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Cost to be reimbursed
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £80
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Evidence
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 20 Aug 2023 to 21 Aug 2023">
+              Download (PDF, 1.01MB)<span class="nhsuk-u-visually-hidden"> evidence</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Student comments
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            I stayed at a different hotel to previous placements as I found a cheaper rate for this night only.
+          </dd>
+        </div>
+      </dl>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            What is the difference between commercial and non-commercial?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Commercial accommodation includes hotels, hostels, or anywhere the student entered in to a formal agreement to pay for their stay.</p>
+          <p>Non-commercial accommodation usually does not include a formal contract or payment. Examples include:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>staying with friends and family</li>
+            <li>renting a room in someone's house</li>
+            <li>accommodation provided by the hospital</li>
+          </ul>
+          <p>Accommodation arranged through an online platform, such as Airbnb, can be either. If the students' booking entered them into a contract, it's commercial. If their booking was an informal agreement, it's non-commercial.</p>
+        </div>
+      </details>
+
+      {% if data['read-only'] != 'true' %}
+      <a class="nhsuk-button" href="TDAE-accommodation-check-2">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Hire car booking 1 details</h1>
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Hire car cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £120
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Booking start and end date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          30 November 2023
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Authorised by
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          John Doe
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Reason for booking
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          My own car had an issue
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Evidence
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/images/hire-car-booking-confirmation.jpg" target="_blank" rel="noopener">View evidence 1<span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span></a><br>
+          <a href="/images/hire-car-booking-confirmation.jpg" target="_blank" rel="noopener">View evidence 2<span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student comments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          My car broke down and is currently at the garage being repaired.
+        </dd>
+      </div>
+
+    </dl>
+
+      {% if (data['read-only'] != 'true') and (data['scenario'] != 'previous') %}
+      <a class="nhsuk-button" href="TDAE-checked-hire-vehicle">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

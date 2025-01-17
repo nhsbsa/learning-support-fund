@@ -1,0 +1,56 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+  General query
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>General query</h1>
+
+        <p>If your query isn't asnwered in our frequently answered questions section on the Notice Board, you can raise a general query here. Do not use this for student specific queries. To raise a query for a specific student click <a href="/">here</a>.</p>
+        <p>Please complete the form below to raise your query with us directly and a member of the team will be able to assist you.</p>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                Name
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                Email
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                Phone number (optional)
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                University
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+              Query
+            </label>
+            <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
+            <div class="nhsuk-hint" id="example-hint">
+                1000 characters remaining
+            </div>
+        </div>
+
+        <a class="nhsuk-button" href="dashboard">Submit</a>
+
+    </div>
+
+  </div>
+{% endblock %}

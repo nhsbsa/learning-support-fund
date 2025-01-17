@@ -1,0 +1,153 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+Change attendance status
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Joe Bloggs change request</span>Check Joe Blogg's change request</h1>
+
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Change request
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Additional funding
+            </dd>
+
+            <dd class="nhsuk-summary-list__actions">
+
+              <a href="../change-request">
+                Change<span class="nhsuk-u-visually-hidden"> change being made</span>
+              </a>
+
+            </dd>
+
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Date from
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              15 March 2023
+            </dd>
+
+            <dd class="nhsuk-summary-list__actions">
+
+              <a href="dates">
+                Change<span class="nhsuk-u-visually-hidden"> date from</span>
+              </a>
+
+            </dd>
+
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Date to
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              15 June 2023
+            </dd>
+
+            <dd class="nhsuk-summary-list__actions">
+
+              <a href="dates">
+                Change<span class="nhsuk-u-visually-hidden"> date to</span>
+              </a>
+
+            </dd>
+
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Academic year
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Year 1
+            </dd>
+
+            <dd class="nhsuk-summary-list__actions">
+
+              <a href="year">
+                Change<span class="nhsuk-u-visually-hidden"> students current academic year</span>
+              </a>
+
+            </dd>
+
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Expected to complete the academic year?
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Yes
+            </dd>
+
+            <dd class="nhsuk-summary-list__actions">
+
+              <a href="expectation">
+                Change<span class="nhsuk-u-visually-hidden"> Is the student expected to complete the academic year?</span>
+              </a>
+
+            </dd>
+
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Reason for additional funding
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              These are the details of why
+            </dd>
+
+            <dd class="nhsuk-summary-list__actions">
+
+              <a href="expectation-comment">
+                Change<span class="nhsuk-u-visually-hidden"> details of the mitigating reason for additional funding</span>
+              </a>
+
+            </dd>
+
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Additional comment
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              These are the additional comments
+            </dd>
+
+            <dd class="nhsuk-summary-list__actions">
+
+              <a href="expectation-comment">
+                Change<span class="nhsuk-u-visually-hidden"> additional comment</span>
+              </a>
+
+            </dd>
+
+          </div>
+
+        </dl>
+
+        <a class="nhsuk-button" href="change-submitted">Submit</a>
+        <a href="../course-intake"><p class="nhsuk-body">Cancel change</p></a>
+    </div>
+</div>
+
+</div>
+{% endblock %}

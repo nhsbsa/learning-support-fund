@@ -1,0 +1,94 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+  Update user
+{% endblock %}
+
+{% block content %}
+
+<div class="overflow">
+  <dialog class="govuk-timeout-warning dialog" data-module="govuk-timeout-warning" id="js-timeout-warning" data-minutes-idle-timeout="0.1" data-minutes-modal-visible="0.2" data-url-redirect="/timeout" role="dialog" aria-live="polite" aria-labelledby="dialog-title" aria-describedby="at-timer" open="">
+      <h1 id="dialog-title" class="govuk-heading-l">
+          Delete User
+      </h1>
+      <div class="govuk-body">
+          <p>Are you sure you want to delete this user?</p>
+      </div>
+      <a class="nhsuk-button" href="user-search">Yes</a><br>
+      <a href="update-user">Cancel</a>
+  </dialog>
+</div>
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <h1 class="nhsuk-heading-l">Update user</h1>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                Email
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text" value="joe.blogs@gmail.com">
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                Surname
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text" value="Blogs">
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                First name
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text" value="Joe">
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="select-1">
+              Role
+            </label>
+            <select class="nhsuk-select" id="select-1" name="select-1">
+              <option value="1" selected>ROLE_HEI_USER</option>
+              <option value="2">ROLE_HEI_READ</option>
+            </select>
+        </div>
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend">
+                  Login active?
+              </legend>
+          
+              <div class="nhsuk-radios nhsuk-radios--inline">
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="login-active-yes" name="login-active" type="radio" value="yes" checked>
+                  <label class="nhsuk-label nhsuk-radios__label" for="login-active-yes">
+                    Yes
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="login-active-no" name="login-active" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="login-active-no">
+                    No
+                  </label>
+                </div>
+          
+              </div>
+            </fieldset>
+          
+        </div>
+        <a class="nhsuk-button nhsuk-u-margin-right-5" href="user-search-results">Update</a>
+        <a class="nhsuk-button" href="#">Delete user</a>
+        <br>
+        <a href="user-search-results">Cancel</a>
+
+    </div>
+
+  </div>
+{% endblock %}

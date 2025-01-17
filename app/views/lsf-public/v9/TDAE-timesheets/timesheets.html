@@ -1,0 +1,63 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Do you pay costs for term time accommodation?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="../v9/TDAE-timesheets" method="POST">
+
+
+
+			<div class="nhsuk-form-group">
+
+				<fieldset class="nhsuk-fieldset">
+				  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+					<h1 class="nhsuk-fieldset__heading">
+						Do you need to upload placement timesheets?
+					</h1>
+				  </legend>
+
+				  <div class="nhsuk-hint" id="costs-hint">
+					Some universities need these. If you select No, your university may return the claim and ask for them if needed.
+				  </div>
+
+				  <div class="nhsuk-radios">
+
+					<div class="nhsuk-radios__item">
+					  <input class="nhsuk-radios__input" id="example-1" name="timesheets" type="radio" value="yes">
+					  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+						Yes
+					  </label>
+					</div>
+
+					<div class="nhsuk-radios__item">
+					  <input class="nhsuk-radios__input" id="example-2" name="timesheets" type="radio" value="no">
+					  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+						No
+					  </label>
+					</div>
+
+				  </div>
+				</fieldset>
+
+			  </div>
+
+			<button class="nhsuk-button" type="submit">Save and continue</button><br>
+			<a href="TDAE-task-list-full">Cancel</a>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

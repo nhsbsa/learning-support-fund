@@ -1,0 +1,58 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Insurance details</h1>
+
+    <dl class="nhsuk-summary-list">
+
+      <dl class="nhsuk-summary-list">
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Insurance costs
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				£60
+			</dd>
+		</div>
+
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Evidence uploaded
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				<a href="/images/travel-insurance-screenshot-1.png" target="_blank" rel="noopener">insurance-screenshot-1.png<span class="nhsuk-u-visually-hidden">opens in new tab</span></a>
+			</dd>
+		</div>
+
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Student comments
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				None provided
+			</dd>
+		</div>
+
+    </dl>
+
+      {% if (data['read-only'] != 'true') and (data['scenario'] != 'previous') %}
+      <a class="nhsuk-button" href="TDAE-overseas-visa-fees-details">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

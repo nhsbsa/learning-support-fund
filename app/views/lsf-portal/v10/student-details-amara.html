@@ -1,0 +1,232 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+  Student details
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>George Hill</h1>
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-third">
+      <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Student reference number</h2>
+      <p>SSRN0096661</p>
+    </div>
+    <div class="nhsuk-grid-column-one-third">
+      <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Date of birth</h2>
+      <p>01 November 2000</p>
+    </div>
+    <div class="nhsuk-grid-column-one-third">
+      <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Email</h2>
+      <p>George.hill@university.ac.uk</p>
+    </div>
+    <div class="nhsuk-grid-column-one-third">
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">University student ID</h2>
+        <p>AB123456</p>
+    </div>
+    <div class="nhsuk-grid-column-one-third">
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Address</h2>
+        <p>Stephenson House<br>
+        Stoddart St<br>
+        Shieldfield<br>
+        Newcastle upon Tyne <br>
+        NE2 1AW</p>
+    </div>
+    <div class="nhsuk-grid-column-one-third">
+      <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Phone number</h2>
+      <p>07777777777</p>
+    </div>
+    <div class="nhsuk-grid-column-one-third">
+      <a id="generalStudentQuery" href="#" class="nhsuk-button" role="button" data-module="nhsuk-button">
+        General student query<span class="nhsuk-u-visually-hidden"> for Joe Hutchinson</span>
+      </a>
+    </div>
+  </div>
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-3">
+            <caption class="nhsuk-table__caption">Application history</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                        Course name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Academic year
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Study year
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Start date
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Status
+                    </th>
+                    {% if data['user-role'] != 'TDAE' %}
+                    <th role="columnheader" class="nhsuk-u-width-one-fifth" scope="col">
+                        Actions
+                    </th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      {% if data['user-role'] != 'TDAE' %}
+                        <span class="nhsuk-table-responsive__heading">Course name</span> <a href="#">Nursing</a>
+                      {% else %}
+                        Nursing
+                      {% endif %}
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Academic year </span> 2023 to 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Study year </span>Year 2
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Start date </span> September 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--grey">Student not responded for term 1</strong>
+                    </td>
+                    {% if data['user-role'] != 'TDAE' %}
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="course-intake">Review course details</a><br><a href="#">Change request</a>
+                      </td>
+                    {% endif %}
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                      {% if data['user-role'] != 'TDAE' %}
+                        <span class="nhsuk-table-responsive__heading">Course name</span> <a href="#">Nursing</a>
+                      {% else %}
+                        Nursing
+                      {% endif %}
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Academic year </span> 2022 to 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Study year </span>Year 1
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Start date </span> September 2022
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--green">In attendance for term 3</strong>
+                    </td>
+                    {% if data['user-role'] != 'TDAE' %}
+                      <td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Action </span><a href="course-intake">Review course details</a>
+                      </td>
+                    {% endif %}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="nhsuk-grid-column-full nhsuk-u-margin-top-5">
+        <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-3">
+            <caption class="nhsuk-table__caption">Active Travel and Dual Accommodation Expenses claims</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                        Date of claim
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Status
+                    </th>
+                    {% if data['user-role'] != 'COSA' %}
+                    <th role="columnheader" class="" scope="col">
+                        Action
+                    </th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date of claim</span>1 August 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span>
+                        <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
+                    </td>
+                    {% if data['user-role'] != 'COSA' %}
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span>
+                        <a class="nhsuk-link--no-visited-state" href="TDAE-student-claim?name=George Hill&status=Returned to student&evidence-completed=in-progress&evidence-completed-2=completed&accommodation-completed=completed&vehicle-hire-check=yes&accommodation-completed-2=completed&university-completed=completed&approve-in-progress=&read-only=true">View claim</a>
+                    </td>
+                    {% endif %}
+                </tr>
+            </tbody>
+        </table>
+        <p><a href="TDAE-student-previous-claims-list?name=George Hill">View previous claims</a></p>
+    </div>
+    <div class="nhsuk-grid-column-full nhsuk-u-margin-top-5">
+
+      <h3 class="nhsuk-heading-s">Activity history</h3>
+
+      <div style="background-color:white; padding: 10px;">
+
+      <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-3">
+          <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row" style="background-color: white!important">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <details class="nhsuk-details">
+                      <summary class="nhsuk-details__summary">
+                        <span class="nhsuk-details__summary-text">
+                          Information mismatch 11 November 2023 ref:12012 (Open)
+                        </span>
+                      </summary>
+                      <div class="nhsuk-details__text">
+                          <div class="nhsuk-hint" id="example-hint">
+                              Comment: This is the comment the HEI has left about which information needs changing.<br>
+                              Date created: 11/11/2023 11:10:58<br>
+                              Date last updated: 11/11/2023 11:10:58<br>
+                              Last updated by: Deacon Robert<br>
+                          </div>
+                      </div>
+                    </details>
+                  </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row" style="background-color: white!important">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <details class="nhsuk-details">
+                      <summary class="nhsuk-details__summary">
+                        <span class="nhsuk-details__summary-text">
+                          2337 - HEI Withdrawal (Active)
+                        </span>
+                      </summary>
+                      <div class="nhsuk-details__text">
+                          <div class="nhsuk-hint" id="example-hint">
+                              Change request type: Academic fail<br>
+                              Date effective: 01/01/2023<br>
+                              Date created: 19/01/2023 11:10:58<br>
+                              Date last updated: 19/01/2023 10:32:51<br>
+                              Last updated by: Deacon Robert<br>
+                              Cipher: drobe
+                          </div>
+                      </div>
+                    </details>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+
+      </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,137 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Placement additional costs comments
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "timesheets",
+        "text": "Go back"
+      }) }}
+
+    <form action="../TDAE-task-list-full?timesheets-task=completed" method="POST">
+
+
+      <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="example">
+            <h1 class="nhsuk-heading-l">Placement timesheets evidence (optional)</h1>
+          </label>
+
+          {% if data['timesheets-task'] === 'action' %}
+      			<div class="nhsuk-warning-callout">
+      			  <h3 class="nhsuk-warning-callout__label">
+      			    <span role="text">
+      			      <span class="nhsuk-u-visually-hidden">Important: </span>
+      			      University feedback
+      			    </span>
+      			  </h3>
+      			  <p>You have not uploaded timesheets for the week you're claiming for in December.</p>
+      			</div>
+      		{% endif %}
+
+          <p>Some universities need you to upload placement timesheets with your claim.</p>
+
+          {% if data['timesheets-evidence'] == "added" %}
+          <p>When you're done, select Save and continue.</p>
+          <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+            <caption class="nhsuk-table__caption"></caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                    File
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Action
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+                <td style="width:75%;" class="nhsuk-table__cell ">
+                  <a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 17 Apr 2023 to 22 Apr 2023">
+        						placement-timesheet-jan25.pdf
+        					</a>
+                </td>
+                <td class="nhsuk-table__cell ">
+                  <a href="TDAE-accommodation-evidence-overview?evidence=removed">Remove</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-bottom: 48px;"><a href="timesheets-evidence">Add more evidence</a></p>
+
+          <button class="nhsuk-button" type="submit">Save and continue</button><br>
+          <p><a href="../TDAE-task-list-full?timesheets-task=in-progress">Return to task list</a></p>
+          {% else %}
+          <p>If you do not need to upload any, select Save and continue. Your university may return the claim and ask for them if needed.</p>
+          <a class="nhsuk-button nhsuk-button--secondary" href="timesheets-evidence">Add evidence</a><br>
+          <button class="nhsuk-button" type="submit">Save and continue</button>
+          <p><a href="../TDAE-task-list-full?timesheets-task=in-progress">Return to task list</a></p>
+          {% endif %}
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <script>
+    const textarea = document.querySelector('#additionalCostsComment');
+    const countRemaining = document.getElementById('charactersRemaining');
+    const staticMsg = document.querySelector('#char-count-screen-reader');
+    const maxCharacters = 500;
+    let timeoutId;
+
+    function updateCharacterCount() {
+      const textEntered = textarea.value;
+      const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+      const addition = newLines?.length || 0;
+      const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+
+      if (remainingCharacters >= 0) {
+        countRemaining.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+        countRemaining.classList.remove('nhsbsa-count-error-message');
+        countRemaining.classList.add('nhsuk-hint');
+        textarea.classList.remove('nhsuk-textarea--error');
+      } else {
+        countRemaining.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+        countRemaining.classList.add('nhsbsa-count-error-message');
+        countRemaining.classList.remove('nhsuk-hint');
+        textarea.classList.add('nhsuk-textarea--error');
+      }
+    }
+
+    function updateScreenReaderMessage() {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        const textEntered = textarea.value;
+        const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+        const addition = newLines?.length || 0;
+        const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+        // TO DO ADD FIX FOR 1 CHARACTER
+        if (remainingCharacters < 0) {
+          staticMsg.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+        } else {
+          staticMsg.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+        }
+      }, 500);
+    }
+
+    textarea.addEventListener('input', () => {
+      updateCharacterCount();
+      updateScreenReaderMessage();
+    });
+
+    // Update character count if textarea has a value on page load
+    window.addEventListener('load', () => {
+      updateCharacterCount();
+      updateScreenReaderMessage();
+    });
+  </script>
+
+  </div>
+{% endblock %}

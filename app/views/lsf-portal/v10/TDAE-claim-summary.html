@@ -1,0 +1,199 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Claim summary
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Claim summary</h1>
+
+    <!--<dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          SSRN0010003
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['name'] }}
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Course
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Adult Nursing
+        </dd>
+      </div>
+
+    </dl>-->
+
+    <h2 class="nhsuk-heading-m">Placement costs</h2>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Placement travel
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £65.20
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Hire cars
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £140.50
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Taxis
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £20
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Accommodation capped cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £87.50
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Accommodation travel
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £45
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Overseas
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £95
+        </dd>
+      </div>
+
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Total cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <strong>£453.20</strong>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="nhsuk-heading-m">University travel costs</h2>
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Daily university travel cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £3
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Number of eligible travel days
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          6
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Total university journey cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <strong>£18</strong>
+        </dd>
+      </div>
+    </dl>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          What are eligible travel days?
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>These are days where the cost of travelling to a placement was higher than the cost of travelling to university.</p>
+        <p>When calculating this, we include any taxi costs, placement travel or accommodation travel costs, including:</p>
+        <ul class="nhsuk-list--bullet">
+          <li>driving</li>
+          <li>cycling</li>
+          <li>public transport</li>
+          <li>community mileage</li>
+          <li>extra costs</li>
+        </ul>
+      </div>
+    </details>
+
+    <p><a href="TDAE-cost-breakdown?previous=claim-summary">View detailed cost breakdown</a></p>
+
+    <h2 class="nhsuk-heading-m">Total amount to be reimbursed</h2>
+    <p>This amount is the total placement costs minus the university travel costs.</p>
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Total amount
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <strong>£435.20</strong>
+        </dd>
+      </div>
+    </dl>
+
+    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-student-claim">Return to claim</a><br>
+    <a class="nhsuk-button" href="TDAE-nhsbsa-comments">Continue</a>
+
+
+  </div>
+
+</div>
+
+<script>
+    // JavaScript code
+    var currentDateElement = document.getElementById("currentDate");
+
+    // Get the current date
+    var currentDate = new Date();
+
+    // Format the date as desired
+    var options = { day: 'numeric', month: 'long', year: 'numeric' };
+    var formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+    // Set the formatted date as the content of the element
+    currentDateElement.textContent = formattedDate;
+  </script>
+
+{% endblock %}

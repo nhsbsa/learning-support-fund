@@ -1,0 +1,123 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Placement journey overview</h1>
+
+    <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Start date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            2 February 2024
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            End date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            5 February 2024
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" style="width: 40%;">
+            Term time address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Flat 12 / Room 6, NE2 1DT
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                Flat 12 / Room 6<br>
+                Portland Road<br>
+                Shieldfield<br>
+                Newcastle upon Tyne<br>
+                NE2 1DT
+              </div>
+            </details>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Placement address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Alnwick Hospital, NE66 2NS
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                Alnwick Hospital<br>
+                Infirmary Drive<br>
+                Alnwick<br>
+                NE66 2NS
+              </div>
+            </details>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Type of travel
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Public transport
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total placement public transport costs
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £46.40
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Number of days on placement during period
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            4
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total cost
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £46.40
+          </dd>
+        </div>
+      </dl>
+
+      {% if data['read-only'] == 'true' %}
+      <a class="nhsuk-button" href="TDAE-student-claim">Continue</a>
+      {% else %}
+      <a class="nhsuk-button" href="TDAE-evidence-match">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

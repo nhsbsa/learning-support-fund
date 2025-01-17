@@ -1,0 +1,140 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">University travel details</h1>
+
+    <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" style="width: 40%;">
+            Term time address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Flat 12 / Room 6, NE2 1DT
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                Flat 12 / Room 6<br>
+                Portland Road<br>
+                Shieldfield<br>
+                Newcastle upon Tyne<br>
+                NE2 1DT
+              </div>
+            </details>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" style="width: 40%;">
+            University address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            The Medical School, NE2 4HH
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                The Medical School<br>
+                Newcastle University<br>
+                Framlington Place<br>
+                Newcastle upon Tyne<br>
+                NE2 4HH
+              </div>
+            </details>
+            <!--<br><br>
+            <p><a class="nhsuk-link--no-visited-state" href="https://www.google.com/maps/dir/NE11+0JY/NE22" target=”_blank”>Google Maps directions</a></p>-->
+          </dd>
+        </div>
+
+        <!--div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" style="width: 40%;">
+            Directions from term-time address to university
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <a class="nhsuk-link--no-visited-state" href="https://www.google.com/maps/dir/NE11+0JY/NE2+4HH" target=”_blank”>View Google Maps directions (opens in new tab)</a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Types of travel
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Car
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Daily return mileage
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            12 miles
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Daily driving return mileage costs
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £5.04
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total daily travel costs
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £5.04
+          </dd>
+        </div>
+      </dl>
+
+      <h3 class="nhsuk-heading-xs">Student comments</h3>
+
+      <p>I use the park and ride.</p>-->
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Transport method
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Walk
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Total daily travel costs
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £0
+        </dd>
+      </div>
+    </dl>
+
+    {% if data['read-only'] != 'true' %}
+    <a class="nhsuk-button" href="TDAE-checked-university-details">Continue</a>
+    {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

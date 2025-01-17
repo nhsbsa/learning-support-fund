@@ -1,0 +1,44 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <form action="TDAE-task-list-full" method="POST">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-l">Has the student given the correct placement timesheets evidence?</h1>
+          </legend>
+           <div class="nhsuk-radios" data-module="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="evidence-match-yes" name="timesheets-task" type="radio" value="completed">
+              <label class="nhsuk-label nhsuk-radios__label" for="evidence-match-yes">
+                Yes
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="evidence-match-no" name="timesheets-task" type="radio" value="in-progress">
+              <label class="nhsuk-label nhsuk-radios__label" for="evidence-match-no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button class="nhsuk-button" type="submit">
+          Save and continue
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}
