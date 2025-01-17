@@ -1,0 +1,131 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+  What are your contact details?
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <fieldset class="nhsuk-fieldset">
+      <form action="v6/bank-details-photo-id" method="POST">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Photo ID uploaded by Emmit Marr
+          </h1>
+        </legend>
+
+        <section class="gem-c-attachment nhsuk-u-margin-bottom-3">
+          <div class="gem-c-attachment__thumbnail">
+            <a target="_self" tabindex="-1" aria-hidden="true" href="#">
+              <svg class="gem-c-attachment__thumbnail-image" version="1.1" viewBox="0 0 99 140" aria-hidden="true">
+                <path d="M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z"stroke-width="0"></path>
+              </svg>
+            </a>
+          </div>
+
+          <div class="gem-c-attachment__details">
+            <h2 class="gem-c-attachment__title">
+              <a class="govuk-link gem-c-attachment__link" target="_self" href="#">Emmit Marr photo ID</a>
+            </h2>
+            <p class="gem-c-attachment__metadata">
+              <span class="gem-c-attachment__attribute"><abbr title="Portable Document Format" class="gem-c-attachment__abbr">JPG</abbr></span>,
+              <span class="gem-c-attachment__attribute">2.3MB</span>
+            </p>
+          </div>
+        </section>
+
+        <p>You can <a href="documents" target="_blank">view documents (opens in a new tab)</a> the student has previously uploaded. If there's already photo ID, you can use this to compare with the uploaded file.</p>
+
+        <p>If there's not, the uploaded file must clearly show a photo of them and their name.</p>
+
+        <!--<details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Previous photo ID provided by Emmit Marr
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+
+            <table class="nhsuk-table">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    File uploaded
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Date submitted
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><a href="#">screenshot_18022024.jpg</a></td>
+                  <td class="nhsuk-table__cell ">12 February 2024</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>-->
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Emmit Marr's contact details
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <ul class="nhsuk-list">
+              <li><b>Phone number:</b> 07777777777</li>
+              <li><b>Email:</b> Emmit.Mar@myemail.com</li>
+            </ul>
+          </div>
+        </details>
+
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+          <h2 class="nhsuk-fieldset__heading">
+            Does the photo ID match the student?
+          </h2>
+        </legend>
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="photo-id-yes" name="photo-id" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="photo-id-yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="photo-id-no" name="photo-id" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="photo-id-no">
+                No
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <button class="nhsuk-button" type="submit">
+              Continue
+          </button><br>
+          <p><a href="#">Cancel</a></p>
+        </div>
+      </form>
+    </fieldset>
+
+  </div>
+
+</div>
+{% endblock %}

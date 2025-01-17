@@ -1,0 +1,279 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <h1 class="nhsuk-heading-l">Accommodation booking 1 details</h1>
+
+    {% if data['name'] === 'Emmit Mar' %}
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Paying for term time accommodation
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Yes
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Term time address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Stephenson House, NE2 1AW
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              Stephenson House<br>
+              Stoddart Street<br>
+              Shieldfield<br>
+              Newcastle upon Tyne <br>
+              NE2 1AW
+            </div>
+          </details>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Placement address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Alnwick Hospital,  NE66 2NS
+          <details class="nhsuk-details" style="margin-bottom: 0;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                Alnwick Hospital<br>
+                Infirmary Drive<br>
+                Alnwick<br>
+                NE66 2NS
+            </div>
+          </details>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Placement accommodation address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          The Village Inn, NE65 8AD
+          <details class="nhsuk-details" style="margin-bottom: 0;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              The Village Inn<br>
+              Front Street<br>
+              Longframlington<br>
+              Morpeth<br>
+              NE65 8AD
+            </div>
+          </details>
+        </dd>
+      </div>
+      
+      {% else %}
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Paying for term time accommodation
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            No
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Living with parents
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Yes
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" style="width: 40%;">
+            Term time address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            82 Meldon Terrace, NE6 5XQ
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                82 Meldon Terrace<br>
+                Heaton<br>
+                Newcastle upon Tyne<br>
+                NE6 5XQ
+              </div>
+            </details>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" style="width: 40%;">
+            Placement address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Alnwick Hospital, NE66 2NS
+            <details class="nhsuk-details" style="margin-bottom: 0;">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                  Alnwick Hospital<br>
+                  Infirmary Drive<br>
+                  Alnwick<br>
+                  NE66 2NS
+              </div>
+            </details>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Placement accommodation address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            The Village Inn, NE65 8AD
+            <details class="nhsuk-details" style="margin-bottom: 0;">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                The Village Inn<br>
+                Front Street<br>
+                Longframlington<br>
+                Morpeth<br>
+                NE65 8AD
+              </div>
+            </details>
+          </dd>
+        </div>
+      {% endif %}
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Start date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            9 February 2024
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            End date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            12 February 2024
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Number of nights
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            3
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Accommodation type
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Commercial
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Nightly cost
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £70 Friday 9 February 2024<br>
+            £81 Saturday 10 February 2024<br>
+            £70 Sunday 11 February 2024
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Maximum nightly allowance
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £87.50
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Cost to be reimbursed
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £221
+          </dd>
+        </div>
+
+        {% if data['name'] === 'Emmit Mar' %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Evidence
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 9 Feb 2024 to 11 Feb 2024">
+              Download (PDF, 1.01MB)<span class="nhsuk-u-visually-hidden"> evidence</span>
+            </a>
+          </dd>
+        </div>
+      {% else %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Evidence
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/images/Hotel-booking-confirmation.pdf" download="Daniel Jackson accommodation evidence 9 Feb 2024 to 11 Feb 2024">
+            Download (PDF, 1.01MB)<span class="nhsuk-u-visually-hidden"> evidence</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student comments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Accommodation was slightly more expensive than usual as it was booked last minute.
+        </dd>
+      </div>
+
+    </dl>
+
+      {% if data['read-only'] != 'true' %}
+      <a class="nhsuk-button" href="TDAE-accommodation-check">Continue</a>
+      {% endif %}
+    
+  </div>
+
+</div>
+{% endblock %}

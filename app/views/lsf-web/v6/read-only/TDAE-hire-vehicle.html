@@ -1,0 +1,82 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <h1 class="nhsuk-heading-l">Hire car booking details</h1>
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Hire car cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £120
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Booking start and end date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          9 February 2024 to <br>
+          12 February 2024
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Authorised by
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          John Doe
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Reason for booking
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          My own car had an issue
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Evidence uploaded
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/images/hire-car-feb-2024.jpg" target="_blank" rel="noopener">hire-car-feb-2024.jpg<span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student comments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          My car broke down and is currently at the garage being repaired.
+        </dd>
+      </div>
+
+    </dl>
+
+    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-student-claim">Return to claim details</a>
+
+  </div>
+
+</div>
+{% endblock %}

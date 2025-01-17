@@ -1,0 +1,59 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+  Search users
+{% endblock %}
+
+{% block content %}
+  <form action="/lsf-web/v6/admin-view/user-results" method="POST">
+    <div class="nhsuk-grid-column-full">
+      <h1 class="nhsuk-heading-l">Manage users</h1>
+      <h2 class="nhsuk-heading-m">Search</h2>
+    </div>
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-form-group" id="lastname-group">
+        <label class="nhsuk-label" for="lastname">Surname</label>
+        <input class="nhsuk-input" id="lastname" name="lastName" type="text">
+      </div>
+    </div>
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-form-group" id="email-group">
+        <label class="nhsuk-label" for="mail">
+          Email
+        </label>
+        <input class="nhsuk-input" id="mail" name="email" type="text">
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-form-group" id="role-group">
+        <label class="nhsuk-label" for="roleDrop" id="role-label">
+          Role
+        </label>
+        <select class="nhsuk-select" id="roleDrop" name="role">
+          <option value="">Select...</option>
+          <option value="ROLE_PROCESSOR">PROCESSOR</option>
+          <option value="ROLE_TECHNICAL_SUPPORT_OFFICER">TECHNICAL SUPPORT OFFICER</option>
+          <option value="ROLE_MANAGEMENT_SUPPORT">MANAGEMENT SUPPORT</option>
+          <option value="ROLE_TEAM_MANAGER">TEAM MANAGER</option>
+          <option value="ROLE_CALL_CENTRE">CALL CENTRE</option>
+          <option value="ROLE_CALL_CENTRE_MANAGER">CALL CENTRE MANAGER</option>
+          <option value="ROLE_FINANCE">FINANCE</option>
+          <option value="ROLE_SUPER_USER">SUPER USER</option>
+          <option value="ROLE_HEI_USER">HEI USER</option>
+          <option value="ROLE_HEI_ADMIN">HEI ADMIN</option>
+          <option value="ROLE_HEI_READ">HEI READ</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-full">
+      <div class="form-group">
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">
+          Search
+        </button>
+      </div>
+      <p><a href="#" id="clearButton">Cancel</a></p>
+    </div>
+  </form>
+{% endblock %}

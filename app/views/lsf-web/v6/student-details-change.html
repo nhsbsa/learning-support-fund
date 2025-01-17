@@ -1,0 +1,135 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Change student details
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+          href="/lsf-web/v6/current-search-student">Student search</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v6/student-details">Student
+          details</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v6/student-details">Back to
+        Student details</a></p>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div>
+      <h1 class="nhsuk-heading-xl">Change student details</h1>
+    </div>
+  </div>
+  <div class="nhsuk-grid-column-two-thirds">
+    <h2 class="nhsuk-heading-m">Personal details</h2>
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Name</dt>
+        <dd class="nhsuk-summary-list__value">Joe Hutchinson</dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a id="update-name" href="/lsf-web/v6/update-student-details/name">
+            Change<span class="nhsuk-u-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Date of birth</dt>
+        <dd class="nhsuk-summary-list__value">12 April 1997</dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a id="updateDOB" href="/lsf-web/v6/update-student-details/dob">
+            Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Address</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>
+            <span id="studentAddressNameOrNumber" class="wordbreak">64</span><br>
+            <span id="studentAddress1" class="wordbreak">Zoo Lane</span><br />
+
+
+            <span id="studentAddressTown" class="wordbreak">Balamory</span><br />
+            <span id="studentPostcode">NE1 1AA</span>
+          </p>
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a id="updateAddress" href="/lsf-web/v6/update-student-details/address">
+            Change<span class="nhsuk-u-visually-hidden"> address</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="nhsuk-grid-column-two-thirds">
+    <h2 class="nhsuk-heading-m">Account details</h2>
+    <!--{% if data['number'] == 'changed' %}
+    <p id="studentEmail" class="wordbreak">The student needs to sign into their account using a security code to confirm
+      their phone number.</p>
+    {% endif %}-->
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Email</dt>
+        <dd class="nhsuk-summary-list__value">jhutchie2021+1@gmail.com</dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a id="updateEmail" href="/lsf-web/v6/update-student-details/email">
+            Change<span class="nhsuk-u-visually-hidden"> email address</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Username</dt>
+        <dd class="nhsuk-summary-list__value">Joetest</dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a id="updateUsername" href="/lsf-web/v6/update-student-details/username">
+            Change<span class="nhsuk-u-visually-hidden"> username</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Phone number</dt>
+        <dd class="nhsuk-summary-list__value">07971721420</dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a id="updatePhone" href="/lsf-web/v6/change-phone-number-note">
+            Change<span class="nhsuk-u-visually-hidden"> phone number</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Account status</dt>
+        <dd class="nhsuk-summary-list__value">Active</dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a id="updateEnabled" href="/lsf-web/v6/change-account-status">
+            Change<span class="nhsuk-u-visually-hidden"> enabled</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  const sendBtn = document.getElementById('emailButton');
+  const sendConfirm = document.getElementById('emailSentMsg');
+
+  sendBtn.addEventListener("click", function (event) {
+    sendConfirm.setAttribute("style", "display:block");
+  });
+
+
+</script>
+{% endblock %}

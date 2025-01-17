@@ -1,0 +1,1529 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Manage universities
+{% endblock %}
+
+{% block content %}
+<form action="/lsf-web/v6/admin-view/manage-unis" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Manage universities</h1>
+	</div>
+		
+	<div class="nhsuk-grid-column-one-third">
+		<div class="nhsuk-form-group" id="filterUnis-group">
+			<label class="nhsuk-label" for="filterUnis">Filter universities</label>
+			<div id="filterUnis-container"></div>
+		</div>
+	</div>
+		
+	<div class="nhsuk-grid-column-full">
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">Apply filter</button> 
+			<a class="nhsuk-button nhsuk-button--secondary" style="float: right;" href="/lsf-web/v6/admin-view/add-uni" data-module="nhsuk-button" type="submit" id="addUniButton">Add university</a>
+			<p><a href="/lsf-web/v6/admin-view/manage-unis" id="clearButton">Reset filter</a></p>
+		</div>
+	</div>
+</form>
+
+<div class="nhsuk-grid-column-full">
+	<hr class="" style="border-color: #005eb8; border-width: 4px">
+	<table role="table" id="collegesTable" class="wordbreak nhsuk-table-responsive js-table-sortable nhsuk-u-margin-bottom-5">
+		<h2 class="heading-large nhsuk-u-visually-hidden">Universities table</h2>
+			<caption class="nhsuk-table__caption">Universities<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 79 results</span><span id="resultMessage" aria-hidden="true"> - contains 79 results</span><span class="nhsuk-u-visually-hidden"> (column headers with links are sortable)</span></caption>
+	
+	<thead role="rowgroup" class="nhsuk-table__head">	
+		<tr role="row">
+			<th role="columnheader" class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">University name</th>
+			<th role="columnheader" class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Regional Uplift</th>
+			<th role="columnheader" class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Enabled</th>
+			<th role="columnheader" class="bold sortable" scope="col" data-sort="string" width="25%"><a href="#" class="table-header__button">Actions</th>
+		</tr>
+	</thead>
+	<tbody class="nhsuk-table__body">
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">University name</span>
+							<span>ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</span>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</span></span></a>
+						</td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>ANGLIA RUSKIN UNIVERSITY - CHELMSFORD</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>ANGLIA RUSKIN UNIVERSITY - CHELMSFORD</span></span></a>
+						</td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>ANGLIA RUSKIN UNIVERSITY - PETERBOROUGH</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>ANGLIA RUSKIN UNIVERSITY - PETERBOROUGH</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>BIRMINGHAM CITY UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>BIRMINGHAM CITY UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>BIRMINGHAM METROPOLITAN COLLEGE</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>BIRMINGHAM METROPOLITAN COLLEGE</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>BOURNEMOUTH UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>BOURNEMOUTH UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>BPP UNIVERSITY LTD</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>BPP UNIVERSITY LTD</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>BRUNEL UNIVERSITY LONDON</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>BRUNEL UNIVERSITY LONDON</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>BUCKS NEW UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>BUCKS NEW UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>CANTERBURY CHRIST CHURCH UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>CANTERBURY CHRIST CHURCH UNIVERSITY</span></span></a>
+						</td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>CITY UNIVERSITY LONDON</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>CITY UNIVERSITY LONDON</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>COLCHESTER INSTITUTE</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>COLCHESTER INSTITUTE</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>COVENTRY UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>COVENTRY UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>DE MONTFORT UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>DE MONTFORT UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>EDGE HILL UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>EDGE HILL UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>KEELE UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>KEELE UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>KINGS COLLEGE LONDON</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>KINGS COLLEGE LONDON</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>KINGSTON UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>>KINGSTON UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>LEEDS BECKETT UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>LEEDS BECKETT UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>LIVERPOOL JOHN MOORES UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>LIVERPOOL JOHN MOORES UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>LONDON METROPOLITAN UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>LONDON METROPOLITAN UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>LONDON SOUTH BANK UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>LONDON SOUTH BANK UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>MANCHESTER METROPOLITAN UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>MANCHESTER METROPOLITAN UNIVERSITY</span></span></a>
+						</td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>MIDDLESEX UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>MIDDLESEX UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>NEW COLLEGE DURHAM</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>NEW COLLEGE DURHAM</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>NORTHUMBRIA UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>NORTHUMBRIA UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>OXFORD BROOKES UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>OXFORD BROOKES UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>SHEFFIELD HALLAM UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>SHEFFIELD HALLAM UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>SOLENT UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>SOLENT UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>STAFFORDSHIRE UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>STAFFORDSHIRE UNIVERSITY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>ST GEORGE'S - UNIVERSITY OF LONDON</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>ST GEORGE'S - UNIVERSITY OF LONDON</span></span></a>
+						</td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY COLLEGE LONDON</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY COLLEGE LONDON</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF BEDFORDSHIRE</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF BEDFORDSHIRE</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF BIRMINGHAM</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF BIRMINGHAM</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF BOLTON</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF BOLTON</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF BRADFORD</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF BRADFORD</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF BRIGHTON</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF BRIGHTON</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF BRISTOL</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF BRISTOL</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF CENTRAL LANCASHIRE</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF CENTRAL LANCASHIRE</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF CHESTER</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF CHESTER</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF CUMBRIA</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF CUMBRIA</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF DERBY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF DERBY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF EAST ANGLIA</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF EAST ANGLIA</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF EAST LONDON</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF EAST LONDON</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF ESSEX</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF ESSEX</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF EXETER</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF EXETER</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF GLOUCESTERSHIRE</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF GLOUCESTERSHIRE</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF GREENWICH</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF GREENWICH</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF HERTFORDSHIRE</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF HERTFORDSHIRE</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF HUDDERSFIELD</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF HUDDERSFIELD</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF HULL</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF HULL</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF LEEDS</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF LEEDS</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF LEICESTER</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF LEICESTER</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF LINCOLN</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF LINCOLN</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF LIVERPOOL</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF LIVERPOOL</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF MANCHESTER</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF MANCHESTER</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF NEWCASTLE</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF NEWCASTLE</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF NORTHAMPTON</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF NORTHAMPTON</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF NOTTINGHAM</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF NOTTINGHAM</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF PLYMOUTH</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF PLYMOUTH</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF PORTSMOUTH</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF PORTSMOUTH</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF READING</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF READING</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF ROEHAMPTON</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF ROEHAMPTON</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF SALFORD</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF SALFORD</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF SHEFFIELD</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF SHEFFIELD</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF SOUTHAMPTON</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF SOUTHAMPTON</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF ST MARK AND ST JOHN</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF ST MARK AND ST JOHN</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF SUFFOLK</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF SUFFOLK</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF SUNDERLAND</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF SUNDERLAND</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF SURREY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF SURREY</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF TEESSIDE</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF TEESSIDE</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF THE WEST OF ENGLAND</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF THE WEST OF ENGLAND</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF WEST LONDON</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF WEST LONDON</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF WINCHESTER</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF WINCHESTER</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF WOLVERHAMPTON</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF WOLVERHAMPTON</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF WORCESTER</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF WORCESTER</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF YORK</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSITY OF YORK</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>UNIVERSITY OF PLYMOUTH</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or 
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>UNIVERSIYT OF PLYMOUTH</span></span></a></td>
+					</tr>
+
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">University name</span>
+						  <span>YORK ST JOHN UNIVERSITY</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Regional uplift</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/college-details">Change university details</a> or
+							<a href="/lsf-web/v6/admin-view/uni-courses">manage courses<span class="nhsuk-u-visually-hidden">for<span>YORK ST JOHN UNIVERSITY</span></span></a></td>
+					</tr>
+
+				</tbody>
+			</table>
+
+			<nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
+				<ul class="nhsbsa-pagination" >
+					<li class="nhsbsa-pagination__item nhsbsa-pagination-li">
+						<a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
+					</li>
+				</ul>
+				<!--a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href="" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a-->
+		
+				<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">79</span> of <span id="tdaeTotalItemsNumber">79 results</span></div>
+			</nav>
+
+		</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+    const universities = [
+    "ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE",
+	"ANGLIA RUSKIN UNIVERSITY - CHELMSFORD",
+	"ANGLIA RUSKIN UNIVERSITY - PETERBOROUGH",
+	"BIRMINGHAM CITY UNIVERSITY",
+	"BIRMINGHAM METROPOLITAN COLLEGE",
+	"BOURNEMOUTH UNIVERSITY",
+	"BPP UNIVERSITY LTD",
+	"BRUNEL UNIVERSITY LONDON",
+	"BUCKS NEW UNIVERSITY",
+	"CANTERBURY CHRIST CHURCH UNIVERSITY",
+	"CITY UNIVERSITY LONDON",
+	"COLCHESTER INSTITUTE",
+	"COVENTRY UNIVERSITY",
+	"DE MONTFORT UNIVERSITY",
+	"EDGE HILL UNIVERSITY",
+	"KEELE UNIVERSITY",
+	"KINGS COLLEGE LONDON",
+	"KINGSTON UNIVERSITY",
+	"LEEDS BECKETT UNIVERSITY",
+	"LIVERPOOL JOHN MOORES UNIVERSITY",
+	"LONDON METROPOLITAN UNIVERSITY",
+	"LONDON SOUTH BANK UNIVERSITY",
+	"MANCHESTER METROPOLITAN UNIVERSITY",
+	"MIDDLESEX UNIVERSITY",
+	"NEW COLLEGE DURHAM",
+	"NORTHUMBRIA UNIVERSITY",
+	"OXFORD BROOKES UNIVERSITY",
+	"SHEFFIELD HALLAM UNIVERSITY",
+	"SOLENT UNIVERSITY",
+	"STAFFORDSHIRE UNIVERSITY",
+	"ST GEORGE'S - UNIVERSITY OF LONDON",
+	"UNIVERSITY COLLEGE LONDON",
+	"UNIVERSITY OF BEDFORDSHIRE",
+	"UNIVERSITY OF BIRMINGHAM",
+	"UNIVERSITY OF BOLTON",
+	"UNIVERSITY OF BRADFORD",
+	"UNIVERSITY OF BRIGHTON",
+	"UNIVERSITY OF BRISTOL",
+	"UNIVERSITY OF CENTRAL LANCASHIRE",
+	"UNIVERSITY OF CHESTER",
+	"UNIVERSITY OF CUMBRIA",
+	"UNIVERSITY OF DERBY",
+	"UNIVERSITY OF EAST ANGLIA",
+	"UNIVERSITY OF EAST LONDON",
+	"UNIVERSITY OF ESSEX",
+	"UNIVERSITY OF EXETER",
+	"UNIVERSITY OF GLOUCESTERSHIRE",
+	"UNIVERSITY OF GREENWICH",
+	"UNIVERSITY OF HERTFORDSHIRE",
+	"UNIVERSITY OF HUDDERSFIELD",
+	"UNIVERSITY OF HULL",
+	"UNIVERSITY OF LEEDS",
+	"UNIVERSITY OF LEICESTER",
+	"UNIVERSITY OF LINCOLN",
+	"UNIVERSITY OF LIVERPOOL",
+	"UNIVERSITY OF MANCHESTER",
+	"UNIVERSITY OF NEWCASTLE",
+	"UNIVERSITY OF NORTHAMPTON",
+	"UNIVERSITY OF NOTTINGHAM",
+	"UNIVERSITY OF PLYMOUTH",
+	"UNIVERSITY OF PORTSMOUTH",
+	"UNIVERSITY OF READING",
+	"UNIVERSITY OF ROEHAMPTON",
+	"UNIVERSITY OF SALFORD",
+	"UNIVERSITY OF SHEFFIELD",
+	"UNIVERSITY OF SOUTHAMPTON",
+	"UNIVERSITY OF ST MARK AND ST JOHN",
+	"UNIVERSITY OF SUFFOLK",
+	"UNIVERSITY OF SUNDERLAND",
+	"UNIVERSITY OF SURREY",
+	"UNIVERSITY OF TEESSIDE",
+	"UNIVERSITY OF THE WEST OF ENGLAND",
+	"UNIVERSITY OF WEST LONDON",
+	"UNIVERSITY OF WINCHESTER",
+	"UNIVERSITY OF WOLVERHAMPTON",
+	"UNIVERSITY OF WORCESTER",
+	"UNIVERSITY OF YORK",
+	"UNIVERSITY OF PLYMOUTH",
+	"YORK ST JOHN UNIVERSITY",
+	];
+
+    accessibleAutocomplete({
+        element: document.querySelector('#filterUnis-container'),
+        id: 'filterUnis', // To match it to the existing element
+        source: universities,
+        onConfirm: function(val) {
+            document.querySelector('#filterUnis').value = val;
+            filterTable(val, 'collegesTable');
+        }
+    });
+
+    function filterTable(filterText, tableId) {
+        let filter, table, tr, td, i, txtValue;
+        filter = filterText.toUpperCase();
+        table = document.getElementById(tableId);
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+</script>
+{% endblock %}

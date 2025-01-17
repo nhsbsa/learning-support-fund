@@ -1,0 +1,56 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Add note type
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-full">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
+
+<form action="v6/admin-view/add-note-type" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Add note type</h1>
+	</div>
+				
+	<div class="nhsuk-grid-column-two-thirds">
+				
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" style="font-weight: bold;" for="noteTypeName">
+						Name
+					</label>
+					<input class="nhsuk-input nhsuk-input--width-20" id="noteTypeName" name="noteTypeName" type="text">
+				</div>
+
+				<fieldset class="nhsuk-fieldset">
+					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Do you want to enable the note type?</legend>
+					<!-- div class="nhsuk-hint" id="contact-hint">Select No to xyz. For example, if xyz.</div-->
+					<div class="nhsuk-form-group">
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="enableNoteTypeYes" name="enableNoteType" type="radio" value="Yes">
+								<label class="nhsuk-label nhsuk-radios__label" for="enableNoteTypeYes">Yes</label>
+							</div>
+		
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="enableNoteTypeNo" name="enableNoteType" type="radio" value="No">
+								<label class="nhsuk-label nhsuk-radios__label" for="enableNoteTypeNo">No</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<div class="nhsuk-form-group">
+					<button class="nhsuk-button" type="submit" id="saveNoteType">Save and continue</button>
+					<p><a class="" href="/lsf-web/v6/admin-view/manage-note-types">Cancel</a></p>
+				</div>
+		
+			
+	</div>
+
+{% endblock %}

@@ -1,0 +1,249 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+What is the reason to send the claim back to the University?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+      <form action="v6/TDAE-send-to-student" method="POST">
+
+          <div class="nhsuk-form-group">
+
+              <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  <h1 class="nhsuk-fieldset__heading">
+                    Why are you returning the claim to the university?
+                  </h1>
+                </legend>
+
+                <div class="nhsuk-hint" id="reason-hint">
+                  Select all that apply.
+                </div>
+
+                <div class="nhsuk-checkboxes">
+
+                {% if data['name'] === 'Emmit Mar' %}
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-1" name="return-reason" type="checkbox" value="University travel details incorrect">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-1">
+                    University travel details incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-2" name="return-reason" type="checkbox" value="Period 1 placement travel details details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-2">
+                    Period 1 placement travel details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-3" name="return-reason" type="checkbox" value="Period 2 placement travel details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-3">
+                    Period 2 placement travel details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-4" name="return-reason" type="checkbox" value="Car hire details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-4">
+                    Hire car details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-5" name="return-reason" type="checkbox" value="Taxi journey details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-5">
+                    Taxi journey details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-6" name="return-reason" type="checkbox" value="Accommodation booking 1 details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-6">
+                    Accommodation booking 1 details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-7" name="return-reason" type="checkbox" value="Accommodation booking 2 details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-7">
+                    Accommodation booking 2 details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-8" name="return-reason" type="checkbox" value="Accommodation travel journey 1 details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-8">
+                    Accommodation travel journey 1 details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-9" name="return-reason" type="checkbox" value="Accommodation travel journey 2 details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-9">
+                    Accommodation travel journey 2 details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-10" name="return-reason" type="checkbox" value="Overseas details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-10">
+                    Overseas details or evidence incorrect or missing
+                  </label>
+                </div>
+
+
+                {% elif data['name'] === 'Alyssa Geary' %}
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-1" name="return-reason" type="checkbox" value="University travel details incorrect">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-1">
+                    University travel details incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-2" name="return-reason" type="checkbox" value="Period 1 placement travel details details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-2">
+                    Period 1 placement travel details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-3" name="return-reason" type="checkbox" value="Taxi journey details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-3">
+                    Taxi journey details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-4" name="return-reason" type="checkbox" value="Overseas details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-4">
+                    Overseas details or evidence incorrect or missing
+                  </label>
+                </div>
+
+
+                {% elif data['name'] === 'Daniel Jackson' %}
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-1" name="return-reason" type="checkbox" value="University travel details incorrect">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-1">
+                    University travel details incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-2" name="return-reason" type="checkbox" value="Accommodation booking 1 details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-6">
+                    Accommodation booking 1 details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-3" name="return-reason" type="checkbox" value="Accommodation travel journey 1 details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-8">
+                    Accommodation travel journey 1 details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-4" name="return-reason" type="checkbox" value="Accommodation travel journey 2 details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-9">
+                    Accommodation travel journey 2 details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                {% else %}
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-1" name="return-reason" type="checkbox" value="University travel details incorrect">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-1">
+                    University travel details incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-2" name="return-reason" type="checkbox" value="Period 1 placement travel details details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-2">
+                    Period 1 placement travel details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-3" name="return-reason" type="checkbox" value="Period 2 placement travel details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-3">
+                    Period 2 placement travel details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-4" name="return-reason" type="checkbox" value="Car hire details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-4">
+                    Hire car details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-5" name="return-reason" type="checkbox" value="Taxi journey details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-5">
+                    Taxi journey details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-6" name="return-reason" type="checkbox" value="Accommodation booking 1 details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-6">
+                    Accommodation booking 1 details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-7" name="return-reason" type="checkbox" value="Accommodation booking 2 details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-7">
+                    Accommodation booking 2 details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-8" name="return-reason" type="checkbox" value="Accommodation travel journey 1 details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-8">
+                    Accommodation travel journey 1 details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-9" name="return-reason" type="checkbox" value="Accommodation travel journey 2 details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-9">
+                    Accommodation travel journey 2 details or evidence incorrect or missing
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="reason-10" name="return-reason" type="checkbox" value="Overseas details or evidence incorrect or missing">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="reason-10">
+                    Overseas details or evidence incorrect or missing
+                  </label>
+                </div>
+                {% endif %}
+
+              </div>
+              </fieldset>
+
+            </div>
+
+
+          <button class="nhsuk-button" type="submit">Continue</button><br>
+
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

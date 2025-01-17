@@ -1,0 +1,566 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Manage enrolment years
+{% endblock %}
+
+{% block content %}
+<form action="/lsf-web/v6/admin-view/manage-enrolment-years" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Manage enrolment years</h1>
+	</div>
+		
+	<div class="nhsuk-grid-column-one-third">
+		<div class="nhsuk-form-group" id="filterEnrolmentYears-group">
+			<label class="nhsuk-label" for="filterEnrolmentYears">Filter by enrolment year or month</label>
+			<div id="filterEnrolmentYears-container"></div>
+		</div>
+	</div>
+		
+	<div class="nhsuk-grid-column-full">
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">Apply filter</button>
+			<a class="nhsuk-button nhsuk-button--secondary" style="float: right;" href="/lsf-web/v6/admin-view/add-enrolment-year" data-module="nhsuk-button" type="submit" id="searchButton">Add enrolment year</a>
+			<p><a href="/lsf-web/v6/admin-view/manage-enrolment-years" id="clearButton">Reset filter</a></p>
+		</div>
+	</div>
+
+</form>
+
+<div class="nhsuk-grid-column-full">
+	<hr class="" style="border-color: #005eb8; border-width: 4px">
+			<table role="table" id="enrolmentYearsListTable" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+				<h2 class="heading-large nhsuk-u-visually-hidden">Enrolment rates table</h2>
+				<caption class="nhsuk-table__caption">Calculation rates<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 22 results</span><span id="resultMessage" aria-hidden="true"> - contains 22 results</span></caption>
+				
+				<thead role="rowgroup" class="nhsuk-table__head">
+					<tr role="row">
+						<th role="columnheader" class="bold" scope="col">Enrolment year</th>
+						<th role="columnheader" class="bold" scope="col">COSA Start date</th>
+						<th role="columnheader" class="bold" scope="col">COSA End date</th>
+						<th role="columnheader" class="bold" scope="col">Enabled</th>
+						<th role="columnheader" class="bold" scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tbody class="nhsuk-table__body">
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2026-Jan
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2025-Jan
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2024-Feb
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2024-Jan
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2023-Oct
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2023-Oct
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2023-Sep
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2023-Jan
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2022-Nov
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>2022-11-01
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>2023-10-28
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2022-Oct
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>2022-10-07
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>2023-08-07
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2022-Sep
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2022-Jul
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2022-Jan
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2021-Nov
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2021-Sep
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>2021-09-01
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>2021-10-08
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2021-Jan
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>2021-01-01
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>2021-01-01
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2020-Oct
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>2020-10-01
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>2020-11-30
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2020-Sep
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>2020-09-02
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>2021-08-31
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2019-Sep
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>2019-09-01
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>2020-08-31
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2019-Jan
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>2019-01-01
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>2019-08-31
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2018-Feb
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>2018-02-01
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>2018-03-01
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+					<tr>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enrolment year</span>2017-Sep
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA start date</span>2017-02-01
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">COSA end date</span>2017-05-01
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<a href="/lsf-web/v6/admin-view/manage-payment-dates">Manage payment dates</a> or 
+							<a href="/lsf-web/v6/admin-view/edit-enrolment-year">change enrolment year</span></a>
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+
+			<nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
+				<ul class="nhsbsa-pagination" >
+					<li class="nhsbsa-pagination__item nhsbsa-pagination-li">
+						<a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
+					</li>
+				</ul>
+				<!--a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href=" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a-->
+		
+				<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">22</span> of <span id="tdaeTotalItemsNumber">22 results</span></div>
+			</nav>
+
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+    const enrolmentYears = [
+        "2026-Jan",
+        "2025-Jan",
+        "2024-Feb",
+        "2024-Jan",
+        "2023-Oct",
+        "2023-Oct",
+        "2023-Sep",
+		"2023-Jan",
+		"2022-Nov",
+        "2022-Oct",
+		"2022-Sep",
+        "2022-Jul",
+        "2022-Jan",
+        "2021-Nov",
+        "2021-Sep",
+        "2021-Jan",
+        "2020-Oct",
+		"2020-Sep",
+		"2019-Sep",
+        "2019-Jan",
+		"2018-Feb",
+        "2017-Sep"
+    ];
+
+    accessibleAutocomplete({
+        element: document.querySelector('#filterEnrolmentYears-container'),
+        id: 'filterEnrolmentYears', // To match it to the existing element
+        source: enrolmentYears,
+        onConfirm: function(val) {
+            document.querySelector('#filterEnrolmentYears').value = val;
+            filterTable(val, 'enrolmentYearsListTable');
+        }
+    });
+
+    function filterTable(filterText, tableId) {
+        let filter, table, tr, td, i, txtValue;
+        filter = filterText.toUpperCase();
+        table = document.getElementById(tableId);
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+</script>
+{% endblock %}

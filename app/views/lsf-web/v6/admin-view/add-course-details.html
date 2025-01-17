@@ -1,0 +1,103 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Add course details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-full">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
+
+<form action="v6/admin-view/edit-course-details" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Add course details</h1>
+	</div>
+				
+	<div class="nhsuk-grid-column-two-thirds">
+
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" style="font-weight: bold;" for="courseName">
+						Course name
+					</label>
+					<input class="nhsuk-input nhsuk-input--width-20" id="courseName" name="courseName" type="text">
+				</div>
+
+				<div style="width: 20%;" class="nhsuk-form-group">
+					<label class="nhsuk-label" style="font-weight: bold;" id="glCode-label" for="glCode" class="form-label-bold">
+						Payment code
+					</label>
+					<input class="nhsuk-input" id="glCode" name="glCode" type="text" maxlength="4" spellcheck="false" autocomplete="off">
+				</div>	
+
+
+				<!--div class="nhsuk-inset-text">
+					<span class="nhsuk-u-visually-hidden">Information:</span>
+					<p>There are 71 linked universities.</p>
+				</div-->
+
+				<fieldset class="nhsuk-fieldset">
+					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Does the regional maintenance grant uplift apply?</legend>
+					<div class="nhsuk-form-group">
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="regionalUpliftYes" name="regionalUplift" type="radio" value="Yes">
+								<label class="nhsuk-label nhsuk-radios__label" for="regionalUpliftYes">Yes</label>
+							</div>
+		
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="regionalUpliftNo" name="regionalUplift" type="radio" value="No">
+								<label class="nhsuk-label nhsuk-radios__label" for="regionalUpliftNo">No</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset class="nhsuk-fieldset">
+					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Is this a blended learning course?</legend>
+					<div class="nhsuk-form-group">
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="blendedLearningYes" name="blendedLearning" type="radio" value="Yes">
+								<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningYes">Yes</label>
+							</div>
+		
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="blendedLearningNo" name="blendedLearning" type="radio" value="No">
+								<label class="nhsuk-label nhsuk-radios__label" for="blendedLearningNo">No</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset class="nhsuk-fieldset">
+					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Do you want to enable the course details?</legend>
+					<!-- div class="nhsuk-hint" id="contact-hint">Select No to xyz. For example, if xyz.</div-->
+					<div class="nhsuk-form-group">
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="enableCourseDetailsYes" name="enableCourseDetails" type="radio" value="Yes">
+								<label class="nhsuk-label nhsuk-radios__label" for="enableCourseDetailsYes">Yes</label>
+							</div>
+		
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="enableCourseDetailsNo" name="enableCourseDetails" type="radio" value="No">
+								<label class="nhsuk-label nhsuk-radios__label" for="enableCourseDetailsNo">No</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<div class="nhsuk-form-group">
+					<button class="nhsuk-button" type="submit" id="saveCourseDetails">Save and continue</button>
+					<p><a class="" href="/lsf-web/v6/admin-view/manage-courses">Cancel</a></p>
+				</div>
+		
+			
+		</div>
+
+{% endblock %}

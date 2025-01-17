@@ -1,0 +1,139 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Accommodation travel journey 2 details</h1>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Journey
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Accommodation to term time address
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Date travelled
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          12 February 2024
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Accommodation address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          The Village Inn, NE65 8AD
+          <details class="nhsuk-details" style="margin-bottom: 0;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              The Village Inn<br>
+              Front Street<br>
+              Longframlington<br>
+              Morpeth<br>
+              NE65 8AD
+            </div>
+          </details>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Term time address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Stephenson House, NE2 1AW
+          <details class="nhsuk-details" style="margin-bottom: 0;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              Stephenson House<br>
+              Stoddart Street<br>
+              Shieldfield<br>
+              Newcastle upon Tyne<br>
+              NE2 1AW
+            </div>
+          </details>
+        </dd>
+      </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Transport method
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Car
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total driving mileage
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            27.5
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total extra costs
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £12
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Evidence
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">
+              View (opens in new tab)<span class="nhsuk-u-visually-hidden">opens in new tab</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Student comments
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            I paid for car parking at the hotel after I checked out.
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Cost
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £23.55
+          </dd>
+        </div>
+      </dl>
+
+      {% if data['read-only'] != 'true' %}
+      <a class="nhsuk-button" href="TDAE-accommodation-travel-check-2">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

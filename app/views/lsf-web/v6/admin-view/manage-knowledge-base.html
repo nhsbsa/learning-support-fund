@@ -1,0 +1,152 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Manage knowledge base
+{% endblock %}
+
+{% block content %}
+<form action="/lsf-web/v6/admin-view/manage-knowledge-base" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Manage knowledge base</h1>
+	</div>
+
+	<div class="nhsuk-grid-column-one-third">
+		<div class="nhsuk-form-group" id="filterKnowledgeList-group">
+			<label class="nhsuk-label" for="filterKnowledgeList">Filter knowledge base items by title</label>
+			<div id="filterKnowledgeList-container"></div>
+		</div>
+	</div>
+		
+	<div class="nhsuk-grid-column-full">
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">Apply filter</button>
+			<a class="nhsuk-button nhsuk-button--secondary" style="float: right;" href="/lsf-web/v6/admin-view/add-item" data-module="nhsuk-button" type="submit" id="searchButton">Add knowledge base item</a>
+			<p><a href="/lsf-web/v6/admin-view/manage-knowledge-base" id="clearButton">Reset filter</a></p>
+		</div>
+	</div>
+
+</form>
+				
+<div class="nhsuk-grid-column-full">
+	<hr class="" style="border-color: #005eb8; border-width: 4px">
+			<table role="table" id="knowledgeListTable" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+				<h2 class="heading-large nhsuk-u-visually-hidden">Knowledge base items table</h2>
+					<caption class="nhsuk-table__caption">Knowledge base items<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 2 results</span><span id="resultMessage" aria-hidden="true"> - contains 2 results</span></caption>
+						<thead role="rowgroup" class="nhsuk-table__head">
+							<tr role="row">
+								<th class="bold" role="columnheader" scope="col">Title</th>	
+								<th class="bold" role="columnheader" scope="col">Content</th>															
+								<th class="bold" role="columnheader" scope="col">Enabled</th>					
+								<th class="bold" role="columnheader" scope="col" width="25%">Action</th>
+							</tr>
+						</thead>
+						<tbody class="nhsuk-table__body">
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell" class="wordbreak">
+									<span class="nhsuk-table-responsive__heading">Title</span>Changes to Travel And Dual Accommodation (TDAE) claim and approval process
+								</td>
+								<td role="cell" class="nhsuk-table__cell" class="wordbreak">
+									<span class="nhsuk-table-responsive__heading">Content</span>We have changed the process for TDAE
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Action</span>
+									<a href="/lsf-web/v6/admin-view/edit-item">Change knowledge base item <span class="nhsuk-u-visually-hidden">1</span></a>
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell" class="wordbreak">
+									<span class="nhsuk-table-responsive__heading">Title</span>Confirmation of Attendance
+								</td>
+								<td role="cell" class="nhsuk-table__cell" class="wordbreak">
+									<span class="nhsuk-table-responsive__heading">Content</span>We have changed the way confirmation of attendance is completed
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Action</span>
+									<a href="/lsf-web/v6/admin-view/edit-item">Change knowledge base item<span class="nhsuk-u-visually-hidden">2</span></a>
+								</td>
+							</tr>
+
+							{% if data['enableKnowledgeItem'] == 'Yes' %}
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell" class="wordbreak">
+									<span class="nhsuk-table-responsive__heading">Title</span><p>{{ data['itemTitle'] }}</p>
+								</td>
+								<td role="cell" class="nhsuk-table__cell" class="wordbreak">
+									<span class="nhsuk-table-responsive__heading">Content</span><p>{{ data['itemContent'] }}</p>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Action</span>
+									<a href="/lsf-web/v6/admin-view/edit-item">Change<span class="nhsuk-u-visually-hidden">Knowledge base item 2</span></a>
+								</td>
+							</tr>
+							{% endif %}
+
+						</tbody>
+			</table>
+
+			<nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
+				<ul class="nhsbsa-pagination" >
+					<li class="nhsbsa-pagination__item nhsbsa-pagination-li">
+						<a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
+					</li>
+				</ul>
+				<!--a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href="" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a-->
+		
+				<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">2</span> of <span id="tdaeTotalItemsNumber">2 results</span></div>
+			</nav>
+
+		</div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+    const knowledgeItems = [
+        "Changes to Travel And Dual Accommodation (TDAE) claim and approval process",
+        "Confirmation of Attendance"
+    ];
+
+    accessibleAutocomplete({
+        element: document.querySelector('#filterKnowledgeList-container'),
+        id: 'filterKnowledgeList', // To match it to the existing element
+        source: knowledgeItems,
+        onConfirm: function(val) {
+            document.querySelector('#filterKnowledgeList').value = val;
+            filterTable(val, 'knowledgeListTable');
+        }
+    });
+
+    function filterTable(filterText, tableId) {
+        let filter, table, tr, td, i, txtValue;
+        filter = filterText.toUpperCase();
+        table = document.getElementById(tableId);
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+</script>
+{% endblock %}

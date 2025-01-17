@@ -1,0 +1,231 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-full">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Public transport tickets for period 2</h1>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Term time address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Stephenson House, NE2 1AW
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              Stephenson House<br>
+              Stoddart Street<br>
+              Shieldfield<br>
+              Newcastle upon Tyne <br>
+              NE2 1AW
+            </div>
+          </details>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Student comments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          I have sent a screenshot of my bus app for the weekly ticket and the train PDFs.
+        </dd>
+      </div>
+    </dl>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Full placement address
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+          Alnwick Hospital<br>
+          Infirmary Drive<br>
+          Alnwick<br>
+          NE66 2NS
+      </div>
+    </details>
+
+    <div class="nhsuk-warning-callout">
+      <h3 class="nhsuk-warning-callout__label">
+        <span role="text">
+          <span class="nhsuk-u-visually-hidden">Important: </span>
+          This may be a duplicate public transport ticket
+        </span>
+      </h3>
+      <p>The student has given details of a public transport ticket entered in a <a href="#">previous claim (opens in new tab)</a>.</p>
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Ticket type
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Multiple day bus ticket
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Friday 2 February 2024 to Monday 5 February 2024
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Cost
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £12
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Evidence
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <a href="#">View</a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-4">
+      <caption class="nhsuk-table__caption">Public transport tickets and evidence</caption>
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+          <th role="columnheader" class="" scope="col">
+            Ticket type
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Date
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Placement address
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Cost
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Evidence
+          </th>
+        </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Public transport ticket </span>Multiple day bus ticket
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date </span> Friday 2 February 2024 to Thursday 8 February 2024
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Placement address </span>Alnwick Hospital
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Cost </span>£12
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Evidence </span>
+            <a href="/images/screenshot-bus-app.png" target="_blank" rel="noopener">View <span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span></a>
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Public transport ticket </span>Daily train ticket
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date </span>Friday 2 February 2024
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Placement address </span>Alnwick Hospital
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Cost </span>£8.60
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Evidence </span>
+            <a href="/images/alyssa-train-tickets.jpeg" target="_blank" rel="noopener">View <span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span></a>
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Public transport ticket </span>Daily train ticket
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date </span>Saturday 3 February 2024
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Placement address </span>Alnwick Hospital
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Cost </span>£8.60
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Evidence </span>
+            <a href="/images/alyssa-train-tickets.jpeg" target="_blank" rel="noopener">View <span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span></a>
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Public transport ticket </span>Daily train ticket
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date </span>Sunday 4 February 2024
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Placement address </span>Alnwick Hospital
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Cost </span>£8.60
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Evidence </span>
+            <a href="/images/alyssa-train-tickets.jpeg" target="_blank" rel="noopener">View <span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span></a>
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Public transport ticket </span>Daily train ticket
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date </span>Monday 5 February 2024
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Placement address </span>Alnwick Hospital
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Cost </span>£8.60
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Evidence </span>
+            <a href="/images/alyssa-train-tickets.jpeg" target="_blank" rel="noopener">View <span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a class="nhsuk-button" href="TDAE-placement-overview-2">Continue</a>
+
+  </div>
+
+</div>
+
+{% endblock %}

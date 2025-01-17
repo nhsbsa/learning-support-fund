@@ -1,0 +1,929 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Manage note types
+{% endblock %}
+
+{% block content %}
+<form action="/lsf-web/v6/admin-view/manage-note-types" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Manage note types</h1>
+	</div>
+		
+	<div class="nhsuk-grid-column-one-third">
+		<div class="nhsuk-form-group" id="filterNoteTypes-group">
+			<label class="nhsuk-label" for="filterNoteTypes">Filter note types by name</label>
+			<div id="filterNoteTypes-container"></div>
+		</div>
+	</div>
+		
+	<div class="nhsuk-grid-column-full">
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">Apply filter</button>
+			<a class="nhsuk-button nhsuk-button--secondary" style="float: right;" href="/lsf-web/v6/admin-view/add-note-type" data-module="nhsuk-button" type="submit" id="searchButton">Add note type</a>
+			<p><a href="/lsf-web/v6/admin-view/manage-note-types" id="clearButton">Reset filter</a></p>
+		</div>
+	</div>
+
+</form>
+
+<div class="nhsuk-grid-column-full">
+	<hr class="" style="border-color: #005eb8; border-width: 4px">
+			<table role="table" id="noteTable" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+				<caption class="nhsuk-table__caption">Note types<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 46 results</span><span id="resultMessage" aria-hidden="true"> - contains 46 results</span></caption>
+				
+				<thead role="rowgroup" class="nhsuk-table__head">	
+					<tr role="row">
+						<th role="columnheader" class="bold" scope="col">Note name</th>
+						<th role="columnheader" class="bold" scope="col">System note</th>
+						<th role="columnheader" class="bold" scope="col">Enabled</th>
+						<th role="columnheader" class="bold" scope="col">Action</th>
+					</tr>
+				</thead>
+				<tbody class="nhsuk-table__body">
+					
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Attendance discontinued</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+					
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Bank details updated</span></a>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+					
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Note name</span>
+							<span class="wordbreak">Call referrals</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+					
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Change of Circumstances</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Change of email address</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Change to course details</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Eligibility</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Email notification of ESF further evidence request sent</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Email notification of ESF rejected sent</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Email notification of Parental support further evidence request sent</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Email notification of Parental support non-funded year sent</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Email notification of Parental support rejected sent</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Email notification of TDAE further evidence request sent</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Email notification of TDAE rejected sent</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Email notification of Training grant further evidence request sent</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Email notification of Training grant non-funded year sent</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Email notification of Training grant rejected sent</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Email sent</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Enrolment confirmation</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">ESF</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Finance</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">General</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">HEI overruled student COSA</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Maintenance Award</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Management Information</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Matched student - Attendance confirmed</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Matched student - Maternity confirmed</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Maternity</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">New payments scheduled</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Not enrolled</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Over payment</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Parental support</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Password has been changed</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Password reset</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Payments held</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Pending - Attendance reset</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Personal details updated</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Quality Assurance</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Repeat</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Return debtors</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">TDAE</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Termly COSA status reset</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Unmatched - Attendance not confirmed</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Username reminder</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Withdrawal</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>No
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+				
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Note name</span>
+						  <span class="wordbreak">Withdrawn - Attendance withdrawn</span></a>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">System note</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Action</span>
+							<a href="/lsf-web/v6/admin-view/edit-note-type">Change note type</a>
+						</td>
+					</tr>
+					
+				</tbody>
+			</table>
+
+			<nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
+				<ul class="nhsbsa-pagination" >
+					<li class="nhsbsa-pagination__item nhsbsa-pagination-li">
+						<a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
+					</li>
+				</ul>
+				<!--a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href=" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a-->
+		
+				<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">46</span> of <span id="tdaeTotalItemsNumber">46 results</span></div>
+			</nav>
+
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+    const noteTypes = [
+        "Attendance discontinued",
+        "Bank details updated",
+        "Call referrals",
+        "Change of Circumstances",
+        "Change of email address",
+        "Change to course details",
+        "Eligibility",
+		"Email notification of ESF further evidence request sent",
+		"Email notification of ESF rejected sent",
+        "Email notification of Parental support further evidence request sent",
+		"Email notification of Parental support non-funded year sent",
+		"Email notification of Parental support rejected sent",
+		"Email notification of TDAE further evidence request sent",
+		"Email notification of TDAE rejected sent",
+		"Email notification of Training grant further evidence request sent",
+		"Email notification of Training grant non-funded year sent",
+		"Email notification of Training grant rejected sent",
+		"Email sent",
+		"Enrolment confirmation",
+		"ESF",
+		"Finance",
+		"General",
+		"HEI overruled student COSA",
+		"Maintenance Award",
+		"Management Information",
+		"Matched student - Attendance confirmed",
+		"Matched student - Maternity confirmed",
+		"Maternity",
+		"New payments scheduled",
+		"Not enrolled",
+		"Over payment",
+		"Parental support",
+		"Password has been changed",
+		"Password reset",
+		"Payments held",
+		"Pending - Attendance reset",
+		"Personal details updated",
+		"Quality Assurance",
+		"Repeat",
+		"Return debtors",
+		"TDAE",
+		"Termly COSA status reset",
+		"Unmatched - Attendance not confirmed",
+		"Username reminder",
+		"Withdrawal",
+		"Withdrawn - Attendance withdrawn"
+    ];
+
+    accessibleAutocomplete({
+        element: document.querySelector('#filterNoteTypes-container'),
+        id: 'filterNoteTypes', // To match it to the existing element
+        source: noteTypes,
+        onConfirm: function(val) {
+            document.querySelector('#filterNoteTypes').value = val;
+            filterTable(val, 'noteTable');
+        }
+    });
+
+    function filterTable(filterText, tableId) {
+        let filter, table, tr, td, i, txtValue;
+        filter = filterText.toUpperCase();
+        table = document.getElementById(tableId);
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+</script>
+{% endblock %}

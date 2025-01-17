@@ -1,0 +1,190 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+  What are your contact details?
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <fieldset class="nhsuk-fieldset">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Change request for Emmit Marr's bank or building society account
+          </h1>
+        </legend>
+
+      </div>
+      <div class="nhsuk-grid-column-one-half">
+
+        <div style="padding-top:32px!important; background-color: #fff; border: 1px solid #768692;" class="nhsuk-warning-callout">
+          <!--<h3 class="nhsuk-warning-callout__label">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Important: </span>
+              School, nursery or work
+            </span>
+          </h3>-->
+          <h2 class="nhsuk-heading-m">Details currently on account</h2>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt style="width: 50%;" class="nhsuk-summary-list__key">
+                Name on account
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Emmit Marr
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Sort code
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                111545
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Account number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                00000003
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Building society roll number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Not entered
+              </dd>
+            </div>
+
+          </dl>
+        </div>
+
+
+
+      </div>
+
+      {% if data['details-entered'] == 'no' %}
+        <div class="nhsuk-grid-column-two-thirds">
+          <div style="margin-top:0px;" class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>The student has not been able to confirm the bank details currently on their account.</p>
+          </div>
+        </div>
+      {% else %}
+      <div class="nhsuk-grid-column-one-half">
+
+        <div style="padding-top:32px!important; background-color: #fff; border: 1px solid #768692;" class="nhsuk-warning-callout">
+          <!--<h3 class="nhsuk-warning-callout__label">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Important: </span>
+              School, nursery or work
+            </span>
+          </h3>-->
+
+          <h2 class="nhsuk-heading-m">Details entered by Emmit Marr</h2>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt style="width: 50%;" class="nhsuk-summary-list__key">
+                Name on account
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Emmit Marr
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Sort code
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                111545
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Account number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                00000003
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Building society roll number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Not entered
+              </dd>
+            </div>
+          </dl>
+
+        </div>
+
+      </div>
+      {% endif %}
+
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Emmit Marr's contact details
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <ul class="nhsuk-list">
+              <li><b>Phone number:</b> 07777777777</li>
+              <li><b>Email:</b> Emmit.Mar@myemail.com</li>
+            </ul>
+          </div>
+        </details>
+
+        <form action="v6/bank-details-check" method="POST">
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+          <h2 class="nhsuk-fieldset__heading">
+            Do the details entered by Emmit Marr match those currently on their account?
+          </h2>
+        </legend>
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="current-details-yes" name="current-details" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="authorise-yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="current-details-no" name="current-details" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="authorise-no">
+                No
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <button class="nhsuk-button" type="submit">
+              Continue
+          </button><br>
+          <p><a href="student-details">Cancel</a></p>
+        </div>
+      </form>
+    </div>
+  </fieldset>
+</div>
+
+  </div>
+{% endblock %}

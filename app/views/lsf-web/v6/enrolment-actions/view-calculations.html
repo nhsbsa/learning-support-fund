@@ -1,0 +1,306 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+  LSF calculation list
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    
+    {{ backLink({
+      "href": "javascript:history.go(-1)",
+      "text": "Go back"
+    }) }}
+    
+  </div>
+  <div class="nhsuk-grid-column-two-thirds">
+  
+    <h1 class="nhsuk-heading-l">
+      <span class="nhsuk-caption-l" id="studentRef">
+        <span>{{ data['student number'] }} - {{ data['name'] }}</span>
+        <span class="nhsuk-u-visually-hidden"> - </span>
+      </span>
+      LSF calculation list
+    </h1>
+
+  </div>
+  <div class="nhsuk-grid-column-one-third">
+    <button value="Lock" class=" nhsuk-button nhsuk-button--secondary right-floater" type="submit" name="unlock" id="unlockButton">Unlock<span class="nhsuk-u-visually-hidden"> account for editing</span></button>
+  </div>
+
+  <div class="nhsuk-grid-column-full clear-float">
+    <p>SSRN0000095-1: ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE, Adult Nursing, 2023-Sep, Full Time, 3 years</p>
+    
+    <div class="nhsuk-table-container">
+      <table id="calculationsTable" role="table" class="nhsuk-table-l">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">Calc date</th>
+            <th role="columnheader" class="" scope="col">Calc time</th>
+            <th role="columnheader" class="" scope="col">Training grant</th>
+            <th role="columnheader" class="" scope="col">Course uplift</th>
+            <th role="columnheader" class="" scope="col">Regional uplift</th>
+            <th role="columnheader" class="" scope="col">PS</th>
+            <th role="columnheader" class="" scope="col">ESF</th>
+            <th role="columnheader" class="" scope="col">Travel</th>
+            <th role="columnheader" class="" scope="col">Accom</th>
+            <th role="columnheader" class="" scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Calc date </span>
+              <span>16/02/2024</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Calc time </span>
+              <span>10:54:06</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Training grant </span>
+              <span>5,000.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Course uplift </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Regional uplift </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">PS </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">ESF </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Travel </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Accom </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Total </span>
+              <span>5,000.00</span>
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Calc date </span>
+              <span>01/02/2024</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Calc time </span>
+              <span>14:59:18</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Training grant </span>
+              <span>5,000.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Course uplift </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Regional uplift </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">PS </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">ESF </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Travel </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Accom </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Total </span>
+              <span>5,000.00</span>
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Calc date </span>
+              <span>19/01/2024</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Calc time </span>
+              <span>16:22:26</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Training grant </span>
+              <span>5,000.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Course uplift </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Regional uplift </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">PS </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">ESF </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Travel </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Accom </span>
+              <span>0.00</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-l__heading">Total </span>
+              <span>5,000.00</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><a href="/lsf-web/v6/student-course-details" id="back">Cancel</a></p>
+  </div>
+</div>
+<style>
+  /** Responsive table with modified media break points to display tables with lots of columns **/
+
+.nhsuk-table-l {
+  margin-bottom: 0;
+  width: 100%
+}
+
+.nhsuk-table-l thead {
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px
+}
+
+@media (min-width: 992px) {
+  .nhsuk-table-l thead {
+    clip: auto;
+    -webkit-clip-path: initial;
+    clip-path: initial;
+    display: table-header-group;
+    height: auto;
+    overflow: auto;
+    position: relative;
+    width: auto
+  }
+}
+
+.nhsuk-table-l .nhsuk-table__body .nhsuk-table-l__heading {
+  font-weight: 600;
+  padding-right: 16px;
+  text-align: left;
+}
+
+@media (min-width: 992px) {
+  .nhsuk-table-l .nhsuk-table__body .nhsuk-table-l__heading {
+    display: none;
+  }
+}
+
+.nhsuk-table-l .nhsuk-table__body .nhsuk-table__row {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.nhsuk-table-l .nhsuk-table__body .nhsuk-table__row:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 992px) {
+  .nhsuk-table-l .nhsuk-table__body .nhsuk-table__row {
+    display: table-row;
+  }
+}
+
+.nhsuk-table-l .nhsuk-table__body .nhsuk-table__row th {
+  text-align: right;
+}
+
+@media (min-width: 992px) {
+  .nhsuk-table-l .nhsuk-table__body .nhsuk-table__row th {
+    text-align: left;
+  }
+}
+
+.nhsuk-table-l .nhsuk-table__body .nhsuk-table__row td {
+  display: block;
+  display: flex;
+  justify-content: space-between;
+  min-width: 1px;
+}
+
+@media all and (-ms-high-contrast: none) {
+  .nhsuk-table-l .nhsuk-table__body .nhsuk-table__row td {
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  .nhsuk-table-l .nhsuk-table__body .nhsuk-table__row td {
+    display: table-cell;
+  }
+}
+
+@media (max-width: 992px) {
+  .nhsuk-table-l .nhsuk-table__body .nhsuk-table__row td {
+    padding-right: 0;
+    text-align: right;
+  }
+
+  .nhsuk-table-l .nhsuk-table__body .nhsuk-table__row td:last-child {
+    border-bottom: 3px solid #d8dde0;
+  }
+}
+
+.nhsuk-table__header--numeric, .nhsuk-table__cell--numeric {
+  text-align: right;
+}
+
+.nhsbsa-u-whitespace__normal{
+  white-space: normal;
+}
+/* 
+.nhsuk-table-l__heading {
+  font-weight: 600;
+  padding-right: 16px;
+  text-align: left
+}
+
+/* @media (min-width: 48.0625em) {
+  .nhsuk-table-l .nhsuk-table__body .nhsuk-table-l__heading {
+      display:none
+  }
+} */ 
+</style>
+{% endblock %}

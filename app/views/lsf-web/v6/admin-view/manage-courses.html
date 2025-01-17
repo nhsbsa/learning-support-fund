@@ -1,0 +1,1183 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Manage courses
+{% endblock %}
+
+{% block content %}
+<form action="/lsf-web/v6/admin-view/manage-courses" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Manage courses</h1>
+	</div>
+		
+	<div class="nhsuk-grid-column-one-third">
+		<div class="nhsuk-form-group" id="filterCourses-group">
+			<label class="nhsuk-label" for="filterCourses">Filter courses</label>
+			<div id="filterCourses-container"></div>
+		</div>
+	</div>
+		
+	<div class="nhsuk-grid-column-full">
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">Apply filter </button>
+			<a class="nhsuk-button nhsuk-button--secondary" style="float: right;" href="/lsf-web/v6/admin-view/add-course-details" data-module="nhsuk-button" type="submit" id="searchButton">Add course</a>
+			<p><a href="/lsf-web/v6/admin-view/manage-courses" id="clearButton">Reset filter</a></p>
+		</div>
+	</div>
+</form>
+
+<div class="nhsuk-grid-column-full">
+  <hr class="" style="border-color: #005eb8; border-width: 4px">
+      <table role="table" id="coursesTable" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+        <h2 class="heading-large nhsuk-u-visually-hidden">Courses table</h2>
+          <caption class="nhsuk-table__caption">Courses<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 40 results</span><span id="resultMessage" aria-hidden="true"> - contains 40 results</span></caption>
+      
+        <thead role="rowgroup" class="nhsuk-table__head">	
+          <tr role="row">
+            <th role="columnheader" class="bold" scope="col" width="35%">Course name</th>
+            <th role="columnheader" class="bold" scope="col">Payment code</th>
+            <th role="columnheader" class="bold" scope="col">Course uplift</th>
+            <th role="columnheader" class="bold" scope="col">Blended learning</th>
+            <th role="columnheader" class="bold" scope="col">Linked universities</th>
+            <th role="columnheader" class="bold" scope="col">Enabled</th>
+            <th role="columnheader" class="bold" scope="col" width="20%">Action</th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Course name</span>
+              <span class="wordbreak">Adult Nursing</span></a>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Payment code</span>1000
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Linked universities</span>71
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Action</span>
+              <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+            </td>
+          </tr>
+
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Adult Nursing - Blended</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1234
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>1
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Adult Nursing and Social Work</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1200
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>1
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Child Nursing</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1010
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>52
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Child Nursing - Blended</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1234
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>1
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Child Nursing and Social Work</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1210
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>1
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Dental Hygiene</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1430
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>4
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Dental Hygiene and Dental Therapy</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1410
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>8
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Dental Therapy</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1410
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>2
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Diagnostic Radiography</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1340
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>24
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Dietetics</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1360
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>14
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Dual Nursing - Adult and Child</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1100
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>3
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Dual Nursing - Adult and Learning Disabilities</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1120
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>1
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Dual Nursing - Adult and Mental Health</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1130
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>9
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Dual Nursing - Child and Learning Disabilities</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1140
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>1
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Dual Nursing - Child and Mental Health</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1150
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>7
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Dual Nursing - Mental Health and Learning Disabilities</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1110
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>2
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Fitness</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1111
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>1
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Language Pathology (MSc)</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1440
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>1
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Learning Disabilities Nursing</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1020
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>28
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Learning Disablilities Nursing and Social Work</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1220
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>3
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">MSci Nurse Paramedic</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1490
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>0
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Mental Health Nursing</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1030
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>60
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Mental Health Nursing and Social Work</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1230
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>1
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Midwifery</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1300
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>50
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Nutrition and Dietetics</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1530
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>0
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Occupational Therapy</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1320
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>34
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Operating Department Practitioner</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1390
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>29
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Orthoptics</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1400
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>3
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Paramedic Practice</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1470
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>0
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Paramedic Science</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1450
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>0
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Paramedic Science 2 Years</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1450
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>0
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Paramedic Science and Out Of Hospital Care</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1510
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>0
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Paramedicine</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1480
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>0
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Physiotherapy</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1310
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>39
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Podiatry</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1370
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>12
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Prosthetics and Orthotics</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1380
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>4
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Radiotherapy and Oncology</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1420
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>0
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Speech and Language Therapy</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1330
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>16
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course name</span>
+                <span class="wordbreak">Therapeutic Radiography</span></a>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Payment code</span>1350
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Course uplift</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Blended learning</span>No
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Linked universities</span>15
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <a href="/lsf-web/v6/admin-view/edit-course-details">Change course details</a>
+              </td>
+            </tr>
+          
+        </tbody>
+      </table>
+
+      <nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
+        <ul class="nhsbsa-pagination" >
+          <li class="nhsbsa-pagination__item nhsbsa-pagination-li">
+            <a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
+          </li>
+        </ul>
+        <!--a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href="" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a -->
+    
+        <div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">40</span> of <span id="tdaeTotalItemsNumber">40 results</span></div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+    const courses = [
+      "Adult Nursing",
+        "Adult Nursing and Social Work",
+        "Child Nursing",
+        "Child Nursing and Social Work",
+        "Dental Hygiene",
+        "Dental Hygiene and Dental Therapy",
+        "Dental Therapy",
+        "Diagnostic Radiography",
+        "Dietetics",
+        "Dual Nursing - Adult and Child",
+        "Dual Nursing - Adult and Learning Disabilities",
+        "Dual Nursing - Adult and Mental Health",
+        "Dual Nursing - Child and Learning Disabilities",
+        "Dual Nursing - Child and Mental Health",
+        "Dual Nursing - Mental Health and Learning Disabilities",
+        "Fitness",
+        "Language Pathology (MSc)",
+        "Learning Disabilities Nursing",
+        "Learning Disablilities Nursing and Social Work",
+        "Mental Health Nursing",
+        "Mental Health Nursing and Social Work",
+        "Midwifery",
+        "MSci Nurse Paramedic",
+        "Nutrition and Dietetics",
+        "Occupational Therapy",
+        "Operating Department Practitioner",
+        "Orthoptics",
+        "Paramedicine",
+        "Paramedic Practice",
+        "Paramedic Science",
+        "Paramedic Science 2 Years",
+        "Paramedic Science and Out Of Hospital Care",
+        "Physiotherapy",
+        "Podiatry",
+        "Prosthetics and Orthotics",
+        "Radiotherapy and Oncology",
+        "Speech and Language Therapy",
+        "Therapeutic Radiography"
+    ];
+
+    accessibleAutocomplete({
+        element: document.querySelector('#filterCourses-container'),
+        id: 'filterCourses', // To match it to the existing element
+        source: courses,
+        onConfirm: function(val) {
+            document.querySelector('#filterCourses').value = val;
+            filterTable(val, 'coursesTable');
+        }
+    });
+
+    function filterTable(filterText, tableId) {
+        let filter, table, tr, td, i, txtValue;
+        filter = filterText.toUpperCase();
+        table = document.getElementById(tableId);
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+</script>
+{% endblock %}

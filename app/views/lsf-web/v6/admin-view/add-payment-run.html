@@ -1,0 +1,160 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Add payment run
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-full">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
+
+<form action="v6/admin-view/add-payment-run" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Add payment run</h1>
+	</div>
+				
+	<div class="nhsuk-grid-column-two-thirds">
+    
+    <div class="nhsuk-form-group">
+      <fieldset class="nhsuk-fieldset" aria-describedby="runDate-hint" role="group">
+        <label class="nhsuk-label form-label" id="dateLabel" for="paymentRunDate" style="font-weight: bold;">
+          Run date
+        </label>
+        <div class="nhsuk-hint" id="paymentRunDate-hint">
+        For example, 29 3 2024
+        </div>
+      
+        <div class="nhsuk-date-input" id="paymentRunTime">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="paymentRunDate-day-label">
+              Day
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="paymentRunDate-day" name="runDate-day" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="paymentRunDateMonth-label">
+              Month
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="paymentRunDate-month" name="runDate-month" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="paymentRunDate-year-label">
+              Year
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="paymentRunDate-year" name="runDate-year" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <fieldset class="nhsuk-fieldset" aria-describedby="runTime-hint" role="group">
+        <label class="nhsuk-label form-label" id="timeLabel" for="paymentRunTime" style="font-weight: bold;">
+          Run time
+        </label>
+        <div class="nhsuk-hint" id="paymentRunTime-hint">
+        For example, 13 30
+        </div>
+      
+        <div class="nhsuk-date-input" id="paymentRunTime">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="paymentRunTime-hour-label">
+              Hour
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="paymentRunTime-hour" name="run-hour" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="paymentRunTimeMinutes-label">
+              Minutes
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="paymentRunTime-minutes" name="run-minutes" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset" aria-describedby="paymentDate-hint" role="group">
+          <label class="nhsuk-label form-label" id="dateLabel" for="paymentDate" style="font-weight: bold;">
+            Payment date
+          </label>
+          <div class="nhsuk-hint" id="paymentDate-hint">
+          For example, 6 4 2024
+          </div>
+        
+          <div class="nhsuk-date-input" id="paymentTime">
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="paymentDate-day-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="paymentDate-day" name="paymentDate-day" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="paymentDateMonth-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="paymentDate-month" name="paymentDate-month" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="paymentDate-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="paymentDate-year" name="paymentDate-year" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+  
+    </div>
+
+
+
+  </div>
+
+        <fieldset class="nhsuk-fieldset">
+					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Do you want to enable the enrolment year?</legend>
+					<!-- div class="nhsuk-hint" id="contact-hint">Select No to xyz. For example, if xyz.</div-->
+					<div class="nhsuk-form-group">
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="enablePaymentRunYes" name="enablePaymentRun" type="radio" value="Yes">
+								<label class="nhsuk-label nhsuk-radios__label" for="enablePaymentRunYes">Yes</label>
+							</div>
+		
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="enablePaymentRunNo" name="enablePaymentRun" type="radio" value="No">
+								<label class="nhsuk-label nhsuk-radios__label" for="enableTDAERatesNo">No</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<div class="nhsuk-form-group">
+					<button class="nhsuk-button" type="submit" id="savePaymentRun">Save and continue</button>
+					<p><a class="" href="/lsf-web/v6/admin-view/manage-payment-runs">Cancel</a></p>
+				</div>
+		
+			
+	</div>
+{% endblock %}

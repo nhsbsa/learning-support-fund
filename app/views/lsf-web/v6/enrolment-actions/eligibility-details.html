@@ -1,0 +1,65 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Eligibility details
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v6/student-details">Student details</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v6/student-course-details">Course details</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v6/enrolment-actions/view-students-application">Student's application</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v6/enrolment-actions/view-students-application">Back to Student's application</a></p>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-heading-l">
+      <span class="nhsuk-caption-l" id="studentRef">
+        <span>{{ data['student number'] }} - {{ data['name'] }}</span>
+        <span class="nhsuk-u-visually-hidden"> - </span>
+      </span>
+      Eligibility details
+    </h1>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Student loan</dt>
+        <dd class="nhsuk-summary-list__value"><span>Yes</span></dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Bank account holder</dt>
+        <dd class="nhsuk-summary-list__value">asasas</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Sort code</dt>
+        <dd class="nhsuk-summary-list__value">112233</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Account number</dt>
+        <dd class="nhsuk-summary-list__value">00000003</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Evidence</dt>
+        <dd class="nhsuk-summary-list__value">
+          <ul class="nhsuk-list">
+            <li>
+              <a id="document0" href="#" target="_blank" rel="noopener">
+                <span>Full student loan award letter</span>
+                <span class="nhsuk-u-visually-hidden"> file 0 (opens in a new tab)</span>
+              </a> 
+            </li>
+          </ul>
+        </dd>
+      </div>
+    </dl>
+    <p><a href="/lsf-web/v6/enrolment-actions/view-students-application">Cancel</a></p>
+  </div>
+</div>
+{% endblock %}

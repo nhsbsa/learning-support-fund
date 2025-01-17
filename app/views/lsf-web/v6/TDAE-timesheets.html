@@ -1,0 +1,45 @@
+{% extends 'layout-HEI.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Placement timesheets</h1>
+
+    {% if data['timesheets'] == 'false' %}
+      <p>The student has not uploaded any placement timesheets.</p>
+    {% else %}
+      <p>The student has uploaded the following placement timetables:</p>
+      <!--<ul class="nhsuk-list nhsuk-list--bullet">
+        <li><a href="#">Placement timesheet 1</a></li>
+      </ul>-->
+
+      <dl class="nhsuk-summary-list">
+  				<div class="nhsuk-summary-list__row">
+  					<dt class="nhsuk-summary-list__key">
+  						Placement timesheet 1
+  					</dt>
+  					<dd class="nhsuk-summary-list__value">
+  						<a href="/images/overseas-authorisation.png" target="_blank" rel="noopener">View<span class="nhsuk-u-visually-hidden">opens in new tab</span></a>
+  					</dd>
+  				</div>
+
+      </dl>
+    {% endif %}
+
+
+
+  </div>
+
+</div>
+{% endblock %}

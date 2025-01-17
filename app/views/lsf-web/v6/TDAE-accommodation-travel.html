@@ -1,0 +1,121 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Accommodation travel journey 1 details</h1>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Journey
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Term time address to accommodation
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Date travelled
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          9 February 2024
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Term time address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Stephenson House, NE2 1AW
+          <details class="nhsuk-details" style="margin-bottom: 0;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              Stephenson House<br>
+              Stoddart Street<br>
+              Shieldfield<br>
+              Newcastle upon Tyne<br>
+              NE2 1AW
+            </div>
+          </details>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Accommodation address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          The Village Inn, NE65 8AD
+          <details class="nhsuk-details" style="margin-bottom: 0;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              The Village Inn<br>
+              Front Street<br>
+              Longframlington<br>
+              Morpeth<br>
+              NE65 8AD
+            </div>
+          </details>
+        </dd>
+      </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Transport method
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Car
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total driving mileage
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            27.5
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Student comments
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            I had to pay to park my car at the hotel each day. I have added the extra costs on my return journey.
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Cost
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £11.55
+          </dd>
+        </div>
+      </dl>
+
+      {% if data['read-only'] != 'true' %}
+      <a class="nhsuk-button" href="TDAE-accommodation-travel-check">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

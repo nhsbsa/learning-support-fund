@@ -1,0 +1,178 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+  What are your contact details?
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <fieldset class="nhsuk-fieldset">
+    <form action="v6/bank-details-approve" method="POST">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Emmit Marr's bank or building society account change request
+          </h1>
+        </legend>
+
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt style="width:75%;" class="nhsuk-summary-list__key">
+              Matched current bank details
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <strong class="nhsuk-tag nhsuk-tag--red">
+                No
+              </strong>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Photo ID matches student
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <strong class="nhsuk-tag nhsuk-tag--green">
+                Yes
+              </strong>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Accept new bank details
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <strong class="nhsuk-tag nhsuk-tag--green">
+                Yes
+              </strong>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Student contacted
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <strong class="nhsuk-tag nhsuk-tag--green">
+                Yes
+              </strong>
+            </dd>
+          </div>
+
+        </dl>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="example">
+            Add a note (optional)
+          </label>
+          <div class="nhsuk-hint">This will be displayed in the Notes section on Student details</div>
+          <textarea class="nhsuk-textarea" id="additionalClaimComment" name="feedbacknote" rows="4"></textarea>
+          <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">500 characters remaining</p>
+          <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 500 characters</p>
+        </div>
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+          <h2 class="nhsuk-fieldset__heading">
+            What do you want to do with this request?
+          </h2>
+        </legend>
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="approve-yes" name="approve" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="approve-yes">
+                Approve request
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="approve-no" name="approve" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="approve-no">
+                Reject request
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="approve-pend" name="approve" type="radio" value="pend">
+              <label class="nhsuk-label nhsuk-radios__label" for="approve-pend">
+                Pend request
+              </label>
+              <!--<div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                If you need to request new photo ID, request fraud or been unable to contact the student
+              </div>-->
+            </div>
+
+          </div>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <button class="nhsuk-button" type="submit">
+              Save and continue
+          </button><br>
+          <p><a href="student-details">Cancel</a></p>
+        </div>
+      </form>
+  </fieldset>
+</div>
+
+<script>
+    const textarea = document.querySelector('#additionalClaimComment');
+    const countRemaining = document.getElementById('charactersRemaining');
+    const staticMsg = document.querySelector('#char-count-screen-reader');
+    const maxCharacters = 500;
+    let timeoutId;
+
+    function updateCharacterCount() {
+      const textEntered = textarea.value;
+      const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+      const addition = newLines?.length || 0;
+      const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+
+      if (remainingCharacters >= 0) {
+        countRemaining.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+        countRemaining.classList.remove('nhsbsa-count-error-message');
+        countRemaining.classList.add('nhsuk-hint');
+        textarea.classList.remove('nhsuk-textarea--error');
+      } else {
+        countRemaining.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+        countRemaining.classList.add('nhsbsa-count-error-message');
+        countRemaining.classList.remove('nhsuk-hint');
+        textarea.classList.add('nhsuk-textarea--error');
+      }
+    }
+
+    function updateScreenReaderMessage() {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        const textEntered = textarea.value;
+        const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+        const addition = newLines?.length || 0;
+        const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+        // TO DO ADD FIX FOR 1 CHARACTER
+        if (remainingCharacters < 0) {
+          staticMsg.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+        } else {
+          staticMsg.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+        }
+      }, 500);
+    }
+
+    textarea.addEventListener('input', () => {
+      updateCharacterCount();
+      updateScreenReaderMessage();
+    });
+
+    // Update character count if textarea has a value on page load
+    window.addEventListener('load', () => {
+      updateCharacterCount();
+      updateScreenReaderMessage();
+    });
+  </script>
+
+{% endblock %}

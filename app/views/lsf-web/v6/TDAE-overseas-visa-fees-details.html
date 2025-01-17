@@ -1,0 +1,60 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Visa fees details</h1>
+
+    <dl class="nhsuk-summary-list">
+
+      <dl class="nhsuk-summary-list">
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Visa fees
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				£35
+			</dd>
+		</div>
+
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Evidence uploaded
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				<a href="/images/bank-statement-visa-fee.png" target="_blank" rel="noopener">
+					bank-statement-visa-fee.png
+				</a>
+			</dd>
+		</div>
+
+		<div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Student comments
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				None provided
+			</dd>
+		</div>
+
+    </dl>
+
+      {% if (data['read-only'] != 'true') and (data['scenario'] != 'previous') %}
+      <a class="nhsuk-button" href="TDAE-overseas-costs-summary">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

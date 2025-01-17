@@ -1,0 +1,107 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Delete university details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-two-thirds">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+
+	<form name="uniDetailsForm" action="v6/admin-view/delete-university" method="post" novalidate="">
+
+		<div class="nhsuk-form-group">
+			<fieldset class="nhsuk-fieldset">
+				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+				<h1 class="nhsuk-fieldset__heading">
+					Are you sure you want to delete this university?
+				</h1>
+				</legend>
+
+				<dl class="nhsuk-summary-list">
+
+					<div class="nhsuk-summary-list__row">
+					  <dt class="nhsuk-summary-list__key">
+						University name
+					  </dt>
+					  <dd class="nhsuk-summary-list__value">
+						ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE
+					  </dd>
+					</div>
+					<div class="nhsuk-summary-list__row">
+					  <dt class="nhsuk-summary-list__key">
+						Payment code
+					  </dt>
+					  <dd class="nhsuk-summary-list__value">
+						  AA0
+					  </dd>
+					</div>
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+						  Regional maintenance grant uplift applied
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+						  No
+						</dd>
+					  </div>
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+						 	Blended learning course
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+						  No
+						</dd>
+					</div>
+					<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						University enabled
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						Yes
+					</dd>
+					</div>
+
+				  </dl>
+			
+				<div class="nhsuk-radios">
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="deleteUniversityYes" name="deleteUniversity" type="radio" value="Yes">
+						<label class="nhsuk-label nhsuk-radios__label" for="deleteUniversityYes">
+						Yes
+						</label>
+					</div>
+				
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="deleteUniversityNo" name="deleteUniversity" type="radio" value="No">
+						<label class="nhsuk-label nhsuk-radios__label" for="deleteUniversityNo">
+						No
+						</label>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+		
+				
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button nhsuk-u-margin-right-4" type="submit" id="deleteUniversityDetails">Save and continue</button>
+
+			<p><a class="" href="/lsf-web/v6/admin-view/manage-unis">Cancel</a></p>
+		</div>
+
+	</form>
+</div>
+
+
+		
+				
+							
+							
+						
+			
+		
+{% endblock %}

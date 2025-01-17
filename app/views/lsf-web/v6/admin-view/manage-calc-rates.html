@@ -1,0 +1,372 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Manage calculation rates
+{% endblock %}
+
+{% block content %}
+<form action="/lsf-web/v6/admin-view/manage-calc-rates" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Manage calculation rates</h1>
+	</div>
+		
+	<div class="nhsuk-grid-column-one-third">
+		<div class="nhsuk-form-group" id="filterCalculationRates-group">
+			<label class="nhsuk-label" for="filterCalculationRates">Filter calculation rates by date</label>
+			<div id="filterCalculationRates-container"></div>
+		</div>
+	</div>
+		
+	<div class="nhsuk-grid-column-full">
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">Apply filter</button>
+			<a class="nhsuk-button nhsuk-button--secondary" style="float: right;" href="/lsf-web/v6/admin-view/add-calc-rates" data-module="nhsuk-button" type="submit" id="searchButton">Add calculation rates</a>
+			<p><a href="/lsf-web/v6/admin-view/manage-calc-rates" id="clearButton">Reset filter</a></p>
+		</div>
+	</div>
+
+</form>
+
+<div class="nhsuk-grid-column-full">
+	<hr class="" style="border-color: #005eb8; border-width: 4px">
+			<table role="table" id="documentsTable" class="nhsuk-table-responsive js-table-sortable nhsuk-u-margin-bottom-5">
+				<h2 class="heading-large nhsuk-u-visually-hidden">Calculation rates table</h2>
+					<caption class="nhsuk-table__caption">Calculation rates<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 17 results</span><span id="resultMessage" aria-hidden="true"> - contains 17 results</span><span class="nhsuk-u-visually-hidden"> (column headers with links are sortable)</span></caption>
+						<thead role="rowgroup" class="nhsuk-table__head">
+							<tr role="row">
+								<th role="columnheader" class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Valid from</a></th>
+								<th role="columnheader" class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Enabled</a></th>
+								<th role="columnheader" class="bold sortable" scope="col" data-sort="string" width="30%"><a href="#" class="table-header__button">Actions</a></th>
+							</tr>
+						</thead>
+
+						<tbody class="nhsuk-table__body">
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+								  <span class="nhsuk-table-responsive__heading">Valid from</span>
+								  <span>10/10/2025</span></a>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Actions</span>
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+								  <span class="nhsuk-table-responsive__heading">Valid from</span>
+								  <span>01/10/2024</span></a>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Actions</span>
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+								  <span class="nhsuk-table-responsive__heading">Valid from</span>
+								  <span>01/01/2020</span></a>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Actions</span>
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+								  <span class="nhsuk-table-responsive__heading">Valid from</span>
+								  <span>01/11/2019</span></a>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Actions</span>
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+								  <span class="nhsuk-table-responsive__heading">Valid from</span>
+								  <span>01/01/2016</span></a>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Actions</span>
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+								  <span class="nhsuk-table-responsive__heading">Valid from</span>
+								  <span>01/01/2015</span></a>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Actions</span>
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+								  <span class="nhsuk-table-responsive__heading">Valid from</span>
+								  <span>01/01/2014</span></a>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Actions</span>
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+								  <span class="nhsuk-table-responsive__heading">Valid from</span>
+								  <span>01/01/2013</span></a>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Actions</span>
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+								  <span class="nhsuk-table-responsive__heading">Valid from</span>
+								  <span>01/01/2012</span></a>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Actions</span>
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+								  <span class="nhsuk-table-responsive__heading">Valid from</span>
+								  <span>01/01/2011</span></a>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Actions</span>
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+								  <span class="nhsuk-table-responsive__heading">Valid from</span>
+								  <span>01/01/2010</span></a>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Actions</span>
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+								  <span class="nhsuk-table-responsive__heading">Valid from</span>
+								  <span>01/01/2009</span></a>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Actions</span>
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+								  <span class="nhsuk-table-responsive__heading">Valid from</span>
+								  <span>01/01/2008</span></a>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Actions</span>
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+								  <span class="nhsuk-table-responsive__heading">Valid from</span>
+								  <span>01/01/2007</span></a>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Actions</span>
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+								  <span class="nhsuk-table-responsive__heading">Valid from</span>
+								  <span>01/01/2006</span></a>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Actions</span>
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+								  <span class="nhsuk-table-responsive__heading">Valid from</span>
+								  <span>01/01/2005</span></a>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Actions</span>
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+								  <span class="nhsuk-table-responsive__heading">Valid from</span>
+								  <span>01/01/2000</span></a>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Actions</span>
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
+						<ul class="nhsbsa-pagination" >
+							<li class="nhsbsa-pagination__item nhsbsa-pagination-li">
+								<a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
+							</li>
+						</ul>
+						<!--a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href="" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a-->
+				
+						<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">17</span> of <span id="tdaeTotalItemsNumber">17 results</span></div>
+					</nav>
+
+				</div>
+			</div>
+		</div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+    const calculationRates = [
+        "10/10/2025",
+        "01/10/2024",
+        "01/01/2020",
+        "01/11/2019",
+        "01/01/2016",
+        "01/01/2015",
+        "01/01/2014",
+		"01/01/2013",
+		"01/01/2012",
+        "01/01/2011",
+        "01/01/2010",
+        "01/01/2009",
+        "01/01/2008",
+        "01/01/2007",
+        "01/01/2006",
+		"01/01/2005",
+		"01/01/2000"
+    ];
+
+    accessibleAutocomplete({
+        element: document.querySelector('#filterCalculationRates-container'),
+        id: 'filterCalculationRates', // To match it to the existing element
+        source: calculationRates,
+        onConfirm: function(val) {
+            document.querySelector('#filterCalculationRates').value = val;
+            filterTable(val, 'documentsTable');
+        }
+    });
+
+    function filterTable(filterText, tableId) {
+        let filter, table, tr, td, i, txtValue;
+        filter = filterText.toUpperCase();
+        table = document.getElementById(tableId);
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+</script>
+{% endblock %}

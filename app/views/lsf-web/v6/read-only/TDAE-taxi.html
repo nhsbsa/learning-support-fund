@@ -1,0 +1,218 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Taxi journey details</h1>
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Authorised by
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Jane Doe
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Authoriser's role
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Ward sister
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Reason for taxi
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Suddenly felt unwell during my night shift and didn't feel comfortable 
+          walking in early hours through the city centre so got a taxi back to hotel instead
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Authorisation uploaded
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/images/taxi-authorisation-email.png" target="_blank" rel="noopener">taxi-authorisation-email.jpg<span class="nhsuk-u-visually-hidden">opens in new tab</span></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          23 February 2024
+        </dd>
+      </div>
+     
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Travelling from
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Alnwick Hospital, NE66 2NS
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              Alnwick Hospital<br>
+              Infirmary Drive<br>
+              Alnwick<br>
+              NE66 2NS
+            </div>
+          </details>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" style="width: 40%;">
+          Travelling to
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          The Hog's Head Inn, NE66 2BF
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                The Hog's Head Inn<br>
+                Hawfinch Drive<br>
+                Alnwick<br>
+                NE66 2BF
+              </div>
+          </details>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Taxi cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £10
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Evidence uploaded
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/images/taxi-evidence.png" target="_blank" rel="noopener">uber-receipt.jpg<span class="nhsuk-u-visually-hidden">opens in new tab</span></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student comments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          None
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Costs to be reimbursed (university travel deducted)
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+         £10
+        </dd>
+      </div>
+
+    </dl>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Breakdown of journey costs in period
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <table class="nhsuk-table">
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+
+            </th>
+            <th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+              Placement journey
+            </th>
+            <th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+              University journey
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                <b>Transport method</b>
+            </td>
+            <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                Taxi
+            </td>
+            <td class="nhsuk-table__cell " style="font-size: 1rem;">
+                Walk
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell" style="font-size: 1rem;">
+              <b>Journey mileage cost</b>
+            </td>
+            <td class="nhsuk-table__cell" style="font-size: 1rem;">
+              £10
+            </td>
+            <td class="nhsuk-table__cell " style="font-size: 1rem;">
+              <span class="nhsuk-u-visually-hidden">No cost</span>
+            </td>
+          </tr>
+          
+          
+          <tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+            <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                <b>Total cost</b>
+            </td>
+            <td class="nhsuk-table__cell" style="font-size: 1rem;">
+              £10
+            </td>
+            <td class="nhsuk-table__cell " style="font-size: 1rem;">
+              £0
+            </td>
+          </tr>
+        </tbody>
+        </table>
+
+        <p><b>Costs to be reimbursed: £10</b></p>
+      </div>
+    </details>
+
+    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-student-claim">Return to claim details</a>
+
+  </div>
+
+</div>
+{% endblock %}

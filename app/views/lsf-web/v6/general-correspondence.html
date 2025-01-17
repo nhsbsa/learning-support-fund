@@ -1,0 +1,149 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+General Correspondence
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+		<div class="nhsuk-grid-column-two-thirds">		
+      <h1 class="nhsuk-heading-xl">
+        <span class="nhsuk-caption-l" id="studentRef">
+          SSRN0000085 - Ben Bloggs
+          <span class="nhsuk-u-visually-hidden"> - </span>
+        </span>
+        General Correspondence
+      </h1>
+        
+      <p>Complete text box to send email to student</p>
+
+      <div class="nhsuk-form-group" id="commentGroup">
+        <label for="mailContent" class="nhsuk-label" id="mailContent-label">Dear student</label>
+
+        <textarea style="width: 100%" class="nhsuk-textarea nhsbsa-textarea__count" rows="8" id="mailContent" maxlength="2000" data-max-characters="2000" aria-describedby="with-hint-info" name="mailContent"></textarea>
+        <p id="with-hint-info" class="nhsuk-hint nhsbsa-character-count__message">You can enter up to 2000 characters</p>
+      </div>
+
+      <p>If you have any general queries about the NHS LSF, please use our online enquiry system <a href="https://nhsbsa-live.powerappsportals.com/knowledgebase/category/?id=CAT-01017" target="_blank" rel="noopener">'Ask Us'<span class="nhsuk-u-visually-hidden"> (opens in a new tab)</span></a> which is available 24 hours a day, 7 days a week. If you cannot find the answer you require, you can contact us using the details below:
+      </p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Telephone: 0300 330 0521</li>
+        <li>Text relay service: 0800 7311 888</li>
+        <li>Twitter: <a href="http://www.twitter.com/nhsbsa_lsf" target="_blank" rel="noopener">@NHSBSA_LSF<span class="nhsuk-u-visually-hidden"> (opens in a new tab)</span></a></li>
+        <li>Facebook: <a href="http://www.facebook.com/learningsupportfund" target="_blank" rel="noopener">LearningSupportFund<span class="nhsuk-u-visually-hidden"> (opens in a new tab)</span></a></li>
+      </ul>
+      <br>
+      <p>Yours faithfully,</p>
+      <br>
+      <p>Student Services</p>
+      <p>NHS Business Services Authority</p>
+      <div class="nhsuk-form-group">
+        <p><a href="#" id="clear">Clear form data</a></p>
+      </div>
+      <div class="nhsuk-form-group">
+        <a class="nhsuk-button" role="button" href="student-details?student number=SSRN0010002&activity number=1922&name=Ben Bloggs&email=ben.bloggs@myemail.com&username=Ben.Bloggs" id="action">Send</a>
+      </div>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block pageScripts %}
+  <script>
+    $(function() {
+      $('#clear').click(function(e) {
+        e.preventDefault()
+        $("#mailContent").val("")
+      });
+    });
+  </script>
+
+  <script>
+    const textareas = document.querySelectorAll(".nhsbsa-textarea__count");
+
+let timeoutId;
+
+textareas.forEach((textarea) => {
+  const withHintInfo = textarea.nextElementSibling;
+  withHintInfo.classList.add("nhsuk-u-visually-hidden");
+
+  const maxCharacters = textarea.getAttribute("data-max-characters");
+
+  const charactersRemaining = document.createElement("p");
+  charactersRemaining.className = "nhsuk-hint nhsbsa-character-count__status";
+  charactersRemaining.textContent = `You have ${maxCharacters} characters remaining`;
+
+  const charCountScreenReader = document.createElement("p");
+  charCountScreenReader.className = "nhsuk-u-visually-hidden";
+  charCountScreenReader.setAttribute("aria-live", "polite");
+  charCountScreenReader.textContent = `You have ${maxCharacters} characters remaining`;
+
+  withHintInfo.insertAdjacentElement("afterend", charCountScreenReader);
+  withHintInfo.insertAdjacentElement("afterend", charactersRemaining);
+  
+  const countRemaining = textarea.nextElementSibling.nextElementSibling;
+  const staticMsg = countRemaining.nextElementSibling;
+
+  countRemaining.setAttribute("aria-hidden", "true");
+
+  function updateCharacterCount() {
+    const textEntered = textarea.value;
+    const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+    const addition = newLines?.length || 0;
+    const remainingCharacters = maxCharacters - textEntered.length - addition;
+
+    if (remainingCharacters >= 0) {
+      countRemaining.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? "" : "s"} remaining`;
+      countRemaining.classList.remove("nhsbsa-count-error-message");
+      countRemaining.classList.add("nhsuk-hint");
+      textarea.classList.remove("nhsuk-textarea--error");
+    } else {
+      countRemaining.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? "" : "s"} too many`;
+      countRemaining.classList.add("nhsbsa-count-error-message");
+      countRemaining.classList.remove("nhsuk-hint");
+      textarea.classList.add("nhsuk-textarea--error");
+    }
+  }
+
+  function updateScreenReaderMessage() {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      const textEntered = textarea.value;
+      const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+      const addition = newLines?.length || 0;
+      const remainingCharacters = maxCharacters - textEntered.length - addition;
+      if (remainingCharacters < 0) {
+        staticMsg.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? "" : "s"} too many`;
+      } else {
+        staticMsg.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? "" : "s"} remaining`;
+      }
+    }, 800);
+  }
+
+  textarea.addEventListener("input", () => {
+    updateCharacterCount();
+    updateScreenReaderMessage();
+  });
+
+  function addErrStyle(){
+    // Adds error style when textarea is blank
+    const prevSibling = textarea.previousElementSibling;
+    if (prevSibling && prevSibling.classList.contains("nhsuk-error-message")) {
+      textarea.classList.add("nhsuk-textarea--error");
+    }
+  };
+  window.addEventListener("load", () => {
+    if (document.getElementById("thErrSummary")) {
+      updateCharacterCount();
+      updateScreenReaderMessage();
+      addErrStyle();
+    } else if (!document.getElementById("thErrSummary") && textarea.value.length > 0 ){
+      updateCharacterCount();
+      updateScreenReaderMessage();
+    }
+  });
+});
+
+  </script>
+{% endblock %}

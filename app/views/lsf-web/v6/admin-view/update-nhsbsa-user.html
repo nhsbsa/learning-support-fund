@@ -1,0 +1,98 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Create user
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-full">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
+
+<div class="nhsuk-grid-column-two-thirds">
+	<form action="v6/admin-view/update-nhsbsa-user" method="POST">
+		<fieldset class="nhsuk-fieldset">
+			<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+				<h1 class="nhsuk-fieldset__heading">What is the user's role?</h1>
+			</legend>
+
+			<div class="nhsuk-grid-row">
+				<div class="nhsuk-grid-column-full">
+					
+
+					<div class="nhsuk-form-group">
+
+						<div class="nhsuk-radios">
+							
+								<div class="nhsuk-radios__item">
+									<input class="nhsuk-radios__input" id="role-1" name="role" type="radio" value="Processor" checked="checked">
+									<label class="nhsuk-label nhsuk-radios__label" for="role-1">Processor</label>
+								</div>
+
+								<div class="nhsuk-radios__item">
+									<input class="nhsuk-radios__input" id="role-2" name="role" type="radio" value="Technical support officer">
+									<label class="nhsuk-label nhsuk-radios__label" for="role-2">Technical support officer</label>
+								</div>
+
+								<div class="nhsuk-radios__item">
+									<input class="nhsuk-radios__input" id="role-3" name="role" type="radio" value="Management support">
+									<label class="nhsuk-label nhsuk-radios__label" for="role-3">Management support</label>
+								</div>
+
+								<div class="nhsuk-radios__item">
+									<input class="nhsuk-radios__input" id="role-4" name="role" type="radio" value="Team manager">
+									<label class="nhsuk-label nhsuk-radios__label" for="role-4">Team manager</label>
+								</div>
+
+									<div class="nhsuk-radios__item">
+										<input class="nhsuk-radios__input" id="role-5" name="role" type="radio" value="Call centre">
+										<label class="nhsuk-label nhsuk-radios__label" for="role-5">Call centre</label>
+									</div>
+	
+									<div class="nhsuk-radios__item">
+										<input class="nhsuk-radios__input" id="role-6" name="role" type="radio" value="Call centre manager">
+										<label class="nhsuk-label nhsuk-radios__label" for="role-6">Call centre manager</label>
+									</div>
+	
+									<div class="nhsuk-radios__item">
+										<input class="nhsuk-radios__input" id="role-7" name="role" type="radio" value="Finance">
+										<label class="nhsuk-label nhsuk-radios__label" for="role-7">Finance</label>
+									</div>
+	
+									<div class="nhsuk-radios__item">
+										<input class="nhsuk-radios__input" id="role-8" name="role" type="radio" value="Super user">
+										<label class="nhsuk-label nhsuk-radios__label" for="role-8">Super user</label>
+									</div>
+								</div>
+
+					</div>
+
+
+				</div>
+				
+		</fieldset>
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button" type="submit">Continue</button>
+			<p><a class="" href="/lsf-web/v6/admin-view/user-results">Cancel</a></p>
+		</div>
+	</form>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+	document.getElementById('clearradiosLink').addEventListener('click', function() {
+		event.preventDefault();
+    var radios = document.querySelectorAll('input[type="radio"]');
+    
+    radios.forEach(function(radio) {
+			radio.checked = false;
+    });
+	});
+</script>
+{% endblock %}

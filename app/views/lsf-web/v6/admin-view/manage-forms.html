@@ -1,0 +1,81 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Manage forms
+{% endblock %}
+
+{% block content %}
+<form action="/lsf-web/v6/admin-view/manage-forms" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Manage forms</h1>
+	
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+               
+      <table role="table" id="documentsTable" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+        <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Forms table</caption>
+        <thead role="rowgroup" class="nhsuk-table__head">	
+          <tr role="row">
+            <th role="columnheader" class="bold" scope="col" data-sort="string" width="20%">Form name</th>
+            <th role="columnheader" class="bold" scope="col" data-sort="string" width="50%">Comments</th>
+            <th role="columnheader" class="bold" scope="col" data-sort="string" width="10%">Enabled</th>
+            <th role="columnheader" class="bold" scope="col" data-sort="string" width="20%">Actions</th>
+            <td>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Form name</span>ESF
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Comments</span>New Form added for ESF
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Actions</span>
+              <a href="/lsf-web/v6/admin-view/edit-form">Change<span class="nhsuk-u-visually-hidden">ESF</span></a> or 
+              <a href="/images/ESF.pdf" target="_blank" rel="noopener">view form<span class="nhsuk-u-visually-hidden">opens in a new tab</span></a>
+            </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Form name</span>TDAE
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Comments</span>New Form added for TDAE
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Actions</span>
+              <a href="#">Change<span class="nhsuk-u-visually-hidden">TDAE</span></a> or 
+              <a href="/images/ESF.pdf" target="_blank" rel="noopener">view form <span class="nhsuk-u-visually-hidden">opens in a new tab</span></a>
+            </td>
+          </tr>
+
+          
+        </tbody>
+      </table>
+
+      <nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
+				<ul class="nhsbsa-pagination" >
+					<li class="nhsbsa-pagination__item nhsbsa-pagination-li">
+						<a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
+					</li>
+				</ul>
+				<!--a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href="" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a-->
+		
+				<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">2</span> of <span id="tdaeTotalItemsNumber">2 results</span></div>
+			</nav>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

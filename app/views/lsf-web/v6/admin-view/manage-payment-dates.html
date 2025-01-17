@@ -1,0 +1,220 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Add scheduled payment date
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-full">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
+
+<form action="v6/admin-view/manage-payment-dates" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Add scheduled payment date for academic year: 2026-Jan</h1>
+	</div>
+				
+	<div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" style="font-weight: bold;" for="termSelection-Label">
+        Term
+      </label>
+      <select class="nhsuk-select" id="termSelection" name="termSelection">
+		<option value="">Select term...</option>
+        <option value="1">Term 1</option>
+        <option value="2">Term 2</option>
+		<option value="2">Term 3</option>
+      </select>
+    </div>
+
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset" aria-describedby="paymentDate-hint" role="group">
+            <label class="nhsuk-label form-label" id="paymentDateLabel" for="paymentDateLabel" style="font-weight: bold;">
+              Payment date
+            </label>
+            <div class="nhsuk-hint" id="example-hint">
+            For example, 6 1 2026
+            </div>
+          
+            <div class="nhsuk-date-input" id="example">
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="validFromDate-day-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="validFromDate-day" name="payment-day" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="validFromDate-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="validFromDate-month" name="payment-month" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="validFromDate-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="validFromDate-year" name="payment-year" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset" aria-describedby="date-hint" role="group">
+            <label class="nhsuk-label form-label" id="dateLabel" for="cosaStartDate" style="font-weight: bold;">
+              Start of COSA window
+            </label>
+            <div class="nhsuk-hint" id="example-hint">
+            For example, 6 3 2026
+            </div>
+          
+            <div class="nhsuk-date-input" id="example">
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="startDate-day-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="startDate-day" name="COSA-start-day" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="startDate-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="startDate-month" name="COSA-start-month" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="startDate-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="startDate-year" name="COSA-start-year" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            </div>
+          </fieldset>
+        </div>
+        
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset" aria-describedby="date-hint" role="group">
+            <label class="nhsuk-label form-label" id="dateLabel" for="cosaEndDate" style="font-weight: bold;">
+              End of COSA window
+            </label>
+            <div class="nhsuk-hint" id="example-hint">
+            For example, 26 1 2026
+            </div>
+          
+            <div class="nhsuk-date-input" id="example">
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="endDate-day-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="endDate-day" name="COSA-end-day" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="endDate-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="endDate-month" name="COSA-end-month" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="endDate-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="endDate-year" name="COSA-end-year" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <fieldset class="nhsuk-fieldset">
+					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Do you want to enable the enrolment year?</legend>
+					<!-- div class="nhsuk-hint" id="contact-hint">Select No to xyz. For example, if xyz.</div-->
+					<div class="nhsuk-form-group">
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="enablePaymentDateYes" name="enablePaymentDate" type="radio" value="Yes">
+								<label class="nhsuk-label nhsuk-radios__label" for="enablePaymentDateYes">Yes</label>
+							</div>
+		
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="enablePaymentDateNo" name="enablePaymentDate" type="radio" value="No">
+								<label class="nhsuk-label nhsuk-radios__label" for="enablePaymentDateNo">No</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<div class="nhsuk-form-group">
+					<button class="nhsuk-button" type="submit" id="savePaymentDate">Save and continue</button>
+					<p><a class="" href="/lsf-web/v6/admin-view/manage-enrolment-years">Cancel</a></p>
+				</div>
+		
+			
+	</div>
+{% endblock %}
+
+		<!--div class="column-two-thirds">
+			<h2 class="heading-large mt-0">Payment schedule dates</h2>
+			<table id="paymentScheduleDatesListTable">
+				<caption class="visually-hidden">Payment schedule dates table</caption>
+				<thead>
+					<tr>
+						<th class="bold" scope="col">Term</th>
+						<th class="bold" scope="col">Schedule payment date</th>
+						<th class="bold" scope="col">Cosa start date</th>
+						<th class="bold" scope="col">Cosa end date</th>
+						<th class="bold" scope="col">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><span>Term 1</span></td>
+						<td>2023-09-01</td>
+						<td>2023-09-01</td>
+						<td>2023-09-30</td>
+						<td>
+							<a id="edit0" href="/lsf-web/v4/admin-view/edit-payment-schedule">Edit</a>
+						</td>
+					</tr>
+					<tr>
+						<td><span>Term 2</span></td>
+						<td>2023-11-01</td>
+						<td>2023-10-01</td>
+						<td>2023-11-30</td>
+						<td>
+							<a id="edit1" href="/lsf-web/v4/admin-view/edit-payment-schedule">Edit</a>
+						</td>
+					</tr>
+					<tr>
+						<td><span>Term 3</span></td>
+						<td>2023-12-01</td>
+						<td>2023-12-01</td>
+						<td>2024-08-30</td>
+						<td>
+							<a id="edit2" href="/lsf-web/v4/admin-view/edit-payment-schedule">Edit</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div -->

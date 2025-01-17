@@ -1,0 +1,175 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <h1 class="nhsuk-heading-l">Placement journey overview for period 1</h1>
+
+    <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Period start date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            10 February 2024
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Period end date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            17 February 2024
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Placement address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Alnwick Hospital, NE66 2NS
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                  Alnwick Hospital<br>
+                  Infirmary Drive<br>
+                  Alnwick<br>
+                  NE66 2NS
+              </div>
+            </details>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Placement accommodation address 1
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            The Village Inn, NE65 8AD
+            <details class="nhsuk-details" style="margin-bottom: 0;">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                The Village Inn<br>
+                Front Street<br>
+                Longframlington<br>
+                Morpeth<br>
+                NE65 8AD
+              </div>
+            </details>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Placement accommodation address 2
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            The Hog's Head Inn, NE66 2BF
+            <details class="nhsuk-details" style="margin-bottom: 0;">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                The Hog's Head Inn<br>
+                Hawfinch Drive<br>
+                Alnwick<br>
+                NE66 2BF
+              </div>
+            </details>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Transport method
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Car
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Placement journey mileage
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            64.8
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Placement journey mileage cost
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £27.22
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Community mileage
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            20
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Community mileage cost
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £8.40
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Extra costs
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £14
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Number of days on placement during period
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            5
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total cost for period
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £49.62
+          </dd>
+        </div>
+      </dl>
+
+      {% if data['read-only'] == 'true' %}
+      <a class="nhsuk-button" href="TDAE-student-claim">Continue</a>
+      {% else %}
+      <a class="nhsuk-button" href="TDAE-evidence-match">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,345 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Claim details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    {% if data['name'] === 'Emmit Mar' %}
+    <h1 class="nhsuk-heading-l">Accommodation travel journey 3 details</h1>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Journey
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Term time address to accommodation
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Date travelled
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          16 February 2024
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Term time address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Stephenson House, NE2 1AW
+          <details class="nhsuk-details" style="margin-bottom: 0;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              Stephenson House<br>
+              Stoddart Street<br>
+              Shieldfield<br>
+              Newcastle upon Tyne<br>
+              NE2 1AW
+            </div>
+          </details>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Accommodation address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          The Hog's Head Inn, NE66 2BF
+          <details class="nhsuk-details" style="margin-bottom: 0;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              The Hog's Head Inn<br>
+              Hawfinch Drive<br>
+              Alnwick<br>
+              NE66 2BF
+            </div>
+          </details>
+        </dd>
+      </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Transport method
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Car
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total driving mileage
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            34.5
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Student comments
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            None
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Amount to be reimbursed
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £14.49
+          </dd>
+        </div>
+      </dl>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+          Breakdown of travel costs
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+              <table class="nhsuk-table">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+  
+                  </th>
+                  <th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+                      Accommodation journey
+                  </th>
+                  <th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+                      University journey
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                      <b>Type of travel</b>
+                  </td>
+                  <td class="nhsuk-table__cell " style="font-size: 1rem;">
+                      Car
+                  </td>
+                  <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                      Walk
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                    <b>Journey mileage cost<br>
+                    (0.42p per mile)</b>
+                  </td>
+                  <td class="nhsuk-table__cell " style="font-size: 1rem;">
+                    £14.49
+                  </td>
+                  <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                    <span class="nhsuk-u-visually-hidden">No cost</span>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+                  <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                      <b>Total cost</b>
+                  </td>
+                  <td class="nhsuk-table__cell " style="font-size: 1rem;">
+                    £14.49
+                  </td>
+                  <td class="nhsuk-table__cell" style="font-size: 1rem;">
+                    <span class="nhsuk-u-visually-hidden">No cost</span>
+                  </td>
+                </tr>
+              </tbody>
+              </table>
+  
+              <p><b>Amount to be reimbursed: £14.49</b></p>
+  
+        </details>
+
+
+      {% else %}
+      <h1 class="nhsuk-heading-l">Accommodation travel journey 1 details</h1>
+  
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Journey
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Term time address to accommodation
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Date travelled
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            16 February 2024
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Term time address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            82 Meldon Terrace, NE6 5XQ
+            <details class="nhsuk-details" style="margin-bottom: 0;">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                82 Meldon Terrace<br>
+                Heaton<br>
+                Newcastle upon Tyne<br>
+                NE6 5XQ
+              </div>
+            </details>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Accommodation address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            The Hog's Head Inn, NE66 2BF
+            <details class="nhsuk-details" style="margin-bottom: 0;">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  View full address
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                The Hog's Head Inn<br>
+                Hawfinch Drive<br>
+                Alnwick<br>
+                NE66 2BF
+              </div>
+            </details>
+          </dd>
+        </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Transport method
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Car
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Total driving mileage
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              33.3
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Student comments
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              None
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Amount to be reimbursed
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              £13.99
+            </dd>
+          </div>
+        </dl>
+
+
+		<details class="nhsuk-details">
+			<summary class="nhsuk-details__summary">
+			  <span class="nhsuk-details__summary-text">
+				Breakdown of travel costs
+			  </span>
+			</summary>
+			<div class="nhsuk-details__text">
+						<table class="nhsuk-table">
+						<thead role="rowgroup" class="nhsuk-table__head">
+							<tr role="row">
+								<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+
+								</th>
+								<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+										Accommodation journey
+								</th>
+								<th role="columnheader" class="" scope="col" style="font-size: 1rem;">
+										University journey
+								</th>
+							</tr>
+						</thead>
+						<tbody class="nhsuk-table__body">
+							<tr role="row" class="nhsuk-table__row">
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+										<b>Type of travel</b>
+								</td>
+								<td class="nhsuk-table__cell " style="font-size: 1rem;">
+										Car
+								</td>
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+										Walk
+								</td>
+							</tr>
+							<tr role="row" class="nhsuk-table__row">
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+									<b>Journey mileage cost<br>
+                  (0.42p per mile)</b>
+								</td>
+								<td class="nhsuk-table__cell " style="font-size: 1rem;">
+									£13.99
+								</td>
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+                  <span class="nhsuk-u-visually-hidden">No cost</span>
+								</td>
+							</tr>
+							<tr role="row" class="nhsuk-table__row" style="font-size: 1rem;">
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+										<b>Total cost</b>
+								</td>
+								<td class="nhsuk-table__cell " style="font-size: 1rem;">
+									£13.99
+								</td>
+								<td class="nhsuk-table__cell" style="font-size: 1rem;">
+									£0
+								</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<p><b>Amount to be reimbursed: £13.99</b></p>
+
+      </details>
+      {% endif %}
+
+      {% if data['read-only'] != 'true' %}
+      <a class="nhsuk-button" href="TDAE-accommodation-travel-check-3">Continue</a>
+      {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

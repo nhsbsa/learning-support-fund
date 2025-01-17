@@ -1,0 +1,308 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Claim checks
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {% if data['read-only'] === 'true' %}
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+    {% endif %}
+
+    <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Travel and Dual Accommodation Expenses</span>
+      Emmit Mar
+    </h1>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Student's personal and course details
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              NHS Learning Support Fund reference number
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              SSRN0010001
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              University student ID
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              AB123456
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Academic year
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              2023 to 2024
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Course
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Adult Nursing
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </details>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Claim start<br>
+          and end date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          2 February 2024 to
+          31 March 2024
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Total claim value
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £614.62
+        </dd>
+      </div>
+    </dl>
+
+
+    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">This claim is currently read-only</h2>
+    <p class="nhsuk-body nhsuk-u-margin-bottom-7">You can view the submitted details and add a note, but you cannot process the claim.</p>
+
+
+      <details class="nhsuk-details nhsuk-expander-warning" open>
+        <summary style="" class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Another claim was submitted for these dates
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Emmit Mar has previously submitted a claim with costs on these dates.</p>
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Claim dates
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                9 February 2024 to 12 February 2024
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Costs claimed
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Hire car
+              </dd>
+            </div>
+          </dl>
+          <p>You need to <a target="_blank" href="TDAE-student-claim-previous">check the previous claim (opens in new tab)</a> to make sure they have not claimed for the same costs again.</p>
+        </div>
+      </details>
+
+
+    <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Claim comments and history
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+
+        <table class="nhsuk-table-responsive">
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                From
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Date
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Feedback
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            {% if data['feedback-note'] == 'yes' %}
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Jane Doe<br>(NHSBSA)</td>
+              <td class="nhsuk-table__cell"> <p id="currentDate"</p> </td>
+              <td class="nhsuk-table__cell ">{{ data['feedbacknote'] }}</td>
+            </tr>
+            {% endif %}
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Mark Hirst<br> (university)</td>
+              <td class="nhsuk-table__cell">12 March 2024</td>
+              <td class="nhsuk-table__cell "><strong>University checks submitted</strong><br>Student has only been able to upload 2 car parking receipts as they explained the ticket machine was out of paper but we are happy to accept they will have had this additional cost.</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">{{ data['name'] }}<br>(student)</td>
+              <td class="nhsuk-table__cell">7 April 2024</td>
+              <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
+            </tr>
+
+          </tbody>
+        </table>
+        <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></p>
+      </div>
+    </details>
+
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1. </span> Travel details
+        </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="TDAE-student-university-details" aria-describedby="eligibility-status">
+                  View university travel details
+                </a>
+              </span>
+            </li>
+
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="TDAE-placement-mileage-details-table" aria-describedby="eligibility-status">
+                  View period 1 placement travel details
+                </a>
+              </span>
+            </li>
+
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="TDAE-placement-details-public-transport" aria-describedby="eligibility-status">
+                  View period 2 placement travel details
+                </a>
+              </span>
+            </li>
+
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="TDAE-hire-vehicle" aria-describedby="eligibility-status">
+                  View hire car details
+                </a>
+              </span>
+            </li>
+
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="TDAE-taxi" aria-describedby="eligibility-status">
+                  View taxi journey details
+                </a>
+              </span>
+            </li>
+          </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">2. </span> Accommodation details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              <a href="TDAE-accommodation" aria-describedby="eligibility-status">
+                View accommodation booking 1 details
+              </a>
+            </span>
+          </li>
+
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              <a href="TDAE-accommodation-2" aria-describedby="eligibility-status">
+                View accommodation booking 2 details
+              </a>
+            </span>
+          </li>
+
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              <a href="TDAE-accommodation-travel" aria-describedby="eligibility-status">
+                View accommodation travel journey 1 details
+              </a>
+            </span>
+          </li>
+
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              <a href="TDAE-accommodation-travel-2" aria-describedby="eligibility-status">
+                View accommodation travel journey 2 details
+              </a>
+            </span>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">3. </span> Overseas costs details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              <a href="TDAE-overseas" aria-describedby="eligibility-status">
+                View overseas details
+              </a>
+            </span>
+          </li>
+        </ul>
+      </li>
+
+
+
+    <a class="nhsuk-button nhsuk-button--secondary" href="/lsf-web/v6/student-course-details#tab-TDAE">Return to Course details</a>
+
+  </div>
+
+</div>
+
+
+<script>
+  // JavaScript code
+  var currentDateElement = document.getElementById("currentDate");
+
+  // Get the current date
+  var currentDate = new Date();
+
+  // Format the date as desired
+  var options = { day: 'numeric', month: 'long', year: 'numeric' };
+  var formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+  // Set the formatted date as the content of the element
+  currentDateElement.textContent = formattedDate;
+</script>
+
+{% endblock %}

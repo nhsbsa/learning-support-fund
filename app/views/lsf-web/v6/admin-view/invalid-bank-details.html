@@ -1,0 +1,20 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Invalid bank details
+{% endblock %}
+
+{% block content %}
+<form action="/lsf-web/v6/admin-view/invalid-bank-details" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Invalid bank details</h1>
+	
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <p>There are no students with invalid bank details</p> 
+    </div>
+  </div>
+  
+</div>
+{% endblock %}

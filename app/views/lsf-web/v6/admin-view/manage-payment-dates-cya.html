@@ -1,0 +1,127 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Check scheduled payment date
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-full">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
+
+<form action="v6/admin-view/manage-payment-dates-cya" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Check scheduled payment dates for academic year: 2026-Jan</h1>
+	</div>
+				
+	<div class="nhsuk-grid-column-two-thirds">
+
+    <h3 class="nhsuk-heading-m">Term 1</h3>
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Scheduled payment date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          6 January 2026
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="/lsf-web/v6/admin-view/manage-payment-dates#payment-day">
+            Change<span class="nhsuk-u-visually-hidden">scheduled payment date</span>
+          </a>
+        </dd>
+      </div>
+    
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Start of COSA window
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          6 January 2026
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="/lsf-web/v6/admin-view/manage-payment-dates#COSA-start-day">
+            Change<span class="nhsuk-u-visually-hidden">start of COSA window</span>
+          </a>
+        </dd>
+      </div>
+    
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          End of COSA window
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          19 January 2026
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="/lsf-web/v6/admin-view/manage-payment-dates#COSA-end-day">
+            Change<span class="nhsuk-u-visually-hidden">end of COSA window</span>
+          </a>
+        </dd>
+      </div>
+    
+    </dl>
+
+    <h3 class="nhsuk-heading-m">Term 2</h3>
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Scheduled payment date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          6 April 2026
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="/lsf-web/v6/admin-view/manage-payment-dates#payment-day">
+            Change<span class="nhsuk-u-visually-hidden">scheduled payment date</span>
+          </a>
+        </dd>
+      </div>
+    
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Start of COSA window
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          6 April  2026
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="/lsf-web/v6/admin-view/manage-payment-dates#COSA-start-day">
+            Change<span class="nhsuk-u-visually-hidden">start of COSA window</span>
+          </a>
+        </dd>
+      </div>
+    
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          End of COSA window
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          20 April 2026
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="/lsf-web/v6/admin-view/manage-payment-dates#COSA-end-day">
+            Change<span class="nhsuk-u-visually-hidden">end of COSA window</span>
+          </a>
+        </dd>
+      </div>
+    
+    </dl>
+
+				<div class="nhsuk-form-group">
+					<button class="nhsuk-button" type="submit" id="addPaymentDateCYA">Add scheduled payment dates</button>
+          <!-- If only one payment date added, change button to Add scheduled payment date -->
+					<p><a class="" href="/lsf-web/v6/admin-view/manage-enrolment-years">Cancel</a></p>
+				</div>
+		
+			
+	</div>
+{% endblock %}

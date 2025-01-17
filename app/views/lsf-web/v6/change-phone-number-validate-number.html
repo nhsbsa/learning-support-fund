@@ -1,0 +1,64 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Student details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <form action="change-phone-number-note" method="POST">
+      <h1 class="nhsuk-heading-l">
+        {% if data['send-again'] == 'true' %}
+          New security code emailed to student
+        {% else %}
+  			  Security code text message sent to student
+        {% endif %}
+  		</h1>
+
+      <p>They need to give you the security code before you change their phone number.</p>
+
+      {% if data['send-again'] == 'true' %}
+      <div class="nhsuk-inset-text">
+          <p>New security code sent</p>
+      </div>
+      {% endif %}
+
+      <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="sign-in-username">
+            Security code
+          </label>
+          <div class="nhsuk-hint" id="example-with-hint-text-hint">
+            This is a 5 digit code
+          </div>
+          <input class="nhsuk-input nhsuk-input--width-10" id="security-code" name="security-code" type="text">
+      </div>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Not received an text message?
+          </span>
+        </summary>
+        {% if data['request-new'] == 'max' %}
+        <div class="nhsuk-details__text">
+          <p>Text messages sometimes take a few minutes to arrive. You cannot request a new code as you've reached the maximum number of codes you can request.</p>
+        </div>
+        {% else %}
+        <div class="nhsuk-details__text">
+          <p>Text messages sometimes take a few minutes to arrive. If the student does not receive the text message, you can <a href="change-phone-number-validate?send-again=true">request a new one</a>.</p>
+        </div>
+        {% endif %}
+      </details>
+
+      <button class="nhsuk-button" type="submit">
+          Continue
+      </button><br>
+    </form>
+    <p><a href="student-details-change">Cancel</a></p>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+{% endblock %}

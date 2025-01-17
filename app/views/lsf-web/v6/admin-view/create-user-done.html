@@ -1,0 +1,33 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+User update complete
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-two-thirds">
+    <div class="admin-page-header"></div>
+
+    <div class="content">
+        <div class="indextext">
+            <div class="done-panel" style="text-align: center;">
+                <h1 class="nhsuk-heading-l" id="updateUpdateCompleteHeading">
+                    User created
+                </h1>
+            </div>
+
+            <h3 class="nhsuk-heading-m">What happens next</h3>
+            <p class="nhsuk-body">We've sent a confirmation email to <b>jane.doe@gmail.com</b>.</p>
+            <p class="nhsuk-body">The user needs to finish setting up their account using the link in the email.</p>
+
+            <br>
+
+            <div class="form-group">
+                <a class="nhsuk-button nhsuk-u-margin-right-4" href="/lsf-web/v6/admin-view/manage-users" role="button">Return to User search</a>
+                <a class="nhsuk-button nhsuk-button--secondary" href="/lsf-web/v6/admin-view/create-user" data-module="nhsuk-button" type="submit" id="searchButton">Create another user</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,634 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Search users
+{% endblock %}
+
+{% block content %}
+<form action="/lsf-web/v6/admin-view/user-results" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Manage users</h1>
+		<h2 class="nhsuk-heading-m">Search</h2>
+	</div>
+	<div class="nhsuk-grid-column-one-third">
+		<div class="nhsuk-form-group" id="lastname-group">
+			<label class="nhsuk-label" for="lastname">Surname</label>
+			<input class="nhsuk-input" id="lastname" name="lastName" type="text">
+		</div>
+	</div>
+	<div class="nhsuk-grid-column-one-third">
+		<div class="nhsuk-form-group" id="email-group">
+			<label class="nhsuk-label" for="mail">
+				Email
+			</label>
+			<input class="nhsuk-input" id="mail" name="email" type="text">
+		</div>
+	</div>
+
+	<div class="nhsuk-grid-column-one-third">
+		<div class="nhsuk-form-group" id="role-group">
+			<label class="nhsuk-label" for="roleDrop" id="role-label">
+				Role
+			</label>
+			<select class="nhsuk-select nhsuk-u-width-full" id="roleDrop" name="role">
+				<option value="">Select...</option>
+				<option value="ROLE_PROCESSOR">PROCESSOR</option>
+				<option value="ROLE_TECHNICAL_SUPPORT_OFFICER">TECHNICAL SUPPORT OFFICER</option>
+				<option value="ROLE_MANAGEMENT_SUPPORT">MANAGEMENT SUPPORT</option>
+				<option value="ROLE_TEAM_MANAGER">TEAM MANAGER</option>
+				<option value="ROLE_CALL_CENTRE">CALL CENTRE</option>
+				<option value="ROLE_CALL_CENTRE_MANAGER">CALL CENTRE MANAGER</option>
+				<option value="ROLE_FINANCE">FINANCE</option>
+				<option value="ROLE_SUPER_USER">SUPER USER</option>
+				<option value="ROLE_HEI_USER">HEI USER</option>
+				<option value="ROLE_HEI_ADMIN">HEI ADMIN</option>
+				<option value="ROLE_HEI_READ">HEI READ</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="nhsuk-grid-column-full">
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">Search </button>
+			
+			<a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-right-4" href="/lsf-web/v6/admin-view/create-user" id="createButton" role="button" data-module="nhsuk-button">Create user</a>
+			
+			<a class="nhsuk-button nhsuk-button--secondary" href="/files/admin-user-export.csv" id="exportButton" role="button" data-module="nhsuk-button">Export</a>
+			
+			<p><a href="/lsf-web/v6/admin-view/user-results" id="clearButton">Cancel</a></p>
+		</div>
+		
+	</div>
+	
+</form>
+
+<div class="nhsuk-grid-column-full">
+		<hr class="" style="border-color: #005eb8; border-width: 4px">
+			<table role="table" id="searchresultsTable" class="wordbreak nhsuk-table-responsive js-table-sortable nhsuk-u-margin-bottom-5">
+				<caption class="nhsuk-table__caption">Search results<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 20 results</span><span id="resultMessage" aria-hidden="true"> - contains 20 results</span></caption>
+	
+		
+		<thead role="rowgroup" class="nhsuk-table__head">
+			<tr role="row" class="nhsuk-table__row">
+				<th role="columnheader" class="sortable" scope="col" data-sort="string" width="30%">Email</th>
+				<th role="columnheader" class="sortable" scope="col" data-sort="string">Name</th>
+				<th role="columnheader" class="sortable" scope="col" data-sort="string">Role</th>
+				<th role="columnheader" class="sortable" scope="col" data-sort="string">Active</th>
+				<th role="columnheader" class="sortable" scope="col" data-sort="string">Locked</th>
+				<th role="columnheader" class="sortable" scope="col" data-sort="string">Action</th>
+			</tr>
+		</thead>
+		<tbody class="nhsuk-table__body">
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>sdsds@gmail.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Tin Cooper
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					HEI ADMIN
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>					
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>jhhj@gmail.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Tony Yeboah
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>HEI USER
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>					
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>loopikp@gmail.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Gary Lucas
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					HEI USER
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>					
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>rthft@gmail.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Liam Cooper
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					HEI USER
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>					
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>nhs.nhsbsa+1@gmail.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Role Processor
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					PROCESSOR
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>					
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>nhs.nhsbsa+2@gmail.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Role TechSupport
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					TECHNICAL SUPPORT OFFICER
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>					
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>nhs.nhsbsa+3@gmail.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>Role ManSupport
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					MANAGEMENT SUPPORT
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>					
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>nhs.nhsbsa+4@gmail.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Role TeamManager
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					TEAM MANAGER
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>					
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>nhs.nhsbsa+5@gmail.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Role CallCentre
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					CALL CENTRE
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>						
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>nhs.nhsbsa+6@gmail.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Role CallManager
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					CALL CENTRE MANAGER
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>						
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>nhs.nhsbsa+7@gmail.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Role Finance
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					FINANCE
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>					
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>nhs.nhsbsa+8@gmail.com</span>
+					</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Role SuperUser
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					SUPER USER
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>					
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>nhs.nhsbsa+9@gmail.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Role HeiUser
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					HEI USER
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>					
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>nhs.nhsbsa+10@gmail.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Role HeiAdmin
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					HEI ADMIN
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>				
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>michael.lee7@nhs.net</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Michael Lee
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					SUPER USER
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>						
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>NHSBSAUAT+hei1@gmail.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Hei One
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					HEI ADMIN
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>					
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Email </span>
+					<span>NHSBSAUAT+hei2@gmail.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Hei Two
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					HEI ADMIN
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>			
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>			
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Email </span>
+					<span>NHSBSAUAT+hei3@gmail.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Hei Three
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					HEI ADMIN
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>					
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>NHSBSAUAT+hei4@gmail.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Hei Four
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					HEI ADMIN
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>	
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>					
+			</tr>
+
+			<tr role="row" class="nhsuk-table__row">
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Email </span>
+					<span>test@hei-email.com</span>
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Name </span>
+					Hei five
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Role(s) </span>
+					HEI ADMIN
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Active </span>
+					Yes
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Locked </span>
+					No
+				</td>
+				<td role="cell" class="nhsuk-table__cell">
+					<span class="nhsuk-table-responsive__heading">Action</span>
+					<a href="/lsf-web/v6/admin-view/update-user">Change user details</a>
+				</td>		
+			</tr>
+		</tbody>
+	</table>
+
+	<nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
+		<ul class="nhsbsa-pagination" >
+			<li class="nhsbsa-pagination__item nhsbsa-pagination-li">
+				<a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
+			</li>
+		</ul>
+		<a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href="/lsf-web/v6/admin-view/user-results-2" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a>
+
+		<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">20</span> of <span id="tdaeTotalItemsNumber">37 results</span></div>
+	</nav>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Delete payment run
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-two-thirds">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+
+	<form action="v6/admin-view/delete-payment-run" method="post" novalidate="">
+
+		<div class="nhsuk-form-group">
+			<fieldset class="nhsuk-fieldset">
+				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+				<h1 class="nhsuk-fieldset__heading">
+					Are you sure you want to delete this payment run?
+				</h1>
+				</legend>
+
+				<dl class="nhsuk-summary-list">
+
+					<div class="nhsuk-summary-list__row">
+					  <dt class="nhsuk-summary-list__key">
+						Run date
+					  </dt>
+					  <dd class="nhsuk-summary-list__value">
+						2 January 2015
+					  </dd>
+					</div>
+					<div class="nhsuk-summary-list__row">
+					  <dt class="nhsuk-summary-list__key">
+						Run time
+					  </dt>
+					  <dd class="nhsuk-summary-list__value">
+						12:01pm
+					  </dd>
+					</div>
+					<div class="nhsuk-summary-list__row">
+					  <dt class="nhsuk-summary-list__key">
+						Payment date
+					  </dt>
+					  <dd class="nhsuk-summary-list__value">
+						1 March 2017
+					  </dd>
+					</div>
+
+					<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Payment run enabled
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						No
+					</dd>
+					</div>
+
+				  </dl>
+			
+				<div class="nhsuk-radios">
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="deletePaymentRunYes" name="deletePaymentRun" type="radio" value="Yes">
+						<label class="nhsuk-label nhsuk-radios__label" for="deletePaymentRunYes">
+						Yes
+						</label>
+					</div>
+				
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="deletePaymentRunNo" name="deletePaymentRun" type="radio" value="No">
+						<label class="nhsuk-label nhsuk-radios__label" for="deletePaymentRunNo">
+						No
+						</label>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+		
+				
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button nhsuk-u-margin-right-4" type="submit" id="deletePaymentRun">Save and continue</button>
+
+			<p><a class="" href="/lsf-web/v6/admin-view/manage-payment-runs">Cancel</a></p>
+		</div>
+
+	</form>
+</div>
+
+
+		
+				
+							
+							
+						
+			
+		
+{% endblock %}

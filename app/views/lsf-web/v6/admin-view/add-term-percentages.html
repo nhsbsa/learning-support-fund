@@ -1,0 +1,122 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Add term payment percentages
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-full">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
+
+<form action="v6/admin-view/add-term-percentages" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Add term payment percentage details</h1>
+	</div>
+				
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<div class="nhsuk-form-group">
+			<fieldset class="nhsuk-fieldset" aria-describedby="date-hint" role="group">
+				<label class="nhsuk-label form-label" id="dateLabel" for="ratesDate" style="font-weight: bold;">
+					Rates effective from
+				</label>
+				<div class="nhsuk-hint" id="example-hint">
+				For example, 15 3 2024
+				</div>
+			
+				<div class="nhsuk-date-input" id="example">
+				<div class="nhsuk-date-input__item">
+					<div class="nhsuk-form-group">
+					<label class="nhsuk-label nhsuk-date-input__label" for="validFromDate-day-label">
+						Day
+					</label>
+					<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="validFromDate-day" name="rate-day" type="text" pattern="[0-9]*" inputmode="numeric">
+					</div>
+				</div>
+				<div class="nhsuk-date-input__item">
+					<div class="nhsuk-form-group">
+					<label class="nhsuk-label nhsuk-date-input__label" for="validFromDate-month-label">
+						Month
+					</label>
+					<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="validFromDate-month" name="rate-month" type="text" pattern="[0-9]*" inputmode="numeric">
+					</div>
+				</div>
+				<div class="nhsuk-date-input__item">
+					<div class="nhsuk-form-group">
+					<label class="nhsuk-label nhsuk-date-input__label" for="validFromDate-year-label">
+						Year
+					</label>
+					<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="validFromDate-year" name="rate-year" type="text" pattern="[0-9]*" inputmode="numeric">
+					</div>
+				</div>
+				</div>
+			</fieldset>
+		</div>
+
+		<div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset">
+				<label class="nhsuk-label" style="font-weight: bold;" for="term1Percentage-label">
+					Term 1 percentage
+				</label>
+
+				<input class="nhsuk-input__suffix-input nhsuk-input nhsuk-input--width-5" id="term1Percentage" name="term1Percentage" type="text">
+              	<div class="nhsuk-input__suffix" aria-hidden="true">%</div>
+            </fieldset>
+          </div>
+
+		<div class="nhsuk-form-group">
+			<fieldset class="nhsuk-fieldset">
+				<label class="nhsuk-label" style="font-weight: bold;" for="term2Percentage-label">
+					Term 2 percentage
+				</label>
+
+				<input class="nhsuk-input__suffix-input nhsuk-input nhsuk-input--width-5" id="term2Percentage" name="term2Percentage" type="text">
+				<div class="nhsuk-input__suffix" aria-hidden="true">%</div>
+			</fieldset>
+		</div>
+
+		<div class="nhsuk-form-group">
+			<fieldset class="nhsuk-fieldset">
+				<label class="nhsuk-label" style="font-weight: bold;" for="term3Percentage-label">
+					Term 3 percentage
+				</label>
+
+				<input class="nhsuk-input__suffix-input nhsuk-input nhsuk-input--width-5" id="term3Percentage" name="term3Percentage" type="text">
+				<div class="nhsuk-input__suffix" aria-hidden="true">%</div>
+			</fieldset>
+		</div>
+				
+				
+
+				<fieldset class="nhsuk-fieldset">
+					<legend class="nhsuk-fieldset__legend" aria-describedby="contact-hint">Do you want to enable the term payment percentage details?</legend>
+					<!-- div class="nhsuk-hint" id="contact-hint">Select No to xyz. For example, if xyz.</div-->
+					<div class="nhsuk-form-group">
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="termPercentageDetailsYes" name="termPercentageDetails" type="radio" value="Yes">
+								<label class="nhsuk-label nhsuk-radios__label" for="termPercentageDetailsYes">Yes</label>
+							</div>
+		
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="termPercentageDetailsNo" name="termPercentageDetails" type="radio" value="No">
+								<label class="nhsuk-label nhsuk-radios__label" for="termPercentageDetailsNo">No</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<div class="nhsuk-form-group">
+					<button class="nhsuk-button" type="submit" id="saveTermPercentageDetails">Save and continue</button>
+					<p><a class="" href="/lsf-web/v6/admin-view/manage-term-percentages">Cancel</a></p>
+				</div>
+		
+			
+	</div>
+
+{% endblock %}

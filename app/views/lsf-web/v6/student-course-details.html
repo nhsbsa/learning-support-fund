@@ -1,0 +1,1443 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Course details
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+          href="/lsf-web/v6/current-search-student">Student search</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v6/student-details">Student
+          details</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v6/student-details">Back to
+        Student details</a></p>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-heading-xl">
+      <span class="nhsuk-caption-l" id="studentRef">
+        <span>{{ data['student number'] }}</span>
+      </span>
+      Course details
+    </h1>
+    <h2 class="nhsuk-heading-m">{{ data['student number'] }} - {{ data['name'] }}</h2>
+  </div>
+  <div class="nhsuk-grid-column-one-third">
+    <button class="nhsuk-button nhsuk-button--secondary" style="float: right;">Unlock</button>
+  </div>
+  <div class="nhsuk-grid-column-full">
+    <hr>
+    <div class="nhsuk-form-group" style="display: inline-block;">
+      <label class="nhsuk-label" for="select-1">
+        Attendance status
+      </label>
+      <select class="nhsuk-select" id="select-1" name="select-1">
+        <option value="1">Pending</option>
+        <option value="2" selected>In attendance</option>
+        <option value="3">Option 3</option>
+      </select>
+    </div>
+    <button class="nhsuk-button" style="display: inline-block; float: right;">Update</button>
+    <hr>
+  </div>
+  <div class="nhsuk-grid-column-full clear-float">
+    <div>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-third">
+          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">University</h2>
+          <p id="studentName">Cumbria University</p>
+
+          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course</h2>
+          <p id="studentDOB">Adult Nursing</p>
+
+          <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Attendance</h2>
+          <p id="studentUsername">Full-time</p>
+
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+
+          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Academic year</h2>
+          <p id="studentPhone">September 2023</p>
+          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course length</h2>
+          <p>3 years</p>
+          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Final year</h2>
+          <p>Yes</p>
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course year</h2>
+          <p>Year 3</p>
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Eligibility status</h2>
+          <p>Eligible</p>
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Repeat year</h2>
+          <p>No</p>
+        </div>
+        <div class="nhsuk-grid-column-full">
+          <div>
+            <details class="nhsuk-details nhsuk-u-margin-bottom-5">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">Enrolment actions</span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <ul class="nhsuk-list">
+                  <li><a href="/lsf-web/v6/enrolment-actions/edit">Edit</a></li>
+                  <li><a href="/lsf-web/v6/enrolment-actions/withdraw-student">Withdraw student</a></li>
+                  <li><a href="/lsf-web/v6/enrolment-actions/view-calculations">View calculations</a></li>
+                  <li><a href="/lsf-web/v6/enrolment-actions/view-student-declaration">View student declaration</a></li>
+                  <li><a href="/lsf-web/v6/enrolment-actions/view-students-application">View student's application</a></li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+      <div class="tabs-nav">
+        <ul class="nhsuk-tabs__list">
+          <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+            <a href="#tab-Activities" class="nhsuk-tabs__tab">Activities</a>
+          </li>
+          <li class="nhsuk-tabs__list-item">
+            <a href="#tab-Training-Grants" class="nhsuk-tabs__tab">Training Grant</a>
+          </li>
+          <li class="nhsuk-tabs__list-item">
+            <a href="#tab-Parental-Support" class="nhsuk-tabs__tab">Parental Support</a>
+          </li>
+          <li class="nhsuk-tabs__list-item">
+            <a href="#tab-TDAE" class="nhsuk-tabs__tab">TDAE</a>
+          </li>
+          <li class="nhsuk-tabs__list-item">
+            <a href="#tab-ESF" class="nhsuk-tabs__tab">ESF</a>
+          </li>
+          <li class="nhsuk-tabs__list-item">
+            <a href="#tab-Payments" class="nhsuk-tabs__tab">Payments</a>
+          </li>
+          <li class="nhsuk-tabs__list-item">
+            <a href="#tab-Cosa" class="nhsuk-tabs__tab">COSA</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nhsuk-tabs__panel" id="tab-Activities">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-third">
+            <h2 class="nhsuk-heading-l">Activities</h2>
+            <div class="nhsuk-form-group">
+              <p><a id="viewDocuments" href="#">Upload evidence</a></p>
+            </div>
+          </div>
+          <div class="nhsuk-grid-column-two-thirds">
+            <hr>
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">1411 - TDAE (Active)</span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <div class="nhsuk-hint" id="example-hint">
+                  <!-- Start Date: 01/11/2022<br>
+        										End date: 15/08/2024<br> -->
+                  Created: 23/10/2023 11:10:58<br>
+                  Last updated: 23/10/2023 11:10:58<br>
+                  Last updated by: Deacon Robert<br>
+                  Cipher: drobe
+                </div>
+                <a target="_blank"
+                  href="TDAE-student-claim?name=Emmit%20Mar&status=To%20be%20completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=">Review</a>
+              </div>
+            </details>
+            <hr>
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  2023/03/01 - Training Grant Simple (Complete)
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <div class="nhsuk-hint" id="example-hint">
+                  Testing data
+                </div>
+                <a href="#">Assess</a>
+              </div>
+            </details>
+            <hr>
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  2022/08/21 - HEI Withdrawal (Complete)
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <div class="nhsuk-hint" id="example-hint">
+                  Testing data
+                </div>
+                <a href="#">Assess</a>
+              </div>
+            </details>
+            <hr>
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-tabs__panel" id="tab-Training-Grants">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-third">
+            <h2 class="nhsuk-heading-l">Training Grant</h2>
+          </div>
+
+          <div class="nhsuk-grid-column-two-thirds">
+            <hr aria-hidden="true" />
+            <p>
+              <a id="assessTrainingSupport" href="#">
+                <span class="wordbreak">SSRN0000108-4 Training Grant 09/08/2023 17:08:37 (Active)</span>
+              </a>
+            </p>
+            <hr aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-tabs__panel" id="tab-Parental-Support">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-third">
+            <h2 class="nhsuk-heading-l">Parental Support</h2>
+          </div>
+
+          <div class="nhsuk-grid-column-two-thirds">
+            <hr aria-hidden="true" />
+            <p>
+              <a id="assessParentalResponsibility" href="#">
+                <span class="wordbreak">SSRN0000108-4 Parental Support 09/08/2023 17:12:36 (Active)</span>
+              </a>
+            </p>
+            <hr aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-tabs__panel" id="tab-TDAE">
+        <div class="nhsuk-column-one-third">
+          <h2 class="nhsuk-heading-l">TDAE</h2>
+        </div>
+        <div class="nhsuk-column-full">
+
+          {% if data['name'] === 'Emmit Mar' %}
+
+          <table role="table" class="nhsuk-table-responsive">
+            <caption class="nhsuk-table__caption">Online active claims</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Activity
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Status
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Claim dates
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Value
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Action
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <!--<tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Status </span>
+                  <strong class="nhsuk-tag nhsuk-tag--grey">Student submitted to HEI </strong>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Claim dates</span>
+                  9 February 2024 to 17 February 2024
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Value</span>
+                  £300
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Action </span>
+                  <a class="nhsuk-link--no-visited-state"
+                    href="/lsf-web/v6/read-only/TDAE-student-claim">View
+                    claim</a>
+                </td>
+              </tr>-->
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  1411
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Status </span>
+                  {% if data['Ansari'] == 'submitted' %}
+                  <strong class="nhsuk-tag">Payment approved</strong>
+                  {% else %}
+                  <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
+                  {% endif %}
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Claim dates</span>
+                  14 October 2023 to 21 October 2023
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Value</span>
+                  £614.62
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Action </span>
+                  {% if data['Ansari'] == 'submitted' %}
+                  <a class="nhsuk-link--no-visited-state"
+                    href="TDAE-student-claim?name=Emmit Mar&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
+                    claim</a>
+                  {% else %}
+                  <a class="nhsuk-link--no-visited-state" target="_blank"
+                    href="TDAE-student-claim?name=Emmit Mar&status=To be completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=">Process
+                    claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                  {% endif %}
+                </td>
+              </tr>
+              <!--<tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  1187
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Status </span>
+                  <strong class="nhsuk-tag nhsuk-tag--purple">Locked by CRJ</strong>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Claim dates</span>
+                  11 October 2023 to 12 October 2023
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Value</span>
+                  £66
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Action </span>
+                  <a class="nhsuk-link--no-visited-state"
+                    href="#">View
+                    claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  1987
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Status </span>
+                  <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to HEI</strong>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Claim dates</span>
+                  03 October 2023 to 05 October 2023
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Value</span>
+                  £210
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Action </span>
+                  <a class="nhsuk-link--no-visited-state"
+                    href="#">View
+                    claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  1464
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Status </span>
+                  <strong class="nhsuk-tag nhsuk-tag--yellow">HEI returned to student</strong>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Claim dates</span>
+                  06 August 2023 to 08 August 2023
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Value</span>
+                  £614.62
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Action </span>
+                  <a class="nhsuk-link--no-visited-state"
+                    href="TDAE-student-claim?name=Emmit Mar&status=Returned to student&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
+                    claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  1314
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Status </span>
+                  <strong class="nhsuk-tag">Payment approved</strong>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Claim dates</span>
+                  24 July 2023 to 28 July 2023
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Value</span>
+                  £614.62
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Action </span>
+                  <a class="nhsuk-link--no-visited-state"
+                    href="TDAE-student-claim?name=Emmit Mar&status=Returned to student&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
+                    claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                </td>
+              </tr>-->
+              <!--
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        1412
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Status </span>
+                                        <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to University</strong>
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Claim dates </span>16 March 2023 to 18 March 2023
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Value</span>
+                                    £28.34
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Action </span>
+                                        <a class="nhsuk-link--no-visited-state"
+                                            href="TDAE-student-claim?name=Emmit Mar&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
+                                            claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                    </td>
+                                </tr>
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        1354
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Status </span>
+                                        <strong class="nhsuk-tag">Payment approved</strong>
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Claim dates </span>03 March 2023 to 05 March 2023
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Value</span>
+                                    £29
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Action </span>
+                                        <a class="nhsuk-link--no-visited-state"
+                                            href="TDAE-student-claim?name=Emmit Mar&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&hei-completed=completed&read-only=true">View
+                                            claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                    </td>
+                                </tr>
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        1372
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Status </span>
+                                        <strong class="nhsuk-tag">Payment approved</strong>
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Claim dates </span>01 March 2023 to 02 March 2023
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Value</span>
+                                    £109.34
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Action </span>
+                                        <a class="nhsuk-link--no-visited-state"
+                                            href="TDAE-student-claim?name=Emmit Mar&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&hei-completed=completed&read-only=true">View
+                                            claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                    </td>
+                                </tr>-->
+            </tbody>
+          </table>
+          <!--<nav class="nav" role="navigation" aria-label="Pagination">
+                            <ul class="pagination">
+                                <li class="pagination__item pagination-li"><a class="pagination__link current" href="#" aria-current="true"
+                                        aria-label="Page 1, current page">1</a></li>
+                                <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">2</a></li>
+                            </ul>
+                            <a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true"role="presentation">&nbsp;&raquo;</span></a>
+                            <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 5 of 10 claims
+                            </div>
+                        </nav>-->
+
+
+                        {% elif data['name'] === 'Alyssa Geary' %}
+
+                        <table role="table" class="nhsuk-table-responsive">
+                          <caption class="nhsuk-table__caption">Online active claims</caption>
+                          <thead role="rowgroup" class="nhsuk-table__head">
+                            <tr role="row">
+                              <th role="columnheader" class="" scope="col">
+                                Activity
+                              </th>
+                              <th role="columnheader" class="" scope="col">
+                                Status
+                              </th>
+                              <th role="columnheader" class="" scope="col">
+                                Claim dates
+                              </th>
+                              <th role="columnheader" class="" scope="col">
+                                Value
+                              </th>
+                              <th role="columnheader" class="" scope="col">
+                                Action
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody class="nhsuk-table__body">
+                            <tr role="row" class="nhsuk-table__row">
+                              <td role="cell" class="nhsuk-table__cell">
+                                1873
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Status </span>
+                                {% if data['Ansari'] == 'submitted' %}
+                                <strong class="nhsuk-tag">Payment approved</strong>
+                                {% else %}
+                                <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
+                                {% endif %}
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Claim dates </span>
+                                9 February 2024 to 17 February 2024
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Value</span>
+                                £151.40
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Action </span>
+                                {% if data['Ansari'] == 'submitted' %}
+                                <a class="nhsuk-link--no-visited-state"
+                                  href="TDAE-student-claim?name=Alyssa Geary&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
+                                  claim</a>
+                                {% else %}
+                                <a class="nhsuk-link--no-visited-state" target="_blank"
+                                  href="TDAE-student-claim?name=Alyssa Geary&status=To be completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=">Process
+                                  claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                {% endif %}
+                              </td>
+                            </tr>
+                            <tr role="row" class="nhsuk-table__row">
+                              <td role="cell" class="nhsuk-table__cell">
+                                1187
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Status </span>
+                                <strong class="nhsuk-tag nhsuk-tag--purple">Locked by CRJ</strong>
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Claim dates </span>11 October 2023 to 12 October 2023
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Value</span>
+                                £108.21
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Action </span>
+                                <a class="nhsuk-link--no-visited-state"
+                                  href="#">View
+                                  claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                              </td>
+                            </tr>
+                            <tr role="row" class="nhsuk-table__row">
+                              <td role="cell" class="nhsuk-table__cell">
+                                1987
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Status </span>
+                                <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to HEI</strong>
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Claim dates</span>03 October 2023 to 05 October 2023
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Value</span>
+                                £21.23
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Action </span>
+                                <a class="nhsuk-link--no-visited-state"
+                                  href="#">View
+                                  claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                              </td>
+                            </tr>
+                            <tr role="row" class="nhsuk-table__row">
+                              <td role="cell" class="nhsuk-table__cell">
+                                1464
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Status </span>
+                                <strong class="nhsuk-tag nhsuk-tag--yellow">HEI returned to student</strong>
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Claim dates </span>06 August 2023 to 08 August 2023
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Value</span>
+                                £151.40
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Action </span>
+                                <a class="nhsuk-link--no-visited-state"
+                                  href="TDAE-student-claim?name=Alyssa Geary&status=Returned to student&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
+                                  claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                              </td>
+                            </tr>
+                            <tr role="row" class="nhsuk-table__row">
+                              <td role="cell" class="nhsuk-table__cell">
+                                1314
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Status </span>
+                                <strong class="nhsuk-tag">Payment approved</strong>
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Claim dates </span>24 July 2023 to 28 July 2023
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Value</span>
+                                £84.50
+                              </td>
+                              <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Action </span>
+                                <a class="nhsuk-link--no-visited-state"
+                                  href="TDAE-student-claim?name=Alyssa Geary&status=Returned to student&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
+                                  claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                              </td>
+                            </tr>
+                            <!--
+                                              <tr role="row" class="nhsuk-table__row">
+                                                  <td role="cell" class="nhsuk-table__cell">
+                                                      1412
+                                                  </td>
+                                                  <td role="cell" class="nhsuk-table__cell">
+                                                      <span class="nhsuk-table-responsive__heading">Status </span>
+                                                      <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to University</strong>
+                                                  </td>
+                                                  <td role="cell" class="nhsuk-table__cell">
+                                                      <span class="nhsuk-table-responsive__heading">Claim dates </span>16 March 2023 to 18 March 2023
+                                                  </td>
+                                                  <td role="cell" class="nhsuk-table__cell">
+                                                  <span class="nhsuk-table-responsive__heading">Value</span>
+                                                  £38
+                                                  </td>
+                                                  <td role="cell" class="nhsuk-table__cell">
+                                                      <span class="nhsuk-table-responsive__heading">Action </span>
+                                                      <a class="nhsuk-link--no-visited-state"
+                                                          href="TDAE-student-claim?name=Emmit Mar&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
+                                                          claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                                  </td>
+                                              </tr>
+                                              <tr role="row" class="nhsuk-table__row">
+                                                  <td role="cell" class="nhsuk-table__cell">
+                                                      1354
+                                                  </td>
+                                                  <td role="cell" class="nhsuk-table__cell">
+                                                      <span class="nhsuk-table-responsive__heading">Status </span>
+                                                      <strong class="nhsuk-tag">Payment approved</strong>
+                                                  </td>
+                                                  <td role="cell" class="nhsuk-table__cell">
+                                                      <span class="nhsuk-table-responsive__heading">Claim dates </span>03 March 2023 to 05 March 2023
+                                                  </td>
+                                                  <td role="cell" class="nhsuk-table__cell">
+                                                  <span class="nhsuk-table-responsive__heading">Value</span>
+                                                  £56.34
+                                                  </td>
+                                                  <td role="cell" class="nhsuk-table__cell">
+                                                      <span class="nhsuk-table-responsive__heading">Action </span>
+                                                      <a class="nhsuk-link--no-visited-state"
+                                                          href="TDAE-student-claim?name=Emmit Mar&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&hei-completed=completed&read-only=true">View
+                                                          claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                                  </td>
+                                              </tr>
+                                              <tr role="row" class="nhsuk-table__row">
+                                                  <td role="cell" class="nhsuk-table__cell">
+                                                      1372
+                                                  </td>
+                                                  <td role="cell" class="nhsuk-table__cell">
+                                                      <span class="nhsuk-table-responsive__heading">Status </span>
+                                                      <strong class="nhsuk-tag">Payment approved</strong>
+                                                  </td>
+                                                  <td role="cell" class="nhsuk-table__cell">
+                                                      <span class="nhsuk-table-responsive__heading">Claim dates</span>01 March 2023 to 02 March 2023
+                                                  </td>
+                                                  <td role="cell" class="nhsuk-table__cell">
+                                                  <span class="nhsuk-table-responsive__heading">Value</span>
+                                                  £21.34
+                                                  </td>
+                                                  <td role="cell" class="nhsuk-table__cell">
+                                                      <span class="nhsuk-table-responsive__heading">Action </span>
+                                                      <a class="nhsuk-link--no-visited-state"
+                                                          href="TDAE-student-claim?name=Emmit Mar&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&hei-completed=completed&read-only=true">View
+                                                          claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                                  </td>
+                                              </tr>-->
+                          </tbody>
+                        </table>
+                        <!--<nav class="nav" role="navigation" aria-label="Pagination">
+                                          <ul class="pagination">
+                                              <li class="pagination__item pagination-li"><a class="pagination__link current" href="#" aria-current="true"
+                                                      aria-label="Page 1, current page">1</a></li>
+                                              <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">2</a></li>
+                                          </ul>
+                                          <a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true"role="presentation">&nbsp;&raquo;</span></a>
+                                          <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 5 of 10 claims
+                                          </div>
+                                      </nav>-->
+
+                                      {% elif data['name'] === 'Daniel Jackson' %}
+
+                                      <table role="table" class="nhsuk-table-responsive">
+                                        <caption class="nhsuk-table__caption">Online active claims</caption>
+                                        <thead role="rowgroup" class="nhsuk-table__head">
+                                          <tr role="row">
+                                            <th role="columnheader" class="" scope="col">
+                                              Activity
+                                            </th>
+                                            <th role="columnheader" class="" scope="col">
+                                              Status
+                                            </th>
+                                            <th role="columnheader" class="" scope="col">
+                                              Claim dates
+                                            </th>
+                                            <th role="columnheader" class="" scope="col">
+                                              Value
+                                            </th>
+                                            <th role="columnheader" class="" scope="col">
+                                              Action
+                                            </th>
+                                          </tr>
+                                        </thead>
+                                        <tbody class="nhsuk-table__body">
+                                          <tr role="row" class="nhsuk-table__row">
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              1544
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Status </span>
+                                              {% if data['Ansari'] == 'submitted' %}
+                                              <strong class="nhsuk-tag">Payment approved</strong>
+                                              {% else %}
+                                              <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
+                                              {% endif %}
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Claim dates </span>
+                                              9 February 2024 to 17 February 2024
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Value</span>
+                                              £65.48
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Action </span>
+                                              {% if data['Ansari'] == 'submitted' %}
+                                              <a class="nhsuk-link--no-visited-state"
+                                                href="TDAE-student-claim?name=Daniel Jackson&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
+                                                claim</a>
+                                              {% else %}
+                                              <a class="nhsuk-link--no-visited-state" target="_blank"
+                                                href="TDAE-student-claim?name=Daniel Jackson&status=To be completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=">Process
+                                                claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                              {% endif %}
+                                            </td>
+                                          </tr>
+                                          <tr role="row" class="nhsuk-table__row">
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              1187
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Status </span>
+                                              <strong class="nhsuk-tag nhsuk-tag--purple">Locked by CRJ</strong>
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Claim dates </span>11 October 2023 to 12 October 2023
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Value</span>
+                                              £93.72
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Action </span>
+                                              <a class="nhsuk-link--no-visited-state"
+                                                href="#">View
+                                                claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                            </td>
+                                          </tr>
+                                          <tr role="row" class="nhsuk-table__row">
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              1987
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Status </span>
+                                              <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to HEI</strong>
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Claim dates </span>03 October 2023 to 05 October 2023
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Value</span>
+                                              £23.56
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Action </span>
+                                              <a class="nhsuk-link--no-visited-state"
+                                                href="#">View
+                                                claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                            </td>
+                                          </tr>
+                                          <tr role="row" class="nhsuk-table__row">
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              1464
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Status </span>
+                                              <strong class="nhsuk-tag nhsuk-tag--yellow">HEI returned to student</strong>
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Claim dates</span>06 August 2023 to 08 August 2023
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Value</span>
+                                              £65.48
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Action </span>
+                                              <a class="nhsuk-link--no-visited-state"
+                                                href="TDAE-student-claim?name=Daniel Jackson&status=Returned to student&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
+                                                claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                            </td>
+                                          </tr>
+                                          <tr role="row" class="nhsuk-table__row">
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              1314
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Status </span>
+                                              <strong class="nhsuk-tag">Payment approved</strong>
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Claim dates </span>24 July 2023 to 28 July 2023
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Value</span>
+                                              £65.48
+                                            </td>
+                                            <td role="cell" class="nhsuk-table__cell">
+                                              <span class="nhsuk-table-responsive__heading">Action </span>
+                                              <a class="nhsuk-link--no-visited-state"
+                                                href="TDAE-student-claim?name=Daniel Jackson&status=Returned to student&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
+                                                claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                            </td>
+                                          </tr>
+                                          <!--
+                                                            <tr role="row" class="nhsuk-table__row">
+                                                                <td role="cell" class="nhsuk-table__cell">
+                                                                    1412
+                                                                </td>
+                                                                <td role="cell" class="nhsuk-table__cell">
+                                                                    <span class="nhsuk-table-responsive__heading">Status </span>
+                                                                    <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to University</strong>
+                                                                </td>
+                                                                <td role="cell" class="nhsuk-table__cell">
+                                                                    <span class="nhsuk-table-responsive__heading">Claim dates </span>16 March 2023 to 18 March 2023
+                                                                </td>
+                                                                <td role="cell" class="nhsuk-table__cell">
+                                                                <span class="nhsuk-table-responsive__heading">Value</span>
+                                                                £38
+                                                                </td>
+                                                                <td role="cell" class="nhsuk-table__cell">
+                                                                    <span class="nhsuk-table-responsive__heading">Action </span>
+                                                                    <a class="nhsuk-link--no-visited-state"
+                                                                        href="TDAE-student-claim?name=Emmit Mar&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&read-only=true">View
+                                                                        claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr role="row" class="nhsuk-table__row">
+                                                                <td role="cell" class="nhsuk-table__cell">
+                                                                    1354
+                                                                </td>
+                                                                <td role="cell" class="nhsuk-table__cell">
+                                                                    <span class="nhsuk-table-responsive__heading">Status </span>
+                                                                    <strong class="nhsuk-tag">Payment approved</strong>
+                                                                </td>
+                                                                <td role="cell" class="nhsuk-table__cell">
+                                                                    <span class="nhsuk-table-responsive__heading">Claim dates </span>03 March 2023 to 05 March 2023
+                                                                </td>
+                                                                <td role="cell" class="nhsuk-table__cell">
+                                                                <span class="nhsuk-table-responsive__heading">Value</span>
+                                                                £89
+                                                                </td>
+                                                                <td role="cell" class="nhsuk-table__cell">
+                                                                    <span class="nhsuk-table-responsive__heading">Action </span>
+                                                                    <a class="nhsuk-link--no-visited-state"
+                                                                        href="TDAE-student-claim?name=Emmit Mar&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&hei-completed=completed&read-only=true">View
+                                                                        claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr role="row" class="nhsuk-table__row">
+                                                                <td role="cell" class="nhsuk-table__cell">
+                                                                    1372
+                                                                </td>
+                                                                <td role="cell" class="nhsuk-table__cell">
+                                                                    <span class="nhsuk-table-responsive__heading">Status </span>
+                                                                    <strong class="nhsuk-tag">Payment approved</strong>
+                                                                </td>
+                                                                <td role="cell" class="nhsuk-table__cell">
+                                                                    <span class="nhsuk-table-responsive__heading">Claim dates </span>01 March 2023 to 02 March 2023
+                                                                </td>
+                                                                <td role="cell" class="nhsuk-table__cell">
+                                                                <span class="nhsuk-table-responsive__heading">Value</span>
+                                                                £13.45
+                                                                </td>
+                                                                <td role="cell" class="nhsuk-table__cell">
+                                                                    <span class="nhsuk-table-responsive__heading">Action </span>
+                                                                    <a class="nhsuk-link--no-visited-state"
+                                                                        href="TDAE-student-claim?name=Emmit Mar&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&hei-completed=completed&read-only=true">View
+                                                                        claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                                                </td>
+                                                            </tr>-->
+                                        </tbody>
+                                      </table>
+                                      <!--<nav class="nav" role="navigation" aria-label="Pagination">
+                                                        <ul class="pagination">
+                                                            <li class="pagination__item pagination-li"><a class="pagination__link current" href="#" aria-current="true"
+                                                                    aria-label="Page 1, current page">1</a></li>
+                                                            <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">2</a></li>
+                                                        </ul>
+                                                        <a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true"role="presentation">&nbsp;&raquo;</span></a>
+                                                        <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 5 of 10 claims
+                                                        </div>
+                                                    </nav>-->
+
+
+
+          {% else %}
+
+          <table role="table" class="nhsuk-table-responsive">
+            <caption class="nhsuk-table__caption">Online active claims</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Activity
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Status
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Claim dates
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Value
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Action
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  1922
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Status </span>
+                  {% if data['Bloggs'] == 'returned' %}
+                  <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to HEI</strong>
+                  {% else %}
+                  <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
+                  {% endif %}
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Claim dates </span>14 August 2023 to 21 August 2023
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Value</span>
+                  £28.42
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Action </span>
+                  {% if data['Bloggs'] == 'returned' %}
+                  <a class="nhsuk-link--no-visited-state"
+                    href="TDAE-student-claim?name=Ben Bloggs&activity number=1922&status=Submitted to NHSBSA&evidence-completed=in-progress&university-completed=completed&approve-in-progress=completed&hei-completed=&read-only=true">View
+                    claim</a>
+                  {% else %}
+                  <a class="nhsuk-link--no-visited-state" target="_blank"
+                    href="TDAE-student-claim?name=Ben Bloggs&activity number=1922&status=To be completed&evidence-completed=&university-completed=&approve-in-progress=&hei-completed=&read-only=">Process
+                    claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                  {% endif %}
+                </td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  1642
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Status </span>
+                  <strong class="nhsuk-tag">Payment approved</strong>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Claim dates </span>21 April 2023 to 23 April 2023
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Value</span>
+                  £49
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Action </span>
+                  <a class="nhsuk-link--no-visited-state"
+                    href="TDAE-student-claim?name=Ben Bloggs&activity number=1642&status=Submitted to NHSBSA&evidence-completed=completed&university-completed=completed&approve-in-progress=completed&hei-completed=completed&read-only=true">View
+                    claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- <nav class="nav" role="navigation" aria-label="Pagination">
+                            <ul class="pagination">
+                                <li class="pagination__item pagination-li"><a class="pagination__link current" href="#" aria-current="true"
+                                        aria-label="Page 1, current page">1</a></li>
+                                <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">2</a></li>
+                            </ul>
+                            <a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true"role="presentation">&nbsp;&raquo;</span></a>
+                            <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 5 of 10 claims
+                            </div>
+                        </nav> -->
+
+          {% endif %}
+          <!-- <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-6">
+                        <caption class="nhsuk-table__caption">PDF active claims</caption>
+                        <thead role="rowgroup" class="nhsuk-table__head">
+                            <tr role="row">
+                                <th role="columnheader" class="" scope="col">
+                                    Status
+                                </th>
+                                <th role="columnheader" class="" scope="col">
+                                    Claim dates
+                                </th>
+                                <th role="columnheader" class="" scope="col">
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="nhsuk-table__body">
+                            <tr role="row" class="nhsuk-table__row">
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Status </span>
+                                    <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Claim dates </span>01 October 2022 to 05 October 2022
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Value</span>
+                                £38
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Action </span>
+                                    <a class="nhsuk-link--no-visited-state" target="_blank"
+                                        href="#">Process
+                                        claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                </td>
+                            </tr>
+                            <tr role="row" class="nhsuk-table__row">
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Status </span>
+                                    <strong class="nhsuk-tag">Payment approved</strong>
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Claim dates </span>03 January 2023 to 05 January 2023
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Value</span>
+                                £68.38
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Action </span>
+                                    <a class="nhsuk-link--no-visited-state" target="_blank"
+                                        href="#">View
+                                        claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                </td>
+                            </tr>
+                            <tr role="row" class="nhsuk-table__row">
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Status </span>
+                                    <strong class="nhsuk-tag">Payment approved</strong>
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Claim dates </span>16 December 2022 to 18 December 2022
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Value</span>
+                                £23.99
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Action </span>
+                                    <a class="nhsuk-link--no-visited-state" target="_blank"
+                                        href="#">View
+                                        claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                </td>
+                            </tr>
+                            <tr role="row" class="nhsuk-table__row">
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Status </span>
+                                    <strong class="nhsuk-tag">Payment approved</strong>
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Claim dates </span>03 January 2023 to 05 January 2023
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Value</span>
+                                £108
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Action </span>
+                                    <a class="nhsuk-link--no-visited-state" target="_blank"
+                                        href="#">View
+                                        claim <span class="nhsuk-u-visually-hidden">(opens in a new tab)</span></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <nav class="nav" role="navigation" aria-label="Pagination">
+                        <ul class="pagination">
+                            <li class="pagination__item pagination-li"><a class="pagination__link current" href="#" aria-current="true"
+                                    aria-label="Page 1, current page">1</a></li>
+                            <li class="pagination__item pagination-li"><a class="pagination__link" href="#" aria-label="Page 2">2</a></li>
+                        </ul>
+                        <a class="pagination__link" href="#" aria-label="Next page">Next<span aria-hidden="true"role="presentation">&nbsp;&raquo;</span></a>
+                        <div class="pagination__summary navigation-mobile" style="text-align: right;">Showing 1 - 5 of 7 claims
+                        </div>
+                    </nav> -->
+          <p class="nhsuk-u-margin-top-7"><a href="TDAE-previously-processed-claims">View previously processed
+              claims</a></p>
+          <!--<h2 class="nhsuk-heading-m">PDF claims</h2>
+                    <p>You can create a claim which has not been eligible for the current online journey.</p>
+                    <a class="nhsuk-button nhsuk-button--secondary" href="">Create claim</a>-->
+        </div>
+      </div>
+
+      <div class="nhsuk-tabs__panel" id="tab-ESF">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-third">
+            <h2 class="nhsuk-heading-l">ESF</h2>
+
+          </div>
+          <div class="nhsuk-grid-column-two-thirds">
+            <hr aria-hidden="true" />
+            <p class="nhsuk-u-font-weight-bold nhsuk-u-text-align-centre" id="noESF">This enrolment has no ESF
+              applications</p>
+            <hr aria-hidden="true" />
+          </div>
+
+        </div>
+      </div>
+      <div class="nhsuk-tabs__panel" id="tab-Payments">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-third">
+            <h2 class="nhsuk-heading-l">Payments</h2>
+
+            <a href="/lsf/payment/details?studentId=1" class="nhsuk-button" id="paymentButton" role="button">Manage
+              payments</a>
+          </div>
+
+          <div class="nhsuk-grid-column-full">
+            <table role="table" class="nhsuk-table-responsive" id="paymentsTable">
+              <caption class="nhsuk-u-visually-hidden">Payments table</caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">Date of next payment</th>
+                  <th role="columnheader" class="" scope="col">Value</th>
+                  <th role="columnheader" class="" scope="col">Award element</th>
+                  <th role="columnheader" class="" scope="col">Held</th>
+                  <th role="columnheader" class="" scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date of next payment </span>
+                    <span class="nhsuk-u-visually-hidden">2020-09-01</span>
+                    <span>01/09/2020</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Value </span>
+                    <span>2475</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Award element </span>
+                    <span>Training Grant</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Held </span>
+                    <span>No</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>
+                    <span>Pending</span>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date of next payment </span>
+                    <span class="nhsuk-u-visually-hidden">2021-01-01</span>
+                    <span>01/01/2021</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Value </span>
+                    <span>2475</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Award element </span>
+                    <span>Training Grant</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Held </span>
+                    <span>No</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>
+                    <span>Pending</span>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date of next payment </span>
+                    <span class="nhsuk-u-visually-hidden">2021-05-01</span>
+                    <span>01/05/2021</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Value </span>
+                    <span>2550</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Award element </span>
+                    <span>Training Grant</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Held </span>
+                    <span>No</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>
+                    <span>Pending</span>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date of next payment </span>
+                    <span class="nhsuk-u-visually-hidden">2020-09-01</span>
+                    <span>01/09/2020</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Value </span>
+                    <span>990</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Award element </span>
+                    <span>Parental Support</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Held </span>
+                    <span>No</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>
+                    <span>Pending</span>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date of next payment </span>
+                    <span class="nhsuk-u-visually-hidden">2021-01-01</span>
+                    <span>01/01/2021</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Value </span>
+                    <span>990</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Award element </span>
+                    <span>Parental Support</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Held </span>
+                    <span>No</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>
+                    <span>Pending</span>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date of next payment </span>
+                    <span class="nhsuk-u-visually-hidden">2021-05-01</span>
+                    <span>01/05/2021</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Value </span>
+                    <span>1020</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Award element </span>
+                    <span>Parental Support</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Held </span>
+                    <span>No</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Status </span>
+                    <span>Pending</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="nhsuk-tabs__panel" id="tab-Cosa">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-third">
+            <h2 class="nhsuk-heading-l">COSA</h2>
+          </div>
+          <div class="nhsuk-grid-column-full">
+            <table role="table" class="nhsuk-table-responsive" id="cosaTable">
+              <caption class="nhsuk-u-visually-hidden">Cosa table</caption>
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">Term</th>
+                  <th role="columnheader" class="" scope="col">Student confirmed</th>
+                  <th role="columnheader" class="" scope="col">Date updated</th>
+                  <th role="columnheader" class="" scope="col">HEI confirmed</th>
+                  <th role="columnheader" class="" scope="col">Date updated</th>
+                  <th role="columnheader" class="" scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Term </span>
+                    <span>1</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Student confirmed </span>
+
+                    <span id="term1StudentInAttendance">Not required</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date updated</span>
+                    <span class="nhsuk-u-visually-hidden" id="term1StudentDateUpdated">26 July 2023</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">HEI confirmed </span>
+
+                    <span id="term1UniversityConfirmed">Yes</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date updated</span>
+                    <span id="term1HeiDateUpdated">26 July 2023</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Action </span>
+                    <span id="term1HeiDateUpdated"><a href="reset-attendance-comments">Reset</a></span>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Term </span>
+                    <span>2</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Student confirmed </span>
+
+                    <span id="term2StudentInAttendance">Yes</span>
+
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date updated by student </span>
+                    <span id="term2StudentDateUpdated">26 July 2023</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">HEI confirmed </span>
+
+                    <span id="term2UniversityConfirmed">No</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date updated by HEI </span>
+                    <span id="term2HeiDateUpdated">01 August 2023</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Action </span>
+                    <span class="nhsuk-u-visually-hidden" id="term1HeiDateUpdated"><a href="#">Reset</a></span>
+                  </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Term </span>
+                    <span>3</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Student confirmed </span>
+                    <span id="term3StudentInAttendance"></span>
+
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date updated by student </span>
+                    <span id="term3StudentDateUpdated"></span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">HEI confirmed </span>
+                    <span id="term3UniversityConfirmed"></span>
+
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Date updated by HEI </span>
+                    <span id="term3HeiDateUpdated"></span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Action </span>
+                    <span class="nhsuk-u-visually-hidden" id="term1HeiDateUpdated"><a href="#">Reset</a></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

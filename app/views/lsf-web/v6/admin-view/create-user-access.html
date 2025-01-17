@@ -1,0 +1,139 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-full">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
+
+	<div class="nhsuk-grid-column-full">
+		<form action="v6/admin-view/create-user-access" method="post">
+			<fieldset class="nhsuk-fieldset">
+				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+					<h1 class="nhsuk-fieldset__heading">Set the user's access</h1>
+				</legend>
+			</fieldset>
+	</div>
+
+		<div class="nhsuk-grid-column-two-thirds">
+
+			{% if data['role'] == 'HEI admin' %}
+			<!--div class="nhsuk-form-group">
+				<fieldset class="nhsuk-fieldset" aria-describedby="userTask-hint" role="group">
+					<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+						<h3 class="nhsuk-fieldset__heading">Admin permissions</h3>
+					</legend>
+
+					<div class="nhsuk-hint" id="userTask-hint">
+						Select the tasks this admin user can grant access to
+					</div>
+
+					<div class="nhsuk-checkboxes">
+						<div class="nhsuk-checkboxes__item">
+						<input class="nhsuk-checkboxes__input" id="userTask-1" name="userTask" type="checkbox" value="Confirmation of Student Attendance">
+						<label class="nhsuk-label nhsuk-checkboxes__label" for="userTask-1">
+							Confirmation of Student Attendance
+						</label>
+						</div>
+				
+						<div class="nhsuk-checkboxes__item">
+						<input class="nhsuk-checkboxes__input" id="userTask-2" name="userTask" type="checkbox" value="Travel and Dual Accommodation Expenses">
+						<label class="nhsuk-label nhsuk-checkboxes__label" for="userTask-2">
+							Travel and Dual Accommodation Expenses
+						</label>
+						</div>
+					</div>
+
+				</fieldset>
+			</div-->
+			{% endif %}
+
+			
+			<div class="nhsuk-form-group">
+				<fieldset class="nhsuk-fieldset" aria-describedby="userAccess-hint" role="group">
+					
+					
+					
+					<!-- Confirmation of Student Attendance access -->
+					<div class="nhsuk-radios nhsuk-radios--inline">
+						<label class="nhsuk-label form-label" id="userPermissions-cosa-label" for="userPermissions-cosa">
+							Confirmation of Student Attendance
+						</label>
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="userPermissions-cosa-1" name="userPermissionsCOSA" type="radio" value="COSA user">
+							<label class="nhsuk-label nhsuk-radios__label" for="userPermissions-cosa-1">
+								COSA user
+							</label>
+						</div>
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="userPermissions-cosa-2" name="userPermissionsCOSA" type="radio" value="COSA read only">
+							<label class="nhsuk-label nhsuk-radios__label" for="userPermissions-cosa-2">
+								COSA read only
+							</label>
+						</div>
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="userPermissions-cosa-3" name="userPermissionsCOSA" type="radio" value="None">
+							<label class="nhsuk-label nhsuk-radios__label" for="userPermissions-cosa-3">
+								None
+							</label>
+						</div>
+					</div>
+					
+					<br>
+					
+					<!-- Travel and Dual Accommodation Expenses access -->
+					<div class="nhsuk-form-group">
+						<div class="nhsuk-radios nhsuk-radios--inline">
+							<label class="nhsuk-label form-label" id="userPermissions-tdae-label" for="userPermissions-tdae">
+								Travel and Dual Accommodation Expenses
+							</label>
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="userPermissions-tdae-1" name="userPermissionsTDAE" type="radio" value="TDAE user">
+								<label class="nhsuk-label nhsuk-radios__label" for="userPermissions-tdae-1">
+									TDAE user
+								</label>
+							</div>
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="userPermissions-tdae-2" name="userPermissionsTDAE" type="radio" value="TDAE read only">
+								<label class="nhsuk-label nhsuk-radios__label" for="userPermissions-tdae-2">
+									TDAE read only
+								</label>
+							</div>
+							<div class="nhsuk-radios__item">
+								<input class="nhsuk-radios__input" id="userPermissions-tdae-2" name="userPermissionsTDAE" type="radio" value="None">
+								<label class="nhsuk-label nhsuk-radios__label" for="userPermissions-tdae-2">
+									None
+								</label>
+							</div>
+						</div>
+					</div>
+					
+				</fieldset>
+			</div>
+			
+				 
+
+			<div class="nhsuk-form-group">
+				<button class="nhsuk-button" type="submit" id="saveUser">Continue</button>
+				<p><a class="" href="/lsf-web/v6/admin-view/user-results">Cancel</a></p>
+			</div>
+	</form>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue : '',
+    autoselect : true,  
+    selectElement : document.querySelector('#collegeDrop')
+  })
+</script>
+{% endblock %}

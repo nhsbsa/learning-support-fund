@@ -1,0 +1,280 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Manage term payment percentages
+{% endblock %}
+
+{% block content %}
+<form action="/lsf-web/v6/admin-view/manage-term-percentages" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Manage term payment percentages</h1>
+	</div>
+
+	<div class="nhsuk-grid-column-one-third">
+		<div class="nhsuk-form-group" id="filterTermPaymentPercentages-group">
+			<label class="nhsuk-label wide-label" for="filterTermPaymentPercentages">Filter term payment percentages by date</label>
+			<div id="filterTermPaymentPercentages-container"></div>
+		</div>
+	</div>
+		
+	<div class="nhsuk-grid-column-full">
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">Apply filter</button>
+			<a class="nhsuk-button nhsuk-button--secondary" style="float: right;" href="/lsf-web/v6/admin-view/add-term-percentages" data-module="nhsuk-button" type="submit" id="searchButton">Add term payment percentages</a>
+			<p><a href="/lsf-web/v6/admin-view/manage-term-percentages id="clearButton">Reset filter</a></p>
+		</div>
+	</div>
+
+</form>
+
+<div class="nhsuk-grid-column-full">
+	<hr class="" style="border-color: #005eb8; border-width: 4px">
+	<table role="table" id="percentsTable" class="wordbreak nhsuk-table-responsive js-table-sortable nhsuk-u-margin-bottom-5">
+		<h2 class="heading-large nhsuk-u-visually-hidden">Term payment percentages table</h2>
+			<caption class="nhsuk-table__caption">Term payment percentages table<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 10 results</span><span id="resultMessage" aria-hidden="true"> - contains 10 results</span><span class="nhsuk-u-visually-hidden"> (column headers with links are sortable)</span></caption>
+	
+				<thead role="rowgroup" class="nhsuk-table__head">
+					<tr role="row">
+						<th role="columnheader" class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Valid from</th>
+						<th role="columnheader" class="bold sortable" scope="col" data-sort="string"><a href="#" class="table-header__button">Enabled</th>
+						<th role="columnheader" class="bold sortable" scope="col" data-sort="string" width="30%"><a href="#" class="table-header__button">Actions</th>
+					</tr>
+				</thead>
+				<tbody class="nhsuk-table__body">
+					
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Valid from</span>
+								<span class="nhsuk-u-visually-hidden">2025-01-01T00:00</span>
+								<span>01/01/2025</span></a>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Actions</span>
+								<a id="editButton" href="/lsf-web/v6/admin-view/edit-term-percentages">Change</a> or
+								<a id="copyButton" href="/lsf-web/v6/admin-view/copy-term-percentages">Copy term
+									percentages</a> 
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Valid from</span>
+								<span class="nhsuk-u-visually-hidden">2022-01-01T00:00</span>
+								<span>01/01/2022</span></a>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<a id="editButton" href="/lsf-web/v6/admin-view/edit-term-percentages">Change</a> or
+								<a id="copyButton" href="/lsf-web/v6/admin-view/copy-term-percentages">Copy term
+									percentages</a> 
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Valid from</span>
+								<span class="nhsuk-u-visually-hidden">2009-01-01T00:00</span>
+								<span>01/01/2009</span></a>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Enabled</span>No
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<a id="editButton" href="/lsf-web/v6/admin-view/edit-term-percentages">Change</a> or
+								<a id="copyButton" href="/lsf-web/v6/admin-view/copy-term-percentages">Copy term
+									percentages</a> 
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Valid from</span>
+								<span class="nhsuk-u-visually-hidden">2006-01-01T00:00</span>
+								<span>01/01/2006</span></a>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Enabled</span>No
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<a id="editButton" href="/lsf-web/v6/admin-view/edit-term-percentages">Change</a> or
+								<a id="copyButton" href="/lsf-web/v6/admin-view/copy-term-percentages">Copy term
+									percentages</a> 
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Valid from</span>
+								<span class="nhsuk-u-visually-hidden">2005-01-01T00:00</span>
+								<span>01/01/2005</span></a>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Enabled</span>No
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<a id="editButton" href="/lsf-web/v6/admin-view/edit-term-percentages">Change</a> or
+								<a id="copyButton" href="/lsf-web/v6/admin-view/copy-term-percentages">Copy term
+									percentages</a> 
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Valid from</span>
+								<span class="nhsuk-u-visually-hidden">2004-01-01T00:00</span>
+								<span>01/01/2004</span></a>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Enabled</span>No
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<a id="editButton" href="/lsf-web/v6/admin-view/edit-term-percentages">Change</a> or
+								<a id="copyButton" href="/lsf-web/v6/admin-view/copy-term-percentages">Copy term
+									percentages</a> 
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Valid from</span>
+								<span class="nhsuk-u-visually-hidden">2003-01-01T00:00</span>
+								<span>01/01/2003</span></a>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Enabled</span>No
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<a id="editButton" href="/lsf-web/v6/admin-view/edit-term-percentages">Change</a> or
+								<a id="copyButton" href="/lsf-web/v6/admin-view/copy-term-percentages">Copy term
+									percentages</a> 
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Valid from</span>
+								<span class="nhsuk-u-visually-hidden">2002-01-01T00:00</span>
+								<span>01/01/2002</span></a>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Enabled</span>No
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<a id="editButton" href="/lsf-web/v6/admin-view/edit-term-percentages">Change</a> or
+								<a id="copyButton" href="/lsf-web/v6/admin-view/copy-term-percentages">Copy term
+									percentages</a> 
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Valid from</span>
+								<span class="nhsuk-u-visually-hidden">2001-01-01T00:00</span>
+								<span>01/01/2001</span></a>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Enabled</span>No
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<a id="editButton" href="/lsf-web/v6/admin-view/edit-term-percentages">Change</a> or
+								<a id="copyButton" href="/lsf-web/v6/admin-view/copy-term-percentages">Copy term
+									percentages</a> 
+							</td>
+						</tr>
+
+						<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Valid from</span>
+								<span class="nhsuk-u-visually-hidden">2000-01-01T00:00</span>
+								<span>01/01/2000</span></a>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Enabled</span>Yes
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<a id="editButton" href="/lsf-web/v6/admin-view/edit-term-percentages">Change</a> or
+								<a id="copyButton" href="/lsf-web/v6/admin-view/copy-term-percentages">Copy term
+									percentages</a> 
+							</td>
+						</tr>
+					
+				</tbody>
+			</table>
+
+			<nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
+				<ul class="nhsbsa-pagination" >
+					<li class="nhsbsa-pagination__item nhsbsa-pagination-li">
+						<a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
+					</li>
+				</ul>
+				<!--a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href="" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a-->
+		
+				<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">10</span> of <span id="tdaeTotalItemsNumber">10 results</span></div>
+			</nav>
+
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+    const termPercentages = [
+        "01/01/2025",
+        "01/01/2022",
+        "01/01/2009",
+        "01/01/2006",
+        "01/01/2005",
+        "01/01/2004",
+        "01/01/2003",
+		"01/01/2002",
+		"01/01/2001",
+        "01/01/2000"
+    ];
+
+    accessibleAutocomplete({
+        element: document.querySelector('#filterTermPaymentPercentages-container'),
+        id: 'filterTermPaymentPercentages', // To match it to the existing element
+        source: termPercentages,
+        onConfirm: function(val) {
+            document.querySelector('#filterTermPaymentPercentages').value = val;
+            filterTable(val, 'percentsTable');
+        }
+    });
+
+    function filterTable(filterText, tableId) {
+        let filter, table, tr, td, i, txtValue;
+        filter = filterText.toUpperCase();
+        table = document.getElementById(tableId);
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+</script>
+
+<style>
+	.wide-label {
+		display: inline-block;
+		width: 380px; /* Adjust the width as needed */
+	}
+</style>
+{% endblock %}

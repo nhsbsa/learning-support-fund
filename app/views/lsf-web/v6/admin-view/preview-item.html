@@ -1,0 +1,71 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Preview knowledge base item
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-full">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
+
+<form action="v6/admin-view/preview-item" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Preview knowledge base item</h1>
+	</div>
+				
+	<div class="nhsuk-grid-column-two-thirds">
+
+    <p>Your knowledge base item will display to universities as:</p>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Knowledge base item title
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>Content</p>
+        <p>Find out more information on the <a href="">NHSBSA website</a>.</p>
+      </div>
+    </details>
+
+    <div class="nhsuk-form-group">
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend">
+          <h1 class="nhsuk-fieldset__heading">
+            Do you want to enable this knowledge base item?
+          </h1>
+        </legend>
+    
+        <div class="nhsuk-radios nhsuk-radios--inline">
+    
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="enableKnowledgeItemYes" name="enableKnowledgeItem" type="radio" value="Yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="enableKnowledgeItemYes">
+              Yes
+            </label>
+          </div>
+    
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="enableKnowledgeItemNo" name="enableKnowledgeItem" type="radio" value="No">
+            <label class="nhsuk-label nhsuk-radios__label" for="enableKnowledgeItemNo">
+              No
+            </label>
+          </div>
+    
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <button class="nhsuk-button" type="submit" id="saveKnowledgeItem">Save and continue</button>
+      <p><a class="" href="/lsf-web/v6/admin-view/manage-knowledge-base">Cancel</a></p>
+    </div>
+  
+</div>
+{% endblock %}

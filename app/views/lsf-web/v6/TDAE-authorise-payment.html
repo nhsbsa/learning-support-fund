@@ -1,0 +1,56 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Do you want to authorise the payment?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds"> 
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+    <!-- <form action="v4/TDAE-approve-pend-reject" method="POST"> -->
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                    Do you want to authorise the payment?
+                </h1>
+              </legend>
+          
+              <div class="nhsuk-radios nhsuk-radios--conditional">
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="authorise-yes" name="authorise" type="radio" value="approve">
+                  <label class="nhsuk-label nhsuk-radios__label" for="authorise-yes">
+                    Yes
+                  </label>
+                </div>
+                  
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="authorise-no" name="authorise" type="radio" value="reject">
+                  <label class="nhsuk-label nhsuk-radios__label" for="authorise-no">
+                    No
+                  </label>
+                </div>
+          
+              </div>
+            </fieldset>
+          
+          </div>
+
+        <a class="nhsuk-button" href="TDAE-payment-authorised">Continue</a><br>
+        <a href="#">Cancel</a>
+
+    <!-- </form> -->
+
+    </div>
+
+  </div>
+{% endblock %}

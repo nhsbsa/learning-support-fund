@@ -1,0 +1,116 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Create user
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-full">
+
+{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
+
+<form name="userDetailsForm" action="v6/admin-view/update-user" method="post" novalidate="">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Change user's details</h1>
+	</div>
+
+		<div class="nhsuk-grid-column-two-thirds">
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" for="user-role-label">
+				What is the user's role?
+				</label>
+				<select class="nhsuk-select" id="user-role" name="user-role">
+				<option value="">Select role...</option>
+				<option value="Processor">Processor</option>
+				<option value="Technical support officer">Technical support officer</option>
+				<option value="Management support">Management support</option>
+				<option value="Team manager">Team manager</option>
+				<option value="Call centre">Call centre</option>
+				<option value="Call centre manager">Call centre manager</option>
+				<option value="Finance">Finance</option>
+				<option value="Super user">Super user</option>
+				<option value="HEI user">HEI user</option>
+				<option value="HEI admin" selected>HEI admin</option>
+				</select>
+			</div>
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" id="email-label" for="email" class="form-label-bold">Email address</label>
+				<input class="nhsuk-input  nhsuk-input--width-20" id="email" name="email" type="text" spellcheck="false" inputmode="email" autocomplete="off" value="sdsds@gmail.com">
+			</div>
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" id="firstname-label" for="firstname" class="form-label-bold">First name</label>
+				<div class="nhsuk-hint" id="contact-hint">Do not include any middle names</div>
+				<input class="nhsuk-input  nhsuk-input--width-10" id="firstName" name="firstName" type="text" spellcheck="false" autocomplete="off" value="Tin">
+			</div>
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" id="lastName-label" for="lastName" class="form-label-bold">Last name</label>
+				<input class="nhsuk-input  nhsuk-input--width-10" id="lastName" name="lastName" type="text" spellcheck="false" autocomplete="off" value="Cooper">
+			</div>
+
+			<div id="locationContainer">
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" id="location-label" for="location" class="form-label-bold">Location</label>
+					<input class="nhsuk-input  nhsuk-input--width-20" id="location" name="location" type="text" spellcheck="false" autocomplete="off" value="Newcastle upon Tyne">
+				</div>
+			
+				<div class="nhsuk-form-group">
+					<label class="nhsuk-label" id="active" for="active" class="form-label-bold">
+						Is the user active?
+					</label>
+					<div class="nhsuk-hint" id="active-user-hint">
+						Select No to stop a user accessing the system. For example, if they leave the NHSBSA.
+						</div>
+
+					<div class="nhsuk-radios nhsuk-radios--inline">
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="optionsActiveYes" name="active" type="radio" value="Yes" checked="checked">
+							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveYes">
+								Yes
+							</label>
+						</div>
+
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="optionsActiveNo" name="active" type="radio" value="No">
+							<label class="nhsuk-label nhsuk-radios__label" for="optionsActiveNo">
+								No
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<!-- div class="nhsuk-form-group">
+					<label class="nhsuk-label" id="active" for="active" class="form-label-bold">
+						Select user type
+					</label>
+
+					<div class="nhsuk-radios nhsuk-radios--inline">
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="userType-NHSBSA" name="userType" type="radio" value="NHSBSA user">
+							<label class="nhsuk-label nhsuk-radios__label" for="userType-NHSBSA">NHSBSA user</label>
+						</div>
+	
+						<div class="nhsuk-radios__item">
+							<input class="nhsuk-radios__input" id="userType-HEI" name="userType" type="radio" value="HEI user" checked="checked">
+							<label class="nhsuk-label nhsuk-radios__label" for="userType-HEI">HEI user</label>
+						</div>
+					</div>
+				</div-->
+			
+
+				<div class="nhsuk-form-group">
+					<button class="nhsuk-button" type="submit" id="saveUser">Continue</button>
+					<p><a class="" href="/lsf-web/v6/admin-view/user-results">Cancel</a></p>
+				</div>
+
+			</div>
+		</div>
+	</form>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+  Withdraw student
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+              
+    {{ backLink({
+      "href": "javascript:history.go(-1)",
+      "text": "Go back"
+    }) }}
+
+    <form action="/lsf-web/v6/student-course-details" method="POST" novalidate="">
+      <h1 class="nhsuk-heading-xl">
+        <span class="nhsuk-caption-l" id="studentRef"> 
+          <span>{{ data['student number'] }} - {{ data['name'] }}</span>
+          <span class="nhsuk-u-visually-hidden"> - </span>
+        </span>
+        Withdraw student
+      </h1>
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend">Start date of course</legend>
+          
+          <div class="nhsuk-date-input">
+            <div class="nhsuk-date-input__item">
+              <label id="courseStartDate-day-label" class="nhsuk-label nhsuk-date-input__label" for="courseDay">Day</label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="courseDay" name="courseDay" value="" type="number" pattern="[0-9]*">
+            </div>
+
+            <div class="nhsuk-date-input__item">
+              <label id="courseStartDate-courseMonth-label" class="nhsuk-label nhsuk-date-input__label" for="courseMonth">Month</label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="courseMonth" name="courseMonth" value="" type="number" pattern="[0-9]*">
+            </div>
+            <div class="nhsuk-date-input__item">
+              <label id="courseStartDate-courseYear-label" class="nhsuk-label nhsuk-date-input__label" for="courseYear">Year</label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="courseYear" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend">Withdrawal date</legend>
+
+          <div class="nhsuk-date-input">
+            <div class="nhsuk-date-input__item">
+              <label id="withdrawalDate-day-label" class="nhsuk-label nhsuk-date-input__label" for="withdrawalDay">Day</label> <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="withdrawalDay" name="withdrawalDay" value="" type="number" pattern="[0-9]*">
+            </div>
+            <div class="nhsuk-date-input__item">
+              <label id="withdrawalDate-withdrawalMonth-label" class="nhsuk-label nhsuk-date-input__label" for="withdrawalMonth">Month</label> <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="withdrawalMonth" name="withdrawalMonth" value="" type="number" pattern="[0-9]*">
+            </div>
+            <div class="nhsuk-date-input__item">
+              <label id="withdrawalDate-withdrawalYear-label" class="nhsuk-label nhsuk-date-input__label" for="withdrawalYear">Year</label> <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="withdrawalYear" type="number" pattern="[0-9]*" name="withdrawalYear" value="">
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <button id="save" class="nhsuk-button" type="submit" value="withdraw" name="save">Save</button>
+        <p><a id="cancel" href="/lsf-web/v6/student-course-details">Cancel</a></p>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

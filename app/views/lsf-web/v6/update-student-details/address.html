@@ -1,0 +1,76 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+  LSF calculation list
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v6/current-search-student">Student search</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v6/student-course-details">Student details</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v6/student-details-change">Update student details</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v6/student-details-change">Back to Update student details</a></p>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<form id="updatenameForm" name="updatenameForm" action="/lsf-web/v6/student-details-change" method="post" novalidate="">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      
+      <h1 class="nhsuk-app-heading">
+        <span class="nhsuk-caption-l">
+          Update personal details
+          <span class="nhsuk-u-visually-hidden"> - </span>
+        </span>
+        Student address
+      </h1>
+      <fieldset class="nhsuk-fieldset" role="group">
+        <legend class="nhsuk-u-visually-hidden">Address fields</legend>
+        <div class="nhsuk-form-group">
+          <label id="nameOrNumber-label" for="nameOrNumber" class="nhsuk-label">Building name or number</label>
+          
+          <input class="nhsuk-input" name="nameOrNumber" id="nameOrNumber" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label id="address1-label" for="address1" class="nhsuk-label">Address line 1</label>
+          
+          <input name="address1" id="address1" class="nhsuk-input" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label id="address2-label" for="address2" class="nhsuk-label">Address line 2 (optional)</label>        
+            
+          <input name="address2" id="address2" class="nhsuk-input" type="text">
+        </div>
+      
+        <div class="nhsuk-form-group">
+          <label id="address3-label" for="address3" class="nhsuk-label">Address line 3 (optional)</label>
+          
+          <input name="address3" id="address3" class="nhsuk-input" type="text">
+        </div>
+    
+        <div class="nhsuk-form-group">
+          <label id="town-label" for="town" class="nhsuk-label">Town or city</label>
+      
+          <input name="town" id="town" class="nhsuk-input nhsuk-u-width-two-thirds" type="text">
+        </div>
+    
+        <div class="nhsuk-form-group">
+          <label id="postcode-label" for="postcode" class="nhsuk-label">Postcode</label>
+          
+          <input name="postcode" id="postcode" class="nhsuk-input nhsuk-input--width-10" type="text">
+        </div>
+      </fieldset>
+      <div class="nhsuk-grid-form-group">
+        <button class="nhsuk-button" type="submit" id="next" data-module="nhsuk-button" data-prevent-double-click="true">Save and submit</button>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}

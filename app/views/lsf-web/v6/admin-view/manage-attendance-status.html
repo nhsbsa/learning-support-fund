@@ -1,0 +1,552 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Attendance status search
+{% endblock %}
+
+{% block content %}
+<form action="/lsf-web/v6/admin-view/manage-attendance-status" method="POST"></form>
+	<div class="nhsuk-grid-column-full">
+		
+		<h1 class="nhsuk-heading-l">Attendance status search</h1>
+	
+
+	<div class="nhsuk-grid-row">
+		<div class="nhsuk-grid-column-two-thirds">
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" id="college-label" for="college" class="form-label">
+					University
+				</label>
+				<select class="nhsuk-select nhsuk-u-width-full" id="collegeDrop" name="college" onchange="getColleges(this)"> 
+					<option value="">Select university...</option>
+					<option id="1" value="ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE">ANGLIA RUSKIN UNIVERSITY - CAMBRIDGE</option>
+					<option id="2" value="ANGLIA RUSKIN UNIVERSITY - CHELMSFORD">ANGLIA RUSKIN UNIVERSITY - CHELMSFORD</option>
+					<option id="3" value="ANGLIA RUSKIN UNIVERSITY - PETERBOROUGH">ANGLIA RUSKIN UNIVERSITY - PETERBOROUGH</option>
+					<option id="4" value="BIRMINGHAM CITY UNIVERSITY">BIRMINGHAM CITY UNIVERSITY</option>
+					<option id="5" value="BIRMINGHAM METROPOLITAN COLLEGE">BIRMINGHAM METROPOLITAN COLLEGE</option>
+					<option id="6" value="BOURNEMOUTH UNIVERSITY">BOURNEMOUTH UNIVERSITY</option>
+					<option id="7" value="BPP UNIVERSITY LTD">BPP UNIVERSITY LTD</option>
+					<option id="8" value="BRUNEL UNIVERSITY LONDON">BRUNEL UNIVERSITY LONDON</option>
+					<option id="9" value="BUCKS NEW UNIVERSITY">BUCKS NEW UNIVERSITY</option>
+					<option id="10" value="CANTERBURY CHRIST CHURCH UNIVERSITY">CANTERBURY CHRIST CHURCH UNIVERSITY</option>
+					<option id="11" value="CITY UNIVERSITY LONDON">CITY UNIVERSITY LONDON</option>
+					<option id="12" value="COLCHESTER INSTITUTE">COLCHESTER INSTITUTE</option>
+					<option id="13" value="COVENTRY UNIVERSITY">COVENTRY UNIVERSITY</option>
+					<option id="14" value="DE MONTFORT UNIVERSITY">DE MONTFORT UNIVERSITY</option>
+					<option id="15" value="EDGE HILL UNIVERSITY">EDGE HILL UNIVERSITY</option>
+					<option id="16" value="KEELE UNIVERSITY">KEELE UNIVERSITY</option>
+					<option id="17" value="KINGS COLLEGE LONDON">KINGS COLLEGE LONDON</option>
+					<option id="18" value="KINGSTON UNIVERSITY">KINGSTON UNIVERSITY</option>
+					<option id="19" value="LEEDS BECKETT UNIVERSITY">LEEDS BECKETT UNIVERSITY</option>
+					<option id="20" value="LIVERPOOL JOHN MOORES UNIVERSITY">LIVERPOOL JOHN MOORES UNIVERSITY</option>
+					<option id="21" value="LONDON METROPOLITAN UNIVERSITY">LONDON METROPOLITAN UNIVERSITY</option>
+					<option id="22" value="LONDON SOUTH BANK UNIVERSITY">LONDON SOUTH BANK UNIVERSITY</option>
+					<option id="23" value="MANCHESTER METROPOLITAN UNIVERSITY">MANCHESTER METROPOLITAN UNIVERSITY</option>
+					<option id="24" value="MIDDLESEX UNIVERSITY">MIDDLESEX UNIVERSITY</option>
+					<option id="25" value="NEW COLLEGE DURHAM">NEW COLLEGE DURHAM</option>
+					<option id="26" value="NORTHUMBRIA UNIVERSITY">NORTHUMBRIA UNIVERSITY</option>
+					<option id="27" value="OXFORD BROOKES UNIVERSITY">OXFORD BROOKES UNIVERSITY</option>
+					<option id="28" value="SHEFFIELD HALLAM UNIVERSITY">SHEFFIELD HALLAM UNIVERSITY</option>
+					<option id="29" value="SOLENT UNIVERSITY">SOLENT UNIVERSITY</option>
+					<option id="31" value="STAFFORDSHIRE UNIVERSITY">STAFFORDSHIRE UNIVERSITY</option>
+					<option id="30" value="ST GEORGE'S - UNIVERSITY OF LONDON">ST GEORGE'S - UNIVERSITY OF LONDON</option>
+					<option id="32" value="UNIVERSITY COLLEGE LONDON">UNIVERSITY COLLEGE LONDON</option>
+					<option id="33" value="UNIVERSITY OF BEDFORDSHIRE">UNIVERSITY OF BEDFORDSHIRE</option>
+					<option id="34" value="UNIVERSITY OF BIRMINGHAM">UNIVERSITY OF BIRMINGHAM</option>
+					<option id="35" value="UNIVERSITY OF BOLTON">UNIVERSITY OF BOLTON</option>
+					<option id="36" value="UNIVERSITY OF BRADFORD">UNIVERSITY OF BRADFORD</option>
+					<option id="37" value="UNIVERSITY OF BRIGHTON">UNIVERSITY OF BRIGHTON</option>
+					<option id="38" value="UNIVERSITY OF BRISTOL">UNIVERSITY OF BRISTOL</option>
+					<option id="39" value="UNIVERSITY OF CENTRAL LANCASHIRE">UNIVERSITY OF CENTRAL LANCASHIRE</option>
+					<option id="40" value="UNIVERSITY OF CHESTER">UNIVERSITY OF CHESTER</option>
+					<option id="41" value="UNIVERSITY OF CUMBRIA">UNIVERSITY OF CUMBRIA</option>
+					<option id="42" value="UNIVERSITY OF DERBY">UNIVERSITY OF DERBY</option>
+					<option id="43" value="UNIVERSITY OF EAST ANGLIA">UNIVERSITY OF EAST ANGLIA</option>
+					<option id="44" value="UNIVERSITY OF EAST LONDON">UNIVERSITY OF EAST LONDON</option>
+					<option id="45" value="UNIVERSITY OF ESSEX">UNIVERSITY OF ESSEX</option>
+					<option id="46" value="UNIVERSITY OF EXETER">UNIVERSITY OF EXETER</option>
+					<option id="47" value="UNIVERSITY OF GLOUCESTERSHIRE">UNIVERSITY OF GLOUCESTERSHIRE</option>
+					<option id="48" value="UNIVERSITY OF GREENWICH">UNIVERSITY OF GREENWICH</option>
+					<option id="49" value="UNIVERSITY OF HERTFORDSHIRE">UNIVERSITY OF HERTFORDSHIRE</option>
+					<option id="50" value="UNIVERSITY OF HUDDERSFIELD">UNIVERSITY OF HUDDERSFIELD</option>
+					<option id="51" value="UNIVERSITY OF HULL">UNIVERSITY OF HULL</option>
+					<option id="52" value="UNIVERSITY OF LEEDS">UNIVERSITY OF LEEDS</option>
+					<option id="53" value="UNIVERSITY OF LEICESTER">UNIVERSITY OF LEICESTER</option>
+					<option id="54" value="UNIVERSITY OF LINCOLN">UNIVERSITY OF LINCOLN</option>
+					<option id="55" value="UNIVERSITY OF LIVERPOOL">UNIVERSITY OF LIVERPOOL</option>
+					<option id="56" value="UNIVERSITY OF MANCHESTER">UNIVERSITY OF MANCHESTER</option>
+					<option id="57" value="UNIVERSITY OF NEWCASTLE">UNIVERSITY OF NEWCASTLE</option>
+					<option id="58" value="UNIVERSITY OF NORTHAMPTON">UNIVERSITY OF NORTHAMPTON</option>
+					<option id="59" value="UNIVERSITY OF NOTTINGHAM">UNIVERSITY OF NOTTINGHAM</option>
+					<option id="60" value="UNIVERSITY OF PLYMOUTH">UNIVERSITY OF PLYMOUTH</option>
+					<option id="61" value="UNIVERSITY OF PORTSMOUTH">UNIVERSITY OF PORTSMOUTH</option>
+					<option id="62" value="UNIVERSITY OF READING">UNIVERSITY OF READING</option>
+					<option id="63" value="UNIVERSITY OF ROEHAMPTON">UNIVERSITY OF ROEHAMPTON</option>
+					<option id="64" value="UNIVERSITY OF SALFORD">UNIVERSITY OF SALFORD</option>
+					<option id="65" value="UNIVERSITY OF SHEFFIELD">UNIVERSITY OF SHEFFIELD</option>
+					<option id="66" value="UNIVERSITY OF SOUTHAMPTON">UNIVERSITY OF SOUTHAMPTON</option>
+					<option id="67" value="UNIVERSITY OF ST MARK AND ST JOHN">UNIVERSITY OF ST MARK AND ST JOHN</option>
+					<option id="68" value="UNIVERSITY OF SUFFOLK">UNIVERSITY OF SUFFOLK</option>
+					<option id="69" value="UNIVERSITY OF SUNDERLAND">UNIVERSITY OF SUNDERLAND</option>
+					<option id="70" value="UNIVERSITY OF SURREY">UNIVERSITY OF SURREY</option>
+					<option id="71" value="UNIVERSITY OF TEESSIDE">UNIVERSITY OF TEESSIDE</option>
+					<option id="72" value="UNIVERSITY OF THE WEST OF ENGLAND">UNIVERSITY OF THE WEST OF ENGLAND</option>
+					<option id="73" value="UNIVERSITY OF WEST LONDON">UNIVERSITY OF WEST LONDON</option>
+					<option id="74" value="UNIVERSITY OF WINCHESTER">UNIVERSITY OF WINCHESTER</option>
+					<option id="75" value="UNIVERSITY OF WOLVERHAMPTON">UNIVERSITY OF WOLVERHAMPTON</option>
+					<option id="76" value="UNIVERSITY OF WORCESTER">UNIVERSITY OF WORCESTER</option>
+					<option id="77" value="UNIVERSITY OF YORK">UNIVERSITY OF YORK</option>
+					<option id="78" value="UNIVERSIYT OF PLYMOUTH">UNIVERSIYT OF PLYMOUTH</option>
+					<option id="79" value="YORK ST JOHN UNIVERSITY">YORK ST JOHN UNIVERSITY</option>
+				</select>
+			</div>
+
+			<div class="nhsuk-form-group">
+				<label class="nhsuk-label" id="courseType-Label" for="courseType" class="form-label">
+					Course
+				</label>
+				<select class="nhsuk-select nhsuk-u-width-full" id="courseType" name="courseType">
+					<option value="">Select course...</option>
+
+					<option value="1">Adult Nursing</option>
+					<option value="2">Adult Nursing and Social Work</option>
+					<option value="3">Child Nursing</option>
+					<option value="4">Child Nursing and Social Work</option>
+					<option value="5">Dental Hygiene</option>
+					<option value="6">Dental Hygiene and Dental Therapy</option>
+					<option value="7">Dental Therapy</option>
+					<option value="8">Diagnostic Radiography</option>
+					<option value="9">Dietetics</option>
+					<option value="10">Dual Nursing - Adult and Child</option>
+					<option value="11">Dual Nursing - Adult and Learning Disabilities</option>
+					<option value="12">Dual Nursing - Adult and Mental Health</option>
+					<option value="13">Dual Nursing - Child and Learning Disabilities</option>
+					<option value="14">Dual Nursing - Child and Mental Health</option>
+					<option value="15">Dual Nursing - Mental Health and Learning Disabilities</option>
+					<option value="42">Fitness</option>
+					<option value="16">Language Pathology (MSc)</option>
+					<option value="17">Learning Disabilities Nursing</option>
+					<option value="18">Learning Disablilities Nursing and Social Work</option>
+					<option value="20">Mental Health Nursing</option>
+					<option value="21">Mental Health Nursing and Social Work</option>
+					<option value="22">Midwifery</option>
+					<option value="19">MSci Nurse Paramedic</option>
+					<option value="23">Nutrition and Dietetics</option>
+					<option value="24">Occupational Therapy</option>
+					<option value="25">Operating Department Practitioner</option>
+					<option value="26">Orthoptics</option>
+					<option value="31">Paramedicine</option>
+					<option value="27">Paramedic Practice</option>
+					<option value="28">Paramedic Science</option>
+					<option value="29">Paramedic Science 2 Years</option>
+					<option value="30">Paramedic Science And Out Of Hospital Care</option>
+					<option value="32">Physiotherapy</option>
+					<option value="33">Podiatry</option>
+					<option value="34">Prosthetics and Orthotics</option>
+					<option value="35">Radiotherapy and Oncology</option>
+					<option value="36">Speech and Language Therapy</option>
+					<option value="37">Therapeutic Radiography</option>
+				</select>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="nhsuk-grid-row">
+
+		<div class="nhsuk-grid-column-one-third">
+			<div class="nhsuk-form-group" id="courseYear-group">
+				<label class="nhsuk-label" id="courseYear-label" for="courseYear" class="form-label">
+					Course year (optional)
+				</label>
+				<select class="nhsuk-select nhsuk-u-width-full" id="courseYearDrop" name="courseYear" onchange="getCourseYear(this)">
+					<option value="">Select course year...</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="nhsuk-grid-column-one-third">
+			<div class="nhsuk-form-group" id="courseLength-group">
+				<label class="nhsuk-label" id="courseLength-label" for="courseLength" class="form-label">
+					Course length (optional)
+				</label>
+				<select class="nhsuk-select nhsuk-u-width-full" id="courseLengthDrop" name="courseLength" onchange="getCourseLength(this)">
+					<option value="">Select course length...</option>
+					<option value="1">1 year</option>
+									<option value="2">1 year 1 month</option>
+									<option value="3">1 year 2 months</option>
+									<option value="4">1 year 3 months</option>
+									<option value="5">1 year 4 months</option>
+									<option value="6">1 year 5 months</option>
+									<option value="7">1 year 6 months</option>
+									<option value="8">1 year 7 months</option>
+									<option value="9">1 year 8 months</option>
+									<option value="10">1 year 9 months</option>
+									<option value="11">1 year 10 months</option>
+									<option value="12">1 year 11 months</option>
+									<option value="13">2 years</option>
+									<option value="14">2 years 1 month</option>
+									<option value="15">2 years 2 months</option>
+									<option value="16">2 years 3 months</option>
+									<option value="17">2 years 4 months</option>
+									<option value="18">2 years 5 months</option>
+									<option value="19">2 years 6 months</option>
+									<option value="20">2 years 7 months</option>
+									<option value="21">2 years 8 months</option>
+									<option value="22">2 years 9 months</option>
+									<option value="23">2 years 10 months</option>
+									<option value="24">2 years 11 months</option>
+									<option value="25">3 years</option>
+									<option value="26">3 years 1 month</option>
+									<option value="27">3 years 2 months</option>
+									<option value="28">3 years 3 months</option>
+									<option value="29">3 years 4 months</option>
+									<option value="30">3 years 5 months</option>
+									<option value="31">3 years 6 months</option>
+									<option value="32">3 years 7 months</option>
+									<option value="33">3 years 8 months</option>
+									<option value="34">3 years 9 months</option>
+									<option value="35">3 years 10 months</option>
+									<option value="36">3 years 11 months</option>
+									<option value="37">4 years</option>
+									<option value="38">4 years 1 month</option>
+									<option value="39">4 years 2 months</option>
+									<option value="40">4 years 3 months</option>
+									<option value="41">4 years 4 months</option>
+									<option value="42">4 years 5 months</option>
+									<option value="43">4 years 6 months</option>
+									<option value="44">4 years 7 months</option>
+									<option value="45">4 years 8 months</option>
+									<option value="46">4 years 9 months</option>
+									<option value="47">4 years 10 months</option>
+									<option value="48">4 years 11 months</option>
+									<option value="49">5 years</option>
+									<option value="50">5 years 1 month</option>
+									<option value="51">5 years 2 months</option>
+									<option value="52">5 years 3 months</option>
+									<option value="53">5 years 4 months</option>
+									<option value="54">5 years 5 months</option>
+									<option value="55">5 years 6 months</option>
+									<option value="56">5 years 7 months</option>
+									<option value="57">5 years 8 months</option>
+									<option value="58">5 years 9 months</option>
+									<option value="59">5 years 10 months</option>
+									<option value="60">5 years 11 months</option>
+									<option value="61">6 years</option>
+									<option value="62">6 years 1 month</option>
+									<option value="63">6 years 2 months</option>
+									<option value="64">6 years 3 months</option>
+									<option value="65">6 years 4 months</option>
+									<option value="66">6 years 5 months</option>
+									<option value="67">6 years 6 months</option>
+									<option value="68">6 years 7 months</option>
+									<option value="69">6 years 8 months</option>
+									<option value="70">6 years 9 months</option>
+									<option value="71">6 years 10 months</option>
+									<option value="72">6 years 11 months</option>
+									<option value="73">7 years</option>
+									<option value="74">7 years 1 month</option>
+									<option value="75">7 years 2 months</option>
+									<option value="76">7 years 3 months</option>
+									<option value="77">7 years 4 months</option>
+									<option value="78">7 years 5 months</option>
+									<option value="79">7 years 6 months</option>
+									<option value="80">7 years 7 months</option>
+									<option value="81">7 years 8 months</option>
+									<option value="82">7 years 9 months</option>
+									<option value="83">7 years 10 months</option>
+									<option value="84">7 years 11 months</option>
+									<option value="85">8 years</option>
+									<option value="86">8 years 1 month</option>
+									<option value="87">8 years 2 months</option>
+									<option value="88">8 years 3 months</option>
+									<option value="89">8 years 4 months</option>
+									<option value="90">8 years 5 months</option>
+									<option value="91">8 years 6 months</option>
+									<option value="92">8 years 7 months</option>
+									<option value="93">8 years 8 months</option>
+									<option value="94">8 years 9 months</option>
+									<option value="95">8 years 10 months</option>
+									<option value="96">8 years 11 months</option>
+									<option value="97">9 years</option>
+				</select>
+			</div>
+
+		</div>
+
+			
+		<div class="nhsuk-grid-column-one-third">
+			<div class="nhsuk-form-group" id="academicYear-group">
+				<label class="nhsuk-label" id="academicYear-label" for="academicYear" class="form-label">
+					Academic year
+				</label>
+				<select class="nhsuk-select nhsuk-u-width-full" id="academicYearDrop" name="academicYear" onchange="getAcademicYear(this)">
+					<option value="">Select academic year...</option>
+
+									
+				</select>
+			</div>
+		</div>
+	
+	</div>
+</div>
+</div>
+
+<div class="nhsuk-form-group">
+	<button class="nhsuk-button" type="button" id="searchAttendanceStatus" onclick="performSearch()">Search</button>
+	<p><a class="" href="/lsf-web/v6/admin-view/manage-attendance-status">Cancel</a></p>
+</div>
+
+<div class="results" id="resultsContainer">
+	<!-- Search results will be displayed here -->
+</div>
+
+<script>
+	function performSearch() {
+		const resultsContainer = document.getElementById('resultsContainer');
+		resultsContainer.innerHTML = `
+			<div class="results" id="resultsContainer">
+					<hr class="" style="border-color: #005eb8; border-width: 4px">
+						<table role="table" id="coursesTable" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+						<h2 class="heading-large nhsuk-u-visually-hidden">Search results table</h2>
+							<caption class="nhsuk-table__caption">Search results<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 6 items</span><span id="resultMessage" aria-hidden="true"> - contains 6 items</span><span class="nhsuk-u-visually-hidden"> (column headers with links are sortable)</span></caption>
+						
+						<thead role="rowgroup" class="nhsuk-table__head">	
+							<tr role="row">
+							<th role="columnheader" class="bold" scope="col"><a href="#" class="table-header__button">Name</a></th>
+							<th role="columnheader" class="bold" scope="col"><a href="#" class="table-header__button">DOB</a></th>
+							<th role="columnheader" class="bold" scope="col"><a href="#" class="table-header__button">Part time</a></th>
+							<th role="columnheader" class="bold" scope="col"><a href="#" class="table-header__button">Student Reference</a></th>
+							<th role="columnheader" class="bold" scope="col"><a href="#" class="table-header__button">Status</a></th>
+							</tr>
+						</thead>
+						<tbody class="nhsuk-table__body">
+							
+							<tr role="row" class="nhsuk-table__row">
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Name</span>Jane Doe</span>
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">DOB</span>10/03/2004
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading">Part time</span>No
+							</td>
+							<td role="cell" class="nhsuk-table__cell">
+								<span class="nhsuk-table-responsive__heading" rel="noopener">Student Reference</span>
+								<a href="/lsf-web/v6/student-details?student%20number=SSRN0010001&activity%20number=1411&name=Emmit%20Mar&email=emmit.mar@myemail.com&username=Emmit.Mar#tab-Enrolments" target="_blank">SSRN0000401</a>
+							</td>
+
+							<td role="cell" class="nhsuk-table__cell">
+								<label for="enrolledStatusDrop0" class="nhsuk-u-visually-hidden" style="">Status drop down</label>
+								<select class="nhsuk-select nhsuk-u-width-full" id="enrolledStatusDrop0" name="enrolmentList[0].enrolledStatus.id">
+									<option value="6">Discontinued</option>
+									<option value="2">Information mismatch</option>
+									<option value="1">Matched student - in attendance</option>
+									<option value="8">Maternity leave</option>
+									<option value="5">Not enrolled</option>
+									<option value="3" selected="selected">Pending</option>
+									<option value="7">Pending NHSBSA</option>
+								</select>
+								<input type="hidden" value="294" id="hiddenIdField" name="enrolmentList[0].id">
+							</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Name</span>Joe Bloggs</span>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">DOB</span>21/08/2004
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Part time</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading" rel="noopener">Student Reference</span>
+									<a href="/lsf-web/v6/student-details?student%20number=SSRN0010001&activity%20number=1411&name=Emmit%20Mar&email=emmit.mar@myemail.com&username=Emmit.Mar#tab-Enrolments" target="_blank">SSRN0000402</a>
+								</td>
+								
+								<td role="cell" class="nhsuk-table__cell">
+								<label for="enrolledStatusDrop0" class="nhsuk-u-visually-hidden" style="">Status drop down</label>
+								<select class="nhsuk-select nhsuk-u-width-full" id="enrolledStatusDrop0" name="enrolmentList[0].enrolledStatus.id">
+									<option value="6">Discontinued</option>
+									<option value="2">Information mismatch</option>
+									<option value="1"selected="selected">Matched student - in attendance</option>
+									<option value="8">Maternity leave</option>
+									<option value="5">Not enrolled</option>
+									<option value="3">Pending</option>
+									<option value="7">Pending NHSBSA</option>
+								</select>
+								<input type="hidden" value="294" id="hiddenIdField" name="enrolmentList[0].id">
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Name</span>John Doe</span>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">DOB</span>3/11/2003
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Part time</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading" rel="noopener">Student Reference</span>
+									<a href="/lsf-web/v6/student-details?student%20number=SSRN0010001&activity%20number=1411&name=Emmit%20Mar&email=emmit.mar@myemail.com&username=Emmit.Mar#tab-Enrolments" target="_blank">SSRN0000403</a>
+								</td>
+								
+								<td role="cell" class="nhsuk-table__cell">
+								<label for="enrolledStatusDrop0" class="nhsuk-u-visually-hidden" style="">Status drop down</label>
+								<select class="nhsuk-select nhsuk-u-width-full" id="enrolledStatusDrop0" name="enrolmentList[0].enrolledStatus.id">
+									<option value="6"selected="selected">Discontinued</option>
+									<option value="2">Information mismatch</option>
+									<option value="1">Matched student - in attendance</option>
+									<option value="8">Maternity leave</option>
+									<option value="5">Not enrolled</option>
+									<option value="3">Pending</option>
+									<option value="7">Pending NHSBSA</option>
+								</select>
+								<input type="hidden" value="294" id="hiddenIdField" name="enrolmentList[0].id">
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Name</span>Jayne Doe</span>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">DOB</span>14/09/2003
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Part time</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading" rel="noopener">Student Reference</span>
+									<a href="/lsf-web/v6/student-details?student%20number=SSRN0010001&activity%20number=1411&name=Emmit%20Mar&email=emmit.mar@myemail.com&username=Emmit.Mar#tab-Enrolments" target="_blank">SSRN0000404</a>
+								</td>
+
+								<td role="cell" class="nhsuk-table__cell">
+									<label for="enrolledStatusDrop0" class="nhsuk-u-visually-hidden" style="">Status drop down</label>
+								<select class="nhsuk-select nhsuk-u-width-full" id="enrolledStatusDrop0" name="enrolmentList[0].enrolledStatus.id">
+									<option value="6">Discontinued</option>
+									<option value="2">Information mismatch</option>
+									<option value="1">Matched student - in attendance</option>
+									<option value="8">Maternity leave</option>
+									<option value="5">Not enrolled</option>
+									<option value="3"selected="selected">Pending</option>
+									<option value="7">Pending NHSBSA</option>
+								</select>
+								<input type="hidden" value="294" id="hiddenIdField" name="enrolmentList[0].id">
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Name</span>Jonathan Doe</span>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">DOB</span>14/02/2004
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Part time</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading" rel="noopener">Student Reference</span>
+									<a href="/lsf-web/v6/student-details?student%20number=SSRN0010001&activity%20number=1411&name=Emmit%20Mar&email=emmit.mar@myemail.com&username=Emmit.Mar#tab-Enrolments" target="_blank">SSRN0000405</a>
+								</td>
+								
+								<td role="cell" class="nhsuk-table__cell">
+								<label for="enrolledStatusDrop0" class="nhsuk-u-visually-hidden" style="">Status drop down</label>
+								<select class="nhsuk-select nhsuk-u-width-full" id="enrolledStatusDrop0" name="enrolmentList[0].enrolledStatus.id">
+									<option value="6">Discontinued</option>
+									<option value="2">Information mismatch</option>
+									<option value="1">Matched student - in attendance</option>
+									<option value="8">Maternity leave</option>
+									<option value="5">Not enrolled</option>
+									<option value="3"selected="selected">Pending</option>
+									<option value="7">Pending NHSBSA</option>
+								</select>
+								<input type="hidden" value="294" id="hiddenIdField" name="enrolmentList[0].id">
+								</td>
+							</tr>
+
+							<tr role="row" class="nhsuk-table__row">
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Name</span>Josie Bloggs</span>
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">DOB</span>17/05/2004
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading">Part time</span>No
+								</td>
+								<td role="cell" class="nhsuk-table__cell">
+									<span class="nhsuk-table-responsive__heading" rel="noopener">Student Reference</span>
+									<a href="/lsf-web/v6/student-details?student%20number=SSRN0010001&activity%20number=1411&name=Emmit%20Mar&email=emmit.mar@myemail.com&username=Emmit.Mar#tab-Enrolments" target="_blank">SSRN0000406</a>
+								</td>
+
+								<td role="cell" class="nhsuk-table__cell">
+								<label for="enrolledStatusDrop0" class="nhsuk-u-visually-hidden" style="">Status drop down</label>
+								<select class="nhsuk-select nhsuk-u-width-full" id="enrolledStatusDrop0" name="enrolmentList[0].enrolledStatus.id">
+									<option value="6">Discontinued</option>
+									<option value="2">Information mismatch</option>
+									<option value="1">Matched student - in attendance</option>
+									<option value="8">Maternity leave</option>
+									<option value="5">Not enrolled</option>
+									<option value="3"selected="selected">Pending</option>
+									<option value="7">Pending NHSBSA</option>
+								</select>
+								<input type="hidden" value="294" id="hiddenIdField" name="enrolmentList[0].id">
+								</td>
+							</tr>
+
+						</tbody>
+					</table>
+
+					<div class="nhsuk-form-group" style="overflow: hidden;">
+						<button class="nhsuk-button" style="float: right;" type="button" id="searchAttendanceStatus">Save changes</button>
+					</div>
+
+					<nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
+						<ul class="nhsbsa-pagination">
+							<li class="nhsbsa-pagination__item nhsbsa-pagination-li">
+								<a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
+							</li>
+						</ul>
+						<!--a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href="" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a-->
+				
+						<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment nhsuk-u-margin-bottom-5">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">6</span> of <span id="tdaeTotalItemsNumber">6 results</span></div>
+					</nav>
+
+			</div>
+			`;
+					}
+    </script>
+
+			</div>
+		</div>
+	</form>
+
+</div>
+{% endblock %}
+
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue : '',
+    autoselect : true,  
+    selectElement : document.querySelector('#collegeDrop')
+  });
+
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    autoselect: true,  
+    selectElement: document.querySelector('#courseType')
+  });
+</script>
+{% endblock %}

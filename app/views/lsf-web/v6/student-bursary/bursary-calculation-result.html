@@ -1,0 +1,91 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-full">
+    <h1 class="nhsuk-heading-xl">Calculation Results</h1>
+    <div class="nhsuk-table__panel-with-heading-tab">
+      <h2 class="nhsuk-table__heading-tab">Awards</h2>
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Awards</caption>  					
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">Award type</th>
+            <th role="columnheader" class="" scope="col">Award amount</th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">NMT Grant</td>
+            <td class="nhsuk-table__cell "><span>£1,000.00</span></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Bursary Award</td>
+            <td class="nhsuk-table__cell "><span>£2,643.00</span></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Rate awarded</td>
+            <td class="nhsuk-table__cell "><span>Outside London lodgings rate</span></td>
+          </tr>    					
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Extra weeks allowance</td>
+            <td class="nhsuk-table__cell "><span>£0.00</span></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Dependants allowance</td>
+            <td class="nhsuk-table__cell "><span>£0.00</span></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Parent Learning allowance</td>
+            <td class="nhsuk-table__cell "><span>£0.00</span></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Childcare allowance</td>
+            <td class="nhsuk-table__cell "><span>£0.00</span></td>
+          </tr>    					    					    					
+        </tbody>
+      </table>
+
+      <div class="nhsuk-u-padding-top-5">			
+        <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Total amount payable: £3,643.00</h2>
+      </div>
+    </div>
+
+    <div class="nhsuk-table__panel-with-heading-tab">
+      <h2 class="nhsuk-table__heading-tab">Deductions</h2>				
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Deductions</caption>  					
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">Type</th>
+            <th role="columnheader" class="" scope="col">Amount</th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Contribution</td>
+            <td class="nhsuk-table__cell "><span>£0.00</span></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Remaining contribution</td>
+            <td class="nhsuk-table__cell "><span>£0.00</span></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Residual income</td>
+            <td class="nhsuk-table__cell "><span>£0.00</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>							
+  
+    <div class="nhsuk-form-group">																						
+      <a href="/lsf-web/v6/student-bursary/bursary-calculation-test" class="nhsuk-button" role="button">Another test</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
