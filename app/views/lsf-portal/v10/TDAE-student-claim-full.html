@@ -639,7 +639,7 @@
           <li>return it to the student</li>
           <li>decline the claim</li>
         </ul>
-        {% if data['university-completed'] === 'in-progress' or data['evidence-completed'] === 'in-progress' or data['taxi-completed'] === 'in-progress' or data['overseas-completed'] === 'in-progress' %}
+        {% if data['university-completed'] === 'in-progress' or data['evidence-completed'] === 'in-progress' or data['taxi-completed'] === 'in-progress' or data['overseas-completed'] === 'in-progress' or data['timesheets-task'] === 'in-progress' %}
           <a class="nhsuk-button" href="TDAE-return-decline">Return or decline claim</a>
         {% else %}
           <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Return or decline claim</a>
