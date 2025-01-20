@@ -1,4 +1,4 @@
-{% extends 'layout-HEI.html' %}
+{% extends 'layout-HEI-v10.html' %}
 
 {% block pageTitle %}
 Travel and Dual Accommodation Expense claims
@@ -14,11 +14,12 @@ Travel and Dual Accommodation Expense claims
       }) }}
 
         <h1 class="nhsuk-heading-l">Previously processed TDAE claims</h1>
-        <p>These are claims that have been processed in the past 30 days. Either the student has not been paid yet or the claim was returned to them. </p>
 
-        <p>To view claims that have been paid or rejected, you can <a href="search-for-student">search for a student</a> and view their claims in their profile.</p>
+        <p>These are claims processed in the last 30 days that are not paid yet or returned to the student. Any declined claims processed within the last year will also appear.</p>
 
-        <p><a href="/images/TDAE-claims-list.csv" download="TDAE claims list 18 September 2023 11:41">Download details of claims you have previously processed but the student has not been paid yet (CSV, 4KB)</a></p>
+        <p>You can <a href="search-for-student">search for a student</a> to view a fill list of an individual's active or processed claims.</p>
+
+        <p><a href="/images/TDAE-claims-list.csv" download="TDAE claims list 18 September 2023 11:41">Download details of previously processed TDAE claims (CSV, 4KB)</a></p>
 
         <div class="nhsuk-form-group">
             <table role="table" class="nhsuk-table-responsive">
@@ -53,7 +54,7 @@ Travel and Dual Accommodation Expense claims
                           <span class="nhsuk-table-responsive__heading">Course </span>Adult nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>3 September 2023
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>3 September 2024
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Status </span>
@@ -75,7 +76,7 @@ Travel and Dual Accommodation Expense claims
                           <span class="nhsuk-table-responsive__heading">Course </span>Mental Health Nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>30 April 2023
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>1 August 2024
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Status </span><strong
@@ -95,7 +96,7 @@ Travel and Dual Accommodation Expense claims
                         <span class="nhsuk-table-responsive__heading">Course </span>Podiatry
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Claim submitted date </span>1 August 2023
+                        <span class="nhsuk-table-responsive__heading">Claim submitted date </span>30 April 2024
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Status </span>
@@ -107,7 +108,27 @@ Travel and Dual Accommodation Expense claims
                             href="TDAE-student-claim?name=George Hill&status=Returned to student&evidence-completed=in-progress&evidence-completed-2=completed&accommodation-completed=completed&vehicle-hire-check=yes&accommodation-completed-2=completed&university-completed=completed&approve-in-progress=&read-only=true">View
                             claim</a>
                     </td>
-                </tr>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Student name </span>George Hill
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Course </span>Podiatry
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Claim submitted date </span>13 August 2024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span>
+                        <strong class="nhsuk-tag nhsuk-tag--red">Declined</strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Action </span><a
+                            class="nhsuk-link--no-visited-state"
+                            href="#">View claim</a>
+                    </td>
+                  </tr>
                 </tbody>
             </table>
         </div>
