@@ -1,4 +1,4 @@
-Return to university{% extends 'layout-custom-header.html' %}
+{% extends 'layout-custom-header.html' %}
 
 {% block pageTitle %}
 Claim checks
@@ -885,6 +885,13 @@ Claim checks
             <span class="app-task-list__task-name">
                 <a href="TDAE-timesheets">Placement timesheets evidence</a>
             </span>
+            {% if data['timesheets-task'] === 'completed' %}
+              <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
+            {% elif data['timesheets-task'] === 'in-progress' %}
+              <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to student</strong>
+            {% else %}
+              <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
+            {% endif %}
           </li>
         </ul>
       </li>
@@ -953,7 +960,8 @@ Claim checks
           data['accommodation-completed-2'] === 'in-progress' or
           data['accommodation-travel-completed'] === 'in-progress' or
           data['accommodation-travel-completed-2'] === 'in-progress' or
-          data['overseas-completed'] === 'in-progress' %}
+          data['overseas-completed'] === 'in-progress' or
+          data['timesheets-task'] === 'in-progress'%}
     <a class="nhsuk-button" href="TDAE-return-decline">Return or decline claim</a>
     {% else %}
     <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Return or decline claim</a>
@@ -1064,7 +1072,8 @@ Claim checks
     {% if data['university-travel'] === 'in-progress' or
           data['accommodation-completed-3'] === 'in-progress' or
           data['accommodation-travel-completed-3'] === 'in-progress' or
-          data['accommodation-travel-completed-4'] === 'in-progress' %}
+          data['accommodation-travel-completed-4'] === 'in-progress' or
+          data['timesheets-task'] === 'in-progress' %}
     <a class="nhsuk-button" href="TDAE-return-decline">Return or decline claim</a>
     {% else %}
     <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Return or decline claim</a>

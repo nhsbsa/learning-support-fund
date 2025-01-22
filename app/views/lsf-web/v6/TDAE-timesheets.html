@@ -1,4 +1,4 @@
-{% extends 'layout-HEI.html' %}
+{% extends 'layout-custom-header.html' %}
 
 {% block pageTitle %}
 Student and University details
@@ -35,6 +35,10 @@ Student and University details
   				</div>
 
       </dl>
+    {% endif %}
+
+    {% if (data['read-only'] != 'true') and (data['scenario'] != 'previous') %}
+      <a class="nhsuk-button" href="TDAE-checked-timesheets">Continue</a>
     {% endif %}
 
 

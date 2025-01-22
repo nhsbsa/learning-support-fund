@@ -24,18 +24,34 @@
                 </h1>
               </legend>
 
+              {% if data['university-travel'] === 'in-progress' or
+                    data['evidence-completed'] === 'in-progress' or
+                    data['evidence-completed-2'] === 'in-progress' or
+                    data['hire-vehicle-completed'] === 'in-progress' or
+                    data['taxi-completed'] === 'in-progress' or
+                    data['accommodation-completed'] === 'in-progress' or
+                    data['accommodation-completed-2'] === 'in-progress' or
+                    data['accommodation-travel-completed'] === 'in-progress' or
+                    data['accommodation-travel-completed-2'] === 'in-progress' or
+                    data['overseas-completed'] === 'in-progress' or
+                    data['timesheets-task'] === 'in-progress'%}
+                <div class="nhsuk-radios">
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="return-student-university" name="return-student" type="radio" value="Return to univerity">
+                    <label class="nhsuk-label nhsuk-radios__label" for="return-student-university">
+                      Return to the university
+                    </label>
+                    <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                      The university will be able to return the claim to the student for them to change and re-submit the claim.
+                    </div>
+                  </div>
+              {% else %}
+              <p>Since no sections of the application have been selected for return, you can only decline this claim. To return it, please go back to the task list and update the relevant sections.</p>
+
               <div class="nhsuk-radios">
 
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="return-student-university" name="return-student" type="radio" value="Return to univerity">
-                  <label class="nhsuk-label nhsuk-radios__label" for="return-student-university">
-                    Return to the univerity
-                  </label>
-                  <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                    The university will be able to return the claim to the student for them to change and re-submit the claim.
-                  </div>
-                </div>
-
+              {% endif %}
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" id="return-student-placement" name="return-student" type="radio" value="Decline claim">
                   <label class="nhsuk-label nhsuk-radios__label" for="return-student-placement">
