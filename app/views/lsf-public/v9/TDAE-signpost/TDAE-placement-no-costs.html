@@ -1,0 +1,66 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Are you sure you want to delete evidence?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		{{ backLink({
+		"href": "javascript:history.go(-1)",
+		"text": "Go back"
+		}) }}
+
+		<form action="../v9/TDAE-placement-no-costs" method="POST">
+
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <h1 class="nhsuk-fieldset__heading">
+											You’ve not told us about any placement travel details
+                    </h1>
+                  </legend>
+
+									<p>If you do not want to add any placement travel details to your claim, you can reset this section. Your other costs will not be affected, and you’ll be able to submit your claim with this section ‘Not started’.</p>
+
+									<h2 class="nhsuk-heading-m">Do you want to continue without placement travel details?</h2>
+
+                  <div class="nhsuk-radios">
+
+										<div class="nhsuk-radios__item">
+											<input class="nhsuk-radios__input" id="reset-placement-details-yes" name="reset-placement-details" type="radio" value="yes">
+											<label class="nhsuk-label nhsuk-radios__label" for="reset-placement-details-yes">
+												Yes, reset this section and return to task list
+											</label>
+											<!--<div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+							          Placement travel details will be reset and you'll go to the task list
+							        </div>-->
+										</div>
+
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="reset-placement-details-no" name="reset-placement-details" type="radio" value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="reset-placement-details-no">
+                        No, return to placement travel details
+                      </label>
+											<!--<div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+							          You'll return to your placement travel details
+							        </div>-->
+                    </div>
+
+                  </div>
+                </fieldset>
+
+              </div>
+
+			<button class="nhsuk-button" type="submit">Save and continue</button><br>
+
+		</form>
+
+	</div>
+
+</div>
+{% endblock %}

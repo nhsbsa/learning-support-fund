@@ -25,6 +25,22 @@ router.post('/v9/TDAE-timesheets', (req, res) => {
 
 })
 
+// TDAE no placement travel details added
+
+router.post('/v9/TDAE-placement-no-costs', (req, res) => {
+
+  const resetPlacementdetails = req.session.data['reset-placement-details']
+
+  if (resetPlacementdetails === 'yes') {
+      res.redirect('/lsf-public/v9/TDAE-task-list-full')
+  }
+  else {
+      res.redirect('/lsf-public/v9/TDAE-placement-itinerary')
+  }
+
+
+})
+
 // Submit claim not all tasks completed
 
 router.post('/v9/TDAE-tasks-not-completed', (req, res) => {
