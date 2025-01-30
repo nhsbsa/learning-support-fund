@@ -459,8 +459,22 @@
             </li>
             <li class="app-task-list__item nhsuk-u-clear">
               <span class="app-task-list__task-name">
-                <a href="TDAE-placement-mileage-details-table-2" aria-describedby="eligibility-status">
+                <a href="TDAE-placement-dates-skipped" aria-describedby="eligibility-status">
                   Check period 2 placement travel details
+                </a>
+              </span>
+              {% if data['dates-skipped'] === 'yes' %}
+                <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
+              {% elif data['dates-skipped'] === 'no' %}
+                <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to student</strong>
+              {% else %}
+                <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="TDAE-placement-mileage-details-table-2" aria-describedby="eligibility-status">
+                  Check period 3 placement travel details
                 </a>
               </span>
               {% if data['evidence-completed-2'] === 'completed' %}
@@ -639,7 +653,7 @@
           <li>return it to the student</li>
           <li>decline the claim</li>
         </ul>
-        {% if data['university-completed'] === 'in-progress' or data['evidence-completed'] === 'in-progress' or data['taxi-completed'] === 'in-progress' or data['overseas-completed'] === 'in-progress' or data['timesheets-task'] === 'in-progress' %}
+        {% if data['university-completed'] === 'in-progress' or data['evidence-completed'] === 'in-progress' or data['taxi-completed'] === 'in-progress' or data['overseas-completed'] === 'in-progress' or data['timesheets-task'] === 'in-progress' or data['dates-skipped'] === 'no' %}
           <a class="nhsuk-button" href="TDAE-return-decline">Return or decline claim</a>
         {% else %}
           <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Return or decline claim</a>
