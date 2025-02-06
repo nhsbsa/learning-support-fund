@@ -9,48 +9,142 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
-        <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">NHS Learning Support Fund</span>General query</h1>
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">Send us a general query</h1>
+        </legend>
 
-        <p>If your query isn't asnwered in our frequently answered questions section on the Notice Board, you can raise a general query here. Do not use this for student specific queries. To raise a query for a specific student click <a href="/">here</a>.</p>
-        <p>Please complete the form below to raise your query with us directly and a member of the team will be able to assist you.</p>
+        <p>If you cannot find the information you need on the Notice Board, you can send us a general query. We'll then contact you to help you.</p>
 
-        <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="example">
-                Name
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+        <p>For queries about specific students, go to <a href="search-for-student" class="action" id="studentSearchLink">Student search</a>.</p>
+
+        <!-- Name -->
+        <div class="nhsuk-form-group" id="name-group">
+          <label for="name" class="nhsuk-label" id="name-label">Name</label>
+
+          <input class="nhsuk-input nhsuk-input--width-20" id="name" type="text" autocomplete="on" name="name" value="Joe Bloggs" />
         </div>
-        <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="example">
-                Email
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+        <!-- /. -->
+
+        <!-- Email -->
+        <div class="nhsuk-form-group" id="email-group">
+          <label for="email" class="nhsuk-label" id="email-label">Email</label>
+
+          <input class="nhsuk-input nhsuk-input--width-20" id="email" type="email" autocomplete="on" name="email" value="joe.bloggs@edu.aru.uk" />
         </div>
-        <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="example">
-                Phone number (optional)
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+        <!-- /. -->
+
+        <!-- Phone -->
+        <div class="nhsuk-form-group" id="phone-group">
+          <label id="phone-label" for="phone" class="nhsuk-label">Phone number (optional)</label>
+
+          <input name="phone" id="phone" class="nhsuk-input nhsuk-input--width-20" type="tel" autocomplete="tel"
+          maxlength="20" value="" />
         </div>
-        <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="example">
-                University
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+        <!-- /. -->
+
+        <!-- University -->
+        <div class="nhsuk-form-group" id="university-group">
+          <label for="university" class="nhsuk-label" id="university-label">University</label>
+
+          <input class="nhsuk-input nhsuk-input--width-20" maxlength="100" id="university" type="text" autocomplete="on" name="university" value="ANGLIA RUSKIN UNIVERSITY" />
         </div>
-        <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="example">
-              Query
-            </label>
-            <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
-            <div class="nhsuk-hint" id="example-hint">
-                1000 characters remaining
+        <!-- /. -->
+
+        <!-- Area -->
+        <div class="nhsuk-form-group" id="area-group">
+          <h2 class="nhsuk-heading-s">What area of NHS Learning Support Fund is your query about?</h2>
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                Travel and Dual Accommodation Expenses (TDAE)
+              </label>
             </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Confirmation of Student Attendance (COSA)
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Other
+              </label>
+            </div>
+          </div>
         </div>
+        <!-- /. -->
 
-        <a class="nhsuk-button" href="dashboard">Submit</a>
+        <!-- Query -->
+        <div class="nhsuk-form-group" id="queryText-group">
+          <label for="queryText" class="nhsuk-label" id="queryText-label">Query</label>
+          <textarea class="nhsuk-textarea" id="additionalCostsComment" name="study-additional-comment" rows="8"></textarea>
+          <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">1000 characters remaining</p>
+          <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 1000 characters</p>
+        </div>
+        <!-- /. -->
+
+      </fieldset>
+
+      <a class="nhsuk-button" href="general-query-submitted">Send query</a>
 
     </div>
 
   </div>
+
+  <script>
+  const textarea = document.querySelector('#additionalCostsComment');
+  const countRemaining = document.getElementById('charactersRemaining');
+  const staticMsg = document.querySelector('#char-count-screen-reader');
+  const maxCharacters = 1000;
+  let timeoutId;
+
+  function updateCharacterCount() {
+    const textEntered = textarea.value;
+    const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+    const addition = newLines?.length || 0;
+    const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+
+    if (remainingCharacters >= 0) {
+      countRemaining.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+      countRemaining.classList.remove('nhsbsa-count-error-message');
+      countRemaining.classList.add('nhsuk-hint');
+      textarea.classList.remove('nhsuk-textarea--error');
+    } else {
+      countRemaining.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+      countRemaining.classList.add('nhsbsa-count-error-message');
+      countRemaining.classList.remove('nhsuk-hint');
+      textarea.classList.add('nhsuk-textarea--error');
+    }
+  }
+
+  function updateScreenReaderMessage() {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      const textEntered = textarea.value;
+      const newLines = textEntered.match(/(\r\n|\n|\r)/g);
+      const addition = newLines?.length || 0;
+      const remainingCharacters = maxCharacters - textEntered.length + addition - (newLines?.length || 0);
+      // TO DO ADD FIX FOR 1 CHARACTER
+      if (remainingCharacters < 0) {
+        staticMsg.textContent = `You have ${Math.abs(remainingCharacters)} character${Math.abs(remainingCharacters) === 1 ? '' : 's'} too many`;
+      } else {
+        staticMsg.textContent = `You have ${remainingCharacters} character${remainingCharacters === 1 ? '' : 's'} remaining`;
+      }
+    }, 1000);
+  }
+
+  textarea.addEventListener('input', () => {
+    updateCharacterCount();
+    updateScreenReaderMessage();
+  });
+
+  // Update character count if textarea has a value on page load
+  window.addEventListener('load', () => {
+    updateCharacterCount();
+    updateScreenReaderMessage();
+  });
+  </script>
 {% endblock %}
