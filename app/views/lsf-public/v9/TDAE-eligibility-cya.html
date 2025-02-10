@@ -84,7 +84,12 @@ Check your answers
                   Placement address
               </dt>
               <dd class="nhsuk-summary-list__value">
-                  {% if data['international'] == 'true' %}
+                  {% if data['address-number'] != '1' %}
+                    <ul class="nhsuk-list">
+                      <li>Alnwick Hospital, NE66 2NS</li>
+                      <li>Newcastle Royal Victoria Infirmary, NE1 2AB</li>
+                    </ul>
+                  {% elseif data['international'] == 'true' %}
                       {% if data['international-placement-building-name'] %}
                           {{ data['international-placement-building-name'] }}<br>
                           {{ data['international-placement-address-line-1'] }}<br>
@@ -178,6 +183,11 @@ Check your answers
 
 
         </dl>
+
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>Check these answers carefully. You'll not be able to change some of them after continuing.</p>
+        </div>
 
         <form action="TDAE-task-list" method="POST">
             <button class="nhsuk-button" type="submit">Save and continue</button><br>
