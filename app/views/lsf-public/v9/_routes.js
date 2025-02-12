@@ -451,7 +451,7 @@ router.post('/v9/TDAE-accommodation-delete', (req, res) => {
 
 router.post('/v9/TDAE-accommodation-pause', (req, res) => {
 
-  res.redirect('/lsf-public/v9/TDAE-accommodation-same-start-date')
+  res.redirect('/lsf-public/v9/TDAE-accommodation-start-date')
 
 })
 
