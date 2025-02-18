@@ -1,0 +1,133 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Update course details
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+{{ backLink({
+"href": "javascript:history.go(-1)",
+"text": "Go back"
+}) }}
+
+<form id="updatenameForm" name="updatenameForm" action="/lsf-web/v6/student-details-change" method="post" novalidate="">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+								<span class="nhsuk-caption-l" id="studentRef">
+									<span>SSRN0000642 - Joe Bloggs</span>
+									<span class="nhsuk-u-visually-hidden"> - </span>
+								</span>
+								Evidence for Training Grant
+							</h1>
+
+							<div id="documentListTable">
+								<div class="nhsuk-form-group">
+
+
+									<input type="hidden" id="documents0.id" name="documents[0].id" value="1018"></input>
+									<input type="hidden" id="documents0.created" name="documents[0].created" value="19/12/24 15:37"></input>
+									<input type="hidden" id="documents0.documentType.Name" name="documents[0].documentType.Name" value="Full student loan award letter"></input>
+									<input type="hidden" id="documents0.fileAvailable" name="documents[0].fileAvailable" value="true"></input>
+
+                  <dl class="nhsuk-summary-list nhsuk-summary-list--no-border" style="margin-bottom: 6px;">
+
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        <nobr>Student finance reference number</nobr>
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        11111111
+                      </dd>
+                    </div>
+
+                  </dl>
+
+                  <p style="margin-bottom: 40px;">If this is incorrect, you can change it in Change student details.</p>
+
+                  <!--<details class="nhsuk-details" style="margin-bottom: 40px;">
+                    <summary class="nhsuk-details__summary">
+                      <span class="nhsuk-details__summary-text">
+                        Incorrect?
+                      </span>
+                    </summary>
+                    <div class="nhsuk-details__text">
+
+                      <p>The Student Finance reference number can be changed in the students details.</p>
+
+                    </div>
+                  </details>-->
+
+									<ul class="nhsuk-list nhsuk-list--tick">
+										<li>
+
+												<svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+													<path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b" />
+												</svg>
+												<h2 class="nhsuk-heading-m">Full student loan award letter<span class="nhsuk-u-visually-hidden"> - file available to view</span></h2>
+
+
+											<p>
+												<span style="word-break: break-all; display: inline-block;">19 December 2024 15:37</span>
+											</p>
+											<p>
+												<a id="document0" href="#" rel="noopener">
+													<strong>View evidence<span class="nhsuk-u-visually-hidden"> (opens in a new tab)</span></strong>
+												</a>
+											</p>
+										</li>
+									</ul>
+
+									<fieldset class="nhsuk-fieldset">
+										<legend class="nhsuk-u-visually-hidden">View evidence from student</legend>
+										<div class="nhsuk-radios">
+											<div class="nhsuk-radios__item">
+												<input type="radio"
+													value="2"
+													id="optionApproved[0]"
+													class="nhsuk-radios__input" name="documents[0].documentStatus.id" /> <label
+													class="nhsuk-label nhsuk-radios__label"
+													for="optionApproved[0]">Accept evidence</label>
+											</div>
+											<div class="nhsuk-radios__item">
+												<input type="radio"
+													value="3"
+													id="optionRejected[0]"
+													class="nhsuk-radios__input" name="documents[0].documentStatus.id" /> <label
+													class="nhsuk-label nhsuk-radios__label"
+													for="optionRejected[0]">Reject evidence</label>
+											</div>
+                      <div class="nhsuk-radios__item">
+												<input type="radio"
+													value="3"
+													id="optionRejected[0]"
+													class="nhsuk-radios__input" name="documents[0].documentStatus.id" /> <label
+													class="nhsuk-label nhsuk-radios__label"
+													for="optionRejected[0]">Request document</label>
+											</div>
+										</div>
+									</fieldset>
+
+
+								</div>
+							</div>
+							<!--<div class="nhsuk-form-group">
+								<a id="requestDocument" class="nhsuk-button nhsuk-button--secondary" role="button" data-module="nhsuk-button" href="#">Request document</a>
+							</div>-->
+							<div class="nhsuk-form-group">
+
+							</div>
+							<div class="nhsuk-form-group">
+								<a href="assess" class="nhsuk-button" type="submit" name="submit" id="continue" data-module="nhsuk-button">Continue</a>
+								<p><a href="../student-details" id="cancel">Cancel</a></p>
+							</div>
+    </div>
+  </div>
+</form>
+{% endblock %}

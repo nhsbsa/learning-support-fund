@@ -1,0 +1,114 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Update course details
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+{{ backLink({
+"href": "javascript:history.go(-1)",
+"text": "Go back"
+}) }}
+
+<form id="updatenameForm" name="updatenameForm" action="/lsf-web/v6/student-details-change" method="post" novalidate="">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+        <span class="nhsuk-caption-l" id="studentRef">
+					<span>SSRN0000642 - Joe Bloggs</span>
+					<span class="nhsuk-u-visually-hidden"> - </span>
+				</span>
+				Calculation details
+			</h1>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Student reference number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            SSRN0000642-2
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            University
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            UNIVERSITY OF NEWCASTLE
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Course
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Adult Nursing
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Academic year
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            2024-Sep
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Attendance type
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Full Time
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Course length
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            3 years
+          </dd>
+        </div>
+      </dl>
+
+
+			<div>
+				<div class="nhsuk-form-group" id="group-maintGrant">
+					<label for="maintGrant" class="nhsuk-label">Training Grant payment</label>
+
+					<input type="text" pattern="\d+(\.\d{1,2})?" title="Monetary value from 0.00 to 999999.99 without commas" maxlength="9" class="nhsuk-input" id="maintGrant" name="maintGrant" value="12">
+				</div>
+			</div>
+
+			<div>
+				<div class="nhsuk-form-group" id="group-courseUplift">
+					<label for="courseUplift" class="nhsuk-label">Specialist subject payment</label>
+
+					<input type="text" pattern="\d+(\.\d{1,2})?" title="Monetary value from 0.00 to 999999.99 without commas" maxlength="9" class="nhsuk-input" id="courseUplift" name="courseUplift" value="0">
+				</div>
+			</div>
+
+			<div class="mb-15">
+				<h2 class="nhsuk-heading-m">Total amount payable: £12</h2>
+			</div>
+
+			<div class="nhsuk-form-group">
+				<a href="assessment-complete" class="nhsuk-button" id="saveButton" type="submit" name="save" data-module="nhsuk-button">Save</a>
+			</div>
+			<div class="nhsuk-form-group">
+
+			</div>
+			<div class="nhsuk-form-group">
+				<p><a href="../student-details" id="cancel">Cancel</a></p>
+			</div>
+    </div>
+  </div>
+</form>
+{% endblock %}

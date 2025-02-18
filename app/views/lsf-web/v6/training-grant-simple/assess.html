@@ -1,0 +1,73 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Update course details
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+{{ backLink({
+"href": "javascript:history.go(-1)",
+"text": "Go back"
+}) }}
+
+<form id="updatenameForm" name="updatenameForm" action="/lsf-web/v6/student-details-change" method="post" novalidate="">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">
+				<span class="nhsuk-caption-l" id="studentRef">
+					<span>SSRN0000642 - Joe Bloggs</span>
+					<span class="nhsuk-u-visually-hidden"> - </span>
+				</span>
+				Application status
+			</h1>
+
+      <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            <nobr>Application reference number</nobr>
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            SSRN0000642-2 Training Grant
+          </dd>
+        </div>
+
+      </dl>
+
+			<div class="nhsuk-form-group" id="applicationStatus-group">
+        <div class="nhsuk-radios">
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+              In payment
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+              Rejected
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+              Non-funded year
+            </label>
+          </div>
+        </div>
+			</div>
+
+			<div class="nhsuk-form-group">
+				<a href="calculate"class="nhsuk-button" type="submit" name="submit" id="continue">Continue</a>
+				<p><a href="../student-details" id="cancel">Cancel</a></p>
+			</div>
+    </div>
+  </div>
+</form>
+{% endblock %}
