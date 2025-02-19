@@ -32,7 +32,31 @@
               <li>accommodation bookings (for example, hotels)</li>
               <li>taxi journey</li>
             </ul>
+          {% elseif data['change'] == "yes-all" %}
+            <p>You cannot remove costs you've already given us information for. These are:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>driving to or from placement</li>
+              <li>public transport to or from placement</li>
+              <li>cycling to or from placement</li>
+              <li>community travel</li>
+              <li>accommodation bookings (for example, hotels)</li>
+              <li>travel between accommodation bookings and term time address</li>
+              <li>taxi journey</li>
+              <li>overseas costs</li>
+              <li>hiring a car</li>
+            </ul>
+          {% elseif data['change'] == "yes-most" %}
+            <p>You cannot remove costs you've already given us information for. These are:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>driving to or from placement</li>
+              <li>accommodation bookings (for example, hotels)</li>
+              <li>travel between accommodation bookings and term time address</li>
+              <li>taxi journey</li>
+            </ul>
           {% endif %}
+
+
+          {% if data['change'] != "yes-all" %}
 
           <div class="nhsuk-hint" id="example-hint">
             Select all that apply
@@ -46,7 +70,7 @@
 
           <div class="nhsuk-checkboxes">
 
-            {% if data['change'] != "yes" %}
+            {% if data['change'] != "yes" and data['change'] != "yes-most" %}
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="claiming-for-car" name="claiming-for" type="checkbox" value="car" {{ checked('car') }}>
               <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-car">
@@ -80,6 +104,8 @@
 
       </div>
 
+      {% if data['change'] != "yes-most" %}
+
       <div class="nhsuk-form-group">
 
         <h2 class="nhsuk-heading-m">Accommodation booking costs</h2>
@@ -104,7 +130,9 @@
 
         </div>
 
-    </div>
+      </div>
+
+      {% endif %}
 
       <div class="nhsuk-form-group">
 
@@ -129,7 +157,7 @@
 
           <div class="nhsuk-checkboxes">
 
-            {% if data['change'] != "yes" %}
+            {% if data['change'] != "yes" and data['change'] != "yes-most" %}
               <div class="nhsuk-checkboxes__item">
                 <input class="nhsuk-checkboxes__input" id="claiming-for-taxi" name="claiming-for" type="checkbox" value="taxi">
                 <label class="nhsuk-label nhsuk-checkboxes__label" for="claiming-for-taxi">
@@ -160,6 +188,8 @@
         </fieldset>
 
       </div>
+
+      {% endif %}
 
       <button class="nhsuk-button" type="submit">Continue</button><br>
       <p><a href="TDAE-start-claim">Cancel</a></p>
