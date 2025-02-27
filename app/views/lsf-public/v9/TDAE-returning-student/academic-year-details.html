@@ -10,7 +10,7 @@ Academic year September 2023
   <div class="nhsuk-grid-column-two-thirds">
 
     <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Your NHS Learning Support Fund
-        reference number is SSRN0000059</span>Academic year September 2023 details</h1>
+        reference number is SSRN0000059</span>Academic year September 2024 details</h1>
 
   </div>
 
@@ -24,14 +24,20 @@ Academic year September 2023
       Newcastle University<br><br>
       <strong>Academic year</strong><br>
       September 2023<br><br>
-      <strong>Course details</strong><br>
-      <a href="#">Edit</a>
+      {% if data['status'] != 'interrupted' %}
+        <strong>Course details</strong><br>
+        <a href="#">Edit</a>
+      {% endif %}
     </p>
   </div>
   <div class="nhsuk-grid-column-one-third">
     <p>
       <strong>Attendance status</strong><br>
-      University confirmation needed for term 1<br><br>
+      {% if data['status'] == 'interrupted' %}
+        Interruption<br><br>
+      {% else %}
+        University confirmation needed for term 1<br><br>
+      {% endif %}
       <strong>Declaration</strong><br>
       <a href="#">View</a><br><br>
       <strong>Attendance</strong><br>
@@ -68,9 +74,11 @@ Academic year September 2023
           <th role="columnheader" class="" scope="col">
             Status
           </th>
-          <th role="columnheader" class="" scope="col">
-            Action
-          </th>
+          {% if data['status'] != 'interrupted' %}
+            <th role="columnheader" class="" scope="col">
+              Action
+            </th>
+          {% endif %}
         </tr>
       </thead>
       <tbody class="nhsuk-table__body">
@@ -81,9 +89,11 @@ Academic year September 2023
           <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Status </span>Approved for payment
           </td>
-          <!--<td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Upload further evidence</a>
-          </td>-->
+          {% if data['status'] != 'interrupted' %}
+            <td role="cell" class="nhsuk-table__cell">
+              <!--<span class="nhsuk-table-responsive__heading">Action </span><a href="#">Upload further evidence</a>-->
+            </td>
+          {% endif %}
         </tr>
       </tbody>
     </table>
@@ -104,16 +114,26 @@ Academic year September 2023
           <a class="nhsuk-tabs__tab" href="#tab-two">Travel and Dual Accommodation Expenses</a>
         </li>
         <li class="nhsuk-tabs__list-item">
-          <a class="nhsuk-tabs__tab" href="#tab-three">Exceptional Support Fund</a>
+          <a class="nhsuk-tabs__tab" href="#tab-three">Exceptional  Support Fund</a>
         </li>
       </ul>
 
       <div class="nhsuk-tabs__panel" id="tab-one">
         <h3 class="nhsuk-heading-m">Parental Support</h3>
-        <p>Parental Support is available to students who have parental responsibility for a child. Please ensure you
-          have read the NHS Learning Support Fund guide relating to Parental Support before completing this application.
-        </p>
-        <a class="nhsuk-button" href="#">Apply</a>
+        <p>You're eligible for Parental Support if you have parental responsibility for a child who is either:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>under the age of 15 years</li>
+          <li>under 17 years if the child is registered with special educational needs</li>
+        </ul>
+        {% if data['status'] != 'interrupted' %}
+          <p>Visit our <a href="https://www.nhsbsa.nhs.uk/nhs-learning-support-fund-lsf/parental-support" target="_blank">Parental Support page (opens in a new tab)</a> for more information before applying.</p>
+          <a class="nhsuk-button" href="#">Apply for Parental Support</a>
+        {% else %}
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>You cannot apply for Parental Support if your course is interrupted. <a href="https://cms.nhsbsa.nhs.uk/nhs-learning-support-fund-lsf/contact-nhs-learning-support-fund">Contact us</a> for more information.</p>
+          </div>
+        {% endif %}
       </div>
       <div class="nhsuk-tabs__panel" id="tab-two">
         <h3 class="nhsuk-heading-m">Claim Travel and Dual Accommodation Expenses (TDAE)</h3>
@@ -130,14 +150,24 @@ Academic year September 2023
         <p><a href="TDAE-claim-history">View your previous claims</a></p>
       </div>
       <div class="nhsuk-tabs__panel" id="tab-three">
-        <h3 class="nhsuk-heading-m">Exceptional Support Fund</h3>
-        <p>The Exceptional Support Fund (ESF) is available to eligible students experiencing unforeseen financial hardship during their studies, who have exhausted all other means of funding.</p>
-        <p>You can apply for ESF at any point throughout the academic year, there's no closing date.</p>
-        <p>We've put together an <a href="https://www.nhsbsa.nhs.uk/learning-support-fund/exceptional-support-fund" target="_blank" rel="noopener"> ESF application guide which is available on our website<span class="nhsuk-u-visually-hidden"> (opens in a new window)</span></a> to help you complete your application form.</p>
-        <p>Read through this before submitting your application. It contains essential information about the types of evidence and supporting documentation you must provide with your claim.</p>
-        <p><a id="downloadEsf" href="/nhslsf/apply/view/esf/form" target="_blank" rel="noopener">Download ESF application form<span class="nhsuk-u-visually-hidden"> (opens in a new tab)</span></a>
-        <p>When completed post your ESF Application form to:</p>
-        <p class="bold">NHS Learning Support Fund (ESF application)<br/>Student Services<br/>Hesketh House<br/>200 - 220 Broadway<br/>Fleetwood<br/>FY7 8SS</p>
+        <h3 class="nhsuk-heading-m">Exceptional Support Fund (ESF)</h3>
+        <p>ESF is funding available to eligible healthcare students who experience unforeseen financial hardship during their studies.</p>
+        {% if data['status'] != 'interrupted' %}
+        <p>You need to <a id="downloadEsf" href="/nhslsf/apply/view/esf/form" target="_blank" rel="noopener">download the ESF application form</a> and send it to <a href="mailto:nhsesf@nhsbsa.nhs.uk">nhsesf@nhsbsa.nhs.uk</a>, or write to us at:<br>
+        NHS Learning Support Fund<br>
+        Student Services<br>
+        Hesketh House<br>
+        200-220 Broadway<br>
+        Fleetwood<br>
+        FY7 8SS</p>
+        <p>Visit our <a href="https://www.nhsbsa.nhs.uk/nhs-learning-support-fund-lsf/exceptional-support-fund-esf" target="_blank">Exceptional Support Fund page (opens in a new tab)</a> for more information before applying.</p>
+        {% endif %}
+        {% if data['status'] == 'interrupted' %}
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>You cannot apply for the Exceptional Support Fund if your course is interrupted. <a href="https://cms.nhsbsa.nhs.uk/nhs-learning-support-fund-lsf/contact-nhs-learning-support-fund">Contact us</a> for more information.</p>
+          </div>
+        {% endif %}
       </div>
     </div>
 

@@ -16,32 +16,41 @@
     </div>
     <div class="nhsuk-grid-row">
 
-        <div class="nhsuk-grid-column-one-half">
+        <div class="nhsuk-grid-column-one-third">
 
-            <div class="nhsuk-grid-row">
-                <div class="nhsuk-grid-column-two-thirds">
-
-                    <div class="nhsuk-card nhsuk-card--clickable">
-                        <div class="nhsuk-card__content">
-                            {% if data['questionnaire-completed'] == 'Completed' %}
-                                <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                                <a class="nhsuk-card__link" href="TDAE-returning-student/academic-year-details">View 2023/2024 academic year details</a>
-                                </h2>
-                            {% else %}
-                                <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                                <a class="nhsuk-card__link" href="attending-university">Apply for 2020/2021 academic year</a>
-                                </h2>
-                                <p class="nhsuk-card__description">You can now apply for this academic year</p>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
+          <div class="nhsuk-card nhsuk-card--clickable">
+              <div class="nhsuk-card__content">
+                  {% if data['questionnaire-completed'] == 'Completed' %}
+                      <h2 class="nhsuk-card__heading nhsuk-heading-s">
+                      <a style="word-break: auto-phrase;" class="nhsuk-card__link" href="TDAE-returning-student/academic-year-details?status=interrupted">View 2024/2025 academic year details</a>
+                      </h2>
+                      <strong class="nhsuk-tag nhsuk-tag--yellow nhsuk-u-margin-bottom-3">
+                        Interruption
+                      </strong>
+                      <p style="word-break: auto-phrase;" class="nhsuk-body-s nhsuk-card__description">Current academic year<br>
+                        Start month: September 2024</p>
+                  {% else %}
+                      <h2 class="nhsuk-card__heading nhsuk-heading-s">
+                      <a style="word-break: auto-phrase;" class="nhsuk-card__link" href="attending-university">Apply for 2024/2025 academic year</a>
+                      </h2>
+                      <p style="word-break: auto-phrase;" class="nhsuk-body-s nhsuk-card__description">You can now apply for this academic year</p>
+                  {% endif %}
+              </div>
+          </div>
         </div>
+        <div class="nhsuk-grid-column-one-third">
+          <div class="nhsuk-card nhsuk-card--clickable">
+              <div class="nhsuk-card__content">
+                  <h2 class="nhsuk-card__heading nhsuk-heading-s">
+                  <a style="word-break: auto-phrase;" style="word-break: auto-phrase;" class="nhsuk-card__link" href="TDAE-returning-student/academic-year-details">View 2023/2024 academic year details</a>
+                  </h2>
+                  <p style="word-break: auto-phrase;" class="nhsuk-body-s nhsuk-card__description">Previous academic year<br>
+                    Start month: September 2023</p>
+              </div>
+          </div>
+        </div>
+      </div>
 
-    </div>
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <div class="nhsuk-tabs" data-module="nhsuk-tabs">
@@ -63,6 +72,9 @@
             <li class="nhsuk-tabs__list-item">
               <a class="nhsuk-tabs__tab" href="#tab-four">Payments</a>
             </li>
+            <li class="nhsuk-tabs__list-item">
+							<a class="nhsuk-tabs__tab" href="#tab-enrolments">Previous enrolments</a>
+						</li>
           </ul>
           <div class="nhsuk-tabs__panel" id="tab-one">
               <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
@@ -328,6 +340,7 @@
                   </div>
 								</dl>
 							</div>
+              </div>
           </div>
           <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="tab-three">
           </div>
@@ -1033,6 +1046,37 @@
               </div>
               </div>
           </div>
+          <div id="tab-enrolments" class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden">
+  					<div class="nhsuk-grid-row">
+  						<div class="nhsuk-grid-column-full">
+  							<h2 class="nhsuk-heading-m">Previous Enrolments</h2>
+  						</div>
+  						<div class="nhsuk-grid-column-full">
+  							<details class="nhsuk-details" id="document">
+  								<summary class="nhsuk-details__summary">
+  									<span class="nhsuk-details__summary-text">2023/2024 (Enrolment status: Interruption)</span>
+  								</summary>
+  								<div class="nhsuk-details__text">
+  									<div class="nhsuk-grid-row">
+  										<div class="nhsuk-grid-column-half">
+
+  											<h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course name</h3>
+  											<p id="courseName">Adult Nursing</p>
+
+  											<h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">University</h3>
+  											<p id="universityName">ANGLIA RUSKIN UNIVERSITY</p>
+
+  											<h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Start month</h3>
+  											<p id="enrolmentYearName">September 2023</p>
+
+                        <p><a class="nhsuk-link--no-visited-state" href="TDAE-returning-student/academic-year-details">View academic year details</a></p>
+  										</div>
+  									</div>
+  								</div>
+  							</details>
+  						</div>
+  					</div>
+  				</div>
         </div>
       </div>
     </div>
