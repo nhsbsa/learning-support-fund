@@ -192,11 +192,11 @@ router.post('/v10/TDAE-accommodation-check', (req, res) => {
 
     if (accommodationCheck === 'yes') {
         req.session.data['accommodation-completed'] = 'completed'
+        res.redirect('/lsf-portal/v10/TDAE-student-claim')
     } else {
         req.session.data['accommodation-completed'] = 'in-progress'
+        res.redirect('/lsf-portal/v10/TDAE-accommodation-reason')
     }
-
-    res.redirect('/lsf-portal/v10/TDAE-student-claim')
 
 })
 
@@ -206,11 +206,11 @@ router.post('/v10/TDAE-accommodation-check-2', (req, res) => {
 
     if (accommodationCheck2 === 'yes') {
         req.session.data['accommodation-completed-2'] = 'completed'
+        res.redirect('/lsf-portal/v10/TDAE-student-claim')
     } else {
         req.session.data['accommodation-completed-2'] = 'in-progress'
+        res.redirect('/lsf-portal/v10/TDAE-accommodation-reason')
     }
-
-    res.redirect('/lsf-portal/v10/TDAE-student-claim')
 
 })
 
@@ -220,11 +220,11 @@ router.post('/v10/TDAE-accommodation-travel-check', (req, res) => {
 
     if (accommodationTravelCheck === 'yes') {
         req.session.data['accommodation-travel-completed'] = 'completed'
+        res.redirect('/lsf-portal/v10/TDAE-student-claim')
     } else {
         req.session.data['accommodation-travel-completed'] = 'in-progress'
+        res.redirect('/lsf-portal/v10/TDAE-accommodation-travel-reason')
     }
-
-    res.redirect('/lsf-portal/v10/TDAE-student-claim')
 
 })
 
@@ -234,11 +234,11 @@ router.post('/v10/TDAE-accommodation-travel-check-2', (req, res) => {
 
     if (accommodationTravelCheck2 === 'yes') {
         req.session.data['accommodation-travel-completed-2'] = 'completed'
+        res.redirect('/lsf-portal/v10/TDAE-student-claim')
     } else {
         req.session.data['accommodation-travel-completed-2'] = 'in-progress'
+        res.redirect('/lsf-portal/v10/TDAE-accommodation-travel-reason')
     }
-
-    res.redirect('/lsf-portal/v10/TDAE-student-claim')
 
 })
 
@@ -264,11 +264,11 @@ router.post('/v10/TDAE-evidence-match-2', (req, res) => {
 
   if (evidenceMatch2 === 'yes') {
       req.session.data['evidence-completed-2'] = 'completed'
+      res.redirect('/lsf-portal/v10/TDAE-student-claim')
   } else {
       req.session.data['evidence-completed-2'] = 'in-progress'
+      res.redirect('/lsf-portal/v10/TDAE-evidence-reason')
   }
-
-  res.redirect('/lsf-portal/v10/TDAE-student-claim')
 
 })
 
@@ -311,7 +311,7 @@ router.post('/v10/TDAE-checked-taxi', (req, res) => {
         res.redirect('/lsf-portal/v10/TDAE-checked-taxi-comments');
     } else {
         req.session.data['taxi-completed'] = 'in-progress';
-        res.redirect('/lsf-portal/v10/TDAE-student-claim');
+        res.redirect('/lsf-portal/v10/TDAE-checked-taxi-reason');
     }
 
 });
@@ -354,7 +354,7 @@ router.post('/v10/TDAE-checked-overseas', (req, res) => {
         res.redirect('/lsf-portal/v10/TDAE-checked-overseas-comments');
     } else {
         req.session.data['overseas-completed'] = 'in-progress';
-        res.redirect('/lsf-portal/v10/TDAE-student-claim');
+        res.redirect('/lsf-portal/v10/TDAE-checked-overseas-reason');
     }
 });
 
@@ -366,17 +366,17 @@ router.post('/v10/TDAE-checked-overseas-comments', (req, res) => {
 })
 
 
-router.post('/v10/TDAE-university-match', (req, res) => {
+router.post('/v10/TDAE-checked-university-details', (req, res) => {
 
     const universityMatch = req.session.data['university-match']
 
     if (universityMatch === 'yes') {
         req.session.data['university-completed'] = 'completed'
+        res.redirect('/lsf-portal/v10/TDAE-student-claim')
     } else {
         req.session.data['university-completed'] = 'in-progress'
+        res.redirect('/lsf-portal/v10/TDAE-checked-university-details-reason')
     }
-
-    res.redirect('/lsf-portal/v10/TDAE-student-claim')
 
 })
 

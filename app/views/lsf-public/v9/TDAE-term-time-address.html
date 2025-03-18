@@ -20,9 +20,25 @@ What is your term time address?
 			<fieldset class="nhsuk-fieldset">
 				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
 					<h1 class="nhsuk-fieldset__heading">
-						What is your term time address?
+						{% if data['change-address'] == 'true' %}
+							Change your term time address
+						{% else %}
+							What is your term time address?
+						{% endif %}
 					</h1>
 				</legend>
+
+				{% if data['change-address'] == 'true' %}
+					<div class="nhsuk-warning-callout">
+					  <h3 class="nhsuk-warning-callout__label">
+					    <span role="text">
+					      <span class="nhsuk-u-visually-hidden">Important: </span>
+					      Details linked to this address
+					    </span>
+					  </h3>
+					  <p>You've entered costs or mileage linked to this address. You'll need to review those sections to check if those details are still correct.</p>
+					</div>
+				{% endif %}
 
 				<div class="nhsuk-form-group">
 					<label class="nhsuk-label" for="term-building-name">

@@ -21,15 +21,31 @@ What is your placement address?
 			<fieldset class="nhsuk-fieldset">
 				<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
 					<h1 class="nhsuk-fieldset__heading">
-						Add your placement address
+						{% if data['change-address'] == 'true' %}
+							Change your placement address
+						{% else %}
+							Add your placement address
+						{% endif %}
 					</h1>
 				</legend>
 
-				<div class="nhsuk-hint"></div>
+				{% if data['change-address'] == 'true' %}
+					<div class="nhsuk-warning-callout">
+					  <h3 class="nhsuk-warning-callout__label">
+					    <span role="text">
+					      <span class="nhsuk-u-visually-hidden">Important: </span>
+					      Details linked to this address
+					    </span>
+					  </h3>
+					  <p>You've entered costs or mileage linked to this address. You'll need to review those sections to check if those details are still correct.</p>
+					</div>
+				{% endif %}
 
 				<div class="nhsuk-hint" id="example-hints-hint">
 		      <p class="nhsuk-u-margin-bottom-2">Placement addresses could include GP practices, hospitals or other medical settings.</p>
-		      <p>If you have more than one placement address, enter the first address. You can add more on the next page.</p>
+					{% if data['change-address'] != 'true' %}
+		      	<p>If you have more than one placement address, enter the first address. You can add more on the next page.</p>
+					{% endif %}
 		    </div>
 
 				<p><a href="TDAE-international-placement-address?international=true">Add an international address</a></p>

@@ -81,7 +81,11 @@ Check your answers
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
+                {% if data['address-number'] != '1' %}
+                  Placement addresses
+                {% else %}
                   Placement address
+                {% endif %}
               </dt>
               <dd class="nhsuk-summary-list__value">
                   {% if data['address-number'] != '1' %}
@@ -137,7 +141,7 @@ Check your answers
                   {% endif %}
               </dd>
               <dd class="nhsuk-summary-list__actions">
-                <a href="TDAE-placement-address-cya?change=yes&address-number=1">
+                <a href="TDAE-placement-address-cya?change=yes&address-number=2&placement-2-building-name=Newcastle Royal Victoria Infirmary&placement-2-address-postcode=NE1 2AB">
                     Change<span class="nhsuk-u-visually-hidden"> placement address</span>
                 </a>
               </dd>
@@ -172,7 +176,7 @@ Check your answers
                 {% if data['submit-claim'] != 'completed' %}
                 <dd class="nhsuk-summary-list__actions">
                   {% if data['task-completed'] != 'yes' %}
-                    <a href="TDAE-term-time-address">
+                    <a href="TDAE-term-time-address?change-address=true">
                       Change<span class="nhsuk-u-visually-hidden"> term time address</span>
                     </a>
                   {% endif %}
@@ -184,14 +188,14 @@ Check your answers
 
         </dl>
 
-        <div class="nhsuk-inset-text">
+        <!--<div class="nhsuk-inset-text">
           <span class="nhsuk-u-visually-hidden">Information: </span>
           <p>Check these answers carefully. You'll not be able to change some of them after continuing.</p>
-        </div>
+        </div>-->
 
         <form action="TDAE-task-list" method="POST">
-            <button class="nhsuk-button" type="submit">Save and continue</button><br>
-            <a href="#">Cancel</a>
+          <button class="nhsuk-button" type="submit">Save and go to task list</button><br>
+          <p><a href="#">Cancel</a></p>
         </form>
 
     </div>
