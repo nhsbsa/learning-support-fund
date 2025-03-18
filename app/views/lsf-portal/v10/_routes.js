@@ -311,7 +311,7 @@ router.post('/v10/TDAE-checked-taxi', (req, res) => {
         res.redirect('/lsf-portal/v10/TDAE-checked-taxi-comments');
     } else {
         req.session.data['taxi-completed'] = 'in-progress';
-        res.redirect('/lsf-portal/v10/TDAE-checked-taxi-reason');
+        res.redirect('/lsf-portal/v10/TDAE-student-claim-full');
     }
 
 });
