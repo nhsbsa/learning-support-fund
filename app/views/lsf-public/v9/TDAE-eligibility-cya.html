@@ -11,6 +11,18 @@ Check your answers
 
         <h1 class="nhsuk-heading-xl">Check your answers</h1>
 
+        {% if data['change'] == 'yes' %}
+          <div class="nhsuk-warning-callout">
+  				  <h2 class="nhsuk-warning-callout__label">
+  				    <span role="text">
+  				      <span class="nhsuk-u-visually-hidden">Important: </span>
+  				      University feedback
+  				    </span>
+  				  </h2>
+  				  <p class="nhsbsa-overflow-wrap">Your Alnwick placement address postcode is incorrect it should be NE66 2NT.</p>
+  				</div>
+        {% endif %}
+
         <dl class="nhsuk-summary-list">
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
