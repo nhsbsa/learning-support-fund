@@ -2120,6 +2120,8 @@ router.post('/v9/TDAE-normal-transport', (req, res) => {
         res.redirect('/lsf-public/v9/TDAE-normal-cycle-return-mileage')
     } else if (modeOfTransport.includes('public')){
         res.redirect('/lsf-public/v9/TDAE-normal-public-additional-costs-often')
+    } else if (modeOfTransport.includes('lift')){
+        res.redirect('/lsf-public/v9/TDAE-normal-lift-contribution')
     } else {
         res.redirect('/lsf-public/v9/TDAE-comments')
     }
@@ -2160,6 +2162,30 @@ router.post('/v9/TDAE-normal-place-study', (req, res) => {
 router.post('/v9/TDAE-normal-return-mileage', (req, res) => {
 
     res.redirect('/lsf-public/v9/TDAE-normal-additional-costs-often')
+
+})
+
+router.post('/v9/TDAE-normal-lift-person', (req, res) => {
+
+    res.redirect('/lsf-public/v9/TDAE-normal-lift-tbc')
+
+})
+
+router.post('/v9/TDAE-normal-lift-contribution', (req, res) => {
+
+    const normalLiftContribution = req.session.data['normal-lift-contribution']
+
+    if (normalLiftContribution === 'yes') {
+        res.redirect('/lsf-public/v9/TDAE-normal-list-contribution-amount')
+    } else {
+        res.redirect('/lsf-public/v9/TDAE-comments')
+    }
+
+})
+
+router.post('/v9/TDAE-normal-lift-contribution-amount', (req, res) => {
+
+    res.redirect('/lsf-public/v9/TDAE-comments')
 
 })
 

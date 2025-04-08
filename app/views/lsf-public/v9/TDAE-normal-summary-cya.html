@@ -178,6 +178,30 @@ Check your answers
 				{% endif %}
 			{% endif %}
 
+			{% if data['mode-of-transport'] %}
+				{% if 'lift' in data['mode-of-transport'] %}
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Lift contribution
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['normal-lift-contribution'] == 'yes' %}
+								£{{ data['normal-lift-cost'] }}
+							{% else %}
+								No contribution
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-normal-lift-contribution">
+									Change<span class="nhsuk-u-visually-hidden"> additional costs total</span>
+								</a>
+							</dd>
+						{% endif %}
+					</div>
+				{% endif %}
+			{% endif %}
+
 			<div class="nhsuk-summary-list__row">
 				<dt class="nhsuk-summary-list__key">
 					Comments

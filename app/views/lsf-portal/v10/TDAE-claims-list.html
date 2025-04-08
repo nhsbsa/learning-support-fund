@@ -16,7 +16,7 @@
     <div class="nhsuk-grid-column-full">
       <p><a class="nhsuk-link--no-visited-state" href="TDAE-previous-claims-list">View previously processed claims</a></p>
 
-      <p><a href="/images/TDAE-claims-list.csv" download="TDAE claims list 16 May 2024 11:41">Download details of claims that need processing (CSV, 4KB)</a></p>
+      <p><a href="/images/TDAE-claims-list.csv" download="TDAE claims list 16 May 2025 11:41">Download details of claims that need processing (CSV, 4KB)</a></p>
 
       <button class="nhsuk-button nhsuk-button--secondary" id="toggle-filter" style="margin-bottom: 24px;" value="Show filter" onclick="change()">Show filter</button>
 
@@ -120,18 +120,28 @@
                         </label>
 
                         <div class="nhsuk-checkboxes nhsuk-checkboxes--small nhsuk-u-padding-bottom-5" data-module="nhsuk-checkboxes">
+                          {% if data['Jackson'] != 'locked' %}
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="status" name="status" type="checkbox" value="1" {% if data['filter'] == 'yes' %}checked{% endif %}>
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status">
+                              Resubmitted (1)
+                            </label>
+                          </div>
+                          {% endif %}
                           <div class="nhsuk-checkboxes__item">
                             <input class="nhsuk-checkboxes__input" id="status" name="status" type="checkbox" value="1" {% if data['filter'] == 'yes' %}checked{% endif %}>
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="status">
                               To be completed (5)
                             </label>
                           </div>
+                          {% if data['Jackson'] == 'locked' %}
                           <div class="nhsuk-checkboxes__item">
                             <input class="nhsuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="status-2">
                               Checks started (1)
                             </label>
                           </div>
+                          {% endif %}
                           <div class="nhsuk-checkboxes__item">
                             <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
@@ -201,26 +211,27 @@
                         <span class="nhsuk-table-responsive__heading">Course </span>Adult Nursing
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Claim submitted date </span>28 February 2024
+                        <span class="nhsuk-table-responsive__heading">Claim submitted date </span><p style="margin-bottom: 0px;" id="currentDate"</p>
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Status </span>
-                        {% if data['Jackson'] == 'Returned' %}
-                        <strong class="nhsuk-tag nhsuk-tag--green">Submitted to NHSBSA</strong>
+                        {% if data['Jackson'] != 'locked' %}
+                        <strong class="nhsuk-tag nhsuk-tag--white">Resubmitted</strong>
                         {% else %}
                         <strong class="nhsuk-tag nhsuk-tag--blue">Started by you</strong>
                         {% endif %}
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Action </span>
-                        {% if data['Thompson'] == 'Returned' %}
+                        {% if data['Jackson'] != 'locked' %}
                         <a class="nhsuk-link--no-visited-state"
-                            href="TDAE-student-claim?name=Daniel Jackson&status=Returned to student&evidence-completed=in-progress&university-completed=completed&approve-in-progress=&read-only=true&breakdown=walk">View
+                            href="TDAE-student-claim-resubmitted?Jackson=locked">Process
                             claim</a>
                         {% else %}
                         <a class="nhsuk-link--no-visited-state"
-                            href="TDAE-student-claim?name=Daniel Jackson&status=To be completed&evidence-completed=&university-completed=completed&approve-in-progress=&read-only=&wrong-evidence=true&breakdown=walk">Process
-                            claim</a>
+                            href="TDAE-student-claim-resubmitted?Jackson=locked">Process
+                            claim</a> or <br>
+                            <a href="TDAE-claims-list?Jackson=unlocked">unlock claim</a>
                         {% endif %}
                     </td>
                   </tr>
@@ -233,11 +244,11 @@
                         <span class="nhsuk-table-responsive__heading">Course </span>Adult Nursing
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Claim submitted date </span>3 March 2024
+                        <span class="nhsuk-table-responsive__heading">Claim submitted date </span>3 March 2025
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Status </span>
-                        <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
+                        <strong class="nhsuk-tag nhsuk-tag--purple">Started by SJ</strong>
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Action </span>
@@ -255,11 +266,11 @@
                         <span class="nhsuk-table-responsive__heading">Course </span>Midwifery
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Claim submitted date </span>5 March 2024
+                        <span class="nhsuk-table-responsive__heading">Claim submitted date </span>5 March 2025
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Status </span>
-                        <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
+                        <strong class="nhsuk-tag nhsuk-tag--white">Returned from NHSBSA</strong>
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Action </span>
@@ -277,7 +288,7 @@
                           <span class="nhsuk-table-responsive__heading">Course </span>Midwifery
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>9 March 2024
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>9 March 2025
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Status </span>
@@ -300,7 +311,7 @@
                           <span class="nhsuk-table-responsive__heading">Course </span>Physiotherapy
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>11 March 2024
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>11 March 2025
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Status </span>
@@ -322,11 +333,11 @@
                           <span class="nhsuk-table-responsive__heading">Course </span>Radiography
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>14 March 2024
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>14 March 2025
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Status </span><strong
-                              class="nhsuk-tag nhsuk-tag--purple">Started by SJ</strong>
+                          <span class="nhsuk-table-responsive__heading">Status </span>
+                          <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Action </span><a
@@ -343,21 +354,15 @@
                           <span class="nhsuk-table-responsive__heading">Course </span>Mental Health Nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>28 March 2024
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>28 March 2025
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Status </span>
-                          {% if data['Cooper'] == 'returned' %}
-                          <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
-                          {% else %}
-                          <strong class="nhsuk-tag nhsuk-tag--white">Returned from NHSBSA</strong>
-                          {% endif %}
+                          <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Action </span>
-                          <a class="nhsuk-link--no-visited-state"
-                              href="#">Process claim
-                          </a>
+                          <a class="nhsuk-link--no-visited-state" href="#">Process claim</a>
                       </td>
                   </tr>
                   {% if data['Bloggs'] != 'submitted' %}
@@ -369,15 +374,11 @@
                           <span class="nhsuk-table-responsive__heading">Course </span>Child Nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>4 April 2024
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>4 April 2025
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Status </span>
-                          {% if data['Bloggs'] == 'returned' %}
-                          <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
-                          {% else %}
                           <strong class="nhsuk-tag nhsuk-tag--white">To be completed</strong>
-                          {% endif %}
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Action </span>
@@ -394,7 +395,7 @@
                           <span class="nhsuk-table-responsive__heading">Course </span>Adult Nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>7 April 2024
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>7 April 2025
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Status </span>
@@ -425,7 +426,7 @@
                           <span class="nhsuk-table-responsive__heading">Course </span>Adult Nursing
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
-                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>7 April 2024
+                          <span class="nhsuk-table-responsive__heading">Claim submitted date </span>7 April 2025
                       </td>
                       <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Status </span>
@@ -491,5 +492,21 @@ function change() // no ';' here
     showAllValues: true,
     selectElement: element
   })
+
+  // Current Date
+
+  // JavaScript code
+  var currentDateElement = document.getElementById("currentDate");
+
+  // Get the current date
+  var currentDate = new Date();
+
+  // Format the date as desired
+  var options = { day: 'numeric', month: 'long', year: 'numeric' };
+  var formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+  // Set the formatted date as the content of the element
+  currentDateElement.textContent = formattedDate;
+
 </script>
 {% endblock %}

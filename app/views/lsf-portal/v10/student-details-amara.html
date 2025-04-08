@@ -162,12 +162,14 @@
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Status </span>
-                        <strong class="nhsuk-tag nhsuk-tag--yellow">Returned to student</strong>
+                        <strong class="nhsuk-tag nhsuk-tag--blue">Started by you</strong>
                     </td>
                     {% if data['user-role'] != 'COSA' %}
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Action </span>
-                        <a class="nhsuk-link--no-visited-state" href="TDAE-student-claim?name=George Hill&status=Returned to student&evidence-completed=in-progress&evidence-completed-2=completed&accommodation-completed=completed&vehicle-hire-check=yes&accommodation-completed-2=completed&university-completed=completed&approve-in-progress=&read-only=true">View claim</a>
+                        <a class="nhsuk-link--no-visited-state"
+                            href="TDAE-student-claim?name=Daniel Jackson&status=To be completed&evidence-completed=&university-completed=completed&approve-in-progress=&read-only=&wrong-evidence=true&breakdown=walk">Process
+                            claim</a> or <a href="#">Unlock claim</a>
                     </td>
                     {% endif %}
                 </tr>
