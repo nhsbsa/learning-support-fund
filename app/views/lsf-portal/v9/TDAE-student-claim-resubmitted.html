@@ -1,0 +1,334 @@
+{% extends 'layout-HEI-v10.html' %}
+
+{% block pageTitle %}
+
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+      "href": "TDAE-claims-list",
+      "text": "Go back to Active TDAE claims"
+      }) }}
+
+      <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Travel and Dual Accommodation Expenses</span>
+        Daniel Jackson
+      </h1>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Student's personal and course details
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                NHS Learning Support Fund reference number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                SSRN0010003
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                University Student ID
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                AB123456
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Academic year
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                2024 to 2025
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Course
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Adult nursing
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </details>
+
+
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Claim start<br>
+            and end date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            2 February 2025 to
+            24 March 2025
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Total claim value
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            £340
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <nobr><p><a href="#">View costs summary</a></p></nobr>
+          </dd>
+        </div>
+
+      </dl>
+
+      <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim.</h2>
+      <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed <span id="completedCount">0</span> of <span id="sectionLength">5</span> sections.</p>
+
+    </div>
+  </div>
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Claim notes and history
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <table class="nhsuk-table-responsive">
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    From
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Date
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Notes
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Daniel Jackson</td>
+                  <td class="nhsuk-table__cell"><p id="currentDate"</p></td>
+                  <td class="nhsuk-table__cell "><strong>Claim resubmitted</strong></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Mark Hirst (university)</td>
+                  <td class="nhsuk-table__cell">3 April 2025</td>
+                  <td class="nhsuk-table__cell "><strong>Returned to student</strong><br>You have not uploaded evidence of your public transport ticket for the 3 February.</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Daniel Jackson</td>
+                  <td class="nhsuk-table__cell">31 March 2025</td>
+                  <td class="nhsuk-table__cell "><strong>Claim submitted</strong><br></td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></p>
+          </div>
+        </details>
+    </div>
+  </div>
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <ol class="app-task-list">
+        <li class="section-item">
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Travel details
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  Check university travel details
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  Check period 1 placement travel details
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  Check period 2 placement travel details
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  Check period 3 placement travel details
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li class="section-item">
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">
+                2.
+            </span> Accommodation details
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  Check accommodation details
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
+            </li>
+
+          <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  Check accommodation travel journey details
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li class="section-item">
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">
+                3.
+            </span> Placement timesheets
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                  <a href="#">Placement timesheets evidence</a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li class="section-item">
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">
+                4.
+            </span> Finish checking claim
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                <span class="app-task-list__task-name">
+                  Submit checked claim
+                </span>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--grey task-status" style="float: right;" id="eligibility-status">Cannot start yet</strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <h2 class="nhsuk-heading-m">Return or decline this claim</h2>
+      <p>If there are issues with this claim, you can either:</p>
+      <ul>
+        <li>return it to the student</li>
+        <li>decline the claim</li>
+      </ul>
+      <a class="nhsuk-button nhsuk-button--secondary" href="#">Return or decline claim</a>
+    </div>
+  </div>
+{% endblock %}
+{% block pageScripts %}
+  <script>
+    // To get the counter to work, you need two things:
+    // 1. This class on your section <li class="section-item">
+    // 2. This class on your status tag <strong class="task-status">
+
+    // Get all elements with the class 'container'
+    const containers = document.querySelectorAll('.section-item');
+
+    // Create an object to store container IDs and their values
+    const containerValues = {};
+
+    // Initialize all container IDs with a value of 1
+    containers.forEach((container, index) => {
+      containerValues[index] = 1;
+    });
+
+    // Function to search within each 'container' element
+    function searchWithinContainer(container, index) {
+      // Find elements with class 'searchable' within the 'container'
+      const searchables = container.querySelectorAll('.task-status');
+
+      // Log the content of each 'searchable' element within the 'container'
+      searchables.forEach((searchable) => {
+        console.log(searchable.textContent);
+        if (searchable.textContent !== 'Completed') {
+          console.log('Not all tasks in this container are completed');
+          // Set the value of the container ID to 0 if a task is not completed
+          containerValues[index] = 0;
+        }
+      });
+    }
+
+    // Search each container
+    containers.forEach((container, index) => {
+      searchWithinContainer(container, index);
+    });
+
+    var completedSectionCount = document.getElementById('completedCount');
+    var totalSectionCount = document.getElementById('sectionLength');
+
+    // Calculate the completed section count
+    var completedSections = Object.values(containerValues).reduce(
+      (total, value) => total + value,
+      0
+    );
+    console.log('completed sections: ' + completedSections)
+
+    completedSectionCount.innerHTML = completedSections;
+    totalSectionCount.innerHTML = containers.length;
+
+
+    // Current Date
+
+    // JavaScript code
+    var currentDateElement = document.getElementById("currentDate");
+
+    // Get the current date
+    var currentDate = new Date();
+
+    // Format the date as desired
+    var options = { day: 'numeric', month: 'long', year: 'numeric' };
+    var formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+    // Set the formatted date as the content of the element
+    currentDateElement.textContent = formattedDate;
+
+  </script>
+{% endblock %}
