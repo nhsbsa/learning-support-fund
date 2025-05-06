@@ -155,30 +155,6 @@ Check your answers
 			{% endif %}
 
 			{% if data['mode-of-transport'] %}
-				{% if 'public' in data['mode-of-transport'] %}
-					<div class="nhsuk-summary-list__row">
-						<dt class="nhsuk-summary-list__key">
-							Public transport daily costs
-						</dt>
-						<dd class="nhsuk-summary-list__value">
-							{% if data['normal-public-often-additional-costs'] == 'yes' %}
-								{{ data['public-additional-cost'] }}
-							{% else %}
-								No costs
-							{% endif %}
-						</dd>
-						{% if data['submit-claim'] != 'completed' %}
-							<dd class="nhsuk-summary-list__actions">
-								<a href="TDAE-normal-additional-costs-often">
-									Change<span class="nhsuk-u-visually-hidden"> additional costs total</span>
-								</a>
-							</dd>
-						{% endif %}
-					</div>
-				{% endif %}
-			{% endif %}
-
-			{% if data['mode-of-transport'] %}
 				{% if 'lift' in data['mode-of-transport'] %}
 					<div class="nhsuk-summary-list__row">
 						<dt class="nhsuk-summary-list__key">
@@ -194,6 +170,30 @@ Check your answers
 						{% if data['submit-claim'] != 'completed' %}
 							<dd class="nhsuk-summary-list__actions">
 								<a href="TDAE-normal-lift-contribution">
+									Change<span class="nhsuk-u-visually-hidden"> additional costs total</span>
+								</a>
+							</dd>
+						{% endif %}
+					</div>
+				{% endif %}
+			{% endif %}
+
+			{% if data['mode-of-transport'] %}
+				{% if 'public' in data['mode-of-transport'] %}
+					<div class="nhsuk-summary-list__row">
+						<dt class="nhsuk-summary-list__key">
+							Public transport daily costs
+						</dt>
+						<dd class="nhsuk-summary-list__value">
+							{% if data['normal-public-often-additional-costs'] == 'yes' %}
+								{{ data['public-additional-cost'] }}
+							{% else %}
+								No costs
+							{% endif %}
+						</dd>
+						{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="TDAE-normal-additional-costs-often">
 									Change<span class="nhsuk-u-visually-hidden"> additional costs total</span>
 								</a>
 							</dd>
@@ -243,7 +243,7 @@ Check your answers
 			{% if data['submit-claim'] != 'completed' %}
 				<form action="v9/TDAE-normal-summary-cya" method="POST">
 					<button class="nhsuk-button" type="submit">Save and continue</button><br>
-					<a href="TDAE-start-claim">Cancel</a>
+					<p><a href="TDAE-start-claim">Cancel</a></p>
 				</form>
 			{% endif %}
 
