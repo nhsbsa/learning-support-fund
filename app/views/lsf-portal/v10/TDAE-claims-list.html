@@ -224,14 +224,11 @@
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">Action </span>
                         {% if data['Jackson'] != 'locked' %}
-                        <a class="nhsuk-link--no-visited-state"
-                            href="TDAE-student-claim-resubmitted?Jackson=locked">Process
-                            claim</a>
+                        <a class="nhsuk-link--no-visited-state" href="TDAE-resubmitted-pause">Process claim</a>
                         {% else %}
-                        <a class="nhsuk-link--no-visited-state"
-                            href="TDAE-student-claim-resubmitted?Jackson=locked">Process
-                            claim</a> or <br>
-                            <a href="TDAE-claims-list?Jackson=unlocked">unlock claim</a>
+                        <a class="nhsuk-link--no-visited-state" href="TDAE-resubmitted-pause">Process claim</a>
+                         or <br>
+                        <a href="TDAE-claims-list?Jackson=unlocked">unlock claim</a>
                         {% endif %}
                     </td>
                   </tr>
