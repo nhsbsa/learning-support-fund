@@ -9,6 +9,11 @@ Check your answers
 
     <div class="nhsuk-grid-column-two-thirds">
 
+      {{ backLink({
+      "href": "javascript:history.go(-1)",
+      "text": "Go back"
+      }) }}
+
         <!-- <form action="" method="POST"> -->
 
         <h1 class="nhsuk-heading-l">Your placement travel dates</h1>
@@ -70,11 +75,11 @@ Check your answers
 
         <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-placement-week-days?placement-week=2">Add more dates</a>
 
-        <form action="v8/TDAE-check-dates" method="POST">
+        <form action="v9/TDAE-check-dates" method="POST">
             <button class="nhsuk-button" type="submit">Save and continue</button><br>
         </form>
 
-        <a class="nhsuk-button nhsuk-button--warning" href="TDAE-dates-warning" style="background-color: #d4351c;">Reset all placement travel days</a>
+        <p><a href="#">Return to Your placement travel details</a></p>
 
         <!-- </form> -->
 
