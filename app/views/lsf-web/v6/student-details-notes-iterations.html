@@ -143,7 +143,7 @@ Student details
 				<div class="nhsuk-tabs__panel" id="tab-Activities">
 					<div class="nhsuk-grid-row">
 						<div class="nhsuk-grid-column-one-third">
-							<h2 class="nhsuk-heading-m">Activities</h2>
+							<h2 class="nhsuk-heading-l">Activities</h2>
 							<div class="nhsuk-form-group">
 								<p><a id="viewDocuments" href="documents">View documents</a></p>
 							</div>
@@ -217,51 +217,118 @@ Student details
 					</div>
 				</div>
 				<div class="nhsuk-tabs__panel" id="tab-Notes">
-          <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-full">
+					<div class="nhsuk-grid-row">
+						<div class="nhsuk-grid-column-full">
               <div class="nhsuk-form-group" style="clear:both; display: flow-root;">
-                <h3 class="nhsuk-heading-m" style="float: left; margin-top: 14px; margin-bottom: 0px;">Notes</h3>
+        				<h3 class="nhsuk-heading-m" style="float: left; margin-top: 14px; margin-bottom: 0px;">Notes</h3>
                 <a href="read-only/TDAE-add-feedback-note-2" class="nhsuk-button" style="float: right; margin-bottom: 0px;">Add note</a>
               </div>
-              <hr>
-            </div>
-          </div>
-          <div class="nhsuk-grid-row">
-						<div class="nhsuk-grid-column-one-third">
-              <h4 class="nhsuk-heading-s"">Filter</h4>
-							<div class="nhsuk-form-group">
-								<label class="nhsuk-label visually-hidden" for="filter-notes">Filter notes</label>
-								<input class="nhsuk-input" id="example" name="filter-notes" type="text" value="">
-							</div>
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="student-name">
-                  Note type
-                </label>
-                <div class="nhsuk-hint" id="contact-hint">
-                Select the notes you want shown.
-                </div>
-                <div class="nhsuk-checkboxes nhsuk-checkboxes--small" style="display: flow-root;" data-module="nhsuk-checkboxes">
-                  <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="note-filter" name="note-filter" type="checkbox" value="1">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="note-filter">
-                      System note
-                      </label>
+              <!--<details class="nhsuk-details nhsuk-expander">
+                <summary class="nhsuk-details__summary">
+                  <span class="nhsuk-details__summary-text">
+                    Filter notes
+                  </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label visually-hidden" for="filter-notes">Filter notes</label>
+                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="example" name="filter-notes" type="text" value="">
                   </div>
-                  <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="note-filter-2" name="note-filter" type="checkbox" value="2">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="note-filter-2">
-                      User note
-                      </label>
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="student-name">
+                      Note type
+                    </label>
+                    <div class="nhsuk-hint" id="contact-hint">
+                    Select the notes you want shown.
+                    </div>
+                    <div class="nhsuk-checkboxes nhsuk-checkboxes--small" style="display: flow-root;" data-module="nhsuk-checkboxes">
+                      <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="note-filter" name="note-filter" type="checkbox" value="1">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="note-filter">
+                          System note
+                          </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                          <input class="nhsuk-checkboxes__input" id="note-filter-2" name="note-filter" type="checkbox" value="2">
+                          <label class="nhsuk-label nhsuk-checkboxes__label" for="note-filter-2">
+                          User note
+                          </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nhsuk-form-group">
+                    <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button">
+                    Apply filters
+                    </button>
                   </div>
                 </div>
-              </div>
-              <div class="nhsuk-form-group">
-                <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button">
-                Apply filters
-                </button>
-              </div>
-						</div>
-      			<div class="nhsuk-grid-column-two-thirds">
+              </details>-->
+
+              <button class="nhsuk-button nhsuk-button--secondary" id="toggle-filter" style="margin-bottom: 24px;" value="Show filter" onclick="change()">Show filter</button>
+
+              <div class="moj-filter-layout">
+                <div class="nhsuk-grid-column-full nhsuk-u-padding-0 moj-filter-layout__filter nhsbsa-hide-filter" id="filter-column">
+                  <div class="moj-filter">
+                    <div class="moj-filter__header">
+                      <div class="moj-filter__header-title">
+                        <h2 class="nhsuk-heading-m">Filter</h2>
+                      </div>
+                      <div class="moj-filter__header-action">
+
+                      </div>
+                    </div>
+
+                    <div class="moj-filter__content">
+                      <div class="moj-filter__options nhsuk-u-margin-bottom-6">
+
+                            <div class="nhsuk-form-group">
+
+                              <fieldset class="nhsuk-fieldset">
+
+                                <div class="nhsuk-form-group">
+                                  <label class="nhsuk-label visually-hidden" for="filter-notes">Filter notes</label>
+                                  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="example" name="filter-notes" type="text" value="">
+                                </div>
+                                <div class="nhsuk-form-group">
+                                  <label class="nhsuk-label" for="student-name">
+                                    Note type
+                                  </label>
+                                  <div class="nhsuk-hint" id="contact-hint">
+                                  Select the notes you want shown.
+                                  </div>
+                                  <div class="nhsuk-checkboxes nhsuk-checkboxes--small" style="display: flow-root;" data-module="nhsuk-checkboxes">
+                                    <div class="nhsuk-checkboxes__item">
+                                        <input class="nhsuk-checkboxes__input" id="note-filter" name="note-filter" type="checkbox" value="1">
+                                        <label class="nhsuk-label nhsuk-checkboxes__label" for="note-filter">
+                                        System note
+                                        </label>
+                                    </div>
+                                    <div class="nhsuk-checkboxes__item">
+                                        <input class="nhsuk-checkboxes__input" id="note-filter-2" name="note-filter" type="checkbox" value="2">
+                                        <label class="nhsuk-label nhsuk-checkboxes__label" for="note-filter-2">
+                                        User note
+                                        </label>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <form action="TDAE-claims-list?filter=yes" method="POST">
+                                  <button style="float: left; clear: left; margin-top:24px;" class="nhsuk-button" data-module="nhsuk-button">
+                                    Apply filters
+                                  </button>
+                                </form>
+                                {% if data['filter'] == 'yes' %}
+                                <p style="float: left; padding-top: 15px; padding-left: 15px;"><a href="?filter=no">Reset filters</a></p>
+                                {% endif %}
+                              </fieldset>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+      				<hr>
 
               <h3>TDAE claim note added on <span id="currentDate1"></span>
                 <br><strong class="nhsuk-tag">User note</strong>
@@ -345,7 +412,7 @@ Student details
 				<div class="nhsuk-tabs__panel" id="tab-Enrolments">
 					<div class="nhsuk-grid-row">
 						<div class="nhsuk-grid-column-one-third">
-							<h2 class="nhsuk-heading-m">Course details</h2>
+							<h2 class="nhsuk-heading-l">Course details</h2>
 						</div>
 					</div>
 					<div class="nhsuk-grid-row">
@@ -432,7 +499,7 @@ Student details
 
 				<div class="nhsuk-tabs__panel" id="tab-Payments">
 					<div class="nhsuk-column-one-third">
-						<h2 class="nhsuk-heading-m">Next payment</h2>
+						<h2 class="nhsuk-heading-l">Next payment</h2>
 						<a href="#" class="nhsuk-button" id="paymentButton" role="button" data-module="nhsuk-button">Manage payments</a>
 					</div>
 					<div class="nhsuk-column-full">
@@ -481,7 +548,7 @@ Student details
 				<div id="tab-accountActions" class="nhsuk-tabs__panel">
 					<div class="nhsuk-grid-row">
 						<div class="nhsuk-grid-column-one-third">
-							<h2 class="nhsuk-heading-m">Account actions</h2>
+							<h2 class="nhsuk-heading-l">Account actions</h2>
 						</div>
 						<div class="nhsuk-grid-column-two-thirds">
 							<form>
@@ -1287,5 +1354,18 @@ Student details
     }
 </script>
 
+<script>
+// show/hide filter
+function change() // no ';' here
+  {
+    var btn = document.getElementById("toggle-filter");
+    if(btn.innerText=="Show filter"){
+      btn.innerText="Hide filter";
+    }
+  else {
+    btn.innerText="Show filter";
+  }
+}
+</script>
 
 {% endblock %}
