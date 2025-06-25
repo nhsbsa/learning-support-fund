@@ -5,1287 +5,1335 @@ Student details
 {% endblock %}
 
 {% block beforeContent %}
-  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container">
-      <ol class="nhsuk-breadcrumb__list">
-        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/lsf-web/v6/current-search-student">Student search</a></li>
+        <ol class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link"
+                                                  href="/lsf-web/v6/current-search-student">Student search</a></li>
 
-      </ol>
-      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/lsf-web/v6/current-search-student">Back to Student search</a></p>
+        </ol>
+        <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink"
+                                             href="/lsf-web/v6/current-search-student">Back to Student search</a></p>
     </div>
-  </nav>
+</nav>
 {% endblock %}
 
 {% block content %}
-  <div class="nhsuk-grid-row">
-		<div class="nhsuk-grid-column-two-thirds">
-			<h1 class="nhsuk-heading-xl">
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-xl">
 				<span class="nhsuk-caption-l" id="studentRef">
 					<span class="nhsuk-u-visually-hidden"> - </span>
 				</span>
-				Student details
-			</h1>
-			<p>Account status: <strong class="nhsuk-tag">Active</strong></p>
+            Student details
+        </h1>
+        <p>Account status: <strong class="nhsuk-tag">Active</strong></p>
     </div>
     <div class="nhsuk-grid-column-one-third">
-      {% if data['locked'] == 'true' %}
+        {% if data['locked'] == 'true' %}
         <a href="student-details?locked=false" class="nhsuk-button nhsuk-button--secondary">Unlock</a>
-      {% else %}
-		    <a href="student-details?locked=true" class="nhsuk-button nhsuk-button--secondary">Lock</a>
-      {% endif %}
+        {% else %}
+        <a href="student-details?locked=true" class="nhsuk-button nhsuk-button--secondary">Lock</a>
+        {% endif %}
     </div>
 
-	{% if data['name'] === 'Emmit Mar' %}
+    {% if data['name'] === 'Emmit Mar' %}
     <div class="nhsuk-grid-column-full clear-float">
-      <div class="nhsuk-grid-row">
-				<div class="nhsuk-grid-column-one-third">
-					<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Name</h2>
-					<p id="studentName">{{ data['name'] }}</p>
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-third">
+                <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Name</h2>
+                <p id="studentName">{{ data['name'] }}</p>
 
-					<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Date of birth</h2>
-					<p id="studentDOB">15 November 2000</p>
+                <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Date of birth</h2>
+                <p id="studentDOB">15 November 2000</p>
 
-					<h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Username</h2>
-					<p id="studentUsername">{{ data['username'] }}</p>
+                <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Username</h2>
+                <p id="studentUsername">{{ data['username'] }}</p>
 
-          <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Student finance reference number</h2>
-					<p id="studentUsername">11111111</p>
-				</div>
-				<div class="nhsuk-grid-column-one-third">
-					<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Phone</h2>
-					<p id="studentPhone">07777777777</p>
-
-					<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Email</h2>
-					<p id="studentEmail">{{ data['email'] }}</p>
-
-          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">University student ID</h2>
-          <p id="studentEmail">AB123456</p>
-				</div>
-
-				<div class="nhsuk-grid-column-one-third">
-					<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Address</h2>
-					<p>
-						Stephenson House <br>
-						Stoddart St <br>
-						Shieldfield <br>
-						Newcastle upon Tyne <br>
-						NE2 1AW
-					</p>
-
-          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">National Insurance number</h2>
-          <p id="studentEmail">QQ123456B</p>
-				</div>
-				<div class="nhsuk-grid-column-full">
-					<details class="nhsuk-details nhsuk-u-margin-bottom-5">
-						<summary class="nhsuk-details__summary">
-							<span class="nhsuk-details__summary-text">Bank or building society account details</span>
-						</summary>
-
-						<div class="nhsuk-details__text">
-
-              {% if data['request'] == 'rejected' %}
-                <strong class="nhsuk-tag nhsuk-tag--red">Bank details change request rejected</strong><br><br>
-              {% elif data['request'] == 'approved' %}
-              {% else %}
-                <strong class="nhsuk-tag nhsuk-tag--yellow">Bank details change request submitted</strong><br><br>
-              {% endif %}
-
-							<h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account number</h3>
-							<p id="accountNumber">123456</p>
-
-							<h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Sort code</h3>
-							<p id="sortcode">11-22-33</p>
-
-							<h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account holder</h3>
-							<p id="accountholder">Emmit Mar</p>
-
-							<h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Building society number</h3>
-							<p>24680</p>
-						</div>
-					</details>
-          {% if data['locked'] == 'true' %}
-  					<div class="nhsuk-action-link">
-  						<a href="student-details-change" class="nhsuk-action-link__link" id="updateDetails">
-  							<svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-  								<path d="M0 0h24v44H0z" fill="none"></path>
-  								<path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-  							</svg>
-  							<span class="nhsuk-action-link__text">Change student details</span>
-  						</a>
-  					</div>
-          {% endif %}
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-			<div class="nhsuk-tabs" data-module="nhsuk-tabs">
-				<div class="tabs-nav">
-					<ul class="nhsuk-tabs__list">
-						<li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
-							<a href="#tab-Activities" class="nhsuk-tabs__tab">Activities</a>
-						</li>
-						<li class="nhsuk-tabs__list-item">
-							<a href="#tab-Notes" class="nhsuk-tabs__tab">Notes</a>
-						</li>
-						<li class="nhsuk-tabs__list-item">
-							<a href="#tab-Enrolments" class="nhsuk-tabs__tab">Course details</a>
-						</li>
-						<li class="nhsuk-tabs__list-item">
-							<a href="#tab-Payments" class="nhsuk-tabs__tab">Next payment</a>
-						</li>
-						<li class="nhsuk-tabs__list-item">
-							<a href="#tab-accountActions" class="nhsuk-tabs__tab">Actions</a>
-						</li>
-					</ul>
-				</div>
-				<div class="nhsuk-tabs__panel" id="tab-Activities">
-					<div class="nhsuk-grid-row">
-						<div class="nhsuk-grid-column-one-third">
-							<h2 class="nhsuk-heading-m">Activities</h2>
-							<div class="nhsuk-form-group">
-								<p><a id="viewDocuments" href="documents">View documents</a></p>
-							</div>
-						</div>
-						<div class="nhsuk-grid-column-two-thirds">
-              <details class="nhsuk-details">
-								<summary class="nhsuk-details__summary">
-									<span class="nhsuk-details__summary-text">2601 - HEI COSA Conflict (Active)</span>
-								</summary>
-								<div class="nhsuk-details__text">
-									<div class="nhsuk-hint" id="example-hint">
-										<b>Students comment:</b> I have dropped off this course and now doing Geography<br><br>
-                    <b>University comment:</b> This student is still currently enrolled on the course the switch of course has yet to be approved.<br><br>
-										Date created: 23/10/2023 11:10:58<br>
-										Date last updated: 23/10/2023 11:10:58<br>
-										Last updated by: Deacon Robert<br>
-										Cipher: drobe
-									</div>
-									<a href="COSA-conflict">Edit</a>
-								</div>
-							</details>
-              <details class="nhsuk-details">
-								<summary class="nhsuk-details__summary">
-									<span class="nhsuk-details__summary-text">1411 - TDAE (Active)</span>
-								</summary>
-								<div class="nhsuk-details__text">
-									<div class="nhsuk-hint" id="example-hint">
-										<!-- Start Date: 01/11/2022<br>
-										End date: 15/08/2024<br> -->
-										Created: 23/10/2023 11:10:58<br>
-										Last updated: 23/10/2023 11:10:58<br>
-										Last updated by: Deacon Robert<br>
-										Cipher: drobe
-									</div>
-									<a target="_blank" href="TDAE-student-claim?name=Emmit%20Mar&status=To%20be%20completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=">Review</a>
-								</div>
-							</details>
-              <details class="nhsuk-details">
-								<summary class="nhsuk-details__summary">
-									<span class="nhsuk-details__summary-text">1043 - Training Grant Simple (Active)</span>
-								</summary>
-								<div class="nhsuk-details__text">
-									<div class="nhsuk-hint" id="example-hint">
-										<!-- Start Date: 01/11/2022<br>
-										End date: 15/08/2024<br> -->
-										Date created: 23/10/2023 11:10:58<br>
-										Date last updated: 23/10/2023 11:10:58<br>
-										Last updated by: Joe Bloggs<br>
-										Cipher: joe.bloggs@email.com
-									</div>
-									<a href="training-grant-simple/approve-documents">Assess</a>
-								</div>
-							</details>
-              <details class="nhsuk-details">
-								<summary class="nhsuk-details__summary">
-									<span class="nhsuk-details__summary-text">1673 - Bank details change request (Active)</span>
-								</summary>
-								<div class="nhsuk-details__text">
-									<div class="nhsuk-hint" id="example-hint">
-										<!-- Start Date: 01/11/2022<br>
-										End date: 15/08/2024<br> -->
-										Created: 20/04/2024 11:10:58<br>
-										Last updated: 20/04/2024 11:10:58<br>
-										Last updated by: Deacon Robert<br>
-										Cipher: drobe
-									</div>
-									<a target="_blank" href="bank-details-check">Review</a>
-								</div>
-							</details>
-						</div>
-					</div>
-				</div>
-				<div class="nhsuk-tabs__panel" id="tab-Notes">
-          <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-full">
-              <div class="nhsuk-form-group" style="clear:both; display: flow-root;">
-                <h3 class="nhsuk-heading-m" style="float: left; margin-top: 14px; margin-bottom: 0px;">Notes</h3>
-                <a href="read-only/TDAE-add-feedback-note-2" class="nhsuk-button" style="float: right; margin-bottom: 0px;">Add note</a>
-              </div>
-              <hr>
+                <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Student finance reference number</h2>
+                <p id="studentUsername">11111111</p>
             </div>
-          </div>
-          <div class="nhsuk-grid-row">
-						<div class="nhsuk-grid-column-one-third">
-              <h4 class="nhsuk-heading-s"">Filter</h4>
-							<div class="nhsuk-form-group">
-								<label class="nhsuk-label visually-hidden" for="filter-notes">Filter notes</label>
-								<input class="nhsuk-input" id="example" name="filter-notes" type="text" value="">
-							</div>
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="student-name">
-                  Note type
-                </label>
-                <div class="nhsuk-hint" id="contact-hint">
-                Select the notes you want shown.
-                </div>
-                <div class="nhsuk-checkboxes nhsuk-checkboxes--small" style="display: flow-root;" data-module="nhsuk-checkboxes">
-                  <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="note-filter" name="note-filter" type="checkbox" value="1">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="note-filter">
-                      System note
-                      </label>
-                  </div>
-                  <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="note-filter-2" name="note-filter" type="checkbox" value="2">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="note-filter-2">
-                      User note
-                      </label>
-                  </div>
-                </div>
-              </div>
-              <div class="nhsuk-form-group">
-                <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button">
-                Apply filters
-                </button>
-              </div>
-						</div>
-      			<div class="nhsuk-grid-column-two-thirds">
+            <div class="nhsuk-grid-column-one-third">
+                <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Phone</h2>
+                <p id="studentPhone">07777777777</p>
 
-              <h3>TDAE claim note added on <span id="currentDate1"></span>
-                <br><strong class="nhsuk-tag">User note</strong>
-              </h3>
+                <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Email</h2>
+                <p id="studentEmail">{{ data['email'] }}</p>
 
-      				<p>
-                Claim dates: 14 October 2023 to 21 October 2023<br>
-                Claim value: £614.62
+                <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">University student ID</h2>
+                <p id="studentEmail">AB123456</p>
+            </div>
 
-
-      				<p>Note added:<br>[NHSBSA comment]</p>
-      				<p>Added by <b>Joe Bloggs</b></p>
-      				<p id="currentDate1"></p>
-      				<hr>
-
-      				{% if data['additional-feedback-note'] == 'yes' %}
-      				<h3>XXXX <span id="currentDate1"></span> </h3>
-      				<p>{{ data['additional-feedbacknote'] }}</p>
-
-      				<p>[NHSBSA comment]</p>
-      				<p>Added by <b>Joe Bloggs</b></p>
-      				<p id="currentDate1"></p>
-      				<hr>
-      				{% endif %}
-
-      				{% if data['feedback-note'] == 'yes' and data['add-note-student-details'] == 'yes-add-note' %}
-      					<h3>XXXX <span id="currentDate2"></span> </h3>
-      					<p>{{ data['feedbacknote'] }}</p>
-
-      					<p>[NHSBSA comment]</p>
-      					<p>Added by <b>Alyssa Geary</b></p>
-      					<p id="currentDate2"></p>
-      					<hr>
-      				{% endif %}
-              {% if data['request'] == 'approved' %}
-              <h3>Bank details change request accepted on 20 April 2023 16:13:51pm
-                <br><strong class="nhsuk-tag">User note</strong>
-              </h3>
-
-      				<p>'Bank details changed for NHS Learning Support Fund' email sent to student.</p>
-
-      				<p>Note added to request:<br>[comment entered by processor]</p>
-
-      				<p>Last modified by <b>Katie Jennings</b></p>
-      				<hr>
-              {% endif %}
-              {% if data['request'] == 'rejected' %}
-              <h3>Bank details change request rejected on 18/04/2023 12:28:20</h3>
-
-      				<p>Note added to request:<br>[comment entered by processor]</p>
-
-      				<p>Last modified by <b>Katie Jennings</b></p>
-      				<hr>
-              {% endif %}
-
-      				<h3>Information mismatch - Attendance not confirmed on 14 October 2023 16:13:51pm
-                <br><strong class="nhsuk-tag nhsuk-tag--grey">System note</strong>
-              </h3>
-
-							<p>An email "NHS Learning Support Fund - information mismatch" has been sent. The university says the information that needs changing is:</p>
-
-							<p>[University comment]</p>
-
-							<p>Last modified by <b>Katie Jennings</b></p>
-							<hr>
-							<h3 class="nhsuk-heading-m">HEI overruled student's COSA on 13 July 2023 at 4:13pm
-                <br><strong class="nhsuk-tag nhsuk-tag--grey">System note</strong>
-              </h3>
-
-							<p>{{ data['name'] }} told us they were not attending their course. The HEI has overruled this with the following reason:</p>
-
-							<p>[reason]</p>
-
-							<p>We have sent an email to {{ data['name'] }} asking them to re-confirm their attendance.</p>
-
-							<p>Last modified by <b>Katie Jennings</b></p>
-						</div>
-					</div>
-				</div>
-
-				<div class="nhsuk-tabs__panel" id="tab-Enrolments">
-					<div class="nhsuk-grid-row">
-						<div class="nhsuk-grid-column-one-third">
-							<h2 class="nhsuk-heading-m">Course details</h2>
-						</div>
-					</div>
-					<div class="nhsuk-grid-row">
-						<div class="nhsuk-grid-column-full">
-							<table class="nhsuk-table-responsive" id="enrolmentTable">
-								<caption class="nhsuk-u-visually-hidden">Enrolments table</caption>
-								<thead role="rowgroup" class="nhsuk-table__head">
-									<tr role="row">
-										<th role="columnheader" class="" scope="col">Academic year reference</th>
-										<th role="columnheader" class="" scope="col">Academic year</th>
-										<th role="columnheader" class="" scope="col">Study year</th>
-										<th role="columnheader" class="" scope="col">Attendance status</th>
-									</tr>
-								</thead>
-								<tbody class="nhsuk-table__body">
-									<tr role="row" class="nhsuk-table__row">
-										<td role="cell" class="nhsuk-table__cell">
-											<span class="nhsuk-table-responsive__heading">Academic year reference </span>
-											<span class="nhsuk-u-visually-hidden">0000000034</span>
-											<a href="/lsf-web/v6/student-course-details">
-												<span id="enrolmentNo0">SSRN0000074-3</span>
-											</a>
-										</td>
-										<td role="cell" class="nhsuk-table__cell">
-											<span class="nhsuk-table-responsive__heading">Academic year </span>
-											2020-Sep
-										</td>
-										<td role="cell" class="nhsuk-table__cell">
-											<span class="nhsuk-table-responsive__heading">Study year </span>
-											Year 1
-										</td>
-										<td role="cell" class="nhsuk-table__cell">
-											<span class="nhsuk-table-responsive__heading">Attendance status </span>
-											Matched student - in attendance
-										</td>
-									</tr>
-									<tr role="row" class="nhsuk-table__row">
-										<td role="cell" class="nhsuk-table__cell">
-											<span class="nhsuk-table-responsive__heading">Academic year reference </span>
-											<span class="nhsuk-u-visually-hidden">0000000031</span>
-											<a href="/lsf-web/v6/student-course-details">
-												<span id="enrolmentNo1">SSRN0000074-2</span>
-											</a>
-										</td>
-										<td role="cell" class="nhsuk-table__cell">
-											<span class="nhsuk-table-responsive__heading">Academic year </span>
-											2022-Sep
-										</td>
-										<td role="cell" class="nhsuk-table__cell">
-											<span class="nhsuk-table-responsive__heading">Study year </span>
-											Year 2
-										</td>
-										<td role="cell" class="nhsuk-table__cell">
-											<span class="nhsuk-table-responsive__heading">Attendance status </span>
-											Matched student - in attendance
-										</td>
-									</tr>
-									<tr role="row" class="nhsuk-table__row">
-										<td role="cell" class="nhsuk-table__cell">
-											<span class="nhsuk-table-responsive__heading">Academic year reference </span>
-											<span class="nhsuk-u-visually-hidden">0000000017</span>
-											<a href="/lsf-web/v6/student-course-details">
-												<span id="enrolmentNo2">SSRN0000074-1</span>
-											</a>
-										</td>
-										<td role="cell" class="nhsuk-table__cell">
-											<span class="nhsuk-table-responsive__heading">Academic year </span>
-											2023-Sep
-										</td>
-										<td role="cell" class="nhsuk-table__cell">
-											<span class="nhsuk-table-responsive__heading">Study year </span>
-											Year 3
-										</td>
-										<td role="cell" class="nhsuk-table__cell">
-											<span class="nhsuk-table-responsive__heading">Attendance status </span>
-											Pending NHSBSA
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-
-				<div class="nhsuk-tabs__panel" id="tab-Payments">
-					<div class="nhsuk-column-one-third">
-						<h2 class="nhsuk-heading-m">Next payment</h2>
-						<a href="#" class="nhsuk-button" id="paymentButton" role="button" data-module="nhsuk-button">Manage payments</a>
-					</div>
-					<div class="nhsuk-column-full">
-						<table id="paymentsTable" class="nhsuk-table-responsive">
-							<caption class="nhsuk-u-visually-hidden">Payments table</caption>
-							<thead role="rowgroup" class="nhsuk-table__head">
-								<tr role="row">
-									<th role="columnheader" class="" scope="col" data-sort="string">Enrolment No</th>
-									<th role="columnheader" class="" scope="col" data-sort="string">Next payment</th>
-									<th role="columnheader" class="" scope="col" data-sort="int">Value</th>
-									<th role="columnheader" class="" scope="col">Award count</th>
-									<th role="columnheader" class="" scope="col">Held</th>
-								</tr>
-							</thead>
-							<tbody class="nhsuk-table__body">
-								<tr role="row" class="nhsuk-table__row">
-									<td role="cell" class="nhsuk-table__cell" scope="row">
-										<span class="nhsuk-table-responsive__heading">Enrolment No </span>
-										<a href="/lsf-web/v4/student-course-details">
-											<span id="studentPayment">SSRN0000120-1</span>
-										</a>
-									</td>
-									<td role="cell" class="nhsuk-table__cell">
-										<span class="nhsuk-table-responsive__heading">Next payment </span>
-
-										10/10/2023
-									</td>
-									<td role="cell" class="nhsuk-table__cell">
-										<span class="nhsuk-table-responsive__heading">Value </span>
-										1650
-									</td>
-									<td role="cell" class="nhsuk-table__cell">
-										<span class="nhsuk-table-responsive__heading">Award count </span>
-										1
-									</td>
-									<td role="cell" class="nhsuk-table__cell">
-										<span class="nhsuk-table-responsive__heading">Hold </span>
-										Yes
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-
-				<div id="tab-accountActions" class="nhsuk-tabs__panel">
-					<div class="nhsuk-grid-row">
-						<div class="nhsuk-grid-column-one-third">
-							<h2 class="nhsuk-heading-m">Account actions</h2>
-						</div>
-						<div class="nhsuk-grid-column-two-thirds">
-							<form>
-								<fieldset class="nhsuk-fieldset">
-									<legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">Generate email to student</legend>
-									<div class="nhsuk-form-group">
-										<label for="emailTypes-list" class="nhsuk-label" id="name-label">Email type</label>
-										<div class="nhsuk-hint" id="formhintemail">Enter or select email type</div>
-										<select class="nhsuk-select" id="emailTypes-list" name="name">
-											<option id="1" value="New Payments">New Payments</option>
-											<option id="4" value="COSA Confirmed">COSA Confirmed</option>
-											<option id="5" value="Application form received">Application form received</option>
-										</select>
-									</div>
-									<div id="emailSentMsg" style="display: none;">
-										<div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
-											<span class="nhsuk-u-visually-hidden">Information: </span>
-											<p class="emailSent">Email has been sent</p>
-										</div>
-									</div>
-									<div class="nhsuk-form-group">
-										<button class="nhsuk-button" type="submit" id="emailButton">Send</button>
-
-										<p><a id="sendGeneralEmail" href="/lsf-web/v6/general-correspondence">Send general email</a></p>
-									</div>
-								</fieldset>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-			{% elif data['name'] === 'Alyssa Geary' %}
-			<div class="nhsuk-grid-column-full clear-float">
-				<div class="nhsuk-grid-row">
-						  <div class="nhsuk-grid-column-one-third">
-							<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Name</h2>
-							<p id="studentName">Alyssa Geary</p>
-
-							  <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Date of birth</h2>
-							  <p id="studentDOB">4 January 2006</p>
-
-							  <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Username</h2>
-							  <p id="studentUsername">alyssa.geary</p>
-						  </div>
-						  <div class="nhsuk-grid-column-one-third">
-							  <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Phone</h2>
-							  <p id="studentPhone">07777777777</p>
-
-							  <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Email</h2>
-							  <p id="studentEmail">alyssa.geary@myemail.com</p>
-
-						<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">University student ID</h2>
-						<p id="studentEmail">AC123456</p>
-							</div>
-
-						  <div class="nhsuk-grid-column-one-third">
-							  <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Address</h2>
-							  <p>
-								  Flat 12 / Room 6<br>
-								  Portland Road <br>
-								  Shieldfield <br>
-								  Newcastle upon Tyne <br>
-								  NE2 1DT
-							  </p>
+            <div class="nhsuk-grid-column-one-third">
+                <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Address</h2>
+                <p>
+                    Stephenson House <br>
+                    Stoddart St <br>
+                    Shieldfield <br>
+                    Newcastle upon Tyne <br>
+                    NE2 1AW
+                </p>
 
                 <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">National Insurance number</h2>
                 <p id="studentEmail">QQ123456B</p>
+            </div>
+            <div class="nhsuk-grid-column-full">
+                <details class="nhsuk-details nhsuk-u-margin-bottom-5">
+                    <summary class="nhsuk-details__summary">
+                        <span class="nhsuk-details__summary-text">Bank or building society account details</span>
+                    </summary>
 
-						  </div>
-						  <div class="nhsuk-grid-column-full">
-							  <details class="nhsuk-details nhsuk-u-margin-bottom-5">
-								  <summary class="nhsuk-details__summary">
-									  <span class="nhsuk-details__summary-text">Bank or building society account details</span>
-								  </summary>
+                    <div class="nhsuk-details__text">
 
-								  <div class="nhsuk-details__text">
-									  <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account number</h3>
-									  <p id="accountNumber">123456</p>
+                        {% if data['request'] == 'rejected' %}
+                        <strong class="nhsuk-tag nhsuk-tag--red">Bank details change request rejected</strong><br><br>
+                        {% elif data['request'] == 'approved' %}
+                        {% else %}
+                        <strong class="nhsuk-tag nhsuk-tag--yellow">Bank details change request
+                            submitted</strong><br><br>
+                        {% endif %}
 
-									  <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Sort code</h3>
-									  <p id="sortcode">11-22-33</p>
+                        <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account number</h3>
+                        <p id="accountNumber">123456</p>
 
-									  <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account holder</h3>
-									  <p id="accountholder">Alyssa Geary</p>
+                        <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Sort code</h3>
+                        <p id="sortcode">11-22-33</p>
 
-									  <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Building society number</h3>
-									  <p>24680</p>
-								  </div>
-							  </details>
-					{% if data['locked'] == 'true' %}
-								<div class="nhsuk-action-link">
-									<a href="student-details-change" class="nhsuk-action-link__link" id="updateDetails">
-										<svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-											<path d="M0 0h24v44H0z" fill="none"></path>
-											<path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-										</svg>
-										<span class="nhsuk-action-link__text">Change student details</span>
-									</a>
-								</div>
-					{% endif %}
-						  </div>
-					  </div>
-				  </div>
-			  </div>
-			  <div class="nhsuk-grid-row">
-			  <div class="nhsuk-grid-column-full">
-					  <div class="nhsuk-tabs" data-module="nhsuk-tabs">
-						  <div class="tabs-nav">
-							  <ul class="nhsuk-tabs__list">
-								  <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
-									  <a href="#tab-Activities" class="nhsuk-tabs__tab">Activities</a>
-								  </li>
-								  <li class="nhsuk-tabs__list-item">
-									  <a href="#tab-Notes" class="nhsuk-tabs__tab">Notes</a>
-								  </li>
-								  <li class="nhsuk-tabs__list-item">
-									  <a href="#tab-Enrolments" class="nhsuk-tabs__tab">Course details</a>
-								  </li>
-								  <li class="nhsuk-tabs__list-item">
-									  <a href="#tab-Payments" class="nhsuk-tabs__tab">Next payment</a>
-								  </li>
-								  <li class="nhsuk-tabs__list-item">
-									  <a href="#tab-accountActions" class="nhsuk-tabs__tab">Actions</a>
-								  </li>
-							  </ul>
-						  </div>
-						  <div class="nhsuk-tabs__panel" id="tab-Activities">
-							  <div class="nhsuk-grid-row">
-								  <div class="nhsuk-grid-column-one-third">
-									  <h2 class="nhsuk-heading-l">Activities</h2>
-									  <div class="nhsuk-form-group">
-										  <p><a id="viewDocuments" href="documents">View documents</a></p>
-									  </div>
-								  </div>
-								  <div class="nhsuk-grid-column-two-thirds">
-						<details class="nhsuk-details">
-										  <summary class="nhsuk-details__summary">
-											  <span class="nhsuk-details__summary-text">1873 - TDAE (Active)</span>
-										  </summary>
-										  <div class="nhsuk-details__text">
-											  <div class="nhsuk-hint" id="example-hint">
-												  <!-- Start Date: 01/11/2022<br>
-												  End date: 15/08/2024<br> -->
-												  Created: 23/10/2023 11:10:58<br>
-												  Last updated: 23/10/2023 11:10:58<br>
-												  Last updated by: Deacon Robert<br>
-												  Cipher: drobe
-											  </div>
-											  <a target="_blank" href="TDAE-student-claim?name=Alyssa%20Geary&status=To%20be%20completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=">Review</a>
-										  </div>
-									  </details>
-								  </div>
-							  </div>
-						  </div>
-						  <div class="nhsuk-tabs__panel" id="tab-Notes">
-							  <div class="nhsuk-grid-row">
-								  <div class="nhsuk-grid-column-two-thirds">
+                        <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account holder</h3>
+                        <p id="accountholder">Emmit Mar</p>
 
-									  <div class="nhsuk-form-group">
-										  <label class="nhsuk-label visually-hidden" for="filter-notes">
+                        <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Building society number</h3>
+                        <p>24680</p>
+                    </div>
+                </details>
+                {% if data['locked'] == 'true' %}
+                <div class="nhsuk-action-link">
+                    <a href="student-details-change" class="nhsuk-action-link__link" id="updateDetails">
+                        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M0 0h24v44H0z" fill="none"></path>
+                            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                        </svg>
+                        <span class="nhsuk-action-link__text">Change student details</span>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+            <div class="tabs-nav">
+                <ul class="nhsuk-tabs__list">
+                    <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+                        <a href="#tab-Activities" class="nhsuk-tabs__tab">Activities</a>
+                    </li>
+                    <li class="nhsuk-tabs__list-item">
+                        <a href="#tab-Notes" class="nhsuk-tabs__tab">Notes</a>
+                    </li>
+                    <li class="nhsuk-tabs__list-item">
+                        <a href="#tab-Enrolments" class="nhsuk-tabs__tab">Course details</a>
+                    </li>
+                    <li class="nhsuk-tabs__list-item">
+                        <a href="#tab-Payments" class="nhsuk-tabs__tab">Next payment</a>
+                    </li>
+                    <li class="nhsuk-tabs__list-item">
+                        <a href="#tab-accountActions" class="nhsuk-tabs__tab">Actions</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nhsuk-tabs__panel" id="tab-Activities">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-one-third">
+                        <h2 class="nhsuk-heading-m">Activities</h2>
+                        <div class="nhsuk-form-group">
+                            <p><a id="viewDocuments" href="documents">View documents</a></p>
+                        </div>
+                    </div>
+                    <div class="nhsuk-grid-column-two-thirds">
+                        <details class="nhsuk-details">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">2601 - HEI COSA Conflict (Active)</span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <div class="nhsuk-hint" id="example-hint">
+                                    <b>Students comment:</b> I have dropped off this course and now doing
+                                    Geography<br><br>
+                                    <b>University comment:</b> This student is still currently enrolled on the course
+                                    the switch of course has yet to be approved.<br><br>
+                                    Date created: 23/10/2023 11:10:58<br>
+                                    Date last updated: 23/10/2023 11:10:58<br>
+                                    Last updated by: Deacon Robert<br>
+                                    Cipher: drobe
+                                </div>
+                                <a href="COSA-conflict">Edit</a>
+                            </div>
+                        </details>
+                        <details class="nhsuk-details">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">1411 - TDAE (Active)</span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <div class="nhsuk-hint" id="example-hint">
+                                    <!-- Start Date: 01/11/2022<br>
+                                    End date: 15/08/2024<br> -->
+                                    Created: 23/10/2023 11:10:58<br>
+                                    Last updated: 23/10/2023 11:10:58<br>
+                                    Last updated by: Deacon Robert<br>
+                                    Cipher: drobe
+                                </div>
+                                <a target="_blank"
+                                   href="TDAE-student-claim?name=Emmit%20Mar&status=To%20be%20completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=">Review</a>
+                            </div>
+                        </details>
+                        <details class="nhsuk-details">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">1043 - Training Grant Simple (Active)</span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <div class="nhsuk-hint" id="example-hint">
+                                    <!-- Start Date: 01/11/2022<br>
+                                    End date: 15/08/2024<br> -->
+                                    Date created: 23/10/2023 11:10:58<br>
+                                    Date last updated: 23/10/2023 11:10:58<br>
+                                    Last updated by: Joe Bloggs<br>
+                                    Cipher: joe.bloggs@email.com
+                                </div>
+                                <a href="training-grant-simple/approve-documents">Assess</a>
+                            </div>
+                        </details>
+                        <details class="nhsuk-details">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">1673 - Bank details change request (Active)</span>
+                            </summary>
+                            <div class="nhsuk-details__text">
+                                <div class="nhsuk-hint" id="example-hint">
+                                    <!-- Start Date: 01/11/2022<br>
+                                    End date: 15/08/2024<br> -->
+                                    Created: 20/04/2024 11:10:58<br>
+                                    Last updated: 20/04/2024 11:10:58<br>
+                                    Last updated by: Deacon Robert<br>
+                                    Cipher: drobe
+                                </div>
+                                <a target="_blank" href="bank-details-check">Review</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+            <div class="nhsuk-tabs__panel" id="tab-Notes">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <div class="nhsuk-form-group" style="clear:both; display: flow-root;">
+                            <h3 class="nhsuk-heading-m" style="float: left; margin-top: 14px; margin-bottom: 0px;">
+                                Notes</h3>
+                            <a href="read-only/TDAE-add-feedback-note-2" class="nhsuk-button"
+                               style="float: right; margin-bottom: 0px;">Add note</a>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-one-third">
+                        <h4 class="nhsuk-heading-s"">Filter</h4>
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label visually-hidden" for="filter-notes">Filter notes</label>
+                            <input class="nhsuk-input" id="example" name="filter-notes" type="text" value="">
+                        </div>
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label" for="student-name">
+                                Note type
+                            </label>
+                            <div class="nhsuk-hint" id="contact-hint">
+                                Select the notes you want shown.
+                            </div>
 
-										  </label>
-										  <input class="nhsuk-input" id="example" name="filter-notes" type="text" placeholder="Filter notes" value="">
-										</div>
+                                <div class="nhsuk-checkboxes__item nhsuk-checkboxes--small">
+                                    <input class="nhsuk-checkboxes__input" id="note-filter" name="note-filter"
+                                           type="checkbox" value="1">
+                                    <label class="nhsuk-label nhsuk-checkboxes__label" for="note-filter">
+                                        System note
+                                    </label>
+                                </div>
+                                <div class="nhsuk-checkboxes__item nhsuk-checkboxes--small">
+                                    <input class="nhsuk-checkboxes__input" id="note-filter-2" name="note-filter"
+                                           type="checkbox" value="2">
+                                    <label class="nhsuk-label nhsuk-checkboxes__label" for="note-filter-2">
+                                        User note
+                                    </label>
+                                </div>
+                        </div>
+                        <div class="nhsuk-form-group">
+                            <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button">
+                                Apply filters
+                            </button>
+                        </div>
+                    </div>
+                    <div class="nhsuk-grid-column-two-thirds">
 
+                        <h3>TDAE claim note added on <span id="currentDate1"></span>
+                            <br><strong class="nhsuk-tag">User note</strong>
+                        </h3>
 
-									  <a href="read-only/TDAE-add-feedback-note-2">
-									  <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-										  Add note
-									  </button>
-									  </a>
-								  </div>
-
-
-
-					  <div class="nhsuk-grid-column-full">
-						  <br><br>
-						  <h3 class="nhsuk-heading-m">Notes</h3>
-
-						  <hr>
-
-						  {% if data['additional-feedback-note'] == 'yes' %}
-						  <h3>XXXX <span id="currentDate1"></span> </h3>
-						  <p>{{ data['additional-feedbacknote'] }}</p>
-
-						  <p>[NHSBSA comment]</p>
-						  <p>Added by <b>Joe Bloggs</b></p>
-						  <p id="currentDate1"></p>
-						  <hr>
-						  {% endif %}
-
-						  {% if data['feedback-note'] == 'yes' and data['add-note-student-details'] == 'yes-add-note' %}
-							  <h3>XXXX <span id="currentDate2"></span> </h3>
-							  <p>{{ data['feedbacknote'] }}</p>
-
-							  <p>[NHSBSA comment]</p>
-							  <p>Added by <b>Jane Doe</b></p>
-							  <p id="currentDate2"></p>
-							  <hr>
-						  {% endif %}
-
-
-
-						  <h3>Information mismatch - Attendance not confirmed on 14/10/2023 16:13:51</h3>
-									  <p>An email "NHS Learning Support Fund - information mismatch" has been sent. The university says the information that needs changing is:</p>
-
-									  <p>[University comment]</p>
-
-									  <p>Last modified by <b>Katie Jennings</b></p>
-									  <hr>
-									  <h3 class="nhsuk-heading-m">HEI overruled student's COSA on 13 July 2023 at 4:13pm</h3>
-									  <p>{{ data['name'] }} told us they were not attending their course. The HEI has overruled this with the following reason:</p>
-
-									  <p>[reason]</p>
-
-									  <p>We have sent an email to {{ data['name'] }} asking them to re-confirm their attendance.</p>
-
-									  <p>Last modified by <b>Katie Jennings</b></p>
-								  </div>
-							  </div>
-						  </div>
-
-						  <div class="nhsuk-tabs__panel" id="tab-Enrolments">
-							  <div class="nhsuk-grid-row">
-								  <div class="nhsuk-grid-column-one-third">
-									  <h2 class="nhsuk-heading-l">Course details</h2>
-								  </div>
-							  </div>
-							  <div class="nhsuk-grid-row">
-								  <div class="nhsuk-grid-column-full">
-									  <table class="nhsuk-table-responsive" id="enrolmentTable">
-										  <caption class="nhsuk-u-visually-hidden">Enrolments table</caption>
-										  <thead role="rowgroup" class="nhsuk-table__head">
-											  <tr role="row">
-												  <th role="columnheader" class="" scope="col">Academic year reference</th>
-												  <th role="columnheader" class="" scope="col">Academic year</th>
-												  <th role="columnheader" class="" scope="col">Study year</th>
-												  <th role="columnheader" class="" scope="col">Attendance status</th>
-											  </tr>
-										  </thead>
-										  <tbody class="nhsuk-table__body">
-											  <tr role="row" class="nhsuk-table__row">
-												  <td role="cell" class="nhsuk-table__cell">
-													  <span class="nhsuk-table-responsive__heading">Academic year reference </span>
-													  <span class="nhsuk-u-visually-hidden">0000000034</span>
-													  <a href="/lsf-web/v6/student-course-details">
-														  <span id="enrolmentNo0">SSRN0010003-3</span>
-													  </a>
-												  </td>
-												  <td role="cell" class="nhsuk-table__cell">
-													  <span class="nhsuk-table-responsive__heading">Academic year </span>
-													  2020-Sep
-												  </td>
-												  <td role="cell" class="nhsuk-table__cell">
-													  <span class="nhsuk-table-responsive__heading">Study year </span>
-													  Year 1
-												  </td>
-												  <td role="cell" class="nhsuk-table__cell">
-													  <span class="nhsuk-table-responsive__heading">Attendance status </span>
-													  Matched student - in attendance
-												  </td>
-											  </tr>
-											  <tr role="row" class="nhsuk-table__row">
-												  <td role="cell" class="nhsuk-table__cell">
-													  <span class="nhsuk-table-responsive__heading">Academic year reference </span>
-													  <span class="nhsuk-u-visually-hidden">0000000031</span>
-													  <a href="/lsf-web/v6/student-course-details">
-														  <span id="enrolmentNo1">SSRN0010003-2</span>
-													  </a>
-												  </td>
-												  <td role="cell" class="nhsuk-table__cell">
-													  <span class="nhsuk-table-responsive__heading">Academic year </span>
-													  2022-Sep
-												  </td>
-												  <td role="cell" class="nhsuk-table__cell">
-													  <span class="nhsuk-table-responsive__heading">Study year </span>
-													  Year 2
-												  </td>
-												  <td role="cell" class="nhsuk-table__cell">
-													  <span class="nhsuk-table-responsive__heading">Attendance status </span>
-													  Matched student - in attendance
-												  </td>
-											  </tr>
-											  <tr role="row" class="nhsuk-table__row">
-												  <td role="cell" class="nhsuk-table__cell">
-													  <span class="nhsuk-table-responsive__heading">Academic year reference </span>
-													  <span class="nhsuk-u-visually-hidden">0000000017</span>
-													  <a href="/lsf-web/v6/student-course-details">
-														  <span id="enrolmentNo2">SSRN0010003-1</span>
-													  </a>
-												  </td>
-												  <td role="cell" class="nhsuk-table__cell">
-													  <span class="nhsuk-table-responsive__heading">Academic year </span>
-													  2023-Sep
-												  </td>
-												  <td role="cell" class="nhsuk-table__cell">
-													  <span class="nhsuk-table-responsive__heading">Study year </span>
-													  Year 3
-												  </td>
-												  <td role="cell" class="nhsuk-table__cell">
-													  <span class="nhsuk-table-responsive__heading">Attendance status </span>
-													  Pending NHSBSA
-												  </td>
-											  </tr>
-										  </tbody>
-									  </table>
-								  </div>
-							  </div>
-						  </div>
-
-						  <div class="nhsuk-tabs__panel" id="tab-Payments">
-							  <div class="nhsuk-column-one-third">
-								  <h2 class="nhsuk-heading-l">Next payment</h2>
-								  <a href="#" class="nhsuk-button" id="paymentButton" role="button" data-module="nhsuk-button">Manage payments</a>
-							  </div>
-							  <div class="nhsuk-column-full">
-								  <table id="paymentsTable" class="nhsuk-table-responsive">
-									  <caption class="nhsuk-u-visually-hidden">Payments table</caption>
-									  <thead role="rowgroup" class="nhsuk-table__head">
-										  <tr role="row">
-											  <th role="columnheader" class="" scope="col" data-sort="string">Enrolment No</th>
-											  <th role="columnheader" class="" scope="col" data-sort="string">Next payment</th>
-											  <th role="columnheader" class="" scope="col" data-sort="int">Value</th>
-											  <th role="columnheader" class="" scope="col">Award count</th>
-											  <th role="columnheader" class="" scope="col">Held</th>
-										  </tr>
-									  </thead>
-									  <tbody class="nhsuk-table__body">
-										  <tr role="row" class="nhsuk-table__row">
-											  <td role="cell" class="nhsuk-table__cell" scope="row">
-												  <span class="nhsuk-table-responsive__heading">Enrolment No </span>
-												  <a href="/lsf-web/v4/student-course-details">
-													  <span id="studentPayment">SSRN0010003-1</span>
-												  </a>
-											  </td>
-											  <td role="cell" class="nhsuk-table__cell">
-												  <span class="nhsuk-table-responsive__heading">Next payment </span>
-
-												  10/04/2024
-											  </td>
-											  <td role="cell" class="nhsuk-table__cell">
-												  <span class="nhsuk-table-responsive__heading">Value </span>
-												  1650
-											  </td>
-											  <td role="cell" class="nhsuk-table__cell">
-												  <span class="nhsuk-table-responsive__heading">Award count </span>
-												  1
-											  </td>
-											  <td role="cell" class="nhsuk-table__cell">
-												  <span class="nhsuk-table-responsive__heading">Hold </span>
-												  Yes
-											  </td>
-										  </tr>
-									  </tbody>
-								  </table>
-							  </div>
-						  </div>
-
-						  <div id="tab-accountActions" class="nhsuk-tabs__panel">
-							  <div class="nhsuk-grid-row">
-								  <div class="nhsuk-grid-column-one-third">
-									  <h2 class="nhsuk-heading-l">Account actions</h2>
-								  </div>
-								  <div class="nhsuk-grid-column-two-thirds">
-									  <form>
-										  <fieldset class="nhsuk-fieldset">
-											  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">Generate email to student</legend>
-											  <div class="nhsuk-form-group">
-												  <label for="emailTypes-list" class="nhsuk-label" id="name-label">Email type</label>
-												  <div class="nhsuk-hint" id="formhintemail">Enter or select email type</div>
-												  <select class="nhsuk-select" id="emailTypes-list" name="name">
-													  <option id="1" value="New Payments">New Payments</option>
-													  <option id="4" value="COSA Confirmed">COSA Confirmed</option>
-													  <option id="5" value="Application form received">Application form received</option>
-												  </select>
-											  </div>
-											  <div id="emailSentMsg" style="display: none;">
-												  <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
-													  <span class="nhsuk-u-visually-hidden">Information: </span>
-													  <p class="emailSent">Email has been sent</p>
-												  </div>
-											  </div>
-											  <div class="nhsuk-form-group">
-												  <button class="nhsuk-button" type="submit" id="emailButton">Send</button>
-
-												  <p><a id="sendGeneralEmail" href="/lsf-web/v6/general-correspondence">Send general email</a></p>
-											  </div>
-										  </fieldset>
-									  </form>
-								  </div>
-							  </div>
-						  </div>
-					  </div>
+                        <p>
+                            Claim dates: 14 October 2023 to 21 October 2023<br>
+                            Claim value: £614.62
 
 
-					  {% else %}
-					  <div class="nhsuk-grid-column-full clear-float">
-						<div class="nhsuk-grid-row">
-								  <div class="nhsuk-grid-column-one-third">
-									<h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Name</h2>
-									<p id="studentName">Daniel Jackson</p>
+                        <p>Note added:<br>[NHSBSA comment]</p>
+                        <p>Added by <b>Joe Bloggs</b></p>
+                        <p id="currentDate1"></p>
+                        <hr>
 
-									  <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Date of birth</h2>
-									  <p id="studentDOB">14 September 2004</p>
+                        {% if data['additional-feedback-note'] == 'yes' %}
+                        <h3>XXXX <span id="currentDate1"></span></h3>
+                        <p>{{ data['additional-feedbacknote'] }}</p>
 
-									  <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Username</h2>
-									  <p id="studentUsername">daniel.jackson</p>
-								  </div>
-								  <div class="nhsuk-grid-column-one-third">
-									  <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Phone</h2>
-									  <p id="studentPhone">07777777777</p>
+                        <p>[NHSBSA comment]</p>
+                        <p>Added by <b>Joe Bloggs</b></p>
+                        <p id="currentDate1"></p>
+                        <hr>
+                        {% endif %}
 
-									  <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Email</h2>
-									  <p id="studentEmail">daniel.jackson@myemail.com</p>
+                        {% if data['feedback-note'] == 'yes' and data['add-note-student-details'] == 'yes-add-note' %}
+                        <h3>XXXX <span id="currentDate2"></span></h3>
+                        <p>{{ data['feedbacknote'] }}</p>
+
+                        <p>[NHSBSA comment]</p>
+                        <p>Added by <b>Alyssa Geary</b></p>
+                        <p id="currentDate2"></p>
+                        <hr>
+                        {% endif %}
+                        {% if data['request'] == 'approved' %}
+                        <h3>Bank details change request accepted on 20 April 2023 16:13:51pm
+                            <br><strong class="nhsuk-tag">User note</strong>
+                        </h3>
+
+                        <p>'Bank details changed for NHS Learning Support Fund' email sent to student.</p>
+
+                        <p>Note added to request:<br>[comment entered by processor]</p>
+
+                        <p>Last modified by <b>Katie Jennings</b></p>
+                        <hr>
+                        {% endif %}
+                        {% if data['request'] == 'rejected' %}
+                        <h3>Bank details change request rejected on 18/04/2023 12:28:20</h3>
+
+                        <p>Note added to request:<br>[comment entered by processor]</p>
+
+                        <p>Last modified by <b>Katie Jennings</b></p>
+                        <hr>
+                        {% endif %}
+
+                        <h3>Information mismatch - Attendance not confirmed on 14 October 2023 16:13:51pm
+                            <br><strong class="nhsuk-tag nhsuk-tag--grey">System note</strong>
+                        </h3>
+
+                        <p>An email "NHS Learning Support Fund - information mismatch" has been sent. The university
+                            says the information that needs changing is:</p>
+
+                        <p>[University comment]</p>
+
+                        <p>Last modified by <b>Katie Jennings</b></p>
+                        <hr>
+                        <h3 class="nhsuk-heading-m">HEI overruled student's COSA on 13 July 2023 at 4:13pm
+                            <br><strong class="nhsuk-tag nhsuk-tag--grey">System note</strong>
+                        </h3>
+
+                        <p>{{ data['name'] }} told us they were not attending their course. The HEI has overruled this
+                            with the following reason:</p>
+
+                        <p>[reason]</p>
+
+                        <p>We have sent an email to {{ data['name'] }} asking them to re-confirm their attendance.</p>
+
+                        <p>Last modified by <b>Katie Jennings</b></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nhsuk-tabs__panel" id="tab-Enrolments">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-one-third">
+                        <h2 class="nhsuk-heading-m">Course details</h2>
+                    </div>
+                </div>
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full">
+                        <table class="nhsuk-table-responsive" id="enrolmentTable">
+                            <caption class="nhsuk-u-visually-hidden">Enrolments table</caption>
+                            <thead role="rowgroup" class="nhsuk-table__head">
+                            <tr role="row">
+                                <th role="columnheader" class="" scope="col">Academic year reference</th>
+                                <th role="columnheader" class="" scope="col">Academic year</th>
+                                <th role="columnheader" class="" scope="col">Study year</th>
+                                <th role="columnheader" class="" scope="col">Attendance status</th>
+                            </tr>
+                            </thead>
+                            <tbody class="nhsuk-table__body">
+                            <tr role="row" class="nhsuk-table__row">
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Academic year reference </span>
+                                    <span class="nhsuk-u-visually-hidden">0000000034</span>
+                                    <a href="/lsf-web/v6/student-course-details">
+                                        <span id="enrolmentNo0">SSRN0000074-3</span>
+                                    </a>
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Academic year </span>
+                                    2020-Sep
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Study year </span>
+                                    Year 1
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Attendance status </span>
+                                    Matched student - in attendance
+                                </td>
+                            </tr>
+                            <tr role="row" class="nhsuk-table__row">
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Academic year reference </span>
+                                    <span class="nhsuk-u-visually-hidden">0000000031</span>
+                                    <a href="/lsf-web/v6/student-course-details">
+                                        <span id="enrolmentNo1">SSRN0000074-2</span>
+                                    </a>
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Academic year </span>
+                                    2022-Sep
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Study year </span>
+                                    Year 2
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Attendance status </span>
+                                    Matched student - in attendance
+                                </td>
+                            </tr>
+                            <tr role="row" class="nhsuk-table__row">
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Academic year reference </span>
+                                    <span class="nhsuk-u-visually-hidden">0000000017</span>
+                                    <a href="/lsf-web/v6/student-course-details">
+                                        <span id="enrolmentNo2">SSRN0000074-1</span>
+                                    </a>
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Academic year </span>
+                                    2023-Sep
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Study year </span>
+                                    Year 3
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Attendance status </span>
+                                    Pending NHSBSA
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nhsuk-tabs__panel" id="tab-Payments">
+                <div class="nhsuk-column-one-third">
+                    <h2 class="nhsuk-heading-m">Next payment</h2>
+                    <a href="#" class="nhsuk-button" id="paymentButton" role="button" data-module="nhsuk-button">Manage
+                        payments</a>
+                </div>
+                <div class="nhsuk-column-full">
+                    <table id="paymentsTable" class="nhsuk-table-responsive">
+                        <caption class="nhsuk-u-visually-hidden">Payments table</caption>
+                        <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" class="" scope="col" data-sort="string">Enrolment No</th>
+                            <th role="columnheader" class="" scope="col" data-sort="string">Next payment</th>
+                            <th role="columnheader" class="" scope="col" data-sort="int">Value</th>
+                            <th role="columnheader" class="" scope="col">Award count</th>
+                            <th role="columnheader" class="" scope="col">Held</th>
+                        </tr>
+                        </thead>
+                        <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell" scope="row">
+                                <span class="nhsuk-table-responsive__heading">Enrolment No </span>
+                                <a href="/lsf-web/v4/student-course-details">
+                                    <span id="studentPayment">SSRN0000120-1</span>
+                                </a>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Next payment </span>
+
+                                10/10/2023
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Value </span>
+                                1650
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Award count </span>
+                                1
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Hold </span>
+                                Yes
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="tab-accountActions" class="nhsuk-tabs__panel">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-one-third">
+                        <h2 class="nhsuk-heading-m">Account actions</h2>
+                    </div>
+                    <div class="nhsuk-grid-column-two-thirds">
+                        <form>
+                            <fieldset class="nhsuk-fieldset">
+                                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">Generate email to
+                                    student
+                                </legend>
+                                <div class="nhsuk-form-group">
+                                    <label for="emailTypes-list" class="nhsuk-label" id="name-label">Email type</label>
+                                    <div class="nhsuk-hint" id="formhintemail">Enter or select email type</div>
+                                    <select class="nhsuk-select" id="emailTypes-list" name="name">
+                                        <option id="1" value="New Payments">New Payments</option>
+                                        <option id="4" value="COSA Confirmed">COSA Confirmed</option>
+                                        <option id="5" value="Application form received">Application form received
+                                        </option>
+                                    </select>
+                                </div>
+                                <div id="emailSentMsg" style="display: none;">
+                                    <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
+                                        <span class="nhsuk-u-visually-hidden">Information: </span>
+                                        <p class="emailSent">Email has been sent</p>
+                                    </div>
+                                </div>
+                                <div class="nhsuk-form-group">
+                                    <button class="nhsuk-button" type="submit" id="emailButton">Send</button>
+
+                                    <p><a id="sendGeneralEmail" href="/lsf-web/v6/general-correspondence">Send general
+                                        email</a></p>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {% elif data['name'] === 'Alyssa Geary' %}
+        <div class="nhsuk-grid-column-full clear-float">
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-one-third">
+                    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Name</h2>
+                    <p id="studentName">Alyssa Geary</p>
+
+                    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Date of birth</h2>
+                    <p id="studentDOB">4 January 2006</p>
+
+                    <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Username</h2>
+                    <p id="studentUsername">alyssa.geary</p>
+                </div>
+                <div class="nhsuk-grid-column-one-third">
+                    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Phone</h2>
+                    <p id="studentPhone">07777777777</p>
+
+                    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Email</h2>
+                    <p id="studentEmail">alyssa.geary@myemail.com</p>
 
                     <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">University student ID</h2>
-									  <p id="studentEmail">AB123456</p>
-								  </div>
+                    <p id="studentEmail">AC123456</p>
+                </div>
 
-								  <div class="nhsuk-grid-column-one-third">
-									  <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Address</h2>
-									  <p>
-										  82 Meldon Terrace<br>
-										  Heaton<br>
-										  Newcastle upon Tyne <br>
-										  NE6 5XQ
-									  </p>
+                <div class="nhsuk-grid-column-one-third">
+                    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Address</h2>
+                    <p>
+                        Flat 12 / Room 6<br>
+                        Portland Road <br>
+                        Shieldfield <br>
+                        Newcastle upon Tyne <br>
+                        NE2 1DT
+                    </p>
 
                     <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">National Insurance number</h2>
                     <p id="studentEmail">QQ123456B</p>
-								  </div>
-								  <div class="nhsuk-grid-column-full">
-									  <details class="nhsuk-details nhsuk-u-margin-bottom-5">
-										  <summary class="nhsuk-details__summary">
-											  <span class="nhsuk-details__summary-text">Bank or building society account details</span>
-										  </summary>
 
-										  <div class="nhsuk-details__text">
-											  <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account number</h3>
-											  <p id="accountNumber">123456</p>
+                </div>
+                <div class="nhsuk-grid-column-full">
+                    <details class="nhsuk-details nhsuk-u-margin-bottom-5">
+                        <summary class="nhsuk-details__summary">
+                            <span class="nhsuk-details__summary-text">Bank or building society account details</span>
+                        </summary>
 
-											  <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Sort code</h3>
-											  <p id="sortcode">11-22-33</p>
+                        <div class="nhsuk-details__text">
+                            <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account number</h3>
+                            <p id="accountNumber">123456</p>
 
-											  <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account holder</h3>
-											  <p id="accountholder">Daniel Jackson</p>
+                            <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Sort code</h3>
+                            <p id="sortcode">11-22-33</p>
 
-											  <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Building society number</h3>
-											  <p>24680</p>
-										  </div>
-									  </details>
-							{% if data['locked'] == 'true' %}
-										<div class="nhsuk-action-link">
-											<a href="student-details-change" class="nhsuk-action-link__link" id="updateDetails">
-												<svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-													<path d="M0 0h24v44H0z" fill="none"></path>
-													<path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-												</svg>
-												<span class="nhsuk-action-link__text">Change student details</span>
-											</a>
-										</div>
-							{% endif %}
-								  </div>
-							  </div>
-						  </div>
-					  </div>
-					  <div class="nhsuk-grid-row">
-					  <div class="nhsuk-grid-column-full">
-							  <div class="nhsuk-tabs" data-module="nhsuk-tabs">
-								  <div class="tabs-nav">
-									  <ul class="nhsuk-tabs__list">
-										  <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
-											  <a href="#tab-Activities" class="nhsuk-tabs__tab">Activities</a>
-										  </li>
-										  <li class="nhsuk-tabs__list-item">
-											  <a href="#tab-Notes" class="nhsuk-tabs__tab">Notes</a>
-										  </li>
-										  <li class="nhsuk-tabs__list-item">
-											  <a href="#tab-Enrolments" class="nhsuk-tabs__tab">Course details</a>
-										  </li>
-										  <li class="nhsuk-tabs__list-item">
-											  <a href="#tab-Payments" class="nhsuk-tabs__tab">Next payment</a>
-										  </li>
-										  <li class="nhsuk-tabs__list-item">
-											  <a href="#tab-accountActions" class="nhsuk-tabs__tab">Actions</a>
-										  </li>
-									  </ul>
-								  </div>
-								  <div class="nhsuk-tabs__panel" id="tab-Activities">
-									  <div class="nhsuk-grid-row">
-										  <div class="nhsuk-grid-column-one-third">
-											  <h2 class="nhsuk-heading-l">Activities</h2>
-											  <div class="nhsuk-form-group">
-												  <p><a id="viewDocuments" href="documents">View documents</a></p>
-											  </div>
-										  </div>
-										  <div class="nhsuk-grid-column-two-thirds">
-								<details class="nhsuk-details">
-												  <summary class="nhsuk-details__summary">
-													  <span class="nhsuk-details__summary-text">1544 - TDAE (Active)</span>
-												  </summary>
-												  <div class="nhsuk-details__text">
-													  <div class="nhsuk-hint" id="example-hint">
-														  <!-- Start Date: 01/11/2022<br>
-														  End date: 15/08/2024<br> -->
-														  Created: 23/10/2023 11:10:58<br>
-														  Last updated: 23/10/2023 11:10:58<br>
-														  Last updated by: Deacon Robert<br>
-														  Cipher: drobe
-													  </div>
-													  <a target="_blank" href="TDAE-student-claim?name=Daniel%20Jackson&status=To%20be%20completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=">Review</a>
-												  </div>
-											  </details>
-										  </div>
-									  </div>
-								  </div>
-								  <div class="nhsuk-tabs__panel" id="tab-Notes">
-									  <div class="nhsuk-grid-row">
-										  <div class="nhsuk-grid-column-two-thirds">
+                            <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account holder</h3>
+                            <p id="accountholder">Alyssa Geary</p>
 
-											  <div class="nhsuk-form-group">
-												  <label class="nhsuk-label visually-hidden" for="filter-notes">
-
-												  </label>
-												  <input class="nhsuk-input" id="example" name="filter-notes" type="text" placeholder="Filter notes" value="">
-												</div>
-
-
-											  <a href="read-only/TDAE-add-feedback-note-2">
-											  <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-												  Add note
-											  </button>
-											  </a>
-										  </div>
-
-
-
-							  <div class="nhsuk-grid-column-full">
-								  <br><br>
-								  <h3 class="nhsuk-heading-m">Notes</h3>
-
-								  <hr>
-
-								  {% if data['additional-feedback-note'] == 'yes' %}
-								  <h3>XXXX <span id="currentDate1"></span> </h3>
-								  <p>{{ data['additional-feedbacknote'] }}</p>
-
-								  <p>[NHSBSA comment]</p>
-								  <p>Added by <b>Joe Bloggs</b></p>
-								  <p id="currentDate1"></p>
-								  <hr>
-								  {% endif %}
-
-								  {% if data['feedback-note'] == 'yes' and data['add-note-student-details'] == 'yes-add-note' %}
-									  <h3>XXXX <span id="currentDate2"></span> </h3>
-									  <p>{{ data['feedbacknote'] }}</p>
-
-									  <p>[NHSBSA comment]</p>
-									  <p>Added by <b>Jane Doe</b></p>
-									  <p id="currentDate2"></p>
-									  <hr>
-								  {% endif %}
-
-
-
-								  <h3>Information mismatch - Attendance not confirmed on 14/10/2023 16:13:51</h3>
-											  <p>An email "NHS Learning Support Fund - information mismatch" has been sent. The university says the information that needs changing is:</p>
-
-											  <p>[University comment]</p>
-
-											  <p>Last modified by <b>Katie Jennings</b></p>
-											  <hr>
-											  <h3 class="nhsuk-heading-m">HEI overruled student's COSA on 13 July 2023 at 4:13pm</h3>
-											  <p>{{ data['name'] }} told us they were not attending their course. The HEI has overruled this with the following reason:</p>
-
-											  <p>[reason]</p>
-
-											  <p>We have sent an email to {{ data['name'] }} asking them to re-confirm their attendance.</p>
-
-											  <p>Last modified by <b>Katie Jennings</b></p>
-										  </div>
-									  </div>
-								  </div>
-
-								  <div class="nhsuk-tabs__panel" id="tab-Enrolments">
-									  <div class="nhsuk-grid-row">
-										  <div class="nhsuk-grid-column-one-third">
-											  <h2 class="nhsuk-heading-l">Course details</h2>
-										  </div>
-									  </div>
-									  <div class="nhsuk-grid-row">
-										  <div class="nhsuk-grid-column-full">
-											  <table class="nhsuk-table-responsive" id="enrolmentTable">
-												  <caption class="nhsuk-u-visually-hidden">Enrolments table</caption>
-												  <thead role="rowgroup" class="nhsuk-table__head">
-													  <tr role="row">
-														  <th role="columnheader" class="" scope="col">Academic year reference</th>
-														  <th role="columnheader" class="" scope="col">Academic year</th>
-														  <th role="columnheader" class="" scope="col">Study year</th>
-														  <th role="columnheader" class="" scope="col">Attendance status</th>
-													  </tr>
-												  </thead>
-												  <tbody class="nhsuk-table__body">
-													  <tr role="row" class="nhsuk-table__row">
-														  <td role="cell" class="nhsuk-table__cell">
-															  <span class="nhsuk-table-responsive__heading">Academic year reference </span>
-															  <span class="nhsuk-u-visually-hidden">0000000034</span>
-															  <a href="/lsf-web/v6/student-course-details">
-																  <span id="enrolmentNo0">SSRN0010004-3</span>
-															  </a>
-														  </td>
-														  <td role="cell" class="nhsuk-table__cell">
-															  <span class="nhsuk-table-responsive__heading">Academic year </span>
-															  2020-Sep
-														  </td>
-														  <td role="cell" class="nhsuk-table__cell">
-															  <span class="nhsuk-table-responsive__heading">Study year </span>
-															  Year 1
-														  </td>
-														  <td role="cell" class="nhsuk-table__cell">
-															  <span class="nhsuk-table-responsive__heading">Attendance status </span>
-															  Matched student - in attendance
-														  </td>
-													  </tr>
-													  <tr role="row" class="nhsuk-table__row">
-														  <td role="cell" class="nhsuk-table__cell">
-															  <span class="nhsuk-table-responsive__heading">Academic year reference </span>
-															  <span class="nhsuk-u-visually-hidden">0000000031</span>
-															  <a href="/lsf-web/v6/student-course-details">
-																  <span id="enrolmentNo1">SSRN0010004-2</span>
-															  </a>
-														  </td>
-														  <td role="cell" class="nhsuk-table__cell">
-															  <span class="nhsuk-table-responsive__heading">Academic year </span>
-															  2022-Sep
-														  </td>
-														  <td role="cell" class="nhsuk-table__cell">
-															  <span class="nhsuk-table-responsive__heading">Study year </span>
-															  Year 2
-														  </td>
-														  <td role="cell" class="nhsuk-table__cell">
-															  <span class="nhsuk-table-responsive__heading">Attendance status </span>
-															  Matched student - in attendance
-														  </td>
-													  </tr>
-													  <tr role="row" class="nhsuk-table__row">
-														  <td role="cell" class="nhsuk-table__cell">
-															  <span class="nhsuk-table-responsive__heading">Academic year reference </span>
-															  <span class="nhsuk-u-visually-hidden">0000000017</span>
-															  <a href="/lsf-web/v6/student-course-details">
-																  <span id="enrolmentNo2">SSRN0010004-1</span>
-															  </a>
-														  </td>
-														  <td role="cell" class="nhsuk-table__cell">
-															  <span class="nhsuk-table-responsive__heading">Academic year </span>
-															  2023-Sep
-														  </td>
-														  <td role="cell" class="nhsuk-table__cell">
-															  <span class="nhsuk-table-responsive__heading">Study year </span>
-															  Year 3
-														  </td>
-														  <td role="cell" class="nhsuk-table__cell">
-															  <span class="nhsuk-table-responsive__heading">Attendance status </span>
-															  Pending NHSBSA
-														  </td>
-													  </tr>
-												  </tbody>
-											  </table>
-										  </div>
-									  </div>
-								  </div>
-
-								  <div class="nhsuk-tabs__panel" id="tab-Payments">
-									  <div class="nhsuk-column-one-third">
-										  <h2 class="nhsuk-heading-l">Next payment</h2>
-										  <a href="#" class="nhsuk-button" id="paymentButton" role="button" data-module="nhsuk-button">Manage payments</a>
-									  </div>
-									  <div class="nhsuk-column-full">
-										  <table id="paymentsTable" class="nhsuk-table-responsive">
-											  <caption class="nhsuk-u-visually-hidden">Payments table</caption>
-											  <thead role="rowgroup" class="nhsuk-table__head">
-												  <tr role="row">
-													  <th role="columnheader" class="" scope="col" data-sort="string">Enrolment No</th>
-													  <th role="columnheader" class="" scope="col" data-sort="string">Next payment</th>
-													  <th role="columnheader" class="" scope="col" data-sort="int">Value</th>
-													  <th role="columnheader" class="" scope="col">Award count</th>
-													  <th role="columnheader" class="" scope="col">Held</th>
-												  </tr>
-											  </thead>
-											  <tbody class="nhsuk-table__body">
-												  <tr role="row" class="nhsuk-table__row">
-													  <td role="cell" class="nhsuk-table__cell" scope="row">
-														  <span class="nhsuk-table-responsive__heading">Enrolment No </span>
-														  <a href="/lsf-web/v4/student-course-details">
-															  <span id="studentPayment">SSRN0010004-1</span>
-														  </a>
-													  </td>
-													  <td role="cell" class="nhsuk-table__cell">
-														  <span class="nhsuk-table-responsive__heading">Next payment </span>
-
-														  10/04/2024
-													  </td>
-													  <td role="cell" class="nhsuk-table__cell">
-														  <span class="nhsuk-table-responsive__heading">Value </span>
-														  1650
-													  </td>
-													  <td role="cell" class="nhsuk-table__cell">
-														  <span class="nhsuk-table-responsive__heading">Award count </span>
-														  1
-													  </td>
-													  <td role="cell" class="nhsuk-table__cell">
-														  <span class="nhsuk-table-responsive__heading">Hold </span>
-														  Yes
-													  </td>
-												  </tr>
-											  </tbody>
-										  </table>
-									  </div>
-								  </div>
-
-								  <div id="tab-accountActions" class="nhsuk-tabs__panel">
-									  <div class="nhsuk-grid-row">
-										  <div class="nhsuk-grid-column-one-third">
-											  <h2 class="nhsuk-heading-l">Account actions</h2>
-										  </div>
-										  <div class="nhsuk-grid-column-two-thirds">
-											  <form>
-												  <fieldset class="nhsuk-fieldset">
-													  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">Generate email to student</legend>
-													  <div class="nhsuk-form-group">
-														  <label for="emailTypes-list" class="nhsuk-label" id="name-label">Email type</label>
-														  <div class="nhsuk-hint" id="formhintemail">Enter or select email type</div>
-														  <select class="nhsuk-select" id="emailTypes-list" name="name">
-															  <option id="1" value="New Payments">New Payments</option>
-															  <option id="4" value="COSA Confirmed">COSA Confirmed</option>
-															  <option id="5" value="Application form received">Application form received</option>
-														  </select>
-													  </div>
-													  <div id="emailSentMsg" style="display: none;">
-														  <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
-															  <span class="nhsuk-u-visually-hidden">Information: </span>
-															  <p class="emailSent">Email has been sent</p>
-														  </div>
-													  </div>
-													  <div class="nhsuk-form-group">
-														  <button class="nhsuk-button" type="submit" id="emailButton">Send</button>
-
-														  <p><a id="sendGeneralEmail" href="/lsf-web/v6/general-correspondence">Send general email</a></p>
-													  </div>
-												  </fieldset>
-											  </form>
-										  </div>
-									  </div>
-								  </div>
-							  </div>
-							  {% endif %}
-
-
+                            <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Building society number</h3>
+                            <p>24680</p>
+                        </div>
+                    </details>
+                    {% if data['locked'] == 'true' %}
+                    <div class="nhsuk-action-link">
+                        <a href="student-details-change" class="nhsuk-action-link__link" id="updateDetails">
+                            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M0 0h24v44H0z" fill="none"></path>
+                                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                            </svg>
+                            <span class="nhsuk-action-link__text">Change student details</span>
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
     </div>
-	</div>
-{% endblock %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+            <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+                <div class="tabs-nav">
+                    <ul class="nhsuk-tabs__list">
+                        <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+                            <a href="#tab-Activities" class="nhsuk-tabs__tab">Activities</a>
+                        </li>
+                        <li class="nhsuk-tabs__list-item">
+                            <a href="#tab-Notes" class="nhsuk-tabs__tab">Notes</a>
+                        </li>
+                        <li class="nhsuk-tabs__list-item">
+                            <a href="#tab-Enrolments" class="nhsuk-tabs__tab">Course details</a>
+                        </li>
+                        <li class="nhsuk-tabs__list-item">
+                            <a href="#tab-Payments" class="nhsuk-tabs__tab">Next payment</a>
+                        </li>
+                        <li class="nhsuk-tabs__list-item">
+                            <a href="#tab-accountActions" class="nhsuk-tabs__tab">Actions</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nhsuk-tabs__panel" id="tab-Activities">
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-one-third">
+                            <h2 class="nhsuk-heading-l">Activities</h2>
+                            <div class="nhsuk-form-group">
+                                <p><a id="viewDocuments" href="documents">View documents</a></p>
+                            </div>
+                        </div>
+                        <div class="nhsuk-grid-column-two-thirds">
+                            <details class="nhsuk-details">
+                                <summary class="nhsuk-details__summary">
+                                    <span class="nhsuk-details__summary-text">1873 - TDAE (Active)</span>
+                                </summary>
+                                <div class="nhsuk-details__text">
+                                    <div class="nhsuk-hint" id="example-hint">
+                                        <!-- Start Date: 01/11/2022<br>
+                                        End date: 15/08/2024<br> -->
+                                        Created: 23/10/2023 11:10:58<br>
+                                        Last updated: 23/10/2023 11:10:58<br>
+                                        Last updated by: Deacon Robert<br>
+                                        Cipher: drobe
+                                    </div>
+                                    <a target="_blank"
+                                       href="TDAE-student-claim?name=Alyssa%20Geary&status=To%20be%20completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=">Review</a>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+                <div class="nhsuk-tabs__panel" id="tab-Notes">
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-two-thirds">
 
-{% block pageScripts %}
-	<script>
-		const sendBtn = document.getElementById('emailButton');
-		const sendConfirm = document.getElementById('emailSentMsg');
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label visually-hidden" for="filter-notes">
 
-		sendBtn.addEventListener("click", function (event) {
-			sendConfirm.setAttribute("style", "display:block");
-		});
-
-
-	</script>
-
-<script>
-    // JavaScript code
-    document.addEventListener("DOMContentLoaded", function() {
-        // currentDate1
-        var currentDate1Element = document.getElementById("currentDate1");
-        if (currentDate1Element) {
-            updateDateTime(currentDate1Element);
-        }
-
-        // currentDate2
-        var currentDate2Element = document.getElementById("currentDate2");
-        if (currentDate2Element) {
-            updateDateTime(currentDate2Element);
-        }
-    });
+                                </label>
+                                <input class="nhsuk-input" id="example" name="filter-notes" type="text"
+                                       placeholder="Filter notes" value="">
+                            </div>
 
 
-    function updateDateTime(element) {
-        var currentDateTime = new Date();
-
-        var options = { day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
-        var formattedDateTime = currentDateTime.toLocaleDateString('en-UK', options);
-
-        formattedDateTime = formattedDateTime.replace(',', '');
-
-        element.textContent = formattedDateTime;
-    }
-</script>
+                            <a href="read-only/TDAE-add-feedback-note-2">
+                                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                                    Add note
+                                </button>
+                            </a>
+                        </div>
 
 
-{% endblock %}
+                        <div class="nhsuk-grid-column-full">
+                            <br><br>
+                            <h3 class="nhsuk-heading-m">Notes</h3>
+
+                            <hr>
+
+                            {% if data['additional-feedback-note'] == 'yes' %}
+                            <h3>XXXX <span id="currentDate1"></span></h3>
+                            <p>{{ data['additional-feedbacknote'] }}</p>
+
+                            <p>[NHSBSA comment]</p>
+                            <p>Added by <b>Joe Bloggs</b></p>
+                            <p id="currentDate1"></p>
+                            <hr>
+                            {% endif %}
+
+                            {% if data['feedback-note'] == 'yes' and data['add-note-student-details'] == 'yes-add-note'
+                            %}
+                            <h3>XXXX <span id="currentDate2"></span></h3>
+                            <p>{{ data['feedbacknote'] }}</p>
+
+                            <p>[NHSBSA comment]</p>
+                            <p>Added by <b>Jane Doe</b></p>
+                            <p id="currentDate2"></p>
+                            <hr>
+                            {% endif %}
+
+
+                            <h3>Information mismatch - Attendance not confirmed on 14/10/2023 16:13:51</h3>
+                            <p>An email "NHS Learning Support Fund - information mismatch" has been sent. The university
+                                says the information that needs changing is:</p>
+
+                            <p>[University comment]</p>
+
+                            <p>Last modified by <b>Katie Jennings</b></p>
+                            <hr>
+                            <h3 class="nhsuk-heading-m">HEI overruled student's COSA on 13 July 2023 at 4:13pm</h3>
+                            <p>{{ data['name'] }} told us they were not attending their course. The HEI has overruled
+                                this with the following reason:</p>
+
+                            <p>[reason]</p>
+
+                            <p>We have sent an email to {{ data['name'] }} asking them to re-confirm their
+                                attendance.</p>
+
+                            <p>Last modified by <b>Katie Jennings</b></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nhsuk-tabs__panel" id="tab-Enrolments">
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-one-third">
+                            <h2 class="nhsuk-heading-l">Course details</h2>
+                        </div>
+                    </div>
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-full">
+                            <table class="nhsuk-table-responsive" id="enrolmentTable">
+                                <caption class="nhsuk-u-visually-hidden">Enrolments table</caption>
+                                <thead role="rowgroup" class="nhsuk-table__head">
+                                <tr role="row">
+                                    <th role="columnheader" class="" scope="col">Academic year reference</th>
+                                    <th role="columnheader" class="" scope="col">Academic year</th>
+                                    <th role="columnheader" class="" scope="col">Study year</th>
+                                    <th role="columnheader" class="" scope="col">Attendance status</th>
+                                </tr>
+                                </thead>
+                                <tbody class="nhsuk-table__body">
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Academic year reference </span>
+                                        <span class="nhsuk-u-visually-hidden">0000000034</span>
+                                        <a href="/lsf-web/v6/student-course-details">
+                                            <span id="enrolmentNo0">SSRN0010003-3</span>
+                                        </a>
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Academic year </span>
+                                        2020-Sep
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Study year </span>
+                                        Year 1
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Attendance status </span>
+                                        Matched student - in attendance
+                                    </td>
+                                </tr>
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Academic year reference </span>
+                                        <span class="nhsuk-u-visually-hidden">0000000031</span>
+                                        <a href="/lsf-web/v6/student-course-details">
+                                            <span id="enrolmentNo1">SSRN0010003-2</span>
+                                        </a>
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Academic year </span>
+                                        2022-Sep
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Study year </span>
+                                        Year 2
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Attendance status </span>
+                                        Matched student - in attendance
+                                    </td>
+                                </tr>
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Academic year reference </span>
+                                        <span class="nhsuk-u-visually-hidden">0000000017</span>
+                                        <a href="/lsf-web/v6/student-course-details">
+                                            <span id="enrolmentNo2">SSRN0010003-1</span>
+                                        </a>
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Academic year </span>
+                                        2023-Sep
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Study year </span>
+                                        Year 3
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Attendance status </span>
+                                        Pending NHSBSA
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nhsuk-tabs__panel" id="tab-Payments">
+                    <div class="nhsuk-column-one-third">
+                        <h2 class="nhsuk-heading-l">Next payment</h2>
+                        <a href="#" class="nhsuk-button" id="paymentButton" role="button" data-module="nhsuk-button">Manage
+                            payments</a>
+                    </div>
+                    <div class="nhsuk-column-full">
+                        <table id="paymentsTable" class="nhsuk-table-responsive">
+                            <caption class="nhsuk-u-visually-hidden">Payments table</caption>
+                            <thead role="rowgroup" class="nhsuk-table__head">
+                            <tr role="row">
+                                <th role="columnheader" class="" scope="col" data-sort="string">Enrolment No</th>
+                                <th role="columnheader" class="" scope="col" data-sort="string">Next payment</th>
+                                <th role="columnheader" class="" scope="col" data-sort="int">Value</th>
+                                <th role="columnheader" class="" scope="col">Award count</th>
+                                <th role="columnheader" class="" scope="col">Held</th>
+                            </tr>
+                            </thead>
+                            <tbody class="nhsuk-table__body">
+                            <tr role="row" class="nhsuk-table__row">
+                                <td role="cell" class="nhsuk-table__cell" scope="row">
+                                    <span class="nhsuk-table-responsive__heading">Enrolment No </span>
+                                    <a href="/lsf-web/v4/student-course-details">
+                                        <span id="studentPayment">SSRN0010003-1</span>
+                                    </a>
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Next payment </span>
+
+                                    10/04/2024
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Value </span>
+                                    1650
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Award count </span>
+                                    1
+                                </td>
+                                <td role="cell" class="nhsuk-table__cell">
+                                    <span class="nhsuk-table-responsive__heading">Hold </span>
+                                    Yes
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="tab-accountActions" class="nhsuk-tabs__panel">
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-one-third">
+                            <h2 class="nhsuk-heading-l">Account actions</h2>
+                        </div>
+                        <div class="nhsuk-grid-column-two-thirds">
+                            <form>
+                                <fieldset class="nhsuk-fieldset">
+                                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">Generate email to
+                                        student
+                                    </legend>
+                                    <div class="nhsuk-form-group">
+                                        <label for="emailTypes-list" class="nhsuk-label" id="name-label">Email
+                                            type</label>
+                                        <div class="nhsuk-hint" id="formhintemail">Enter or select email type</div>
+                                        <select class="nhsuk-select" id="emailTypes-list" name="name">
+                                            <option id="1" value="New Payments">New Payments</option>
+                                            <option id="4" value="COSA Confirmed">COSA Confirmed</option>
+                                            <option id="5" value="Application form received">Application form received
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div id="emailSentMsg" style="display: none;">
+                                        <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
+                                            <span class="nhsuk-u-visually-hidden">Information: </span>
+                                            <p class="emailSent">Email has been sent</p>
+                                        </div>
+                                    </div>
+                                    <div class="nhsuk-form-group">
+                                        <button class="nhsuk-button" type="submit" id="emailButton">Send</button>
+
+                                        <p><a id="sendGeneralEmail" href="/lsf-web/v6/general-correspondence">Send
+                                            general email</a></p>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            {% else %}
+            <div class="nhsuk-grid-column-full clear-float">
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-one-third">
+                        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Name</h2>
+                        <p id="studentName">Daniel Jackson</p>
+
+                        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Date of birth</h2>
+                        <p id="studentDOB">14 September 2004</p>
+
+                        <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1">Username</h2>
+                        <p id="studentUsername">daniel.jackson</p>
+                    </div>
+                    <div class="nhsuk-grid-column-one-third">
+                        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Phone</h2>
+                        <p id="studentPhone">07777777777</p>
+
+                        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Email</h2>
+                        <p id="studentEmail">daniel.jackson@myemail.com</p>
+
+                        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">University student ID</h2>
+                        <p id="studentEmail">AB123456</p>
+                    </div>
+
+                    <div class="nhsuk-grid-column-one-third">
+                        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Address</h2>
+                        <p>
+                            82 Meldon Terrace<br>
+                            Heaton<br>
+                            Newcastle upon Tyne <br>
+                            NE6 5XQ
+                        </p>
+
+                        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">National Insurance number</h2>
+                        <p id="studentEmail">QQ123456B</p>
+                    </div>
+                    <div class="nhsuk-grid-column-full">
+                        <details class="nhsuk-details nhsuk-u-margin-bottom-5">
+                            <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">Bank or building society account details</span>
+                            </summary>
+
+                            <div class="nhsuk-details__text">
+                                <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account number</h3>
+                                <p id="accountNumber">123456</p>
+
+                                <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Sort code</h3>
+                                <p id="sortcode">11-22-33</p>
+
+                                <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Account holder</h3>
+                                <p id="accountholder">Daniel Jackson</p>
+
+                                <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Building society number</h3>
+                                <p>24680</p>
+                            </div>
+                        </details>
+                        {% if data['locked'] == 'true' %}
+                        <div class="nhsuk-action-link">
+                            <a href="student-details-change" class="nhsuk-action-link__link" id="updateDetails">
+                                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M0 0h24v44H0z" fill="none"></path>
+                                    <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                                </svg>
+                                <span class="nhsuk-action-link__text">Change student details</span>
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+                <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+                    <div class="tabs-nav">
+                        <ul class="nhsuk-tabs__list">
+                            <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+                                <a href="#tab-Activities" class="nhsuk-tabs__tab">Activities</a>
+                            </li>
+                            <li class="nhsuk-tabs__list-item">
+                                <a href="#tab-Notes" class="nhsuk-tabs__tab">Notes</a>
+                            </li>
+                            <li class="nhsuk-tabs__list-item">
+                                <a href="#tab-Enrolments" class="nhsuk-tabs__tab">Course details</a>
+                            </li>
+                            <li class="nhsuk-tabs__list-item">
+                                <a href="#tab-Payments" class="nhsuk-tabs__tab">Next payment</a>
+                            </li>
+                            <li class="nhsuk-tabs__list-item">
+                                <a href="#tab-accountActions" class="nhsuk-tabs__tab">Actions</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nhsuk-tabs__panel" id="tab-Activities">
+                        <div class="nhsuk-grid-row">
+                            <div class="nhsuk-grid-column-one-third">
+                                <h2 class="nhsuk-heading-l">Activities</h2>
+                                <div class="nhsuk-form-group">
+                                    <p><a id="viewDocuments" href="documents">View documents</a></p>
+                                </div>
+                            </div>
+                            <div class="nhsuk-grid-column-two-thirds">
+                                <details class="nhsuk-details">
+                                    <summary class="nhsuk-details__summary">
+                                        <span class="nhsuk-details__summary-text">1544 - TDAE (Active)</span>
+                                    </summary>
+                                    <div class="nhsuk-details__text">
+                                        <div class="nhsuk-hint" id="example-hint">
+                                            <!-- Start Date: 01/11/2022<br>
+                                            End date: 15/08/2024<br> -->
+                                            Created: 23/10/2023 11:10:58<br>
+                                            Last updated: 23/10/2023 11:10:58<br>
+                                            Last updated by: Deacon Robert<br>
+                                            Cipher: drobe
+                                        </div>
+                                        <a target="_blank"
+                                           href="TDAE-student-claim?name=Daniel%20Jackson&status=To%20be%20completed&evidence-completed=&university-completed=&approve-in-progress=&read-only=">Review</a>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nhsuk-tabs__panel" id="tab-Notes">
+                        <div class="nhsuk-grid-row">
+                            <div class="nhsuk-grid-column-two-thirds">
+
+                                <div class="nhsuk-form-group">
+                                    <label class="nhsuk-label visually-hidden" for="filter-notes">
+
+                                    </label>
+                                    <input class="nhsuk-input" id="example" name="filter-notes" type="text"
+                                           placeholder="Filter notes" value="">
+                                </div>
+
+
+                                <a href="read-only/TDAE-add-feedback-note-2">
+                                    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                                        Add note
+                                    </button>
+                                </a>
+                            </div>
+
+
+                            <div class="nhsuk-grid-column-full">
+                                <br><br>
+                                <h3 class="nhsuk-heading-m">Notes</h3>
+
+                                <hr>
+
+                                {% if data['additional-feedback-note'] == 'yes' %}
+                                <h3>XXXX <span id="currentDate1"></span></h3>
+                                <p>{{ data['additional-feedbacknote'] }}</p>
+
+                                <p>[NHSBSA comment]</p>
+                                <p>Added by <b>Joe Bloggs</b></p>
+                                <p id="currentDate1"></p>
+                                <hr>
+                                {% endif %}
+
+                                {% if data['feedback-note'] == 'yes' and data['add-note-student-details'] ==
+                                'yes-add-note' %}
+                                <h3>XXXX <span id="currentDate2"></span></h3>
+                                <p>{{ data['feedbacknote'] }}</p>
+
+                                <p>[NHSBSA comment]</p>
+                                <p>Added by <b>Jane Doe</b></p>
+                                <p id="currentDate2"></p>
+                                <hr>
+                                {% endif %}
+
+
+                                <h3>Information mismatch - Attendance not confirmed on 14/10/2023 16:13:51</h3>
+                                <p>An email "NHS Learning Support Fund - information mismatch" has been sent. The
+                                    university says the information that needs changing is:</p>
+
+                                <p>[University comment]</p>
+
+                                <p>Last modified by <b>Katie Jennings</b></p>
+                                <hr>
+                                <h3 class="nhsuk-heading-m">HEI overruled student's COSA on 13 July 2023 at 4:13pm</h3>
+                                <p>{{ data['name'] }} told us they were not attending their course. The HEI has
+                                    overruled this with the following reason:</p>
+
+                                <p>[reason]</p>
+
+                                <p>We have sent an email to {{ data['name'] }} asking them to re-confirm their
+                                    attendance.</p>
+
+                                <p>Last modified by <b>Katie Jennings</b></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nhsuk-tabs__panel" id="tab-Enrolments">
+                        <div class="nhsuk-grid-row">
+                            <div class="nhsuk-grid-column-one-third">
+                                <h2 class="nhsuk-heading-l">Course details</h2>
+                            </div>
+                        </div>
+                        <div class="nhsuk-grid-row">
+                            <div class="nhsuk-grid-column-full">
+                                <table class="nhsuk-table-responsive" id="enrolmentTable">
+                                    <caption class="nhsuk-u-visually-hidden">Enrolments table</caption>
+                                    <thead role="rowgroup" class="nhsuk-table__head">
+                                    <tr role="row">
+                                        <th role="columnheader" class="" scope="col">Academic year reference</th>
+                                        <th role="columnheader" class="" scope="col">Academic year</th>
+                                        <th role="columnheader" class="" scope="col">Study year</th>
+                                        <th role="columnheader" class="" scope="col">Attendance status</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="nhsuk-table__body">
+                                    <tr role="row" class="nhsuk-table__row">
+                                        <td role="cell" class="nhsuk-table__cell">
+                                            <span class="nhsuk-table-responsive__heading">Academic year reference </span>
+                                            <span class="nhsuk-u-visually-hidden">0000000034</span>
+                                            <a href="/lsf-web/v6/student-course-details">
+                                                <span id="enrolmentNo0">SSRN0010004-3</span>
+                                            </a>
+                                        </td>
+                                        <td role="cell" class="nhsuk-table__cell">
+                                            <span class="nhsuk-table-responsive__heading">Academic year </span>
+                                            2020-Sep
+                                        </td>
+                                        <td role="cell" class="nhsuk-table__cell">
+                                            <span class="nhsuk-table-responsive__heading">Study year </span>
+                                            Year 1
+                                        </td>
+                                        <td role="cell" class="nhsuk-table__cell">
+                                            <span class="nhsuk-table-responsive__heading">Attendance status </span>
+                                            Matched student - in attendance
+                                        </td>
+                                    </tr>
+                                    <tr role="row" class="nhsuk-table__row">
+                                        <td role="cell" class="nhsuk-table__cell">
+                                            <span class="nhsuk-table-responsive__heading">Academic year reference </span>
+                                            <span class="nhsuk-u-visually-hidden">0000000031</span>
+                                            <a href="/lsf-web/v6/student-course-details">
+                                                <span id="enrolmentNo1">SSRN0010004-2</span>
+                                            </a>
+                                        </td>
+                                        <td role="cell" class="nhsuk-table__cell">
+                                            <span class="nhsuk-table-responsive__heading">Academic year </span>
+                                            2022-Sep
+                                        </td>
+                                        <td role="cell" class="nhsuk-table__cell">
+                                            <span class="nhsuk-table-responsive__heading">Study year </span>
+                                            Year 2
+                                        </td>
+                                        <td role="cell" class="nhsuk-table__cell">
+                                            <span class="nhsuk-table-responsive__heading">Attendance status </span>
+                                            Matched student - in attendance
+                                        </td>
+                                    </tr>
+                                    <tr role="row" class="nhsuk-table__row">
+                                        <td role="cell" class="nhsuk-table__cell">
+                                            <span class="nhsuk-table-responsive__heading">Academic year reference </span>
+                                            <span class="nhsuk-u-visually-hidden">0000000017</span>
+                                            <a href="/lsf-web/v6/student-course-details">
+                                                <span id="enrolmentNo2">SSRN0010004-1</span>
+                                            </a>
+                                        </td>
+                                        <td role="cell" class="nhsuk-table__cell">
+                                            <span class="nhsuk-table-responsive__heading">Academic year </span>
+                                            2023-Sep
+                                        </td>
+                                        <td role="cell" class="nhsuk-table__cell">
+                                            <span class="nhsuk-table-responsive__heading">Study year </span>
+                                            Year 3
+                                        </td>
+                                        <td role="cell" class="nhsuk-table__cell">
+                                            <span class="nhsuk-table-responsive__heading">Attendance status </span>
+                                            Pending NHSBSA
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nhsuk-tabs__panel" id="tab-Payments">
+                        <div class="nhsuk-column-one-third">
+                            <h2 class="nhsuk-heading-l">Next payment</h2>
+                            <a href="#" class="nhsuk-button" id="paymentButton" role="button"
+                               data-module="nhsuk-button">Manage payments</a>
+                        </div>
+                        <div class="nhsuk-column-full">
+                            <table id="paymentsTable" class="nhsuk-table-responsive">
+                                <caption class="nhsuk-u-visually-hidden">Payments table</caption>
+                                <thead role="rowgroup" class="nhsuk-table__head">
+                                <tr role="row">
+                                    <th role="columnheader" class="" scope="col" data-sort="string">Enrolment No</th>
+                                    <th role="columnheader" class="" scope="col" data-sort="string">Next payment</th>
+                                    <th role="columnheader" class="" scope="col" data-sort="int">Value</th>
+                                    <th role="columnheader" class="" scope="col">Award count</th>
+                                    <th role="columnheader" class="" scope="col">Held</th>
+                                </tr>
+                                </thead>
+                                <tbody class="nhsuk-table__body">
+                                <tr role="row" class="nhsuk-table__row">
+                                    <td role="cell" class="nhsuk-table__cell" scope="row">
+                                        <span class="nhsuk-table-responsive__heading">Enrolment No </span>
+                                        <a href="/lsf-web/v4/student-course-details">
+                                            <span id="studentPayment">SSRN0010004-1</span>
+                                        </a>
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Next payment </span>
+
+                                        10/04/2024
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Value </span>
+                                        1650
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Award count </span>
+                                        1
+                                    </td>
+                                    <td role="cell" class="nhsuk-table__cell">
+                                        <span class="nhsuk-table-responsive__heading">Hold </span>
+                                        Yes
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="tab-accountActions" class="nhsuk-tabs__panel">
+                        <div class="nhsuk-grid-row">
+                            <div class="nhsuk-grid-column-one-third">
+                                <h2 class="nhsuk-heading-l">Account actions</h2>
+                            </div>
+                            <div class="nhsuk-grid-column-two-thirds">
+                                <form>
+                                    <fieldset class="nhsuk-fieldset">
+                                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">Generate email
+                                            to student
+                                        </legend>
+                                        <div class="nhsuk-form-group">
+                                            <label for="emailTypes-list" class="nhsuk-label" id="name-label">Email
+                                                type</label>
+                                            <div class="nhsuk-hint" id="formhintemail">Enter or select email type</div>
+                                            <select class="nhsuk-select" id="emailTypes-list" name="name">
+                                                <option id="1" value="New Payments">New Payments</option>
+                                                <option id="4" value="COSA Confirmed">COSA Confirmed</option>
+                                                <option id="5" value="Application form received">Application form
+                                                    received
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div id="emailSentMsg" style="display: none;">
+                                            <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
+                                                <span class="nhsuk-u-visually-hidden">Information: </span>
+                                                <p class="emailSent">Email has been sent</p>
+                                            </div>
+                                        </div>
+                                        <div class="nhsuk-form-group">
+                                            <button class="nhsuk-button" type="submit" id="emailButton">Send</button>
+
+                                            <p><a id="sendGeneralEmail" href="/lsf-web/v6/general-correspondence">Send
+                                                general email</a></p>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+
+            </div>
+        </div>
+        {% endblock %}
+
+        {% block pageScripts %}
+        <script>
+            const sendBtn = document.getElementById('emailButton');
+            const sendConfirm = document.getElementById('emailSentMsg');
+
+            sendBtn.addEventListener("click", function (event) {
+                sendConfirm.setAttribute("style", "display:block");
+            });
+
+
+        </script>
+
+        <script>
+            // JavaScript code
+            document.addEventListener("DOMContentLoaded", function () {
+                // currentDate1
+                var currentDate1Element = document.getElementById("currentDate1");
+                if (currentDate1Element) {
+                    updateDateTime(currentDate1Element);
+                }
+
+                // currentDate2
+                var currentDate2Element = document.getElementById("currentDate2");
+                if (currentDate2Element) {
+                    updateDateTime(currentDate2Element);
+                }
+            });
+
+
+            function updateDateTime(element) {
+                var currentDateTime = new Date();
+
+                var options = {
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: true
+                };
+                var formattedDateTime = currentDateTime.toLocaleDateString('en-UK', options);
+
+                formattedDateTime = formattedDateTime.replace(',', '');
+
+                element.textContent = formattedDateTime;
+            }
+        </script>
+
+
+        {% endblock %}
