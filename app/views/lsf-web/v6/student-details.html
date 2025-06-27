@@ -246,24 +246,20 @@ Student details
                             <label class="nhsuk-label" for="student-name">
                                 Note type
                             </label>
-                            <div class="nhsuk-hint" id="contact-hint">
-                                Select the notes you want shown.
+                            <div class="nhsuk-checkboxes__item nhsuk-checkboxes--small">
+                                <input class="nhsuk-checkboxes__input" id="note-filter" name="note-filter"
+                                       type="checkbox" value="1">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="note-filter">
+                                    System note
+                                </label>
                             </div>
-
-                                <div class="nhsuk-checkboxes__item nhsuk-checkboxes--small">
-                                    <input class="nhsuk-checkboxes__input" id="note-filter" name="note-filter"
-                                           type="checkbox" value="1">
-                                    <label class="nhsuk-label nhsuk-checkboxes__label" for="note-filter">
-                                        System note
-                                    </label>
-                                </div>
-                                <div class="nhsuk-checkboxes__item nhsuk-checkboxes--small">
-                                    <input class="nhsuk-checkboxes__input" id="note-filter-2" name="note-filter"
-                                           type="checkbox" value="2">
-                                    <label class="nhsuk-label nhsuk-checkboxes__label" for="note-filter-2">
-                                        User note
-                                    </label>
-                                </div>
+                            <div class="nhsuk-checkboxes__item nhsuk-checkboxes--small">
+                                <input class="nhsuk-checkboxes__input" id="note-filter-2" name="note-filter"
+                                       type="checkbox" value="2">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="note-filter-2">
+                                    User note
+                                </label>
+                            </div>
                         </div>
                         <div class="nhsuk-form-group">
                             <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button">
@@ -307,7 +303,7 @@ Student details
                         <hr>
                         {% endif %}
                         {% if data['request'] == 'approved' %}
-                        <h4 class="nhsuk-heading-s">Bank details change request accepted on 20 April 2023 16:13:51pm
+                        <h4 class="nhsuk-heading-s">Bank details change request accepted on 20 April 2023 4:13pm
                             <br><strong class="nhsuk-tag">User note</strong>
                         </h4>
 
@@ -327,7 +323,7 @@ Student details
                         <hr>
                         {% endif %}
 
-                        <h4 class="nhsuk-heading-s">Information mismatch - Attendance not confirmed on 14 October 2023 16:13:51pm
+                        <h4 class="nhsuk-heading-s">Information mismatch - Attendance not confirmed on 14 October 2023 4:13pm
                             <br><strong class="nhsuk-tag nhsuk-tag--grey">System note</strong>
                         </h4>
 
@@ -706,7 +702,7 @@ Student details
                             {% endif %}
 
 
-                            <h3>Information mismatch - Attendance not confirmed on 14/10/2023 16:13:51</h3>
+                            <h3>Information mismatch - Attendance not confirmed on 14 October 2023 3:13pm</h3>
                             <p>An email "NHS Learning Support Fund - information mismatch" has been sent. The university
                                 says the information that needs changing is:</p>
 
@@ -1079,7 +1075,7 @@ Student details
                                 {% endif %}
 
 
-                                <h3>Information mismatch - Attendance not confirmed on 14/10/2023 16:13:51</h3>
+                                <h3>Information mismatch - Attendance not confirmed on 14 October 2023 4:13pm</h3>
                                 <p>An email "NHS Learning Support Fund - information mismatch" has been sent. The
                                     university says the information that needs changing is:</p>
 
@@ -1299,41 +1295,44 @@ Student details
         </script>
 
         <script>
-            // JavaScript code
-            document.addEventListener("DOMContentLoaded", function () {
-                // currentDate1
-                var currentDate1Element = document.getElementById("currentDate1");
-                if (currentDate1Element) {
-                    updateDateTime(currentDate1Element);
-                }
+    // JavaScript code
+    document.addEventListener("DOMContentLoaded", function () {
+        // currentDate1
+        var currentDate1Element = document.getElementById("currentDate1");
+        if (currentDate1Element) {
+            updateDateTime(currentDate1Element);
+        }
 
-                // currentDate2
-                var currentDate2Element = document.getElementById("currentDate2");
-                if (currentDate2Element) {
-                    updateDateTime(currentDate2Element);
-                }
-            });
+        // currentDate2
+        var currentDate2Element = document.getElementById("currentDate2");
+        if (currentDate2Element) {
+            updateDateTime(currentDate2Element);
+        }
+    });
+
+    function updateDateTime(element) {
+        var currentDateTime = new Date();
+
+        // Format the date
+        var day = String(currentDateTime.getDate()).padStart(2, '0');
+        var month = currentDateTime.toLocaleString('en-UK', { month: 'long' });
+        var year = currentDateTime.getFullYear();
+
+        // Format the time
+        var hours = currentDateTime.getHours();
+        var minutes = String(currentDateTime.getMinutes()).padStart(2, '0');
+        var ampm = hours >= 12 ? 'pm' : 'am';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // Convert '0' to '12'
+
+        var timeString = `${hours}:${minutes}${ampm}`;
+        var formattedDateTime = `${day} ${month} ${year} ${timeString}`;
+
+        element.textContent = formattedDateTime;
+    }
+</script>
 
 
-            function updateDateTime(element) {
-                var currentDateTime = new Date();
-
-                var options = {
-                    day: '2-digit',
-                    month: 'long',
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit',
-                    hour12: true
-                };
-                var formattedDateTime = currentDateTime.toLocaleDateString('en-UK', options);
-
-                formattedDateTime = formattedDateTime.replace(',', '');
-
-                element.textContent = formattedDateTime;
-            }
-        </script>
 
 
         {% endblock %}
