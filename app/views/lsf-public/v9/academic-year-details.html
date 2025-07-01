@@ -39,63 +39,65 @@
 </div>
 <div class="nhsuk-grid-row">
   <!-- ENROLMENT DETAILS -->
-  <div class="nhsuk-grid-column-full">
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-grid-column-full">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-third">
 
-        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course name</h2>
-        <p id="courseName">Adult Nursing</p>
-      </div>
-      <div class="nhsuk-grid-column-one-third">
-        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Attendance status</h2>
-        <p>University confirmation needed for term 1</p>
-      </div>
-      <div class="nhsuk-grid-column-one-third">
-        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course length</h2>
-        <p id="courseLength">3 years</p>
-      </div>
-    </div>
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course name</h2>
+              <p id="courseName">Adult Nursing</p>
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Attendance status</h2>
+              <p>Matched student - in attendance</p>
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course length</h2>
+              <p id="courseLength">3 years</p>
+            </div>
+          </div>
 
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-one-third">
-        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">University</h2>
-        <p id="universityName">UNIVERSITY OF NEWCASTLE</p>
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-third">
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">University</h2>
+              <p id="universityName">UNIVERSITY OF NEWCASTLE</p>
 
-        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Academic year</h2>
-        <p id="academicYear">September 2024</p>
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Academic year</h2>
+              <p id="academicYear">September 2024</p>
 
-        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course details</h2>
-        <p><a id="updateEnrolment" href="#">Edit <span class="visually-hidden">enrolment details</span></a></p>
-      </div>
-      <div class="nhsuk-grid-column-one-third">
-        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Declaration</h2>
-        <p><a id="declarationLink" href="APPLY-student-declaration-view">View <span class="visually-hidden">course declaration</span></a></p>
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course details</h2>
+              <p><a id="updateEnrolment" href="#">Edit <span class="visually-hidden">enrolment details</span></a></p>
 
-        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Attendance</h2>
-        <p id="partTime">Full Time</p>
+              <p></p>
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Declarations</h2>
+              <p><a id="declarationLink" href="declarations-view">View</a></p>
 
-
-          <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Repeat year</h3>
-          <p id="repeatYear">No</p>
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Attendance</h2>
+              <p id="partTime">Full Time</p>
 
 
-      </div>
-      <div class="nhsuk-grid-column-one-third">
-        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course year</h2>
-        <p id="courseYear">Year 1</p>
+                <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Repeat year</h3>
+                <p id="repeatYear">No</p>
 
-        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Final year</h2>
-        <p id="finalYear">No</p>
-      </div>
-    </div>
-  </div>
+
+            </div>
+            <div class="nhsuk-grid-column-one-third">
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Course year</h2>
+              <p id="courseYear">Year 1</p>
+
+              <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">Final year</h2>
+              <p id="finalYear">No</p>
+            </div>
+          </div>
+          <hr>
+        </div>
 
 </div>
 {% if data['questionnaire-completed'] == 'Completed' %}
     {% if data['training-grant-submitted'] == 'Submitted' %}
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-two-thirds">
-                <hr>
                 <h2 class="nhsuk-heading-l">Training Grant</h2>
                 <h3 class="nhsuk-heading-m">Application for Training Grant</h3>
                 <p>Training grant is a non-means tested grant of £5,000 per academic year. For more information, <a href="#">Please visit our website</a>.</p>
@@ -111,9 +113,9 @@
                         <th role="columnheader" class="" scope="col">
                           Status
                         </th>
-                        <th role="columnheader" class="" scope="col">
-                          Action
-                        </th>
+                        <!-- Option 1 not chosen<th role="columnheader" class="" scope="col">
+                          Declaration
+                        </th>-->
                       </tr>
                     </thead>
                     <tbody class="nhsuk-table__body">
@@ -132,6 +134,9 @@
                         <td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Status </span>Approved for payment
                         </td>
+                        <!-- Option 1 not chosen<td role="cell" class="nhsuk-table__cell">
+                          <span class="nhsuk-table-responsive__heading">Declaration </span><a href="APPLY-student-declaration-view">View</a>
+                        </td>-->
 
                         <!--<td role="cell" class="nhsuk-table__cell">
                           <span class="nhsuk-table-responsive__heading">Action </span><a href="#">Upload further evidence</a>
@@ -139,6 +144,11 @@
                       </tr>
                     </tbody>
                 </table>
+              </div>
+            </div>
+            <hr>
+          <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-full">
 
                 <h2 class="nhsuk-heading-l">Apply for further NHS Learning Support Funding</h2>
                 <div class="nhsuk-tabs" data-module="nhsuk-tabs">
@@ -151,61 +161,69 @@
                         <li class="nhsuk-tabs__list-item">
                             <a class="nhsuk-tabs__tab" href="#tab-two">Travel and Dual Accommodation Expenses</a>
                         </li>
+                        <li class="nhsuk-tabs__list-item">
+                            <a class="nhsuk-tabs__tab" href="#tab-three">Exceptional Support Fund</a>
+                        </li>
                     </ul>
 
                     <div class="nhsuk-tabs__panel" id="tab-one">
-                        <h3 class="nhsuk-heading-m">Parental Support</h3>
-                        <p>Parental Support is available to students who have parental responsibility for a child. Please ensure you have read the NHS Learning Support Fund guide relating to Parental Support before completing this application.</p>
-                        <a class="nhsuk-button" href="#">Apply</a>
-                    </div>
-                    <div class="nhsuk-tabs__panel" id="tab-two">
-                        <h3 class="nhsuk-heading-m">Travel and Dual Accommodation Expense (TDAE)</h3>
-                        <p>Travel and Dual Accommodation Expenses reimburses excess costs you paid when undertaking clinical placements.</p>
-                        <h3 class="nhsuk-heading-m">When to submit a TDAE claim</h3>
-                        <p>You'll need to submit your form within nine months of the last date of the placement period you are claiming for.</p>
-                        <a class="nhsuk-button" href="TDAE-start-screen">Make a claim</a>
-                        <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
-                            <caption class="nhsuk-table__caption">Your TDAE claims</caption>
+                      <h3 class="nhsuk-heading-m">Parental Support</h3>
+                      <p>You're eligible for Parental Support if you have parental responsibility for a child who is either:</p>
+                      <ul class="nhsuk-list nhsuk-list--bullet">
+                  <li>under the age of 15 years</li>
+                  <li>under 17 years if the child is registered with special educational needs</li>
+              </ul>
+
+                        <div>
+                          <table role="table" class="nhsuk-table-responsive">
+                            <caption class="nhsuk-u-visually-hidden">Parental Support application status</caption>
                             <thead role="rowgroup" class="nhsuk-table__head">
                               <tr role="row">
-                                <th role="columnheader" class="" scope="col">
-                                  Application
-                                </th>
-                                <th role="columnheader" class="" scope="col">
-                                  Status
-                                </th>
-                                <th role="columnheader" class="" scope="col">
-                                  Dates
-                                </th>
+                                <th role="columnheader" class="" scope="col">Application</th>
+                                <th role="columnheader" class="" scope="col">Status</th>
+                                <!-- Option 1 not chosen
+                                <th role="columnheader" class="" scope="col">Declaration</th>
+                                -->
                               </tr>
                             </thead>
                             <tbody class="nhsuk-table__body">
-                              {% if data['TDAE-claim'] == 'Submitted' %}
-                                <tr role="row" class="nhsuk-table__row">
-                                  <td role="cell" class="nhsuk-table__cell">
-                                    <span class="nhsuk-table-responsive__heading">Application </span>Travel expenses (Car journey)
-                                  </td>
-                                  <td role="cell" class="nhsuk-table__cell">
-                                    <span class="nhsuk-table-responsive__heading">Status </span>Pending
-                                  </td>
-                                  <td role="cell" class="nhsuk-table__cell">
-                                    <span class="nhsuk-table-responsive__heading">Dates </span><a href="#">21-Nov-2022 to 23-Nov-2022</a>
-                                  </td>
-                                </tr>
-                              {% endif %}
+
                               <tr role="row" class="nhsuk-table__row">
+                                <td role="cell" class="nhsuk-table__cell">Parental Support</td>
+                                <td role="cell" class="nhsuk-table__cell">Approved for payment</td>
+                                <!-- Option 1 not chosen
                                 <td role="cell" class="nhsuk-table__cell">
-                                  <span class="nhsuk-table-responsive__heading">Application </span>Travel and Dual Accommodation Expenses
-                                </td>
-                                <td role="cell" class="nhsuk-table__cell">
-                                  <span class="nhsuk-table-responsive__heading">Status </span>Approved for payment
-                                </td>
-                                <td role="cell" class="nhsuk-table__cell">
-                                  <span class="nhsuk-table-responsive__heading">Dates </span><a href="#">01-Sep-2020 to 02-Sep-2020</a>
-                                </td>
+                                  <span class="nhsuk-table-responsive__heading">Declaration </span><a href="">View</a>
+                                </td>-->
                               </tr>
                             </tbody>
-                        </table>
+                          </table>
+                        </div>
+                    </div>
+                    <div class="nhsuk-tabs__panel" id="tab-two">
+                      <h3 class="nhsuk-heading-m">Claim Travel and Dual Accommodation Expenses (TDAE)</h3>
+                      <p>If you've attended a placement as part of your course, you may be able to claim back:</p>
+                      <ul class="nhsuk-list nhsuk-list--bullet">
+                        <li>excess costs for travel relating to your placement, compared to your usual journey to university</li>
+                        <li>accommodation you paid for to attend your placement</li>
+                      </ul>
+                      <p>You can find out more about TDAE and what you’ll be reimbursed on our <a href="https://www.nhsbsa.nhs.uk/nhs-bursary-students/travel-and-dual-accommodation-expenses-tdae">website (opens in a new tab)</a> or in our <a href="https://cms.nhsbsa.nhs.uk/sites/default/files/2023-09/Guide%20to%20NHS%20Bursary%20TDAE%20expenses%20for%20students%20and%20universities%20%28V4%29%2009.2023.pdf" download="TDAE Guidance Booklet">TDAE Guidance Booklet (PDF: 2.36MB)</a>.</p>
+                      <h3 class="nhsuk-heading-m">When to submit a claim</h3>
+                      <p>You can submit your claim any time within 6 months of the last date of your placement.</p>
+                      <a class="nhsuk-button nhsuk-u-margin-right-5" href="../TDAE-start-screen">Make a claim</a>
+                      <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-active-claims">View your active claims</a><br>
+                      <p><a href="TDAE-claim-history">View your previous claims</a></p>
+                    </div>
+                    <div class="nhsuk-tabs__panel" id="tab-three">
+                      <h3 class="nhsuk-heading-m">Exceptional Support Fund</h3>
+                      <p>ESF is funding available to eligible healthcare students who experience unforeseen financial hardship during their studies.</p>
+
+                        <p>You can apply for ESF at any point throughout the academic year, there's no closing date.</p>
+                        <p>We've put together an <a href="https://www.nhsbsa.nhs.uk/learning-support-fund/exceptional-support-fund" target="_blank" rel="noopener"> ESF application guide which is available on our website<span class="nhsuk-u-visually-hidden"> (opens in a new window)</span></a> to help you complete your application form.</p>
+                        <p>Read through this before submitting your application. It contains essential information about the types of evidence and supporting documentation you must provide with your claim.</p>
+                        <p><a id="downloadEsf" href="/student/apply/view/esf/form" target="_blank" rel="noopener">Download ESF application form<span class="nhsuk-u-visually-hidden"> (opens in a new tab)</span></a>
+                        <p>When completed post your ESF Application form to:</p>
+                        <p class="bold">NHS Learning Support Fund (ESF application)<br/>Student Services<br/>Hesketh House<br/>200 - 220 Broadway<br/>Fleetwood<br/>FY7 8SS</p>
                     </div>
                 </div>
 
