@@ -1,0 +1,180 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Student declaration
+{% endblock %}
+
+{% block content %}
+<style>
+		ul, .nhsuk-list--circle {
+		  list-style-type: circle;
+		    padding-left: 20px;
+		}
+
+		.nhsuk-list-style-none{
+		  list-style: none;
+		}
+		</style>
+
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ backLink({
+      "href": "javascript:history.go(-1)",
+      "text": "Go back"
+      }) }}
+
+        <h1 class="nhsuk-heading-l">View signed declarations</h1>
+
+				{% if data['dec'] == "parental" %}
+					<nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+					  <h2 class="nhsuk-u-visually-hidden">Declarations</h2>
+					  <ol class="nhsuk-contents-list__list">
+					    <li class="nhsuk-contents-list__item">
+					      <a class="nhsuk-contents-list__link" href="declarations-view?dec=">Training Grant application submitted 8 January 2025</a>
+					    </li>
+					    <li class="nhsuk-contents-list__item" aria-current="page">
+					      <span class="nhsuk-contents-list__current">Parental Support application submitted 6 January 2025</span>
+					    </li>
+					  </ol>
+					</nav>
+				{% else %}
+					<nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+						<h2 class="nhsuk-u-visually-hidden">Declarations</h2>
+						<ol class="nhsuk-contents-list__list">
+							<li class="nhsuk-contents-list__item" aria-current="page">
+								<span class="nhsuk-contents-list__current">Training Grant application submitted 8 January 2025</span>
+							</li>
+							<li class="nhsuk-contents-list__item">
+								<a class="nhsuk-contents-list__link" href="declarations-view?dec=parental">Parental Support application submitted 6 January 2025</a>
+							</li>
+						</ol>
+					</nav>
+				{% endif %}
+
+				{% if data['dec'] == "parental" %}
+					<h2 class="nhsuk-heading-m">Parental Support application</h2>
+				{% else %}
+					<h2 class="nhsuk-heading-m">Training Grant application</h2>
+				{% endif %}
+
+        <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+              <span role="text">
+                <span class="nhsuk-u-visually-hidden">Important: </span>
+                Declaration
+              </span>
+            </h3>
+            <p>I declare that:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>I’m studying a pre-registration health professional course which is eligible for NHS LSF</li>
+              <li>I’ve read and understood relevant guidance and related information about the conditions for claiming NHS LSF</li>
+              <li>I’m studying at a Higher Education Institution in England</li>
+              <li>I’ve enrolled on and started my course so I’m in in active training</li>
+              <li>I’m not an assisted student – I do not receive sponsorship from an employer or any other agency</li>
+            </ul>
+
+            <p>I also declare that either:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>I receive tuition fees, a maintenance loan, or both, from Student Loans Company which confirms that I am ordinarily resident in the United Kingdom</li>
+              <li>I’ve not applied for a student loan, and I’ll provide eligibility evidence and another declaration (if necessary) if asked to by NHSBSA</li>
+            </ul>
+
+            <p>We’ll use the information you provide to:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>assess your application</li>
+              <li>pay you</li>
+              <li>prevent and detect fraud and errors</li>
+              <li>help plan and make improvements to NHS services and direct patient care</li>
+              <li>research the effectiveness of the Training Grant</li>
+            </ul>
+
+            <h3 class="nhsuk-heading-m">Sharing your information</h3>
+
+            <p>To prevent, detect and investigate fraud and errors, we may share your information with:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>Student Loans Company</li>
+              <li>HM Revenue and Customs</li>
+              <li>Home Office</li>
+              <li>Cabinet Office, in relation to the National Fraud Initiative</li>
+              <li>higher education institutions</li>
+              <li>organisations you receive benefits, bursaries, grants, or support from</li>
+              <li>bodies acting on behalf of the above organisations, including but not limited to:</li>
+              <li class="nhsuk-list-style-none">
+  					    <ul class="nhsuk-list nhsuk-list--circle nhsuk-u-margin-bottom-0">
+  					       <li>Department for Work and Pensions</li>
+  								 <li>HM Revenue and Customs</li>
+  								 <li>local authorities in the UK</li>
+  					    </ul>
+  					  </li>
+            </ul>
+
+            <p>To prevent, detect, investigate, and prosecute fraud or other unlawful activity affecting the NHS, we may also share your information with:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>Department of Health and Social Care (DHSC)</li>
+              <li>NHSBSA Loss and Fraud Prevention Team (NHSBSA LFP)</li>
+              <li>NHS Counter Fraud Authority (NHSCFA)</li>
+            </ul>
+
+            <p>We may also share anonymised with the DHSC to monitor compliance with equality law and to research the effectiveness of the Training Grant.</p>
+
+            <p>The NHSCFA collects data to detect economic crime within the NHS and undertakes loss measurement exercises. NHSCFA and the DHSC Anti-Fraud Unit receive data during investigations that the NHSBSA LFP Team, intelligence gathering, and other proactive anti-crime programmes undertake.</p>
+
+            <p>We may contact you to discuss your application using the details you gave us. You can find out more about your rights and how we process your information on our Privacy page.</p>
+
+            <h3 class="nhsuk-heading-m">Changes to circumstances or attendance</h3>
+
+            <p>I accept that NHSBSA Student Services will immediately stop or suspend my funding if:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>I withdraw, abandon, suspend, defer, or interrupt my course for any reason either permanently or temporarily, regardless of whether I intend to return</li>
+              <li>I gain financial support from other sources which may affect my entitlement</li>
+              <li>NHSBSA Student Services in its absolute discretion decides that I’m no longer entitled to financial support and it’s reasonable to withdraw funding</li>
+            </ul>
+
+            <p>I understand and accept that if I fail to notify NHSBSA Student Services of any change to my bank or building society account details in sufficient time, or provide incorrect information, NHSBSA Student Services cannot take responsibility for:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>payments made to an incorrect account</li>
+              <li>delayed payments</li>
+              <li>payments not being made</li>
+            </ul>
+
+            <h3 class="nhsuk-heading-m">Repayments</h3>
+
+            <p>We’re committed to accurately administering entitlement where possible. I agree to pay back NHSBSA Student Services any excess payment, fees, and any other charges within 30 days of being notified. Related circumstances include, but are not limited to, if:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>I change my study pattern or course attendance in any way</li>
+              <li>I withdraw, abandon, suspend, defer, or interrupt my course for any reason either permanently or temporarily, regardless of whether I intend to return</li>
+              <li>I’ve been overpaid because I failed to notify NHSBSA Student Services of a change in my circumstances</li>
+              <li>I gain financial support from other sources which may affect my entitlement</li>
+              <li>NHSBSA Student Services in its absolute discretion decides I’ve received funding I’m not entitled to</li>
+            </ul>
+            <p>I understand that if I fail to fully repay any amount due or agree on an acceptable repayment plan with NHSBSA, the debt will pass to a debt collection agency. I also understand that I may be charged for any additional recovery costs, interest, or both, at the rate of 8% on the referred debt. This may be added to the overall balance.</p>
+
+            <h3 class="nhsuk-heading-m">NHS Learning Support Fund</h3>
+
+            <p>I understand the NHSBSA is responsible for administrating the NHS Learning Support Fund and for counter fraud and security management in the NHS.</p>
+
+            <p>I have read and accepted the NHSBSA Student Services privacy notice.</p>
+
+            <p>I understand if I fail to notify NHSBSA Student Services that I have withdrawn, abandoned, suspended, deferred or interrupted my course for any reason either permanently or temporarily, I may be referred to the NHSBSA Loss and Fraud Prevention Team for failure to disclose information and obtaining money I’m not entitled to.</p>
+            <p>I declare the information I’ve given on this form and in any supporting documents is complete and accurate. I understand and accept that if I give NHSBSA Student Services false or misleading information, they may refuse or withdraw financial support. I may also be liable to criminal prosecution, civil proceedings, or both.</p>
+
+          </div>
+
+
+          <div class="nhsuk-checkboxes nhsuk-u-margin-bottom-7">
+            <div class="nhsuk-checkboxes__item">
+              <input type="checkbox" id="declarationBox" disabled="disabled" checked="checked" class="nhsuk-checkboxes__input">
+							{% if data['dec'] == "parental" %}
+              	<label for="declarationBox" class="nhsuk-label nhsuk-checkboxes__label">Accepted 06/01/2025 14:52</label>
+							{% else %}
+								<label for="declarationBox" class="nhsuk-label nhsuk-checkboxes__label">Accepted 08/01/2025 10:38</label>
+							{% endif %}
+            </div>
+          </div>
+
+    </div>
+
+</div>
+{% endblock %}
