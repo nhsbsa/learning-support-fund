@@ -13,6 +13,14 @@ Check your answers
 
 		<h1 class="nhsuk-heading-xl">Taxi journeys</h1>
 
+		{% if data['taxi-details'] === 'started' %}
+		<div class="nhsuk-inset-text">
+		  <span class="nhsuk-u-visually-hidden">Information: </span>
+
+		  <p>You've changed your placement address. We've marked these sections as Not started because you need to check that these details are still correct.</p>
+		</div>
+		{% endif %}
+
 		{% if data['taxi-details'] === 'action' %}
 			<div class="nhsuk-warning-callout">
 				<h3 class="nhsuk-warning-callout__label">
