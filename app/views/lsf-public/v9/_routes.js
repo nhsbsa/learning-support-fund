@@ -1610,6 +1610,19 @@ router.post('/v9/TDAE-accommodation-comment', (req, res) => {
 
 })
 
+// Term time address evidence
+router.post('/v9/TDAE-accommodation-term-time-evidence-overview', (req, res) => {
+
+    const reuseEvidence = req.session.data['reuse-evidence']
+
+    if (reuseEvidence === 'no') {
+        res.redirect('/lsf-public/v9/TDAE-accommodation-term-time-evidence')
+    } else {
+        res.redirect('/lsf-public/v9/TDAE-accommodation-check-multiple')
+    }
+
+})
+
 // Is this your final year?
 router.post('/v9/TDAE-accommodation-next-stay', (req, res) => {
 
