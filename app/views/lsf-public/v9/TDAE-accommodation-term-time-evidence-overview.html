@@ -17,23 +17,22 @@ Placement additional costs comments
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="example">
-          <h1 class="nhsuk-heading-l">Term time address evidence</h1>
+          <h1 class="nhsuk-heading-l">Term time accommodation costs evidence</h1>
         </label>
 
-        <p>You'll need to add evidence of your term time address from Monday 1 September to Wednesday 3 September
-          2024.</p>
+        <p>You'll need to add evidence of your term time accommodation costs which covers Monday 1 September to Wednesday 3 September
+          2024. </p>
 
-        {% if data['term-time--address-evidence'] != "not-added" %}
         <p>You can reuse this evidence from a previous claim, or add new evidence.</p>
 
         <div class="nhsuk-inset-text">
           <span class="nhsuk-u-visually-hidden">Previously submitted evidence: </span>
           <h2 class="nhsuk-heading-s">Previously submitted evidence</h2>
-          <p><a href="#">term-time-evidence.pdf (opens in a new tab)</a></p>
+          <p><a href="#">tenancy-agreement.pdf (opens in a new tab)</a></p>
         </div>
         <!-- <div class="nhsuk-inset-text">
           <span class="nhsuk-u-visually-hidden">Previously submitted evidence: </span>
-          <p><strong>Previously submitted evidence: </strong><a>term-time-evidence.pdf (opens in a new tab)</a></p>
+          <p><strong>Previously submitted evidence: </strong><a>tenancy-agreement.pdf (opens in a new tab)</a></p>
         </div> -->
 
         <h2 class="nhsuk-heading-m">Would you like to reuse this evidence?</h1>
@@ -57,11 +56,6 @@ Placement additional costs comments
           </div>
 
           <button class="nhsuk-button" type="submit">Continue</button>
-
-          {% else %}
-
-          <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-accommodation-term-time-evidence">Add evidence</a>
-          {% endif %}
 
           <p><a href="TDAE-task-list">Return to task list</a></p>
       </div>
