@@ -19,6 +19,8 @@ Claim details
     <h1 class="nhsuk-heading-l">Accommodation booking details</h1>
     {% endif %}
 
+    <h2 class="nhsuk-heading-m">Term time</h2>
+
     <dl class="nhsuk-summary-list">
       {% if data['name'] === 'Emmit Mar' %}
       <div class="nhsuk-summary-list__row">
@@ -94,6 +96,22 @@ Claim details
         </dd>
       </div>
       {% endif %}
+      
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Evidence
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="#">
+            Download (PDF, 0.84MB)<span class="nhsuk-u-visually-hidden"> evidence</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="nhsuk-heading-m">Placement</h2>
+
+    <dl class="nhsuk-summary-list">
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key" style="width: 40%;">
           Placement address
@@ -111,121 +129,123 @@ Claim details
               Infirmary Drive<br>
               Alnwick<br>
               NE66 2NS
-          </div>
+            </div>
           </details>
         </dd>
       </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Placement accommodation address
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            The Hog's Head Inn, NE66 2BF
-            <details class="nhsuk-details" style="margin-bottom: 0;">
-              <summary class="nhsuk-details__summary">
-                <span class="nhsuk-details__summary-text">
-                  View full address
-                </span>
-              </summary>
-              <div class="nhsuk-details__text">
-                The Hog's Head Inn<br>
-                Hawfinch Drive<br>
-                Alnwick<br>
-                NE66 2BF
-              </div>
-            </details>
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Start date
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            16 February 2024
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            End date
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            17 February 2024
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Number of nights
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            1
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Accommodation type
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            Non-commercial
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Nightly cost
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            £85
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Maximum nightly allowance
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            £37.50
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Cost to be reimbursed
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            £37.50
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Evidence uploaded
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {% if data['name'] === 'Emmit Mar' %}
-            <a href="/images/Hotel-booking-confirmation.pdf" download="Emmit Mar accommodation evidence 16 Feb 2024 to 17 Feb 2024">
-              Download (PDF, 1.01MB)<span class="nhsuk-u-visually-hidden"> evidence</span>
-            </a>
-            {% else %}
-            <a href="/images/Hotel-booking-confirmation.pdf" download="Daniel Jackson accommodation evidence 16 Feb 2024 to 17 Feb 2024">
-              Download (PDF, 1.01MB)<span class="nhsuk-u-visually-hidden"> evidence</span>
-            </a>
-            {% endif %}
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Student comments
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            None provided
-          </dd>
-        </div>
-  
-      </dl>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Placement accommodation address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          The Hog's Head Inn, NE66 2BF
+          <details class="nhsuk-details" style="margin-bottom: 0;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View full address
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              The Hog's Head Inn<br>
+              Hawfinch Drive<br>
+              Alnwick<br>
+              NE66 2BF
+            </div>
+          </details>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Start date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          16 February 2024
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          End date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          17 February 2024
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Number of nights
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          1
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Accommodation type
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Non-commercial
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Nightly cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £85
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Maximum nightly allowance
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £37.50
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Cost to be reimbursed
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £37.50
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Evidence uploaded
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['name'] === 'Emmit Mar' %}
+          <a href="/images/Hotel-booking-confirmation.pdf"
+            download="Emmit Mar accommodation evidence 16 Feb 2024 to 17 Feb 2024">
+            Download (PDF, 1.01MB)<span class="nhsuk-u-visually-hidden"> evidence</span>
+          </a>
+          {% else %}
+          <a href="/images/Hotel-booking-confirmation.pdf"
+            download="Daniel Jackson accommodation evidence 16 Feb 2024 to 17 Feb 2024">
+            Download (PDF, 1.01MB)<span class="nhsuk-u-visually-hidden"> evidence</span>
+          </a>
+          {% endif %}
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student comments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          None provided
+        </dd>
+      </div>
 
-      {% if data['read-only'] != 'true' %}
-      {% if data['name'] === 'Emmit Mar' %}
-      <a class="nhsuk-button" href="TDAE-accommodation-check-2">Continue</a>
-      {% else %}
-      <a class="nhsuk-button" href="TDAE-accommodation-check-3">Continue</a>
-      {% endif %}
-      {% endif %}
+    </dl>
+
+    {% if data['read-only'] != 'true' %}
+    {% if data['name'] === 'Emmit Mar' %}
+    <a class="nhsuk-button" href="TDAE-accommodation-check-2">Continue</a>
+    {% else %}
+    <a class="nhsuk-button" href="TDAE-accommodation-check-3">Continue</a>
+    {% endif %}
+    {% endif %}
 
 
   </div>
