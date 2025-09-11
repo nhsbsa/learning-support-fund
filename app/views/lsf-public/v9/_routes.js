@@ -1618,7 +1618,7 @@ router.post('/v9/TDAE-accommodation-term-time-evidence-overview', (req, res) => 
     if (reuseEvidence === 'no') {
         res.redirect('/lsf-public/v9/TDAE-accommodation-term-time-evidence')
     } else {
-        res.redirect('/lsf-public/v9/TDAE-accommodation-check-multiple')
+        res.redirect('/lsf-public/v9/TDAE-accommodation-evidence-overview?term-time-accommodation-evidence=added')
     }
 
 })
