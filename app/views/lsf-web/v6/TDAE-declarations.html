@@ -1,0 +1,108 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+  What is the reason to send the claim back to the student?
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      {{ backLink({
+        "href": "TDAE-student-claim",
+        "text": "Back to claim"
+      }) }}
+
+
+      <div class="nhsuk-form-group">
+
+        <h1 class="nhsuk-heading-l">
+          View TDAE claim declarations
+        </h1>
+
+        <!--<p>You can view all the declarations signed for this claim.</p>-->
+
+				<nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+					<h2 class="nhsuk-u-visually-hidden">Declarations</h2>
+					<ol class="nhsuk-contents-list__list">
+            {% if data['declaration'] != 'HEI' %}
+  						<li class="nhsuk-contents-list__item"><span class="nhsuk-contents-list__current">Student submitted 19 December 2024</span></li>
+              <li class="nhsuk-contents-list__item"><a class="nhsuk-contents-list__link" href="TDAE-declarations?declaration=HEI">University submitted 21 December 2024</a></li>
+            {% else %}
+              <li class="nhsuk-contents-list__item"><a class="nhsuk-contents-list__link" href="TDAE-declarations?declaration=student">Student submitted 19 December 2024</a></li>
+              <li class="nhsuk-contents-list__item"><span class="nhsuk-contents-list__current">University submitted 21 December 2024</span></li>
+            {% endif %}
+					</ol>
+				</nav>
+
+      </div>
+
+      {% if data['declaration'] != 'HEI' %}
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+              <span role="text">
+                <span class="nhsuk-u-visually-hidden">Important: </span>
+                Declaration
+              </span>
+            </h3>
+            <p>Review all information you have provided before completing this declaration. Read this declaration carefully before accepting it. If you choose not to accept it, your funding application will not be processed.</p>
+        <p>I declare that:</p>
+        <ol class="nhsuk-list nhsuk-list--number nhsuk-u-margin-bottom-7">
+            <li>I am undertaking a pre-registration healthcare programme at a university in England that is eligible for Travel and Dual Accommodation Expenses.</li>
+            <li>I have read and understood the relevant booklet/s and/or any other other information regarding the conditions for claiming Travel and Dual Accommodation Expenses.</li>
+            <li>By signing this declaration I am also aware of the main NHS Learning Support Fund terms and conditions, including the Privacy Notice and Consent to share information clauses, as set out in the declaration I signed when I registered for my NHS LSF account.</li>
+            <li>I confirm that I have enrolled and commenced on my programme of study and am still in active training.</li>
+            <li>I confirm that the expenses claimed were essentially incurred as a result of my attending practice placements and that my normal daily travel to university costs have been deducted.</li>
+            <li>I confirm that I have used the cheapest available transport, where available, to access the practice placement/s.</li>
+            <li>I confirm that, if I have claimed for a private motor vehicle, I have appropriate insurance in place.</li>
+            <li>I understand that the administration of Travel and Dual Accommodation Expenses and responsibility for counter fraud and security management in the NHS are both responsibilities of the NHS Business Services Authority. I understand that NHSBSA Student Services may share the information on this form with NHS Counter Fraud Authority for the purposes of the prevention, detection, investigation and prosecution of fraud or any other unlawful activity affecting the NHS.</li>
+            <li>I understand and accept that if I fail to give sufficient notice of any change to my bank or building society account details, or provide incorrect details, NHSBSA Student Services cannot take responsibility for payments made to an incorrect account, delayed payments or non-payment of the funding.</li>
+            <li>I understand and accept that the terms and conditions (including rates) of Travel and Dual Accommodation Expenses may change at any time without notice, and the scheme is subject to continued government funding, which may cease at any time without notice.</li>
+            <li>I declare that the information given on this form and in any supporting documents provided is complete and accurate. I understand and accept that if I provide NHSBSA Student Services with false or misleading information, financial support may be refused or withdrawn and I may be liable to prosecution and/or civil proceedings.</li>
+        </ol>
+          </div>
+      </div>
+			<div class="nhsuk-form-group">
+				<div class="nhsuk-checkboxes">
+					<div class="nhsuk-checkboxes__item">
+						<input id="declarationBox" type="checkbox" disabled="disabled" checked="checked" class="nhsuk-checkboxes__input" />
+						<label for="declarationBox" class="nhsuk-label nhsuk-checkboxes__label">Accepted 19 December 2024 15:31</label>
+					</div>
+				</div>
+			</div>
+      {% else %}
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+              <span role="text">
+                <span class="nhsuk-u-visually-hidden">Important: </span>
+                Declaration
+              </span>
+            </h3>
+        <p>In countersigning this claim for Travel and Dual Accommodation Expenses, I confirm the following: </p>
+        <ol class="nhsuk-list nhsuk-list--number nhsuk-u-margin-bottom-7">
+            <li>The student named on this form is studying on a pre-registration healthcare programme that is, to the best of my knowledge, eligible for Travel and Dual Accommodation Expenses.</li>
+            <li>The practice placement/s for which the student is claiming the Travel and Dual Accommodation Expenses were essentially incurred as part of the overall programme requirements.</li>
+            <li>the expenses detailed in this claim form have been reasonably and necessarily incurred in accordance with the provisions of the policy</li>
+            <li>The student’s normal daily travel to university costs have been deducted.</li>
+            <li>I have checked the claim and, to the best of my knowledge, confirm that the expenses being claimed are correct.</li>
+            <li>I have checked the receipts (where applicable) and these will be retained in line with this institution’s audit and governance requirements.</li>
+            <li>I am a registered employee of the higher education institution that the student attends, and I have authority agreed by this higher education institution to countersign Travel and Dual Accommodation Expense claims.</li>
+            <li>I understand and accept that if I provide false or misleading information, I may be liable to prosecution and/or civil proceedings.</li>
+            <li>I understand that the administration of Travel and Dual Accommodation Expenses and responsibility for counter fraud and security management are both responsibilities of the NHS Business Services Authority</li>
+            <li>I understand that Student Services may share the information on this form with the NHSBSA and NHS Counter Fraud Authority for the purposes of the prevention, detection, investigation and prosecution of fraud or any other unlawful activity affecting the NHS.</li>
+        </ol>
+          </div>
+      </div>
+      <div class="nhsuk-form-group">
+				<div class="nhsuk-checkboxes">
+					<div class="nhsuk-checkboxes__item">
+						<input id="declarationBox" type="checkbox" disabled="disabled" checked="checked" class="nhsuk-checkboxes__input" />
+						<label for="declarationBox" class="nhsuk-label nhsuk-checkboxes__label">Accepted 21 December 2024 12:54 by [HEI name]</label>
+					</div>
+				</div>
+			</div>
+      {% endif %}
+  </div>
+{% endblock %}

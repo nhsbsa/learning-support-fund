@@ -137,123 +137,6 @@ Claim checks
     <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-7">Claim currently being processed by Samuel Jackson</h2>
     {% endif %}
 
-    {% if data['late-submission'] === 'true' %}
-      <details class="nhsuk-details nhsuk-expander-warning" open>
-        <summary style="" class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-            Claim submitted late
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <p>Joe Bloggs submitted this claim over 6 months after the claim end date. They've entered a reason to consider as an exceptional circumstance.</p>
-          <dl class="nhsuk-summary-list">
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Student comments
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                Sorry for submitting it late I forgot about this placement.
-              </dd>
-            </div>
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                University comments
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                Having spoken to the student they have been on sickness leave for 3 months and we are willing to accept their reason for lateness.
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </details>
-    {% endif %}
-
-    {% if data['read-only'] != 'true' %}
-    <details class="nhsuk-details nhsuk-expander-warning" open>
-      <summary style="" class="nhsuk-details__summary">
-        <span class="nhsuk-details__summary-text">
-          Another claim was submitted for these dates
-        </span>
-      </summary>
-      <div class="nhsuk-details__text">
-        <p>{% if data['name'] %}{{ data['name'] }}{% else %}Joe Bloggs{% endif %} has previously submitted a claim with costs on these dates.</p>
-        <dl class="nhsuk-summary-list">
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Claim dates
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              6 October 2023 to 9 October 2023
-            </dd>
-          </div>
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Costs claimed
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              Hire car
-            </dd>
-          </div>
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Claim status
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              Claim paid
-            </dd>
-          </div>
-        </dl>
-        <p>To make sure they're not claiming the same costs as this previous claim, you can:</p>
-        <ul class="nhsuk-list nhsuk-list--bullet">
-          <li><a href="TDAE-cost-breakdown-previous" target="_blank">View Costs breakdown of previously submitted claim (opens in a new tab)</a></li>
-          <li><a href="#">View the previously submitted claim</a> in full, but you'll be navigated away from the active claim.</li>
-        </ul>
-        <!--<p>You need to <a target="_blank" href="TDAE-student-claim-previous">check the previous claim (opens in new tab)</a> to make sure they have not claimed for the same costs again.</p>-->
-      </div>
-    </details>
-    <details class="nhsuk-details nhsuk-expander-warning" open>
-      <summary style="" class="nhsuk-details__summary">
-        <span class="nhsuk-details__summary-text">
-          Another claim was submitted for these dates
-        </span>
-      </summary>
-      <div class="nhsuk-details__text">
-        <p>{% if data['name'] %}{{ data['name'] }}{% else %}Joe Bloggs{% endif %} has previously submitted a claim with costs on these dates.</p>
-        <dl class="nhsuk-summary-list">
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Claim dates
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              6 October 2023 to 9 October 2023
-            </dd>
-          </div>
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Costs claimed
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              Hire car
-            </dd>
-          </div>
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Claim status
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              Declined
-            </dd>
-          </div>
-        </dl>
-        <p>To make sure they're not claiming the same costs as this previous claim, you can:</p>
-        <ul class="nhsuk-list nhsuk-list--bullet">
-          <li><a href="TDAE-cost-breakdown-previous" target="_blank">View Costs breakdown of previously submitted claim (opens in a new tab)</a></li>
-          <li><a href="#">View the previously submitted claim</a> in full, but you'll be navigated away from the active claim.</li>
-        </ul>
-        <!--<p>You need to <a target="_blank" href="TDAE-student-claim-previous">check the previous claim (opens in new tab)</a> to make sure they have not claimed for the same costs again.</p>-->
-      </div>
-    </details>
-    {% endif %}
 
     <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
       <summary class="nhsuk-details__summary">
@@ -298,7 +181,11 @@ Claim checks
 
           </tbody>
         </table>
-        <p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></p>
+        <!--<p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></p>-->
+        <ul class="nhsuk-list nhsuk-u-padding-top-3">
+          <li><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></li>
+          <li><a class="nhsuk-link--no-visited-state" href="TDAE-declarations">View declarations</a></li>
+        </ul>
       </div>
     </details>
 
