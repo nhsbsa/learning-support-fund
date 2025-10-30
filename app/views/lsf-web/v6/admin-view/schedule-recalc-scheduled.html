@@ -1,0 +1,25 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Add calculation rates
+{% endblock %}
+
+{% block content %}
+
+<form action="manage-recalcs" method="POST">
+	<div class="nhsuk-grid-column-two-thirds">
+		<div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+				<div class="nhsuk-card__content">
+						<h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+							Recalculation scheduled
+						</h1>
+				</div>
+		</div>
+
+		<p>Student payment recalculations have been scheduled for Monday 10 January 2026 at 1:00am.</p>
+
+		<button class="nhsuk-button" type="submit" id="saveCalcRatesDetails">Continue</button>
+
+	</div>
+</form>
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Add calculation rates
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-full">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
+
+<form action="schedule-recalc-scheduled" method="POST">
+	<div class="nhsuk-grid-column-two-thirds">
+		<h1 class="nhsuk-heading-l">Schedule a reclaculation of students payments</h1>
+
+		<p>This will recalculate students payments based on their current application information using the active rates at the time scheduled. This will apply to all active academic years?</p>
+
+		<div class="nhsuk-form-group">
+			<fieldset class="nhsuk-fieldset" aria-describedby="date-hint" role="group">
+				<label class="nhsuk-label form-label" id="dateLabel" for="ratesDate">
+					Run date
+				</label>
+				<div class="nhsuk-hint" id="example-hint">
+				For example, 15 3 2024
+				</div>
+
+				<div class="nhsuk-date-input" id="example">
+				<div class="nhsuk-date-input__item">
+					<div class="nhsuk-form-group">
+					<label class="nhsuk-label nhsuk-date-input__label" for="validFromDate-day-label">
+						Day
+					</label>
+					<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="validFromDate-day" name="rate-day" type="text" pattern="[0-9]*" inputmode="numeric">
+					</div>
+				</div>
+				<div class="nhsuk-date-input__item">
+					<div class="nhsuk-form-group">
+					<label class="nhsuk-label nhsuk-date-input__label" for="validFromDate-month-label">
+						Month
+					</label>
+					<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="validFromDate-month" name="rate-month" type="text" pattern="[0-9]*" inputmode="numeric">
+					</div>
+				</div>
+				<div class="nhsuk-date-input__item">
+					<div class="nhsuk-form-group">
+					<label class="nhsuk-label nhsuk-date-input__label" for="validFromDate-year-label">
+						Year
+					</label>
+					<input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="validFromDate-year" name="rate-year" type="text" pattern="[0-9]*" inputmode="numeric">
+					</div>
+				</div>
+				</div>
+			</fieldset>
+		</div>
+
+		<div class="nhsuk-form-group">
+      <fieldset class="nhsuk-fieldset" aria-describedby="dob-hint" role="group">
+        <legend class="nhsuk-fieldset__legend">
+            Run time
+        </legend>
+        <span class="nhsuk-hint" id="dob-hint">
+            Enter your time in 24 hour format. For example, 09:30 or 14:00.
+        </span>
+
+        <div class="nhsuk-date-input" id="dob">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="dob-day">
+                Hour
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="dob-month">
+                Minute
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button" type="submit" id="saveCalcRatesDetails">Save and continue</button>
+			<p><a class="" href="/lsf-web/v6/admin-view/manage-calc-rates">Cancel</a></p>
+		</div>
+
+	</div>
+</form>
+
+{% endblock %}

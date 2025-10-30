@@ -12,19 +12,28 @@ Manage calculation rates
 	<div class="nhsuk-grid-column-full">
 		<h1 class="nhsuk-heading-l">Manage calculation rates</h1>
 	</div>
-		
-	<div class="nhsuk-grid-column-one-third">
-		<div class="nhsuk-form-group" id="filterCalculationRates-group">
-			<label class="nhsuk-label" for="filterCalculationRates">Filter calculation rates by date</label>
-			<div id="filterCalculationRates-container"></div>
+
+	<!--<div class="nhsuk-grid-column-full">
+		<div class="nhsuk-group">
+			<a class="nhsuk-button" href="/lsf-web/v6/admin-view/add-calc-rates" data-module="nhsuk-button" type="submit" id="searchButton">Add calculation rates</a>
 		</div>
-	</div>
-		
+	</div>-->
+
 	<div class="nhsuk-grid-column-full">
-		<div class="nhsuk-form-group">
-			<button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit" value="Search" id="searchButton">Apply filter</button>
-			<a class="nhsuk-button nhsuk-button--secondary" style="float: right;" href="/lsf-web/v6/admin-view/add-calc-rates" data-module="nhsuk-button" type="submit" id="searchButton">Add calculation rates</a>
-			<p><a href="/lsf-web/v6/admin-view/manage-calc-rates" id="clearButton">Reset filter</a></p>
+		<div class="filterBox js-disabled" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: nowrap; gap: 20px;padding: 15px 20px;
+    background-color: #dee0e2; margin-bottom: 10px; overflow: hidden;">
+			<div class="search-box" id="filterForm" style="font-size: 19px; line-height: 1.31579; width: 80%;">
+				<div class="nhsuk-form-group">
+				  <label class="nhsuk-label" for="example">
+						Filter calculation rates
+				  </label>
+				  <input class="nhsuk-input" id="example" name="example" type="text">
+				</div>
+				<p class="resetLinkContainer"><a href="#" id="resetLink" onclick="resetTable('filterText', 'documentsTable', event)">Reset filter</a></p>
+			</div>
+			<div class="btn-container">
+				<a class="nhsuk-button" style="float: right;" href="/lsf-web/v6/admin-view/add-calc-rates" data-module="nhsuk-button" type="submit" id="searchButton">Add calculation rates</a>
+			</div>
 		</div>
 	</div>
 
@@ -54,7 +63,7 @@ Manage calculation rates
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Actions</span>
-									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or
 									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
 								</td>
 							</tr>
@@ -69,7 +78,7 @@ Manage calculation rates
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Actions</span>
-									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or
 									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
 								</td>
 							</tr>
@@ -84,7 +93,7 @@ Manage calculation rates
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Actions</span>
-									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or
 									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
 								</td>
 							</tr>
@@ -99,7 +108,7 @@ Manage calculation rates
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Actions</span>
-									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or
 									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
 								</td>
 							</tr>
@@ -114,7 +123,7 @@ Manage calculation rates
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Actions</span>
-									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or
 									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
 								</td>
 							</tr>
@@ -129,7 +138,7 @@ Manage calculation rates
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Actions</span>
-									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or
 									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
 								</td>
 							</tr>
@@ -144,7 +153,7 @@ Manage calculation rates
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Actions</span>
-									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or
 									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
 								</td>
 							</tr>
@@ -159,7 +168,7 @@ Manage calculation rates
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Actions</span>
-									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or
 									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
 								</td>
 							</tr>
@@ -174,7 +183,7 @@ Manage calculation rates
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Actions</span>
-									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or
 									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
 								</td>
 							</tr>
@@ -189,7 +198,7 @@ Manage calculation rates
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Actions</span>
-									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or
 									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
 								</td>
 							</tr>
@@ -204,7 +213,7 @@ Manage calculation rates
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Actions</span>
-									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or
 									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
 								</td>
 							</tr>
@@ -219,7 +228,7 @@ Manage calculation rates
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Actions</span>
-									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or
 									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
 								</td>
 							</tr>
@@ -234,7 +243,7 @@ Manage calculation rates
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Actions</span>
-									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or
 									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
 								</td>
 							</tr>
@@ -249,7 +258,7 @@ Manage calculation rates
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Actions</span>
-									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or
 									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
 								</td>
 							</tr>
@@ -264,7 +273,7 @@ Manage calculation rates
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Actions</span>
-									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or
 									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
 								</td>
 							</tr>
@@ -279,7 +288,7 @@ Manage calculation rates
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Actions</span>
-									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or
 									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
 								</td>
 							</tr>
@@ -294,7 +303,7 @@ Manage calculation rates
 								</td>
 								<td role="cell" class="nhsuk-table__cell">
 									<span class="nhsuk-table-responsive__heading">Actions</span>
-									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or 
+									<a href="/lsf-web/v6/admin-view/edit-calc-rates">Change</a> or
 									<a href="/lsf-web/v6/admin-view/copy-calc-rates">Copy calculation rates</span></a>
 								</td>
 							</tr>
@@ -308,7 +317,7 @@ Manage calculation rates
 							</li>
 						</ul>
 						<!--a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href="" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a-->
-				
+
 						<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">17</span> of <span id="tdaeTotalItemsNumber">17 results</span></div>
 					</nav>
 
@@ -365,7 +374,7 @@ Manage calculation rates
                 } else {
                     tr[i].style.display = "none";
                 }
-            }       
+            }
         }
     }
 </script>

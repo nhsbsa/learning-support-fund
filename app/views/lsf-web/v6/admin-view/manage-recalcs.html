@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css">
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Manage calculation rates
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-full">
+	<h1 class="nhsuk-heading-l">Manage recalculations</h1>
+
+	<a href="" class="nhsuk-button">Create new reclalculation</a>
+
+	<table role="table" id="documentsTable" class="nhsuk-table-responsive js-table-sortable nhsuk-u-margin-bottom-5">
+		<h2 class="heading-large nhsuk-u-visually-hidden">Recalculations</h2>
+			<caption class="nhsuk-table__caption">Calculation rates<span id="ariaLiveMessage" class="nhsuk-u-visually-hidden"> - contains 2 results</span><span id="resultMessage" aria-hidden="true"> - contains 17 results</span><span class="nhsuk-u-visually-hidden"> (column headers with links are sortable)</span></caption>
+				<thead role="rowgroup" class="nhsuk-table__head">
+					<tr role="row">
+						<th role="columnheader">Run date</th>
+						<th scope="col" class="nhsuk-table__header">Status</th>
+						<th scope="col" class="nhsuk-table__header">Actions</th>
+					</tr>
+				</thead>
+
+				<tbody class="nhsuk-table__body">
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Run date</span>
+						  <span>Monday 10 January 2026 at 1:00am</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Status</span><strong class="nhsuk-tag nhsuk-tag--white">Scheduled<strong>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<ul class="nhsuk-list" style="margin-bottom: 0px;">
+								<li><a href="#">Cancel</a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Run date</span>
+						  <span>Thursday 10 October 2025 at 1:00am</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Status</span><strong class="nhsuk-tag">Completed</strong>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+							<ul class="nhsuk-list" style="margin-bottom: 0px;">
+								<li><a href="#">Positive report (CSV, 78.23KB)</a></li>
+								<li><a href="#">Negative report (CSV, 1.23MB)</a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr role="row" class="nhsuk-table__row">
+						<td role="cell" class="nhsuk-table__cell">
+						  <span class="nhsuk-table-responsive__heading">Run date</span>
+						  <span>Thursday 10 October 2025 at 1:00am</span>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Status</span><strong class="nhsuk-tag nhsuk-tag--grey">Cancelled</strong>
+						</td>
+						<td role="cell" class="nhsuk-table__cell">
+							<span class="nhsuk-table-responsive__heading">Actions</span>
+						</td>
+					</tr>
+				</tbody>
+	</table>
+
+	<nav class="nhsbsa-pagination__nav" role="navigation" aria-label="Pagination">
+		<ul class="nhsbsa-pagination" >
+			<li class="nhsbsa-pagination__item nhsbsa-pagination-li">
+				<a class="nhsbsa-pagination__link nhsbsa-pagination__current" href="#">1</a>
+			</li>
+		</ul>
+		<!--a class="nhsbsa-pagination__link nhsbsa-pagination-next__link" href="" aria-label="Next page">Next<span aria-hidden="true" role="presentation">&nbsp;»</span></a-->
+
+		<div class="nhsbsa-pagination__summary nhsbsa-summary__alignment">Showing <span id="tdaeFirstItemNumber">1</span> - <span id="tdaeLastItemNumber">2</span> of <span id="tdaeTotalItemsNumber">2 results</span></div>
+	</nav>
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}

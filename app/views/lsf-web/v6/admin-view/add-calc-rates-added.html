@@ -1,0 +1,60 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Add calculation rates
+{% endblock %}
+
+{% block content %}
+
+<form action="v6/admin-view/add-calc-rates-added" method="POST">
+	<div class="nhsuk-grid-column-two-thirds">
+		<div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+				<div class="nhsuk-card__content">
+						<h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+							New calculation rates added
+						</h1>
+				</div>
+		</div>
+
+		<div class="nhsuk-form-group">
+		  <fieldset class="nhsuk-fieldset">
+		    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+		      <h2 class="nhsuk-fieldset__heading">
+		        Do you want to schedule a recalculation of students existing payments?
+		      </h2>
+		    </legend>
+				<details class="nhsuk-details">
+				  <summary class="nhsuk-details__summary">
+				    <span class="nhsuk-details__summary-text">
+				      What is a recalculation?
+				    </span>
+				  </summary>
+				  <div class="nhsuk-details__text">
+				    <p>The recalculation will update the payments of students where payments have already been scheduled or sent. Two reports will be created for those successfully updated and those which could not be recalculated by the system.</p>
+				  </div>
+				</details>
+				<!--<div id="example-hints-hint" class="nhsuk-hint">
+		      The recalculation will update the payments of students where payments have already been scheduled or sent. Two reports will be created for those successfully updated and those which could not be recalculated by the system.
+		    </div>-->
+		    <div class="nhsuk-radios" data-module="nhsuk-radios">
+		      <div class="nhsuk-radios__item">
+		        <input class="nhsuk-radios__input" id="scheduleRecalc-yes" name="scheduleRecalc" type="radio" value="Yes">
+		        <label class="nhsuk-label nhsuk-radios__label" for="scheduleRecalc-yes">
+		          Yes
+		        </label>
+		      </div>
+		      <div class="nhsuk-radios__item">
+		        <input class="nhsuk-radios__input" id="scheduleRecalc-no" name="scheduleRecalc" type="radio" value="No">
+		        <label class="nhsuk-label nhsuk-radios__label" for="scheduleRecalc-no">
+		          No, return to Manage calculation rates
+		        </label>
+		      </div>
+		    </div>
+		  </fieldset>
+		</div>
+
+		<button class="nhsuk-button" type="submit" id="saveCalcRatesDetails">Continue</button>
+
+	</div>
+</form>
+{% endblock %}

@@ -178,6 +178,18 @@ router.post('/v6/admin-view/add-calc-rates', (req, res) => {
 
 })
 
+router.post('/v6/admin-view/add-calc-rates-added', (req, res) => {
+
+  const scheduleRecalc = req.session.data['scheduleRecalc']
+
+  if (scheduleRecalc === 'No') {
+      res.redirect('/lsf-web/v6/admin-view/manage-calc-rates')
+  } else {
+      res.redirect('/lsf-web/v6/admin-view/schedule-recalc')
+  }
+
+})
+
 router.post('/v6/admin-view/edit-calc-rates', (req, res) => {
 
     res.redirect('/lsf-web/v6/admin-view/manage-calc-rates')

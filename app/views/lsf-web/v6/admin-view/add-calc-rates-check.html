@@ -1,0 +1,83 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Add calculation rates
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-full">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
+
+<form action="add-calc-rates-added" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Check calculation rates details</h1>
+	</div>
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<dl class="nhsuk-summary-list">
+		  <div class="nhsuk-summary-list__row">
+		    <dt class="nhsuk-summary-list__key">
+		      Rates effective from
+		    </dt>
+		    <dd class="nhsuk-summary-list__value">
+		      10 January 2026
+		    </dd>
+		  </div>
+			<div class="nhsuk-summary-list__row">
+				 <dt class="nhsuk-summary-list__key">
+					 Training Support rate
+				 </dt>
+				 <dd class="nhsuk-summary-list__value">
+					 £1000
+				 </dd>
+			 </div>
+			 <div class="nhsuk-summary-list__row">
+				<dt class="nhsuk-summary-list__key">
+					Parental Support rate
+				</dt>
+				<dd class="nhsuk-summary-list__value">
+					£1000
+				</dd>
+			</div>
+			<div class="nhsuk-summary-list__row">
+			 <dt class="nhsuk-summary-list__key">
+				 Specialist course rate
+			 </dt>
+			 <dd class="nhsuk-summary-list__value">
+				 £1000
+			 </dd>
+		 </div>
+		 <div class="nhsuk-summary-list__row">
+			<dt class="nhsuk-summary-list__key">
+				Regional uplift rate
+			</dt>
+			<dd class="nhsuk-summary-list__value">
+				£1000.23
+			</dd>
+		</div>
+		<div class="nhsuk-summary-list__row">
+		 <dt class="nhsuk-summary-list__key">
+			 Enable calculation rates details
+		 </dt>
+		 <dd class="nhsuk-summary-list__value">
+			 Yes
+		 </dd>
+	 </div>
+	</dl>
+
+	<div class="nhsuk-form-group">
+		<a class="nhsuk-button nhsuk-button--secondary" href="add-calc-rates" type="submit" id="saveCalcRatesDetails">Change answers</a><br>
+		<button class="nhsuk-button" type="submit" id="saveCalcRatesDetails">Save and continue</button>
+		<p><a class="" href="/lsf-web/v6/admin-view/manage-calc-rates">Cancel</a></p>
+	</div>
+
+
+	</div>
+
+{% endblock %}
