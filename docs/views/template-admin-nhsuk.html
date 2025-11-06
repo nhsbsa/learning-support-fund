@@ -43,7 +43,7 @@
     <title>{% block pageTitle %}NHS.UK prototype kit{% endblock %}</title>
 
     {% block headCSS %}
-      
+
     {% endblock %}
 
     {% block customStyles %}
@@ -59,8 +59,8 @@
     <meta name="msapplication-square70x70logo" content="/nhsuk-frontend/assets/favicons/smalltile-70x70.png">
     <meta name="msapplication-square150x150logo" content="/nhsuk-frontend/assets/favicons/mediumtile-150x150.png">
     <meta name="msapplication-wide310x150logo" content="/nhsuk-frontend/assets/favicons/widetile-310x150.png">
-    <meta name="msapplication-square310x310logo" content="/nhsuk-frontend/assets/favicons/largetile-310x310.png"> 
-    
+    <meta name="msapplication-square310x310logo" content="/nhsuk-frontend/assets/favicons/largetile-310x310.png">
+
     <link href="https://www.nhs.uk/" rel="preconnect">
     <link href="https://assets.nhs.uk/" rel="preconnect" crossorigin>
 
@@ -73,7 +73,7 @@
     {% endblock %}
 
     {% block head %}{% endblock %}
-    
+
   </head>
 
   <body class="{{ bodyClasses }}">
@@ -81,9 +81,9 @@
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
     {% block bodyStart %}{% endblock %}
 
-      
+
       {% block header %}
-        
+
       {% endblock %}
 
       {% block beforeContent %}{% endblock %}
@@ -92,26 +92,27 @@
       <div class="nhsbsa-page-wrapper">
         <div class="nhsbsa-sidebar-container">
           <div class="nhsbsa-sidebar-wrapper">
-            <div class="nhsbsa-sidebar-nav">          
+            <div class="nhsbsa-sidebar-nav">
               <nav class="nhsbsa-side-nav-inner" aria-label="Admin navigation">
                 <ul role="list">
-                  <li><a id="studentSearchButton" href="/lsf-web/v5/current-search-student">Student search</a></li>
-                  <li><a id="manageUsersButton" href="/lsf-web/v5/admin-view/manage-users">Manage users</a></li>
-                  <li><a id="manageCollegesButton" href="/lsf-web/v5/admin-view/manage-unis">Manage universities</a></li>
-                  <li><a id="manageCoursesButton" href="/lsf-web/v5/admin-view/manage-courses">Manage courses</a></li>
-                  <li><a id="manageRatesButton" href="/lsf-web/v5/admin-view/manage-calc-rates">Manage calculation rates</a></li>
-                  <li><a id="manageTdaeRatesButton" href="/lsf-web/v5/admin-view/manage-tdae-rates">Manage TDAE rates</a></li>
-                  <li><a id="manageTermPaymentPercentsButton" href="/lsf-web/v5/admin-view/manage-term-percentages">Manage term payment percentages</a></li>
-                  <li><a id="manageKnowledgeBaseButton" href="/lsf-web/v5/admin-view/manage-knowledge-base">Manage knowledge base</a></li>
-                  <li><a id="manageEnrolmentYearsButton" href="/lsf-web/v5/admin-view/manage-enrolment-years">Manage enrolment year</a>
+                  <li><a id="studentSearchButton" href="/lsf-web/v6/current-search-student">Student search</a></li>
+                  <li><a id="manageUsersButton" href="/lsf-web/v6/admin-view/manage-users">Manage users</a></li>
+                  <li><a id="manageCollegesButton" href="/lsf-web/v6/admin-view/manage-unis">Manage universities</a></li>
+                  <li><a id="manageCoursesButton" href="/lsf-web/v6/admin-view/manage-courses">Manage courses</a></li>
+                  <li><a id="manageRatesButton" href="/lsf-web/v6/admin-view/manage-calc-rates">Manage calculation rates</a></li>
+                  <li><a id="manageRatesButton" href="/lsf-web/v6/admin-view/manage-recalcs">Manage recalculations</a></li>
+                  <li><a id="manageTdaeRatesButton" href="/lsf-web/v6/admin-view/manage-tdae-rates">Manage TDAE rates</a></li>
+                  <li><a id="manageTermPaymentPercentsButton" href="/lsf-web/v6/admin-view/manage-term-percentages">Manage term payment percentages</a></li>
+                  <li><a id="manageKnowledgeBaseButton" href="/lsf-web/v6/admin-view/manage-knowledge-base">Manage knowledge base</a></li>
+                  <li><a id="manageEnrolmentYearsButton" href="/lsf-web/v6/admin-view/manage-enrolment-years">Manage enrolment year</a>
                   </li>
-                  <li><a id="manageCosaButton" href="/lsf-web/v5/admin-view/manage-attendance-status">Manage attendance status</a></li>
-                  <li><a id="manageNoteTypes" href="/lsf-web/v5/admin-view/manage-note-types">Manage note types</a></li> 
-                  <li><a id="manageFormsButton" href="/lsf-web/v5/admin-view/manage-forms">Manage forms</a></li>
-                  <li><a id="managePaymentRunButton" href="/lsf-web/v5/admin-view/manage-payment-runs">Manage payment runs</a></li>
-                  <li><a id="invalidBankDetailsButton" href="/lsf-web/v5/admin-view/invalid-bank-details">Invalid bank details</a>
+                  <li><a id="manageCosaButton" href="/lsf-web/v6/admin-view/manage-attendance-status">Manage attendance status</a></li>
+                  <li><a id="manageNoteTypes" href="/lsf-web/v6/admin-view/manage-note-types">Manage note types</a></li>
+                  <li><a id="manageFormsButton" href="/lsf-web/v6/admin-view/manage-forms">Manage forms</a></li>
+                  <li><a id="managePaymentRunButton" href="/lsf-web/v6/admin-view/manage-payment-runs">Manage payment runs</a></li>
+                  <li><a id="invalidBankDetailsButton" href="/lsf-web/v6/admin-view/invalid-bank-details">Invalid bank details</a>
                   </li>
-                  <li><a id="reportMenuButton" href="/lsf-web/v5/admin-view/reporting-menu">Reporting menu</a></li>
+                  <li><a id="reportMenuButton" href="/lsf-web/v6/admin-view/reporting-menu">Reporting menu</a></li>
                 </ul>
               </nav>
             </div>
@@ -133,7 +134,7 @@
       {% endblock %}
 
       {% block footer %}
-       
+
       {% endblock %}
 
     {% block bodyEnd %}{% endblock %}
