@@ -79,6 +79,37 @@ Check your answers
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
+                Receive DSA
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <span class="capitalize">{{ data['dsa-support'] }}</span>
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="TDAE-dsa-help">
+                  Change<span class="nhsuk-u-visually-hidden"> if you receive DSA</span>
+                </a>
+              </dd>
+            </div>
+
+            {% if data['dsa-support'] == "yes" %}
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Claiming DSA taxi costs
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <span class="capitalize">{{ data['dsa-travel'] }}</span>
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="TDAE-dsa-travel">
+                  Change<span class="nhsuk-u-visually-hidden"> if you want to claim DSA taxi costs</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if data['dsa-travel'] != "yes" %}
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
                 Paid costs for
               </dt>
               <dd class="nhsuk-summary-list__value">
@@ -90,6 +121,7 @@ Check your answers
                 </a>
               </dd>
             </div>
+            {% endif %}
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
@@ -160,7 +192,7 @@ Check your answers
             </div>
 
             <!-- If user only selects Overseas from 'Which costs did you pay for screen' do not display term-time address details -->
-            {% if 'car' in data['claiming-for'] or 'Public transport' in data['claiming-for'] or 'Cycle' in data['claiming-for'] or 'community' in data['claiming-for'] or 'accommodation' in data['claiming-for'] or 'travel to accommodation' in data['claiming-for'] or 'taxi' in data['claiming-for'] or 'hire-car' in data['claiming-for'] %}
+            {% if 'car' in data['claiming-for'] or 'Public transport' in data['claiming-for'] or 'Cycle' in data['claiming-for'] or 'community' in data['claiming-for'] or 'accommodation' in data['claiming-for'] or 'travel to accommodation' in data['claiming-for'] or 'taxi' in data['claiming-for'] or 'hire-car' in data['claiming-for'] or data['dsa-travel'] == "yes" %}
             <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
                     Term time address
@@ -205,7 +237,7 @@ Check your answers
           <p>Check these answers carefully. You'll not be able to change some of them after continuing.</p>
         </div>-->
 
-        <form action="TDAE-task-list" method="POST">
+        <form action="v9/TDAE-eligibility-cya" method="POST">
           <button class="nhsuk-button" type="submit">Save and go to task list</button><br>
           <p><a href="#">Cancel</a></p>
         </form>

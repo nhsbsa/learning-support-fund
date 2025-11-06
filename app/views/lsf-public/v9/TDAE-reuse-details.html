@@ -101,7 +101,7 @@
                     </details>
                   </div>
                 </div>
-
+                {% if data['dsa-travel'] != "yes" %}
                 <div class="nhsuk-checkboxes__item">
                   <input class="nhsuk-checkboxes__input" id="university-travel-details" name="reused-details" type="checkbox" value="university-travel-details" aria-describedby="university-travel-details-hint">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="university-travel-details">
@@ -111,6 +111,7 @@
                     <a href="TDAE-normal-summary-cya?submit-claim=completed&mode-of-transport=walk">View university travel details</a>
                   </div>
                 </div>
+                {% endif %}
 
               </div>
             {% else %}
@@ -164,6 +165,7 @@
                 </div>
               </div>
 
+              {% if data['dsa-travel'] != "yes" %}
               <div class="nhsuk-checkboxes__item">
                 <input class="nhsuk-checkboxes__input" id="university-travel-details" name="reused-details" type="checkbox" value="university-travel-details" aria-describedby="university-travel-details-hint">
                 <label class="nhsuk-label nhsuk-checkboxes__label" for="university-travel-details">
@@ -173,6 +175,7 @@
                   <a href="TDAE-normal-summary-cya?submit-claim=completed&mode-of-transport=walk">View university travel details</a>
                 </div>
               </div>
+              {% endif %}
 
             </div>
 

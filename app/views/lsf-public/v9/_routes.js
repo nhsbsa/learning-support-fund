@@ -309,6 +309,45 @@ router.post('/v9/travelling-to', (req, res) => {
 
 })
 
+// TDAE DSA Taxis
+
+router.post('/v9/dsa-travelling-from', (req, res) => {
+
+  const travellingFrom = req.session.data['dsa-travelling-from']
+
+  if (travellingFrom === 'new'){
+    res.redirect('/lsf-public/v9/TDAE-dsa-taxi/travelling-from-address')
+  } else {
+    res.redirect('/lsf-public/v9/TDAE-dsa-taxi/travelling-to')
+  }
+
+})
+
+router.post('/v9/dsa-travelling-to', (req, res) => {
+
+  const travellingTo = req.session.data['dsa-travelling-to']
+
+  if (travellingTo === 'new'){
+    res.redirect('/lsf-public/v9/TDAE-dsa-taxi/travelling-to-address')
+  } else {
+    res.redirect('/lsf-public/v9/TDAE-dsa-taxi/single-return')
+  }
+
+})
+
+router.post('/v9/dsa-evidence-reuse', (req, res) => {
+
+  const reuseEvidence = req.session.data['reuse-evidence']
+  req.session.data['dsa-evidence'] = 'added';
+
+  if (reuseEvidence === 'yes'){
+    res.redirect('/lsf-public/v9/TDAE-dsa-taxi/evidence-overview')
+  } else {
+    res.redirect('/lsf-public/v9/TDAE-dsa-taxi/evidence-dsa')
+  }
+
+})
+
 router.post('/v9/evidence', (req, res) => {
 
   res.redirect('/lsf-public/v9/TDAE-taxi/evidence-mini-cya')
@@ -1945,10 +1984,36 @@ router.post('/v9/TDAE-dsa-help', (req, res) => {
     const dsaSupport = req.session.data['dsa-support']
 
     if (dsaSupport === 'yes') {
-        req.session.data['TDAE-signpost'] = 'DSA'
-        res.redirect('/lsf-public/v9/TDAE-signpost/TDAE-dsa-signpost')
+        res.redirect('/lsf-public/v9/TDAE-dsa-travel')
     } else {
-        res.redirect('/lsf-public/v9/TDAE-incur-costs')
+        res.redirect('/lsf-public/v9/TDAE-travel-accommodation')
+    }
+
+})
+
+// Do you want to claim DSA taxi costs?
+router.post('/v9/TDAE-dsa-travel', (req, res) => {
+
+    const dsaTravel = req.session.data['dsa-travel']
+
+    if (dsaTravel === 'yes') {
+        req.session.data['claiming-for'] = 'dsa'
+        res.redirect('/lsf-public/v9/TDAE-reuse-answers')
+    } else {
+        res.redirect('/lsf-public/v9/TDAE-travel-accommodation')
+    }
+
+})
+
+// Claim overview (Eligibility) CYA
+router.post('/v9/TDAE-eligibility-cya', (req, res) => {
+
+    const dsaTravel = req.session.data['dsa-travel']
+
+    if (dsaTravel === 'yes') {
+        res.redirect('/lsf-public/v9/TDAE-task-list-dsa')
+    } else {
+        res.redirect('/lsf-public/v9/TDAE-task-list')
     }
 
 })
@@ -1974,11 +2039,11 @@ router.post('/v9/TDAE-incur-cost', (req, res) => {
 
     const dateCostIncurred = incurDay + '/' + incurMonth + '/' + incurYear
 
-    if (incurYear == '2022' || incurYear == '22') {
+    if (incurYear == '2023' || incurYear == '23') {
         res.redirect('/lsf-public/v9/TDAE-academic-year')
     } else {
         req.session.data['academic-year'] = 'no'
-        res.redirect('/lsf-public/v9/TDAE-travel-accommodation')
+        res.redirect('/lsf-public/v9/TDAE-dsa-help')
     }
 
 })

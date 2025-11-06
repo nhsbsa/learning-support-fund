@@ -284,6 +284,11 @@ Learning Support Fund
 {% block scripts %}
 <!-- Custom JavaScript files can be added to this file -->
 {% include "includes/scripts.html" %}
+<!-- NHS Frontend JS -->
+<script src="/nhsuk-frontend/nhsuk.min.js"></script>
+<script>
+  window.NHSUKFrontend.initAll()
+</script>
 <script>
 
   (function (a, b) {

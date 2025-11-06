@@ -35,7 +35,9 @@
                   <ul class="nhsuk-list nhsuk-list--bullet">
                     <li>term time address</li>
                     <li>placement addresses</li>
+                    {% if data['dsa-travel'] != "yes" %}
                     <li>university travel details</li>
+                    {% endif %}
                   </ul>
                 </div>
               </details>

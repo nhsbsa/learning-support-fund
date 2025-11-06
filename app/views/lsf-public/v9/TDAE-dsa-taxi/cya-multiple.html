@@ -1,0 +1,505 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<!-- <form action="" method="POST"> -->
+
+		<h1 class="nhsuk-heading-xl">DSA Taxi journeys</h1>
+
+		{% if data['taxi-details'] === 'started' %}
+		<div class="nhsuk-inset-text">
+		  <span class="nhsuk-u-visually-hidden">Information: </span>
+
+		  <p>You've changed your placement address. We've marked these sections as Not started because you need to check that these details are still correct.</p>
+		</div>
+		{% endif %}
+
+		{% if data['taxi-details'] === 'action' %}
+			<div class="nhsuk-warning-callout">
+				<h3 class="nhsuk-warning-callout__label">
+					<span role="text">
+						<span class="nhsuk-u-visually-hidden">Important: </span>
+						University feedback
+					</span>
+				</h3>
+				<p>This is the comment left by the University when returning to student.</p>
+			</div>
+		{% endif %}
+
+			{% if data['taxi-journeys'] != '2' %}
+			<details class="nhsuk-details nhsuk-expander">
+				<summary class="nhsuk-details__summary">
+					<span class="nhsuk-details__summary-text">
+						23 February 2024
+					</span>
+					{% if data['taxi-details'] === 'action' %}<strong class="nhsuk-tag nhsuk-tag--yellow app-task-list__tag task-status">Action needed</strong>{% endif %}
+				</summary>
+				<div class="nhsuk-details__text">
+					<dl class="nhsuk-summary-list">
+						<!-- Date of taxi journey -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Date
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['taxi-journey-day'] %}
+									{{ data['taxi-journey-day'] }} <span class="cya-month">{{ data['taxi-journey-month'] }}</span> {{ data['taxi-journey-year'] }}
+								{% else %}
+									23 February 2024
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="date">
+									Change<span class="nhsuk-u-visually-hidden">date of journey</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+						<!-- Travelling from -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Travelling from
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								Alnwick Hospital<br>
+								Infirmary Drive<br>
+								Alnwick<br>
+								NE66 2NS
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="travelling-from">
+									Change<span class="nhsuk-u-visually-hidden"> travelling from</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+						<!-- Travelling to -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Travelling to
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								The Hog's Head Inn<br>
+								Hawfinch Drive<br>
+								Alnwick<br>
+								NE66 2BF
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="travelling-to">
+									Change<span class="nhsuk-u-visually-hidden"> travelling from</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+						<!-- Cost of taxi -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Return journey
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								<span class="capitalize">{{ data['single-return']}}</span>
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="return-single">
+									Change<span class="nhsuk-u-visually-hidden"> cost</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+						<!-- Cost of taxi -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								First journey taxi cost
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['taxi-cost'] %}
+									£{{ data['taxi-cost'] }}
+								{% else %}
+									£10
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="cost">
+									Change<span class="nhsuk-u-visually-hidden"> cost</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+						<!-- Cost of taxi -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Return journey taxi cost
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['taxi-cost'] %}
+									£{{ data['taxi-cost'] }}
+								{% else %}
+									£10
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="cost">
+									Change<span class="nhsuk-u-visually-hidden"> cost</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+					</dl>
+					<a class="nhsuk-button nhsuk-button--secondary" href="check" style="float: left; margin-right:20px;">Change journey</a>
+					<a class="nhsuk-button nhsuk-button--warning" href="remove">Remove journey</a>
+				</div>
+			</details>
+			{% else %}
+			<details class="nhsuk-details nhsuk-expander">
+				<summary class="nhsuk-details__summary">
+					<span class="nhsuk-details__summary-text">
+						23 February 2024
+					</span>
+					{% if data['taxi-details'] === 'action' %}<strong class="nhsuk-tag nhsuk-tag--yellow app-task-list__tag task-status">Action needed</strong>{% endif %}
+				</summary>
+				<div class="nhsuk-details__text">
+					<dl class="nhsuk-summary-list">
+
+						<!-- Date of taxi journey -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Date
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['taxi-journey-day'] %}
+									{{ data['taxi-journey-day'] }} <span class="cya-month">{{ data['taxi-journey-month'] }}</span> {{ data['taxi-journey-year'] }}
+								{% else %}
+									23 February 2024
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="date">
+									Change<span class="nhsuk-u-visually-hidden">date of journey</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+						<!-- Travelling from -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+							  Travelling from
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+							  Alnwick Hospital<br>
+							  Infirmary Drive<br>
+							  Alnwick<br>
+							  NE66 2NS
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="travelling-from">
+									Change<span class="nhsuk-u-visually-hidden"> travelling from</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+						<!-- Travelling to -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+							  Travelling to
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+						  	The Hog's Head Inn<br>
+							  Hawfinch Drive<br>
+							  Alnwick<br>
+							  NE66 2BF
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="travelling-to">
+									Change<span class="nhsuk-u-visually-hidden"> travelling from</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+						<!-- Cost of taxi -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Return journey
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								<span class="capitalize">{{ data['single-return']}}</span>
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="return-single">
+									Change<span class="nhsuk-u-visually-hidden"> cost</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+						<!-- Cost of taxi -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								First journey taxi cost
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['taxi-cost'] %}
+									£{{ data['taxi-cost'] }}
+								{% else %}
+									£10
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="cost">
+									Change<span class="nhsuk-u-visually-hidden"> cost</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+						<!-- Cost of taxi -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Return journey taxi cost
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['taxi-cost'] %}
+									£{{ data['taxi-cost'] }}
+								{% else %}
+									£10
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="cost">
+									Change<span class="nhsuk-u-visually-hidden"> cost</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+					</dl>
+					<a class="nhsuk-button nhsuk-button--secondary" href="check" style="float: left; margin-right:20px;">Change journey</a>
+					<a class="nhsuk-button nhsuk-button--warning" href="remove">Remove journey</a>
+				</div>
+			</details>
+
+			<details class="nhsuk-details nhsuk-expander">
+					<summary class="nhsuk-details__summary">
+					<span class="nhsuk-details__summary-text">
+						24 February 2024
+					</span>
+				</summary>
+				<div class="nhsuk-details__text">
+					<dl class="nhsuk-summary-list">
+
+						<!-- Date of taxi journey -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Date
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['taxi-journey-day'] %}
+									{{ data['taxi-journey-day'] }} <span class="cya-month">{{ data['taxi-journey-month'] }}</span> {{ data['taxi-journey-year'] }}
+								{% else %}
+									23 February 2024
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="date">
+									Change<span class="nhsuk-u-visually-hidden">date of journey</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+						<!-- Travelling from -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+							  Travelling from
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+						  	Alnwick Hospital<br>
+							  Infirmary Drive<br>
+							  Alnwick<br>
+							  NE66 2NS
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="travelling-from">
+									Change<span class="nhsuk-u-visually-hidden"> travelling from</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+						<!-- Travelling to -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+							  Travelling to
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+						  	The Hog's Head Inn<br>
+							  Hawfinch Drive<br>
+							  Alnwick<br>
+							  NE66 2BF
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="travelling-to">
+									Change<span class="nhsuk-u-visually-hidden"> travelling from</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+						<!-- Cost of taxi -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Return journey
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								<span class="capitalize">{{ data['single-return']}}</span>
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="return-single">
+									Change<span class="nhsuk-u-visually-hidden"> cost</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+						<!-- Cost of taxi -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								First journey taxi cost
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['taxi-cost'] %}
+									£{{ data['taxi-cost'] }}
+								{% else %}
+									£10
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="cost">
+									Change<span class="nhsuk-u-visually-hidden"> cost</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+						<!-- Cost of taxi -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Return journey taxi cost
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['taxi-cost'] %}
+									£{{ data['taxi-cost'] }}
+								{% else %}
+									£10
+								{% endif %}
+							</dd>
+							{% if data['submit-claim'] != 'completed' %}
+							<dd class="nhsuk-summary-list__actions">
+								<a href="cost">
+									Change<span class="nhsuk-u-visually-hidden"> cost</span>
+								</a>
+							</dd>
+							{% endif %}
+						</div>
+
+					</dl>
+					<a class="nhsuk-button nhsuk-button--secondary" href="check" style="float: left; margin-right:20px;">Change journey</a>
+					<a class="nhsuk-button nhsuk-button--warning" href="remove">Remove journey</a>
+				</div>
+			</details>
+			{% endif %}
+
+
+			<h2 class="nhsuk-heading-m">Total DSA taxi costs to be reimbursed</h2>
+	    <dl class="nhsuk-summary-list">
+
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Total amount
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+							£20
+					</dd>
+				</div>
+	    </dl>
+
+			<form action="/lsf-public/v9/TDAE-task-list-dsa?dsa-details=completed" method="POST">
+				<button style="float: left; margin-right:20px;" class="nhsuk-button" type="submit">Continue</button>
+			</form>
+			<a class="nhsuk-button nhsuk-button--secondary" href="date?taxi-journeys=2">Add another taxi journey</a><br>
+			<p><a href="../TDAE-task-list-dsa?dsa-details=in-progress">Return to task list</a></p>
+
+		<!-- </form> -->
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			const months = {
+				"01": "January",
+				"02": "February",
+				"03": "March",
+				"04": "April",
+				"05": "May",
+				"06": "June",
+				"07": "July",
+				"08": "August",
+				"09": "September",
+				"1": "January",
+				"2": "February",
+				"3": "March",
+				"4": "April",
+				"5": "May",
+				"6": "June",
+				"7": "July",
+				"8": "August",
+				"9": "September",
+				"10": "October",
+				"11": "November",
+				"12": "December",
+			};
+
+			$(".cya-month").text(function () {
+				const month = $(this).text();
+				console.log("month:", month);
+				console.log("months[month]:", months[month]);
+				return months[month];
+			});
+		});
+		</script>
+
+
+</div>
+{% endblock %}

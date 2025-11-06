@@ -1,0 +1,35 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Travel between accommodation and term time journey
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+        }) }}
+
+        <form action="date" method="POST">
+
+          <h1 class="nhsuk-heading-l">Add your DSA taxi details</h1>
+
+          <p>If you have successfully claimed for DSA taxi allowance from Student Loans Company, you'll have received the extra cost of a taxi compared to public transport.</p>
+
+          <p>You can claim back the rest of the cost (public transport equivalent) here.</p>
+
+          <p>You will need to provide evidence of the taxi cost and your DSA 2 letter stating the public transport equivalent cost.</p>
+
+          <button class="nhsuk-button" type="submit">Add first taxi journey</button><br>
+      		<p><a href="../TDAE-task-list-dsa">Cancel</a></p>
+
+      </form>
+
+    </div>
+
+</div>
+{% endblock %}
