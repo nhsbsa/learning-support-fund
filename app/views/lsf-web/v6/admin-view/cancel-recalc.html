@@ -1,0 +1,47 @@
+{% extends 'layout-admin-nhsuk.html' %}
+
+{% block pageTitle %}
+Add calculation rates
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-column-full">
+
+	{{ backLink({
+	"href": "javascript:history.go(-1)",
+	"text": "Go back"
+	}) }}
+</div>
+
+<form action="manage-recalcs" method="POST">
+	<div class="nhsuk-grid-column-full">
+		<h1 class="nhsuk-heading-l">Are you sure you want to cancel this recalculation?</h1>
+	</div>
+
+	<div class="nhsuk-grid-column-two-thirds">
+
+		<p>This will cancel the recalulcation scheduled for Monday 10 January 2026 at 1:00am.</p>
+
+			<div class="nhsuk-form-group">
+				<div class="nhsuk-radios nhsuk-radios--inline">
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="enableCalcRatesYes" name="enableCalcRatesDetails" type="radio" value="Yes">
+						<label class="nhsuk-label nhsuk-radios__label" for="enableCalcRatesYes">Yes</label>
+					</div>
+
+					<div class="nhsuk-radios__item">
+						<input class="nhsuk-radios__input" id="enableCalcRatesDetailsNo" name="enableCalcRatesDetails" type="radio" value="No">
+						<label class="nhsuk-label nhsuk-radios__label" for="enableCalcRatesDetailsNo">No</label>
+					</div>
+				</div>
+			</div>
+
+		<div class="nhsuk-form-group">
+			<button class="nhsuk-button" type="submit" id="saveCalcRatesDetails">Continue</button>
+			<p><a class="" href="/lsf-web/v6/admin-view/manage-calc-rates">Cancel</a></p>
+		</div>
+
+
+	</div>
+
+{% endblock %}

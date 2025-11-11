@@ -1,0 +1,159 @@
+{% extends 'layout-HEI-v10.html' %}
+
+{% block pageTitle %}
+Student and University details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+
+    <h1 class="nhsuk-heading-l">Taxi costs (for DSA students) details</h1>
+
+    <details class="nhsuk-details nhsuk-expander" open>
+      <summary style="" class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          What are taxi costs for DSA students?
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>For students receiving Disabled Students' Allowance who need a taxi to get to and from placement, Student Loans Company reimburse some costs towards that.</p>
+        <p>Student Loans Company pay the actual cost of the taxi journey minus what the public transport journey would have cost. And students claim back the public transport journey cost that DSA did not pay through TDAE.</p>
+      </div>
+    </details>
+
+    <!--<div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
+      <div class="nhsuk-card--care__heading-container">
+        <h2 class="nhsuk-card--care__heading">What are taxi costs for DSA students?</h2> <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-card__content">
+        <p>For students receiving Disabled Students' Allowance who need a taxi to get to and from placement, Student Loans Company reimburse some costs towards that.</p>
+        <p>Student Loans Company pay the actual cost of the taxi journey minus what the public transport journey would have cost. And students claim back the public transport journey cost that DSA did not pay through TDAE.</p>
+      </div>
+    </div>-->
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Disabled Student Allowance evidence
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <a href="#" target="_blank" rel="noopener">View evidence (opens in a new tab)</a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Student comments
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          I am still awaiting payment from Student Loans Company for my taxi costs.
+        </dd>
+      </div>
+
+    </dl>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Full addresses
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <ul class="nhsuk-list">
+          <li>
+              Alnwick Hospital<br>
+              Infirmary Drive<br>
+              Alnwick<br>
+              NE66 2NS
+          </li>
+          <li>
+              The Hog's Head Inn<br>
+              Hawfinch Drive<br>
+              Alnwick<br>
+              NE66 2BF
+          </li>
+      </div>
+    </details>
+
+  </div>
+  <div class="nhsuk-grid-column-full">
+
+    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-4">
+      <caption class="nhsuk-table__caption">Taxi journeys and evidence</caption>
+      <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+          <th role="columnheader" class="" scope="col">
+            Date
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Travelling from
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Travelling to
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Cost
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Evidence
+          </th>
+        </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date </span>23 February 2024
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Travelling from </span>Alnwick Hospital
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Travelling to </span>The Hog's Head Inn
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Cost </span>£12
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Evidence </span>
+            <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">View 1<span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span></a><br>
+            <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">View 2<span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span></a>
+          </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date </span>23 February 2024
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Travelling from </span>The Hog's Head Inn
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Travelling to </span>Alnwick Hospital
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Cost </span>£12
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Evidence </span>
+            <a href="/images/Screenshot 2023-02-06 at 17.09.59.png" target="_blank" rel="noopener">View<span class="nhsuk-u-visually-hidden">(opens in new tab) evidence</span></a><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+    {% if data['read-only'] != 'true' %}
+      <a class="nhsuk-button" href="TDAE-checked-dsa-taxi">Continue</a>
+    {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

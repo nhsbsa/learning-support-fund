@@ -11,7 +11,7 @@ Check your answers
 
 		<!-- <form action="" method="POST"> -->
 
-		<h1 class="nhsuk-heading-xl">DSA taxi journeys</h1>
+		<h1 class="nhsuk-heading-xl">Taxi journeys</h1>
 
 		{% if data['taxi-details'] === 'started' %}
 		<div class="nhsuk-inset-text">
@@ -43,6 +43,7 @@ Check your answers
 				</summary>
 				<div class="nhsuk-details__text">
 					<dl class="nhsuk-summary-list">
+
 						<!-- Date of taxi journey -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
@@ -55,39 +56,25 @@ Check your answers
 									23 February 2024
 								{% endif %}
 							</dd>
-							{% if data['submit-claim'] != 'completed' %}
-							<dd class="nhsuk-summary-list__actions">
-								<a href="date">
-									Change<span class="nhsuk-u-visually-hidden">date of journey</span>
-								</a>
-							</dd>
-							{% endif %}
 						</div>
 
 						<!-- Travelling from -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
-								Travelling from
+							  Travelling from
 							</dt>
 							<dd class="nhsuk-summary-list__value">
-								Alnwick Hospital<br>
-								Infirmary Drive<br>
-								Alnwick<br>
-								NE66 2NS
+						  	Alnwick Hospital<br>
+							  Infirmary Drive<br>
+							  Alnwick<br>
+							  NE66 2NS
 							</dd>
-							{% if data['submit-claim'] != 'completed' %}
-							<dd class="nhsuk-summary-list__actions">
-								<a href="travelling-from">
-									Change<span class="nhsuk-u-visually-hidden"> travelling from</span>
-								</a>
-							</dd>
-							{% endif %}
 						</div>
 
 						<!-- Travelling to -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
-								Travelling to
+							  Travelling to
 							</dt>
 							<dd class="nhsuk-summary-list__value">
 								The Hog's Head Inn<br>
@@ -95,36 +82,36 @@ Check your answers
 								Alnwick<br>
 								NE66 2BF
 							</dd>
-							{% if data['submit-claim'] != 'completed' %}
-							<dd class="nhsuk-summary-list__actions">
-								<a href="travelling-to">
-									Change<span class="nhsuk-u-visually-hidden"> travelling from</span>
-								</a>
-							</dd>
-							{% endif %}
 						</div>
 
 						<!-- Cost of taxi -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
-								Return journey
+								Taxi journey cost
+							</dt>
+							<dd class="nhsuk-summary-list__value">
+								{% if data['taxi-cost'] %}
+									£{{ data['taxi-cost'] }}
+								{% else %}
+									£10
+								{% endif %}
+							</dd>
+						</div>
+
+						<!-- Return journey -->
+						<div class="nhsuk-summary-list__row">
+							<dt class="nhsuk-summary-list__key">
+								Return journey?
 							</dt>
 							<dd class="nhsuk-summary-list__value">
 								<span class="capitalize">{{ data['single-return']}}</span>
 							</dd>
-							{% if data['submit-claim'] != 'completed' %}
-							<dd class="nhsuk-summary-list__actions">
-								<a href="return-single">
-									Change<span class="nhsuk-u-visually-hidden"> cost</span>
-								</a>
-							</dd>
-							{% endif %}
 						</div>
 
 						<!-- Cost of taxi -->
 						<div class="nhsuk-summary-list__row">
 							<dt class="nhsuk-summary-list__key">
-								First journey taxi cost
+								Return taxi journey cost
 							</dt>
 							<dd class="nhsuk-summary-list__value">
 								{% if data['taxi-cost'] %}
@@ -133,35 +120,8 @@ Check your answers
 									£10
 								{% endif %}
 							</dd>
-							{% if data['submit-claim'] != 'completed' %}
-							<dd class="nhsuk-summary-list__actions">
-								<a href="cost">
-									Change<span class="nhsuk-u-visually-hidden"> cost</span>
-								</a>
-							</dd>
-							{% endif %}
 						</div>
 
-						<!-- Cost of taxi -->
-						<div class="nhsuk-summary-list__row">
-							<dt class="nhsuk-summary-list__key">
-								Return journey taxi cost
-							</dt>
-							<dd class="nhsuk-summary-list__value">
-								{% if data['taxi-cost'] %}
-									£{{ data['taxi-cost'] }}
-								{% else %}
-									£10
-								{% endif %}
-							</dd>
-							{% if data['submit-claim'] != 'completed' %}
-							<dd class="nhsuk-summary-list__actions">
-								<a href="cost">
-									Change<span class="nhsuk-u-visually-hidden"> cost</span>
-								</a>
-							</dd>
-							{% endif %}
-						</div>
 					</dl>
 					<a class="nhsuk-button nhsuk-button--secondary" href="check" style="float: left; margin-right:20px;">Change journey</a>
 					<a class="nhsuk-button nhsuk-button--warning" href="remove">Remove journey</a>
@@ -441,7 +401,7 @@ Check your answers
 			{% endif %}
 
 
-			<h2 class="nhsuk-heading-m">Total DSA taxi costs to be reimbursed</h2>
+			<h2 class="nhsuk-heading-m">Total costs to be reimbursed</h2>
 	    <dl class="nhsuk-summary-list">
 
 				<div class="nhsuk-summary-list__row">
@@ -454,7 +414,7 @@ Check your answers
 				</div>
 	    </dl>
 
-			<form action="/lsf-public/v9/TDAE-task-list-dsa?dsa-details=completed" method="POST">
+			<form action="add-comment" method="POST">
 				<button style="float: left; margin-right:20px;" class="nhsuk-button" type="submit">Continue</button>
 			</form>
 			<a class="nhsuk-button nhsuk-button--secondary" href="date?taxi-journeys=2">Add another taxi journey</a><br>

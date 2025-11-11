@@ -330,7 +330,7 @@ router.post('/v9/dsa-travelling-to', (req, res) => {
   if (travellingTo === 'new'){
     res.redirect('/lsf-public/v9/TDAE-dsa-taxi/travelling-to-address')
   } else {
-    res.redirect('/lsf-public/v9/TDAE-dsa-taxi/single-return')
+    res.redirect('/lsf-public/v9/TDAE-dsa-taxi/cost')
   }
 
 })
@@ -1978,7 +1978,7 @@ router.post('/v9/APPLY-training-grant-submitted', (req, res) => {
 // ********************************
 
 
-// Do you receive travel support from Disabled Students Allowance?
+// Do you receive travel support from Disabled Students’ Allowance?
 router.post('/v9/TDAE-dsa-help', (req, res) => {
 
     const dsaSupport = req.session.data['dsa-support']

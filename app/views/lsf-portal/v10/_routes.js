@@ -316,6 +316,26 @@ router.post('/v10/TDAE-checked-taxi', (req, res) => {
 
 });
 
+router.post('/v10/TDAE-checked-dsa-taxi-comments', (req, res) => {
+
+    res.redirect('/lsf-portal/v10/TDAE-student-claim-dsa')
+
+})
+
+router.post('/v10/TDAE-checked-dsa-taxi', (req, res) => {
+
+    const DSATaxiCheck = req.session.data['dsa-taxi-check'];
+
+    if (DSATaxiCheck === 'yes') {
+        req.session.data['dsa-taxi-completed'] = 'completed';
+        res.redirect('/lsf-portal/v10/TDAE-checked-dsa-taxi-comments');
+    } else {
+        req.session.data['dsa-taxi-completed'] = 'in-progress';
+        res.redirect('/lsf-portal/v10/TDAE-student-claim-dsa');
+    }
+
+});
+
 router.post('/v10/TDAE-checked-taxi-comments', (req, res) => {
 
     res.redirect('/lsf-portal/v10/TDAE-student-claim')

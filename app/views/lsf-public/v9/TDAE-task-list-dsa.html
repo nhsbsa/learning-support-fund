@@ -36,9 +36,9 @@
             <li class="app-task-list__item nhsuk-u-clear">
               <span class="app-task-list__task-name">
                 {% if data['dsa-details'] === 'completed' %}
-                  <a href="TDAE-dsa-taxi/cya">Disabled Students Allowance taxi costs and evidence</a>
+                  <a href="TDAE-dsa-taxi/cya-multiple">Taxi details and evidence</a>
                 {% else %}
-                  <a href="TDAE-dsa-taxi/pause">Disabled Students Allowance taxi costs and evidence</a>
+                  <a href="TDAE-dsa-taxi/pause">Taxi details and evidence</a>
                 {% endif %}
               </span>
               {% if data['dsa-details'] === 'completed' %}
@@ -52,14 +52,36 @@
 
         <li class="section-item">
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3.</span> Submit claim
+            <span class="app-task-list__section-number">
+                3.
+            </span> Placement timesheets
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item nhsuk-u-clear">
+              <span class="app-task-list__task-name">
+                  <a href="TDAE-timesheets/timesheets-evidence-overview-optional">Placement timesheets evidence (optional)</a>
+              </span>
+              {% if data['timesheets-task'] === 'completed' %}
+                <strong class="nhsuk-tag app-task-list__tag task-status">Completed</strong>
+              {% elif data['timesheets-task'] === 'in-progress' %}
+                <strong class="nhsuk-tag nhsuk-tag--blue app-task-list__tag task-status">Task started</strong>
+              {% else %}
+                <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+
+        <li class="section-item">
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4.</span> Submit claim
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item nhsuk-u-clear">
               <span class="app-task-list__task-name">
                 {% if data['dsa-details'] === 'completed'
                 %}
-                  <a class="app-task-list__task-name" href="TDAE-placement-cost-summary">Submit your claim</a>
+                  <a class="app-task-list__task-name" href="TDAE-placement-cost-summary-dsa">Submit your claim</a>
                 {% else %}
                   <span class="app-task-list__task-name">Submit your claim</span>
                 {% endif %}

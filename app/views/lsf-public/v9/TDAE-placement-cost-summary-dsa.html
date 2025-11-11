@@ -1,0 +1,67 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+Claim costs summary
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-l">Claim costs summary</h1>
+
+    <h2 class="nhsuk-heading-m">Your costs</h2>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Taxi costs
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £65.20
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Total cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <strong>£65.20</strong>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="nhsuk-heading-m">Total amount to be reimbursed</h2>
+
+    <!--<p>This amount is the total placement costs minus the university travel costs.</p>-->
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Total amount
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <strong>£65.20</strong>
+        </dd>
+      </div>
+    </dl>
+
+    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-task-list">Change claim</a><br>
+    <a class="nhsuk-button" href="TDAE-student-declaration">Save and continue</a><br>
+    <p><a href="TDAE-start-claim">Cancel</a></p>
+
+  </div>
+
+</div>
+
+<style>
+
+  @media (min-width: 40.0625em) {
+    .nhsuk-summary-list__key {
+        width: 50%;
+    }
+  }
+
+</style>
+{% endblock %}

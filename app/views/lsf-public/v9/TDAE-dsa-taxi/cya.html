@@ -99,7 +99,28 @@ Check your answers
 				<!-- Cost of taxi -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						Return journey
+						Taxi journey cost
+					</dt>
+					<dd class="nhsuk-summary-list__value">
+						{% if data['taxi-cost'] %}
+							£{{ data['taxi-cost'] }}
+						{% else %}
+							£10
+						{% endif %}
+					</dd>
+					{% if data['submit-claim'] != 'completed' %}
+					<dd class="nhsuk-summary-list__actions">
+						<a href="cost">
+							Change<span class="nhsuk-u-visually-hidden"> cost</span>
+						</a>
+					</dd>
+					{% endif %}
+				</div>
+
+				<!-- Return journey -->
+				<div class="nhsuk-summary-list__row">
+					<dt class="nhsuk-summary-list__key">
+						Return journey?
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						<span class="capitalize">{{ data['single-return']}}</span>
@@ -116,7 +137,7 @@ Check your answers
 				<!-- Cost of taxi -->
 				<div class="nhsuk-summary-list__row">
 					<dt class="nhsuk-summary-list__key">
-						First journey taxi cost
+						Return taxi journey cost
 					</dt>
 					<dd class="nhsuk-summary-list__value">
 						{% if data['taxi-cost'] %}
@@ -133,48 +154,6 @@ Check your answers
 					</dd>
 					{% endif %}
 				</div>
-
-				<!-- Cost of taxi -->
-				<div class="nhsuk-summary-list__row">
-					<dt class="nhsuk-summary-list__key">
-						Return journey taxi cost
-					</dt>
-					<dd class="nhsuk-summary-list__value">
-						{% if data['taxi-cost'] %}
-							£{{ data['taxi-cost'] }}
-						{% else %}
-							£10
-						{% endif %}
-					</dd>
-					{% if data['submit-claim'] != 'completed' %}
-					<dd class="nhsuk-summary-list__actions">
-						<a href="cost">
-							Change<span class="nhsuk-u-visually-hidden"> cost</span>
-						</a>
-					</dd>
-					{% endif %}
-				</div>
-
-				<!-- Additional comments -->
-				<div class="nhsuk-summary-list__row">
-					<dt class="nhsuk-summary-list__key">
-						Comments
-					</dt>
-					<dd class="nhsuk-summary-list__value">
-						{% if data['additionalComments'] %}
-							{{ data['additionalComments'] }}
-						{% else %}
-							None provided
-						{% endif %}
-					</dd>
-					{% if data['submit-claim'] != 'completed' %}
-					  <dd class="nhsuk-summary-list__actions">
-						  <a href="add-comment">
-								Change<span class="nhsuk-u-visually-hidden"> additional comments</span>
-						  </a>
-					  </dd>
-					{% endif %}
-				  </div>
 
 			</dl>
 
