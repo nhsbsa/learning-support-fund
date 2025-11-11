@@ -21,43 +21,6 @@ Placement additional costs comments
           <h1 class="nhsuk-heading-l">Taxi costs evidence</h1>
         </label>
 
-        <h2 class="nhsuk-heading-m">Taxi journey evidence</h2>
-
-        {% if data['taxi-evidence'] == "added" %}
-        <p>You need to show us evidence of your taxi costs on 15 April 2025. For example, a receipt or invoice.</p>
-        <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
-          <caption class="nhsuk-table__caption"></caption>
-          <thead role="rowgroup" class="nhsuk-table__head">
-            <tr role="row">
-              <th role="columnheader" class="" scope="col">
-                File
-              </th>
-              <th role="columnheader" class="" scope="col">
-                Action
-              </th>
-            </tr>
-          </thead>
-          <tbody class="nhsuk-table__body">
-            <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
-              <td style="width:75%;" class="nhsuk-table__cell ">
-                <a href="/images/taxi-evidence.png">
-                  uber-receipt.jpg
-                </a>
-              </td>
-              <td class="nhsuk-table__cell ">
-                <a href="evidence-overview?taxi-evidence=removed">Remove</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <p style="margin-bottom: 48px;"><a href="evidence">Add more evidence</a></p>
-
-        {% else %}
-        <p>You need to show us evidence of your taxi costs on 15 April 2025. For example, a receipt or invoice.</p>
-        <a class="nhsuk-button nhsuk-button--secondary" href="evidence">Add evidence</a>
-        {% endif %}
-
-
         <h2 class="nhsuk-heading-m">Disabled Students' Allowance evidence</h2>
 
         {% if data['dsa-evidence'] == "added" %}
@@ -96,6 +59,43 @@ Placement additional costs comments
         {% if (data['taxi-evidence'] == "added") and (data['dsa-evidence'] == "added") %}
         <button class="nhsuk-button" type="submit">Continue</button><br>
         {% endif %}
+
+        <h2 class="nhsuk-heading-m">Taxi journey evidence</h2>
+
+        {% if data['taxi-evidence'] == "added" %}
+        <p>You need to show us evidence of your taxi costs on 15 April 2025. For example, a receipt or invoice.</p>
+        <table style="margin-bottom: 24px;" id="evidenceTable" class="nhsuk-table">
+          <caption class="nhsuk-table__caption"></caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                File
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row" id="evidenceRow1">
+              <td style="width:75%;" class="nhsuk-table__cell ">
+                <a href="/images/taxi-evidence.png">
+                  uber-receipt.jpg
+                </a>
+              </td>
+              <td class="nhsuk-table__cell ">
+                <a href="evidence-overview?taxi-evidence=removed">Remove</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-bottom: 48px;"><a href="evidence">Add more evidence</a></p>
+
+        {% else %}
+        <p>You need to show us evidence of your taxi costs on 15 April 2025. For example, a receipt or invoice.</p>
+        <a class="nhsuk-button nhsuk-button--secondary" href="evidence">Add evidence</a>
+        {% endif %}
+
 
       </div>
 

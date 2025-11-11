@@ -32,7 +32,10 @@ University details
               Reason
             </dt>
             <dd class="nhsuk-summary-list__value">
-              {{ data['return-reason'] }}
+              <ul class="nhsuk-list nhsuk-u-margin-bottom-0">
+                <li>Placement timesheets evidence</li>
+                <li>Taxi costs (for DSA students)</li>
+              </ul>
             </dd>
             <dd class="nhsuk-summary-list__actions">
               <a href="TDAE-send-to-student">
@@ -67,7 +70,7 @@ University details
       {% else %}
       <a class="nhsuk-button" href="TDAE-sent-to-student">Return to university</a>
       {% endif %}
-      
+
 
 
     </div>

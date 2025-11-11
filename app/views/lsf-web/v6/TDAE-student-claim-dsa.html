@@ -1,0 +1,268 @@
+{% extends 'layout-custom-header.html' %}
+
+{% block pageTitle %}
+Claim checks
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    {% if data['read-only'] === 'true' %}
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+    {% endif %}
+
+    <h1 class="nhsuk-heading-l"><span class="nhsuk-caption-l nhsuk-caption--bottom">Travel and Dual Accommodation Expenses</span>
+      Alyssa Geary (1411)
+    </h1>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Student's personal and course details
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Student reference number
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              SSRN0010003
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              University student ID
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              AC123456
+              <br>
+              <p class="nhsuk-body-s">Students can change their university student ID in their personal details.</p>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Academic year
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              2023 to 2024
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Course
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Adult Nursing
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </details>
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Claim start<br>
+          and end date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          2 February 2024 to
+          31 March 2024
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Total claim value
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £65.20
+        </dd>
+      </div>
+
+    </dl>
+
+    {% if data['read-only'] != 'true' %}
+        <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">There are incomplete checks for this claim</h2>
+        {% if data['name'] === 'Emmit Mar' %}
+        <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed <span id="completedCount">0</span> of <span id="sectionLength">4</span> sections.</p>
+        {% else %}
+        <p class="nhsuk-body nhsuk-u-margin-bottom-7">You have completed <span id="completedCount">0</span> of <span id="sectionLength">3</span> sections.</p>
+        {% endif %}
+      {% endif %}
+
+    {% if data['status'] == 'University processing' %}
+    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-7">Claim currently being processed by Samuel Jackson</h2>
+    {% endif %}
+
+
+    <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-top-0">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Claim notes and history
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+
+        <table class="nhsuk-table-responsive">
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                From
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Date
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Notes
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            {% if data['feedback-note'] == 'yes' %}
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Jane<br> (NHSBSA)</td>
+              <td class="nhsuk-table__cell"> <p id="currentDate"</p> </td>
+              <td class="nhsuk-table__cell ">{{ data['feedbacknote'] }}</td>
+            </tr>
+            {% endif %}
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Mark Hirst<br> (university)</td>
+              <td class="nhsuk-table__cell">12 March 2024</td>
+              <td class="nhsuk-table__cell "><strong>University checks submitted</strong><br>Student completed these placement dates before withdrawing from the course.</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">{{ data['name'] }}<br>(student)</td>
+              <td class="nhsuk-table__cell">7 April 2024</td>
+              <td class="nhsuk-table__cell "><strong>Claim submitted</strong></td>
+            </tr>
+
+          </tbody>
+        </table>
+        <!--<p class="nhsuk-u-padding-top-3"><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></p>-->
+        <ul class="nhsuk-list nhsuk-u-padding-top-3">
+          <li><a class="nhsuk-link--no-visited-state" href="TDAE-add-feedback-note">Add a note</a></li>
+          <li><a class="nhsuk-link--no-visited-state" href="TDAE-declarations">View declarations</a></li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1. </span> Travel details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              <a href="TDAE-dsa-taxi" aria-describedby="eligibility-status">
+                Check taxi costs (for DSA students)
+              </a>
+            </span>
+            {% if data['dsa-taxi-completed'] === 'completed' %}
+              <strong class="nhsuk-tag task-status" style="float: right;" id="eligibility-status">Completed</strong>
+            {% elif data['dsa-taxi-completed'] === 'in-progress' %}
+              <strong class="nhsuk-tag nhsuk-tag--yellow task-status" style="float: right;" id="eligibility-status">Return to student</strong>
+            {% else %}
+              <strong class="nhsuk-tag nhsuk-tag--white task-status" style="float: right;" id="eligibility-status">Not started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+
+      <li class="section-item">
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">
+              2.
+          </span> Placement timesheets
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+                <a href="TDAE-timesheets">Placement timesheets evidence</a>
+            </span>
+              <strong class="nhsuk-tag nhsuk-tag--white app-task-list__tag task-status">Not started</strong>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">3. </span> Finish checking claim
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item nhsuk-u-clear">
+            <span class="app-task-list__task-name">
+              {% if data['dsa-taxi-completed'] === 'completed'%}
+              <a class="app-task-list__task-name" href="TDAE-claim-summary-dsa">
+                Authorise payment
+              </a>
+              {% else %}
+              <span class="app-task-list__task-name">
+                Authorise payment
+              </span>
+              {% endif %}
+            </span>
+            {% if data['dsa-taxi-completed'] === 'completed' %}
+                <strong class="nhsuk-tag nhsuk-tag--white" style="float: right;" id="eligibility-status">Not started</strong>
+            {% else %}
+              <strong class="nhsuk-tag nhsuk-tag--grey" style="float: right;" id="eligibility-status">Cannot start yet</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+    </ol>
+
+    {% if data['read-only'] != 'true' %}
+    <h2 class="nhsuk-heading-m">Return or decline this claim</h2>
+    <p>If there are issues with this claim, you can either:</p>
+    <ul>
+      <li>return it to the university</li>
+      <li>decline the claim</li>
+    </ul>
+    {% if data['dsa-taxi-completed'] === 'in-progress' %}
+    <a class="nhsuk-button" href="TDAE-return-decline">Return or decline claim</a>
+    {% else %}
+    <a class="nhsuk-button nhsuk-button--secondary" href="TDAE-return-decline">Return or decline claim</a>
+    {% endif %}
+    {% endif %}
+
+  </div>
+
+
+
+</div>
+
+<script>
+  // JavaScript code
+  var currentDateElement = document.getElementById("currentDate");
+
+  // Get the current date
+  var currentDate = new Date();
+
+  // Format the date as desired
+  var options = { day: 'numeric', month: 'long', year: 'numeric' };
+  var formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+  // Set the formatted date as the content of the element
+  currentDateElement.textContent = formattedDate;
+</script>
+{% endblock %}

@@ -604,6 +604,20 @@ router.post('/v6/TDAE-taxi-check', (req, res) => {
 
 })
 
+router.post('/v6/TDAE-dsa-taxi-check', (req, res) => {
+
+    const taxiCheck = req.session.data['dsa-taxi-check']
+
+    if (taxiCheck === 'yes') {
+        req.session.data['dsa-taxi-completed'] = 'completed'
+    } else {
+        req.session.data['dsa-taxi-completed'] = 'in-progress'
+    }
+
+    res.redirect('/lsf-web/v6/TDAE-student-claim-dsa')
+
+})
+
 router.post('/v6/TDAE-overseas', (req, res) => {
 
     res.redirect('/lsf-web/v6/TDAE-overseas-insurance-details')

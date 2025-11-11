@@ -1,4 +1,4 @@
-{% extends 'layout-HEI-v10.html' %}
+{% extends 'layout-custom-header.html' %}
 
 {% block pageTitle %}
 Student and University details
@@ -13,13 +13,12 @@ Student and University details
     "text": "Go back"
     }) }}
 
-    <form action="v10/TDAE-checked-dsa-taxi" method="POST">
+    <form action="v6/TDAE-dsa-taxi-check" method="POST">
       <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-heading-l">Has the student given the correct details and evidence for their taxi journeys and Disabled Students' Allowance?</h1>
-          </legend>
-           <div class="nhsuk-radios" data-module="nhsuk-radios">
+          <h1 class="nhsuk-heading-l">Can you process the taxi journey details?</h1>
+          <div class="nhsuk-hint">Use the evidence and notes you have seen to choose whether you can accept these details.</div>
+          <div class="nhsuk-radios" data-module="nhsuk-radios">
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="evidence-match-yes" name="dsa-taxi-check" type="radio" value="yes">
               <label class="nhsuk-label nhsuk-radios__label" for="evidence-match-yes">
