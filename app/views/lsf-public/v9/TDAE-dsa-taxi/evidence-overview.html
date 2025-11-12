@@ -56,10 +56,6 @@ Placement additional costs comments
           evidence</a>
         {% endif %}
 
-        {% if (data['taxi-evidence'] == "added") and (data['dsa-evidence'] == "added") %}
-        <button class="nhsuk-button" type="submit">Continue</button><br>
-        {% endif %}
-
         <h2 class="nhsuk-heading-m">Taxi journey evidence</h2>
 
         {% if data['taxi-evidence'] == "added" %}
@@ -94,6 +90,10 @@ Placement additional costs comments
         {% else %}
         <p>You need to show us evidence of your taxi costs on 15 April 2025. For example, a receipt or invoice.</p>
         <a class="nhsuk-button nhsuk-button--secondary" href="evidence">Add evidence</a>
+        {% endif %}
+
+        {% if (data['taxi-evidence'] == "added") and (data['dsa-evidence'] == "added") %}
+        <button class="nhsuk-button" type="submit">Continue</button><br>
         {% endif %}
 
 
