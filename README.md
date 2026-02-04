@@ -1,4 +1,4 @@
-# NHS.UK prototype kit
+# NHS.UK prototype kit (test)
 
 Visit the <a href="http://nhsuk-prototype-kit.azurewebsites.net/docs">NHS.UK prototype kit site</a> to download the latest version and read the documentation.
 
