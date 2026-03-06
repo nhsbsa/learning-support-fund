@@ -1,0 +1,99 @@
+{% extends 'layout-public.html' %}
+
+{% block pageTitle %}
+  Enter the security code
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-heading-l">Check your phone</h1>
+
+        {% if data['send-again'] == 'true' %}
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>New code sent.</p>
+          </div>
+        {% endif %}
+
+        <p>We've sent a text message with a security code to <b>*******6920</b>.</p>
+
+        {% if data['changed'] == 'true' %}
+          <p>If you want to change where the text message is sent, you can <a href="phone-number">change the mobile number</a>.</p>
+        {% endif %}
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Not received a text message?
+            </span>
+          </summary>
+          {% if data['request-new'] == 'max' %}
+          <div class="nhsuk-details__text">
+            <p>Text messages sometimes take a few minutes to arrive. You cannot request a new code as you've reached the maximum number of codes you can receive.</p>
+          </div>
+          {% else %}
+          <div class="nhsuk-details__text">
+            <p>Text messages sometimes take a few minutes to arrive. If you do not receive the text message, you can <a href="phone-number-2fa?send-again=true&request-new=max">request a new one</a>.</p>
+          </div>
+          {% endif %}
+        </details>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="sign-in-username">
+              Security code
+            </label>
+            <div class="nhsuk-hint" id="example-with-hint-text-hint">
+              This is a 5 digit code
+            </div>
+            <input class="nhsuk-input nhsuk-input--width-10" id="security-code" name="security-code" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-checkboxes">
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="remember-device" name="remember-device" type="checkbox" value="true">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="remember-device">
+                Remember this device and stop sending security codes
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              What does remember this device mean?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>If you select this, we'll remember this device for 60 days. You'll not need to enter a security code each time you sign in with this device. After this time, you'll need to enter a security code again.</p>
+            <p>To keep your NHS Learning Support Fund account secure, only select this on personal or trusted devices.</p>
+          </div>
+        </details>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              I cannot access my phone
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>You cannot sign into your account without entering a security code.</p>
+            <p>Try again later when you can access your phone or contact us by:</p>
+            <ul class="nhsuk-list">
+              <li>Telephone: 0300 330 0521</li>
+              <li>Text relay service: 18001 0300 330 0521</li>
+            </ul>
+          </div>
+        </details>
+
+        <a class="nhsuk-button" href="dashboard?questionnaire-completed=Completed">Continue</a><br>
+        <p><a href="sign-in">Cancel</a></p>
+
+    </div>
+
+  </div>
+{% endblock %}

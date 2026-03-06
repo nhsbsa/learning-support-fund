@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Page templates - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <main class="nhsuk-main-wrapper nhsuk-u-padding-top-0" id="content" role="main">
+				
+		
+	
+				<div class="nhsuk-grid-row">
+					<div class="nhsuk-grid-column-two-thirds">
+						<div class="nhsuk-back-link">
+		<a class="nhsuk-back-link__link" href="/student/student-details/view" id="back">
+			<svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+				<path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+			</svg> Go back
+		</a>
+	</div>
+						
+						<form name="enrolmentForm" action="/student/enrol/enrolment-year" method="post" novalidate=""><input type="hidden" name="_csrf" value="aba7c5cd-a36f-48e4-bbd7-a0df3deb47de">
+						
+							
+							
+							<h1 class="nhsuk-heading-l">
+								<span class="nhsuk-caption-l" id="secondary-heading">
+									Course details
+									<span class="nhsuk-u-visually-hidden"> - </span>
+								</span>
+								When does the academic year you're applying for start?
+							</h1>
+
+							<p class="nhsuk-body">Select the month and year relevant to this application.</p>							
+														
+							<div class="nhsuk-form-group" id="group-enrolmentYear">
+								<fieldset class="nhsuk-fieldset" id="enrolmentYear">
+									<legend class="nhsuk-fieldset__legend nhsuk-u-visually-hidden">Course start date </legend>
+									<div class="nhsuk-radios">
+										
+										
+											<div class="nhsuk-radios__item">
+												<div class="nhsuk-multiple-choice">
+													<input type="radio" id="enYear[0]" value="8" class="nhsuk-radios__input" name="enrolmentYear"> <label class="nhsuk-label nhsuk-radios__label" for="enYear[0]">October 2022</label>
+												</div>
+											</div>
+										
+											<div class="nhsuk-radios__item">
+												<div class="nhsuk-multiple-choice">
+													<input type="radio" id="enYear[1]" value="10" class="nhsuk-radios__input" name="enrolmentYear"> <label class="nhsuk-label nhsuk-radios__label" for="enYear[1]">November 2022</label>
+												</div>
+											</div>
+										
+											<div class="nhsuk-radios__item">
+												<div class="nhsuk-multiple-choice">
+													<input type="radio" id="enYear[2]" value="16" class="nhsuk-radios__input" name="enrolmentYear"> <label class="nhsuk-label nhsuk-radios__label" for="enYear[2]">January 2023</label>
+												</div>
+											</div>
+										
+											<div class="nhsuk-radios__item">
+												<div class="nhsuk-multiple-choice">
+													<input type="radio" id="enYear[3]" value="14" class="nhsuk-radios__input" name="enrolmentYear"> <label class="nhsuk-label nhsuk-radios__label" for="enYear[3]">June 2023</label>
+												</div>
+											</div>
+										
+									</div>
+								</fieldset>
+							</div>
+
+							<div class="nhsuk-form-group">
+								<button class="nhsuk-button" type="submit" name="next" id="continue">Continue</button>
+							</div>
+							
+							<p class="nhsuk-body">If you cannot find your academic year, you can <a href="https://www.nhsbsa.nhs.uk/nhs-learning-support-fund-lsf/contact-us" target="_blank" rel="noopener" id="contactUsLink">contact us (opens in a new tab)</a>.</p>
+						</form>
+					</div>
+				</div>
+			</main>
+{% endblock %}
