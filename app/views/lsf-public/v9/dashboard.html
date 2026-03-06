@@ -1080,4 +1080,48 @@
         </div>
       </div>
     </div>
+    <a aria-hidden="true" class="scroll-to-bottom-button scroll-down-arrow nhsuk-u-text-align-centre nhsuk-u-font-size-14" data-module="nhsuk-button" type="button">
+
+    <svg  class="nhsuk-icon nhsuk-icon--arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
+        <path transform="rotate(90 12 12)"  d="M12 2a10 10 0 0 0-10 9h11.7l-4-4a1 1 0 0 1 1.5-1.4l5.6 5.7a1 1 0 0 1 0 1.4l-5.6 5.7a1 1 0 0 1-1.5 0 1 1 0 0 1 0-1.4l4-4H2A10 10 0 1 0 12 2z"></path>
+    </svg>
+
+    <span>Scroll to bottom</span>
+</a>
+
+<script>
+    const button = document.querySelector('.scroll-to-bottom-button');
+
+    button.addEventListener('click', function () {
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
+        });
+    });
+
+    window.addEventListener('load', function () {
+        const scrollPosition = window.innerHeight + window.scrollY;
+        const pageHeight = document.body.offsetHeight;
+        const pageWidth = document.body.offsetWidth;
+
+        if (scrollPosition < pageHeight - 200 && pageWidth < 767) {
+            button.style.display = 'inline-block';
+        } else {
+            button.style.display = 'none';
+        }
+    });
+
+    window.addEventListener('scroll', function () {
+        const scrollPosition = window.innerHeight + window.scrollY;
+        const pageHeight = document.body.offsetHeight;
+        const pageWidth = document.body.offsetWidth;
+
+        if (scrollPosition < pageHeight - 200 && pageWidth < 767) {
+            button.style.display = 'inline-block';
+        } else {
+            button.style.display = 'none';
+        }
+    });
+
+</script>
 {% endblock %}
