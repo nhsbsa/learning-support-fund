@@ -31,3 +31,41 @@
   text-align: center;
   display: flex;
 }
+.scroll-to-bottom-button {
+  border: none;
+  background: none;
+  box-shadow: none;
+  position: fixed;
+  //width: 100%;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  /*border: none;*/
+  /*outline: none;*/
+  //background: rgba(255, 255, 255, 0.1);
+  display: none; /* Hidden by default */
+  flex-direction: column;   /* Stack svg above span */
+  align-items: center;      /* Center horizontally */
+  justify-content: center;  /* Center vertically (optional) */
+  gap: 0px;                 /* Space between icon and text */
+}
+
+.scroll-to-bottom-button.nhsuk-button--reverse:active {
+  background: #212b32;
+  box-shadow: none;
+  color: #fff;
+  top: inherit;
+}
+
+.scroll-to-bottom-button svg {
+  fill: #007f3b!important;
+  margin:0 auto;
+}
+
+.scroll-to-bottom-button svg, .scroll-to-bottom-button span{
+  align-content: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
